@@ -25,12 +25,11 @@
                                         <a class="dropdown-item" href="#">Another action</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
                                     </div> -->
-                        <select class="form-control" id="select-service">
+                        <select class="form-control select-service" name="select-service" >
 
                             @if(!empty($all_remaining_services))
                             @foreach($all_remaining_services as $r_service)
-                            <p>{{$service->id}}</p>
-                            <p>{{$r_service->id}}</p>
+                            
                             <option {{ ($service->id == $r_service->id) ? "selected" : ''}} value="{{$r_service->id}}">{{$r_service->name}} </option>
                             @endforeach
 
@@ -97,7 +96,10 @@
     });
 
     $(document).ready(function() {
-        var count = 1;
+        
+    })
+
+    var count = 1;
         var total = 0;
         var total_price = document.getElementById('totalPrice').innerHTML;
         $('#quantity').text(count);
@@ -145,32 +147,34 @@
                 $input.change();
                 return false;
             });
+            
 
-            $('#select-service').change(function() {
-                var id = $(this).val();
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    type: 'POST',
-                    url: "/services/getSingleServiceForSelect",
-                    data: {
-                        'id': id
-                    },
-                    dataType: 'JSON',
-                    success: function(response) {
-
-                        $('input[name="unit-input"]').val(1)
-                        $('#totalPrice').text(response.price);
-                        $('#sub-total').text(response.price);
-
-
-                    }
-                });
-            });
+            
         });
-    })
+
+    $('select[name="select-service"]').change(function() {
+        var id = $(this).val();
+    
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: "/services/getSingleServiceForSelect",
+            data: {
+                'id': id
+            },
+            dataType: 'JSON',
+            success: function(response) {
+
+                $('input[name="unit-input"]').val(1)
+                $('#totalPrice').text(response.price);
+                $('#sub-total').text(response.price);
+
+
+            }
+        });
+    });
 </script>

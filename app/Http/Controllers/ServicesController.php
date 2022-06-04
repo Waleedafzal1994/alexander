@@ -346,7 +346,7 @@ class ServicesController extends Controller
         }
         $service_id = $request->input('id');
         if (!empty($service_id)) {
-            $service = Service::with('user')->whereId($service_id)->first();
+            $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($service_id)->first();
             if ($service) {
 
                 // $category_id = $service['category']->id;
@@ -354,7 +354,7 @@ class ServicesController extends Controller
                 // $category_id = $service['category']->id;
                 $data = $service;
 
-                return json_encode($data);
+                echo json_encode($data);
             }
         }
     }
