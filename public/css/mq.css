@@ -1,0 +1,115 @@
+@media(max-width:767px) {
+    #registration_title {
+        text-align: center;
+    }
+
+    .footer-mobile {
+        text-align: center;
+    }
+
+    #profile_column_mobile {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    #profile_column_mobile img {
+        left: 0px !important;
+    }
+
+    #profile_column_mobile h3,
+    #profile_column_mobile p {
+        text-align: center !important;
+    }
+
+    #profile_main_container {
+        margin: 10px 0;
+    }
+
+    .mobile_ul_nav {
+        display: block !important;
+    }
+
+    .menu-navbar {
+        display: none;
+    }
+
+    #services_container_responsive {
+        margin-left: 0px !important;
+    }
+
+    #filters {
+        flex-direction: column;
+    }
+
+    .mobile-center {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .showMenuDiv, .showMenu {
+        display: block;
+    }
+
+    .header-page {
+        flex-direction: column;
+    }
+
+    .flex-collapse {
+        flex-direction: column;
+    }
+
+    .spaced-out-lg {
+        display: none;
+    }
+
+    .nav_profile_name {
+        justify-content: initial !important;
+    }
+
+    .auth-links .nav-item {
+        margin: 5px;
+    }
+
+    .auth-links .nav-item a {
+        width: 100%;
+    }
+
+    #registerModal {
+        margin-top: 15px !important;
+    }
+
+    .mobile-width {
+        width: 100% !important;
+    }
+
+    .mobile-hide-class {
+        display: none;
+    }
+
+    .mobile-svg-home-section {
+        margin-top: -12px;
+    }
+}
+
+
+@media(min-width:767px) {
+    .menu-navbar {
+        display: block !important;
+    }
+}
+
+@media(min-width:1250px) {
+    .spaced-out-lg {
+        margin-right: 25px;
+    }
+
+    .mobile-svg-home-section {
+        margin-top: -1px;
+    }
+}
+
+@media(max-width:1134px) {
+    .menu-navbar {
+        margin-top: -22px;
+    }
+}

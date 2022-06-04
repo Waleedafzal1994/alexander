@@ -1,0 +1,95 @@
+.chat_conversation_container {
+    display:flex; 
+    justify-content:space-between; 
+    background:rgba(0,0,0,0.05); 
+    border-radius:0px; 
+    width:100%; 
+    cursor:pointer;
+    padding:10px;
+}
+
+.chat_conversation_avatar_container {
+    margin-right:10px;
+}
+
+.chat_conversation_avatar {
+    height:40px; 
+    object-fit:cover; 
+    width:40px; 
+    border:2px solid transparent;
+    border-radius:50%;
+}
+
+.chat_conversation_user_info_container {
+    width:100%; 
+    padding:5px 0;
+}
+
+.chat_conversation_user_info_container h6 {
+    margin:0; padding:0;
+}
+.chat_conversation_user_info_container h6 span {
+    float:right;
+}
+
+.chat_conversation_user_info_container .last_message {
+    display:block; overflow:hidden; text-overflow:ellipsis; max-width:70%; white-space:nowrap;
+}
+
+.chat_conversation_hr {
+    margin:0; padding:0; border-bottom:1px solid rgba(0,0,0,0.3) !important;
+}
+
+
+/* === MESSAGE LEFT === */
+.chat_conversation_message_left_div {
+    display:flex; 
+    justify-content:space-between; 
+    border-radius:0px; 
+    width:50%; 
+    padding:0px 10px;
+}
+
+.chat_conversation_message_left_div_avatar {
+    height:40px; 
+    object-fit:cover; 
+    width:40px; 
+    /* border:2px solid transparent; */
+    border-radius:50%;
+}
+
+
+
+
+/* === MESSAGE RIGHT === */
+
+.chat_conversation_message_right_div{
+    display:flex; 
+    justify-content:space-between; 
+    border-radius:0px; 
+    text-align:right; 
+    width:100%; 
+    padding:0 10px;
+}
+
+.old_messages_loader {
+    visibility: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    background:rgba(0,0,0,0.1);
+    cursor: pointer;
+    height:35px;
+}
+
+
+/* notifications  */
+
+.chat-notify-gray {
+    float:right; display:flex; align-items:center; font-size:14px; color:black; background:rgba(0,0,0,0.1); border-radius:50%; padding:5px 15px;
+}
+
+.chat-notify-red {
+    float:right; display:flex; align-items:center; font-size:14px; color:white; background:red; border-radius:50%; padding:5px 15px;
+}

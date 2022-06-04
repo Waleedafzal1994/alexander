@@ -1,0 +1,34 @@
+.admin_nav_icon {
+    vertical-align: middle;
+    font-size:28px !important;
+}
+
+.admin_nav_icon:hover {
+    opacity:0.5;
+}
+
+@media(max-width:767px) {
+    #admin_sidebar {
+        display: none !important;
+    }
+    .admin_nav_icon {
+        display: none !important;
+    }
+    #admin_expand {
+        display: none !important;
+    }
+    #admin_panel_mobile {
+        display: block !important;
+    }
+}
+
+@media(min-width:767px) {
+    .admin-container {
+        padding-left:180px;
+    }
+
+}
+
+.apexcharts-menu-icon {
+    display:none !important;
+}
