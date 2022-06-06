@@ -15,10 +15,10 @@
 
 
 
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <div class="tab-pane more_section">
             <div class="card-body ">
                 <div class="service-main-body-content">
-                    <div id="" class="service_category  main-category">
+                    <div id="more_section_content" class="service_category  main-category">
                         <ul class="menu_ul nav nav-pills" id="pills-tab" role="tablist">
 
                             <li class="nav-item active" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this.id)">
@@ -167,7 +167,12 @@
 
                     $('#pills-home').html(response.html);
                     $('#pills-home').addClass('show active');
-                    $('#pills-contact').removeClass('show active');
+                    // $('#pills-contact').removeClass('show active');
+
+                    $(".nav-link").hover(function(){
+                        $(this).click();
+                    }); //It's not working "hover" on more button
+
 
                     //top-head-categories//
                     $('.top-head-cate').html(response.html2);
@@ -179,4 +184,4 @@
                 }
             });
         }
-    </script>
+</script>

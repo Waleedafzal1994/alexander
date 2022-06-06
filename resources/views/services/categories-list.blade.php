@@ -41,7 +41,7 @@
 
 <li class="nav-item" role="presentation">
     <!-- IF STAART HERE -->
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+    <div class="nav-link p-0" id="more_section">
         <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))">
             <!-- Else Section -->
             <!-- <div class="categories_box_holder" style="background:var(--color-secondary);">
@@ -50,6 +50,6 @@
         </div>
         <!-- ENd Here -->
         <p>More</p>
-    </a>
+    </div>
 </li>
 @endif

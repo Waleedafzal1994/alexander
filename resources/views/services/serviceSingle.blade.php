@@ -34,9 +34,9 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
-        <div class="row">
+        <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
-            <div class="col-lg-3 col-sm-12 profileBar">
+            <div class="profileBar">
                 <!-- START: Service Profile Side bar First Card -->
                 <div class="card card-box-shadow">
                     <div class="card-body p-0 m-0">
@@ -51,19 +51,19 @@
 
 
 
-                        <div class="nav-button-side mt-2">
-                            <div class="row img-two-btns-row">
-                                <div class="col-4 fa-round-border cust-nab-left">
+                        <div class="nav-button-side mt-2 mx-3">
+                            <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
+                                <div class="mt-4">
                                     <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
                                 </div>
-                                <div class="col-5 cust-nab-center">
+                                <div class="center-img">
                                     <div class="">
                                         <a href="#" class="pop">
                                             <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="img-fluid profile-image-v2 zoom-clicked-img" />
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-3 fa-round-border cust-nab-right">
+                                <div class="mt-4">
                                     <a class="btn-cust" type="button">Chat</a>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@
 
 <!-- START: Service main Body-->
 
-<div class="col-lg-8 col-sm-12 mainBody">
+<div class="mainBody">
     <!-- START: First Card mianbody -->
     <div class="card review-body">
         <div class="card-body ">

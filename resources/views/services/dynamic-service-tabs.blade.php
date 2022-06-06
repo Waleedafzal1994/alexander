@@ -1,15 +1,15 @@
 
             <div class="card-body ">
                 <div class="service-main-body-content">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 font-weight-600 margin-bottom-1rem">
+                    <div class="d-flex justify-content-between">
+                        <div class="font-weight-600 margin-bottom-1rem">
                             <h1 id="categoryName">{{$service->category->name}}</h1>
                             <span class="number-row-card ms-2">
                                 <i class="fas fa-star"></i>
                                 {{ $service->average_rate > 0 ? $service->average_rate : 0 }}</span>
                             
                         </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6 margin-bottom-1rem ">
+                        <div class="font-weight-600 margin-bottom-1rem">
                             <span id="{{$service->id}}" onclick="openComfirmOrderModel(this.id)">
                                 <button id="buyBtn" class="btn-block btn-primary btn-right-50">Order
                                     ({{ $service->price ?: '0' }} GP)
@@ -43,7 +43,7 @@
                                                 <p class="mb-0">{{$r_service->price}}/{{$r_service->service_duration_type}}</p>
                                             </div>
                                             <div class="right-arrow ml-4">
-                                                <i class="fa fa-chevron right"></i>
+                                                <i class="fa fa-chevron-right"></i>
                                             </div>
                                         </div>
                                     </div>
