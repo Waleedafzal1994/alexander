@@ -26,7 +26,7 @@
 
 <li class="nav-item" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)" role="presentation">
 <!-- IF STAART HERE -->
-@if(!empty($category->image_1))
+@if($category->image_1 != null)
 <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{url($category->image_1)}});">
 
 

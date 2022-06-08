@@ -257,7 +257,7 @@ class ServicesController extends Controller
         //Fetch all subsicribe categories
         $all_remaining_cats =  Service::groupBy('category_id', 'user_id')
             ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
-            ->select('categories.name', 'categories.id' , 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
+            ->select('categories.name', 'categories.id', 'categories.image_1', 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
             ->where('services.user_id', $user_id)
             ->where('services.category_id', '!=', $category_id)
             ->where('services.active', 1)
@@ -399,7 +399,7 @@ class ServicesController extends Controller
 
                     $all_remaining_cats = Service::groupBy('category_id', 'user_id')
                     ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
-                    ->select('categories.name', 'categories.id' , 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
+                    ->select('categories.name', 'categories.id' ,'categories.image_1', 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
                     ->where('services.user_id', $user_id)
                     ->where('services.category_id', '!=', $category_id)
                     ->where('services.active', 1)

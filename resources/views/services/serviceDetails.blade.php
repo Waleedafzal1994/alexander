@@ -18,44 +18,55 @@
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
                     <div  class="service_category  main-category">
-                        <ul class="menu_ul nav nav-pills" id="pills-tab" role="tablist">
 
-                            <li class="nav-item active" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
-                                @if ($service->category->image_1 != null)
-                                <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ url($service->category->image_1) }}');">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                
+                                 <div class="col-lg-4" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                    @if ($service->category->image_1 != null)
+
+                                        <img src="{{ url($service->category->image_1) }}">
+
                                     @else
-                                    <div class="categories_box_holder" style="background:var(--color-secondary);">
+
+                                    <div style="background:var(--color-secondary);">
+                                        
                                     </div>
+
+                                    @endif
+                                    <h2>{{ $service->category->name }}  <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small></h2>
                                 </div>
+
+                                <?php $i = 1 ?>
+                                @if(!empty($all_remaining_cats))
+                                @foreach($all_remaining_cats as $category)
+                                <div class="col-lg-4" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+
+                                    @if ($category->image_1 != null)
+
+                                        <img src="{{ url($category->image_1) }}">
+
+                                    @else
+
+                                    <div style="background:var(--color-secondary);">
+                                        
+                                    </div>
+
+                                    @endif
+                                    <h2>{{ $category->name }}  <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small></h2>
+                                </div>
+
+                                <?php $i++; ?>
+                                @endforeach
                                 @endif
-                                <p>{{ $service->category->name }} {{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</p>
-                            </li>
 
-                            <?php $i = 1 ?>
-                            @if(!empty($all_remaining_cats))
-                            @foreach($all_remaining_cats as $category)
+                            </div>
+                            
+                        </div>
 
-                            <li class="nav-item " role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
-                                <!-- IF STAART HERE -->
-                                @if(!empty($category->image_1))
-                                <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{url($category->image_1)}});">
+                       
 
-                                </div>
-                                @else
-                                <div class="categories_box_holder" style="background:var(--color-secondary);">
-                                </div>
-                                @endif
-
-                                <!-- ENd Here -->
-                                <p>{{ $category->name }} {{ $category->minPrice .'/'. $category->service_duration_type }}</p>
-
-                            </li>
-
-                            <?php $i++; ?>
-                            @endforeach
-                            @endif
-
-                        </ul>
                     </div>
                 </div>
             </div>
