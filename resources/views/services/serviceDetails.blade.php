@@ -12,16 +12,15 @@
             @include('services.dynamic-service-tabs')
         </div>
 
-
-
-
-        <div class="tab-pane more_section">
+        <!-- <div class="tab-pane more_section"> -->
+        <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="card-body ">
                 <div class="service-main-body-content">
-                    <div id="more_section_content" class="service_category  main-category">
+                    <!-- <div id="more_section_content" class="service_category  main-category"> -->
+                    <div  class="service_category  main-category">
                         <ul class="menu_ul nav nav-pills" id="pills-tab" role="tablist">
 
-                            <li class="nav-item active" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this.id)">
+                            <li class="nav-item active" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                 @if ($service->category->image_1 != null)
                                 <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{ url($service->category->image_1) }}');">
                                     @else
@@ -36,7 +35,7 @@
                             @if(!empty($all_remaining_cats))
                             @foreach($all_remaining_cats as $category)
 
-                            <li class="nav-item " role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this.id)">
+                            <li class="nav-item " role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
                                 <!-- IF STAART HERE -->
                                 @if(!empty($category->image_1))
                                 <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{url($category->image_1)}});">
@@ -147,9 +146,16 @@
             });
         }
 
-        function getCategoryServices(id) {
+        function getCategoryServices(obj,id) {
+
+            $('.nav-item').removeClass('active');
+            $(obj).addClass('active');
 
             var user_id = '<?php echo $service->user->id; ?>';
+            var cat_ord_arr = $('#cat_ord_arr').val();
+//alert(cat_ord_arr);
+
+
 
             $.ajaxSetup({
                 headers: {
@@ -161,27 +167,38 @@
                 url: "/services/getServiceDetailsForTab/",
                 data: {
                     'id': id,
+                    'cat_ord_arr': cat_ord_arr,
                     user_id: user_id
                 },
                 success: function(response) {
 
+
+
                     $('#pills-home').html(response.html);
                     $('#pills-home').addClass('show active');
+
+
                     // $('#pills-contact').removeClass('show active');
 
-                    $(".nav-link").hover(function(){
-                        $(this).click();
-                    }); //It's not working "hover" on more button
+
+                    $('#more_section').show();
+                    $('#more_section_content').show();
 
 
-                    //top-head-categories//
+
+                //top-head-categories//
+                if (response.html2 != '')
+                {
                     $('.top-head-cate').html(response.html2);
+                }
+
+
 
 
                 },
                 error: function(data) {
-                    //console.log(data);
+                //console.log(data);
                 }
             });
-        }
+}
 </script>
