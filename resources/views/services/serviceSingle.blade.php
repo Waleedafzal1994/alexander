@@ -38,12 +38,13 @@
             <!-- START: Service Profile Side bar -->
             <div class="profileBar">
                 <!-- START: Service Profile Side bar First Card -->
-                <div class="card card-box-shadow">
+                <div class="card shadow">
                     <div class="card-body p-0 m-0">
                         <div class="profile-image-part">
                             <div class="profile-background">
                                 <a href="#" class="pop">
-                                    <img id="img01" src="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
+                                    <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
+
                                 </a>
                             </div>
                         </div>
@@ -75,27 +76,43 @@
                                 {{ $service->user->name ?: 'NA' }}
                             </h3>
                             <div class="profile-about">
-                                <div class="row mt-1 mb-1 mx-1">
-                                    <div class=" profile-section-two col-12">
+                                <div class="mx-4">
+                                    <div class=" profile-section-two">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'NA' }}
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row mt-1 mx-1 mb-5">
-                                    <div class=" profile-section-two col-3 offset-2">
-                                        <div class="review-body text-center">
-                                            {{ $service->user->gender ?: 'NA' }}
+                                    <div class="m-1 d-flex align-items-center justify-content-between">
+                                        <div class="profile-section-two">
+                                            <div class="review-body text-center">
+                                                {{ $service->user->gender ?: 'NA' }}
+                                            </div>
+                                        </div>
+                                        <div class="profile-section-two">
+                                            <div class="review-body text-center">
+                                                {{ $service->user->getAge() ?: '0' }}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-2"></div>
-                                    <div class=" profile-section-two col-3">
-                                        <div class="review-body text-center">
-                                            {{ $service->user->getAge() ?: '0' }}
-                                        </div>
+                                </div>
+
+
+                                <div class="badge-section my-4 d-flex align-items-center justify-content-between">
+                                    <div class="">
+                                        <img src="/imgs/elitegpbadge.png" width="30" alt="">
+                                        ELITE GP+
+                                    </div>
+                                    <div class="disbaled">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
+                                        ELITE GP+
+                                    </div>
+                                    <div class="">
+                                        <img src="/imgs/topgpbadge.png" width="30" alt="">
+                                        TOP GP+
                                     </div>
                                 </div>
-                                <h4 class="profile-name text-style-4 color-primary head-style-fst">
+
+                                <h4 class="py-3 skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
                                 <p class="more-description text-justify"> {{ $service->user->description }} </p>
@@ -133,10 +150,23 @@
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
             <div class="mb-5"></div>
             <div class="profile-about mt-3">
-                <h4 class="profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
                     Socials
                 </h4>
-                <div class="body-fluid row justify-content-start ml-0">
+                <div class="social_icons">
+                    <a href="">
+                        <img src="/imgs/icons/facebook.svg" width="25" alt="">
+                    </a>
+                    <a href="">
+                        <img src="/imgs/icons/instagram.svg" width="25" alt="">
+                    </a>
+                    <a href="">
+                        <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
+                            <g><polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" class="ScBody-sc-cdc1ai-3 kswvAb"><animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate><animate dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate><animate dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate><animate dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate></polygon><polygon points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" class="ScFace-sc-cdc1ai-4 dTDTur"><animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform><animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform><animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform><animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform></polygon><g class="ScEyes-sc-cdc1ai-5 bHVzTZ"><path d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" class="ScBody-sc-cdc1ai-3 kswvAb"><animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform><animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform><animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform><animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform></path></g></g>
+                        </svg>
+                    </a>
+                </div>
+                <!-- <div class="body-fluid row justify-content-start ml-0">
                     @if (!empty($service->user->instagram_profile))
                     <a href="https://www.instagram.com/{{ $service->user->instagram_profile }}" class="icon-game col-3 icon-instagram" target="_blank">
                         <i class="fab fa-instagram"></i>
@@ -154,12 +184,12 @@
                         <i class="fab fa-facebook-square"></i>
                     </a>
                     @endif
-                </div>
+                </div> -->
             </div>
         </div>
 </div>
 </div>
-<div class="card mt-4 mb-4 card-box-shadow">
+<div class="card mt-4 mb-4 shadow">
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
@@ -185,9 +215,9 @@
         </div>
     </div>
     <!-- END: Service Profile Side bar First Card -->
-    <div class="card mt-4 mb-4 card-box-shadow">
+    <div class="card mt-4 mb-4 shadow">
         <div class="card table-card">
-            <h4 class="profile-name text-style-4 color-primary head-style-fst">
+            <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
                 Available Time
             </h4>
             <div class="table-responsive">
@@ -288,7 +318,7 @@
 
 <div class="mainBody">
     <!-- START: First Card mianbody -->
-    <div class="card review-body">
+    <div class="card review-body shadow">
         <div class="card-body ">
             <div class="service-game-main-body">
                 <div class="service-game-nav">

@@ -1,12 +1,12 @@
 <div class="main-services">
-    <div id="" class="service_category  main-category">
+    <div id="" class="service_category main-category">
         <ul class="menu_ul nav nav-pills top-head-cate" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
         </ul>
     </div>
 
-    <div class="card mt-2 p-3 tab-content" id="pills-tabContent">
+    <div class="card mt-2 p-3 tab-content shadow" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
             @include('services.dynamic-service-tabs')
@@ -84,8 +84,9 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script>
+<script>
         function categoryId(id) {
             console.log(id, 'ID')
             $.ajaxSetup({
@@ -153,7 +154,7 @@
 
             var user_id = '<?php echo $service->user->id; ?>';
             var cat_ord_arr = $('#cat_ord_arr').val();
-//alert(cat_ord_arr);
+        //alert(cat_ord_arr);
 
 
 
@@ -200,5 +201,5 @@
                 //console.log(data);
                 }
             });
-}
+        }
 </script>

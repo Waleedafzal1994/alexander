@@ -2559,9 +2559,9 @@ form button {
   border-top: 2px dashed var(--color-lighter-primary);
 }
 
-.card-box-shadow {
+/* .card-box-shadow {
   box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .btn-right-50 {

@@ -71,7 +71,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white" style="position:fixed; width:100%;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-white" style="position:fixed; width:100%; z-index: 100;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style="height:40px;">

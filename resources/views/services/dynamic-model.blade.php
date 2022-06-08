@@ -17,15 +17,19 @@
                 </div>
                 <div class="newdropdown">
                     <div class="dropdown w-100">
-                        <!-- <button class="new-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div> -->
-                        <select class="form-control select-service" name="select-service" >
+                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                            Dropdown
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+                        </ul>
+                    </div>
+                        <!-- <select class="form-control select-service" name="select-service" >
 
                             @if(!empty($all_remaining_services))
                             @foreach($all_remaining_services as $r_service)
@@ -34,8 +38,7 @@
                             @endforeach
 
                             @endif
-                        </select>
-                    </div>
+                        </select> -->
                 </div>
 
                 <div class="number mt-3 d-flex align-items-center justify-content-between">
@@ -53,7 +56,7 @@
             <div class="mb-12 subtotal d-flex align-items-center justify-content-between">
                 <p class="font-font-weight-bold mb-0">Subtotal</p>
                 <p class="font-font-weight-bold mb-0">
-                    <img width="20px" height="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAABm1BMVEUAAACDav////+EZO5rXv16YvRsX/xvYPqGZO9vYPqLZe1wYPt7Y/Z3aP+IaPOHcf9xYfl4YvVxX/mGZe1tX/uCZPGHZe6BY/F1YfeIZu5wZv+KZvBqXv2JZuxrX/yJZOtzYfiJZe14YvZ9Y/OKZuxwYPqJZOyMZ+x3YvV9Y/GAZPFrYPxrX/yAY/CCZfJtYP9qYP91ZviDZvCAY/BvX/ltX/p4YfR6YvNxYPd0YPZyYPiDY++FZO19YvFzYPeCY+6GZO12YfVrXvt5YfR+Y/F/YvCEZO51YfZ7YfJ8YvOHZOtwYPlwX/f/uEB1YPaIZez/pkX/qET/qkT/tUH/uz+JZOz/sEL/vT/6qkn/rEP/s0LLlIf/rUP/ukD6oUz+pEaFaOaGaeGVctCeeMSngLf/vz9uX/uCY/B9ZOqLbNyQbtaXdM6YcsiufK6yg6m7jZ3Flo7LjYjPnILQjYHcpm/vnVrrs1n1nVL1u0z6tkehdryieruneba4hJ+5g56/hpfAkJTFiY/Xl3bhqmjjombtplnzqFPzslD9qUZy5oOZAAAAM3RSTlMADAHzgH/zv7+lf3JSFhYJ8+jZ2dbVpYGAciMj/vPo6NPTqqqqg4NS8/PoqqqlclJSIyMny+XFAAADCUlEQVQ4y3XUZ1/iQBAG8KWDiL33fr2iCSBFMIGYaChSDg+7nr3X67187JvZ3QDe6bzl/3tmJhlCblZ3Z5uz2WJpdrZ1dpM7q25sUFXVKahgMB6JtLbX3cpMNb1qMqmCAhaPT0Ymtyztpv/dvX5VTdK8OMaB83q98sPaf5i5JpfL8TzqgCGUJZu52tWPqDkWhwzbMiVLUmi4vipvxGDgkIFb81IWCs0MVzJrcmqSx9HxIG79GBwyRRFt5T3AGQ+FxXn3rjdY3IwiiiLfyNSfTNKulW13rwsr6CBOEaeFRhNrDPMxh4G47M7l5rnE4pRpgAJtXtfLu5afysrlZuGIjSciE6L3PQDHwEFYEBR1cvD7ZqGwFlJmkIEDGO0AOEjngzTWVo6cF7LZ39BXVKiLQukDcC9T7NVCUSefgps7rY6LJhL+F6STbRsx3HEhuzg3t6Gg40xP+P1u0oY3gHHUSUdZdPMr4FhcApQ/HHYRZxDaRowTOKRs/ocoCkZbZGGfgzTTvoxJG4vULeRf0ToRErofyufzNRGLsYUkh9bfUraQz5eKxUz6RNChMcRBNRBLua20h26BulImk/4axTxgAV8g0EBat5DhqchfXmP9zOcxLv1Z1zGOslmtiThpWuVUQr9KRYhLfcKukIdsVht3kCcAkeGp4MN7XyoCSx3q9LEEAGrjUC7y1ItxmMdexrcMugP2VJBpCCfc5KUshwDiRaFb/ZNOp5Y/YJqfj4duoouQVn557KQ+QtzSO8jDNaBAoWshhLSDo9OhEy5Sy0vrzPkgbRYZ1Cge7gM+HZ7UPrh9Nh1vi+6N3UOgbBDIXfRs+WoNp0MGirlYzMr+XI2Qh0yIbi9d7YahL7BKXCzWxz9Btcbl6QcXO5TBeNxhXs8zwsvGLz5xtsrH07RyW2xslHmIXfL2qp+/NMYYfGyu+kgNAeMnhUwzGNSjemZ4Zoee4GlsXYP1WCt5fKPGsJFX5fqe3/Jp7migTqswu9VEbivP6ACo8rYtVg+5s7rcLkeT3d7icLm7bv7yF5xoPVJ1zHVQAAAAAElFTkSuQmCC">
+                    <img src="/imgs/icons/6.png" style="height:24px; margin-left:5px;">
                     <span class="sub-total" id="sub-total">{{$service->price}}</span>
                 </p>
             </div>
@@ -77,7 +80,7 @@
                 <div class="">
                     <p class="mb-0">
                         <span class="quantity" id="quantity"></span> Units(s) total
-                        <img width="20px" height="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAABm1BMVEUAAACDav////+EZO5rXv16YvRsX/xvYPqGZO9vYPqLZe1wYPt7Y/Z3aP+IaPOHcf9xYfl4YvVxX/mGZe1tX/uCZPGHZe6BY/F1YfeIZu5wZv+KZvBqXv2JZuxrX/yJZOtzYfiJZe14YvZ9Y/OKZuxwYPqJZOyMZ+x3YvV9Y/GAZPFrYPxrX/yAY/CCZfJtYP9qYP91ZviDZvCAY/BvX/ltX/p4YfR6YvNxYPd0YPZyYPiDY++FZO19YvFzYPeCY+6GZO12YfVrXvt5YfR+Y/F/YvCEZO51YfZ7YfJ8YvOHZOtwYPlwX/f/uEB1YPaIZez/pkX/qET/qkT/tUH/uz+JZOz/sEL/vT/6qkn/rEP/s0LLlIf/rUP/ukD6oUz+pEaFaOaGaeGVctCeeMSngLf/vz9uX/uCY/B9ZOqLbNyQbtaXdM6YcsiufK6yg6m7jZ3Flo7LjYjPnILQjYHcpm/vnVrrs1n1nVL1u0z6tkehdryieruneba4hJ+5g56/hpfAkJTFiY/Xl3bhqmjjombtplnzqFPzslD9qUZy5oOZAAAAM3RSTlMADAHzgH/zv7+lf3JSFhYJ8+jZ2dbVpYGAciMj/vPo6NPTqqqqg4NS8/PoqqqlclJSIyMny+XFAAADCUlEQVQ4y3XUZ1/iQBAG8KWDiL33fr2iCSBFMIGYaChSDg+7nr3X67187JvZ3QDe6bzl/3tmJhlCblZ3Z5uz2WJpdrZ1dpM7q25sUFXVKahgMB6JtLbX3cpMNb1qMqmCAhaPT0Ymtyztpv/dvX5VTdK8OMaB83q98sPaf5i5JpfL8TzqgCGUJZu52tWPqDkWhwzbMiVLUmi4vipvxGDgkIFb81IWCs0MVzJrcmqSx9HxIG79GBwyRRFt5T3AGQ+FxXn3rjdY3IwiiiLfyNSfTNKulW13rwsr6CBOEaeFRhNrDPMxh4G47M7l5rnE4pRpgAJtXtfLu5afysrlZuGIjSciE6L3PQDHwEFYEBR1cvD7ZqGwFlJmkIEDGO0AOEjngzTWVo6cF7LZ39BXVKiLQukDcC9T7NVCUSefgps7rY6LJhL+F6STbRsx3HEhuzg3t6Gg40xP+P1u0oY3gHHUSUdZdPMr4FhcApQ/HHYRZxDaRowTOKRs/ocoCkZbZGGfgzTTvoxJG4vULeRf0ToRErofyufzNRGLsYUkh9bfUraQz5eKxUz6RNChMcRBNRBLua20h26BulImk/4axTxgAV8g0EBat5DhqchfXmP9zOcxLv1Z1zGOslmtiThpWuVUQr9KRYhLfcKukIdsVht3kCcAkeGp4MN7XyoCSx3q9LEEAGrjUC7y1ItxmMdexrcMugP2VJBpCCfc5KUshwDiRaFb/ZNOp5Y/YJqfj4duoouQVn557KQ+QtzSO8jDNaBAoWshhLSDo9OhEy5Sy0vrzPkgbRYZ1Cge7gM+HZ7UPrh9Nh1vi+6N3UOgbBDIXfRs+WoNp0MGirlYzMr+XI2Qh0yIbi9d7YahL7BKXCzWxz9Btcbl6QcXO5TBeNxhXs8zwsvGLz5xtsrH07RyW2xslHmIXfL2qp+/NMYYfGyu+kgNAeMnhUwzGNSjemZ4Zoee4GlsXYP1WCt5fKPGsJFX5fqe3/Jp7migTqswu9VEbivP6ACo8rYtVg+5s7rcLkeT3d7icLm7bv7yF5xoPVJ1zHVQAAAAAElFTkSuQmCC">
+                        <img src="/imgs/icons/6.png" style="height:24px;">
                         <span class="font-weight-bold" id="totalPrice">{{$service->price}}</span>
                     </p>
                 </div>
@@ -96,8 +99,16 @@
     });
 
     $(document).ready(function() {
-        
     })
+
+
+    $('.dropdown').on('show.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
+    });
+
+    $('.dropdown').on('hide.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(300);
+    });
 
     var count = 1;
         var total = 0;
