@@ -28,41 +28,45 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                             <div class="scroll-div">
                                 <li role="presentation" class="active">
-                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                    <a role="menuitem" tabindex="-1">
                                         <div class="game-title">Let Play League of Legends Together</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                            <span>5.00/Game</span>
+                                            <div class="final-price">Final Price: 4.75</div>
                                         </div>
                                         <i class="fa fa-check rounded-circle p-1"></i>
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                    <a role="menuitem" tabindex="-1">
                                         <div class="game-title">Let Play League of Legends Together</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                            <span>5.00/Game</span>
+                                            <div class="final-price">Final Price: 4.75</div>
                                         </div>
                                         <i class="fa fa-check rounded-circle p-1"></i>
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                    <a role="menuitem" tabindex="-1">
                                         <div class="game-title">Let Play League of Legends Together</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                            <span>5.00/Game</span>
+                                            <div class="final-price">Final Price: 4.75</div>
                                         </div>
                                         <i class="fa fa-check rounded-circle p-1"></i>
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                    <a role="menuitem" tabindex="-1">
                                         <div class="game-title">Let Play League of Legends Together</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                            <span>5.00/Game</span>
+                                            <div class="final-price">Final Price: 4.75</div>
                                         </div>
                                         <i class="fa fa-check rounded-circle p-1"></i>
                                     </a>
@@ -70,7 +74,7 @@
                             </div>
                         </ul>
                     </div>
-                        <!-- <select class="form-control select-service" name="select-service" >
+                    <!-- <select class="form-control select-service" name="select-service" >
 
                             @if(!empty($all_remaining_services))
                             @foreach($all_remaining_services as $r_service)
@@ -139,21 +143,33 @@
         $("#exampleModal").modal('hide');
     });
 
-    $(document).ready(function() {
-    })
+    $(document).ready(function() {})
 
 
-    $('.dropdown').on('show.bs.dropdown', function(e){
+    $('.dropdown').on('show.bs.dropdown', function(e) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
     });
 
-    $('.dropdown').on('hide.bs.dropdown', function(e){
+    $('.dropdown').on('hide.bs.dropdown', function(e) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp(300);
     });
 
     var count = 1;
-        var total = 0;
-        var total_price = document.getElementById('totalPrice').innerHTML;
+    var total = 0;
+    var total_price = document.getElementById('totalPrice').innerHTML;
+    $('#quantity').text(count);
+    // console.log(total_price);
+    $('.minus').click(function() {
+        var $input = $(this).parent().find('input');
+        count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        console.log(count, 'minus');
+        // Minus total value
+        total = count * parseFloat(total_price);
+        $('#totalPrice').text(total);
+        $('#sub-total').text(total);
         $('#quantity').text(count);
         // console.log(total_price);
         $('.minus').click(function() {
@@ -168,45 +184,32 @@
             $('#totalPrice').text(total);
             $('#sub-total').text(total);
             $('#quantity').text(count);
-            // console.log(total_price);
-            $('.minus').click(function() {
-                var $input = $(this).parent().find('input');
-                count = parseInt($input.val()) - 1;
-                count = count < 1 ? 1 : count;
-                $input.val(count);
-                $input.change();
-                console.log(count, 'minus');
-                // Minus total value
-                total = count * parseFloat(total_price);
-                $('#totalPrice').text(total);
-                $('#sub-total').text(total);
-                $('#quantity').text(count);
-                console.log(total);
-                // End Here
-                return false;
-            });
-            $('.plus').click(function() {
-                var $input = $(this).parent().find('input');
-                count = parseInt($input.val()) + 1;
-                console.log(count);
-                total = count * parseFloat(total_price);
-                $('#totalPrice').text(total);
-                $('#sub-total').text(total);
-                $('#quantity').text(count);
-                console.log(total);
-                // console.log($input.val(parseInt($input.val()) + 1))
-                $input.val(parseInt($input.val()) + 1);
-                $input.change();
-                return false;
-            });
-            
-
-            
+            console.log(total);
+            // End Here
+            return false;
         });
+        $('.plus').click(function() {
+            var $input = $(this).parent().find('input');
+            count = parseInt($input.val()) + 1;
+            console.log(count);
+            total = count * parseFloat(total_price);
+            $('#totalPrice').text(total);
+            $('#sub-total').text(total);
+            $('#quantity').text(count);
+            console.log(total);
+            // console.log($input.val(parseInt($input.val()) + 1))
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+
+
+
+    });
 
     $('select[name="select-service"]').change(function() {
         var id = $(this).val();
-    
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

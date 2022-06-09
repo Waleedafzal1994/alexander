@@ -264,7 +264,7 @@ class ServicesController extends Controller
             ->get();
 
         //Fetch min price for selected category//
-        $minPrice = Service::select('services.service_duration_type',DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
+        $minPrice = Service::select('services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
 
 
         // echo "<pre>";
@@ -286,7 +286,8 @@ class ServicesController extends Controller
         if ($service == null) {
             return redirect('/');
         }
-        return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats','minPrice'));
+        // dd($service->images[0]->file_name);
+        return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice'));
     }
     public function serviceCategoryInfo(Request $request)
     {
@@ -327,8 +328,8 @@ class ServicesController extends Controller
                     // ->where('services.id','!=', $id)
                     ->where('services.active', 1)
                     ->get();
-                    // print_r($data['all_remaining_services']) ;
-                    // die();
+                // print_r($data['all_remaining_services']) ;
+                // die();
                 // $category_id = $service['category']->id;
                 $data['service'] = $service;
 
@@ -369,12 +370,11 @@ class ServicesController extends Controller
         }
         $category_id = $request->input('id');
         $cat_ord_arr = explode(',', $request->input('cat_ord_arr'));
-//print_r($cat_ord_arr);
-//echo in_array($category_id, $cat_ord_arr);die;
+        //print_r($cat_ord_arr);
+        //echo in_array($category_id, $cat_ord_arr);die;
         $user_id = $request->input('user_id');
-        if(!empty($category_id))
-        {
-            $service = Service::with('images','category', 'user', 'ratings', 'posts')->where(array('category_id'=>$category_id,'user_id'=>$user_id))->first();
+        if (!empty($category_id)) {
+            $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->where(array('category_id' => $category_id, 'user_id' => $user_id))->first();
 
             if ($service) {
 
@@ -385,31 +385,28 @@ class ServicesController extends Controller
 
 
 
-//Fetch all remaining services//
+                //Fetch all remaining services//
                 $data['all_remaining_services'] = Service::groupBy()
-                ->select('services.name', 'services.price', 'services.service_duration_type', 'services.id')
-                ->where('services.category_id', $category_id)
-                ->where('services.user_id', $user_id)
-// ->where('services.id','!=', $id)
-                ->where('services.active', 1)
-                ->get();
-//Fetch all subsicribe categories
-                if (in_array($category_id, $cat_ord_arr) == '' || in_array($category_id, $cat_ord_arr) == 0)
-                {
-
-                    $all_remaining_cats = Service::groupBy('category_id', 'user_id')
-                    ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
-                    ->select('categories.name', 'categories.id' ,'categories.image_1', 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
+                    ->select('services.name', 'services.price', 'services.service_duration_type', 'services.id')
+                    ->where('services.category_id', $category_id)
                     ->where('services.user_id', $user_id)
-                    ->where('services.category_id', '!=', $category_id)
+                    // ->where('services.id','!=', $id)
                     ->where('services.active', 1)
                     ->get();
-//Fetch min price for selected category//
-                    $minPrice = Service::select('services.service_duration_type',DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
-                    $data1['html2'] = view('services/categories-list', compact('service','all_remaining_cats','minPrice'))->render();
-                }
-                else
-                {
+                //Fetch all subsicribe categories
+                if (in_array($category_id, $cat_ord_arr) == '' || in_array($category_id, $cat_ord_arr) == 0) {
+
+                    $all_remaining_cats = Service::groupBy('category_id', 'user_id')
+                        ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
+                        ->select('categories.name', 'categories.id', 'categories.image_1', 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
+                        ->where('services.user_id', $user_id)
+                        ->where('services.category_id', '!=', $category_id)
+                        ->where('services.active', 1)
+                        ->get();
+                    //Fetch min price for selected category//
+                    $minPrice = Service::select('services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
+                    $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice'))->render();
+                } else {
                     $data1['html2'] = '';
                 }
 
