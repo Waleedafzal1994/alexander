@@ -464,20 +464,27 @@ a:hover {
 /* Scrollbar CSS */
 
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar {
     width: 5px;
 }
 
-body {
+body,
+.newdropdown .dropdown .dropdown-menu .scroll-div {
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) white;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-track {
     background: white;
 }
+.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-thumb {
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
     border: 2px solid white;
@@ -1670,8 +1677,8 @@ span {
     object-fit: cover;
 }
 .profileBar{
-    width: 386px;
-    max-width: 386px;
+    width: 500px;
+    max-width: 500px;
     margin-right: 20px;
 }
 .mainBody{
@@ -1735,29 +1742,96 @@ span {
     border: 1px solid #6b21a8;
 }
 .newdropdown .dropdown .dropdown-menu{
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    /* border-top-left-radius: 0;
+    border-top-right-radius: 0; */
     width: 100%;
     background: #6b21a8;
     border: 0;
-    margin-top: 0;
+    /* margin-top: -1px; */
 }
-.newdropdown .dropdown.show #drop1{
+/* .newdropdown .dropdown.show #drop1{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+} */
+.newdropdown .dropdown .dropdown-menu{
+    padding: 6px !important;
+}
+.newdropdown .dropdown .dropdown-menu .scroll-div{
+    max-height: 200px;
+    overflow-y: scroll;
 }
 .newdropdown .dropdown .dropdown-menu li a{
     color: #fff;
     display: block;
     padding: 10px;
+    transition: all .3s ease-in-out;    
+    border-radius: 6px;
+    position: relative;
+}
+.newdropdown .dropdown .dropdown-menu.show li a:hover{
+    background-color: #7f22cb !important;
+}
+.newdropdown .dropdown #drop1::after{
+    transform: rotate(0deg);
+    transition: all .3s ease-in-out;
+    position: absolute;
+    right: 10px;
+    top: 45%;
+}
+.newdropdown .dropdown.show #drop1::after{
+    transform: rotate(180deg);
+}
+.newdropdown .dropdown .dropdown-menu li a{
+    font-size: 14px;
+}
+.newdropdown .dropdown .dropdown-menu li a .final-price{
+    color: #5d016f;
+}
+.newdropdown .dropdown .dropdown-menu li a .game-price{
+    display: flex;
+    align-items: center;
+}
+.newdropdown .dropdown .dropdown-menu li a .game-price .final-price{
+    margin-left: 10px;
+    color: rgb(194, 145, 238, 0.75);
+}
+.newdropdown .dropdown .dropdown-menu li a i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6b21a8;
+    color: white;
+}
+.newdropdown .dropdown .dropdown-menu li a .final-price,
+.newdropdown .dropdown .dropdown-menu li a i{
+    display: none;
+}
+.newdropdown .dropdown .dropdown-menu li.active a .final-price,
+.newdropdown .dropdown .dropdown-menu li.active a i{
+    display: block;
+} 
+.newdropdown .dropdown .dropdown-menu li.active a{
+    background-color: #7f22cb !important;
 }
 .social_icons{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
+.social_icons a{
+    background-color: #581C87;
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social_icons a img{
+    width: 20px;
+}
 .social_icons svg{
-    width: 38px;
+    width: 34px;
 }
 .social_icons svg .ScFace-sc-cdc1ai-4{
     fill: #fff;
@@ -1767,4 +1841,23 @@ span {
 }
 .social_icons svg .ScEyes-sc-cdc1ai-5{
     fill: #581C87;
+}
+.gamePlay .service{
+    word-break: break-word;
+}
+
+@media (max-width: 1024px){
+    .service > div{
+        display: block !important;
+    }
+    .service > div .profileBar{
+        width: 100%;
+        max-width: 100%;
+    }
+    .profile-background .pop img{
+        width: 100%;
+    }
+    .head-style-fst{
+        width: fit-content !important;
+    }
 }

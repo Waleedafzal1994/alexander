@@ -17,16 +17,57 @@
                 </div>
                 <div class="newdropdown">
                     <div class="dropdown w-100">
-                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                            Dropdown
-                            <span class="caret"></span>
+                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                            <div class="game-title">Let Play League of Legends Together</div>
+                            <div class="game-price pr-3">
+                                <img src="/imgs/icons/6.png" style="height:24px">
+                                <span>5.00/Game</span>
+                            </div>
                         </a>
+
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+                            <div class="scroll-div">
+                                <li role="presentation" class="active">
+                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                        <div class="game-title">Let Play League of Legends Together</div>
+                                        <div class="game-price">
+                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
+                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                        </div>
+                                        <i class="fa fa-check rounded-circle p-1"></i>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                        <div class="game-title">Let Play League of Legends Together</div>
+                                        <div class="game-price">
+                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
+                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                        </div>
+                                        <i class="fa fa-check rounded-circle p-1"></i>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                        <div class="game-title">Let Play League of Legends Together</div>
+                                        <div class="game-price">
+                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
+                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                        </div>
+                                        <i class="fa fa-check rounded-circle p-1"></i>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="https://twitter.com/fat">
+                                        <div class="game-title">Let Play League of Legends Together</div>
+                                        <div class="game-price">
+                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
+                                            <span>5.00/Game</span> <div class="final-price">Final Price: 4.75</div>
+                                        </div>
+                                        <i class="fa fa-check rounded-circle p-1"></i>
+                                    </a>
+                                </li>
+                            </div>
                         </ul>
                     </div>
                         <!-- <select class="form-control select-service" name="select-service" >
