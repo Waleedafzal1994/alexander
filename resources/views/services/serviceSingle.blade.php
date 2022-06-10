@@ -232,7 +232,15 @@
                 </div>
                 <div class="item">
                     <div class="count">
-                        @if($totalOrders > 0 && $totalOrders <= 50) {{ "1"}} @elseif($totalOrders>= 51 && $totalOrders <= 100) {{ "2"}} @else {{"0"}} @endif </div>
+                        
+                        @if($totalOrders > 0 && $totalOrders <= 50) {{ "1"}} 
+                        @elseif($totalOrders>= 51 && $totalOrders <= 100) 
+                            {{ "2"}}
+                        @elseif($totalOrders>= 101 && $totalOrders <= 500) 
+                            {{ "3"}}
+                        @elseif($totalOrders>= 501 && $totalOrders >= 1000) 
+                            {{ "4"}}         
+                        @else {{"0"}} @endif </div>
                                 <div class="socialName">Badge</div>
                     </div>
                 </div>
