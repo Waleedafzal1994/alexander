@@ -29,7 +29,7 @@
 </style>
 @endsection
 @section('content')
-{{-- NEW CONTENT START --}}
+<!-- {{-- NEW CONTENT START --}} -->
 <div class="gamePlay" id="gamePlay">
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->

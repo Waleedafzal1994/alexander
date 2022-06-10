@@ -23,11 +23,11 @@
             <div class="col-sm-12 col-md-7 mt-1 text-justify margin-bottom-1rem">
                 <p>{{$service->category->description}}</p>
             </div>
-            @if (!empty($service->images) && isset($service->images[0]) && !empty($service->images[0]))
+            @if (!empty($service->category) && isset($service->category->image_1) && !empty($service->category->image_1))
             <div class="col-12 col-md-5 text-right ">
                 <div class="lightbox lightbox-user-gallery">
                     <!-- <a href="#" class="pop"> -->
-                    <img id="img03" src='/{{ $service->images[0]->file_name }}' alt="" class="img-fluid border-radius-30 service-big-image zoom-clicked-img" />
+                    <img id="img03" src='/{{ $service->category->image_1 }}' alt="" class="img-fluid border-radius-30 service-big-image zoom-clicked-img" />
                     <!-- </a> -->
                 </div>
             </div>
