@@ -17,16 +17,14 @@
             <div class="card-body ">
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
-                    <div class="service_category  main-category">
+                    <div class="service_category  main-category more-cards">
 
                         <div class="row">
 
-                            <div class="col-md-12">
-
-                                <div class="col-lg-4" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                     @if ($service->category->image_1 != null)
 
-                                    <img src="{{ url($service->category->image_1) }}">
+                                    <img class="rounded" src="{{ url($service->category->image_1) }}">
 
                                     @else
 
@@ -41,11 +39,11 @@
                                 <?php $i = 1 ?>
                                 @if(!empty($all_remaining_cats))
                                 @foreach($all_remaining_cats as $category)
-                                <div class="col-lg-4" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+                                <div class="col-4 mb-4 pb-5" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
 
                                     @if ($category->image_1 != null)
 
-                                    <img src="{{ url($category->image_1) }}">
+                                    <img class="rounded" src="{{ url($category->image_1) }}">
 
                                     @else
 
@@ -62,10 +60,6 @@
                                 @endif
 
                             </div>
-
-                        </div>
-
-
 
                     </div>
                 </div>

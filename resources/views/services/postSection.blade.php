@@ -4,41 +4,41 @@
             id="post-item-box-{{ $post->id }}">
             <div class="user-post">
                 <div class="friend-info">
-                    <figure>
-                        <img src="{{ $post->postAuthor->getProfilePicture() }}" alt="">
-                    </figure>
-                    <div class="friend-name">
-                        @if ($post->user_id == Auth::user()->id)
-                            <div class="more">
-                                <div class="more-post-optns post-actions" data-post="{{ $post->id }}">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                    <ul>
-                                        {{-- <li><i class="fas fa-edit"></i>Edit
-                                        Post
-                                    </li> --}}
-                                        <li class="delete-post-action"><i class="fas fa-trash"></i>Delete
+                        <figure>
+                            <img src="{{ $post->postAuthor->getProfilePicture() }}" alt="">
+                        </figure>
+                        <div class="friend-name">
+                            @if ($post->user_id == Auth::user()->id)
+                                <div class="more">
+                                    <div class="more-post-optns post-actions" data-post="{{ $post->id }}">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                        <ul>
+                                            {{-- <li><i class="fas fa-edit"></i>Edit
                                             Post
+                                        </li> --}}
+                                            <li class="delete-post-action"><i class="fas fa-trash"></i>Delete
+                                                Post
+                                            </li>
+                                            {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
+                                            Post</li> --}}
+                                            {{-- <li><i class="fas fa-address-card"></i>Boost
+                                            This Post</li>
+                                        <li><i class="fas fa-clock"></i>Schedule Post</li>
+                                        <li><i class="fab fa-wpexplorer"></i>Select as featured
                                         </li>
-                                        {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
-                                        Post</li> --}}
-                                        {{-- <li><i class="fas fa-address-card"></i>Boost
-                                        This Post</li>
-                                    <li><i class="fas fa-clock"></i>Schedule Post</li>
-                                    <li><i class="fab fa-wpexplorer"></i>Select as featured
-                                    </li>
-                                    <li><i class="fas fa-bell-slash"></i>Turn off
-                                        Notifications</li> --}}
-                                    </ul>
+                                        <li><i class="fas fa-bell-slash"></i>Turn off
+                                            Notifications</li> --}}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        @endif
-                        <ins><a href="time-line.html" title="">{{ $post->postAuthor->name ?: 'NA' }}</a>
-                            {{-- share <a href="#" title="">link</a> --}}
-                        </ins>
-                        <span><i class="fa fa-globe"></i> published:
-                            {{ $post->formatted_created_at }}
-                        </span>
-                    </div>
+                            @endif
+                            <ins><a href="time-line.html" title="">{{ $post->postAuthor->name ?: 'NA' }}</a>
+                                {{-- share <a href="#" title="">link</a> --}}
+                            </ins>
+                            <span><i class="fa fa-globe"></i> published:
+                                {{ $post->formatted_created_at }}
+                            </span>
+                        </div>
                     <div class="post-meta">
                         <div class="description">
                             <p>{!! $post->content !!}</p>

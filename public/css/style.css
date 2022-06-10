@@ -1846,6 +1846,37 @@ span {
     word-break: break-word;
 }
 
+.timiline-cards .card .card-body .loadMore .central-meta{
+    background-color: #581C87;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.friend-info>figure{
+    width: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#pills-contact-tab{
+    border-radius: 10px;
+    background: var(--color-background);
+}
+.more-cards img{
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+@media (max-width: 1500px){
+    .more-cards img{
+        height: 120px;
+    }
+}
+@media (max-width: 1300px){
+    .more-cards img{
+        height: 100px;
+    }
+}
 @media (max-width: 1024px){
     .service > div{
         display: block !important;
@@ -1859,5 +1890,8 @@ span {
     }
     .head-style-fst{
         width: fit-content !important;
+    }
+    .more-cards img{
+        height: 100px;
     }
 }
