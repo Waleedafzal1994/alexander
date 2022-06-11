@@ -34,6 +34,9 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
+        <div class="right-bottom-arrow bg-purple-gradient shadow">
+            <i class="fa fa-chevron-up text-white"></i>
+        </div>
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
             <div class="profileBar">
@@ -116,10 +119,10 @@
                                     </div>
                                 </div>
 
-                                <h4 class="py-3 skew-bg profile-name text-style-4 color-primary head-style-fst">
+                                <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
-                                <p class="more-description text-justify"> {{ $service->user->description }} </p>
+                                <p class="more-description text-justify mt-3"> {{ $service->user->description }} </p>
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}}
                                 <div class="mb-3"></div>
                                 {{-- <div class="review-body">
@@ -154,18 +157,20 @@
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
             <div class="mb-5"></div>
             <div class="profile-about mt-3">
-                <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
                     Socials
                 </h4>
                 <div class="social_icons">
                     <a href="">
-                        <img src="/imgs/icons/facebook.svg" width="25" alt="">
+                        <!-- <img src="/imgs/icons/facebook.svg" width="25" alt=""> -->
+                        <i class="fab fa-facebook-f text-white"></i>
                     </a>
                     <a href="">
-                        <img src="/imgs/icons/instagram.svg" width="25" alt="">
+                        <!-- <img src="/imgs/icons/instagram.svg" width="25" alt=""> -->
+                        <i class="fab fa-instagram text-white"></i>
                     </a>
                     <a href="">
-                        <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
+                        <!-- <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
                             <g>
                                 <polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" class="ScBody-sc-cdc1ai-3 kswvAb">
                                     <animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
@@ -188,7 +193,8 @@
                                     </path>
                                 </g>
                             </g>
-                        </svg>
+                        </svg> -->
+                        <i class="fab fa-twitch text-white"></i>
                     </a>
                 </div>
                 <!-- <div class="body-fluid row justify-content-start ml-0">
@@ -250,7 +256,7 @@
     <!-- END: Service Profile Side bar First Card -->
     <div class="card mt-4 mb-4 shadow">
         <div class="card table-card">
-            <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
+            <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
                 Available Time
             </h4>
             <div class="table-responsive">

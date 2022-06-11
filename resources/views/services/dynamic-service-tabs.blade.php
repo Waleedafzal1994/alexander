@@ -1,13 +1,14 @@
-<div class="card-body ">
+<div class="card-body bg-white shadow rounded py-5">
     <div class="service-main-body-content">
         <div class="d-flex justify-content-between">
             <div class="font-weight-600 margin-bottom-1rem">
-                <h1 id="categoryName" class="skew-bg py-4">
+                <h1 id="categoryName" class="skew-bg py-4 mb-3">
                     <span>{{$service->category->name}}</span>
                 </h1>
-                <span class="number-row-card ms-2">
+                <!-- <span class="number-row-card ms-2 bg-purple-gradient p-3 rounded text-white">
+                    {{ $service->average_rate > 0 ? $service->average_rate : 0 }}
                     <i class="fas fa-star"></i>
-                    {{ $service->average_rate > 0 ? $service->average_rate : 0 }}</span>
+                </span> -->
 
             </div>
             <div class="font-weight-600 margin-bottom-1rem">
@@ -19,7 +20,7 @@
                 </span>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-5">
             <div class="col-sm-12 col-md-7 mt-1 text-justify margin-bottom-1rem">
                 <p>{{$service->category->description}}</p>
             </div>
