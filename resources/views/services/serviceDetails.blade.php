@@ -80,9 +80,11 @@
                                     <h5 class="color-primary fw-bold mr-2 mb-0 skew-bg skew-height">Service Review(s)</h5>
                                     <span class="line"></span>
                                 </div>
+                                @if(!empty($service->average_rate))
                                 <span class="number-row-card bg-purple-gradient">
                                     {{ $service->average_rate }} <i class="fas fa-star"></i>
                                 </span>
+                                @endif
                             </span>
                             <ul class="review mt-3 mb-3">
                                 @if (!empty($service->ratings))

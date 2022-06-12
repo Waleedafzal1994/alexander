@@ -12,7 +12,7 @@
 
             </div>
             <div class="font-weight-600 margin-bottom-1rem">
-                <span id="{{$service->id}}" onclick="openComfirmOrderModel(this.id)">
+                <span id="{{$minPrice->id}}" onclick="openComfirmOrderModel(this.id)">
                     <button id="buyBtn" class="btn-block btn-primary btn-right-50">PLAY</button>
                     <!-- <button id="buyBtn" class="btn-block btn-primary btn-right-50">Order
                                     ({{ $service->price ?: '0' }} GP)

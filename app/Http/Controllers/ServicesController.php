@@ -264,11 +264,11 @@ class ServicesController extends Controller
             ->get();
 
         //Fetch min price for selected category//
-        $minPrice = Service::select('services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
+        $minPrice = Service::select('services.service_duration_type','services.id', DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
 
 
         // echo "<pre>";
-        // print_r($all_remaining_cats);die;
+        // print_r($minPrice);die;
 
         $totalOrders = Order::where('buyer_id', $service['user']->id)->count();
 
