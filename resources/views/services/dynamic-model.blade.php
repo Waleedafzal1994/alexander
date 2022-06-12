@@ -18,36 +18,32 @@
                 <div class="newdropdown">
                     <div class="dropdown w-100">
                         <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                            <div class="game-title">Let Play League of Legends Together</div>
+                            <div class="game-title" id="drop_down_select">Let Play League of Legends Together</div>
                             <div class="game-price pr-3">
                                 <img src="/imgs/icons/6.png" style="height:24px">
-                                <span>5.00/Game</span>
+                                <span id="selected_drop_down_price">5.00/Game</span>
                             </div>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1" id="lists_li">
                             <div class="scroll-div">
-
 
                             @if(!empty($all_remaining_services))
                             @foreach($all_remaining_services as $r_service)
                                 <li role="presentation" class='{{ ($service->id == $r_service->id) ? "active" : ""}}' id="{{$r_service->id}}" onclick="singleServiceForSelect(this,this.id)">
-                                    <a role="menuitem" tabindex="-1">
+                                    <a role="menuitem" tabindex="-1" id="{{$r_service->id}}">
                                         <div class="game-title">{{$r_service->name}}</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>{{ $r_service->price .'/'. $r_service->service_duration_type }}</span>
+                                            <span>{{$r_service->price}}/Game</span>
                                             <div class="final-price">Final Price: {{$r_service->price}}</div>
                                         </div>
-                                        @if($service->id == $r_service->id)
-                                            <i class="fa fa-check rounded-circle p-1"></i>
-                                        @endif
-                                        
+                                        <i class="fa fa-check rounded-circle p-1"></i>
                                     </a>
                                 </li>
-                               @endforeach
-
+                                @endforeach
                                 @endif
+   
                             </div>
                         </ul>
                     </div>
