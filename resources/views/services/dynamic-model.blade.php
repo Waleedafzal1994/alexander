@@ -27,53 +27,32 @@
 
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                             <div class="scroll-div">
-                                <li role="presentation" class="active">
+
+
+                            @if(!empty($all_remaining_services))
+                            @foreach($all_remaining_services as $r_service)
+                                <li role="presentation" class='{{ ($service->id == $r_service->id) ? "active" : ""}}' id="{{$r_service->id}}" onclick="singleServiceForSelect(this,this.id)">
                                     <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
+                                        <div class="game-title">{{$r_service->name}}</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
+                                            <span>{{ $r_service->price .'/'. $r_service->service_duration_type }}</span>
+                                            <div class="final-price">Final Price: {{$r_service->price}}</div>
                                         </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
+                                        @if($service->id == $r_service->id)
+                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                        @endif
+                                        
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li>
+                               @endforeach
+
+                                @endif
                             </div>
                         </ul>
                     </div>
+
+
                     <!-- <select class="form-control select-service" name="select-service" >
 
                             @if(!empty($all_remaining_services))
@@ -207,8 +186,10 @@
 
     });
 
-    $('select[name="select-service"]').change(function() {
-        var id = $(this).val();
+    function singleServiceForSelect(obj,id){
+
+        // var id = $(obj).id;
+        // alert(id);
 
         $.ajaxSetup({
             headers: {
@@ -231,5 +212,9 @@
 
             }
         });
+    }
+
+    $('select[name="select-service"]').change(function() {
+       
     });
 </script>
