@@ -266,6 +266,11 @@
                                 <input type="text" name="real_name" class="form-control" value="{{ $user->real_name }}">
                             </div>
 
+                            <div class="form-group">
+                                <label for="">Age</label>
+                                <input type="date" name="birth_date" class="form-control" value="{{ $user->birth_date }}">
+                            </div>
+
 
 
                             {{-- Form Element --}}
@@ -549,12 +554,12 @@
                             <input type="text" name="instagram_profile" class="input" placeholder="@gamersplay"
                                 value="{{ $user->instagram_profile }}">
                         </div>
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <br>
                             <label for="">Discord</label>
                             <input type="text" name="discord_handle" class="input" placeholder="GamersPlay#0000"
                                 value="{{ $user->discord_handle }}">
-                        </div>
+                        </div> -->
                         <div class="col-md-12" style="text-align:center;">
                             <br>
                             <button type="submit" class="btn btn-success">Save</button>

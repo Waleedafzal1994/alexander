@@ -1,6 +1,17 @@
 @extends('layouts.admin')
 
+@section('style')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+<style type="">
+    .choices__input{
+      display: none;
+    }
+
+</style>
+@endsection
 @section('content')
+
+
 <div class="container-fluid admin-container">
     <h6>Admin Panel - Editing User {{$user->name}} - {{$user->email}}</h6>
     <small>{{date('Y-m-d H:i:s')}}</small>
@@ -10,6 +21,8 @@
     <div class="row">
         <div class="col-md-12">
             <form action="/admin/user/edit" method="POST">
+
+              
                 @csrf
                 <input type="hidden" name="id" value="{{$user->id}}">
 
@@ -42,8 +55,25 @@
                       <option value="3">Admin</option>
                   </select>
                 </div>
-
+                 @if(!empty($user->general_badge))
+                                
+                  @php
+                    $g_badge = explode(',',$user->general_badge)
+                  @endphp
+                  @endif    
                 <div class="form-group">
+                    <label for="">General Badges</label>
+                  <select class="form-control" id="choices-multiple-remove-button"  multiple  name="general_badge[]" >
+                      <option value="elite" <?= (!empty($g_badge) && in_array("elite",$g_badge)) ? "selected" : '' ?>>
+                      Elite GamersPlay+
+                    </option>
+                      <option value="top" <?= (!empty($g_badge) && in_array("top",$g_badge)) ? "selected" : '' ?>>Top GamersPlay+</option>
+                      <option value="vip"  <?= (!empty($g_badge) && in_array("vip",$g_badge)) ? "selected" : '' ?>>VIP +</option>
+                  </select>
+              </div>
+
+
+            <div class="form-group">
                   <label for="">Seller Rank</label>
                 <select class="form-control" name="seller_rank">
                     <option value="0">None</option>
@@ -85,7 +115,26 @@
 @endsection
 
 @push('scripts')
+
+<script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
 <script>
+$(document).ready(function(){
+    
+     var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+        removeItemButton: true,
+        // maxItemCount:5,
+
+        // searchEnabled: false,
+        // searchChoices: false,
+        placeholder: true,
+        placeholderValue: 'Select General Basdge',
+        // renderChoiceLimit:5
+      }); 
+     
+     
+ });
+
     @if (\Session::has('success'))
     Swal.fire('Success','{{\Session::get('success')}}','success');
     {{\Session::forget('success')}}

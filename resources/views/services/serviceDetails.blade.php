@@ -6,7 +6,7 @@
         </ul>
     </div>
 
-    <div class="card mt-2 p-3 tab-content shadow" id="pills-tabContent">
+    <div class="card mt-2 tab-content bg-transparent" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
             @include('services.dynamic-service-tabs')
@@ -17,16 +17,14 @@
             <div class="card-body ">
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
-                    <div class="service_category  main-category">
+                    <div class="service_category  main-category more-cards">
 
                         <div class="row">
 
-                            <div class="col-md-12">
-
-                                <div class="col-lg-4" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                     @if ($service->category->image_1 != null)
 
-                                    <img src="{{ url($service->category->image_1) }}">
+                                    <img class="rounded" src="{{ url($service->category->image_1) }}">
 
                                     @else
 
@@ -41,11 +39,11 @@
                                 <?php $i = 1 ?>
                                 @if(!empty($all_remaining_cats))
                                 @foreach($all_remaining_cats as $category)
-                                <div class="col-lg-4" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+                                <div class="col-4 mb-4 pb-5" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
 
                                     @if ($category->image_1 != null)
 
-                                    <img src="{{ url($category->image_1) }}">
+                                    <img class="rounded" src="{{ url($category->image_1) }}">
 
                                     @else
 
@@ -63,10 +61,6 @@
 
                             </div>
 
-                        </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -76,49 +70,55 @@
         <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
 
-        <div class=" card mt-4 p-3">
-            <div class="card-body">
+        <div class="card mt-4">
+            <div class="card-body p-4">
                 <div class="service-main-body-content">
                     <div class="row">
                         <div class="col-sm-12">
-                            <span class="d-flex review-header">
-                                <h5 class="color-primary fw-bold">Service Review(s)</h5>
-                                <span class="line"></span>
-                                <span class="number-row-card ms-2">
-                                    <i class="fas fa-star"></i>
-                                    {{ $service->average_rate }}</span>
+                            <span class="d-flex align-items-center justify-content-between review-header">
+                                <div class="">
+                                    <h5 class="color-primary fw-bold mr-2 mb-0 skew-bg skew-height">Service Review(s)</h5>
+                                    <span class="line"></span>
+                                </div>
+                                <span class="number-row-card bg-purple-gradient">
+                                    {{ $service->average_rate }} <i class="fas fa-star"></i>
+                                </span>
                             </span>
                             <ul class="review mt-3 mb-3">
                                 @if (!empty($service->ratings))
                                 @foreach ($service->ratings as $rating)
-                                <li class="review-body mb-3">
-                                    <div class="review-head border-bottom-2 d-flex justify-content-between">
+                                <li class="review-body mb-3 shadow p-3 bg-gradient">
+                                    <div class="review-head d-flex justify-content-between">
                                         <span class="review-intro p-3">
                                             <img src='{{ $rating->user->getProfilePicture() }}' alt="" />
                                             <span class="review-profile">
-                                                <p class="fw-bold">
-                                                    {{ $rating->user->name }}
-                                                </p>
-                                                <p class="color-gray-fst">
-                                                    {{ Carbon\Carbon::parse($rating->created_at)->format('F d, Y') }}
-                                                </p>
+                                                <div class="">
+                                                    <div class="d-flex align-items-center">
+                                                        <p class="review-profile-heading fw-bold">
+                                                            {{ $rating->user->name }}
+                                                        </p>
+                                                        <p class="color-gray-fst">
+                                                            {{ Carbon\Carbon::parse($rating->created_at)->format('F d, Y') }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="review-comment color-gray-fst p-3">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Molestiae aliquid quasi deleniti, nesciunt non
+                                                        perspiciatis
+                                                        magnam distinctio fugit tempora ut?
+                                                    </div>
+                                                </div>
                                                 <span class="review-star mobile-star">
                                                     {!! str_repeat('<i class="fa fa-star"></i>', $rating->rating) !!}
                                                     {!! str_repeat('<i class="fa fa-star-o"></i>', 5 - $rating->rating) !!}
                                                 </span>
                                             </span>
                                         </span>
-                                        <span class="review-star desktop-star">
+                                        <span class="review-star desktop-star d-flex">
                                             {!! str_repeat('<i class="fa fa-star"></i>', $rating->rating) !!}
                                             {!! str_repeat('<i class="fa fa-star-o"></i>', 5 - $rating->rating) !!}
                                         </span>
-                                    </div>
-                                    <div class="review-comment color-gray-fst p-3">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing
-                                        elit.
-                                        Molestiae aliquid quasi deleniti, nesciunt non
-                                        perspiciatis
-                                        magnam distinctio fugit tempora ut?
                                     </div>
                                 </li>
                                 @endforeach
