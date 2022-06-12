@@ -77,24 +77,25 @@
                         <!-- END: Service Social button -->
                         <div class="profile-info mt-2 px-3 mb-2 profile-name-top">
                             <h3 class="profile-name text-center text-style-3 mb-2 profile-name-game">
-                                {{ $service->user->name ?: 'NA' }}
+                                {{ $service->user->name ?: 'N/A' }}
                             </h3>
                             <div class="profile-about">
                                 <div class="mx-4">
                                     <div class=" profile-section-two">
                                         <div class="review-body text-center">
-                                            {{ $service->user->primary_language ?: 'NA' }}
+                                            {{ $service->user->primary_language ?: 'N/A' }}
+                                            {{ ', '.$service->user->secondary_language }}
                                         </div>
                                     </div>
                                     <div class="m-1 d-flex align-items-center justify-content-between">
                                         <div class="profile-section-two">
                                             <div class="review-body text-center">
-                                                {{ $service->user->gender ?: 'NA' }}
+                                                {{ $service->user->gender ?: 'N/A' }}
                                             </div>
                                         </div>
                                         <div class="profile-section-two">
                                             <div class="review-body text-center">
-                                                {{ $service->user->getAge() ?: '0' }}
+                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '0' }}
                                             </div>
                                         </div>
                                     </div>
@@ -102,26 +103,78 @@
 
 
                                 <div class="badge-section my-4 d-flex align-items-center justify-content-between">
+
+                                @if(!empty($service->user->general_badge))
+                                
+                                @php
+                                $g_badge = explode(',',$service->user->general_badge)
+                                @endphp    
+
+                                @if(in_array('elite',$g_badge))
+
                                     <div class="">
                                         <img src="/imgs/elitegpbadge.png" width="30" alt="">
                                         ELITE GP+
                                     </div>
+                                @else    
                                     <div class="disbaled">
                                         <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
-                                        ELITE GP+
+                                        Elite GP+
                                     </div>
+                                @endif  
+
+                                @if(in_array('top',$g_badge))
+
                                     <div class="">
                                         <img src="/imgs/topgpbadge.png" width="30" alt="">
-                                        TOP GP+
+                                        Top GP+
                                     </div>
+                                @else    
+                                    <div class="disbaled">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        Top GP+
+                                    </div>
+                                @endif  
+
+                                @if(in_array('vip',$g_badge))
+
+                                    <div class="">
+                                        <img src="/imgs/elitegpbadge.png" width="30" alt="">
+                                        VIP+
+                                    </div>
+                                @else    
+                                    <div class="disbaled">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        VIP+
+                                    </div>
+                                @endif   
+
+                                @else 
+
+                                    <div class="disbaled">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
+                                        Elite GP+
+                                    </div>
+                                    <div class="disbaled">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        Top GP+
+                                    </div>
+                                    <div class="disbaled">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        VIP+
+                                    </div>
+                                @endif
+
+                                    
                                 </div>
 
                                 <h4 class="py-3 skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
-                                <p class="more-description text-justify"> {{ $service->user->description }} </p>
+                                <p class="more-description text-justify"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}}
                                 <div class="mb-3"></div>
+                                <!-- Commented Data -->
                                 {{-- <div class="review-body">
                                         <div class="profile-section-two">
                                             <div class="body-fluid row mt-1">
@@ -145,7 +198,9 @@
                                 Language
                             </div>
                             <div class="text-text col-6 text-style-5 info-game-name">
+                                adskfhas
                                 {{ $service->user->primary_language }}
+                                
                             </div>
                         </div>
                     </div>
@@ -153,44 +208,68 @@
             </div>
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
             <div class="mb-5"></div>
+            
             <div class="profile-about mt-3">
-                <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg py-3 mb-2 profile-name text-style-4 color-primary head-style-fst">
                     Socials
                 </h4>
+
+                
                 <div class="social_icons">
-                    <a href="">
-                        <img src="/imgs/icons/facebook.svg" width="25" alt="">
-                    </a>
-                    <a href="">
-                        <img src="/imgs/icons/instagram.svg" width="25" alt="">
-                    </a>
-                    <a href="">
-                        <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
-                            <g>
-                                <polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" class="ScBody-sc-cdc1ai-3 kswvAb">
-                                    <animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
-                                    <animate dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
-                                    <animate dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
-                                    <animate dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
-                                </polygon>
-                                <polygon points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" class="ScFace-sc-cdc1ai-4 dTDTur">
-                                    <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                    <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                    <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                    <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                </polygon>
-                                <g class="ScEyes-sc-cdc1ai-5 bHVzTZ">
-                                    <path d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" class="ScBody-sc-cdc1ai-3 kswvAb">
+                 @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
+                 
+
+                    @if(!empty($service->user->facebook_profile))
+
+                        <a href="{{$service->user->facebook_profile}}" target=_blank>
+                            <img src="/imgs/icons/facebook.svg" width="25" alt="">
+                        </a>
+                    @endif
+
+                    @if(!empty($service->user->instagram_profile))
+                        <a href="{{$service->user->instagram_profile}}" target=_blank>
+                            <img src="/imgs/icons/instagram.svg" width="25" alt="">
+                        </a>
+                    @endif
+
+                    @if(!empty($service->user->twitch_profile))
+                        <a href="{{$service->user->twitch_profile}}" target=_blank>
+                            <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
+                                <g>
+                                    <polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" class="ScBody-sc-cdc1ai-3 kswvAb">
+                                        <animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+                                        <animate dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+                                        <animate dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+                                        <animate dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+                                    </polygon>
+                                    <polygon points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" class="ScFace-sc-cdc1ai-4 dTDTur">
                                         <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
                                         <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
                                         <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
                                         <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                    </path>
+                                    </polygon>
+                                    <g class="ScEyes-sc-cdc1ai-5 bHVzTZ">
+                                        <path d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" class="ScBody-sc-cdc1ai-3 kswvAb">
+                                            <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
+                                            <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
+                                            <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
+                                            <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
+                                        </path>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
-                    </a>
+                            </svg>
+                        </a>
+                    @endif
+                    
+                    
+                @else
+                    <p>N/A</p>
+                @endif
                 </div>
+
+
+
+                
                 <!-- <div class="body-fluid row justify-content-start ml-0">
                     @if (!empty($service->user->instagram_profile))
                     <a href="https://www.instagram.com/{{ $service->user->instagram_profile }}" class="icon-game col-3 icon-instagram" target="_blank">
@@ -211,6 +290,7 @@
                     @endif
                 </div> -->
             </div>
+            
         </div>
 </div>
 </div>

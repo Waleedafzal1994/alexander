@@ -219,6 +219,11 @@ class AdminController extends Controller
             $user->seller_rank_update = date('Y-m-d H:i:s');
         }
         $user->seller_rank = $request->seller_rank;
+        if(!empty($request->general_badge)){
+
+            $user->general_badge = implode(',', $request->general_badge);
+
+        }
 
         $user->save();
         return redirect()->back()->with(['success' => 'User info has been updated.']);

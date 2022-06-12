@@ -53,18 +53,20 @@ class ProfileController extends Controller
             'country' => 'required|string|min:2',
             'description' => 'nullable|string|max:180',
             'gender' => 'nullable',
+            'birth_date' => 'nullable',
             'primary_language' => 'nullable',
             'secondary_language' => 'nullable',
             'facebook_profile' => 'max:64|nullable',
             'twitch_profile' => 'nullable',
             'instagram_profile' => 'nullable',
-            'discord_handle' => 'nullable',
+            // 'discord_handle' => 'nullable',
         ]);
         $user->name = $validated['name'];
         $user->real_name = $validated['real_name'];
         $user->user_title = $validated['title'];
         $user->country = $validated['country'];
         $user->gender = $validated['gender'];
+        $user->birth_date = $validated['birth_date'];
         $user->description = $validated['description'];
         $languages = [
             'Afrikaans',
@@ -163,12 +165,12 @@ class ProfileController extends Controller
         if (isset($validated['instagram_profile'])) {
             $user->instagram_profile = $validated['instagram_profile'];
         }
-        if (isset($validated['discord_handle'])) {
-            $dcHandle = explode('#', $validated['discord_handle']);
-            if (is_array($dcHandle) && count($dcHandle) == 2) {
-                $user->discord_handle = $validated['discord_handle'];
-            }
-        }
+        // if (isset($validated['discord_handle'])) {
+        //     $dcHandle = explode('#', $validated['discord_handle']);
+        //     if (is_array($dcHandle) && count($dcHandle) == 2) {
+        //         $user->discord_handle = $validated['discord_handle'];
+        //     }
+        // }
         $user->save();
         return redirect()->back()->with(['success' => 'Profile has been updated.']);
     }
