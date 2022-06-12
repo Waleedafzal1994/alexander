@@ -34,6 +34,9 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
+        <div class="right-bottom-arrow bg-purple-gradient shadow">
+            <i class="fa fa-chevron-up text-white"></i>
+        </div>
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
             <div class="profileBar">
@@ -168,10 +171,11 @@
                                     
                                 </div>
 
-                                <h4 class="py-3 skew-bg profile-name text-style-4 color-primary head-style-fst">
+                                <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
-                                <p class="more-description text-justify"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
+
+<p class="more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}}
                                 <div class="mb-3"></div>
                                 <!-- Commented Data -->
@@ -210,7 +214,8 @@
             <div class="mb-5"></div>
             
             <div class="profile-about mt-3">
-                <h4 class="skew-bg py-3 mb-2 profile-name text-style-4 color-primary head-style-fst">
+
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">                    
                     Socials
                 </h4>
 
@@ -222,42 +227,20 @@
                     @if(!empty($service->user->facebook_profile))
 
                         <a href="{{$service->user->facebook_profile}}" target=_blank>
-                            <img src="/imgs/icons/facebook.svg" width="25" alt="">
+                            <i class="fab fa-facebook-f text-white"></i>
                         </a>
                     @endif
 
                     @if(!empty($service->user->instagram_profile))
                         <a href="{{$service->user->instagram_profile}}" target=_blank>
-                            <img src="/imgs/icons/instagram.svg" width="25" alt="">
+                            <i class="fab fa-instagram text-white"></i>
                         </a>
                     @endif
 
                     @if(!empty($service->user->twitch_profile))
                         <a href="{{$service->user->twitch_profile}}" target=_blank>
-                            <svg overflow="visible" width="40px" height="40px" version="1.1" viewBox="0 0 40 40" x="0px" y="0px" class="ScSvg-sc-cdc1ai-2 jxiAGm">
-                                <g>
-                                    <polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" class="ScBody-sc-cdc1ai-3 kswvAb">
-                                        <animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
-                                        <animate dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
-                                        <animate dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
-                                        <animate dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="points" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5" from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
-                                    </polygon>
-                                    <polygon points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" class="ScFace-sc-cdc1ai-4 dTDTur">
-                                        <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                        <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                        <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                        <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                    </polygon>
-                                    <g class="ScEyes-sc-cdc1ai-5 bHVzTZ">
-                                        <path d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" class="ScBody-sc-cdc1ai-3 kswvAb">
-                                            <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                            <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                            <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0"></animateTransform>
-                                            <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1" keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3"></animateTransform>
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
+                            <i class="fab fa-twitch text-white"></i>
+
                         </a>
                     @endif
                     
@@ -265,6 +248,7 @@
                 @else
                     <p>N/A</p>
                 @endif
+
                 </div>
 
 
@@ -330,7 +314,7 @@
     <!-- END: Service Profile Side bar First Card -->
     <div class="card mt-4 mb-4 shadow">
         <div class="card table-card">
-            <h4 class="skew-bg py-3 mb-4 profile-name text-style-4 color-primary head-style-fst">
+            <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
                 Available Time
             </h4>
             <div class="table-responsive">

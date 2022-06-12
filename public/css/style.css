@@ -322,7 +322,6 @@ p {
     box-shadow: 6px 6px 0 #afa3da;
     transform: skewX(-15deg);
 }
-
 .cta:focus {
     outline: none;
 }
@@ -464,30 +463,34 @@ a:hover {
 /* Scrollbar CSS */
 
 
-body::-webkit-scrollbar,
-.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 5px;
 }
-
 body,
 .newdropdown .dropdown .dropdown-menu .scroll-div {
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) white;
 }
-
-body::-webkit-scrollbar-track,
-.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: white;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    border: 2px solid white;
+}
+
+
+.newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
 }
 .newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-track {
     border-radius: 10px;
 }
-
-body::-webkit-scrollbar-thumb,
 .newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-thumb {
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
-    border: 2px solid white;
 }
 
 
@@ -1530,7 +1533,6 @@ span {
 #categoryName{
     font-size: 32px;
     font-weight: 700;
-    height: 80%;
 }
 #buyBtn{
     width: 160px !important;
@@ -1705,7 +1707,9 @@ span {
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
 }
-
+.nav-custom-nav li{
+    margin-bottom: 8px;
+}
 .skew-bg{
     position: relative;
     display: flex;
@@ -1716,19 +1720,22 @@ span {
     color: #FFF !important;
     background: #581c87;
     z-index: 1;
+    min-height: 90px;
+}
+.skew-height{
+    min-height: 60px;
 }
 .skew-bg::before{
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0px;
     z-index: -1;
-    background: #581c87;
-    transform-origin: top right;
-    transform: skew(40deg, 0deg);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -30px;
+    width: 80%;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
     background-image: linear-gradient(to right, #581c87, #8e5cb5);
 }
 .newdropdown .dropdown #drop1{
@@ -1742,23 +1749,19 @@ span {
     border: 1px solid #6b21a8;
 }
 .newdropdown .dropdown .dropdown-menu{
-    /* border-top-left-radius: 0;
-    border-top-right-radius: 0; */
     width: 100%;
     background: #6b21a8;
     border: 0;
-    /* margin-top: -1px; */
 }
-/* .newdropdown .dropdown.show #drop1{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-} */
 .newdropdown .dropdown .dropdown-menu{
     padding: 6px !important;
 }
 .newdropdown .dropdown .dropdown-menu .scroll-div{
     max-height: 200px;
     overflow-y: scroll;
+}
+.newdropdown .dropdown .dropdown-menu li{
+    cursor: pointer;
 }
 .newdropdown .dropdown .dropdown-menu li a{
     color: #fff;
@@ -1821,13 +1824,14 @@ span {
 .social_icons a{
     background-color: #581C87;
     margin-right: 12px;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 4px;
 }
-.social_icons a img{
+/* .social_icons a img{
     width: 20px;
 }
 .social_icons svg{
@@ -1841,21 +1845,17 @@ span {
 }
 .social_icons svg .ScEyes-sc-cdc1ai-5{
     fill: #581C87;
-}
+} */
 .gamePlay .service{
     word-break: break-word;
+    position: relative;
 }
 
 .timiline-cards .card .card-body .loadMore .central-meta{
-    background-color: #581C87;
+    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
     border: 0;
     padding-left: 20px;
     padding-right: 20px;
-}
-.friend-info>figure{
-    width: 140px;
-    border-radius: 50%;
-    overflow: hidden;
 }
 #pills-contact-tab{
     border-radius: 10px;
@@ -1881,6 +1881,9 @@ span {
     .service > div{
         display: block !important;
     }
+    .service > .right-bottom-arrow{
+        display: flex !important;
+    }
     .service > div .profileBar{
         width: 100%;
         max-width: 100%;
@@ -1894,4 +1897,91 @@ span {
     .more-cards img{
         height: 100px;
     }
+}
+.bg-dark-purple{
+    background-color: var(--color-primary) !important;
+}
+.review-profile-heading{
+    font-size: 32px !important;
+    font-weight: bold !important;
+    margin-right: 12px;
+    color: var(--color-primary) !important;
+}
+.bg-gradient{
+    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+}
+.bg-purple-gradient{
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+}
+.review-intro img {
+    height: 70px !important;
+    width: 70px !important;
+}
+.review-header{
+    margin-bottom: 40px;
+}
+.number-row-card{
+    padding: 12px !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+    line-height: normal !important;
+    margin: 0 !important;
+}
+.badge-card .gained{
+    font-size: 20px;
+}
+.badge-card .badge{
+    border-radius: 35px;
+    font-size: 16px;
+}
+.badge-cards .card{
+    transition: all .4s ease-in-out;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%);
+}
+.badge-cards .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+.w-400{
+    width: 400px !important;
+}
+.friend-info ins{
+    font-size: 24px;
+    font-weight: bold;
+}
+.we-comet>li{
+    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    padding: 16px;
+    border-radius: 10px;
+}
+.post-comt-box textarea{
+    background-color: transparent !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    color: #000 !important;
+}
+.post-comt-box textarea::placeholder{
+    color: #000 !important;
+}
+.right-bottom-arrow{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+.right-bottom-arrow:hover{
+    transform: translateY(-5px);
+}
+.top-head-cate li.active{
+    transform: scale(1.1);
 }

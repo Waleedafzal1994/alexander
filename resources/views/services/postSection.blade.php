@@ -1,13 +1,12 @@
 @foreach ($posts as $post)
     @if (!empty($post))
-        <div class="central-meta item post-item-box" style="display: inline-block;"
+        <div class="central-meta item post-item-box shadow" style="display: inline-block;"
             id="post-item-box-{{ $post->id }}">
             <div class="user-post">
                 <div class="friend-info">
-                        <figure>
-                            <img src="{{ $post->postAuthor->getProfilePicture() }}" alt="">
-                        </figure>
-                        <div class="friend-name">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ $post->postAuthor->getProfilePicture() }}" width="80" class="rounded-circle mr-3" alt="">
+                        <div class="w-100">
                             @if ($post->user_id == Auth::user()->id)
                                 <div class="more">
                                     <div class="more-post-optns post-actions" data-post="{{ $post->id }}">
@@ -32,13 +31,14 @@
                                     </div>
                                 </div>
                             @endif
-                            <ins><a href="time-line.html" title="">{{ $post->postAuthor->name ?: 'NA' }}</a>
+                            <ins class="mr-3"><a href="time-line.html" title="">{{ $post->postAuthor->name ?: 'NA' }}</a>
                                 {{-- share <a href="#" title="">link</a> --}}
                             </ins>
                             <span><i class="fa fa-globe"></i> published:
                                 {{ $post->formatted_created_at }}
                             </span>
                         </div>
+                    </div>
                     <div class="post-meta">
                         <div class="description">
                             <p>{!! $post->content !!}</p>
@@ -106,7 +106,7 @@
                                         data-post-id="{{ $post->id }}">
                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}"
                                             id="commentable_id_{{ $post->id }}">
-                                        <textarea placeholder="Post your comment" name="body" id="commentable_content_{{ $post->id }}"
+                                        <textarea name="body" id="commentable_content_{{ $post->id }}"
                                             data-post-id="{{ $post->id }}">
                                                                     </textarea>
                                         {{-- <div class="add-smiles">
