@@ -34,9 +34,9 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
-        <div class="right-bottom-arrow bg-purple-gradient shadow">
+        <a class="right-bottom-arrow bg-purple-gradient shadow">
             <i class="fa fa-chevron-up text-white"></i>
-        </div>
+        </a>
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
             <div class="profileBar">
@@ -107,52 +107,52 @@
 
                                 <div class="badge-section my-4 d-flex align-items-center justify-content-between">
 
-                                @if(!empty($service->user->general_badge))
-                                
-                                @php
-                                $g_badge = explode(',',$service->user->general_badge)
-                                @endphp    
+                                    @if(!empty($service->user->general_badge))
 
-                                @if(in_array('elite',$g_badge))
+                                    @php
+                                    $g_badge = explode(',',$service->user->general_badge)
+                                    @endphp
+
+                                    @if(in_array('elite',$g_badge))
 
                                     <div class="">
                                         <img src="/imgs/elitegpbadge.png" width="30" alt="">
                                         ELITE GP+
                                     </div>
-                                @else    
+                                    @else
                                     <div class="disbaled">
                                         <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
                                         Elite GP+
                                     </div>
-                                @endif  
+                                    @endif
 
-                                @if(in_array('top',$g_badge))
+                                    @if(in_array('top',$g_badge))
 
                                     <div class="">
                                         <img src="/imgs/topgpbadge.png" width="30" alt="">
                                         Top GP+
                                     </div>
-                                @else    
+                                    @else
                                     <div class="disbaled">
                                         <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
                                         Top GP+
                                     </div>
-                                @endif  
+                                    @endif
 
-                                @if(in_array('vip',$g_badge))
+                                    @if(in_array('vip',$g_badge))
 
                                     <div class="">
                                         <img src="/imgs/elitegpbadge.png" width="30" alt="">
                                         VIP+
                                     </div>
-                                @else    
+                                    @else
                                     <div class="disbaled">
                                         <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
                                         VIP+
                                     </div>
-                                @endif   
+                                    @endif
 
-                                @else 
+                                    @else
 
                                     <div class="disbaled">
                                         <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
@@ -166,16 +166,16 @@
                                         <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
                                         VIP+
                                     </div>
-                                @endif
+                                    @endif
 
-                                    
+
                                 </div>
 
                                 <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
 
-<p class="more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
+                                <p class="more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}}
                                 <div class="mb-3"></div>
                                 <!-- Commented Data -->
@@ -202,9 +202,9 @@
                                 Language
                             </div>
                             <div class="text-text col-6 text-style-5 info-game-name">
-                              
+
                                 {{ $service->user->primary_language }}
-                                
+
                             </div>
                         </div>
                     </div>
@@ -212,48 +212,48 @@
             </div>
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
             <div class="mb-5"></div>
-            
+
             <div class="profile-about mt-3">
 
-                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">                    
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
                     Socials
                 </h4>
 
-                
+
                 <div class="social_icons">
-                 @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
-                 
+                    @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
+
 
                     @if(!empty($service->user->facebook_profile))
 
-                        <a href="{{$service->user->facebook_profile}}" target=_blank>
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
+                    <a href="{{$service->user->facebook_profile}}" target=_blank>
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
                     @endif
 
                     @if(!empty($service->user->instagram_profile))
-                        <a href="{{$service->user->instagram_profile}}" target=_blank>
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
+                    <a href="{{$service->user->instagram_profile}}" target=_blank>
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
                     @endif
 
                     @if(!empty($service->user->twitch_profile))
-                        <a href="{{$service->user->twitch_profile}}" target=_blank>
-                            <i class="fab fa-twitch text-white"></i>
+                    <a href="{{$service->user->twitch_profile}}" target=_blank>
+                        <i class="fab fa-twitch text-white"></i>
 
-                        </a>
+                    </a>
                     @endif
-                    
-                    
-                @else
+
+
+                    @else
                     <p>N/A</p>
-                @endif
+                    @endif
 
                 </div>
 
 
 
-                
+
                 <!-- <div class="body-fluid row justify-content-start ml-0">
                     @if (!empty($service->user->instagram_profile))
                     <a href="https://www.instagram.com/{{ $service->user->instagram_profile }}" class="icon-game col-3 icon-instagram" target="_blank">
@@ -274,7 +274,7 @@
                     @endif
                 </div> -->
             </div>
-            
+
         </div>
 </div>
 </div>
@@ -296,118 +296,113 @@
                 </div>
                 <div class="item">
                     <div class="count">
-                        
-                        @if($totalOrders > 0 && $totalOrders <= 50) {{ "1"}} 
-                        @elseif($totalOrders>= 51 && $totalOrders <= 100) 
-                            {{ "2"}}
-                        @elseif($totalOrders>= 101 && $totalOrders <= 500) 
-                            {{ "3"}}
-                        @elseif($totalOrders>= 501 && $totalOrders >= 1000) 
-                            {{ "4"}}         
-                        @else {{"0"}} @endif </div>
-                                <div class="socialName">Badge</div>
-                    </div>
+
+                        @if($totalOrders > 0 && $totalOrders <= 50) {{ "1"}} @elseif($totalOrders>= 51 && $totalOrders <= 100) {{ "2"}} @elseif($totalOrders>= 101 && $totalOrders <= 500) {{ "3"}} @elseif($totalOrders>= 501 && $totalOrders >= 1000)
+                                    {{ "4"}}
+                                    @else {{"0"}} @endif </div>
+                    <div class="socialName">Badge</div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- END: Service Profile Side bar First Card -->
-    <div class="card mt-4 mb-4 shadow">
-        <div class="card table-card">
-            <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
-                Available Time
-            </h4>
-            <div class="table-responsive">
-                <table class="table timeline-table" style="text-align: center">
-                    <tr>
-                        <th>Monday</th>
-                        @if (isset(explode(':', $service->monday_from)[1]) && isset(explode(':', $service->monday_to)[1]))
-                        <td>{{ explode(':', $service->monday_from)[0] . ':' . explode(':', $service->monday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->monday_to)[0] . ':' . explode(':', $service->monday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Tuesday</th>
-                        @if (isset(explode(':', $service->tuesday_from)[1]) && isset(explode(':', $service->tuesday_to)[1]))
-                        <td>{{ explode(':', $service->tuesday_from)[0] . ':' . explode(':', $service->tuesday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->tuesday_to)[0] . ':' . explode(':', $service->tuesday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Wednesday</th>
-                        @if (isset(explode(':', $service->wednesday_from)[1]) && isset(explode(':', $service->wednesday_to)[1]))
-                        <td>{{ explode(':', $service->wednesday_from)[0] . ':' . explode(':', $service->wednesday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->wednesday_to)[0] . ':' . explode(':', $service->wednesday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Thursday</th>
-                        @if (isset(explode(':', $service->thursday_from)[1]) && isset(explode(':', $service->thursday_to)[1]))
-                        <td>{{ explode(':', $service->thursday_from)[0] . ':' . explode(':', $service->thursday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->thursday_to)[0] . ':' . explode(':', $service->thursday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Friday</th>
-                        @if (isset(explode(':', $service->friday_from)[1]) && isset(explode(':', $service->friday_to)[1]))
-                        <td>{{ explode(':', $service->friday_from)[0] . ':' . explode(':', $service->friday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->friday_to)[0] . ':' . explode(':', $service->friday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Saturday</th>
-                        @if (isset(explode(':', $service->saturday_from)[1]) && isset(explode(':', $service->saturday_to)[1]))
-                        <td>{{ explode(':', $service->saturday_from)[0] . ':' . explode(':', $service->saturday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->saturday_to)[0] . ':' . explode(':', $service->saturday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                    <tr>
-                        <th>Sunday</th>
-                        @if (isset(explode(':', $service->sunday_from)[1]) && isset(explode(':', $service->sunday_to)[1]))
-                        <td>{{ explode(':', $service->sunday_from)[0] . ':' . explode(':', $service->sunday_from)[1] }}
-                        </td>
-                        <td>-</td>
-                        <td>{{ explode(':', $service->sunday_to)[0] . ':' . explode(':', $service->sunday_to)[1] }}
-                        </td>
-                        @else
-                        <td colspan="3">Unavailable</td>
-                        @endif
-                    </tr>
-                </table>
-            </div>
+</div>
+<!-- END: Service Profile Side bar First Card -->
+<div class="card mt-4 mb-4 shadow">
+    <div class="card table-card">
+        <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
+            Available Time
+        </h4>
+        <div class="table-responsive">
+            <table class="table timeline-table" style="text-align: center">
+                <tr>
+                    <th>Monday</th>
+                    @if (isset(explode(':', $service->monday_from)[1]) && isset(explode(':', $service->monday_to)[1]))
+                    <td>{{ explode(':', $service->monday_from)[0] . ':' . explode(':', $service->monday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->monday_to)[0] . ':' . explode(':', $service->monday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    @if (isset(explode(':', $service->tuesday_from)[1]) && isset(explode(':', $service->tuesday_to)[1]))
+                    <td>{{ explode(':', $service->tuesday_from)[0] . ':' . explode(':', $service->tuesday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->tuesday_to)[0] . ':' . explode(':', $service->tuesday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    @if (isset(explode(':', $service->wednesday_from)[1]) && isset(explode(':', $service->wednesday_to)[1]))
+                    <td>{{ explode(':', $service->wednesday_from)[0] . ':' . explode(':', $service->wednesday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->wednesday_to)[0] . ':' . explode(':', $service->wednesday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    @if (isset(explode(':', $service->thursday_from)[1]) && isset(explode(':', $service->thursday_to)[1]))
+                    <td>{{ explode(':', $service->thursday_from)[0] . ':' . explode(':', $service->thursday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->thursday_to)[0] . ':' . explode(':', $service->thursday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    @if (isset(explode(':', $service->friday_from)[1]) && isset(explode(':', $service->friday_to)[1]))
+                    <td>{{ explode(':', $service->friday_from)[0] . ':' . explode(':', $service->friday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->friday_to)[0] . ':' . explode(':', $service->friday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Saturday</th>
+                    @if (isset(explode(':', $service->saturday_from)[1]) && isset(explode(':', $service->saturday_to)[1]))
+                    <td>{{ explode(':', $service->saturday_from)[0] . ':' . explode(':', $service->saturday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->saturday_to)[0] . ':' . explode(':', $service->saturday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+                <tr>
+                    <th>Sunday</th>
+                    @if (isset(explode(':', $service->sunday_from)[1]) && isset(explode(':', $service->sunday_to)[1]))
+                    <td>{{ explode(':', $service->sunday_from)[0] . ':' . explode(':', $service->sunday_from)[1] }}
+                    </td>
+                    <td>-</td>
+                    <td>{{ explode(':', $service->sunday_to)[0] . ':' . explode(':', $service->sunday_to)[1] }}
+                    </td>
+                    @else
+                    <td colspan="3">Unavailable</td>
+                    @endif
+                </tr>
+            </table>
         </div>
     </div>
-    <!-- END: Service Profile Side bar SECOND Card -->
+</div>
+<!-- END: Service Profile Side bar SECOND Card -->
 </div>
 <!-- END: Service Profile Side bar -->
 
@@ -579,6 +574,7 @@
 
 <script>
     jQuery(document).ready(function($) {
+        // $("#back_to_top").scrollTop(0);
         // show comments	
         $('.comment').on('click', function() {
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");

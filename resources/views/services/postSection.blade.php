@@ -30,10 +30,11 @@
                         </div>
                     </div>
                     @endif
-                    <ins class="mr-3"><a href="time-line.html" title="">{{ $post->postAuthor->name ?: 'NA' }}</a>
+                    <span class="mr-3 font-weight-bold"><a href="time-line.html" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
                         {{-- share <a href="#" title="">link</a> --}}
-                    </ins>
-                    <span><i class="fa fa-globe"></i> published:
+                    </span>
+                    <span>
+                        <!-- <i class="fa fa-globe"></i> -->
                         {{ $post->formatted_created_at }}
                     </span>
                 </div>
