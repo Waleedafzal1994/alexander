@@ -34,7 +34,7 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
-        <a class="right-bottom-arrow bg-purple-gradient shadow">
+        <a class="right-bottom-arrow bg-purple-gradient shadow" style="display: none;" id="back_to_top">
             <i class="fa fa-chevron-up text-white"></i>
         </a>
         <div class="d-flex justify-content-between">
@@ -574,7 +574,27 @@
 
 <script>
     jQuery(document).ready(function($) {
-        // $("#back_to_top").scrollTop(0);
+        // $("#back_to_top").css("display", "none");
+        // Scroll Button Functionality Start Here 
+        const btnScrollToTop = document.querySelector("#back_to_top");
+
+        // scroll to top of page when button clicked
+        btnScrollToTop.addEventListener("click", e => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // toggle 'scroll to top' based on scroll position
+        window.addEventListener('scroll', e => {
+            btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
+        });
+
+
+        // Scroll Button Functionality End Here
+
         // show comments	
         $('.comment').on('click', function() {
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");

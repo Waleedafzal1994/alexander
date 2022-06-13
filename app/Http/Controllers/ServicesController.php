@@ -266,7 +266,7 @@ class ServicesController extends Controller
         //Fetch min price for selected category//
         // $minPrice = Service::select('services.service_duration_type','services.id', DB::raw('MIN(services.price) AS minPrice','id'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
 
-        $minPrice = Service::select('services.service_duration_type','services.id','price AS minPrice ' )->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first(); 
+        $minPrice = Service::select('services.service_duration_type', 'services.id', 'price AS minPrice ')->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first();
 
 
         // echo "<pre>";
@@ -385,7 +385,7 @@ class ServicesController extends Controller
                 $category_id = $service['category']->id;
                 $user_id = $service['user']->id;
 
-                $data['minPrice'] = $minPrice = Service::select('services.service_duration_type','services.id','price AS minPrice ' )->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first(); 
+                $data['minPrice'] = $minPrice = Service::select('services.service_duration_type', 'services.id', 'price AS minPrice ')->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first();
 
                 //Fetch all remaining services//
                 $data['all_remaining_services'] = Service::groupBy()
@@ -409,7 +409,7 @@ class ServicesController extends Controller
                     // $minPrice = Service::select('services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
 
 
-                    
+
                     $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice'))->render();
                 } else {
                     $data1['html2'] = '';
