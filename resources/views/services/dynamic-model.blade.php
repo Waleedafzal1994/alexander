@@ -18,23 +18,24 @@
                 <div class="newdropdown">
                     <div class="dropdown w-100">
                         <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                            <div class="game-title" id="drop_down_select">Let Play League of Legends Together</div>
+                            <div class="game-title" id="drop_down_select">{{$service->name}}</div>
                             <div class="game-price pr-3">
                                 <img src="/imgs/icons/6.png" style="height:24px">
-                                <span id="selected_drop_down_price">5.00/Game</span>
+                                <span id="selected_drop_down_price">{{$service->price}}/{{$service->service_duration_type}}</span>
                             </div>
                         </a>
 
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1" id="lists_li">
                             <div class="scroll-div">
-                                @if(!empty($all_remaining_services))
-                                @foreach($all_remaining_services as $r_service)
-                                <li role="presentation" class="" id="list-{{$r_service->id}}">
+
+                            @if(!empty($all_remaining_services))
+                            @foreach($all_remaining_services as $r_service)
+                                <li role="presentation" class='{{ ($service->id == $r_service->id) ? "active" : ""}}' id="{{$r_service->id}}" onclick="singleServiceForSelect(this,this.id)">
                                     <a role="menuitem" tabindex="-1" id="{{$r_service->id}}">
                                         <div class="game-title">{{$r_service->name}}</div>
                                         <div class="game-price">
                                             <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>{{$r_service->price}}/Game</span>
+                                            <span>{{$r_service->price}}/{{$r_service->service_duration_type}}</span>
                                             <div class="final-price">Final Price: {{$r_service->price}}</div>
                                         </div>
                                         <i class="fa fa-check rounded-circle p-1"></i>
@@ -42,42 +43,12 @@
                                 </li>
                                 @endforeach
                                 @endif
-                                <!-- <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a role="menuitem" tabindex="-1">
-                                        <div class="game-title">Let Play League of Legends Together</div>
-                                        <div class="game-price">
-                                            <img src="/imgs/icons/6.png" style="height:24px" class="mr-1">
-                                            <span>5.00/Game</span>
-                                            <div class="final-price">Final Price: 4.75</div>
-                                        </div>
-                                        <i class="fa fa-check rounded-circle p-1"></i>
-                                    </a>
-                                </li> -->
+   
                             </div>
                         </ul>
                     </div>
+
+
                     <!-- <select class="form-control select-service" name="select-service" >
 
                             @if(!empty($all_remaining_services))
@@ -211,8 +182,10 @@
 
     });
 
-    $('select[name="select-service"]').change(function() {
-        var id = $(this).val();
+    function singleServiceForSelect(obj,id){
+
+        // var id = $(obj).id;
+        // alert(id);
 
         $.ajaxSetup({
             headers: {
@@ -228,6 +201,10 @@
             dataType: 'JSON',
             success: function(response) {
 
+                $('li').removeClass('active');
+                $(obj).addClass('active');
+                $('#drop_down_select').text(response.name);
+                $('#selected_drop_down_price').text(response.price+'/'+response.service_duration_type);
                 $('input[name="unit-input"]').val(1)
                 $('#totalPrice').text(response.price);
                 $('#sub-total').text(response.price);
@@ -235,5 +212,6 @@
 
             }
         });
-    });
+    }
+
 </script>

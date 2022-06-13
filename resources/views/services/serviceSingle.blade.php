@@ -87,7 +87,7 @@
                                     <div class=" profile-section-two">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'N/A' }}
-                                            {{ ', '.$service->user->secondary_language }}
+                                            {{ !empty($service->user->secondary_language) ? ', '.$service->user->secondary_language : '' }}
                                         </div>
                                     </div>
                                     <div class="m-1 d-flex align-items-center justify-content-between">
@@ -202,7 +202,7 @@
                                 Language
                             </div>
                             <div class="text-text col-6 text-style-5 info-game-name">
-                                adskfhas
+                              
                                 {{ $service->user->primary_language }}
                                 
                             </div>
