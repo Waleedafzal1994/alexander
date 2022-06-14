@@ -206,7 +206,6 @@
     }
 
     function getCategoryServices(obj, id) {
-
         $('.nav-item').removeClass('active');
         $(obj).addClass('active');
 
