@@ -302,7 +302,9 @@
                             $g_badge = count(explode(',',$service->user->general_badge));
                             @endphp
                         @else
-                            $g_badge = 0;    
+                            @php
+                            $g_badge = 0;
+                            @endphp    
                         @endif
 
 
