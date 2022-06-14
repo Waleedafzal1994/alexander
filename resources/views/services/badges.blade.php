@@ -38,9 +38,41 @@
                             </div>
                         </div>
 
-                        @elseif($totalOrders >= 500)
+                        @elseif($totalOrders >= 500 && $totalOrders < 1000)
 
                         <div class="card badge-card border-0 py-4 my-4">
+                            <div class="card-body text-center">
+                                <div class="badge-img">
+                                    <img src="/imgs/elitegpbadge.png" width="220" alt="">
+                                </div>
+                                <div class="badge badge-primary my-5 p-3 text-uppercase">50 Orders Completed</div>
+                                <div class="gained font-weight-bold">+ 50 XP Gained !</div>
+                            </div>
+                        </div>
+
+                        <div class="card badge-card border-0 py-4 my-4">
+                            <div class="card-body text-center">
+                                <div class="badge-img">
+                                    <img src="/imgs/topgpbadge.png" width="220" alt="">
+                                </div>
+                                <div class="badge badge-primary my-5 p-3 text-uppercase">100 Orders Completed</div>
+                                <div class="gained font-weight-bold">+ 100 XP Gained !</div>
+                            </div>
+                        </div>
+
+                        <div class="card badge-card border-0 py-4 my-4">
+                            <div class="card-body text-center">
+                                <div class="badge-img">
+                                    <img src="/imgs/elitegpbadge.png" width="220" alt="">
+                                </div>
+                                <div class="badge badge-primary my-5 p-3 text-uppercase">500 Orders Completed</div>
+                                <div class="gained font-weight-bold">+ 500 XP Gained !</div>
+                            </div>
+                        </div>
+
+                        @elseif($totalOrders >= 1000 )
+
+                         <div class="card badge-card border-0 py-4 my-4">
                             <div class="card-body text-center">
                                 <div class="badge-img">
                                     <img src="/imgs/elitegpbadge.png" width="220" alt="">

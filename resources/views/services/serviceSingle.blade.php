@@ -296,10 +296,27 @@
                 </div>
                 <div class="item">
                     <div class="count">
+                        
+                        @if(!empty($service->user->general_badge))
+                            @php
+                            $g_badge = count(explode(',',$service->user->general_badge));
+                            @endphp
+                        @else
+                            $g_badge = 0;    
+                        @endif
 
-                        @if($totalOrders > 0 && $totalOrders <= 50) {{ "1"}} @elseif($totalOrders>= 51 && $totalOrders <= 100) {{ "2"}} @elseif($totalOrders>= 101 && $totalOrders <= 500) {{ "3"}} @elseif($totalOrders>= 501 && $totalOrders >= 1000)
-                                    {{ "4"}}
-                                    @else {{"0"}} @endif </div>
+
+                        @if($totalOrders >= 50 && $totalOrders < 100) 
+                            {{ 1 + $g_badge }} 
+                        @elseif($totalOrders >= 100 && $totalOrders < 500) 
+                            {{ 2 + $g_badge}} 
+                        @elseif($totalOrders >= 500 && $totalOrders < 1000) 
+                            {{ 3 + $g_badge}} 
+                        @elseif($totalOrders >= 1000)
+                            {{ 4 + $g_badge}}
+                        @else 
+                            {{ 0 + $g_badge}} 
+                        @endif </div>
                     <div class="socialName">Badge</div>
                 </div>
             </div>
