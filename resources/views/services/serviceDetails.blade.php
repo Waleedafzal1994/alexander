@@ -21,45 +21,45 @@
 
                         <div class="row">
 
-                                <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
-                                    @if ($service->category->image_1 != null)
+                            <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                @if ($service->category->image_1 != null)
 
-                                    <img class="rounded" src="{{ url($service->category->image_1) }}">
+                                <img class="rounded" src="{{ url($service->category->image_1) }}">
 
-                                    @else
+                                @else
 
-                                    <div style="background:var(--color-secondary);">
+                                <div style="background:var(--color-secondary);">
 
-                                    </div>
-
-                                    @endif
-                                    <h2>{{ $service->category->name }} <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small></h2>
                                 </div>
 
-                                <?php $i = 1 ?>
-                                @if(!empty($all_remaining_cats))
-                                @foreach($all_remaining_cats as $category)
-                                <div class="col-4 mb-4 pb-5" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
-
-                                    @if ($category->image_1 != null)
-
-                                    <img class="rounded" src="{{ url($category->image_1) }}">
-
-                                    @else
-
-                                    <div style="background:var(--color-secondary);">
-
-                                    </div>
-
-                                    @endif
-                                    <h2>{{ $category->name }} <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small></h2>
-                                </div>
-
-                                <?php $i++; ?>
-                                @endforeach
                                 @endif
-
+                                <h2>{{ $service->category->name }} <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small></h2>
                             </div>
+
+                            <?php $i = 1 ?>
+                            @if(!empty($all_remaining_cats))
+                            @foreach($all_remaining_cats as $category)
+                            <div class="col-4 mb-4 pb-5" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+
+                                @if ($category->image_1 != null)
+
+                                <img class="rounded" src="{{ url($category->image_1) }}">
+
+                                @else
+
+                                <div style="background:var(--color-secondary);">
+
+                                </div>
+
+                                @endif
+                                <h2>{{ $category->name }} <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small></h2>
+                            </div>
+
+                            <?php $i++; ?>
+                            @endforeach
+                            @endif
+
+                        </div>
 
                     </div>
                 </div>
@@ -209,11 +209,20 @@
         $('.nav-item').removeClass('active');
         $(obj).addClass('active');
 
+        // Active and de-active class on more functionality Is Done
+        const li = document.querySelectorAll('#pills-tab li');
+        for (let i = 0; i < li.length; i++) {
+            if (id == li[i].id) {
+                document.getElementById('' + li[i].id).className = "active";
+            } else {
+                document.getElementById('' + li[i].id).className = "";
+            }
+        }
+
+        // Active and de-active class on more functionality Is Done End Here
+
         var user_id = '<?php echo $service->user->id; ?>';
         var cat_ord_arr = $('#cat_ord_arr').val();
-        //alert(cat_ord_arr);
-
-
 
         $.ajaxSetup({
             headers: {
@@ -239,6 +248,7 @@
                     $('#pills-home').html(response.html);
                     $('#pills-home').addClass('show active');
                     $('#pills-contact').removeClass('show active');
+
                     // $('#more_section_content').show();
                 }
 
