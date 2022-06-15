@@ -14,18 +14,19 @@
 
         <!-- <div class="tab-pane more_section"> -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="card-body ">
+            <div class="card-body bg-white br-10 shadow">
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
-                    <div class="service_category  main-category more-cards">
+                    <div class="service_category main-category more-cards">
 
                         <div class="row">
 
                             <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                 @if ($service->category->image_1 != null)
 
-                                <img class="rounded" src="{{ url($service->category->image_1) }}">
-
+                                <div class="game-img">
+                                    <img class="rounded" src="{{ url($service->category->image_1) }}">
+                                </div>
                                 @else
 
                                 <div style="background:var(--color-secondary);">
@@ -33,7 +34,8 @@
                                 </div>
 
                                 @endif
-                                <h2>{{ $service->category->name }} <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small></h2>
+                                <h2>{{ $service->category->name }}</h2>
+                                <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small>
                             </div>
 
                             <?php $i = 1 ?>
@@ -43,7 +45,9 @@
 
                                 @if ($category->image_1 != null)
 
-                                <img class="rounded" src="{{ url($category->image_1) }}">
+                                <div class="game-img">
+                                    <img class="rounded" src="{{ url($category->image_1) }}">
+                                </div>
 
                                 @else
 
@@ -52,7 +56,8 @@
                                 </div>
 
                                 @endif
-                                <h2>{{ $category->name }} <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small></h2>
+                                <h2>{{ $category->name }} </h2>
+                                <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small>
                             </div>
 
                             <?php $i++; ?>

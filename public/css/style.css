@@ -1202,9 +1202,9 @@ ul.nav.nav-tabs.md-tabs.tabs-2.light-blue.darken-3 li {
     border: unset;
 }
 
-li.nav-item {
+/* li.nav-item {
     margin-top: 6px !important;
-}
+} */
 
 .modal-close-btn {
     margin-bottom: 63px !important;
@@ -1438,13 +1438,14 @@ a.slider-link:hover {
 
 .main-category {
     margin-left: 0;
-    margin-bottom: 25px;
     padding-bottom: 0;
+    margin-bottom: 12px;
 }
 
 .main-category ul li {
     margin-bottom: 0;
     position: relative;
+    margin-bottom: 4px;
 }
 
 .main-category ul li:first-child {
@@ -1860,21 +1861,27 @@ span {
     background: var(--color-background);
     height: 100%;
 }
-.more-cards img{
-    height: 80%;
+.more-cards .game-img{
+    height: 106px;
     width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.more-cards .game-img img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 20px;
 }
-@media (max-width: 1500px){
-    .more-cards img{
-        height: 120px;
-    }
+.more-cards h2{
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
 }
-@media (max-width: 1300px){
-    .more-cards img{
-        height: 100px;
-    }
+.more-cards small{
+    font-size: 12px;
+    font-weight: 500;
 }
 @media (max-width: 1024px){
     .service > div{
