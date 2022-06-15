@@ -141,12 +141,20 @@ class Post extends BaseModel
     {
         $content = "";
         $content .= "<li class='comment-section_" . $post->id . "'>";
+        
+        $content = "";
+        $content .= '<div class="shadow bg-gradient br-10 p-3 mb-4">';
+        $content .= '<div class="d-flex align-items-center">';
         $content .= '<div class="comet-avatar"><img src="' . $value->user->getProfilePicture() . '" alt=""></div>';
-        $content .= '<div class="we-comment">';
-        $content .= '<h5><a href="time-line.html" title="">' . $value->user->name . '</a></h5>';
-        $content .= '<p>' . $value->body . '</p>';
-        $content .= '<div class="inline-itms comment-action-box">';
+        $content .= '<div class="we-comment pb-0 pl-3">';
+        $content .= '<div class="d-flex align-items-center">';
+        $content .= '<h5 class="review-profile-heading mb-0"><a href="time-line.html" title="">' . $value->user->name . '</a></h5>';
         $content .= '<span>' . Carbon::parse($value->created_at)->format('F d, Y') . '</span>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '<div class="inline-itms comment-action-box">';
+        $content .= '<p class="text-black my-3">' . $value->body . '</p>';
         $content .= '<span class="comment-reaction likes heart';
         if ($value->userliked()) {
             $content .= ' active-heart';
@@ -168,7 +176,7 @@ class Post extends BaseModel
         $content = "";
         if (!empty($images)) {
             $content .=  '<div id="fullsizeimg" style="position: relative;" class="lightbox lightbox-user-gallery">';
-            $content .=  '<div class="row wo_adaptive_media">';
+            $content .=  '<div class="row wo_adaptive_media mx-0 px-3">';
             foreach ($images as $value) {
                 $content .= '<div class="album-image ' . $this->selectClassImage($count) . '">';
                 $content .= '<img src="' . $value->file_name . '" alt="' . $value->name . '" class="image-file pointer">';

@@ -71,7 +71,7 @@
         </div>
 
         <div class="card mt-4">
-            <div class="card-body p-4">
+            <div class="card-body py-4 pr-4 pl-0">
                 <div class="service-main-body-content">
                     <div class="row">
                         <div class="col-sm-12">
@@ -86,7 +86,7 @@
                                 </span>
                                 @endif
                             </span>
-                            <ul class="review mt-3 mb-3">
+                            <ul class="pl-4 review mt-3 mb-3">
                                 @if (!empty($service->ratings))
                                 @foreach ($service->ratings as $rating)
                                 <li class="review-body mb-3 shadow p-3 bg-gradient">
@@ -99,11 +99,11 @@
                                                         <p class="review-profile-heading fw-bold">
                                                             {{ $rating->user->name }}
                                                         </p>
-                                                        <p class="color-gray-fst">
+                                                        <p class="text-black">
                                                             {{ Carbon\Carbon::parse($rating->created_at)->format('F d, Y') }}
                                                         </p>
                                                     </div>
-                                                    <div class="review-comment color-gray-fst p-3">
+                                                    <div class="review-comment text-black p-3">
                                                         Lorem ipsum dolor sit amet consectetur adipisicing
                                                         elit.
                                                         Molestiae aliquid quasi deleniti, nesciunt non

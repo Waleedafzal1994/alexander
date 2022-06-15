@@ -35,7 +35,9 @@
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
         <a class="right-bottom-arrow bg-purple-gradient shadow" style="display: none;" id="back_to_top">
-            <i class="fa fa-chevron-up text-white"></i>
+            <div class="d-flex align-items-center justify-content-center h-100">
+                <i class="fa fa-chevron-up text-white"></i>
+            </div>
         </a>
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
@@ -78,16 +80,16 @@
                         </div>
 
                         <!-- END: Service Social button -->
-                        <div class="profile-info mt-2 px-3 mb-2 profile-name-top">
-                            <h3 class="profile-name text-center text-style-3 mb-2 profile-name-game">
+                        <div class="profile-info mt-2 pr-3 mb-2 profile-name-top">
+                            <h3 class="pl-3 profile-name text-center text-style-3 mb-2 profile-name-game">
                                 {{ $service->user->name ?: 'N/A' }}
                             </h3>
                             <div class="profile-about">
-                                <div class="mx-4">
+                                <div class="mx-4 pl-3">
                                     <div class=" profile-section-two">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'N/A' }}
-                                            {{ !empty($service->user->secondary_language) ? ', '.$service->user->secondary_language : '' }}
+                                            {{ !empty($service->user->secondary_language) ? ' 1/ '.$service->user->secondary_language : '' }}
                                         </div>
                                     </div>
                                     <div class="m-1 d-flex align-items-center justify-content-between">
@@ -105,7 +107,7 @@
                                 </div>
 
 
-                                <div class="badge-section my-4 d-flex align-items-center justify-content-between">
+                                <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between">
 
                                     @if(!empty($service->user->general_badge))
 
@@ -116,12 +118,12 @@
                                     @if(in_array('elite',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/elitegpbadge.png" width="30" alt="">
+                                        <img src="/imgs/elitegpbadge.png" width="40" alt="">
                                         ELITE GP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="40" alt="">
                                         Elite GP+
                                     </div>
                                     @endif
@@ -129,12 +131,12 @@
                                     @if(in_array('top',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/topgpbadge.png" width="30" alt="">
+                                        <img src="/imgs/topgpbadge.png" width="40" alt="">
                                         Top GP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
                                         Top GP+
                                     </div>
                                     @endif
@@ -142,12 +144,12 @@
                                     @if(in_array('vip',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/elitegpbadge.png" width="30" alt="">
+                                        <img src="/imgs/elitegpbadge.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @endif
@@ -155,15 +157,15 @@
                                     @else
 
                                     <div class="disbaled">
-                                        <img src="/imgs/elitegpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="40" alt="">
                                         Elite GP+
                                     </div>
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
                                         Top GP+
                                     </div>
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="30" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @endif
@@ -175,9 +177,9 @@
                                     About Me
                                 </h4>
 
-                                <p class="more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
+                                <p class="text-black pl-3 more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}}
-                                <div class="mb-3"></div>
+                                <div class="pl-3 mb-3"></div>
                                 <!-- Commented Data -->
                                 {{-- <div class="review-body">
                                         <div class="profile-section-two">
@@ -220,7 +222,7 @@
                 </h4>
 
 
-                <div class="social_icons">
+                <div class="pl-3 social_icons">
                     @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
 
 
@@ -246,7 +248,7 @@
 
 
                     @else
-                    <p>N/A</p>
+                    <p class="text-black">N/A</p>
                     @endif
 
                 </div>
@@ -331,7 +333,7 @@
         <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
             Available Time
         </h4>
-        <div class="table-responsive">
+        <div class="table-responsive pl-20">
             <table class="table timeline-table" style="text-align: center">
                 <tr>
                     <th>Monday</th>
