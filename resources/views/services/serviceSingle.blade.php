@@ -51,7 +51,7 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="cover-image" class="w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <div class="">
                                         <!-- <a href="#" class="pop"> -->
                                         <div class="lightbox lightbox-user-gallery">
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="{{ $service->user->getProfilePicture() }}" class="img-fluid profile-image-v2 zoom-clicked-img" />
+                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="img-fluid profile-image-v2 zoom-clicked-img" />
                                             <!-- </a> -->
                                         </div>
                                     </div>
@@ -298,29 +298,23 @@
                 </div>
                 <div class="item">
                     <div class="count">
-                        
+
                         @if(!empty($service->user->general_badge))
-                            @php
-                            $g_badge = count(explode(',',$service->user->general_badge));
-                            @endphp
+                        @php
+                        $g_badge = count(explode(',',$service->user->general_badge));
+                        @endphp
                         @else
-                            @php
-                            $g_badge = 0;
-                            @endphp    
+                        @php
+                        $g_badge = 0;
+                        @endphp
                         @endif
 
 
-                        @if($totalOrders >= 50 && $totalOrders < 100) 
-                            {{ 1 + $g_badge }} 
-                        @elseif($totalOrders >= 100 && $totalOrders < 500) 
-                            {{ 2 + $g_badge}} 
-                        @elseif($totalOrders >= 500 && $totalOrders < 1000) 
-                            {{ 3 + $g_badge}} 
-                        @elseif($totalOrders >= 1000)
-                            {{ 4 + $g_badge}}
-                        @else 
-                            {{ 0 + $g_badge}} 
-                        @endif </div>
+                        @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
+                                    {{ 4 + $g_badge}}
+                                    @else
+                                    {{ 0 + $g_badge}}
+                                    @endif </div>
                     <div class="socialName">Badge</div>
                 </div>
             </div>

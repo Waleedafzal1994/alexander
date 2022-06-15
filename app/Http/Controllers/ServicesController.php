@@ -272,8 +272,8 @@ class ServicesController extends Controller
         // echo "<pre>";
         // print_r($minPrice);die;
 
-        // $totalOrders = Order::where('buyer_id', $service['user']->id)->count();
-        $totalOrders = 50;
+        $totalOrders = Order::where('buyer_id', $service['user']->id)->count();
+        // $totalOrders = 500;
 
         $totalFollowers = Follower::where('user_id', $service['user']->id)->count();
         $totalfollowing = Follower::where('follower_id', $service['user']->id)->count();
