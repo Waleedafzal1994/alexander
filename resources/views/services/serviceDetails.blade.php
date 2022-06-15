@@ -209,7 +209,7 @@
         $('.nav-item').removeClass('active');
         $(obj).addClass('active');
 
-        // Active and de-active class on more functionality Is Done
+        // Active and de-active class on more functionality Is one
         const li = document.querySelectorAll('#pills-tab li');
         for (let i = 0; i < li.length; i++) {
             if (id == li[i].id) {
