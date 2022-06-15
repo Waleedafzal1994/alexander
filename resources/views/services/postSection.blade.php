@@ -5,7 +5,17 @@
         <div class="friend-info">
             <div class="d-flex align-items-center">
                 <img src="{{ $post->postAuthor->getProfilePicture() }}" width="80" class="rounded-circle mr-3" alt="">
-                <div class="w-100">
+                <div class="w-100 d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <span class="mr-3 font-weight-bold review-profile-heading"><a href="time-line.html" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
+                            {{-- share <a href="#" title="">link</a> --}}
+                        </span>
+                        <span class="text-black">
+                            <!-- <i class="fa fa-globe"></i> -->
+                            {{ $post->formatted_created_at }}
+                        </span>
+                    </div>
+
                     @if ($post->user_id == Auth::user()->id)
                     <div class="more">
                         <div class="more-post-optns post-actions" data-post="{{ $post->id }}">
@@ -30,18 +40,11 @@
                         </div>
                     </div>
                     @endif
-                    <span class="mr-3 font-weight-bold"><a href="time-line.html" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
-                        {{-- share <a href="#" title="">link</a> --}}
-                    </span>
-                    <span>
-                        <!-- <i class="fa fa-globe"></i> -->
-                        {{ $post->formatted_created_at }}
-                    </span>
                 </div>
             </div>
             <div class="post-meta">
                 <div class="description">
-                    <p>{!! $post->content !!}</p>
+                    <p class="text-black">{!! $post->content !!}</p>
                 </div>
                 <div class="row">
                     <p> {!! $post->videoContentHtml() !!}
@@ -93,40 +96,42 @@
                     @endif
 
                     <li class="post-comment" id="post-comment_form_{{ $post->id }}">
-                        <div class="comet-avatar">
-                            <img src="{{Auth::user()->getProfilePicture()}}" alt="">
-                        </div>
-                        <div class="post-comt-box">
-                            <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
-                                <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
-                                <textarea name="body" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
-                                {{-- <div class="add-smiles">
-                                                                <div class="uploadimage">
-                                                                    <i class="fa fa-image"></i>
-                                                                    <label class="fileContainer">
-                                                                        <input type="file">
-                                                                    </label>
-                                                                </div>
-                                                                <span class="em em-expressionless"
-                                                                    title="add icon"></span>
-                                                                <div class="smiles-bunch">
-                                                                    <i class="em em---1"></i>
-                                                                    <i class="em em-smiley"></i>
-                                                                    <i class="em em-anguished"></i>
-                                                                    <i class="em em-laughing"></i>
-                                                                    <i class="em em-angry"></i>
-                                                                    <i class="em em-astonished"></i>
-                                                                    <i class="em em-blush"></i>
-                                                                    <i class="em em-disappointed"></i>
-                                                                    <i class="em em-worried"></i>
-                                                                    <i class="em em-kissing_heart"></i>
-                                                                    <i class="em em-rage"></i>
-                                                                    <i class="em em-stuck_out_tongue"></i>
-                                                                </div>
-                                                            </div> --}}
+                        <div class="d-flex">
+                            <div class="comet-avatar">
+                                <img width="80" src="{{Auth::user()->getProfilePicture()}}" alt="">
+                            </div>
+                            <div class="post-comt-box">
+                                <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
+                                    <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
+                                    <textarea name="body" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
+                                    {{-- <div class="add-smiles">
+                                            <div class="uploadimage">
+                                                <i class="fa fa-image"></i>
+                                                <label class="fileContainer">
+                                                    <input type="file">
+                                                </label>
+                                            </div>
+                                            <span class="em em-expressionless"
+                                                title="add icon"></span>
+                                            <div class="smiles-bunch">
+                                                <i class="em em---1"></i>
+                                                <i class="em em-smiley"></i>
+                                                <i class="em em-anguished"></i>
+                                                <i class="em em-laughing"></i>
+                                                <i class="em em-angry"></i>
+                                                <i class="em em-astonished"></i>
+                                                <i class="em em-blush"></i>
+                                                <i class="em em-disappointed"></i>
+                                                <i class="em em-worried"></i>
+                                                <i class="em em-kissing_heart"></i>
+                                                <i class="em em-rage"></i>
+                                                <i class="em em-stuck_out_tongue"></i>
+                                            </div>
+                                    </div> --}}
 
-                                {{-- <button type="submit"></button> --}}
-                            </form>
+                                    {{-- <button type="submit"></button> --}}
+                                </form>
+                            </div>
                         </div>
                     </li>
                 </ul>

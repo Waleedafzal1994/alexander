@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="number mt-3 d-flex align-items-center justify-content-between">
-                    <p>Units</p>
+                    <p class="text-black">Units</p>
                     <div class="d-flex align-items-center">
                         <span class="minus ml-0">-</span>
                         <input name="unit-input" type="text" value="1" />

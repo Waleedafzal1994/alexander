@@ -33,6 +33,7 @@
 
 .service_category ul {
     display: flex;
+    align-items: center;
     list-style: none;
 }
 
@@ -56,6 +57,7 @@
     border-radius: 10px;
     color: white;
     text-decoration: none;
+    height: 100%;
 }
 
 .service_category ul li .categories_box_holder p {
@@ -914,12 +916,8 @@ table th {
 }
 
 .menu_ul li {
-    transition: 0.5s;
+    /* transition: 0.5s; */
     text-decoration: none !important;
-}
-
-.menu_ul li:hover {
-    transform: scale(1.1);
 }
 
 .header-page {
@@ -1852,7 +1850,7 @@ span {
 }
 
 .timiline-cards .card .card-body .loadMore .central-meta{
-    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+    /* background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important; */
     border: 0;
     padding-left: 20px;
     padding-right: 20px;
@@ -1860,6 +1858,7 @@ span {
 #pills-contact-tab{
     border-radius: 10px;
     background: var(--color-background);
+    height: 100%;
 }
 .more-cards img{
     height: 80%;
@@ -1937,6 +1936,9 @@ span {
 .badge-cards .card{
     transition: all .4s ease-in-out;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%);
+    margin-right: 12px;
+    margin-left: 12px;
+    min-height: 420px;
 }
 .badge-cards .card:hover{
     transform: translateY(-15px);
@@ -1983,5 +1985,15 @@ span {
     transform: translateY(-5px);
 }
 .top-head-cate li.active{
-    transform: scale(1.1);
+    width: 160px;
+    height: 63px;
+}
+.text-black{
+    color: #000 !important;
+}
+.br-10{
+    border-radius: 10px !important;
+}
+.pl-20{
+    padding-left: 20px;
 }

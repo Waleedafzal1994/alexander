@@ -1,4 +1,4 @@
-<div class="card-body bg-white shadow rounded py-5">
+<div class="card-body bg-white shadow rounded py-5 pl-0">
     <div class="service-main-body-content">
         <div class="d-flex justify-content-between">
             <div class="font-weight-600 margin-bottom-1rem">
@@ -20,9 +20,9 @@
                 </span>
             </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5 pl-20">
             <div class="col-sm-12 col-md-7 mt-1 text-justify margin-bottom-1rem">
-                <p>{{$service->category->description}}</p>
+                <p class="text-black">{{$service->category->description}}</p>
             </div>
             @if (!empty($service->category) && isset($service->category->image_1) && !empty($service->category->image_1))
             <div class="col-12 col-md-5 text-right ">
@@ -39,7 +39,7 @@
 
         @if(!empty($all_remaining_services))
         @foreach($all_remaining_services as $r_service)
-        <div class="row mt-3">
+        <div class="row mt-3 pl-20">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="box-styling shadow" type="button" id="{{$r_service->id}}" onclick="openComfirmOrderModel(this.id)">
 
