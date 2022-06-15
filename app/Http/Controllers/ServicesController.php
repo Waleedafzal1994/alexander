@@ -243,7 +243,7 @@ class ServicesController extends Controller
         $id = intVal($id);
 
         $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
-        $category_id = $service['category']->id;
+        $data['category_id'] = $category_id = $service['category']->id;
         $user_id = $service['user']->id;
 
         //Fetch all remaining services//
@@ -382,8 +382,9 @@ class ServicesController extends Controller
 
                 $data['service'] = $service;
 
-                $category_id = $service['category']->id;
+                $data['category_id'] = $category_id = $service['category']->id;
                 $user_id = $service['user']->id;
+
 
                 $data['minPrice'] = $minPrice = Service::select('services.service_duration_type', 'services.id', 'price AS minPrice ')->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first();
 
@@ -410,7 +411,7 @@ class ServicesController extends Controller
 
 
 
-                    $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice'))->render();
+                    $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice','category_id'))->render();
                 } else {
                     $data1['html2'] = '';
                 }
