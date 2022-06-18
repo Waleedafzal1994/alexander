@@ -412,7 +412,7 @@ class ServicesController extends Controller
 
 
 
-                    $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice','category_id'))->render();
+                    $data1['html2'] = view('services/categories-list', compact('service', 'all_remaining_cats', 'minPrice', 'category_id'))->render();
                 } else {
                     $data1['html2'] = '';
                 }
