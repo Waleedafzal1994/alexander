@@ -311,10 +311,11 @@
 
 
                         @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
-                                    {{ 4 + $g_badge}}
-                                    @else
-                                    {{ 0 + $g_badge}}
-                                    @endif </div>
+                        {{ 4 + $g_badge}}
+                        @else
+                        {{ 0 + $g_badge}}
+                        @endif 
+                    </div>
                     <div class="socialName">Badge</div>
                 </div>
             </div>
