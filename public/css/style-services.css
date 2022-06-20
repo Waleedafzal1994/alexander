@@ -1429,6 +1429,7 @@ p {
   position: absolute;
   text-decoration: none;
   top: -10px;
+  white-space: nowrap;
 }
 
 .we-video-info ul li .heart {
@@ -1474,6 +1475,7 @@ p {
   left: 20px;
   position: absolute;
   top: -10px;
+  white-space: nowrap;
 }
 
 .gallery-like-heart {
@@ -1538,6 +1540,12 @@ p {
 .gallery-img-item:hover .gallery-reaction {
   opacity: 1;
   background-color: red;
+} */
+.gallery-img-item img{
+  cursor: pointer;
+}
+/* .gallery-img-item img:hover{
+  box-shadow: 0 0 10px 10px black;
 } */
 
 .we-video-info>ul li span:hover i {
@@ -1701,8 +1709,9 @@ a.underline:hover:before,
   border-radius: 5px;
   color: inherit;
   font-size: 13px;
-  height: 80px;
+  /* height: 80px; */
   line-height: 16px;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
 
 .add-smiles {

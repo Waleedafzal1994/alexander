@@ -85,14 +85,14 @@
                                 {{ $service->user->name ?: 'N/A' }}
                             </h3>
                             <div class="profile-about">
-                                <div class="mx-4 pl-3">
+                                <div class="pl-3">
                                     <div class=" profile-section-two">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'N/A' }}
                                             {{ !empty($service->user->secondary_language) ? ' 1/ '.$service->user->secondary_language : '' }}
                                         </div>
                                     </div>
-                                    <div class="m-1 d-flex align-items-center justify-content-between">
+                                    <div class="my-1 d-flex align-items-center justify-content-between">
                                         <div class="profile-section-two">
                                             <div class="review-body text-center">
                                                 {{ $service->user->gender ?: 'N/A' }}
@@ -107,7 +107,7 @@
                                 </div>
 
 
-                                <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between">
+                                <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between pb-5">
 
                                     @if(!empty($service->user->general_badge))
 
@@ -222,7 +222,7 @@
                 </h4>
 
 
-                <div class="pl-3 social_icons">
+                <div class="pl-3 social_icons mb-4">
                     @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
 
 
@@ -311,10 +311,11 @@
 
 
                         @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
-                                    {{ 4 + $g_badge}}
-                                    @else
-                                    {{ 0 + $g_badge}}
-                                    @endif </div>
+                        {{ 4 + $g_badge}}
+                        @else
+                        {{ 0 + $g_badge}}
+                        @endif 
+                    </div>
                     <div class="socialName">Badge</div>
                 </div>
             </div>
@@ -454,11 +455,11 @@
                                         Followers
                                     </a>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="following-tab" data-bs-toggle="tab" data-bs-target="#following" type="button" role="tab" aria-controls="following" aria-selected="false" href="#following">
                                         Following
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="badges-tab" data-bs-toggle="tab" data-bs-target="#badges" type="button" role="tab" aria-controls="badges" aria-selected="false" href="#badges">
                                         Badges

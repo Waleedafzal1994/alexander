@@ -1484,6 +1484,11 @@ a.slider-link:hover {
     justify-content: center;
     color: #fff;
     font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+.box-styling:hover .right-arrow {
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: var(--color-primary-hover);
 }
 
 span {
@@ -1707,7 +1712,8 @@ span {
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
 }
 .nav-custom-nav li{
-    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 .skew-bg{
     position: relative;
@@ -1829,6 +1835,11 @@ span {
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+.social_icons a:hover{
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    background-color: var(--color-primary-hover);
 }
 /* .social_icons a img{
     width: 20px;

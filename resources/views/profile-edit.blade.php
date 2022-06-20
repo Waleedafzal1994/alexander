@@ -542,16 +542,16 @@
                         <div class="col-md-4">
                             <br>
                             <label for="">Facebook</label>
-                            <input type="text" name="facebook_profile" class="input" style="margin-bottom:10px;"
+                            <input type="url" name="facebook_profile" class="input" style="margin-bottom:10px;"
                                 placeholder="facebook.com/gamersplay" value="{{ $user->facebook_profile }}">
                             <label for="">Twitch</label>
-                            <input type="text" name="twitch_profile" class="input"
+                            <input type="url" name="twitch_profile" class="input"
                                 placeholder="twitch.tv/gamersplay" value="{{ $user->twitch_profile }}">
                         </div>
                         <div class="col-md-4">
                             <br>
                             <label for="">Instagram</label>
-                            <input type="text" name="instagram_profile" class="input" placeholder="@gamersplay"
+                            <input type="url" name="instagram_profile" class="input" placeholder="@gamersplay"
                                 value="{{ $user->instagram_profile }}">
                         </div>
                         <!-- <div class="col-md-4">
