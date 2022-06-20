@@ -236,7 +236,7 @@
         });
         $.ajax({
             type: 'POST',
-            url: "/services/getServiceDetailsForTab/",
+            url: "/services/getServiceDetailsForTab",
             data: {
                 'id': id,
                 'cat_ord_arr': cat_ord_arr,
