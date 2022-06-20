@@ -57,11 +57,11 @@
                 <div class="we-video-info">
                     <ul>
                         {{-- <li>
-                                    <span class="views" title="views">
-                                        <i class="fa fa-eye"></i>
-                                        <ins>0</ins>
-                                    </span>
-                                </li> --}}
+                                <span class="views" title="views">
+                                    <i class="fa fa-eye"></i>
+                                    <ins>0</ins>
+                                </span>
+                            </li> --}}
                         <li>
                             <div class="likes heart post-reaction {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
                                 <i class="fas fa-heart"></i>
@@ -103,7 +103,7 @@
                             <div class="post-comt-box">
                                 <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
                                     <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
-                                    <textarea name="body" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
+                                    <textarea name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
                                     {{-- <div class="add-smiles">
                                             <div class="uploadimage">
                                                 <i class="fa fa-image"></i>

@@ -56,7 +56,7 @@
                         @endif
                         @if ($service->post_count > 3)
                             <div class="text-center">
-                                <a href="#" title="" class="showmore-posts underline" data-post-load_page="1"
+                                <a href="#" title="" class="showmore-posts underline font-weight-bold" data-post-load_page="1"
                                     data-post-service="{{ $service->id }}">
                                     more posts+
                                 </a>

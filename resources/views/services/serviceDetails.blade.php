@@ -87,7 +87,7 @@
                                 </div>
                                 @if(!empty($service->average_rate))
                                 <span class="number-row-card bg-purple-gradient">
-                                    {{ $service->average_rate }} <i class="fas fa-star"></i>
+                                    16 . {{ $service->average_rate }} <i class="fas fa-star"></i>
                                 </span>
                                 @endif
                             </span>
