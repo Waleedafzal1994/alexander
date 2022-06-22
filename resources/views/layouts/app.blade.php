@@ -35,6 +35,14 @@ $noFooter = true;
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <!-- Owl caoursel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <!-- Owl caoursel -->
+
     <!-- Primary Meta Tags -->
     <title>GamersPlay | Home</title>
     <meta name="title" content="GamersPlay | Home">
@@ -71,7 +79,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white" style="position:fixed; width:100%; z-index: 100;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; z-index: 100;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style="height:40px;">
@@ -269,6 +277,8 @@ $noFooter = true;
             @yield('content')
         </main>
         @yield('footer')
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             $(document).ready(function() {
                 $("#loginModal").on('shown.bs.modal', function(e) {

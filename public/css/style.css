@@ -1660,6 +1660,7 @@ span {
     border-radius: 50%;
     text-align: center;
     border: 4px solid white;
+    background-color: #fff;
     overflow: hidden;
     left: 50%;
     transform: translateX(-50%);
@@ -1969,6 +1970,44 @@ span {
     font-size: 24px;
     font-weight: bold;
 }
+.friend-info .carousel-inner{
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+.friend-info .carousel-control-prev, 
+.friend-info .carousel-control-next {
+    width: 10%;
+    background-color: #581c87;
+    margin: auto 12px;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+}
+.friend-info .carousel-control-prev i, 
+.friend-info .carousel-control-next i {
+    color: #fff;
+    font-size: 20px;
+}
+.friend-info .prev-icon{
+    transform: rotate(225deg);
+}
+.friend-info .next-icon{
+    transform: rotate(40deg);
+}
+.friend-info .carousel-indicators{
+    bottom: -45px;
+}
+.friend-info .carousel-indicators li {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #8f57babf;
+    border: 0;
+}
+.friend-info .carousel-indicators li.active {
+    background: #581c87;
+}
 .we-comet>li{
     background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
@@ -2015,3 +2054,66 @@ span {
 .pl-20{
     padding-left: 20px;
 }
+.navbar-nav .nav-link{
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+}
+.photos-section .box-shadow{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg,transparent,rgba(0,0,0,.8));
+    height: 40px;
+    width: 100%;
+    border-radius: 0.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+}
+.photos-section:hover .box-shadow{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Gallery section css */
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+  }
+  .gallery__column {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+  .gallery__link {
+    overflow: hidden;
+  }
+  .gallery__link:hover .gallery__caption {
+    opacity: 1;
+  }
+  .gallery__thumb {
+    position: relative;
+  }
+  .gallery__image {
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+  }
+  /* .gallery__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px 15px 15px;
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: white;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+  } */
