@@ -93,12 +93,17 @@
                                         </div>
                                     </div>
                                     <div class="my-1 d-flex align-items-center justify-content-between">
-                                        <div class="profile-section-two">
+                                        <div class="profile-section-two gender">
                                             <div class="review-body text-center">
                                                 {{ $service->user->gender ?: 'N/A' }}
                                             </div>
                                         </div>
-                                        <div class="profile-section-two">
+                                        <div class="profile-section-two w-100 mx-2">
+                                            <div class="review-body text-center">
+                                                &nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="profile-section-two numbers">
                                             <div class="review-body text-center">
                                                 {{ $service->user->getAge() ? $service->user->getAge().' years': '0' }}
                                             </div>
@@ -106,6 +111,16 @@
                                     </div>
                                 </div>
 
+                                <div class="d-block mt-5 ml-3 pb-3">
+                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between mb-2 px-3">
+                                        <span>Avg. Response Time</span>
+                                        <span>5 - 10 Mins</span>
+                                    </div>
+                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 number-row-card">
+                                        <span>1258 Served</span>
+                                        <span><i class="fas fa-star"></i> 5.0 </span>
+                                    </div>
+                                </div>
 
                                 <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between pb-5">
 

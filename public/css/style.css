@@ -2054,6 +2054,9 @@ span {
 .pl-20{
     padding-left: 20px;
 }
+.h-40{
+    height: 48px !important;
+}
 .navbar-nav .nav-link{
     padding-left: 4px;
     padding-right: 4px;
@@ -2067,7 +2070,7 @@ span {
     background: linear-gradient(180deg,transparent,rgba(0,0,0,.8));
     height: 40px;
     width: 100%;
-    border-radius: 0.25rem;
+    border-radius: 10px;
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease-in-out;
@@ -2081,39 +2084,39 @@ span {
 /* Gallery section css */
 .gallery {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     transition: 0.3s;
-  }
-  .gallery__column {
+}
+.gallery__column {
     display: flex;
     flex-direction: column;
-    width: 30%;
-  }
-  .gallery__link {
+    width: 33%;
+}
+.gallery__link {
+    margin: 2px;
     overflow: hidden;
-  }
-  .gallery__link:hover .gallery__caption {
-    opacity: 1;
-  }
-  .gallery__thumb {
+    margin-bottom: -14px;
+}
+.gallery__thumb {
     position: relative;
-  }
-  .gallery__image {
+}
+.gallery__image {
     display: block;
     width: 100%;
     transition: 0.3s;
-  }
-  /* .gallery__caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 25px 15px 15px;
-    width: 100%;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    color: white;
-    opacity: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
-    transition: 0.3s;
-  } */
+    border-radius: 10px;
+}
+.profile-section-two{
+    height: 33px;
+}
+.profile-section-two.gender, 
+.profile-section-two.numbers{
+    width: 100px;
+}
+.highlights button{
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    background-size: 200% auto;
+    transition: all .3s ease-in-out;
+}
+.highlights button:hover{
+    background-position: right center;
+}
