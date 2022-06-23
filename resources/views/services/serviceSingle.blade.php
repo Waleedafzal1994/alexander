@@ -284,19 +284,19 @@
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
-                <div class="item">
+                <div class="item activeTimeline">
                     <div class="count">16</div>
                     <div class="socialName">Posts</div>
                 </div>
-                <div class="item">
+                <div class="item activeFollowers">
                     <div class="count count-followers">{{ !empty($totalFollowers) ? $totalFollowers : '0' }} </div>
                     <div class="socialName">Followers</div>
                 </div>
-                <div class="item">
+                <div class="item activeFollowers">
                     <div class="count count-following">{{ !empty($totalfollowing) ? $totalfollowing : '0' }} </div>
                     <div class="socialName">Following</div>
                 </div>
-                <div class="item">
+                <div class="item activeBadge">
                     <div class="count">
 
                         @if(!empty($service->user->general_badge))
@@ -1126,8 +1126,62 @@
             }, 400);
         }
 
+        $('.activeTimeline').on("click", function() {
+                //Active Tab//
+                $('#myTab a[href="#'+'profile'+'"]').tab("show");
+                //Change Url//
+                let c_tab = '#profile';
+                if (c_tab == "#home") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + c_tab;
+                }
+                newUrl += "/";
+                history.replaceState(null, null, newUrl);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+        });
+
+        $('.activeFollowers').on("click", function() {
+                //Active Tab//
+                $('#myTab a[href="#'+'followers'+'"]').tab("show");
+                //Change Url//
+                let c_tab = '#profile';
+                if (c_tab == "#home") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + c_tab;
+                }
+                newUrl += "/";
+                history.replaceState(null, null, newUrl);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+        });
+
+        $('.activeBadge').on("click", function() {
+                //Active Tab//
+                $('#myTab a[href="#'+'badges'+'"]').tab("show");
+                //Change Url//
+                let c_tab = '#profile';
+                if (c_tab == "#home") {
+                    newUrl = url.split("#")[0];
+                } else {
+                    newUrl = url.split("#")[0] + c_tab;
+                }
+                newUrl += "/";
+                history.replaceState(null, null, newUrl);
+                setTimeout(() => {
+                    $(window).scrollTop(0);
+                }, 400);
+        });
+
+
+
         $('a[data-bs-toggle="tab"]').on("click", function() {
             let newUrl;
+
             const hash = $(this).attr("href");
             if (hash == "#home") {
                 newUrl = url.split("#")[0];
