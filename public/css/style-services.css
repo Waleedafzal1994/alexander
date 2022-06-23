@@ -1495,7 +1495,8 @@ p {
 }
 
 .gallery-reaction {
-  bottom: 36px;
+  bottom: 20px;
+  left: -10px;
   position: relative;
 }
 
