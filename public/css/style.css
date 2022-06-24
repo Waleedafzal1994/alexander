@@ -2009,10 +2009,10 @@ span {
     background: #581c87;
 }
 .we-comet>li{
-    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+    /*background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 10px;*/
 }
 .post-comt-box textarea{
     background-color: transparent !important;

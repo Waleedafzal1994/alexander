@@ -958,6 +958,8 @@
 
         // load more comments
         $(document).on("click", "[id^='showmore_']", function(e) {
+
+
             e.preventDefault();
             let loadMoreTarget = e.target;
             let post_id = $(loadMoreTarget).attr("data-comment-post-id");
@@ -977,7 +979,9 @@
                 },
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
+                        // console.log(response.data);
                         $(".comment-section_" + post_id).last().after(response.data);
+                        // $(".comment-section_" + post_id).append(response.data);
                         $(loadMoreTarget).attr("data-comment-load_page", response.page)
                         if (response.last_page === true) {
                             $("#showmore_" + post_id).hide();
@@ -985,7 +989,7 @@
                     }
                 },
                 error: function(XMLHttpRequest) {
-                    Swal.fire('An error occured while attempting this action.');
+                    $.notify('An error occured while attempting this action.','error');
                 }
             });
         });
@@ -1010,6 +1014,7 @@
                 },
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
+                        console.log(response.data);
                         $(".post-item-box").last().after(response.data);
                         $(loadMoreTargetPost).attr("data-post-load_page", response.page)
                         if (response.last_page === true) {
