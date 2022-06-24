@@ -1,6 +1,6 @@
 @foreach ($posts as $post)
 @if (!empty($post))
-<div class="central-meta item  shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
+<div class="central-meta item shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">
@@ -47,7 +47,7 @@
                             </div>
 
                             <!-- New Design -->
-                            <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                            <!-- <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                                     <li data-target="#carousel-1" data-slide-to="1"></li>
@@ -72,7 +72,7 @@
                                     <i class="fa-solid fa-location-arrow next-icon"></i>
                                     <span class="sr-only">Next</span>
                                 </a>
-                            </div>
+                            </div> -->
 
                             <!-- New Design -->
 
@@ -86,8 +86,43 @@
                                     </p>
                                 </div>
                                 <div class="row">
-                                    <p> {!! $post->imageContentHtml() !!}
-                                    </p>
+                                    @php $images = $post->imageContentHtml() @endphp
+                                    @if(!empty($images) && $images->count()>0)
+                                     <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            @if(!empty($images))
+                                                @php $i=0; @endphp
+                                                @foreach ($images as $value)
+                                                    <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i++}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                                @endforeach
+                                            @endif
+                                            
+                                        </ol>
+                                        <div class="carousel-inner">
+
+                                            @if(!empty($images))
+                                                @php $i=0; @endphp
+                                                @foreach ($images as $value) 
+
+                                                    <div class="carousel-item {{$i == 0 ? 'active' :''}}">
+                                                        <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
+                                                    </div>
+
+                                                @endforeach
+                                            @endif
+                                            
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                    @endif
+                                   
                                 </div>
                                 <div class="we-video-info">
                                     <ul>
@@ -168,6 +203,7 @@
 @endforeach
 <!-- more post data -->
 <div class="post-item-box"></div>
+
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

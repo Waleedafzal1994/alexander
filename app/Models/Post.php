@@ -171,8 +171,12 @@ class Post extends BaseModel
 
     public function imageContentHtml()
     {
-        $images = $this->images;
+        return $images = $this->images;
+        // echo "<pre>";
+        //  print_r($images);
+        // die();
         $count = $images->count();
+
         $content = "";
         if (!empty($images)) {
             $content .=  '<div id="fullsizeimg" style="position: relative;" class="lightbox lightbox-user-gallery">';
@@ -188,6 +192,26 @@ class Post extends BaseModel
         }
         return $content;
     }
+    
+    // public function imageContentHtml()
+    // {
+    //     $images = $this->images;
+    //     $count = $images->count();
+    //     $content = "";
+    //     if (!empty($images)) {
+    //         $content .=  '<div id="fullsizeimg" style="position: relative;" class="lightbox lightbox-user-gallery">';
+    //         $content .=  '<div class="row wo_adaptive_media mx-0 px-3">';
+    //         foreach ($images as $value) {
+    //             $content .= '<div class="album-image ' . $this->selectClassImage($count) . '">';
+    //             $content .= '<img src="' . $value->file_name . '" alt="' . $value->name . '" class="image-file pointer">';
+    //             $content .= '</div>';
+    //             $content .= '<div class="clear"></div>';
+    //         }
+    //         $content .=  '</div>';
+    //         $content .=  '</div>';
+    //     }
+    //     return $content;
+    // }
 
     public function selectClassImage($count)
     {
