@@ -25,8 +25,8 @@ class SellerController extends Controller
     //
     public function index()
     {
-        $myServicesCount = Service::where('user_id', Auth::id())->get()->count();
-        $totalOrders = DB::table('orders')->leftJoin('services', 'orders.service_id', '=', 'services.id')->where('orders.seller_id', Auth::id())->get()->count();
+        $myServicesCount = shortNumber(Service::where('user_id', Auth::id())->get()->count());
+        $totalOrders = shortNumber(DB::table('orders')->leftJoin('services', 'orders.service_id', '=', 'services.id')->where('orders.seller_id', Auth::id())->get()->count());
         $totalEarnings = DB::table('orders')->leftJoin('services', 'orders.service_id', '=', 'services.id')->whereIn('orders.status', [1, 4])->where('orders.seller_id', Auth::id())->sum('orders.price');
 
         $earnings = array();

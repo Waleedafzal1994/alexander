@@ -28,8 +28,8 @@ class FollowerController extends Controller
 	        $followers = Follower::where(array('user_id'=>$request->following_id,'follower_id'=>$follower_id))->delete();
 	        if (!empty($followers)) 
 	        {
-	        	$totalFollowers = Follower::where('user_id', $user_id)->count();
-				$totalfollowing = Follower::where('follower_id', $user_id)->count();
+	        	$totalFollowers = shortNumber(Follower::where('user_id', $user_id)->count());
+				$totalfollowing = shortNumber(Follower::where('follower_id', $user_id)->count());
 				$data['followersList'] = $this->Follower->getAllFollowers($user_id);
 				// echo $user_id;
 				// print_r($data);die;
@@ -59,8 +59,8 @@ class FollowerController extends Controller
 	        	$follow->follower_id = $follower_id;
 	        	$follow->save();
 
-	        	$totalFollowers = Follower::where('user_id', $user_id)->count();
-				$totalfollowing = Follower::where('follower_id', $user_id)->count();
+	        	$totalFollowers = shortNumber(Follower::where('user_id', $user_id)->count());
+				$totalfollowing = shortNumber(Follower::where('follower_id', $user_id)->count());
 				$data['followersList'] = $this->Follower->getAllFollowers($user_id);
 				$data['followingList'] = $this->Follower->getAllFollowing($user_id);
 

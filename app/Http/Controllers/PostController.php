@@ -237,7 +237,7 @@ class PostController extends Controller
             $data = [
                 'message' => $msg,
                 "liked" => $likeModel->state_id,
-                'likes_count' => $likeModel->number_format_short($model->likes->count()),
+                'likes_count' => shortNumber($likeModel->number_format_short($model->likes->count())),
             ];
             if ($request->type == 'post') {
                 $data['liked_html'] = $model->postLikedUserNames();
@@ -283,7 +283,7 @@ class PostController extends Controller
         return $this->success(
             [
                 "data" => Post::commentHtml($comment, $model),
-                'count' => $model->number_format_short($model->comments->count()),
+                'count' => shortNumber($model->number_format_short($model->comments->count())),
             ]
         );
         // } catch (\Illuminate\Database\QueryException $exception) {
