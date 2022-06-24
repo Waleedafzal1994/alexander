@@ -189,6 +189,8 @@ style="color:white; display:flex; justify-content:center; ">
 
 @if (isset($popular) && count($popular) > 0)
 @push('scripts')
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
     $('.carousel').slick({
         slidesToShow: 3,

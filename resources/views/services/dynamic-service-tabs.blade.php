@@ -24,7 +24,7 @@
                 </div>
                 <div class="served ml-3">
                     <button class="new-btn bg-purple-gradient text-white border-0 py-3 br-10 h-40 number-row-card">
-                        <i class="fas fa-star"></i> 5.0 . 1258 Served
+                        <i class="fas fa-star"></i> 5.0 <span class="dot"> . </span> 1258 Served
                     </button>
                 </div>
             </div>
