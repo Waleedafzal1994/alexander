@@ -1,6 +1,6 @@
 @foreach ($posts as $post)
 @if (!empty($post))
-<div class="central-meta item post-item-box shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
+<div class="central-meta item  shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">
@@ -166,6 +166,8 @@
 </div>
 @endif
 @endforeach
+<!-- more post data -->
+<div class="post-item-box"></div>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
