@@ -675,11 +675,14 @@
 
 
         /** Post a Comment **/
-        jQuery(".post-comt-box textarea").on("keydown", function(event) {
-            if (event.keyCode == 13) {
+
+        jQuery(".post-comt-box form").on("submit", function(event) {
+                
+                
                 event.preventDefault();
-                let comment = jQuery(this).val();
+                let comment = jQuery(this).find('textarea').val();
                 let post_id = jQuery(this).attr("data-post-id");
+
                 if (!post_id) {
                     return false;
                 }
@@ -692,28 +695,70 @@
                 $.ajax({
                     type: 'POST',
                     url: "/post/comment",
-                    data: $('#' + event.target.form.id).serialize(),
+                    data: $('#' + jQuery(this).attr("id")).serialize(),
                     success: function(response) {
                         if (response.status === true && response.code === 200) {
                             let parent = jQuery("#post-comment_form_" + post_id).parent(
                                 "li");
                             let comment_HTML = response.data;
-                            $("#comment-box_" + post_id).prepend(comment_HTML);
+                            // $("#comment-box_" + post_id).prepend(comment_HTML);
+
+                            $("#append_comment_" + post_id).append(comment_HTML);
                             // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
                             $("#commentable_content_" + post_id).val("");
                             $("#comment_post_count_" + post_id).text(response.count);
                         }
                     },
+                        
                     error: function(data) {
-                        data?.responseJSON?.error?.error ? Swal.fire(data.responseJSON.error
-                            .error) : ""
-                        data?.responseJSON?.message ? Swal.fire(data.responseJSON.message) :
+                        data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                            .error, "error") : ""
+                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
                             ""
-                        jQuery(this).val(' ');
+                        jQuery(this).find('textarea').val(' ');
                     }
                 });
-            }
+           
         });
+        // jQuery(".post-comt-box textarea").on("keydown", function(event) {
+        //     if (event.keyCode == 13) {
+        //         event.preventDefault();
+        //         let comment = jQuery(this).val();
+        //         let post_id = jQuery(this).attr("data-post-id");
+        //         if (!post_id) {
+        //             return false;
+        //         }
+
+        //         $.ajaxSetup({
+        //             headers: {
+        //                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //             }
+        //         });
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: "/post/comment",
+        //             data: $('#' + event.target.form.id).serialize(),
+        //             success: function(response) {
+        //                 if (response.status === true && response.code === 200) {
+        //                     let parent = jQuery("#post-comment_form_" + post_id).parent(
+        //                         "li");
+        //                     let comment_HTML = response.data;
+        //                     $("#comment-box_" + post_id).prepend(comment_HTML);
+        //                     // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
+        //                     $("#commentable_content_" + post_id).val("");
+        //                     $("#comment_post_count_" + post_id).text(response.count);
+        //                 }
+        //             },
+        //             error: function(data) {
+        //                 data?.responseJSON?.error?.error ? Swal.fire(data.responseJSON.error
+        //                     .error) : ""
+        //                 data?.responseJSON?.message ? Swal.fire(data.responseJSON.message) :
+        //                     ""
+        //                 jQuery(this).val(' ');
+        //             }
+        //         });
+        //     }
+        // });
     });
 </script>
 <script type="text/javascript">

@@ -1869,10 +1869,11 @@ a.underline:hover:before,
 }
 
 .post-comt-box form button {
-  bottom: 2px;
-  position: absolute;
-  right: 0;
-  background: none;
+  /*bottom: 2px;*/
+  /*position: absolute;*/
+  /*right: 0;*/
+  /*background: none;*/
+  margin-top: 5px;
 }
 
 form button {

@@ -46,8 +46,38 @@
                                 @endif
                             </div>
 
+                            <!-- New Design -->
+                            <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                                    <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                                    <i class="fa-solid fa-location-arrow next-icon"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <!-- New Design -->
+
                             <!-- This section is for pictures & comment-section and also dynamic -->
-                            <!-- <div class="post-meta mt-3">
+                            <div class="post-meta mt-3">
                                 <div class="description">
                                     <p class="text-black">{!! $post->content !!}</p>
                                 </div>
@@ -93,6 +123,9 @@
                             <div class="coment-area ">
                                 <ul class="we-comet" id="comment-box_{{ $post->id }}">
                                     {!! $post->commentByUsers() !!}
+                                    
+                                    <span id="append_comment_{{ $post->id }}"></span>
+
                                     @if ($post->comments_count > 3)
                                     <li>
                                         <a href="#" title="" class="showmore underline" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
@@ -107,67 +140,23 @@
                                             </div>
                                             <div class="post-comt-box">
                                                 <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
+                                                    
                                                     <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                     <textarea name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
-                                                    {{-- <div class="add-smiles">
-                                                            <div class="uploadimage">
-                                                                <i class="fa fa-image"></i>
-                                                                <label class="fileContainer">
-                                                                    <input type="file">
-                                                                </label>
-                                                            </div>
-                                                            <span class="em em-expressionless"
-                                                                title="add icon"></span>
-                                                            <div class="smiles-bunch">
-                                                                <i class="em em---1"></i>
-                                                                <i class="em em-smiley"></i>
-                                                                <i class="em em-anguished"></i>
-                                                                <i class="em em-laughing"></i>
-                                                                <i class="em em-angry"></i>
-                                                                <i class="em em-astonished"></i>
-                                                                <i class="em em-blush"></i>
-                                                                <i class="em em-disappointed"></i>
-                                                                <i class="em em-worried"></i>
-                                                                <i class="em em-kissing_heart"></i>
-                                                                <i class="em em-rage"></i>
-                                                                <i class="em em-stuck_out_tongue"></i>
-                                                            </div>
-                                                    </div> --}}
 
-                                                    {{-- <button type="submit"></button> --}}
+
+                                                    <!-- <button class="btn btn-primary"  type="buton">Post</button> -->
+                                                    <input type="submit" class="btn btn-primary" name="" value="Post Comment">
+
+                                                     
                                                 </form>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-                            </div> -->
-
-                            <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-1" data-slide-to="1"></li>
-                                    <li data-target="#carousel-1" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
-                                    <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
-                                    <i class="fa-solid fa-location-arrow next-icon"></i>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             </div>
+
+                            
                         </div>
                     </div>
                 </div>
