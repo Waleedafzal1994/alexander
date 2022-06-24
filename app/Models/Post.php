@@ -159,9 +159,9 @@ class Post extends BaseModel
         if ($value->userliked()) {
             $content .= ' active-heart';
         }
-        $content .= '" data-comment-post-id="' . $value->id . '" data-comment-reaction-id="' . $value->likedPost() . '">';
+        $content .= '" data-comment-post-id="' . $value->id . '" data-comment-reaction-id="' . shortNumber($value->likedPost()) . '">';
         $content .= ' <i class="fa fa-heart"></i>';
-        $content .= ' <span id="liked_comment_count_' . $value->id . '"> ' . $value->likes_count . '</span>';
+        $content .= ' <span id="liked_comment_count_' . $value->id . '"> ' . shortNumber($value->likes_count) . '</span>';
         $content .= '</span>';
         $content .= '</div>';
         $content .= '</div>';

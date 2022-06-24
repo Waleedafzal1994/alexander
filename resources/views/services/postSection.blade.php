@@ -79,7 +79,7 @@
                             <!-- This section is for pictures & comment-section and also dynamic -->
                             <div class="post-meta mt-3">
                                 <div class="description">
-                                    <p class="text-black">{!! $post->content !!}</p>
+                                    <!-- <p class="text-black">{!! $post->content !!}</p> -->
                                 </div>
                                 <div class="row">
                                     <p> {!! $post->videoContentHtml() !!}
@@ -100,13 +100,13 @@
                                         <li>
                                             <div class="likes heart post-reaction {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
                                                 <i class="fas fa-heart"></i>
-                                                <span class="liked_post_count">{{ $post->likes_count }}</span>
+                                                <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
                                             </div>
                                         </li>
                                         <li>
                                             <span class="comment" title="Comments">
                                                 <i class="fa fa-commenting"></i>
-                                                <ins id="comment_post_count_{{ $post->id }}">{{ $post->comments_count }}</ins>
+                                                <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
                                             </span>
                                         </li>
 

@@ -103,8 +103,8 @@
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
-                        <div class="badge badge-primary my-5 p-3 text-uppercase">1000 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 1000 XP Gained !</div>
+                        <div class="badge badge-primary my-5 p-3 text-uppercase">1k Orders Completed</div>
+                        <div class="gained font-weight-bold">+ 1k XP Gained !</div>
                     </div>
                 </div>
                 @endif
