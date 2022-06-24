@@ -11,7 +11,7 @@
                         <div class="d-flex flex-column w-100">
                             <div class="d-flex align-items-center justify-content-between mt-3">
                                 <div class="d-flex align-items-center">
-                                    <span class="mr-3 font-weight-bold review-profile-heading"><a href="time-line.html" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
+                                    <span class="mr-3 font-weight-bold review-profile-heading"><a href="javascrip:void(0);" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
                                         {{-- share <a href="#" title="">link</a> --}}
                                     </span>
                                     <span class="text-black">
@@ -206,6 +206,9 @@
 @endif
 @endforeach
 <!-- more post data -->
+<div class="loader d-none">
+    <img src="/imgs/loader.gif">
+</div>
 <div class="post-item-box"></div>
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>

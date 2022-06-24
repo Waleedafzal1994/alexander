@@ -604,24 +604,99 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
 
 <script>
+
     jQuery(document).ready(function($) {
+
+
         // $("#back_to_top").css("display", "none");
         // Scroll Button Functionality Start Here 
-        const btnScrollToTop = document.querySelector("#back_to_top");
+        // const btnScrollToTop = document.querySelector("#back_to_top");
 
-        // scroll to top of page when button clicked
-        btnScrollToTop.addEventListener("click", e => {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
+        // // scroll to top of page when button clicked
+        // btnScrollToTop.addEventListener("click", e => {
+        //     window.scrollTo({
+        //         top: 0,
+        //         left: 0,
+        //         behavior: "smooth"
+        //     });
+        // });
+
+        // // toggle 'scroll to top' based on scroll position
+        // window.addEventListener('scroll', e => {
+        //     btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
+        // });
+
+
+        //On scroll Down load post//
+        $(window).scroll(function(){
+            // alert();
+            var position = $(window).scrollTop();
+            var bottom = $(document).height() - $(window).height();
+
+            if( position == bottom ){
+              loadMorePost();
+              
+            }
+            
+
+        });
+
+        // load more posts
+        $(document).on("click", '.showmore-posts', function(e) {
+
+            // alert($(".post-item-box").last().attr('id'));
+            e.preventDefault();
+             // $(".post-item-box").last().html('<p>this is for testing</p>');
+            
+
+             loadMorePost();
+
+        });
+
+        function loadMorePost()
+        {
+            // let loadMoreTargetPost = $('.showmore-posts');
+            let page =  $('.showmore-posts').attr('data-post-load_page');
+            let service =  $('.showmore-posts').attr('data-post-service');
+            if (!page && !service) return false;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
             });
-        });
-
-        // toggle 'scroll to top' based on scroll position
-        window.addEventListener('scroll', e => {
-            btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
-        });
+            $.ajax({
+                method: 'post',
+                url: `/posts/load`,
+                data: {
+                    page,
+                    service
+                },
+                beforeSend:function(){
+                    $('.loader').show();
+                },
+                completed:function(){
+                    $('.loader').hide();
+                },
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+                        // console.log($(".post-item-box").last());
+                        // alert( $(".post-item-box").last().length);
+                        
+                        // $("#post-item-box-9").last().after(response.data);working
+                        // post-item-box
+                        $(".post-item-box").after(response.data);
+                        // $(".post-item-box").last().after(response.data);
+                         $('.showmore-posts').attr("data-post-load_page", response.page)
+                        if (response.last_page === true) {
+                            $(".showmore-posts").hide();
+                        }
+                    }
+                },
+                error: function(XMLHttpRequest) {
+                    Swal.fire('An error occured while attempting this action.');
+                }
+            });
+        }
 
 
         // Scroll Button Functionality End Here
@@ -759,6 +834,70 @@
         //         });
         //     }
         // });
+
+         $('#add-blog-post-form').submit(function(e) {
+
+            e.preventDefault();
+            let i = 1;
+            $("#create-post-btn").attr('disabled', true);
+            $("#create-post-btn").text("Posting");
+            let formDataAddPost = new FormData($('#add-blog-post-form')[0]);
+            console.log(...formDataAddPost);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                beforeSend: function() {
+                    $('.add-post-progress-bar').html(
+                        '<div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>'
+                    );
+                    setTimeout(function() {
+                        $('.progress-bar').animate({
+                            width: i + "%"
+                        }, 100);
+                    }, 10);
+                    i = i + Math.floor(Math.random() * 100);
+                },
+                type: 'POST',
+                url: "/create/post",
+                data: formDataAddPost,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: (data) => {
+                    console.log("success", data);
+                    $('.progress-bar').addClass("bg-success")
+                    $('.progress-bar').animate({
+                        width: "100%",
+                    }, 1);
+                    $("#create-post-btn").attr('disabled', false);
+                    $("#create-post-btn").text("Post");
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                },
+                error: function(data) {
+                    console.log("error", data);
+                    $('.progress-bar').addClass("bg-danger")
+                    $('.progress-bar').animate({
+                        width: "100%"
+                    }, 1);
+                    $("#create-post-btn").attr('disabled', false);
+                    $("#create-post-btn").text("Post");
+                    
+                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                            .error, "error") : ""
+                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                            ""
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                }
+            });
+            // this.submit();
+        });
     });
 </script>
 <script type="text/javascript">
@@ -895,69 +1034,7 @@
         //         return false;
         //     }
         // });
-        $('#add-blog-post-form').submit(function(e) {
-
-            e.preventDefault();
-            let i = 1;
-            $("#create-post-btn").attr('disabled', true);
-            $("#create-post-btn").text("Posting");
-            let formDataAddPost = new FormData($('#add-blog-post-form')[0]);
-            console.log(...formDataAddPost);
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                beforeSend: function() {
-                    $('.add-post-progress-bar').html(
-                        '<div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>'
-                    );
-                    setTimeout(function() {
-                        $('.progress-bar').animate({
-                            width: i + "%"
-                        }, 100);
-                    }, 10);
-                    i = i + Math.floor(Math.random() * 100);
-                },
-                type: 'POST',
-                url: "/create/post",
-                data: formDataAddPost,
-                cache: false,
-                processData: false,
-                contentType: false,
-                success: (data) => {
-                    console.log("success", data);
-                    $('.progress-bar').addClass("bg-success")
-                    $('.progress-bar').animate({
-                        width: "100%",
-                    }, 1);
-                    $("#create-post-btn").attr('disabled', false);
-                    $("#create-post-btn").text("Post");
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 1000);
-                },
-                error: function(data) {
-                    console.log("error", data);
-                    $('.progress-bar').addClass("bg-danger")
-                    $('.progress-bar').animate({
-                        width: "100%"
-                    }, 1);
-                    $("#create-post-btn").attr('disabled', false);
-                    $("#create-post-btn").text("Post");
-                    
-                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
-                            .error, "error") : ""
-                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
-                            ""
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 1000);
-                }
-            });
-            // this.submit();
-        });
+       
 
         // load more comments
         $(document).on("click", "[id^='showmore_']", function(e) {
@@ -996,70 +1073,7 @@
                 }
             });
         });
-        //On scroll Down load post//
-        $(window).scroll(function(){
-
-            var position = $(window).scrollTop();
-            var bottom = $(document).height() - $(window).height();
-
-            if( position == bottom ){
-              loadMorePost();
-              //alert(); 
-            }
-            
-
-        });
-
-        // load more posts
-        $(document).on("click", '.showmore-posts', function(e) {
-
-            // alert($(".post-item-box").last().attr('id'));
-            e.preventDefault();
-             // $(".post-item-box").last().html('<p>this is for testing</p>');
-            
-
-             loadMorePost();
-
-        });
-
-        function loadMorePost()
-        {
-            // let loadMoreTargetPost = $('.showmore-posts');
-            let page =  $('.showmore-posts').attr('data-post-load_page');
-            let service =  $('.showmore-posts').attr('data-post-service');
-            if (!page && !service) return false;
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                method: 'post',
-                url: `/posts/load`,
-                data: {
-                    page,
-                    service
-                },
-                success: function(response) {
-                    if (response.status === true && response.code === 200) {
-                        // console.log($(".post-item-box").last());
-                        // alert( $(".post-item-box").last().length);
-                        
-                        // $("#post-item-box-9").last().after(response.data);working
-                        // post-item-box
-                        $(".post-item-box").after(response.data);
-                        // $(".post-item-box").last().after(response.data);
-                         $('.showmore-posts').attr("data-post-load_page", response.page)
-                        if (response.last_page === true) {
-                            $(".showmore-posts").hide();
-                        }
-                    }
-                },
-                error: function(XMLHttpRequest) {
-                    Swal.fire('An error occured while attempting this action.');
-                }
-            });
-        }
+        
         // validate if description has links it should be youtube links only
 
         let regexYoutubeURl = new RegExp(
