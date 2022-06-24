@@ -1,3 +1,6 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 @foreach ($posts as $post)
 @if (!empty($post))
 <div class="central-meta item shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
@@ -88,12 +91,13 @@
                                 <div class="row">
                                     @php $images = $post->imageContentHtml() @endphp
                                     @if(!empty($images) && $images->count()>0)
-                                     <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                     <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
                                         <ol class="carousel-indicators">
                                             @if(!empty($images))
                                                 @php $i=0; @endphp
                                                 @foreach ($images as $value)
-                                                    <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i++}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                                    <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                                    @php $i++ @endphp
                                                 @endforeach
                                             @endif
                                             
@@ -107,7 +111,7 @@
                                                     <div class="carousel-item {{$i == 0 ? 'active' :''}}">
                                                         <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
                                                     </div>
-
+                                                        @php $i++ @endphp
                                                 @endforeach
                                             @endif
                                             
@@ -199,14 +203,45 @@
         </div>
     </div>
 </div>
+
+<!-- <script>
+$(document).ready(function(){
+  // When strating hide prev arrow
+  $('.carousel-control-prev').hide();
+});
+
+
+var post_id ='{{$post->id}}';
+alert(post_id);
+$('#carousel-'+post_id).on('slide.bs.carousel', function (e) {
+
+  var slidingItemsAsIndex = $('.carousel-item').length - 1;
+
+  // If last item hide next arrow
+  if($(e.relatedTarget).index() == slidingItemsAsIndex ){
+      $('.carousel-control-next').hide();
+  }
+  else{
+      $('.carousel-control-next').show();
+  }
+
+  // If first item hide prev arrow
+  if($(e.relatedTarget).index() == 0){
+      $('.carousel-control-prev').hide();
+    }
+  else{
+      $('.carousel-control-prev').show();
+    }
+
+})
+</script> -->
+
 @endif
 @endforeach
 <!-- more post data -->
 <div class="post-item-box"></div>
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <script>
 $(document).ready(function(){
   // When strating hide prev arrow
@@ -214,8 +249,9 @@ $(document).ready(function(){
 });
 
 
-
-$('#carousel-1').on('slide.bs.carousel', function (e) {
+var post_id ='{{$post->id}}';
+// alert(post_id);
+$('.post-carousel').on('slide.bs.carousel', function (e) {
 
   var slidingItemsAsIndex = $('.carousel-item').length - 1;
 
