@@ -300,7 +300,7 @@
         <div class="profile-info-counters">
             <div class="social">
                 <div class="item activeTimeline">
-                    <div class="count">16</div>
+                    <div class="count">{{$service->post_count}}</div>
                     <div class="socialName">Posts</div>
                 </div>
                 <div class="item activeFollowers">
@@ -995,7 +995,10 @@
         });
         // load more posts
         $(document).on("click", '.showmore-posts', function(e) {
+
+            // alert($(".post-item-box").last().attr('id'));
             e.preventDefault();
+             // $(".post-item-box").last().html('<p>this is for testing</p>');
             let loadMoreTargetPost = e.target;
             let page = $(loadMoreTargetPost).attr('data-post-load_page');
             let service = $(loadMoreTargetPost).attr('data-post-service');
@@ -1014,8 +1017,13 @@
                 },
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
-                        console.log(response.data);
-                        $(".post-item-box").last().after(response.data);
+                        // console.log($(".post-item-box").last());
+                        // alert( $(".post-item-box").last().length);
+                        
+                        // $("#post-item-box-9").last().after(response.data);working
+                        // post-item-box
+                        $(".post-item-box").after(response.data);
+                        // $(".post-item-box").last().after(response.data);
                         $(loadMoreTargetPost).attr("data-post-load_page", response.page)
                         if (response.last_page === true) {
                             $(".showmore-posts").hide();

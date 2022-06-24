@@ -49,6 +49,7 @@
                         <!-- END: Create post -->
                         @if ($service->post_count > 0)
                             <div class="loadMore post-box">
+                                <!-- {{$service->post_count}} -->
                                 @include('services.postSection', [
                                     'posts' => $service->posts->skip(0)->take(5),
                                 ])
