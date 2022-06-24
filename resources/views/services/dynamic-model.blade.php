@@ -28,8 +28,8 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1" id="lists_li">
                             <div class="scroll-div">
 
-                            @if(!empty($all_remaining_services))
-                            @foreach($all_remaining_services as $r_service)
+                                @if(!empty($all_remaining_services))
+                                @foreach($all_remaining_services as $r_service)
                                 <li role="presentation" class='{{ ($service->id == $r_service->id) ? "active" : ""}}' id="{{$r_service->id}}" onclick="singleServiceForSelect(this,this.id)">
                                     <a role="menuitem" tabindex="-1" id="{{$r_service->id}}">
                                         <div class="game-title">{{$r_service->name}}</div>
@@ -43,7 +43,7 @@
                                 </li>
                                 @endforeach
                                 @endif
-   
+
                             </div>
                         </ul>
                     </div>
@@ -114,12 +114,18 @@
 </div>
 
 <script type="text/javascript">
+    $(document).ready(function() {
+        var count = 1;
+        var total = 0;
+        var total_price = document.getElementById('totalPrice').innerHTML;
+        if (count == 1) {
+            $(".minus").css("pointer-events", "none");
+        }
+    });
+
     $(".close").click(function() {
         $("#exampleModal").modal('hide');
     });
-
-    $(document).ready(function() {})
-
 
     $('.dropdown').on('show.bs.dropdown', function(e) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
@@ -133,56 +139,42 @@
     var total = 0;
     var total_price = document.getElementById('totalPrice').innerHTML;
     $('#quantity').text(count);
-    // console.log(total_price);
     $('.minus').click(function() {
-        var $input = $(this).parent().find('input');
-        count = parseInt($input.val()) - 1;
-        count = count < 1 ? 1 : count;
-        $input.val(count);
-        $input.change();
-        console.log(count, 'minus');
-        // Minus total value
-        total = count * parseFloat(total_price);
-        $('#totalPrice').text(total);
-        $('#sub-total').text(total);
-        $('#quantity').text(count);
-        // console.log(total_price);
-        $('.minus').click(function() {
+        if (count == 1) {
+            $(".minus").css("pointer-events", "none");
+        } else {
             var $input = $(this).parent().find('input');
             count = parseInt($input.val()) - 1;
             count = count < 1 ? 1 : count;
             $input.val(count);
             $input.change();
-            console.log(count, 'minus');
             // Minus total value
             total = count * parseFloat(total_price);
-            $('#totalPrice').text(total);
-            $('#sub-total').text(total);
+            $('#totalPrice').text(total.toFixed(2));
+            $('#sub-total').text(total.toFixed(2));
             $('#quantity').text(count);
-            console.log(total);
             // End Here
             return false;
-        });
-        $('.plus').click(function() {
-            var $input = $(this).parent().find('input');
-            count = parseInt($input.val()) + 1;
-            console.log(count);
-            total = count * parseFloat(total_price);
-            $('#totalPrice').text(total);
-            $('#sub-total').text(total);
-            $('#quantity').text(count);
-            console.log(total);
-            // console.log($input.val(parseInt($input.val()) + 1))
-            $input.val(parseInt($input.val()) + 1);
-            $input.change();
-            return false;
-        });
-
-
-
+        }
+    });
+    $('.plus').click(function() {
+        $(".minus").css("pointer-events", "auto");
+        var $input = $(this).parent().find('input');
+        count = parseInt($input.val()) + 1;
+        total = count * parseFloat(total_price);
+        $('#totalPrice').text(total.toFixed(2));
+        $('#sub-total').text(total.toFixed(2));
+        $('#quantity').text(count);
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
     });
 
-    function singleServiceForSelect(obj,id){
+
+
+    // });
+
+    function singleServiceForSelect(obj, id) {
 
         // var id = $(obj).id;
         // alert(id);
@@ -204,7 +196,7 @@
                 $('li').removeClass('active');
                 $(obj).addClass('active');
                 $('#drop_down_select').text(response.name);
-                $('#selected_drop_down_price').text(response.price+'/'+response.service_duration_type);
+                $('#selected_drop_down_price').text(response.price + '/' + response.service_duration_type);
                 $('input[name="unit-input"]').val(1)
                 $('#totalPrice').text(response.price);
                 $('#sub-total').text(response.price);
@@ -213,5 +205,4 @@
             }
         });
     }
-
 </script>
