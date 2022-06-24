@@ -896,6 +896,7 @@
         //     }
         // });
         $('#add-blog-post-form').submit(function(e) {
+
             e.preventDefault();
             let i = 1;
             $("#create-post-btn").attr('disabled', true);
@@ -945,9 +946,11 @@
                     }, 1);
                     $("#create-post-btn").attr('disabled', false);
                     $("#create-post-btn").text("Post");
-                    data?.responseJSON?.error?.error ? Swal.fire(data.responseJSON.error
-                        .error) : ""
-                    data?.responseJSON?.message ? Swal.fire(data.responseJSON.message) : ""
+                    
+                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                            .error, "error") : ""
+                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                            ""
                     setTimeout(function() {
                         window.location.reload();
                     }, 1000);
