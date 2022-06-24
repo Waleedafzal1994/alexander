@@ -996,15 +996,37 @@
                 }
             });
         });
+        //On scroll Down load post//
+        $(window).scroll(function(){
+
+            var position = $(window).scrollTop();
+            var bottom = $(document).height() - $(window).height();
+
+            if( position == bottom ){
+              loadMorePost();
+              //alert(); 
+            }
+            
+
+        });
+
         // load more posts
         $(document).on("click", '.showmore-posts', function(e) {
 
             // alert($(".post-item-box").last().attr('id'));
             e.preventDefault();
              // $(".post-item-box").last().html('<p>this is for testing</p>');
-            let loadMoreTargetPost = e.target;
-            let page = $(loadMoreTargetPost).attr('data-post-load_page');
-            let service = $(loadMoreTargetPost).attr('data-post-service');
+            
+
+             loadMorePost();
+
+        });
+
+        function loadMorePost()
+        {
+            // let loadMoreTargetPost = $('.showmore-posts');
+            let page =  $('.showmore-posts').attr('data-post-load_page');
+            let service =  $('.showmore-posts').attr('data-post-service');
             if (!page && !service) return false;
             $.ajaxSetup({
                 headers: {
@@ -1027,7 +1049,7 @@
                         // post-item-box
                         $(".post-item-box").after(response.data);
                         // $(".post-item-box").last().after(response.data);
-                        $(loadMoreTargetPost).attr("data-post-load_page", response.page)
+                         $('.showmore-posts').attr("data-post-load_page", response.page)
                         if (response.last_page === true) {
                             $(".showmore-posts").hide();
                         }
@@ -1037,7 +1059,7 @@
                     Swal.fire('An error occured while attempting this action.');
                 }
             });
-        });
+        }
         // validate if description has links it should be youtube links only
 
         let regexYoutubeURl = new RegExp(
