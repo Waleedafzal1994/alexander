@@ -326,10 +326,10 @@
 
 
                         @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
-                        {{ 4 + $g_badge}}
-                        @else
-                        {{ 0 + $g_badge}}
-                        @endif 
+                                    {{ 4 + $g_badge}}
+                                    @else
+                                    {{ 0 + $g_badge}}
+                                    @endif
                     </div>
                     <div class="socialName">Badge</div>
                 </div>
@@ -604,28 +604,27 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
 
 <script>
-
     jQuery(document).ready(function($) {
 
 
-        // $("#back_to_top").css("display", "none");
+        $("#back_to_top").css("display", "none");
         // Scroll Button Functionality Start Here 
-        // const btnScrollToTop = document.querySelector("#back_to_top");
+        const btnScrollToTop = document.querySelector("#back_to_top");
 
         // // scroll to top of page when button clicked
-        // btnScrollToTop.addEventListener("click", e => {
-        //     window.scrollTo({
-        //         top: 0,
-        //         left: 0,
-        //         behavior: "smooth"
-        //     });
-        // });
+        btnScrollToTop.addEventListener("click", e => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        });
 
         // // toggle 'scroll to top' based on scroll position
-        // window.addEventListener('scroll', e => {
-        //     btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
-        // });
- 
+        window.addEventListener('scroll', e => {
+            btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
+        });
+
 
 
 
@@ -681,48 +680,48 @@
         /** Post a Comment **/
 
         jQuery(".post-comt-box form").on("submit", function(event) {
-                
-                
-                event.preventDefault();
-                let comment = jQuery(this).find('textarea').val();
-                let post_id = jQuery(this).attr("data-post-id");
 
-                if (!post_id) {
-                    return false;
+
+            event.preventDefault();
+            let comment = jQuery(this).find('textarea').val();
+            let post_id = jQuery(this).attr("data-post-id");
+
+            if (!post_id) {
+                return false;
+            }
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "/post/comment",
+                data: $('#' + jQuery(this).attr("id")).serialize(),
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+                        let parent = jQuery("#post-comment_form_" + post_id).parent(
+                            "li");
+                        let comment_HTML = response.data;
+                        // $("#comment-box_" + post_id).prepend(comment_HTML);
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        $("#append_comment_" + post_id).append(comment_HTML);
+                        // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
+                        $("#commentable_content_" + post_id).val("");
+                        $("#comment_post_count_" + post_id).text(response.count);
                     }
-                });
-                $.ajax({
-                    type: 'POST',
-                    url: "/post/comment",
-                    data: $('#' + jQuery(this).attr("id")).serialize(),
-                    success: function(response) {
-                        if (response.status === true && response.code === 200) {
-                            let parent = jQuery("#post-comment_form_" + post_id).parent(
-                                "li");
-                            let comment_HTML = response.data;
-                            // $("#comment-box_" + post_id).prepend(comment_HTML);
+                },
 
-                            $("#append_comment_" + post_id).append(comment_HTML);
-                            // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
-                            $("#commentable_content_" + post_id).val("");
-                            $("#comment_post_count_" + post_id).text(response.count);
-                        }
-                    },
-                        
-                    error: function(data) {
-                        data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
-                            .error, "error") : ""
-                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
-                            ""
-                        jQuery(this).find('textarea').val(' ');
-                    }
-                });
-           
+                error: function(data) {
+                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                        .error, "error") : ""
+                    data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                        ""
+                    jQuery(this).find('textarea').val(' ');
+                }
+            });
+
         });
         // jQuery(".post-comt-box textarea").on("keydown", function(event) {
         //     if (event.keyCode == 13) {
@@ -764,7 +763,7 @@
         //     }
         // });
 
-         $('#add-blog-post-form').submit(function(e) {
+        $('#add-blog-post-form').submit(function(e) {
 
             e.preventDefault();
             let i = 1;
@@ -815,11 +814,11 @@
                     }, 1);
                     $("#create-post-btn").attr('disabled', false);
                     $("#create-post-btn").text("Post");
-                    
+
                     data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
-                            .error, "error") : ""
-                        data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
-                            ""
+                        .error, "error") : ""
+                    data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                        ""
                     setTimeout(function() {
                         window.location.reload();
                     }, 1000);
@@ -965,7 +964,7 @@
         // });
 
 
-       
+
 
         // load more comments
         $(document).on("click", "[id^='showmore_']", function(e) {
@@ -988,10 +987,10 @@
                     'id': post_id,
                     'page': page
                 },
-                beforeSend:function(){
+                beforeSend: function() {
                     $('.comment-loader').show();
                 },
-                complete:function(){
+                complete: function() {
                     $('.comment-loader').hide();
                 },
                 success: function(response) {
@@ -1006,25 +1005,25 @@
                     }
                 },
                 error: function(XMLHttpRequest) {
-                    $.notify('An error occured while attempting this action.','error');
+                    $.notify('An error occured while attempting this action.', 'error');
                 }
             });
         });
 
-               //On scroll Down load post//
-        $(window).scroll(function(){
+        //On scroll Down load post//
+        $(window).scroll(function() {
             // alert();
             var position = $(window).scrollTop();
 
             var bottom = $(document).height() - $(window).height();
             bottom = parseInt(bottom) - parseInt(50);
-            console.log(position+'bottom'+bottom);
-            if( position >= bottom ){
-               
-              loadMorePost();
-              
+            console.log(position + 'bottom' + bottom);
+            if (position >= bottom) {
+
+                loadMorePost();
+
             }
-            
+
 
         });
 
@@ -1033,15 +1032,14 @@
 
             e.preventDefault();
 
-             loadMorePost();
+            loadMorePost();
 
         });
 
-        function loadMorePost()
-        {
+        function loadMorePost() {
 
-            let page =  $('.showmore-posts').attr('data-post-load_page');
-            let service =  $('.showmore-posts').attr('data-post-service');
+            let page = $('.showmore-posts').attr('data-post-load_page');
+            let service = $('.showmore-posts').attr('data-post-service');
             // alert(page+'service'+service);
             if (!page && !service) return false;
             $.ajaxSetup({
@@ -1064,10 +1062,10 @@
                 // },
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
-                       
+
                         $(".post-item-box").after(response.data);
                         // $(".post-item-box").last().after(response.data);
-                         $('.showmore-posts').attr("data-post-load_page", response.page);
+                        $('.showmore-posts').attr("data-post-load_page", response.page);
                         if (response.last_page === true) {
                             $(".showmore-posts").hide();
                         }
@@ -1079,7 +1077,7 @@
             });
         }
         // Scroll Button Functionality End Here
-        
+
         // validate if description has links it should be youtube links only
 
         let regexYoutubeURl = new RegExp(
@@ -1245,54 +1243,54 @@
         }
 
         $('.activeTimeline').on("click", function() {
-                //Active Tab//
-                $('#myTab a[href="#'+'profile'+'"]').tab("show");
-                //Change Url//
-                let c_tab = '#profile';
-                if (c_tab == "#home") {
-                    newUrl = url.split("#")[0];
-                } else {
-                    newUrl = url.split("#")[0] + c_tab;
-                }
-                newUrl += "/";
-                history.replaceState(null, null, newUrl);
-                setTimeout(() => {
-                    $(window).scrollTop(0);
-                }, 400);
+            //Active Tab//
+            $('#myTab a[href="#' + 'profile' + '"]').tab("show");
+            //Change Url//
+            let c_tab = '#profile';
+            if (c_tab == "#home") {
+                newUrl = url.split("#")[0];
+            } else {
+                newUrl = url.split("#")[0] + c_tab;
+            }
+            newUrl += "/";
+            history.replaceState(null, null, newUrl);
+            setTimeout(() => {
+                $(window).scrollTop(0);
+            }, 400);
         });
 
         $('.activeFollowers').on("click", function() {
-                //Active Tab//
-                $('#myTab a[href="#'+'followers'+'"]').tab("show");
-                //Change Url//
-                let c_tab = '#profile';
-                if (c_tab == "#home") {
-                    newUrl = url.split("#")[0];
-                } else {
-                    newUrl = url.split("#")[0] + c_tab;
-                }
-                newUrl += "/";
-                history.replaceState(null, null, newUrl);
-                setTimeout(() => {
-                    $(window).scrollTop(0);
-                }, 400);
+            //Active Tab//
+            $('#myTab a[href="#' + 'followers' + '"]').tab("show");
+            //Change Url//
+            let c_tab = '#profile';
+            if (c_tab == "#home") {
+                newUrl = url.split("#")[0];
+            } else {
+                newUrl = url.split("#")[0] + c_tab;
+            }
+            newUrl += "/";
+            history.replaceState(null, null, newUrl);
+            setTimeout(() => {
+                $(window).scrollTop(0);
+            }, 400);
         });
 
         $('.activeBadge').on("click", function() {
-                //Active Tab//
-                $('#myTab a[href="#'+'badges'+'"]').tab("show");
-                //Change Url//
-                let c_tab = '#profile';
-                if (c_tab == "#home") {
-                    newUrl = url.split("#")[0];
-                } else {
-                    newUrl = url.split("#")[0] + c_tab;
-                }
-                newUrl += "/";
-                history.replaceState(null, null, newUrl);
-                setTimeout(() => {
-                    $(window).scrollTop(0);
-                }, 400);
+            //Active Tab//
+            $('#myTab a[href="#' + 'badges' + '"]').tab("show");
+            //Change Url//
+            let c_tab = '#profile';
+            if (c_tab == "#home") {
+                newUrl = url.split("#")[0];
+            } else {
+                newUrl = url.split("#")[0] + c_tab;
+            }
+            newUrl += "/";
+            history.replaceState(null, null, newUrl);
+            setTimeout(() => {
+                $(window).scrollTop(0);
+            }, 400);
         });
 
 
