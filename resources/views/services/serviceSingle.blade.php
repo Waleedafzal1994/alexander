@@ -625,81 +625,10 @@
         // window.addEventListener('scroll', e => {
         //     btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
         // });
+ 
 
 
-        //On scroll Down load post//
-        $(window).scroll(function(){
-            // alert();
-            var position = $(window).scrollTop();
-            var bottom = $(document).height() - $(window).height();
 
-            if( position == bottom ){
-              loadMorePost();
-              
-            }
-            
-
-        });
-
-        // load more posts
-        $(document).on("click", '.showmore-posts', function(e) {
-
-            // alert($(".post-item-box").last().attr('id'));
-            e.preventDefault();
-             // $(".post-item-box").last().html('<p>this is for testing</p>');
-            
-
-             loadMorePost();
-
-        });
-
-        function loadMorePost()
-        {
-            // let loadMoreTargetPost = $('.showmore-posts');
-            let page =  $('.showmore-posts').attr('data-post-load_page');
-            let service =  $('.showmore-posts').attr('data-post-service');
-            if (!page && !service) return false;
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                method: 'post',
-                url: `/posts/load`,
-                data: {
-                    page,
-                    service
-                },
-                beforeSend:function(){
-                    $('.loader').show();
-                },
-                completed:function(){
-                    $('.loader').hide();
-                },
-                success: function(response) {
-                    if (response.status === true && response.code === 200) {
-                        // console.log($(".post-item-box").last());
-                        // alert( $(".post-item-box").last().length);
-                        
-                        // $("#post-item-box-9").last().after(response.data);working
-                        // post-item-box
-                        $(".post-item-box").after(response.data);
-                        // $(".post-item-box").last().after(response.data);
-                         $('.showmore-posts').attr("data-post-load_page", response.page)
-                        if (response.last_page === true) {
-                            $(".showmore-posts").hide();
-                        }
-                    }
-                },
-                error: function(XMLHttpRequest) {
-                    Swal.fire('An error occured while attempting this action.');
-                }
-            });
-        }
-
-
-        // Scroll Button Functionality End Here
 
         // show comments	
         $('.comment').on('click', function() {
@@ -1034,6 +963,8 @@
         //         return false;
         //     }
         // });
+
+
        
 
         // load more comments
@@ -1057,6 +988,12 @@
                     'id': post_id,
                     'page': page
                 },
+                beforeSend:function(){
+                    $('.comment-loader').show();
+                },
+                complete:function(){
+                    $('.comment-loader').hide();
+                },
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
                         // console.log(response.data);
@@ -1073,6 +1010,75 @@
                 }
             });
         });
+
+               //On scroll Down load post//
+        $(window).scroll(function(){
+            // alert();
+            var position = $(window).scrollTop();
+
+            var bottom = $(document).height() - $(window).height();
+            bottom = parseInt(bottom) - parseInt(50);
+            console.log(position+'bottom'+bottom);
+            if( position >= bottom ){
+               
+              loadMorePost();
+              
+            }
+            
+
+        });
+
+        // load more posts
+        $(document).on("click", '.showmore-posts', function(e) {
+
+            e.preventDefault();
+
+             loadMorePost();
+
+        });
+
+        function loadMorePost()
+        {
+
+            let page =  $('.showmore-posts').attr('data-post-load_page');
+            let service =  $('.showmore-posts').attr('data-post-service');
+            // alert(page+'service'+service);
+            if (!page && !service) return false;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: 'post',
+                url: `/posts/load`,
+                data: {
+                    page,
+                    service
+                },
+                // beforeSend:function(){
+                //     $('.loader').show();
+                // },
+                // complete:function(){
+                //     $('.loader').hide();
+                // },
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+                       
+                        $(".post-item-box").after(response.data);
+                        // $(".post-item-box").last().after(response.data);
+                         $('.showmore-posts').attr("data-post-load_page", response.page);
+                        if (response.last_page === true) {
+                            $(".showmore-posts").hide();
+                        }
+                    }
+                },
+                error: function(XMLHttpRequest) {
+                    Swal.fire('An error occured while attempting this action.');
+                }
+            });
+        }
+        // Scroll Button Functionality End Here
         
         // validate if description has links it should be youtube links only
 

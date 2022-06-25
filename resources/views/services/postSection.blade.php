@@ -161,7 +161,11 @@
                                 <ul class="we-comet" id="comment-box_{{ $post->id }}">
                                     {!! $post->commentByUsers() !!}
                                     
+                                    <div class="comment-loader" style="display: none;">
+                                        <img src="/imgs/loader.gif">
+                                    </div>
                                     <span id="append_comment_{{ $post->id }}"></span>
+
 
                                     @if ($post->comments_count > 3)
                                     <li>
@@ -206,7 +210,7 @@
 @endif
 @endforeach
 <!-- more post data -->
-<div class="loader d-none">
+<div class="loader" style="display: none;">
     <img src="/imgs/loader.gif">
 </div>
 <div class="post-item-box"></div>

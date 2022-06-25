@@ -55,14 +55,14 @@
                                 ])
                             </div>
                         @endif
-                        <!-- @if ($service->post_count > 3)
+                        @if ($service->post_count > 5)
                             <div class="text-center">
                                 <a href="#" title="" class="showmore-posts underline font-weight-bold" data-post-load_page="1"
                                     data-post-service="{{ $service->id }}">
-                                    more posts+
+                                    <!-- more posts+ -->
                                 </a>
                             </div>
-                        @endif -->
+                        @endif
                     </div>
                 </div>
             </div>
