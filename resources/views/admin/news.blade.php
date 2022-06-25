@@ -21,11 +21,11 @@
             <form action="javascript:void(0)" method="POST" enctype="multipart/form-data" id="newsCreate">
                 <div class="form-group">
                     <label for="">Title</label>
-                    <input type="text" name="title" id="title" class="form-control">
+                    <input type="text" name="title" id="title" required class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input type="file" name="image" id="image" class="form-control">
+                    <input type="file" name="image" id="image" required class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="">Content</label>
