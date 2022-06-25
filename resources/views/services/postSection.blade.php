@@ -6,8 +6,8 @@
         <div class="friend-info">
             <div class="d-flex">
                 <img src="{{ $post->postAuthor->getProfilePicture() }}" style="height:80px;" width="80" class="rounded-circle mr-3" alt="">
-                <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center justify-content-between w-100">
+                    <div class="d-flex align-items-center w-100">
                         <div class="d-flex flex-column w-100">
                             <div class="d-flex align-items-center justify-content-between mt-3">
                                 <div class="d-flex align-items-center">
@@ -86,7 +86,7 @@
                                     <p> {!! $post->videoContentHtml() !!}
                                     </p>
                                 </div>
-                                <div class="row">
+                                <div class="carousel-row">
                                     @php $images = $post->imageContentHtml() @endphp
                                     @if(!empty($images) && $images->count()>0)
                                      <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
@@ -185,11 +185,9 @@
                                                     <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                     <textarea name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
 
-
                                                     <!-- <button class="btn btn-primary"  type="buton">Post</button> -->
-                                                    <input type="submit" class="btn btn-primary" name="" value="Post Comment">
+                                                    <input type="submit" class="btn btn-primary mt-2" name="" value="Post Comment">
 
-                                                     
                                                 </form>
                                             </div>
                                         </div>

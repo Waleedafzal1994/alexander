@@ -2085,8 +2085,9 @@ span {
     column-count: 4;
 }
 .gallery-section > div img{
-    margin-bottom: 16px;
     box-shadow: 0px 3px 5px rgb(0 0 0 / 20%) !important;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .profile-section-two{
@@ -2108,4 +2109,25 @@ span {
     position: relative;
     top: -5px;
     margin: 0 4px;
+}
+.post-carousel.carousel{
+    max-width: 350px !important;
+}
+.post-carousel.carousel .carousel-control-prev {
+    left: -30px;
+}
+.post-carousel.carousel .carousel-control-next {
+    right: -30px;
+}
+.post-carousel .carousel-inner .carousel-item{
+    height: 350px;
+    width: 280px;
+}
+.post-carousel .carousel-inner .carousel-item img{
+    height: 350px;
+    width: 280px !important;
+    object-fit: cover;
+}
+.carousel-row{
+    margin-left: -35px;
 }
