@@ -604,8 +604,73 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
 
 <script>
+    // alert(jQuery(window).scrollTop()+'window-height'+jQuery(window).height()+'document-height'+jQuery(document).height());
+    // jQuery(window).scroll(function() { //detect page scroll
+
+    //     });  
+
     jQuery(document).ready(function($) {
 
+        jQuery(document).scroll(function() { // OR  $(window).scroll(function() {
+            didScroll = true;
+
+            if (jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height()) { //if user scrolled from top to bottom of the page
+                // alert();
+                // page++; //page number increment
+                loadMorePost(); //load content   
+            }
+        });
+
+        // load more posts
+        // $(document).on("click", '.showmore-posts', function(e) {
+
+        //     e.preventDefault();
+
+        //      loadMorePost();
+
+        // });
+
+        function loadMorePost() {
+            // alert('loadmore');
+            let page = $('.showmore-posts').attr('data-post-load_page');
+            let service = $('.showmore-posts').attr('data-post-service');
+            // alert(page+'service'+service);
+            if (!page && !service) return false;
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: 'post',
+                url: `/posts/load`,
+                data: {
+                    page,
+                    service
+                },
+                // beforeSend:function(){
+                //     $('.loader').show();
+                // },
+                // complete:function(){
+                //     $('.loader').hide();
+                // },
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+
+                        $(".post-item-box").after(response.data);
+                        // $(".post-item-box").last().after(response.data);
+                        $('.showmore-posts').attr("data-post-load_page", response.page);
+                        if (response.last_page === true) {
+                            $(".showmore-posts").hide();
+                        }
+                    }
+                },
+                error: function(XMLHttpRequest) {
+                    Swal.fire('An error occured while attempting this action.');
+                }
+            });
+        }
+        // Scroll Button Functionality End Here
 
         $("#back_to_top").css("display", "none");
         // Scroll Button Functionality Start Here 
@@ -1011,72 +1076,25 @@
         });
 
         //On scroll Down load post//
-        $(window).scroll(function() {
-            // alert();
-            var position = $(window).scrollTop();
-
-            var bottom = $(document).height() - $(window).height();
-            bottom = parseInt(bottom) - parseInt(50);
-            console.log(position + 'bottom' + bottom);
-            if (position >= bottom) {
-
-                loadMorePost();
-
-            }
 
 
-        });
+        // $(window).scroll(function(){
+        //     // alert();
+        //     var position = $(window).scrollTop();
 
-        // load more posts
-        $(document).on("click", '.showmore-posts', function(e) {
+        //     var bottom = $(document).height() - $(window).height();
+        //     bottom = parseInt(bottom) - parseInt(20);
+        //     console.log(position+'bottom'+bottom);
+        //     if( position >= bottom ){
 
-            e.preventDefault();
+        //       loadMorePost();
 
-            loadMorePost();
+        //     }
 
-        });
 
-        function loadMorePost() {
+        // });
 
-            let page = $('.showmore-posts').attr('data-post-load_page');
-            let service = $('.showmore-posts').attr('data-post-service');
-            // alert(page+'service'+service);
-            if (!page && !service) return false;
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                method: 'post',
-                url: `/posts/load`,
-                data: {
-                    page,
-                    service
-                },
-                // beforeSend:function(){
-                //     $('.loader').show();
-                // },
-                // complete:function(){
-                //     $('.loader').hide();
-                // },
-                success: function(response) {
-                    if (response.status === true && response.code === 200) {
 
-                        $(".post-item-box").after(response.data);
-                        // $(".post-item-box").last().after(response.data);
-                        $('.showmore-posts').attr("data-post-load_page", response.page);
-                        if (response.last_page === true) {
-                            $(".showmore-posts").hide();
-                        }
-                    }
-                },
-                error: function(XMLHttpRequest) {
-                    Swal.fire('An error occured while attempting this action.');
-                }
-            });
-        }
-        // Scroll Button Functionality End Here
 
         // validate if description has links it should be youtube links only
 
