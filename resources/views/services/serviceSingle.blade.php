@@ -116,9 +116,9 @@
                                         <span>Avg. Response Time</span>
                                         <span>5 - 10 Mins</span>
                                     </div>
-                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 number-row-card">
+                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 sidebar-rating">
                                         <span>1258 Served</span>
-                                        <span><i class="fas fa-star"></i> 5.0 </span>
+                                        <span class="number-row-card"><i class="fas fa-star"></i> 5.0 </span>
                                     </div>
                                 </div>
 
@@ -159,12 +159,12 @@
                                     @if(in_array('vip',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/elitegpbadge.png" width="40" alt="">
+                                        <img src="/imgs/vipbadge.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/vipbadgedisabled.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @endif
@@ -180,7 +180,7 @@
                                         Top GP+
                                     </div>
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/vipbadgedisabled.png" width="40" alt="">
                                         VIP+
                                     </div>
                                     @endif
@@ -545,7 +545,7 @@
         <!-- END: Gallery -->
 
         <!-- START: Followers -->
-        <div class="tab-pane fade followers-result" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+        <div class="tab-pane fade followers-result shadow rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
             @include('services.followers')
 
         </div>

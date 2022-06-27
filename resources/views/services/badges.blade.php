@@ -12,7 +12,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">50 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 50 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 50 XP Gained !</div>
                     </div>
                 </div>
                 @elseif($totalOrders >= 100 && $totalOrders < 500)
@@ -22,7 +22,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">50 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 50 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 50 XP Gained !</div>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">100 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 100 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 100 XP Gained !</div>
                     </div>
                 </div>
                 @elseif($totalOrders>= 500 && $totalOrders < 1000)
@@ -43,7 +43,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">50 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 50 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 50 XP Gained !</div>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">100 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 100 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 100 XP Gained !</div>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">500 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 500 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 500 XP Gained !</div>
                     </div>
                 </div>
                 @elseif($totalOrders>= 1000)
@@ -74,7 +74,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">50 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 50 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 50 XP Gained !</div>
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">100 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 100 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 100 XP Gained !</div>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">500 Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 500 XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 500 XP Gained !</div>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">1k Orders Completed</div>
-                        <div class="gained font-weight-bold">+ 1k XP Gained !</div>
+                        <div class="gained green font-weight-bold">+ 1k XP Gained !</div>
                     </div>
                 </div>
                 @endif
@@ -123,7 +123,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">ELITE GP+</div>
-                        <!-- <div class="gained font-weight-bold">VIP+</div> -->
+                        <div class="gained green font-weight-bold">ELITE GP+ XP Gained !</div>
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">Top GP+</div>
-                        <!-- <div class="gained font-weight-bold">VIP+</div> -->
+                        <div class="gained green font-weight-bold">TOP GP+ XP Gained !</div>
                     </div>
                 </div>
 
@@ -148,10 +148,10 @@
                 <div class="card badge-card border-0 py-4 my-3">
                     <div class="card-body text-center">
                         <div class="badge-img">
-                            <img src="/imgs/elitegpbadge.png" width="220" alt="">
+                            <img src="/imgs/vipbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">VIP+</div>
-                        <!-- <div class="gained font-weight-bold">VIP+</div> -->
+                        <div class="gained green font-weight-bold">VIP GP+ XP Gained !</div>
                     </div>
                 </div>
                 @endif

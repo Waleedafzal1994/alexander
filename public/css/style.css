@@ -1639,7 +1639,14 @@ span {
 }
 /* custom css : Amit Singh */
 
-.service_category .menu_ul .nav-item.active{
+/* .service_category .menu_ul .nav-item.active{
+    border: 2px solid #5d016f;
+    background-color: #5d016f !important;
+    border-radius: 10px;
+} */
+.top-head-cate li.active{
+    width: 160px;
+    height: 63px;
     border: 2px solid #5d016f;
     background-color: #5d016f !important;
     border-radius: 10px;
@@ -1696,9 +1703,21 @@ span {
 }
 
 .badge-section > div{
-    color: #f17f0a;
-    font-weight: 900;
+    color: #fff;
+    font-weight: 700;
     font-size: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    min-height: 70px;
+    width: 30%;
+    justify-content: center;
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+.badge-section > div img{
+    margin-bottom: 4px;
 }
 .badge-section .disbaled{
     color: grey;
@@ -2008,12 +2027,12 @@ span {
 .friend-info .carousel-indicators li.active {
     background: #581c87;
 }
-.we-comet>li{
-    /*background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+/* .we-comet>li{
+    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
     padding: 16px;
-    border-radius: 10px;*/
-}
+    border-radius: 10px;
+} */
 .post-comt-box textarea{
     background-color: transparent !important;
     padding-right: 0 !important;
@@ -2040,10 +2059,6 @@ span {
 }
 .right-bottom-arrow:hover{
     transform: translateY(-5px);
-}
-.top-head-cate li.active{
-    width: 160px;
-    height: 63px;
 }
 .text-black{
     color: #000 !important;
@@ -2104,6 +2119,7 @@ span {
 }
 .highlights button:hover{
     background-position: right center;
+    box-shadow: 0 0.5rem 1rem #fd9f8595 ;
 }
 .served .new-btn .dot{
     position: relative;
@@ -2131,3 +2147,82 @@ span {
 .carousel-row{
     margin-left: -35px;
 }
+.green{
+    color: #357960 !important;
+}
+
+.sidebar-rating .number-row-card{
+    padding-right: 0 !important;
+}
+.sidebar-rating span{
+    font-weight: 400 !important;
+    font-size: 1em !important;
+}
+
+
+.follower-section li a.active{
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    color: #fff !important;
+    box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
+    border-radius: 8px;
+}
+.follower-section .tab-content .follower-img img{
+    margin-right: 12px;
+}
+.follower-section .tab-content .follower-img p {
+    font-size: 18px;
+}
+.follower-section .tab-content button{
+    width: 120px !important;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+}
+.follower-img{
+    position: relative;
+}
+.follower-img .offline,
+.follower-img .online{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: red;
+    border-radius: 50%;
+    bottom: -4px;
+    left: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+.follower-img .offline .dash{
+    height: 2px;
+    width: 5px;
+    background-color: #fff;
+    margin: auto;
+}
+.follower-img .online{
+    background: #357960;
+}
+.follower-img .tool-tip{
+    background-color: rgba(0, 0, 0, 0.749);
+    min-width: 60px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transform: translateY(-10px);
+    transition: all .2s ease-in-out;
+}
+.follower-img .online:hover .tool-tip,
+.follower-img .offline:hover .tool-tip{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-25px);
+}
+
