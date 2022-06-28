@@ -314,8 +314,10 @@ class PostController extends Controller
         $model = Post::where('id', $request->id)->first();
         if (!empty($model)) {
             $offset = $request->page * $limit;
+            $next_offset = ($request->page+1) * $limit;
             $comment = $model->commentByUsers($offset);
-            if (!empty($comment)) {
+            $next_page_comments = $model->commentByUsers($next_offset);
+            if (!empty($next_page_comments)) {
                 return $this->success([
                     "data" => $comment,
                     "page" => ($request->page + 1),
@@ -323,7 +325,7 @@ class PostController extends Controller
                 ]);
             } else {
                 return $this->success([
-                    "data" => "",
+                    "data" => $comment,
                     "page" => $request->page,
                     "last_page" => true
                 ]);

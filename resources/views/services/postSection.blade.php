@@ -186,7 +186,7 @@
                                     @endif
 
                                     <li class="show-less show-less-{{ $post->id }}">
-                                        <a href="#" title="" class="showmore underline" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
+                                        <a href="#" title="" class="showmore underline" data-comment-load_page="0" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
                                         </a>
                                     </li>
 
