@@ -641,6 +641,7 @@
     //             // },
     //             success: function(response) {
     //                 if (response.status === true && response.code === 200) {
+    //                     alert();
     //                      $('.remove-when-timeline-clicked').remove();
     //                     $(".post-item-box").after(response.data);
     //                     // $(".post-item-box").last().after(response.data);

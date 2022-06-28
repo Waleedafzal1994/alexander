@@ -234,6 +234,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
+
+ // show comments   
+// $('.comment').on('click', function() {
+
+//     $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
+// });   
   // When strating hide prev arrow
   $('.carousel-control-prev').hide();
 });
