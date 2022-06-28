@@ -1115,7 +1115,7 @@
                         $(".show-less-" + post_id).removeClass('show-less-block');
                         if (response.last_page === false) {
                             $("#showmore_" + post_id).show();
-                            $("#showmore_"+ post_id).attr("data-comment-load_page", '2');
+                            $("#showmore_"+ post_id).attr("data-comment-load_page", '1');
                         //     $("#show-less-" + post_id).show();
                         }
                         // else{
