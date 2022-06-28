@@ -74,8 +74,8 @@
 
 .gift-image {
     position: absolute;
-    right: -46px;
-    top: -90px;
+    right: -50px;
+    top: -120px;
 }
 
 ::placeholder {
@@ -2226,3 +2226,41 @@ span {
     transform: translateY(-25px);
 }
 
+/* Ripple background image css */
+.ripple-section{
+    background-image: url("../imgs/ripple-wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 530px;
+    margin-top: -28px;
+}
+.ripple-section .row{
+    min-height: 530px;
+}
+.ripple-section .welcome-heading{
+    width: fit-content;
+    text-align: center;
+    margin-top: -100px;
+}
+.middle-puzzle{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+@media (max-width: 767px){
+    .ripple-section .welcome-heading{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .ripple-section{
+        min-height: 700px;
+    }
+}
+@media (max-width: 575px){
+    .gift-image {
+        right: 0px;
+        top: -100px;
+    }
+}

@@ -158,10 +158,10 @@ ul {
   border-top-right-radius: var(--border-card-radius);
 }
 
-.body-fluid {
-  /* display: flex;
-      justify-content: space-around; */
-}
+/* .body-fluid {
+  display: flex;
+      justify-content: space-around;
+} */
 
 .border-gray {
   border: 3px solid var(--color-gray);
@@ -294,9 +294,9 @@ ul {
   /* box-shadow: 0 0 3px 2px #dfdfdf; */
 }
 
-.icon-instagram {
-  /* background: #dfdfdf; */
-}
+/* .icon-instagram {
+  background: #dfdfdf;
+} */
 
 .profile-mian-image:after {
   content: "";
@@ -311,7 +311,7 @@ ul {
   display: inline-block;
 }
 
-.icon-twitter {}
+/* .icon-twitter {} */
 
 .nav-custom-nav {
   border-bottom: none;
@@ -406,14 +406,14 @@ ul {
   border-radius: var(--border-radius);
 }
 
-.review-header .line::before {
-  /* width: 30px;
+/* .review-header .line::before {
+  width: 30px;
     content: "";
     background: var(--color-dark);
     height: 3px;
     position: absolute;
-    transform: translate(10px, 12px); */
-}
+    transform: translate(10px, 12px);
+} */
 
 .review-intro {
   display: flex;
@@ -1940,9 +1940,9 @@ form button {
   visibility: visible;
 }
 
-.follow-button a {
-  /* flex: none; */
-}
+/* .follow-button a {
+  flex: none;
+} */
 
 .folow-image li:hover .follow-button {
   display: block;
@@ -2173,9 +2173,9 @@ form button {
     left: -15px;
   }
 
-  .badge-card-star {
-    /* justify-content: space-between !important; */
-  }
+  /* .badge-card-star {
+    justify-content: space-between !important;
+  } */
 }
 
 
