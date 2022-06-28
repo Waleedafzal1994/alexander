@@ -110,6 +110,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //follower routes//
     Route::post('/follow', [FollowerController::class, 'index'])->name('follower.index');
+    Route::post('/loginfollow', [FollowerController::class, 'loginFollow']);
 
     // Paypal routes
 

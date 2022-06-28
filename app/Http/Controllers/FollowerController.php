@@ -85,4 +85,41 @@ class FollowerController extends Controller
 		            ]);
         }
     }
+
+    public function loginFollow(Request $request)
+    {
+        $follower_id = Auth::user()->id;
+        if ($follower_id)
+        {
+        	$user_id = $request->following_id;
+	        $followers = Follower::where(array('user_id'=>$request->following_id,'follower_id'=>$follower_id))->delete();
+	        if (!empty($followers)) 
+	        {
+				$data=[
+				    'status'=>'1',
+				    'msg'=>'Follow',
+				];
+				return response()->json($data);
+	        } 
+	        else 
+	        {
+	        	$follow = new Follower();
+	        	$follow->user_id = $request->following_id;
+	        	$follow->follower_id = $follower_id;
+	        	$follow->save();
+
+		        return Response()->json([
+	                "status" => '1',
+	                'msg'=>'Following',
+	            ]);
+	        }
+	    }
+	    else 
+        {
+        	return Response()->json([
+		                "error" => '1',
+		                "msg"=>"Please login first."
+		            ]);
+        }
+    }
 }

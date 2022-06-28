@@ -25,7 +25,7 @@
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
                                                 <img src="{{$row->profile_picture}}" class="rounded-circle" width="80" alt="">
-                                                <p class="text-black">{{$row->name.'-'.$row->id}}</p>
+                                                <p class="text-black">{{$row->name}}</p>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
                                                 </div> -->
@@ -35,7 +35,7 @@
                                                 </div>
                                             </div>
                                             <div class="">
-                                                <button class="new-btn btn-primary mr-3 follow">{{ !empty($checkFollow) ? 'Following' : 'Follow' }}</button>
+                                                <button class="new-btn btn-primary mr-3 loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
                                                 <button class="new-btn btn-primary">Chat</button>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
                                                 <img src="{{$row->profile_picture}}" class="rounded-circle" width="80" alt="">
-                                                <p class="text-black">{{$row->name.'-'.$row->id}}</p>
+                                                <p class="text-black">{{$row->name}}</p>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
                                                 </div> -->
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="">
-                                                <button class="new-btn btn-primary mr-3 follow">Follow</button>
+                                                <button class="new-btn btn-primary mr-3 loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
                                                 <button class="new-btn btn-primary">Chat</button>
                                             </div>
                                         </div>
@@ -77,3 +77,32 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function loginFollow(user_id) {
+            // console.log(following_id);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "/loginfollow/",
+                data: {
+                    'following_id':user_id
+                },
+                success: function(response) {
+                    if (response.status === '1') {
+                        $('.loginUserFollows-'+user_id).html(response.msg);
+                    }
+                    if (response.error === '1') {
+                        Swal.fire(response.msg);
+                    }
+                },
+                error: function(data) {
+                    //console.log(data);
+                }
+            });
+        }
+</script>
