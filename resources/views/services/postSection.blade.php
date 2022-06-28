@@ -8,7 +8,7 @@
 </style>
 @foreach ($posts as $post)
 @if (!empty($post))
-<div class="central-meta item shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
+<div class="central-meta item shadow remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">

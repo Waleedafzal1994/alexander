@@ -609,6 +609,53 @@
 
     //     });  
 
+    // $('#profile-tab').click(function(){
+     
+    //         $('.showmore-posts').attr('data-post-load_page','0');
+    //         loadMorePostForTimelineTab();
+    //     });
+    // function loadMorePostForTimelineTab() {
+    //         // alert('loadmore');
+    //         // let page = $('.showmore-posts').attr('data-post-load_page','0');
+    //         let page = 0;
+    //         let service = $('.showmore-posts').attr('data-post-service');
+    //         alert(page+'service'+service);
+    //         if (!service) return false;
+    //         $.ajaxSetup({
+    //             headers: {
+    //                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //             }
+    //         });
+    //         $.ajax({
+    //             method: 'post',
+    //             url: `/posts/load`,
+    //             data: {
+    //                 page,
+    //                 service
+    //             },
+    //             // beforeSend:function(){
+    //             //     $('.loader').show();
+    //             // },
+    //             // complete:function(){
+    //             //     $('.loader').hide();
+    //             // },
+    //             success: function(response) {
+    //                 if (response.status === true && response.code === 200) {
+    //                      $('.remove-when-timeline-clicked').remove();
+    //                     $(".post-item-box").after(response.data);
+    //                     // $(".post-item-box").last().after(response.data);
+    //                     $('.showmore-posts').attr("data-post-load_page", response.page);
+    //                     if (response.last_page === true) {
+    //                         $(".showmore-posts").hide();
+    //                     }
+    //                 }
+    //             },
+    //             error: function(XMLHttpRequest) {
+    //                 Swal.fire('An error occured while attempting this action.');
+    //             }
+    //         });
+    //     }
+
     jQuery(document).ready(function($) {
 
         jQuery(document).scroll(function() { // OR  $(window).scroll(function() {
@@ -620,6 +667,11 @@
                 loadMorePost(); //load content   
             }
         });
+
+        // $('#profile-tab').click(function(){
+        //     $('.showmore-posts').attr('data-post-load_page','0');
+        //     loadMorePost();
+        // });
 
         // load more posts
         // $(document).on("click", '.showmore-posts', function(e) {
@@ -1314,7 +1366,9 @@
             }, 400);
         }
 
+
         $('.activeTimeline').on("click", function() {
+
             //Active Tab//
             $('#myTab a[href="#' + 'profile' + '"]').tab("show");
             //Change Url//
