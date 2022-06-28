@@ -1,4 +1,11 @@
-
+<style type="text/css">
+    .show-less{
+        display: none !important;
+    }
+    .show-less-block{
+        display: block !important;
+    }
+</style>
 @foreach ($posts as $post)
 @if (!empty($post))
 <div class="central-meta item shadow" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
@@ -106,7 +113,7 @@
                                                 @php $i=0; @endphp
                                                 @foreach ($images as $value) 
 
-                                                    <div class="carousel-item {{$i == 0 ? 'active' :''}}">
+                                                    <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
                                                         <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
                                                     </div>
                                                         @php $i++ @endphp
@@ -118,10 +125,13 @@
                                             <i class="fa-solid fa-location-arrow prev-icon"></i>
                                             <span class="sr-only">Previous</span>
                                         </a>
+                                        
+                                        @if(!empty($images) && count($images) > 1   )
                                         <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
                                             <i class="fa-solid fa-location-arrow next-icon"></i>
                                             <span class="sr-only">Next</span>
                                         </a>
+                                        @endif
                                     </div>
                                     @endif
                                    
@@ -161,10 +171,11 @@
                                 <ul class="we-comet" id="comment-box_{{ $post->id }}">
                                     {!! $post->commentByUsers() !!}
                                     
-                                    <div class="comment-loader" style="display: none;">
-                                        <img src="/imgs/loader.gif">
-                                    </div>
                                     <span id="append_comment_{{ $post->id }}"></span>
+                                    
+                                    <div class="comment-loader" id="append_less_comment_{{ $post->id }}" style="display: none;">
+                                        <img src="{{asset('imgs/loader.gif')}}">
+                                    </div>
 
 
                                     @if ($post->comments_count > 3)
@@ -173,6 +184,11 @@
                                         </a>
                                     </li>
                                     @endif
+
+                                    <li class="show-less show-less-{{ $post->id }}">
+                                        <a href="#" title="" class="showmore underline" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
+                                        </a>
+                                    </li>
 
                                     <li class="post-comment" id="post-comment_form_{{ $post->id }}">
                                         <div class="d-flex">
@@ -227,10 +243,12 @@ var post_id ='{{$post->id}}';
 // alert(post_id);
 $('.post-carousel').on('slide.bs.carousel', function (e) {
 
-  var slidingItemsAsIndex = $('.carousel-item').length - 1;
+  // var slidingItemsAsIndex = $('.carousel-item').length - 1;
+  var slidingItemsAsIndex = $(this).find('.carousel-item').length - 1;
 
   // If last item hide next arrow
   if($(e.relatedTarget).index() == slidingItemsAsIndex ){
+
       $('.carousel-control-next').hide();
   }
   else{

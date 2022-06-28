@@ -1066,7 +1066,61 @@
                         $(loadMoreTarget).attr("data-comment-load_page", response.page)
                         if (response.last_page === true) {
                             $("#showmore_" + post_id).hide();
+                            $(".show-less-" + post_id).addClass('show-less-block');
                         }
+                        else{
+                            $(".show-less-" + post_id).removeClass('show-less-block');
+                        }
+                    }
+                },
+                error: function(XMLHttpRequest) {
+                    $.notify('An error occured while attempting this action.', 'error');
+                }
+            });
+        });
+
+        $(document).on("click", "[id^='showless_']", function(e) {
+
+
+            e.preventDefault();
+            let loadMoreTarget = e.target;
+            let post_id = $(loadMoreTarget).attr("data-comment-post-id");
+            let page = $(loadMoreTarget).attr("data-comment-load_page");
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                method: 'post',
+                url: `/comments/load`,
+                data: {
+                    'id': post_id,
+                    'page': page
+                },
+                beforeSend: function() {
+                    $('.comment-loader').show();
+                },
+                complete: function() {
+                    $('.comment-loader').hide();
+                },
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+                        $(".comment-section_" + post_id).remove();
+                        // console.log(response.data);
+                        $("#append_comment_" + post_id).append(response.data);
+                        // $(".comment-section_" + post_id).append(response.data);
+                        
+                        $(".show-less-" + post_id).removeClass('show-less-block');
+                        if (response.last_page === false) {
+                            $("#showmore_" + post_id).show();
+                            $("#showmore_"+ post_id).attr("data-comment-load_page", '2');
+                        //     $("#show-less-" + post_id).show();
+                        }
+                        // else{
+                        //     $("#show-less-" + post_id).hide();
+                        // }
                     }
                 },
                 error: function(XMLHttpRequest) {
