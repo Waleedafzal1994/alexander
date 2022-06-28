@@ -83,7 +83,7 @@
                     <span id="admin_panel_mobile">Admin Panel</span>
                     {{-- <span class="material-icons" style="z-index:999;" id="admin_expand">menu</span> --}}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

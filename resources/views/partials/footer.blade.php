@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5 offset-md-1">
+                <!-- <div class="col-md-5 offset-md-1">
                     <h6 class="special-heading">Latest <span>News</span></h6>
                     @if (isset($news) && count($news) > 0)
                         @foreach ($news as $post)
@@ -41,13 +41,9 @@
                     @else
                         <p>No news to show.</p>
                     @endif
-                </div>
-
+                </div> -->
             </div>
         </div>
-
-
-
     </div>
     <div style="background:black; color:White;">
         <div class="container footer-mobile" style="padding:15px;">

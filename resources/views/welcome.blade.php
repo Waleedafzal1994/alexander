@@ -19,8 +19,31 @@
 
 <link rel="stylesheet" type="text/css" href="/css/slick.css" />
 <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+
+<div class="ripple-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="welcome-heading">
+                    <h1 class="text-white">Welcome to GamersPlay</h1>
+                    <p class="text-white">Your premier destination for finding gamer friends to play with!</p>
+                    <br>
+                    <a href="/services" class="button-pu palse">Get started</a>
+                    <!-- <a href="#" class="button-pu pulse">Get started</a> -->
+                    <a href="#learnMore" class="button-pub text-white">Learn more</a>
+                </div>
+            </div>
+            <div class="col-md-6">&nbsp;</div>
+        </div>
+        <!-- <div class="col-md-12">
+            <img src="/imgs/Gaming.png" alt="" class="mw-70">
+
+        </div> -->
+    </div>
+</div>
 <div class="container">
-    <div class="row">
+
+    <!-- <div class="row">
         <div class="col-md-12" style="text-align:center;">
             <img src="/imgs/Gaming.png" alt="" class="mw-70">
             <h1>Welcome to GamersPlay</h1>
@@ -30,8 +53,7 @@
             <a href="#" class="button-pu pulse">Get started</a>
             <a href="#learnMore" class="button-pub">Learn more</a>
         </div>
-
-    </div>
+    </div> -->
     <br>
     <br>
     <div class="flex-collapse frontpage-hero-box">
@@ -48,7 +70,50 @@
 <div style="height:70px;">
 </div>
 
-<div style="display:flex; justify-content:center;">
+<div class="container">
+    <div class="row gamer-puzzle-section">
+        <div class="col-lg-5 col-md-4">
+            <div class="row left-cards">
+                <div class="col-6">
+                    <img src="imgs/become-recognized.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/earn-xp.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/upload-your-highlights-.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/conquer-the-ladders.png" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+            <div class="middle-puzzle">
+                <img src="imgs/puzzles-blue-yellow.png" class="" alt="">
+                <img src="imgs/puzzles-green-pink.png" class="" alt="">
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-4">
+           <div class="row right-cards">
+                <div class="col-6">
+                    <img src="imgs/play-to-earn-crypto-.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/get-paid.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/keep-your-fans.png" class="w-100" alt="">
+                </div>
+                <div class="col-6">
+                    <img src="imgs/vip-benefits.png" class="w-100" alt="">
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top: 40px;">
     <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
 </div>
 <div style="height:70px;">
@@ -153,14 +218,14 @@ style="color:white; display:flex; justify-content:center; ">
     </div>
     <div style="height:100px;"></div>
 </div>
-<div style="display:flex; justify-content:center;">
+<div style="display:flex; justify-content:center; margin-top: 50px;">
     <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
 </div>
 <div class="container">
     <div class="col-md-12">
         <div class="frontpage-discord-box position-relative">
             <img src="/imgs/discord-logo3d.png" style="height:31px;">
-            <img src="{{asset('imgs/discord-gift-box.png')}}" width="270px" height="250px" class="gift-image">
+            <img src="{{asset('imgs/discord-gift-box.png')}}" width="220px" height="200px" class="gift-image">
             <div style=" height:100%; display:flex; justify-content:space-between; align-items:center;" class="flex-collapse">
                 <div>
                     <h3 style="color:white; margin-top:35px;">Join our Discord server community</h3>
