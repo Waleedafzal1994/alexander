@@ -516,7 +516,7 @@
         </div>
 
         <!-- START: Timeline Tab Start here -->
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade posttimeline" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             @include('services.servicesPost', [
             'service' => $service,
             ])
@@ -748,9 +748,7 @@
 
 
         // show comments	
-        $('.comment').on('click', function() {
-            $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
-        });
+
         /*--- emojies show on text area ---*/
         $('.add-smiles > span, .smile-it').on("click", function() {
             $(this).siblings(".smiles-bunch").toggleClass("active");
@@ -797,9 +795,8 @@
 
         /** Post a Comment **/
 
-        jQuery(".post-comt-box form").on("submit", function(event) {
-
-
+        jQuery(".post-comt-box form").on("submit", function(event) 
+        {
             event.preventDefault();
             let comment = jQuery(this).find('textarea').val();
             let post_id = jQuery(this).attr("data-post-id");
@@ -1428,7 +1425,37 @@
             const hash = $(this).attr("href");
             if (hash == "#home") {
                 newUrl = url.split("#")[0];
-            } else {
+            }
+            else if(hash == "#profile")
+            {
+                newUrl = url.split("#")[0] + hash;
+
+                id = "{{ $service->id }}";
+                //alert(id);
+                //reset timeline page with ajax//
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "/loadTimeline/",
+                    data: {
+                        'id': id,
+                    },
+
+                    // data: $('#' + jQuery(this).attr("id")).serialize(),
+                    success: function(response) {
+                        $(".posttimeline").html(response);
+                    },
+
+                    error: function(data) {
+                        
+                    }
+                });
+            }
+            else {
                 newUrl = url.split("#")[0] + hash;
             }
             newUrl += "/";

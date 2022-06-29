@@ -292,6 +292,24 @@ class ServicesController extends Controller
         // dd($service->images[0]->file_name);
         return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice'));
     }
+
+    public function loadTimeline(Request $request)
+    {
+        if (!$request->ajax()) {
+            return response('', 405);
+        }
+        $id = $request->input('id');
+        if (!empty($id)) {
+            $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
+            if ($service) 
+            {
+                $data['service'] = $service;
+                $html = view('services/servicesPost', $data)->render();
+                return response()->json($html);
+            }
+        }
+    }
+
     public function serviceCategoryInfo(Request $request)
     {
         // return response()->json($request->id);

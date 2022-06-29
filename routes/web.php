@@ -108,9 +108,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/getCategoriesInfo', [ServicesController::class, 'serviceCategoryInfo'])->name('service.serviceCategoryInfo');
 
-    //follower routes//
+    //follower routes by umar//
     Route::post('/follow', [FollowerController::class, 'index'])->name('follower.index');
     Route::post('/loginfollow', [FollowerController::class, 'loginFollow']);
+    Route::post('/loadTimeline', [ServicesController::class, 'loadTimeline']);
 
     // Paypal routes
 

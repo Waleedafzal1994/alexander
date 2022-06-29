@@ -152,7 +152,7 @@
                                         </li>
                                         <li>
                                             <span class="comment" title="Comments">
-                                                <i class="fa fa-commenting"></i>
+                                                <i class="fa fa-commenting" ></i>
                                                 <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
                                             </span>
                                         </li>
@@ -234,15 +234,62 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-
- // show comments   
-// $('.comment').on('click', function() {
-
-//     $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
-// });   
+    //show comment//
+    $('.comment').off().on('click', function(e) {
+        e.stopImmediatePropagation();
+            $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
+        });
   // When strating hide prev arrow
   $('.carousel-control-prev').hide();
+
+
+    jQuery(".post-comt-box form").on("submit", function(event) 
+    {
+        event.preventDefault();
+        let comment = jQuery(this).find('textarea').val();
+        let post_id = jQuery(this).attr("data-post-id");
+
+        if (!post_id) {
+            return false;
+        }
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: "/post/comment",
+            data: $('#' + jQuery(this).attr("id")).serialize(),
+            success: function(response) {
+                if (response.status === true && response.code === 200) {
+                    let parent = jQuery("#post-comment_form_" + post_id).parent(
+                        "li");
+                    let comment_HTML = response.data;
+                    // $("#comment-box_" + post_id).prepend(comment_HTML);
+
+                    $("#append_comment_" + post_id).append(comment_HTML);
+                    // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
+                    $("#commentable_content_" + post_id).val("");
+                    $("#comment_post_count_" + post_id).text(response.count);
+                }
+            },
+
+            error: function(data) {
+                data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                    .error, "error") : ""
+                data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                    ""
+                jQuery(this).find('textarea').val(' ');
+            }
+        });
+
+    });
+
+
 });
+
 
 
 var post_id ='{{$post->id}}';
