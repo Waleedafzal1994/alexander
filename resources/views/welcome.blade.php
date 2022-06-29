@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
 
 <div class="ripple-section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="welcome-heading">

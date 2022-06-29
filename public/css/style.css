@@ -2244,6 +2244,7 @@ span {
     background-size: cover;
     min-height: 530px;
     margin-top: -30px;
+    padding: 0 100px;
 }
 .ripple-section .row{
     min-height: 450px;
@@ -2276,6 +2277,11 @@ span {
 @media (min-width: 1400px){
     .middle-puzzle img{
         width: 130px;
+    }
+}
+@media (max-width: 1200px){
+    .ripple-section{
+        padding: 0 50px;
     }
 }
 @media (max-width: 991px){
