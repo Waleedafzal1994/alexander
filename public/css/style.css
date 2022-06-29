@@ -2265,6 +2265,14 @@ span {
 .middle-puzzle img{
     width: 100px;
 }
+.gamer-puzzle-section .left-cards img,
+.gamer-puzzle-section .right-cards img {
+    transition: all .2s ease-in-out;
+}
+.gamer-puzzle-section .left-cards img:hover,
+.gamer-puzzle-section .right-cards img:hover {
+    transform: translateY(-10px);
+}
 @media (min-width: 1400px){
     .middle-puzzle img{
         width: 130px;
