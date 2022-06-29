@@ -37,7 +37,7 @@
             <div class="col-12 col-md-5 text-right mb-5">
                 <div class="lightbox lightbox-user-gallery">
                     <!-- <a href="#" class="pop"> -->
-                    <img id="img03" src='/{{ $service->category->image_1 }}' alt="" class="img-fluid border-radius-30 service-big-image zoom-clicked-img" />
+                    <img id="img03" src='/{{ $service->category->image_1 }}' alt="" class="pointer img-fluid border-radius-30 service-big-image zoom-clicked-img" />
                     <!-- </a> -->
                 </div>
             </div>

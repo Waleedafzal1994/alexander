@@ -51,7 +51,7 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <div class="">
                                         <!-- <a href="#" class="pop"> -->
                                         <div class="lightbox lightbox-user-gallery">
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="img-fluid profile-image-v2 zoom-clicked-img" />
+                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img" />
                                             <!-- </a> -->
                                         </div>
                                     </div>

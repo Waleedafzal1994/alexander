@@ -1964,6 +1964,9 @@ span {
     line-height: normal !important;
     margin: 0 !important;
 }
+.badge-card{
+    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+}
 .badge-card .gained{
     font-size: 20px;
 }
@@ -2026,6 +2029,11 @@ span {
 }
 .friend-info .carousel-indicators li.active {
     background: #581c87;
+}
+.we-comet{
+    width: 90% !important;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 /* .we-comet>li{
     background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
@@ -2147,6 +2155,9 @@ span {
 .carousel-row{
     margin-left: -35px;
 }
+.carousel-row img{
+    cursor: pointer;
+}
 .green{
     color: #357960 !important;
 }
@@ -2232,22 +2243,37 @@ span {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 530px;
-    margin-top: -28px;
+    margin-top: -30px;
 }
 .ripple-section .row{
-    min-height: 530px;
+    min-height: 450px;
 }
 .ripple-section .welcome-heading{
     width: fit-content;
     text-align: center;
     margin-top: -100px;
 }
+.ripple-section .welcome-heading a{
+    font-size: 20px;
+}
 .middle-puzzle{
     height: 100%;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+.middle-puzzle img{
+    width: 100px;
+}
+@media (min-width: 1400px){
+    .middle-puzzle img{
+        width: 130px;
+    }
+}
+@media (max-width: 991px){
+    .middle-puzzle img{
+        width: 70px;
+    }
 }
 @media (max-width: 767px){
     .ripple-section .welcome-heading{
@@ -2263,4 +2289,7 @@ span {
         right: 0px;
         top: -100px;
     }
+}
+.pointer{
+    cursor: pointer;
 }
