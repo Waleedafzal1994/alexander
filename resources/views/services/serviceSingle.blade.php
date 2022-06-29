@@ -610,7 +610,7 @@
     //     });  
 
     // $('#profile-tab').click(function(){
-     
+
     //         $('.showmore-posts').attr('data-post-load_page','0');
     //         loadMorePostForTimelineTab();
     //     });
@@ -1120,8 +1120,7 @@
                         if (response.last_page === true) {
                             $("#showmore_" + post_id).hide();
                             $(".show-less-" + post_id).addClass('show-less-block');
-                        }
-                        else{
+                        } else {
                             $(".show-less-" + post_id).removeClass('show-less-block');
                         }
                     }
@@ -1164,12 +1163,12 @@
                         // console.log(response.data);
                         $("#append_comment_" + post_id).append(response.data);
                         // $(".comment-section_" + post_id).append(response.data);
-                        
+
                         $(".show-less-" + post_id).removeClass('show-less-block');
                         if (response.last_page === false) {
                             $("#showmore_" + post_id).show();
-                            $("#showmore_"+ post_id).attr("data-comment-load_page", '1');
-                        //     $("#show-less-" + post_id).show();
+                            $("#showmore_" + post_id).attr("data-comment-load_page", '1');
+                            //     $("#show-less-" + post_id).show();
                         }
                         // else{
                         //     $("#show-less-" + post_id).hide();

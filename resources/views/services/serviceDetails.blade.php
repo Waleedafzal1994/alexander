@@ -194,7 +194,7 @@
 
                 const li = document.querySelectorAll('#lists_li li');
                 for (let i = 0; i < li.length; i++) {
-                    console.log(li[i], 'Data');
+                    // console.log(li[i], 'Data');
                     var list_dropdown = $(li[i]).find('a').attr('id');
                     if (id == list_dropdown) {
                         var li_data = $("#lists_li").find("#list-" + list_dropdown).attr({
