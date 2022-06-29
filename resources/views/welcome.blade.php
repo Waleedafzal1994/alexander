@@ -21,15 +21,14 @@
 <link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
 
 <div class="ripple-section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="welcome-heading">
                     <h1 class="text-white">Welcome to GamersPlay</h1>
                     <p class="text-white">Your premier destination for finding gamer friends to play with!</p>
                     <br>
-                    <a href="/services" class="button-pu palse">Get started</a>
-                    <!-- <a href="#" class="button-pu pulse">Get started</a> -->
+                    <a href="/services" class="button-pu pulse">Get started</a>
                     <a href="#learnMore" class="button-pub text-white">Learn more</a>
                 </div>
             </div>
@@ -70,48 +69,47 @@
 <div style="height:70px;">
 </div>
 
-<div class="container">
-    <div class="row gamer-puzzle-section">
-        <div class="col-lg-5 col-md-4">
+<!-- <div class="container">
+    <div class="row gamer-puzzle-section justify-content-center">
+        <div class="col-lg-5 col-md-5 px-0">
             <div class="row left-cards">
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/become-recognized.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/earn-xp.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/upload-your-highlights-.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/conquer-the-ladders.png" class="w-100" alt="">
                 </div>
             </div>
         </div>
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-2 col-md-2">
             <div class="middle-puzzle">
-                <img src="imgs/puzzles-blue-yellow.png" class="" alt="">
-                <img src="imgs/puzzles-green-pink.png" class="" alt="">
+                <img src="imgs/purple-bolt.png" alt="">
             </div>
         </div>
-        <div class="col-lg-5 col-md-4">
+        <div class="col-lg-5 col-md-5 px-0">
            <div class="row right-cards">
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/play-to-earn-crypto-.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/get-paid.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/keep-your-fans.png" class="w-100" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-6 px-0">
                     <img src="imgs/vip-benefits.png" class="w-100" alt="">
                 </div>
            </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div style="display:flex; justify-content:center; margin-top: 40px;">
     <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
@@ -167,8 +165,49 @@ style="color:white; display:flex; justify-content:center; ">
 
 @endif
 
+<div class="container my-5 pt-4">
+    <div class="row gamer-puzzle-section justify-content-center">
+        <div class="col-lg-5 col-md-5 px-0">
+            <div class="row left-cards">
+                <div class="col-6 px-0">
+                    <img src="imgs/become-recognized.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/earn-xp.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/upload-your-highlights-.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/conquer-the-ladders.png" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 pr-0">
+            <div class="middle-puzzle">
+                <img src="imgs/purple-bolt.png" alt="">
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 px-0">
+           <div class="row right-cards">
+                <div class="col-6 px-0">
+                    <img src="imgs/play-to-earn-crypto-.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/get-paid.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/keep-your-fans.png" class="w-100" alt="">
+                </div>
+                <div class="col-6 px-0">
+                    <img src="imgs/vip-benefits.png" class="w-100" alt="">
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
 
-<div style="display:flex; justify-content:center;">
+<div style="display:flex; justify-content:center; padding-top:50px;">
     <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
 </div>
 

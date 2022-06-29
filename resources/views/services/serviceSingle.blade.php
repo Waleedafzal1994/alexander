@@ -51,7 +51,7 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <div class="">
                                         <!-- <a href="#" class="pop"> -->
                                         <div class="lightbox lightbox-user-gallery">
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="img-fluid profile-image-v2 zoom-clicked-img" />
+                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img" />
                                             <!-- </a> -->
                                         </div>
                                     </div>
@@ -610,7 +610,7 @@
     //     });  
 
     // $('#profile-tab').click(function(){
-     
+
     //         $('.showmore-posts').attr('data-post-load_page','0');
     //         loadMorePostForTimelineTab();
     //     });
@@ -1117,8 +1117,7 @@
                         if (response.last_page === true) {
                             $("#showmore_" + post_id).hide();
                             $(".show-less-" + post_id).addClass('show-less-block');
-                        }
-                        else{
+                        } else {
                             $(".show-less-" + post_id).removeClass('show-less-block');
                         }
                     }
@@ -1161,12 +1160,12 @@
                         // console.log(response.data);
                         $("#append_comment_" + post_id).append(response.data);
                         // $(".comment-section_" + post_id).append(response.data);
-                        
+
                         $(".show-less-" + post_id).removeClass('show-less-block');
                         if (response.last_page === false) {
                             $("#showmore_" + post_id).show();
-                            $("#showmore_"+ post_id).attr("data-comment-load_page", '1');
-                        //     $("#show-less-" + post_id).show();
+                            $("#showmore_" + post_id).attr("data-comment-load_page", '1');
+                            //     $("#show-less-" + post_id).show();
                         }
                         // else{
                         //     $("#show-less-" + post_id).hide();

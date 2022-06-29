@@ -1579,22 +1579,24 @@ p {
 
 .we-video-info>.users-thumb-list>span {
   display: block;
-  font-size: 11px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .users-thumb-list>span {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .we-video-info>.users-thumb-list>span b {
   color: #222;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .users-thumb-list>a img {
   border: 2px solid #fff;
   border-radius: 50%;
+  width: 50px;
 }
 
 .coment-area {
