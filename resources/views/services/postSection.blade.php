@@ -287,6 +287,70 @@ $(document).ready(function(){
 
     });
 
+    $('#add-blog-post-form').submit(function(e) {
+
+            e.preventDefault();
+            let i = 1;
+            $("#create-post-btn").attr('disabled', true);
+            $("#create-post-btn").text("Posting");
+            let formDataAddPost = new FormData($('#add-blog-post-form')[0]);
+            console.log(...formDataAddPost);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                beforeSend: function() {
+                    $('.add-post-progress-bar').html(
+                        '<div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div></div>'
+                    );
+                    setTimeout(function() {
+                        $('.progress-bar').animate({
+                            width: i + "%"
+                        }, 100);
+                    }, 10);
+                    i = i + Math.floor(Math.random() * 100);
+                },
+                type: 'POST',
+                url: "/create/post",
+                data: formDataAddPost,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: (data) => {
+                    console.log("success", data);
+                    $('.progress-bar').addClass("bg-success")
+                    $('.progress-bar').animate({
+                        width: "100%",
+                    }, 1);
+                    $("#create-post-btn").attr('disabled', false);
+                    $("#create-post-btn").text("Post");
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                },
+                error: function(data) {
+                    console.log("error", data);
+                    $('.progress-bar').addClass("bg-danger")
+                    $('.progress-bar').animate({
+                        width: "100%"
+                    }, 1);
+                    $("#create-post-btn").attr('disabled', false);
+                    $("#create-post-btn").text("Post");
+
+                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                        .error, "error") : ""
+                    data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                        ""
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 1000);
+                }
+            });
+            // this.submit();
+        });
+
 
 });
 
