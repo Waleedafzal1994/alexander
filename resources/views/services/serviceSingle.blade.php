@@ -303,11 +303,11 @@
                     <div class="count">{{$service->post_count}}</div>
                     <div class="socialName">Posts</div>
                 </div>
-                <div class="item activeFollowers">
+                <div class="item activeFollowers" id="activefollowers">
                     <div class="count count-followers">{{ !empty($totalFollowers) ? $totalFollowers : '0' }} </div>
                     <div class="socialName">Followers</div>
                 </div>
-                <div class="item activeFollowers">
+                <div class="item activeFollowers" id="activefollowing">
                     <div class="count count-following">{{ !empty($totalfollowing) ? $totalfollowing : '0' }} </div>
                     <div class="socialName">Following</div>
                 </div>
@@ -1323,6 +1323,25 @@
         $('.activeFollowers').on("click", function() {
             //Active Tab//
             $('#myTab a[href="#' + 'followers' + '"]').tab("show");
+
+            var clickedTab = $(this).attr('id');
+            if(clickedTab == 'activefollowers'){
+
+                $('#pills-following-tab').removeClass('active');
+                $('#pills-following').removeClass('active show');
+
+                $('#pills-follower-tab').addClass('active');
+                $('#pills-follower').addClass('active show');
+            }
+            else if(clickedTab == 'activefollowing'){
+
+                $('#pills-follower-tab').removeClass('active');
+                $('#pills-follower').removeClass('active show');
+
+                $('#pills-following-tab').addClass('active');
+                $('#pills-following').addClass('active show');
+
+            }
             //Change Url//
             let c_tab = '#profile';
             if (c_tab == "#home") {
@@ -1335,7 +1354,11 @@
             setTimeout(() => {
                 $(window).scrollTop(0);
             }, 400);
+
+            
         });
+
+        
 
         $('.activeBadge').on("click", function() {
             //Active Tab//
