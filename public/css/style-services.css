@@ -1664,10 +1664,10 @@ a.underline:before,
 
 .we-comet li a.showmore {
   display: table;
-  font-size: 12px;
+  font-size: 16px;
   margin: 0 auto;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 a.underline {
