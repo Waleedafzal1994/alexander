@@ -310,7 +310,7 @@ class PostController extends Controller
             ];
             return $this->error($error);
         }
-        $limit = 3;
+        $limit = 5;
         $model = Post::where('id', $request->id)->first();
         if (!empty($model)) {
             $offset = $request->page * $limit;

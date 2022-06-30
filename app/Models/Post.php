@@ -125,7 +125,7 @@ class Post extends BaseModel
     }
 
 
-    public function commentByUsers($offset = 0, $take = 3)
+    public function commentByUsers($offset = 0, $take = 5)
     {
         $content = "";
         $comments = $this->comments->skip($offset)->take($take);

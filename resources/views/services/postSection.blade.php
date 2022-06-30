@@ -366,18 +366,18 @@ $('.post-carousel').on('slide.bs.carousel', function (e) {
   // If last item hide next arrow
   if($(e.relatedTarget).index() == slidingItemsAsIndex ){
 
-      $('.carousel-control-next').hide();
+      $(this).find('.carousel-control-next').hide();
   }
   else{
-      $('.carousel-control-next').show();
+      $(this).find('.carousel-control-next').show();
   }
 
   // If first item hide prev arrow
   if($(e.relatedTarget).index() == 0){
-      $('.carousel-control-prev').hide();
+      $(this).find('.carousel-control-prev').hide();
     }
   else{
-      $('.carousel-control-prev').show();
+      $(this).find('.carousel-control-prev').show();
     }
 
 })
