@@ -299,7 +299,7 @@
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
-                <div class="item activeTimeline">
+                <div class="item activeTimeline" id="activeTimeline">
                     <div class="count">{{$service->post_count}}</div>
                     <div class="socialName">Posts</div>
                 </div>
@@ -1306,12 +1306,42 @@
 
             //Active Tab//
             $('#myTab a[href="#' + 'profile' + '"]').tab("show");
+
+        
+            // activeTimeline
             //Change Url//
             let c_tab = '#profile';
             if (c_tab == "#home") {
+
                 newUrl = url.split("#")[0];
             } else {
+
                 newUrl = url.split("#")[0] + c_tab;
+
+                id = "{{ $service->id }}";
+                //alert(id);
+                //reset timeline page with ajax//
+                $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "/loadTimeline/",
+                    data: {
+                        'id': id,
+                    },
+
+                    // data: $('#' + jQuery(this).attr("id")).serialize(),
+                    success: function(response) {
+                        $(".posttimeline").html(response);
+                    },
+
+                    error: function(data) {
+                        
+                    }
+                });
             }
             newUrl += "/";
             history.replaceState(null, null, newUrl);
