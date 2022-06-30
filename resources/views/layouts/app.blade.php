@@ -111,7 +111,7 @@ $noFooter = true;
                                     <div class="nav-link-icon-container">
                                         <img src="{{ asset('/imgs/icons/news.png') }}" class="nav-link-icon">
                                     </div>
-                                    News
+                                    Posts
                                 </a>
                             </li>
                             <li class="nav-item">

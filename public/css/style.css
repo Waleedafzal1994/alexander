@@ -74,8 +74,8 @@
 
 .gift-image {
     position: absolute;
-    right: -50px;
-    top: -120px;
+    right: -65px;
+    top: -125px;
 }
 
 ::placeholder {
@@ -1139,6 +1139,7 @@ table th {
     max-height: 25vh;
     max-width: 100%;
     object-fit: contain;
+    transition: all .2s ease-in-out;
 }
 
 .invalid-feedback {
@@ -1491,9 +1492,9 @@ a.slider-link:hover {
     background-color: var(--color-primary-hover);
 }
 
-span {
+/* span {.post-carousel .carousel-inner .carousel-item img
     cursor: pointer;
-}
+} */
 
 .minus,
 .plus {
@@ -1647,7 +1648,7 @@ span {
 .top-head-cate li.active{
     width: 160px;
     height: 63px;
-    border: 2px solid #5d016f;
+    border: 6px solid #5d016f;
     background-color: #5d016f !important;
     border-radius: 10px;
 }
@@ -1994,6 +1995,7 @@ span {
 }
 .friend-info .carousel-inner{
     width: 80%;
+    height: 450px;
     margin: auto;
     border-radius: 10px;
 }
@@ -2135,7 +2137,7 @@ span {
     margin: 0 4px;
 }
 .post-carousel.carousel{
-    max-width: 350px !important;
+    max-width: 450px !important;
 }
 .post-carousel.carousel .carousel-control-prev {
     left: -30px;
@@ -2144,12 +2146,11 @@ span {
     right: -30px;
 }
 .post-carousel .carousel-inner .carousel-item{
-    height: 350px;
-    width: 280px;
+    height: -webkit-fill-available;
 }
 .post-carousel .carousel-inner .carousel-item img{
-    height: 350px;
-    width: 280px !important;
+    height: 100%;
+    width: 100% !important;
     object-fit: cover;
 }
 .carousel-row{
@@ -2284,9 +2285,22 @@ span {
         padding: 0 50px;
     }
 }
+@media (max-width: 1050px) and (min-width: 991px){
+    .gift-image {
+        right: -40px;
+    }
+}
 @media (max-width: 991px){
     .middle-puzzle img{
         width: 70px;
+    }
+    .frontpage-arrow-down{
+        width: 140px;
+    }
+}
+@media (max-width: 800px) and (min-width: 768px){
+    .gift-image {
+        right: -50px;
     }
 }
 @media (max-width: 767px){

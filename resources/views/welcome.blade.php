@@ -146,7 +146,7 @@ style="color:white; display:flex; justify-content:center; ">
             <a href="/services?category={{ $category->id }}&menu={{ $category->menu_id }}" class=" slider-link d-flex justify-content-center">
                 <div class="w-100 ">
                     <img src="{{ $category->image_1 }}" class="slider-img">
-                    <h6>{{ $category->name }}</h6>
+                    <h6 class="mt-3">{{ $category->name }}</h6>
                 </div>
             </a>
             @endforeach
@@ -213,7 +213,7 @@ style="color:white; display:flex; justify-content:center; ">
 
 <br id="learnMore">
 <br>
-<h2 style="text-align:center; font-weight:500 !important; margin:50px 0;">How GamersPlay works</h2>
+<h2 style="text-align:center; font-weight:700 !important; margin:50px 0; font-size: 2.5rem;">How GamersPlay works</h2>
 
 <div class="container">
 
@@ -264,7 +264,7 @@ style="color:white; display:flex; justify-content:center; ">
     <div class="col-md-12">
         <div class="frontpage-discord-box position-relative">
             <img src="/imgs/discord-logo3d.png" style="height:31px;">
-            <img src="{{asset('imgs/discord-gift-box.png')}}" width="220px" height="200px" class="gift-image">
+            <img src="{{asset('imgs/discord-gift-box.png')}}" width="180px" height="170px" class="gift-image">
             <div style=" height:100%; display:flex; justify-content:space-between; align-items:center;" class="flex-collapse">
                 <div>
                     <h3 style="color:white; margin-top:35px;">Join our Discord server community</h3>
