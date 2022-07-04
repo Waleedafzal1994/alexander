@@ -125,8 +125,11 @@ class Post extends BaseModel
     }
 
 
-    public function commentByUsers($offset = 0, $take = 5)
+    public function commentByUsers($offset = 0, $take='')
     {
+        if(empty($take)){
+            $take = 3; 
+        }
         $content = "";
         $comments = $this->comments->skip($offset)->take($take);
         if (!empty($comments) && ($comments->count() > 0)) {

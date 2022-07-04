@@ -315,8 +315,8 @@ class PostController extends Controller
         if (!empty($model)) {
             $offset = $request->page * $limit;
             $next_offset = ($request->page+1) * $limit;
-            $comment = $model->commentByUsers($offset);
-            $next_page_comments = $model->commentByUsers($next_offset);
+            $comment = $model->commentByUsers($offset,5);
+            $next_page_comments = $model->commentByUsers($next_offset,5);
             if (!empty($next_page_comments)) {
                 return $this->success([
                     "data" => $comment,
