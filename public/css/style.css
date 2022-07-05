@@ -27,7 +27,6 @@
 .service_category {
     margin-left: 15px;
     padding: 15px 0;
-    cursor: pointer;
     user-select: none;
 }
 
@@ -1447,6 +1446,7 @@ a.slider-link:hover {
     margin-bottom: 0;
     position: relative;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 
 .main-category ul li:first-child {
@@ -1509,6 +1509,7 @@ a.slider-link:hover {
     justify-content: center;
     margin: 0 5px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .number input {
@@ -1648,7 +1649,7 @@ a.slider-link:hover {
 .top-head-cate li.active{
     width: 160px;
     height: 63px;
-    border: 6px solid #5d016f;
+    border: 3px solid #5d016f;
     background-color: #5d016f !important;
     border-radius: 10px;
 }
@@ -2171,7 +2172,9 @@ a.slider-link:hover {
     font-size: 1em !important;
 }
 
-
+.follower-section ul{
+    border-bottom: 2px dashed #581c87;
+}
 .follower-section li a.active{
     background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
     color: #fff !important;

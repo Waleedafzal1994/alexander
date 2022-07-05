@@ -10,7 +10,7 @@
                            
                             
                             <div class="follower-section">
-                                <ul class="nav nav-pills mb-3 pb-3 border-bottom" id="followers-tab" role="tablist">
+                                <ul class="nav nav-pills mb-3 pb-3" id="followers-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" id="pills-follower-tab" data-toggle="pill" href="#pills-follower" role="tab" aria-controls="pills-follower" aria-selected="true">Followers ({{!empty($followersList) ? count($followersList) : 0}})</a>
                                     </li>

@@ -123,7 +123,7 @@
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">ELITE GP+</div>
-                        <div class="gained green font-weight-bold">ELITE GP+ XP Gained !</div>
+                        <!-- <div class="gained green font-weight-bold">ELITE GP+ XP Gained !</div> -->
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">Top GP+</div>
-                        <div class="gained green font-weight-bold">TOP GP+ XP Gained !</div>
+                        <!-- <div class="gained green font-weight-bold">TOP GP+ XP Gained !</div> -->
                     </div>
                 </div>
 
@@ -151,7 +151,7 @@
                             <img src="/imgs/vipbadge.png" width="220" alt="">
                         </div>
                         <div class="badge badge-primary my-5 p-3 text-uppercase">VIP+</div>
-                        <div class="gained green font-weight-bold">VIP GP+ XP Gained !</div>
+                        <!-- <div class="gained green font-weight-bold">VIP GP+ XP Gained !</div> -->
                     </div>
                 </div>
                 @endif
