@@ -1049,7 +1049,17 @@
                 success: function(response) {
                     if (response.status === true && response.code === 200) {
                         // console.log(response.data);
-                        $(".comment-section_" + post_id).last().after(response.data);
+                        // $(".comment-section_" + post_id).last().after(response.data);
+                        console.log($("#append_comment_" + post_id).first().length );
+                        if($("#append_comment_" + post_id).first().length > 0){
+
+                         $("#append_comment_" + post_id).first().before(response.data);
+
+                        }
+                        else{
+                            $(".comment-section_" + post_id).last().after(response.data);
+                        }
+
                         // $(".comment-section_" + post_id).append(response.data);
                         $(loadMoreTarget).attr("data-comment-load_page", response.page)
                         if (response.last_page === true) {
