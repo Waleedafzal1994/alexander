@@ -310,13 +310,13 @@ class PostController extends Controller
             ];
             return $this->error($error);
         }
-        $limit = 5;
+        $limit = !empty($request->page) ? 5 : 3;
         $model = Post::where('id', $request->id)->first();
         if (!empty($model)) {
-            $offset = $request->page * $limit;
-            $next_offset = ($request->page+1) * $limit;
-            $comment = $model->commentByUsers($offset,5);
-            $next_page_comments = $model->commentByUsers($next_offset,5);
+            $offset = $request->page * $limit - (!empty($request->page) ? 2 : 0); // as we fetched 3 records initially so -2 added
+            $next_offset = ($request->page+1) * $limit - (!empty($request->page) ? 2 : 0 );
+            $comment = $model->commentByUsers($offset,$limit);
+            $next_page_comments = $model->commentByUsers($next_offset,$limit);
             if (!empty($next_page_comments)) {
                 return $this->success([
                     "data" => $comment,
