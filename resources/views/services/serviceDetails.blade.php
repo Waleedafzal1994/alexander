@@ -21,7 +21,7 @@
 
                         <div class="row">
 
-                            <div class="col-4 mb-4 pb-5" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                            <div class="col-4 mb-4 pb-5 pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                 @if ($service->category->image_1 != null)
 
                                 <div class="game-img">
@@ -41,7 +41,7 @@
                             <?php $i = 1 ?>
                             @if(!empty($all_remaining_cats))
                             @foreach($all_remaining_cats as $category)
-                            <div class="col-4 mb-4 pb-5" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+                            <div class="col-4 mb-4 pb-5 pointer" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
 
                                 @if ($category->image_1 != null)
 
