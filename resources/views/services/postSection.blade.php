@@ -245,7 +245,9 @@ $(document).ready(function(){
 
     jQuery(".post-comt-box form").on("submit", function(event) 
     {
+        // alert('umar');
         event.preventDefault();
+        event.stopImmediatePropagation();
         let comment = jQuery(this).find('textarea').val();
         let post_id = jQuery(this).attr("data-post-id");
 
