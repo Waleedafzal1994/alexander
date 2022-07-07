@@ -1050,7 +1050,7 @@
                     if (response.status === true && response.code === 200) {
                         // console.log(response.data);
                         // $(".comment-section_" + post_id).last().after(response.data);
-                        console.log($("#append_comment_" + post_id).first().length );
+                        // console.log($("#append_comment_" + post_id).first().length );
                         if($("#append_comment_" + post_id).first().length > 0){
 
                          $("#append_comment_" + post_id).first().before(response.data);
