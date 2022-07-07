@@ -1053,7 +1053,7 @@
                         // console.log($("#append_comment_" + post_id).first().length );
                         if($("#append_comment_" + post_id).first().length > 0){
 
-                         $("#append_comment_" + post_id).first().before(response.data);
+                         $("#append_comment_" + post_id).first().after(response.data);
 
                         }
                         else{
