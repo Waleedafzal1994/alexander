@@ -55,22 +55,25 @@
     </div> -->
     <br>
     <br>
-    <div class="flex-collapse frontpage-hero-box bg-purple-gradient text-white">
-        <div style="margin:0 10px;"><img src="/imgs/icons/thunder.png" alt="" style="height:50px; margin-right:15px;">
-            <span class="dashed-heading font-weight-bold text-uppercase">100K GP+ Gamers offering their companionship</span>
-        </div>
-        <div style="margin:0 10px;">
-            <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
+    <div class="d-flex justify-content-center">
+        <div class="flex-collapse d-flex align-items-center justify-content-center flex-wrap frontpage-hero-box bg-purple-gradient text-white">
+            <div style="margin:0 10px;" class=" mt-1">
+                <img src="/imgs/icons/thunder.png" alt="" style="height:50px; margin-right:15px;" class="mr-3">
+                <span class="dashed-heading font-weight-bold">Ready to find your gamer friend?</span>
+            </div>
+            <div style="margin:0 10px;" class="d-flex align-items-center">
+                <span class="dashed-heading font-weight-bold text-uppercase mr-3">100K GP+ Gamers offering <span class="text-lowercase">their companionship</span></span>
+                <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
+            </div>
         </div>
     </div>
-
 </div>
 
 <div style="height:70px;">
 </div>
 
 <div class="container mb-5 pb-5">
-    <div class="row d-flex align-items-center justify-content-center games-cards flex-wrap">
+    <div class="row d-flex align-items-center justify-content-center games-cards flex-wrap mb-5">
         <div class="col-lg col-md-4 col-sm-6">
             <div class="card border-0 p-0">
                 <div class="card-body p-0">

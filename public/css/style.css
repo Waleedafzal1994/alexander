@@ -1125,11 +1125,11 @@ table th {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #53ac8c;
+    background: linear-gradient(45deg, #00ffa0 -40%, #53ac8c 80%);
 }
 
 .dashed-heading{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .frontpage-discord-box {
