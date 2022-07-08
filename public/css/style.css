@@ -1115,14 +1115,21 @@ table th {
     align-items: center;
     justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border: 2px dashed var(--color-secondary);
+    /* border: 2px dashed var(--color-secondary); */
 }
 
 .frontpage-hero-box-cta {
-    padding: 20px;
-    background: #f3f4f6;
+    height: 40px;
     border-radius: 8px;
-    color: limegreen;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #53ac8c;
+}
+
+.dashed-heading{
+    font-size: 20px;
 }
 
 .frontpage-discord-box {
@@ -1381,7 +1388,7 @@ p.card-text {
 }
 
 .carousel-section {
-    background: #581C87;
+    background: linear-gradient(45deg, #c395f1 0%, #8224e3 75%) !important;
     color: white;
     box-shadow: rgba(106, 61, 213, 0.4) 0px 5px, rgba(106, 61, 213, 0.3) 0px 10px, rgba(106, 61, 213, 0.2) 0px 15px, rgba(106, 61, 213, 0.1) 0px 20px, rgba(106, 61, 213, 0.05) 0px 25px;
     padding: 10px 0;
@@ -2314,6 +2321,9 @@ a.slider-link:hover {
     .ripple-section{
         min-height: 700px;
     }
+    .gift-image {
+        right: -50px;
+    }
 }
 @media (max-width: 575px){
     .gift-image {
@@ -2323,4 +2333,19 @@ a.slider-link:hover {
 }
 .pointer{
     cursor: pointer;
+}
+
+.games-cards .card{
+    margin-bottom: 24px;
+    background-color: transparent;
+}
+.games-cards .card .card-image .titles{
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+.games-cards .card .card-image .titles .card-title{
+    margin-bottom: 0;
 }

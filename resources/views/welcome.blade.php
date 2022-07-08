@@ -55,12 +55,12 @@
     </div> -->
     <br>
     <br>
-    <div class="flex-collapse frontpage-hero-box">
+    <div class="flex-collapse frontpage-hero-box bg-purple-gradient text-white">
         <div style="margin:0 10px;"><img src="/imgs/icons/thunder.png" alt="" style="height:50px; margin-right:15px;">
-            <span style="font-weight:bold;">Ready to find</span> your gamer buddy?
+            <span class="dashed-heading font-weight-bold text-uppercase">100K GP+ Gamers offering their companionship</span>
         </div>
         <div style="margin:0 10px;">
-            <div class="frontpage-hero-box-cta">Easy</div>
+            <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
         </div>
     </div>
 
@@ -69,6 +69,75 @@
 <div style="height:70px;">
 </div>
 
+<div class="container mb-5 pb-5">
+    <div class="row d-flex align-items-center justify-content-center games-cards flex-wrap">
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="card border-0 p-0">
+                <div class="card-body p-0">
+                    <div class="card-image position-relative br-10">
+                        <img src="/imgs/league-of-legends-lfg.png" class="w-100" alt="">
+                        <div class="titles text-white font-weight-bold">
+                            <div class="card-sub-title">League of Legends</div>
+                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">5.780 GP+ Gamers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="card border-0 p-0">
+                <div class="card-body p-0">
+                    <div class="card-image position-relative br-10">
+                        <img src="/imgs/Valorant-lfg.png" class="w-100" alt="">
+                        <div class="titles text-white font-weight-bold">
+                            <div class="card-sub-title">Valorant</div>
+                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">4.639 GP+ Gamers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="card border-0 p-0">
+                <div class="card-body p-0">
+                    <div class="card-image position-relative br-10">
+                        <img src="/imgs/Fortnite-lfg.png" class="w-100" alt="">
+                        <div class="titles text-white font-weight-bold">
+                            <div class="card-sub-title">Fortnite</div>
+                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">3.738 GP+ Gamers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="card border-0 p-0">
+                <div class="card-body p-0">
+                    <div class="card-image position-relative br-10">
+                        <img src="/imgs/Apex-Legends-lfg.png" class="w-100" alt="">
+                        <div class="titles text-white font-weight-bold">
+                            <div class="card-sub-title">Apex Legends</div>
+                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">2.367 GP+ Gamers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="card border-0 p-0">
+                <div class="card-body p-0">
+                    <div class="card-image position-relative br-10">
+                        <img src="/imgs/Overwatch-lfg.png" class="w-100" alt="">
+                        <div class="titles text-white font-weight-bold">
+                            <div class="card-sub-title">Overwatch 2</div>
+                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">1.457 GP+ Gamers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- <div class="container">
     <div class="row gamer-puzzle-section justify-content-center">
         <div class="col-lg-5 col-md-5 px-0">
@@ -111,11 +180,11 @@
     </div>
 </div> -->
 
-<div style="display:flex; justify-content:center; margin-top: 40px;">
+<!-- <div style="display:flex; justify-content:center; margin-top: 40px;">
     <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
 </div>
 <div style="height:70px;">
-</div>
+</div> -->
 
 @if (isset($popular) && count($popular) > 0)
 {{-- <div style="background:#581C87; color:white; padding:10px 0;">
@@ -137,7 +206,7 @@ style="color:white; display:flex; justify-content:center; ">
 </div>
 
 </div> --}}
-<div class="section carousel-section">
+<div class="section carousel-section bg-purple-gradient">
     <br>
     <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
     <div class="justify-content-center d-flex">
