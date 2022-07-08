@@ -1051,14 +1051,14 @@
                         // console.log(response.data);
                         // $(".comment-section_" + post_id).last().after(response.data);
                         // console.log($("#append_comment_" + post_id).first().length );
-                        if($("#append_comment_" + post_id).first().length > 0){
+                        // if($("#append_comment_" + post_id).first().length > 0){
 
-                         $("#append_comment_" + post_id).first().after(response.data);
+                        //  $("#append_comment_" + post_id).first().after(response.data);
 
-                        }
-                        else{
-                            $(".comment-section_" + post_id).last().after(response.data);
-                        }
+                        // }
+                        // else{
+                            $(".comment-section_" + post_id).first().before(response.data);
+                        // }
 
                         // $(".comment-section_" + post_id).append(response.data);
                         $(loadMoreTarget).attr("data-comment-load_page", response.page)

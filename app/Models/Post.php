@@ -39,7 +39,7 @@ class Post extends BaseModel
     }
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable')->with('likes');
+        return $this->morphMany(Comment::class, 'commentable')->orderBy('created_at','DESC')->with('likes');
     }
     public function userliked()
     {
@@ -131,7 +131,7 @@ class Post extends BaseModel
             $take =3; 
         }
         $content = "";
-        $comments = $this->comments->skip($offset)->take($take);
+        $comments = $this->comments->skip($offset)->take($take)->sortBy('created_at');
         if (!empty($comments) && ($comments->count() > 0)) {
             foreach ($comments as $key => $value) {
                 $content .= self::commentHtml($value, $this);
