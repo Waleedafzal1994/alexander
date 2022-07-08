@@ -246,6 +246,7 @@ $(document).ready(function(){
     jQuery(".post-comt-box form").on("submit", function(event) 
     {
         event.preventDefault();
+        event.stopImmediatePropagation();
         let comment = jQuery(this).find('textarea').val();
         let post_id = jQuery(this).attr("data-post-id");
 
@@ -269,7 +270,16 @@ $(document).ready(function(){
                     let comment_HTML = response.data;
                     // $("#comment-box_" + post_id).prepend(comment_HTML);
 
-                    $("#append_comment_" + post_id).append(comment_HTML);
+                    if($("#comment-box_" + post_id).first().length > 0){
+
+                        $(".comment-section_" + post_id).last().after(response.data);
+                     
+                    }
+                    else{
+                        $("#append_comment_" + post_id).append(comment_HTML);
+                    }
+
+                    // $("#append_comment_" + post_id).append(comment_HTML);
                     // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
                     $("#commentable_content_" + post_id).val("");
                     $("#comment_post_count_" + post_id).text(response.count);
