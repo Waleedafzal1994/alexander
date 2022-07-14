@@ -4667,7 +4667,6 @@ input[type=button].btn-block {
 }
 
 .badge {
-  display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
   font-weight: 700;
@@ -4704,7 +4703,7 @@ a.badge:hover, a.badge:focus {
 
 .badge-primary {
   color: #fff;
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg,  #ffc371 0%, #ff5f6d 75%);
 }
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;

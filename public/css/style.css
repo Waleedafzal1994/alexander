@@ -212,7 +212,7 @@ p {
 .button-pu {
     display: inline-flex;
     align-items: center;
-    background: #581C87;
+    background: linear-gradient(to right,   #83D475 0%, #53ac8c  100%);
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     height: 45px;
@@ -225,7 +225,7 @@ p {
 }
 
 .button-pu:hover {
-    background: #9333ea;
+    background: linear-gradient(to right,  #ffc371  0%, #ff5f6d 100%);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -2px, 0);
     color: #fff;
@@ -318,7 +318,7 @@ p {
     font-family: "Poppins", sans-serif;
     font-size: 25px;
     color: white;
-    background: #6a3dd5;
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
     transition: 1s;
     box-shadow: 6px 6px 0 #afa3da;
     transform: skewX(-15deg);
@@ -1107,6 +1107,7 @@ table th {
 }
 
 .frontpage-hero-box {
+    Width:100%;	
     background: white;
     border-radius: 8px;
     padding: 15px;
@@ -1125,11 +1126,11 @@ table th {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, #00ffa0 -40%, #53ac8c 80%);
+    background: linear-gradient(to right,   #83D475 0%, #53ac8c  100%);
 }
 
 .dashed-heading{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .frontpage-discord-box {
@@ -1479,14 +1480,14 @@ a.slider-link:hover {
     background-color: #6b21a81c;
     border-radius: 4px;
     padding: 20px 20px 20px 16px;
-    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%);
+    background: linear-gradient(135deg, rgb(195, 149, 241) 0%, rgb(130, 36, 227) 75%) !important;
 }
 
 .box-styling .right-arrow {
     height: 40px;
     width: 40px;
     border-radius: 4px;
-    background-color: var(--color-lighter-primary);
+    background: linear-gradient(135deg, #c395f1 0%, #ad75e7c4 75%) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1496,7 +1497,7 @@ a.slider-link:hover {
 }
 .box-styling:hover .right-arrow {
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
-    background-color: var(--color-primary-hover);
+    background: linear-gradient(135deg, #c395f1 0%, #ad75e7c4 75%) !important;
 }
 
 /* span {.post-carousel .carousel-inner .carousel-item img
@@ -1577,12 +1578,13 @@ a.slider-link:hover {
     line-height: 25px;
 }
 .subcategory h5{
-    font-weight: 700;
+    
+    color: #ffffff !important;
 }
 .rateMin p{
     font-size: 24px;
-    color: var(--color-lighter-primary);
-    font-weight: 600;
+    color: #ffffff !important;
+    
 }
 .subtotal p{
     color: var(--color-lighter-primary);
@@ -1656,8 +1658,8 @@ a.slider-link:hover {
 .top-head-cate li.active{
     width: 160px;
     height: 63px;
-    border: 3px solid #5d016f;
-    background-color: #5d016f !important;
+    border: 2px solid #7041e6;
+    background-color: #714878 !important;
     border-radius: 10px;
 }
 #more_section_content{
@@ -1954,7 +1956,7 @@ a.slider-link:hover {
     color: var(--color-primary) !important;
 }
 .bg-gradient{
-    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+    background: #ededfb !important;
 }
 .bg-purple-gradient{
     background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
@@ -1974,7 +1976,7 @@ a.slider-link:hover {
     margin: 0 !important;
 }
 .badge-card{
-    background: linear-gradient(135deg, rgba(130, 36, 227, 0.04) 0%, rgba(255, 255, 255, 0) 25%, rgba(130, 36, 227, 0.07) 100%) !important;
+    background: linear-gradient(135deg, rgb(195, 149, 241) 0%, rgb(130, 36, 227) 75%) !important;
 }
 .badge-card .gained{
     font-size: 20px;
@@ -2010,7 +2012,7 @@ a.slider-link:hover {
 .friend-info .carousel-control-prev, 
 .friend-info .carousel-control-next {
     width: 10%;
-    background-color: #581c87;
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
     margin: auto 12px;
     height: 42px;
     width: 42px;
@@ -2034,7 +2036,7 @@ a.slider-link:hover {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #8f57babf;
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
     border: 0;
 }
 .friend-info .carousel-indicators li.active {
@@ -2079,7 +2081,7 @@ a.slider-link:hover {
     transform: translateY(-5px);
 }
 .text-black{
-    color: #000 !important;
+    color: #000000 !important;
 }
 .br-10{
     border-radius: 10px !important;
@@ -2131,13 +2133,13 @@ a.slider-link:hover {
     width: 100px;
 }
 .highlights button{
-    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    background-image: linear-gradient(to right, #6ec160 0%, #83D475 51%, #53ac8c 100%);
     background-size: 200% auto;
     transition: all .3s ease-in-out;
 }
 .highlights button:hover{
     background-position: right center;
-    box-shadow: 0 0.5rem 1rem #fd9f8595 ;
+    box-shadow: 0 0.5rem 1rem #83d47585;
 }
 .served .new-btn .dot{
     position: relative;
@@ -2180,7 +2182,7 @@ a.slider-link:hover {
 }
 
 .follower-section ul{
-    border-bottom: 2px dashed #581c87;
+    border-bottom: 2px solid #581c87;
 }
 .follower-section li a.active{
     background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
@@ -2343,7 +2345,7 @@ a.slider-link:hover {
     position: absolute;
     left: 10px;
     bottom: 15px;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
 }
 .games-cards .card .card-image .titles .card-title{

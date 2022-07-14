@@ -2528,8 +2528,8 @@ form button {
 
 .profile-info-counters .social .item .count {
   height: 21px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--font-color-1);
   line-height: 21px;
   margin-bottom: 4px;
@@ -2616,7 +2616,7 @@ form button {
 }
 
 .profile-section-two {
-  background: var(--color-lighter-primary-opacity) !important;
+  background: #ededfb !important;
   border-radius: var(--border-radius) !important;
   border: none !important;
   padding: 0px;
