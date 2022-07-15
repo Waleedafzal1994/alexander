@@ -9,6 +9,12 @@
 #app{
     background-color: #f6f6ff;
 }
+.bg-content-clr{
+    background-color: #f6f6ff !important;
+}
+.bg-welcome-clr{
+    background-color: #faf5ff !important;
+}
 
 @keyframes pulse {
     0% {
