@@ -6,6 +6,9 @@
     src: url("/fonts/Poppins-Regular.ttf") format("truetype");
 }
 
+#app{
+    background-color: #f6f6ff;
+}
 
 @keyframes pulse {
     0% {
@@ -73,8 +76,15 @@
 
 .gift-image {
     position: absolute;
-    right: -65px;
-    top: -125px;
+    right: -50px;
+    bottom: 0;
+    transform: rotateY(180deg);
+}
+.gift-image-left {
+    position: absolute;
+    left: -50px;
+    bottom: 0;
+    transform: rotateY(180deg);
 }
 
 ::placeholder {
@@ -1026,7 +1036,7 @@ table th {
 
 .btn-discord {
     background: white;
-    padding: 15px 30px;
+    padding: 12px 20px;
     color: #7b61ff;
     font-weight: bold;
     align-self: center;
@@ -1114,15 +1124,15 @@ table th {
     min-height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin-top: 350px;
     /* border: 2px dashed var(--color-secondary); */
 }
 
 .frontpage-hero-box-cta {
     height: 40px;
     border-radius: 8px;
-    width: 100px;
+    min-width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1131,6 +1141,19 @@ table th {
 
 .dashed-heading{
     font-size: 16px;
+    /* margin-left: 250px; */
+}
+.mobile-img{
+    width: 350px;
+}
+.mobile-img img{
+    /* position: absolute;
+    left: 0;
+    top: -80px; */
+    width: 250px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .frontpage-discord-box {
@@ -1138,7 +1161,7 @@ table th {
     background-blend-mode: overlay, normal;
     margin-top: 130px;
     min-height: 200px;
-    padding: 30px;
+    padding: 30px 200px;
     border-radius: 8px;
 }
 
@@ -1399,9 +1422,16 @@ p.card-text {
     max-width: 60vw;
 }
 
-.slider-link {
+.slider-link.slick-slide {
     color: white;
-
+    width: 169px !important;
+    height: 340px !important;
+    padding: 20px 5px !important;
+}
+.slider-link h6{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 a.slider-link:hover {
@@ -1480,7 +1510,10 @@ a.slider-link:hover {
     background-color: #6b21a81c;
     border-radius: 4px;
     padding: 20px 20px 20px 16px;
-    background: linear-gradient(135deg, rgb(195, 149, 241) 0%, rgb(130, 36, 227) 75%) !important;
+    background: linear-gradient(to right , #581c87, #8e5cb5 ) !important;
+}
+.new-purple-gradient{
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
 }
 
 .box-styling .right-arrow {
@@ -1724,7 +1757,7 @@ a.slider-link:hover {
     min-height: 70px;
     width: 30%;
     justify-content: center;
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 .badge-section > div img{
@@ -2146,6 +2179,9 @@ a.slider-link:hover {
     top: -5px;
     margin: 0 4px;
 }
+.served .new-btn{
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
+}
 .post-carousel.carousel{
     max-width: 450px !important;
 }
@@ -2326,6 +2362,30 @@ a.slider-link:hover {
     .gift-image {
         right: -50px;
     }
+    .dashed-heading , 
+    .frontpage-hero-box-cta{
+        font-size: 14px;
+    }
+    .mobile-img{
+        width: 350px;
+        height: 100px;
+        text-align: center;
+    }
+    .mobile-img img{
+        /* position: absolute;
+        left: 0;
+        top: -80px; */
+        width: 250px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: unset;
+        top: -80px;
+    }
+    .dashed-heading{
+        margin-top: 16px !important;
+    }
+
 }
 @media (max-width: 575px){
     .gift-image {
@@ -2345,7 +2405,7 @@ a.slider-link:hover {
     position: absolute;
     left: 10px;
     bottom: 15px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
 }
 .games-cards .card .card-image .titles .card-title{

@@ -94,7 +94,7 @@
                             <ul class="pl-4 review mt-3 mb-3">
                                 @if (!empty($service->ratings))
                                 @foreach ($service->ratings as $rating)
-                                <li class="review-body mb-3 shadow p-3 bg-gradient">
+                                <li class="review-body mb-3 p-3 bg-gradient">
                                     <div class="review-head d-flex justify-content-between">
                                         <span class="review-intro p-3">
                                             <img src='{{ $rating->user->getProfilePicture() }}' alt="" />

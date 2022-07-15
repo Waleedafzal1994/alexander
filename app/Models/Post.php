@@ -146,7 +146,7 @@ class Post extends BaseModel
         $content .= "<li class='comment-section_" . $post->id . "'>";
         
         // $content = "";
-        $content .= '<div class="shadow bg-gradient br-10 p-3 mb-4">';
+        $content .= '<div class="bg-gradient br-10 p-3 mb-4">';
         $content .= '<div class="d-flex">';
         $content .= '<div class="comet-avatar"><img src="' . $value->user->getProfilePicture() . '" alt=""></div>';
         $content .= '<div class="we-comment pb-0 pl-3">';

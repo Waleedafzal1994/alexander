@@ -55,15 +55,21 @@
     </div> -->
     <br>
     <br>
-    <div class="d-flex justify-content-center">
-        <div class="flex-collapse d-flex align-items-center justify-content-center flex-wrap frontpage-hero-box bg-purple-gradient text-white">
-            <div style="margin:0 10px;" class=" mt-1">
-                <img src="/imgs/icons/thunder.png" alt="" style="height:50px; margin-right:15px;" class="mr-3">
-                <span class="dashed-heading font-weight-bold">Ready to find your gamer friend?</span>
+    <div class="position-relative">
+        <div class="flex-collapse frontpage-hero-box bg-purple-gradient text-white w-100">
+            <div class="mobile-img mr-4">
+                <img src="/imgs/gamersplay-lfg.png" class="" alt="">
             </div>
-            <div style="margin:0 10px;" class="d-flex align-items-center">
-                <span class="dashed-heading font-weight-bold text-uppercase mr-3">100K GP+ Gamers offering <span class="text-lowercase">their companionship</span></span>
-                <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
+
+            <div class="d-flex align-items-center justify-content-between w-100 flex-wrap">
+                <div>
+                    <!-- <img src="/imgs/icons/gamersplay-lfg.png" alt="" style="height:50px; margin-right:15px;" class="mr-3"> -->
+                    <span class="dashed-heading font-weight-bold">Ready to find your gamer friend?</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="dashed-heading ml-0 mt-0 font-weight-bold text-uppercase mr-2">100K GP+ Gamers offering <span class="text-lowercase">their companionship</span></span>
+                    <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
+                </div>
             </div>
         </div>
     </div>
@@ -81,7 +87,7 @@
                         <img src="/imgs/league-of-legends-lfg.png" class="w-100" alt="">
                         <div class="titles text-white font-weight-bold">
                             <div class="card-sub-title">League of Legends</div>
-                            <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">5.780 GP+ Gamers</div>
+                            <div class="card-title bg-purple-gradient br-10 px-1 py-1 shadow">5.780 GP+ Gamers</div>
                         </div>
                     </div>
                 </div>
@@ -209,7 +215,10 @@ style="color:white; display:flex; justify-content:center; ">
 </div>
 
 </div> --}}
-<div class="section carousel-section bg-purple-gradient">
+
+
+<!-- Dynamic slick carousel start -->
+<!-- <div class="section carousel-section bg-purple-gradient">
     <br>
     <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
     <div class="justify-content-center d-flex">
@@ -224,7 +233,87 @@ style="color:white; display:flex; justify-content:center; ">
             @endforeach
         </div>
     </div>
+</div> -->
+<!-- Dynamic slick carousel end -->
+
+<!-- Static slick carousel start -->
+<div class="section carousel-section bg-purple-gradient">
+    <br>
+    <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
+    <div class="justify-content-center d-flex">
+        <div class="carousel text-center justify-content-center mt-5">
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/apex-legends-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">Apex Legends</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/cs-go-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">CS GO</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/dota2-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">DOTA 2</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/elder-ring-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">ELDER RING</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/fortnite-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">FORTNITE</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/league-of-legends-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">LEAGUE OF LEGENDS</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/lost-ark-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">LOST ARK</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/roblox-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">ROBLOX</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/the-elder-scrolls-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">THE ELDER SCROLLS</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/valorant-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">VALORANT</h6>
+                </div>
+            </a>
+            <a href="" class="slider-link d-flex justify-content-center">
+                <div class="w-100 ">
+                    <img src="/imgs/SliderGames/wild-rift-lfg.jpg" class="slider-img">
+                    <h6 class="mt-3">WILD RIFT</h6>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
+<!-- Static slick carousel end -->
+
+
 <svg id="visual" class="mobile-svg-home-section" viewBox="0 0 1300 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 </svg>
 @else
@@ -336,14 +425,15 @@ style="color:white; display:flex; justify-content:center; ">
     <div class="col-md-12">
         <div class="frontpage-discord-box position-relative">
             <img src="/imgs/discord-logo3d.png" style="height:31px;">
-            <img src="{{asset('imgs/discord-gift-box.png')}}" width="180px" height="170px" class="gift-image">
+            <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image">
+            <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image-left">
             <div style=" height:100%; display:flex; justify-content:space-between; align-items:center;" class="flex-collapse">
                 <div>
                     <h3 style="color:white; margin-top:35px;">Join our Discord server community</h3>
                     <p style="color:white;">Join us for news, updates and latest giveaways.</p>
                 </div>
 
-                <div style="padding:10px 25px;">
+                <div>
                     <a href="https://discord.gg/vQ6eAYb8kZ" class="btn btn-discord">Join Discord Now</a>
                 </div>
             </div>
@@ -370,12 +460,14 @@ style="color:white; display:flex; justify-content:center; ">
 <script>
     $('.carousel').slick({
         slidesToShow: 3,
-        slidesToScroll: 1,
+        // slidesToScroll: 1,
         autoplay: true,
         arrows: false,
         pauseOnHover: true,
-        infinite: true,
-        autoplaySpeed: 1500,
+        // infinite: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        cssEease: 'linear',
         responsive: [{
                 breakpoint: 1024,
                 settings: {

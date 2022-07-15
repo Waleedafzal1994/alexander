@@ -23,7 +23,7 @@
                     </span>
                 </div>
                 <div class="served ml-3">
-                    <div class="new-btn bg-purple-gradient text-white border-0 py-3 br-10 h-40 number-row-card">
+                    <div class="new-btn new-purple-gradient text-white border-0 py-3 br-10 h-40 number-row-card">
                         <i class="fas fa-star"></i> 5.0 <span class="dot"> . </span> 1258 Served
                     </div>
                 </div>
@@ -50,7 +50,7 @@
         @foreach($all_remaining_services as $r_service)
         <div class="row mt-3 pl-20">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="box-styling shadow" type="button" id="{{$r_service->id}}" onclick="openComfirmOrderModel(this.id)">
+                <div class="box-styling" type="button" id="{{$r_service->id}}" onclick="openComfirmOrderModel(this.id)">
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="subcategory">

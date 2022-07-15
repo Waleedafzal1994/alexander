@@ -34,7 +34,7 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
-        <a class="right-bottom-arrow bg-purple-gradient shadow" style="display: none;" id="back_to_top">
+        <a class="right-bottom-arrow new-purple-gradient shadow" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <i class="fa fa-chevron-up text-white"></i>
             </div>
@@ -112,11 +112,11 @@
                                 </div>
 
                                 <div class="d-block mt-5 ml-3 pb-3">
-                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between mb-2 px-3">
+                                    <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between mb-2 px-3">
                                         <span>Avg. Response Time</span>
                                         <span>5 - 10 Mins</span>
                                     </div>
-                                    <div class="bg-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 sidebar-rating">
+                                    <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 sidebar-rating">
                                         <span>1258 Served</span>
                                         <span class="number-row-card"><i class="fas fa-star"></i> 5.0 </span>
                                     </div>
