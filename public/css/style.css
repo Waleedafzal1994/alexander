@@ -90,7 +90,6 @@
     position: absolute;
     left: -50px;
     bottom: 0;
-    transform: rotateY(180deg);
 }
 
 ::placeholder {
@@ -1131,7 +1130,7 @@ table th {
     display: flex;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin-top: 350px;
+    margin-top: 220px;
     /* border: 2px dashed var(--color-secondary); */
 }
 
@@ -1438,6 +1437,8 @@ p.card-text {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 600;
+    text-align: center;
+    color: #fff;
 }
 
 a.slider-link:hover {
@@ -2344,12 +2345,27 @@ a.slider-link:hover {
         right: -40px;
     }
 }
+@media (min-width: 992px){
+    .mobileview{
+        display: none;
+    }
+}
 @media (max-width: 991px){
     .middle-puzzle img{
         width: 70px;
     }
     .frontpage-arrow-down{
         width: 140px;
+    }
+    .desktopview{
+        display: none;
+    }
+    .mobileview{
+        right: -40px !important;
+        top: -100px;
+    }
+    .frontpage-discord-box{
+        padding: 30px 20px;
     }
 }
 @media (max-width: 800px) and (min-width: 768px){
@@ -2395,10 +2411,78 @@ a.slider-link:hover {
 }
 @media (max-width: 575px){
     .gift-image {
-        right: 0px;
-        top: -100px;
+        width: 150px;
+        height: 140px;
+        right: -20px;
+        top: -75px !important;
+    }
+    .left-cards .col-6, .right-cards .col-6{
+        padding: 0 15px !important;
     }
 }
+/* Welcome Animated Carousel Start */
+/* @-webkit-keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+}
+.carousel-section .slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+}
+.carousel-section .slider::before, .carousel-section .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.carousel-section .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.carousel-section .slider::before {
+    left: 0;
+    top: 0;
+}
+.carousel-section .slider .slider-track {
+    -webkit-animation: scroll 40s linear infinite;
+            animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.carousel-section .slider .slidecertificado {
+    height: 200px;
+    width: 250px;
+} */
+
+
+.owl-carousel .item{
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* Welcome Animated Carousel End */
+
 .pointer{
     cursor: pointer;
 }

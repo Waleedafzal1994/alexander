@@ -6,6 +6,10 @@
     .footer-mobile {
         text-align: center;
     }
+    .footer-mobile .footer-social{
+        justify-content: center;
+        margin-top: 12px;
+    }
 
     #profile_column_mobile {
         flex-direction: column;
