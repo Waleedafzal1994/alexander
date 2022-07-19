@@ -6,9 +6,9 @@
     src: url("/fonts/Poppins-Regular.ttf") format("truetype");
 }
 
-#app{
+/* #app{
     background-color: #f6f6ff;
-}
+} */
 .bg-content-clr{
     background-color: #f6f6ff !important;
 }
