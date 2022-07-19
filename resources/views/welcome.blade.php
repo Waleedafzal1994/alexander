@@ -56,12 +56,11 @@
                     <a href="#learnMore" class="button-pub">Learn more</a>
                 </div>
             </div> -->
+            
+            <div class="position-relative">
             <div class="text-center">
                 <img src="/imgs/gamers-play-lfg.png" class="w-100" alt="">
             </div>
-            <br>
-            <br>
-            <div class="position-relative">
                 <div class="flex-collapse frontpage-hero-box new-purple-gradient text-white w-100">
                     <div class="mobile-img mr-4">
                         <img src="/imgs/gamersplay-lfg.png" class="" alt="">
