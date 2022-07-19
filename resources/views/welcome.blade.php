@@ -57,7 +57,7 @@
                 </div>
             </div> -->
             <div class="text-center">
-                <img src="/imgs/gamers-play-lfg.png" alt="" style="width:60%">
+                <img src="/imgs/gamers-play-lfg.png" alt="" class="characters_image">
             </div>
             <div class="position-relative">
                 <div class="flex-collapse frontpage-hero-box new-purple-gradient text-white w-100">
