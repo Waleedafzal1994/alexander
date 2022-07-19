@@ -240,13 +240,13 @@
         <!-- Dynamic slick carousel end -->
 
         <!-- Static slick carousel start -->       
-        <div class="section carousel-section new-purple-gradient">
+        <div class="section carousel-section new-purple-gradient" id="carousel_id">
             <br>
             <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
             <br>
             <div class="owl-carousel owl-theme">
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/apex-legends-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">Apex Legends</h6>
@@ -254,7 +254,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/cs-go-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">CS GO</h6>
@@ -262,7 +262,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/dota2-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">DOTA 2</h6>
@@ -270,7 +270,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/elder-ring-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">ELDER RING</h6>
@@ -278,7 +278,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/fortnite-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">FORTNITE</h6>
@@ -286,7 +286,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/league-of-legends-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">LEAGUE OF LEGENDS</h6>
@@ -294,7 +294,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/lost-ark-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">LOST ARK</h6>
@@ -302,7 +302,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/roblox-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">ROBLOX</h6>
@@ -310,7 +310,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/the-elder-scrolls-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">THE ELDER SCROLLS</h6>
@@ -318,7 +318,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/valorant-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">VALORANT</h6>
@@ -326,7 +326,7 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="slider-link d-flex justify-content-center">
+                    <a href="#carousel_id" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/wild-rift-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">WILD RIFT</h6>
