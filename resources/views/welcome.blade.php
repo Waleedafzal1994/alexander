@@ -56,6 +56,9 @@
                     <a href="#learnMore" class="button-pub">Learn more</a>
                 </div>
             </div> -->
+            <div class="text-center">
+                <img src="/imgs/gamers-play-lfg.png" class="w-100" alt="">
+            </div>
             <br>
             <br>
             <div class="position-relative">
