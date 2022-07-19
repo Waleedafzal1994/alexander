@@ -17,8 +17,10 @@
     }
 </style>
 
-<link rel="stylesheet" type="text/css" href="/css/slick.css" />
-<link rel="stylesheet" type="text/css" href="/css/slick-theme.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/css/slick.css" />
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
     <div class="bg-welcome-clr">
         <div class="ripple-section">
@@ -57,7 +59,7 @@
             <br>
             <br>
             <div class="position-relative">
-                <div class="flex-collapse frontpage-hero-box bg-purple-gradient text-white w-100">
+                <div class="flex-collapse frontpage-hero-box new-purple-gradient text-white w-100">
                     <div class="mobile-img mr-4">
                         <img src="/imgs/gamersplay-lfg.png" class="" alt="">
                     </div>
@@ -67,8 +69,8 @@
                             <!-- <img src="/imgs/icons/gamersplay-lfg.png" alt="" style="height:50px; margin-right:15px;" class="mr-3"> -->
                             <span class="dashed-heading font-weight-bold">Ready to find your gamer friend?</span>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <span class="dashed-heading ml-0 mt-0 font-weight-bold text-uppercase mr-2">100K GP+ Gamers offering <span class="text-lowercase">their companionship</span></span>
+                        <div class="d-flex align-items-center highlights">
+                            <span class="dashed-heading ml-0 mt-0 font-weight-bold mr-2">100K GP+ Gamers offering their companionship</span>
                             <div class="frontpage-hero-box-cta text-white shadow">Let's Play!</div>
                         </div>
                     </div>
@@ -88,7 +90,7 @@
                                 <img src="/imgs/league-of-legends-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
                                     <div class="card-sub-title">League of Legends</div>
-                                    <div class="card-title bg-purple-gradient br-10 px-1 py-1 shadow">5.780 GP+ Gamers</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadow">5.780 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +103,7 @@
                                 <img src="/imgs/Valorant-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
                                     <div class="card-sub-title">Valorant</div>
-                                    <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">4.639 GP+ Gamers</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadow">4.639 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +116,7 @@
                                 <img src="/imgs/Fortnite-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
                                     <div class="card-sub-title">Fortnite</div>
-                                    <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">3.738 GP+ Gamers</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadow">3.738 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +129,7 @@
                                 <img src="/imgs/Apex-Legends-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
                                     <div class="card-sub-title">Apex Legends</div>
-                                    <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">2.367 GP+ Gamers</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadow">2.367 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +142,7 @@
                                 <img src="/imgs/Overwatch-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
                                     <div class="card-sub-title">Overwatch 2</div>
-                                    <div class="card-title bg-purple-gradient br-10 px-2 py-1 shadow">1.457 GP+ Gamers</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadow">1.457 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +221,7 @@
 
 
         <!-- Dynamic slick carousel start -->
-        <!-- <div class="section carousel-section bg-purple-gradient">
+        <!-- <div class="section carousel-section new-purple-gradient">
             <br>
             <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
             <div class="justify-content-center d-flex">
@@ -237,72 +239,93 @@
         </div> -->
         <!-- Dynamic slick carousel end -->
 
-        <!-- Static slick carousel start -->
-        <div class="section carousel-section bg-purple-gradient">
+        <!-- Static slick carousel start -->       
+        <div class="section carousel-section new-purple-gradient">
             <br>
             <h4 class="text-center">GamersPlay+ members are offering hundreds of gaming and lifestyle services</h4>
-            <div class="justify-content-center d-flex">
-                <div class="carousel text-center justify-content-center mt-5">
+            <br>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/apex-legends-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">Apex Legends</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/cs-go-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">CS GO</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/dota2-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">DOTA 2</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/elder-ring-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">ELDER RING</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/fortnite-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">FORTNITE</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/league-of-legends-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">LEAGUE OF LEGENDS</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/lost-ark-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">LOST ARK</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/roblox-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">ROBLOX</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/the-elder-scrolls-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">THE ELDER SCROLLS</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/valorant-lfg.jpg" class="slider-img">
                             <h6 class="mt-3">VALORANT</h6>
                         </div>
                     </a>
+                </div>
+                <div class="item">
                     <a href="" class="slider-link d-flex justify-content-center">
                         <div class="w-100 ">
                             <img src="/imgs/SliderGames/wild-rift-lfg.jpg" class="slider-img">
@@ -311,6 +334,8 @@
                     </a>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
         <!-- Static slick carousel end -->
 
@@ -426,12 +451,13 @@
             <div class="col-md-12">
                 <div class="frontpage-discord-box position-relative">
                     <img src="/imgs/discord-logo3d.png" style="height:31px;">
-                    <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image">
-                    <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image-left">
+                    <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image desktopview">
+                    <img src="{{asset('imgs/discord-gift-box-cutted.png')}}" width="220px" class="gift-image-left desktopview">
+                    <img src="{{asset('imgs/discord-gift-box.png')}}" width="180px" height="160px" class="gift-image mobileview">
                     <div style=" height:100%; display:flex; justify-content:space-between; align-items:center;" class="flex-collapse">
                         <div>
-                            <h3 style="color:white; margin-top:35px;">Join our Discord server community</h3>
-                            <p style="color:white;">Join us for news, updates and latest giveaways.</p>
+                            <h3 class="text-white"style="margin-top:35px;">Join our Discord server community</h3>
+                            <p class="text-white mb-4">Join us for news, updates and latest giveaways.</p>
                         </div>
 
                         <div>
@@ -458,42 +484,46 @@
 @if (isset($popular) && count($popular) > 0)
 @push('scripts')
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" ></script>
 <script>
-    $('.carousel').slick({
-        slidesToShow: 3,
-        // slidesToScroll: 1,
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 25,
         autoplay: true,
-        arrows: false,
-        pauseOnHover: true,
-        // infinite: true,
-        autoplaySpeed: 0,
-        speed: 8000,
-        cssEease: 'linear',
-        responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-
+        slideTransition: 'linear',
+        dots: false,
+        nav: false,
+        smartSpeed: 2500,
+        autoplaySpeed: 5000,
+        responsiveClass:true,
+        mouseDrag: false,
+        responsive:{
+            0:{
+                items:2,
             },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
+            600:{
+                items:3,
+            },
+            768:{
+                items:4,
+            },
+            991:{
+                items:5,
+            },
+            1100:{
+                items:6,
+            },
+            1300:{
+                items:7,
+            },
+            1500:{
+                items:9,
             }
-        ]
-    });
+        }
+    })
 </script>
+
 @endpush
 @endif
