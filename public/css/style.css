@@ -1141,7 +1141,7 @@ table th {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right,   #83D475 0%, #53ac8c  100%);
+    background: linear-gradient(181deg,   #83D475 0%, #53ac8c  100%);
 }
 
 .dashed-heading{
