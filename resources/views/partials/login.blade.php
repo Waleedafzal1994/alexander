@@ -121,9 +121,14 @@
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
                                 </a>
                             </div>
-                            <div class="">
+                            <div class="mr-2">
                                 <a href="">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/apple_logo.png') }}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -239,9 +244,14 @@
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
                                 </a>
                             </div>
-                            <div class="">
+                            <div class="mr-2">
                                 <a href="">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/apple_logo.png') }}" alt="">
                                 </a>
                             </div>
                         </div>
