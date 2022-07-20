@@ -60,6 +60,11 @@
                                         <div class="form-group">
                                             <h6>Password</h6>
                                             <input id="login-password" type="password" name="password" required autocomplete="login-current-password">
+                                            
+                                            <span class="password-showhide">
+                                                <span class="show-password">Show</span>
+                                                <span class="hide-password">Hide</span>
+                                            </span>
                                         </div>
                                         <div class="link-forget-pwd">
                                             @if (Route::has('password.request'))
@@ -98,9 +103,30 @@
                     </div>
                     </form>
                     {{-- <hr> --}}
-                    <div class="text-center mt-4">
+                    <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-4">
                         <p>Or log in with</p>
-                        <a href="/auth/discord"><img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt=""></a>
+                        <div class="social-links d-flex align-items-center">
+                            <div class="mr-2">
+                                <a href="/auth/discord">
+                                    <img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/facebook.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,15 +172,24 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group position-relative">
                                             <h6>Password</h6>
                                             <input id="password-reg" type="password" name="password" required autocomplete="new-password">
+                                            <span class="password-showhide">
+                                                <span class="show-password">Show</span>
+                                                <span class="hide-password">Hide</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group position-relative">
                                             <h6>Confirm</h6>
                                             <input id="password-confirm-reg" type="password" name="password_confirmation" required autocomplete="new-cnf-password">
+
+                                            <span class="password-showhide">
+                                                <span class="show-password">Show</span>
+                                                <span class="hide-password">Hide</span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-12 password-reg-error-msg">
@@ -186,8 +221,31 @@
                         </div>
                     </form>
                     <div class="text-center mt-3">
+                        <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-4">
                         <p>Or log in with</p>
-                        <a href="/auth/discord"><img height="32px" src="{{ asset('imgs/auth/discord.jpg') }}" alt=""></a>
+                        <div class="social-links d-flex align-items-center">
+                            <div class="mr-2">
+                                <a href="/auth/discord">
+                                    <img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/facebook.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="mr-2">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="">
+                                <a href="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -348,5 +406,21 @@
                 }
             });
         }
+
+        // Password hide show
+
+        $(".show-password, .hide-password").on('click', function() {
+            var passwordId = $(this).parents('.form-group').find('input').attr('id');
+            if ($(this).hasClass('show-password')) {
+            $("#" + passwordId).attr("type", "text");
+            $(this).parent().find(".show-password").hide();
+            $(this).parent().find(".hide-password").show();
+            } else {
+            $("#" + passwordId).attr("type", "password");
+            $(this).parent().find(".hide-password").hide();
+            $(this).parent().find(".show-password").show();
+            }
+        });
+
     });
 </script>

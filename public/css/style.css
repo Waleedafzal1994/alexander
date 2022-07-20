@@ -1188,6 +1188,35 @@ table th {
     font-size: 80%;
     color: var(--color-secondary) !important;
 }
+.form-group{
+    position: relative;
+}
+.password-showhide{
+    position: absolute;
+    right: 10px;
+    top: 32px;
+}
+.hide-password {
+    display: none
+}
+
+.social-links div{
+    background: #fff;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 25%);
+}
+.social-links a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* custom css : Amit Singh */
 
@@ -1269,12 +1298,18 @@ p.card-text {
     font-size: 33px;
     z-index: 9999;
     margin-left: 17px;
+    position: relative;
+    right: 8px;
+    top: 8px;
 }
 
 .modal-close-btn button.close {
     color: #fff;
 }
 
+.dot-body input::placeholder{
+    color: black;
+}
 /* @media screen and (max-width: 768px) {
     .img-modal-login-center {
         margin-left: 0px;
