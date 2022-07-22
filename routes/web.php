@@ -34,6 +34,11 @@ Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login')
 Route::post('/auth/register', [AuthController::class, 'signup'])->name('auth.register');
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha'])->name('reload-captcha');
 
+
+Route::middleware(['reg'])->group(function () {
+    // Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+}); 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/news', [HomeController::class, 'news'])->name('news');
