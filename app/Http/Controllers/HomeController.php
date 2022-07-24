@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Post;
+use App\Models\GenericModel;
 use Auth;
 use Cache;
 
+
 class HomeController extends Controller
 {
+
+    function __construct()
+    {
+        $this->Generic_model = new GenericModel;
+    }
     /**
      * Create a new controller instance.
      *
@@ -36,10 +46,50 @@ class HomeController extends Controller
     {
         $news = News::orderBy('created_at', 'desc')->get()->take(3);
         $popular = Category::where('popular', 1)->where('image_1', '!=', null)->get();
-
         return view('welcome', compact('news', 'popular'));
     }
 
+    public function completeProfile(Request $request)
+    {
+        $response = array();
+         $rules = array(
+                'name' => ['required', 'string', 'max:25'],
+                'gender' => ['required'],
+                'month' => ['required'],
+                'day' => ['required'],
+                'year' => ['required'],
+                //'referal_code' => ['required'],
+            );
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails())
+        {
+            array_push($response, array("result"=>'0' , "message" =>'Please enter required fields.'));
+            echo json_encode($response) ;
+        }
+        else
+        {
+            $data['name'] = $request->input('name');
+            $data['gender'] = $request->input('gender');
+            $month = $request->input('month');
+            $day = $request->input('day');
+            $year = $request->input('year');
+            $data['birth_date'] = $year.'-'.$month.'-'.$day;
+            $id= Auth::id();
+            //$data['referal_code'] = $request->input('referal_code');
+            $update = $this->Generic_model->updateRecord('users',$data,array('id'=>$id));
+            if (!empty($update))
+            {
+                Auth::user()->setProfileCompleteAttribute(1);
+                array_push($response, array("result"=>'1' , "message" =>'Data Update SuccessFully.'));
+                echo json_encode($response);
+            }
+            else
+            {
+                array_push($response, array("result"=>'0' , "message" =>'Soemthing went wrong.'));
+                echo json_encode($response) ;
+            }
+        }
+    }
 
     // Filtering function
     /*

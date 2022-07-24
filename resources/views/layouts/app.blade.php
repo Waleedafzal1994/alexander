@@ -273,6 +273,10 @@ $noFooter = true;
         @endguest
         {{-- @include('partials.login2') --}}
         {{-- @include('partials.register') --}}
+
+        @if(!empty(Auth::user()) && empty(Auth::user()->profile_complete))
+            @include('partials.register_complete')
+        @endif
         <div class="bg-content-clr">
             <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
                 @yield('content')
@@ -290,6 +294,16 @@ $noFooter = true;
                 })
             });
         </script>
+
+        <script>
+            $(document).ready(function() {
+
+                $('#dotModal').modal({
+                    show: true
+                });
+            });
+        </script>
+        
     </div>
     <script type="text/javascript">
         $.notify.defaults({globalPosition: 'top right'});   
