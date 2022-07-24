@@ -26,6 +26,7 @@ class EventServiceProvider extends ServiceProvider
             \SocialiteProviders\Steam\SteamExtendSocialite::class.'@handle',
             \SocialiteProviders\Facebook\FacebookExtendSocialite::class.'@handle',
             \SocialiteProviders\Twitch\TwitchExtendSocialite::class.'@handle',
+            \SocialiteProviders\Apple\AppleExtendSocialite::class.'@handle',
         ],
     ];
 

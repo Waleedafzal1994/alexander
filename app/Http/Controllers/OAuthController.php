@@ -49,4 +49,48 @@ class OAuthController extends Controller
         return redirect('/');
     }
 
+    public function loginUsingFacebook() {
+        
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function callbackFromFacebook(Request $request) {
+        
+         $user =  Socialite::driver('facebook')->user();   
+         dd($user);
+    }
+
+    public function loginUsingGoogle() {
+        
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function callbackFromGoogle(Request $request) {
+        
+         $user =  Socialite::driver('google')->user();   
+         dd($user);
+    }
+
+    public function loginUsingTwitch() {
+        
+        return Socialite::driver('twitch')->redirect();
+    }
+
+    public function callbackFromTwitch(Request $request) {
+        
+         $user =  Socialite::driver('twitch')->user();   
+         dd($user);
+    }
+
+    public function loginUsingApple() {
+        
+        return Socialite::driver('apple')->redirect();
+    }
+
+    public function callbackFromApple(Request $request) {
+        
+         $user =  Socialite::driver('apple')->user();   
+         dd($user);
+    }
+
 }

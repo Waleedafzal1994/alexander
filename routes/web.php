@@ -60,6 +60,26 @@ Route::prefix('auth')->group(function () {
     Route::get('discord', [OAuthController::class, 'loginDiscord']);
     Route::get('discord/callback', [OAuthController::class, 'loginDiscordCallback']);
 });
+
+Route::prefix('facebook')->name('facebook.')->group(function () {
+    Route::get('auth', [OAuthController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [OAuthController::class, 'callbackFromFacebook'])->name('callback');
+});
+
+Route::prefix('google')->name('google.')->group(function () {
+    Route::get('auth', [OAuthController::class, 'loginUsingGoogle'])->name('login');
+    Route::get('callback', [OAuthController::class, 'callbackFromGoogle'])->name('callback');
+});
+
+Route::prefix('twitch')->name('twitch.')->group(function () {
+    Route::get('auth', [OAuthController::class, 'loginUsingTwitch'])->name('login');
+    Route::get('callback', [OAuthController::class, 'callbackFromTwitch'])->name('callback');
+});
+
+Route::prefix('apple')->name('apple.')->group(function () {
+    Route::get('auth', [OAuthController::class, 'loginUsingApple'])->name('login');
+    Route::get('callback', [OAuthController::class, 'callbackFromApple'])->name('callback');
+});
 Route::middleware(['auth', 'verified', 'throttle:custom_five'])->group(function () {
     Route::post('/create/post', [PostController::class, 'createPost'])->name('createPost');
     Route::post('/post/comment', [PostController::class, 'addComment'])->name('comment');
