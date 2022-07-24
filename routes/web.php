@@ -35,24 +35,29 @@ Route::post('/auth/register', [AuthController::class, 'signup'])->name('auth.reg
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha'])->name('reload-captcha');
 
 
-Route::middleware(['reg'])->group(function () {
-    // Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware(['profile_complete'])->group(function () {
+    Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 }); 
-Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/news', [HomeController::class, 'news'])->name('news');
-Route::get('/news/{post}', [HomeController::class, 'post'])->name('post');
-Route::get('/users', [HomeController::class, 'news'])->name('users');
-Route::get('/frequently-asked-questions', [HomeController::class, 'faq'])->name('faq');
-Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
-Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
-Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
-Route::get('/services', [ServicesController::class, 'index'])->name('services');
-Route::get('/services/get', [ServicesController::class, 'search'])->name('get');
-Route::post('/services/getServiceInfoForModel', [ServicesController::class, 'getServiceInfoForModel']);
-Route::post('/services/getServiceDetailsForTab', [ServicesController::class, 'getServiceDetailsForTab']);
-Route::post('/services/getSingleServiceForSelect', [ServicesController::class, 'getSingleServiceForSelect']);
+
+Route::middleware(['check_login'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::post('/completeProfile', [HomeController::class, 'completeProfile'])->name('profile_complete');
+    
+    Route::get('/news', [HomeController::class, 'news'])->name('news');
+    Route::get('/news/{post}', [HomeController::class, 'post'])->name('post');
+    Route::get('/users', [HomeController::class, 'news'])->name('users');
+    Route::get('/frequently-asked-questions', [HomeController::class, 'faq'])->name('faq');
+    Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
+    Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+    Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
+    Route::get('/services', [ServicesController::class, 'index'])->name('services');
+    Route::get('/services/get', [ServicesController::class, 'search'])->name('get');
+    Route::post('/services/getServiceInfoForModel', [ServicesController::class, 'getServiceInfoForModel']);
+    Route::post('/services/getServiceDetailsForTab', [ServicesController::class, 'getServiceDetailsForTab']);
+    Route::post('/services/getSingleServiceForSelect', [ServicesController::class, 'getSingleServiceForSelect']);
+}); 
+//Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+
 
 
 // oAuth routes

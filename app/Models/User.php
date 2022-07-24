@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Cashier\Billable;
+use Session;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -27,7 +28,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'real_name',
         'password',
         'tnc',
-        'profile_thumbnail'
+        'profile_thumbnail',
+        'profile_complete'
     ];
 
     /**
@@ -89,5 +91,15 @@ class User extends Authenticatable implements MustVerifyEmail
         } else {
             return "/imgs/avatar.svg";
         }
+    }
+
+    public function getProfileCompleteAttribute() 
+    {
+        return Session::get('profile_complete', null);
+    }
+
+    public function setProfileCompleteAttribute($value)
+    {
+        Session::put('profile_complete', $value);
     }
 }

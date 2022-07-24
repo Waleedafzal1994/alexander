@@ -70,6 +70,7 @@ class Kernel extends HttpKernel
         'moderator' => \App\Http\Middleware\moderator::class,
         'seller' => \App\Http\Middleware\seller::class,
         'cors' => \App\Http\Middleware\Cors::class,
-        'reg' => \App\Http\Middleware\completlyRegistered::class,
+        'check_login' => \App\Http\Middleware\checkLogin::class,
+        'profile_complete' => \App\Http\Middleware\completlyRegistered::class,
     ];
 }

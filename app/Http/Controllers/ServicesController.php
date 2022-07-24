@@ -25,7 +25,6 @@ class ServicesController extends Controller
     //
     public function index()
     {
-        // dd("Hello");
         $menus = Menu::with('categories')->get();
         $categories = Category::select('id', 'name')->get();
         $popular = Category::where('popular', 1)->get();
