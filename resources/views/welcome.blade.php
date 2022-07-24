@@ -31,7 +31,8 @@
                             <h1 class="text-white">Welcome to GamersPlay</h1>
                             <p class="text-white">Your premier destination for finding gamer friends to play with!</p>
                             <br>
-                            <a href="/services" class="button-pu pulse">Get started</a>
+                            <a href="#" class="button-pu pulse get_start">Get started</a>
+                            <!-- <a href="/services" class="button-pu pulse">Get started</a> -->
                             <a href="#learnMore" class="button-pub text-white">Learn more</a>
                         </div>
                     </div>
@@ -533,6 +534,23 @@
     $('.dropdown').on('hide.bs.dropdown', function(e) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp(300);
     });
+
+    var user = "{{ !empty(Auth::user()->id) ? Auth::user()->id : ''}}";
+    $(document).ready(function() {
+        $('.get_start').click(function() {
+            if (user == '') 
+            {
+                var msg = 'asdfasdf';
+                Swal.fire('Error', 'You are not login. Please Login Now');
+            }
+            else
+            {
+                window.location.href = "{{url('/services')}}";
+            }
+                    
+        });
+   })
+
 </script>
 
 @endpush
