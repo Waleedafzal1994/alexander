@@ -308,6 +308,21 @@ $noFooter = true;
     <script type="text/javascript">
         $.notify.defaults({globalPosition: 'top right'});   
     </script>
+
+    @if(session('success'))
+              
+        <script type="text/javascript">
+            var msg = '{{ session("success")}}';
+            $.notify(msg, "success");
+        </script>
+    @elseif(session('flash_errors'))
+   
+        <script type="text/javascript">
+            var msg = '{{ session("flash_errors")}}';
+            $.notify(msg, "error");
+        </script>
+
+    @endif
     @stack('scripts')
 </body>
 </html>
