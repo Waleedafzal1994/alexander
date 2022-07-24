@@ -35,6 +35,11 @@ class OAuthController extends Controller
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
             } else {
+                $existingEmailInDb = User::where('email',$user->email)->first();
+                if(!empty($existingEmailInDb)){
+                   return redirect('/')->with('flash_errors','Email already exists.'); 
+                }
+                
                 $newUser = new User();
                 $newUser->name = $user->name;
                 $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
@@ -47,6 +52,131 @@ class OAuthController extends Controller
             }
         }
         return redirect('/');
+    }
+
+    public function loginUsingFacebook() {
+        
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function callbackFromFacebook(Request $request) {
+        
+        if(isset($request->error) && $request->error != "") {
+            return redirect('/');
+        }
+        if(Auth::check()) {
+            return redirect('/');
+        }
+        $user = Socialite::driver('facebook')->user();
+        if(isset($user) && isset($user->id)) {
+            $userInDb = User::where('facebook_id',$user->id)->first();
+            if($userInDb) {
+                Auth::loginUsingId($userInDb->id);
+            } else {
+
+                $existingEmailInDb = User::where('email',$user->email)->first();
+                if(!empty($existingEmailInDb)){
+                   return redirect('/')->with('flash_errors','Email already exists.'); 
+                }
+
+                $newUser = new User();
+                $newUser->name = $user->name;
+                $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
+                $newUser->email = $user->email;
+                $newUser->facebook_id = $user->id;
+                $newUser->email_verified_at = Carbon::now();
+                $newUser->profile_picture = $user->avatar;
+                $newUser->save();
+                Auth::loginUsingId($newUser->id);
+            }
+        }
+        return redirect('/');
+    }
+
+    public function loginUsingGoogle() {
+        
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function callbackFromGoogle(Request $request) {
+        
+        if(isset($request->error) && $request->error != "") {
+            return redirect('/');
+        }
+        if(Auth::check()) {
+            return redirect('/');
+        }
+        $user = Socialite::driver('google')->user();
+        if(isset($user) && isset($user->id)) {
+            $userInDb = User::where('google_id',$user->id)->first();
+            if($userInDb) {
+                Auth::loginUsingId($userInDb->id);
+            } else {
+                $existingEmailInDb = User::where('email',$user->email)->first();
+                if(!empty($existingEmailInDb)){
+                   return redirect('/')->with('flash_errors','Email already exists.'); 
+                }
+                $newUser = new User();
+                $newUser->name = $user->name;
+                $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
+                $newUser->email = $user->email;
+                $newUser->google_id = $user->id;
+                $newUser->email_verified_at = Carbon::now();
+                $newUser->profile_picture = $user->avatar;
+                $newUser->save();
+                Auth::loginUsingId($newUser->id);
+            }
+        }
+        return redirect('/');
+    }
+
+    public function loginUsingTwitch() {
+        
+        return Socialite::driver('twitch')->redirect();
+    }
+
+    public function callbackFromTwitch(Request $request) {
+        
+        if(isset($request->error) && $request->error != "") {
+            return redirect('/');
+        }
+        if(Auth::check()) {
+            return redirect('/');
+        }
+        $user = Socialite::driver('twitch')->user();
+        if(isset($user) && isset($user->id)) {
+            $userInDb = User::where('twitch_id',$user->id)->first();
+            if($userInDb) {
+                Auth::loginUsingId($userInDb->id);
+            } else {
+                $existingEmailInDb = User::where('email',$user->email)->first();
+                if(!empty($existingEmailInDb)){
+                   return redirect('/')->with('flash_errors','Email already exists.'); 
+                }
+
+                $newUser = new User();
+                $newUser->name = $user->name;
+                $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
+                $newUser->email = $user->email;
+                $newUser->twitch_id = $user->id;
+                $newUser->email_verified_at = Carbon::now();
+                $newUser->profile_picture = $user->avatar;
+                $newUser->save();
+                Auth::loginUsingId($newUser->id);
+            }
+        }
+        return redirect('/');
+    }
+
+    public function loginUsingApple() {
+        
+        return Socialite::driver('apple')->redirect();
+    }
+
+    public function callbackFromApple(Request $request) {
+        
+         $user =  Socialite::driver('apple')->user();   
+         dd($user);
     }
 
 }
