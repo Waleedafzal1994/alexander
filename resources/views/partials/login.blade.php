@@ -123,7 +123,7 @@
                             </div>
                             <div class="mr-2">
                                 <a href="{{route('twitch.login')}}">
-                                    <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/twitch.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="">
@@ -248,7 +248,7 @@
                             </div>
                             <div class="mr-2">
                                 <a href="">
-                                    <img class="discord-img-height" src="{{ asset('imgs/icons/instagram.svg') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/twitch.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="">
