@@ -237,22 +237,22 @@
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <a href="">
+                                <a href="{{route('facebook.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/facebook.svg') }}" alt="">
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <a href="">
+                                <a href="{{route('google.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
                                 </a>
                             </div>
                             <div class="mr-2">
-                                <a href="">
+                                <a href="{{route('twitch.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/twitch.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="">
-                                <a href="">
+                                <a href="{{route('apple.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/apple_logo.png') }}" alt="">
                                 </a>
                             </div>
