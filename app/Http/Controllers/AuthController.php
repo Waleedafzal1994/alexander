@@ -70,7 +70,8 @@ class AuthController extends Controller
 
         $messages = [
             'password.min' => 'Password must be at least 8 characters. ',
-            'password.regex' => 'Password must contain at least one uppercase character, one number, and one special character.'
+            'password.regex' => 'Password must contain at least one Uppercase, Number, & Special character.'
+            // 'password.regex' => 'Password must contain at least one uppercase character, one number, and one special character.'
         ];
         $this->validate($request, $rules, $messages);
 

@@ -4,6 +4,11 @@
         font-size: 100%;
         margin-top: 0px;
     }
+    .modal-c-tabs .contact-us{
+        font-size: 14px;
+        margin-top: -10px;
+        font-weight:600;
+    }
 </style>
 <div class="modal fade mt-4" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -21,7 +26,10 @@
 
             <!--Modal cascading tabs-->
             <div class="modal-c-tabs">
-                <!-- Nav tabs -->
+                <div class="contact-us mb-2 pb-1 text-right mr-3">
+                    <a href="" type="button">Contact Us</a>
+                </div>
+                    <!-- Nav tabs -->
                 <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3 login-modal-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active " data-toggle="tab" href="#loginPanel" role="tab">
@@ -174,19 +182,22 @@
                                             </span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group position-relative">
+                                    <div class="col-md-12">
+                                        <div class="form-group position-relative mb-3 pb-1">
                                             <h6>Password</h6>
                                             <input id="password-reg" type="password" name="password" required autocomplete="new-password">
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>
                                                 <span class="hide-password">Hide</span>
                                             </span>
+                                            <div class="password-reg-error-msg pt-3">
+                                                <span class="invalid-feedback" role="alert" id="password-reg-error">
+                                                    <strong></strong>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group position-relative">
                                             <h6>Confirm</h6>
                                             <input id="password-confirm-reg" type="password" name="password_confirmation" required autocomplete="new-cnf-password">
@@ -196,11 +207,6 @@
                                                 <span class="hide-password">Hide</span>
                                             </span>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 password-reg-error-msg">
-                                        <span class="invalid-feedback" role="alert" id="password-reg-error">
-                                            <strong></strong>
-                                        </span>
                                     </div>
                                 </div>
                                 <div class="row mt-3 mb-3">
