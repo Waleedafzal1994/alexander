@@ -1310,6 +1310,10 @@ p.card-text {
 .dot-body input::placeholder{
     color: black;
 }
+.dot-body .completeBtn button:disabled{
+    background: #f3f3f4 !important;
+    color: black !important;
+}
 /* @media screen and (max-width: 768px) {
     .img-modal-login-center {
         margin-left: 0px;

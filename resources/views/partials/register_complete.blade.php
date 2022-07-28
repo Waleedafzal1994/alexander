@@ -1,7 +1,7 @@
 <!-- Date of birth Modal start -->
-<!-- <button >verification modal</button> -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" >verification modal</button> -->
 
-<div class="modal fade mt-4" id="dotModal" tabindex="-1" role="dialog" aria-labelledby="dotModal" aria-hidden="true">
+<div class="modal fade mt-4" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- <div class="modal-close-btn">
@@ -23,7 +23,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <h6>Nick Name</h6>
-                                <input type="text" placeholder="Please enter your nickname" name="name" value="{{ Auth::user()->name }}" required autocomplete="name" autofocus>
+                                <input type="text" id="nickName" placeholder="Please enter your nickname" name="name" value="{{ Auth::user()->name }}" required autocomplete="name" autofocus>
                             </div>
                         </div>
                         <div class="col-12">
@@ -56,7 +56,7 @@
                                         </ul>
                                     </div>
                                 </div> -->
-                                <select name="gender" required="">
+                                <select name="gender" id="gender" required="">
                                     <option value="" selected="" disabled="">Please select you gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -67,7 +67,7 @@
 
                         <div class="col-12">
                             <h6>Birthday</h6>
-                            <select name="month" required="" class="col-4">
+                            <select name="month" id="month" required="" class="col-4">
                                 <option value="" selected="" disabled="">Month</option>
                                 <option value="01">Jan</option>
                                 <option value="02">Feb</option>
@@ -82,7 +82,7 @@
                                 <option value="11">Nov</option>
                                 <option value="12">Dec</option>
                             </select>
-                            <select name="day" required="" class="col-4">
+                            <select name="day" id="date" required="" class="col-4">
                                 <option value="" selected="" disabled="">Date</option>
                                 <option value="01">01</option>
                                 <option value="02">02</option>
@@ -97,7 +97,7 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <select name="year" required="" class="col-3">
+                            <select name="year" id="year" required="" class="col-3">
                                 <option value="" selected="" disabled="">Year</option>
                                 <option value="1991">1991</option>
                                 <option value="1992">1992</option>
@@ -287,7 +287,7 @@
                         </div>
 
                         <div class="col-12 text-center mt-4">
-                            <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Complete</button>
+                            <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn" disabled>Complete</button>
                         </div>
                     </div>
                 </form>
@@ -328,5 +328,25 @@
                     }
                 })
             });
-        })
+    })
+
+    const completeBtn = document.getElementById('completeBtn')
+    const nickName = document.getElementById('nickName')
+    const gender = document.getElementById('gender')
+    const month = document.getElementById('month')
+
+    // run this function whenever the values of any of the above 4 inputs change.
+    // this is to check if the input for all 4 is valid.  if so, enable completeBtn.
+    // otherwise, disable it.
+    const checkEnableButton = () => {
+        completeBtn.disabled = !(
+            nickName.value && 
+            gender.value && 
+            month.value !== 'Choose'
+        )
+    }
+
+    nickName.addEventListener('change', checkEnableButton)
+    gender.addEventListener('change', checkEnableButton)
+    month.addEventListener('change', checkEnableButton)
 </script>
