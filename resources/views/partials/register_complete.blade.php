@@ -286,7 +286,7 @@
                             <input type="text" placeholder="Please enter your invitation code" name="referal_code" autocomplete="Invitation Code" autofocus>
                         </div>
 
-                        <div class="col-12 text-center mt-4">
+                        <div class="col-12 text-center mt-4 completeBtn">
                             <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn" disabled>Complete</button>
                         </div>
                     </div>
@@ -330,6 +330,8 @@
             });
     })
 
+
+    // Complete Modal Validation
     const completeBtn = document.getElementById('completeBtn')
     const nickName = document.getElementById('nickName')
     const gender = document.getElementById('gender')

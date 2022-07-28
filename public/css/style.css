@@ -1314,6 +1314,12 @@ p.card-text {
     background: #f3f3f4 !important;
     color: black !important;
 }
+/* .dot-body .newdropdown .dropdown-menu li.active a::after {
+    content: '/f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+} */
+
 /* @media screen and (max-width: 768px) {
     .img-modal-login-center {
         margin-left: 0px;
@@ -1869,6 +1875,7 @@ a.slider-link:hover {
 }
 .newdropdown .dropdown .dropdown-menu{
     width: 100%;
+    min-width: 100%;
     background: #6b21a8;
     border: 0;
 }
