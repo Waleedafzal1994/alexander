@@ -16,7 +16,7 @@
             </div>
 
             <div class="modal-body dot-body">
-                <h5 class="text-center mb-4 font-weight-bold">Complete Your Details To Meet Real Friends</h5>
+                <h5 class="text-center mb-4 font-weight-bold">Complete your details to meet new gamer friends!</h5>
                 <form method="POST" id="profileFormModal">
                     @csrf
                     <div class="row pb-3">
@@ -67,7 +67,7 @@
 
                         <div class="col-12">
                             <h6>Birthday</h6>
-                            <select name="month" id="month" required="" class="col-4">
+                            <!-- <select name="month" id="month" required="" class="col-4">
                                 <option value="" selected="" disabled="">Month</option>
                                 <option value="01">Jan</option>
                                 <option value="02">Feb</option>
@@ -111,9 +111,9 @@
                                 <option value="2000">2000</option>
                                 <option value="2001">2001</option>
                                 <option value="2002">2002</option>
-                            </select>
+                            </select> -->
 
-                            <!-- <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
                                 <div class="form-group w-100 mr-2">
                                     <div class="newdropdown">
                                         <div class="dropdown w-100">
@@ -126,73 +126,73 @@
                                                     <li role="presentation" class="active">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jan</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Feb</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Mar</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Apr</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">May</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jun</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jul</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Aug</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Sep</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Oct</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Nov</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Dec</div>
-                                                            <i class="fa fa-check rounded-circle p-1"></i>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
                                                 </div>
@@ -209,31 +209,14 @@
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                                                 <div class="scroll-div">
-                                                    <li role="presentation" class="active">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">01</div>
-                                                        </a>
-                                                    </li>
+                                                    @for($d = 01; $d<=31; $d++)
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
-                                                            <div class="">02</div>
+                                                            <div class="">{{$d}}</div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">03</div>
-                                                        </a>
-                                                    </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">04</div>
-                                                        </a>
-                                                    </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">05</div>
-                                                        </a>
-                                                    </li>
+                                                    @endfor
                                                 </div>
                                             </ul>
                                         </div>
@@ -248,41 +231,24 @@
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                                                 <div class="scroll-div">
-                                                    <li role="presentation" class="active">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">1991</div>
-                                                        </a>
-                                                    </li>
+                                                    @for($i = 1950; $i<= 2022; $i++)
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
-                                                            <div class="">1992</div>
+                                                            <div id="year">{{$i}}</div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">1993</div>
-                                                        </a>
-                                                    </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">1994</div>
-                                                        </a>
-                                                    </li>
-                                                    <li role="presentation" class="">
-                                                        <a role="menuitem" tabindex="-1">
-                                                            <div class="">1995</div>
-                                                        </a>
-                                                    </li>
+                                                    @endfor
                                                 </div>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
 
                         <div class="col-12 py-2">
-                            <h6>Invitation Code (Optional)</h6>
+                            <h6>Invitation Code (Optional) <span><a type="button" class="rounded-circle px-1" data-tooltip title="Please contact your registered friends on the platform and obtain an invitation code from the community event.">?</a></span></h6>
                             <input type="text" placeholder="Please enter your invitation code" name="referal_code" autocomplete="Invitation Code" autofocus>
                         </div>
 

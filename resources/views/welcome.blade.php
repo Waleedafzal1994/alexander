@@ -45,6 +45,221 @@
             </div>
         </div>
     
+
+        <!-- Sample of a Complete form Modal-->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" >verification modal</button>
+
+            <div class="modal fade mt-4" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-close-btn">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-header header-page login-header rounded-top">
+                            <div class="header-img-modal-login-center custom-set">
+                                <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                            </div>
+                        </div>
+
+                        <div class="modal-body dot-body">
+                            <h5 class="text-center mb-4 font-weight-bold">Complete your details to meet new gamer friends!</h5>
+                            <form method="POST" id="profileFormModal">
+                                <div class="row pb-3">
+                                    <div class="col-12">
+                                        <div class="form-group mb-3 pb-3">
+                                            <h6>Nick Name</h6>
+                                            <input type="text" id="nickName" placeholder="Please enter your nickname" name="name" value="" required autocomplete="name" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-3 pb-3">
+                                            <h6>Gender</h6>
+                                            <div class="newdropdown">
+                                                <div class="dropdown w-100">
+                                                    <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                        <div class="game-title" id="drop_down_select">Please select you gender</div>
+                                                    </a>
+
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                        <div class="scroll-div">
+                                                            <li role="presentation" class="">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Male</div>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Female</div>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Other</div>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mb-3 pb-3">
+                                        <h6>Birthday</h6>
+
+                                        <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
+                                            <div class="form-group w-100 mr-2">
+                                                <div class="newdropdown">
+                                                    <div class="dropdown w-100">
+                                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                            <div class="game-title" id="drop_down_select">Month</div>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                            <div class="scroll-div">
+                                                                <li role="presentation" class="active">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Jan</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Feb</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Mar</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Apr</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">May</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Jun</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Jul</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Aug</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Sep</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Oct</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Nov</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">Dec</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group w-100 mr-2">
+                                                <div class="newdropdown">
+                                                    <div class="dropdown w-100">
+                                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                            <div class="game-title" id="drop_down_select">Date</div>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                            <div class="scroll-div">
+                                                                @for($d = 01; $d<=31; $d++)
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="">{{$d}}</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                @endfor
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group w-100">
+                                                <div class="newdropdown">
+                                                    <div class="dropdown w-100">
+                                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                            <div class="game-title" id="drop_down_select">Year</div>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                            <div class="scroll-div">
+                                                                @for($i = 1950; $i<= 2022; $i++)
+                                                                <li role="presentation" class="">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div id="year">{{$i}}</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                @endfor
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 py-2">
+                                        <h6>Invitation Code (Optional) <span><a type="button" class="rounded-circle px-1" data-tooltip title="Please contact your registered friends on the platform and obtain an invitation code from the community event.">?</a></span></h6>
+                                        <input type="text" placeholder="Please enter your invitation code" name="referal_code" autocomplete="Invitation Code" autofocus>
+                                    </div>
+
+                                    <div class="col-12 text-center mt-4 completeBtn">
+                                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn" disabled>Complete</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        -->
+
+
         <div class="container">
 
             <!-- <div class="row">

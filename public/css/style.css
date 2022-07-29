@@ -940,14 +940,14 @@ table th {
 
 .header-page {
     width: 100%;
-    background: #6B21A8;
+    background: linear-gradient(359deg, #581c87, #8e5cb5) !important;
     color: white;
     padding: 15px;
     margin: 0 !important;
     position: relative;
     bottom: 25px;
-    border-top: 8px dashed #7E22CE;
-    border-bottom: 8px dashed #7E22CE;
+    /* border-top: 8px dashed #7E22CE;
+    border-bottom: 8px dashed #7E22CE; */
     display: flex;
     align-items: center;
     margin-top: 10px !important;
@@ -1254,13 +1254,13 @@ ul.nav.nav-tabs.md-tabs.tabs-2.light-blue.darken-3 li {
 }
 
 .login-modal-tabs li.nav-item a.nav-link.active {
-    background: #7E22CE !important;
+    background: linear-gradient(359deg, #581c87, #8e5cb5) !important;
     color: #fff !important;
 }
 
-.login-modal-tabs {
+/* .login-modal-tabs {
     border-bottom: 2px dashed var(--color-background);
-}
+} */
 
 .login-modal-tabs .nav-link:hover,
 .login-modal-tabs .nav-link:focus {
@@ -1292,6 +1292,11 @@ p.card-text {
 .login-body .form-group h6 {
     color: #000;
 }
+.login-body .form-group input:hover,
+.login-body .form-group input:focus{
+    border-color: #581C87;
+    box-shadow: unset;
+}
 
 .modal-close-btn {
     margin-bottom: -4px !important;
@@ -1313,6 +1318,36 @@ p.card-text {
 .dot-body .completeBtn button:disabled{
     background: #f3f3f4 !important;
     color: black !important;
+}
+[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+    display: block;
+    position: absolute;
+    font-size: 0.8em;
+    color: white;
+}
+[data-tooltip]:hover:before {
+    border-radius: 0.2em;
+    content: attr(title);
+    background-color: rgba(0, 0, 0, 0.9);
+    margin-top: -2.5em;
+    position: absolute;
+    width: 200px;
+    top: -47px;
+    left: -85px;
+    padding: 6px;
+}
+[data-tooltip]:hover:after {
+    content: "";
+    margin-top: -2.2em;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    border-width: 0.5em 0.5em 0 0.5em;
+}
+.dot-body span a{
+    background-color: #f3f3f4;
+    position: relative;
+    transition: all .3s ease-in-out;
 }
 /* .dot-body .newdropdown .dropdown-menu li.active a::after {
     content: '/f00c';
@@ -1353,9 +1388,8 @@ p.card-text {
 }
 
 #reg-submit-btn:disabled {
-    background: #f3f3f4;
-    border: 1px solid #f3f3f4;
-    color: var(--color-darker);
+    background: #f3f3f4 !important;
+    color: var(--color-darker) !important;
 }
 
 .password-reg-error-msg {
@@ -1879,6 +1913,9 @@ a.slider-link:hover {
     background: #6b21a8;
     border: 0;
 }
+.dob-dropdown .dropdown .dropdown-menu{
+    transform: translateY(-216px) !important;
+}
 .newdropdown .dropdown .dropdown-menu{
     padding: 6px !important;
 }
@@ -1942,6 +1979,25 @@ a.slider-link:hover {
 } 
 .newdropdown .dropdown .dropdown-menu li.active a{
     background-color: #7f22cb !important;
+}
+
+.form-group .newdropdown .dropdown .dropdown-menu a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.newdropdown .dropdown .dropdown-menu li a svg{
+    display: none;
+}
+.newdropdown .dropdown .dropdown-menu li.active a svg{
+    display: block;
+} 
+.form-group .newdropdown .dropdown .dropdown-menu a svg{
+    width: 22px;
+    background: #f3f3f442;
+    border-radius: 50%;
+    height: 22px;
+    padding: 5px;
 }
 .social_icons{
     display: flex;

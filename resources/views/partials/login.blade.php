@@ -27,7 +27,7 @@
             <!--Modal cascading tabs-->
             <div class="modal-c-tabs">
                 <div class="contact-us mb-2 pb-1 text-right mr-3">
-                    <a href="" type="button">Contact Us</a>
+                    <a type="button">Contact Us</a>
                 </div>
                     <!-- Nav tabs -->
                 <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3 login-modal-tabs" role="tablist">
@@ -105,7 +105,7 @@
                                     </span>
                                 </div>
                                 <div class="text-center mt-4">
-                                    <button class="btn button-primary w-100" id="login-submit-btn">Login</button>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-5 py-2" id="login-submit-btn">Login</button>
                                 </div>
                         </div>
                     </div>
@@ -223,8 +223,8 @@
                                 </div>
 
                                 <div class="row ">
-                                    <div class="col-md-12 ">                                  
-                                        <button class="button-primary w-100" type="submit" id="reg-submit-btn" data-toggle="modal" data-target="#dotModal" data-backdrop="static" data-keyboard="false">Create
+                                    <div class="col-md-12 text-center">                                  
+                                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" type="submit" id="reg-submit-btn" data-toggle="modal" data-target="#dotModal" data-backdrop="static" data-keyboard="false">Create
                                             Account</button>
                                             <!-- <button class="button-primary w-100" type="submit" id="reg-submit-btn">Create
                                             Account</button> -->
