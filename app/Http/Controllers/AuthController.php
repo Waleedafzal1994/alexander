@@ -55,21 +55,21 @@ class AuthController extends Controller
     public function signup(Request $request)
     {
         $rules = [
-            'name' => ['required', 'string', 'max:25'],
-            'real_name' => ['required', 'string', 'max:64'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'min:3','max:30'],
+            'real_name' => ['required', 'string','min:3', 'max:30'],
+            'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => [
-                'required', 'string', 'min:8',    'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'required', 'string', 'min:6',    'regex:/[a-z]/',      // must contain at least one lowercase letter
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character
-                'max:255', 'confirmed'
+                'max:15', 'confirmed'
             ],
             'tnc' => 'required|accepted'
         ];
 
         $messages = [
-            'password.min' => 'Password must be at least 8 characters. ',
+            'password.min' => 'Password must be at least 6 characters. ',
             'password.regex' => 'Password must contain at least one Uppercase, Number, & Special character.'
             // 'password.regex' => 'Password must contain at least one uppercase character, one number, and one special character.'
         ];

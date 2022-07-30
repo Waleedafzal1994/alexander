@@ -298,7 +298,7 @@ $noFooter = true;
         <script>
             $(document).ready(function() {
 
-                $('#dotModal').modal({
+                $('#staticBackdrop').modal({
                     show: true
                 });
             });

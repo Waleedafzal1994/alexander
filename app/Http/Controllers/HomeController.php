@@ -39,6 +39,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return redirect('/');
     }
 
@@ -68,13 +69,21 @@ class HomeController extends Controller
         }
         else
         {
+
             $data['name'] = $request->input('name');
             $data['gender'] = $request->input('gender');
             $month = $request->input('month');
             $day = $request->input('day');
             $year = $request->input('year');
             $data['birth_date'] = $year.'-'.$month.'-'.$day;
+           
             $id= Auth::id();
+
+
+            $getCountry = getUsercountry();
+            if(!empty($getCountry['country'])){
+             $data['country'] = $getCountry['country'];
+            }
             //$data['referal_code'] = $request->input('referal_code');
             $update = $this->Generic_model->updateRecord('users',$data,array('id'=>$id));
             if (!empty($update))
