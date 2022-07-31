@@ -1,6 +1,13 @@
 <!-- Date of birth Modal start -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" >verification modal</button> -->
-
+<style type="text/css">
+    .complete-error{
+        display: none;
+    }
+    .complete-error p{
+        color: red;
+    }
+</style>
 <div class="modal fade mt-4" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -64,7 +71,10 @@
                                 </select>
                             </div>
                         </div>
-
+                        
+                        <input class="month_hidden" type="hidden" name="month">
+                        <input class="date_hidden" type="hidden" name="day">
+                        <input class="year_hidden" type="hidden" name="year">
                         <div class="col-12">
                             <h6>Birthday</h6>
                             <!-- <select name="month" id="month" required="" class="col-4">
@@ -122,7 +132,7 @@
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                                <div class="scroll-div">
+                                                <div class="scroll-div month">
                                                     <li role="presentation" class="active">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jan</div>
@@ -208,7 +218,7 @@
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                                <div class="scroll-div">
+                                                <div class="scroll-div date">
                                                     @for($d = 01; $d<=31; $d++)
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
@@ -230,7 +240,7 @@
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                                <div class="scroll-div">
+                                                <div class="scroll-div year">
                                                     @for($i = 1950; $i<= 2022; $i++)
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
@@ -251,9 +261,12 @@
                             <h6>Invitation Code (Optional) <span><a type="button" class="rounded-circle px-1" data-tooltip title="Please contact your registered friends on the platform and obtain an invitation code from the community event.">?</a></span></h6>
                             <input type="text" placeholder="Please enter your invitation code" name="referal_code" autocomplete="Invitation Code" autofocus>
                         </div>
+                        <div class="col-12 complete-error">
+                            <p >All fields are required</p>
+                        </div>
 
                         <div class="col-12 text-center mt-4 completeBtn">
-                            <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn" disabled>Complete</button>
+                            <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn">Complete</button>
                         </div>
                     </div>
                 </form>
@@ -262,6 +275,7 @@
     </div>
 </div>
 <!-- Date of birth Modal end-->
+
 <script type="text/javascript">
     $(document).ready(function() {
         // clear errors
@@ -270,6 +284,18 @@
 
             $('#profileFormModal').submit(function(e) {
                 e.preventDefault();
+
+                var month = $('.month_hidden').val();
+                var date = $('.date_hidden').val();
+                var year = $('.year_hidden').val();
+                if(month =='' && date =='' && year ==''){
+                    $('.complete-error').show();
+                    $('.completeBtn').attr('disabled',true);
+                }
+                else{
+                    $('.complete-error').hide();
+                     $('.completeBtn').attr('disabled',false);
+                }
                 let formData = $(this).serializeArray();
                 $.ajax({
                     type: "POST",
@@ -284,10 +310,10 @@
                         {
                             window.location.reload();
                         }
-                        else
-                        {
-                            $.notify(response[0].message, 'error');
-                        }
+                        // else
+                        // {
+                        //     $.notify(response[0].message, 'error');
+                        // }
                     },
                     error: (response) => {
 
@@ -296,25 +322,51 @@
             });
     })
 
+    $('.scroll-div li a').click(function(){
+        if($(this).parents('.scroll-div').hasClass('month')){
+          $(this).parents('.month').find('li').removeClass('active');  
+
+          var month = $.trim($(this).text());
+          $('.month_hidden').val(month);
+        }
+        else if($(this).parents('.scroll-div').hasClass('date')){
+          $(this).parents('.date').find('li').removeClass('active');  
+
+          var date = $.trim($(this).text());
+          $('.date_hidden').val(date);
+        }
+        else if($(this).parents('.scroll-div').hasClass('year')){
+          $(this).parents('.year').find('li').removeClass('active');  
+
+          var year = $.trim($(this).text());
+          $('.year_hidden').val(year);
+        }
+
+        
+        
+        $(this).parent('li').addClass('active');
+    });
+
 
     // Complete Modal Validation
-    const completeBtn = document.getElementById('completeBtn')
-    const nickName = document.getElementById('nickName')
-    const gender = document.getElementById('gender')
-    const month = document.getElementById('month')
+    // const completeBtn = document.getElementById('completeBtn');
+    // const nickName = document.getElementById('nickName');
+    // const gender = document.getElementById('gender');
+    // const month = document.getElementById('month');
 
-    // run this function whenever the values of any of the above 4 inputs change.
-    // this is to check if the input for all 4 is valid.  if so, enable completeBtn.
-    // otherwise, disable it.
-    const checkEnableButton = () => {
-        completeBtn.disabled = !(
-            nickName.value && 
-            gender.value && 
-            month.value !== 'Choose'
-        )
-    }
-
-    nickName.addEventListener('change', checkEnableButton)
-    gender.addEventListener('change', checkEnableButton)
-    month.addEventListener('change', checkEnableButton)
+    // // run this function whenever the values of any of the above 4 inputs change.
+    // // this is to check if the input for all 4 is valid.  if so, enable completeBtn.
+    // // otherwise, disable it.
+    // const checkEnableButton = () => {
+    //     completeBtn.disabled = !(
+    //         nickName.value && 
+    //         gender.value && 
+    //         month.value !== 'Choose'
+    //     )
+    // }
+    // alert(checkEnableButton);
+    // nickName.addEventListener('change', checkEnableButton);
+    // gender.addEventListener('change', checkEnableButton);
+    // month.addEventListener('change', checkEnableButton);
 </script>
+

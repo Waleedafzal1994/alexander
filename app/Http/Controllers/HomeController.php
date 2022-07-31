@@ -75,7 +75,9 @@ class HomeController extends Controller
             $month = $request->input('month');
             $day = $request->input('day');
             $year = $request->input('year');
-            $data['birth_date'] = $year.'-'.$month.'-'.$day;
+            $date = $month.' '.$day.' '.$year;
+
+            $data['birth_date'] = date('Y-m-d', strtotime($date));
            
             $id= Auth::id();
 
