@@ -765,7 +765,7 @@
             });
             $.ajax({
                 type: 'POST',
-                url: "/follow/",
+                url: "/follow",
                 data: {
                     'following_id': following_id
                 },
@@ -1338,7 +1338,7 @@
                 });
                 $.ajax({
                     type: 'POST',
-                    url: "/loadTimeline/",
+                    url: "/loadTimeline",
                     data: {
                         'id': id,
                     },
@@ -1440,7 +1440,7 @@
                 });
                 $.ajax({
                     type: 'POST',
-                    url: "/loadTimeline/",
+                    url: "/loadTimeline",
                     data: {
                         'id': id,
                     },
