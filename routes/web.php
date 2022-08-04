@@ -107,6 +107,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile/{id}/edit', [ProfileController::class, 'editProfilePage'])->name('profile_edit_page');
     Route::get('/profile/{id}/removeAvatar', [ProfileController::class, 'removeAvatar'])->name('removeAvatar');
     Route::get('/seller/apply', [SellerController::class, 'application'])->name('sellerApply');
+
+    Route::get('/edit-profile', [SellerController::class, 'editProfileUser'])->name('editProfileUser');
+    
     Route::get('/support', [TicketController::class, 'index'])->name('support');
     Route::get('/support/new', [TicketController::class, 'new'])->name('newTicket');
     Route::get('/support/ticket/{id}', [TicketController::class, 'show'])->name('showTicket');

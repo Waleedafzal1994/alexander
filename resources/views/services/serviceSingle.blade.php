@@ -480,6 +480,11 @@
                                         Badges
                                     </a>
                                 </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="badges-tab" href="/edit-profile">
+                                        Edit
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <!-- END: Service main Menu -->
