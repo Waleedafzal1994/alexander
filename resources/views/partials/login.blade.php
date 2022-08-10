@@ -158,7 +158,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h6>Nickname</h6>
-                                            <input id="name-reg" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                            <input id="name-reg" maxlength="30" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                             <span class="invalid-feedback" role="alert" id="name-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -167,7 +167,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h6>Full Name</h6>
-                                            <input id="real_name-reg" type="text" name="real_name" value="{{ old('real_name') }}" required autocomplete="real_name" autofocus>
+                                            <input id="real_name-reg" maxlength="30" type="text" name="real_name" value="{{ old('real_name') }}" required autocomplete="real_name" autofocus>
                                             <span class="invalid-feedback" role="alert" id="real_name-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -176,7 +176,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h6>Email</h6>
-                                            <input id="email-reg" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="email-reg" type="email" name="email" maxlength="50" value="{{ old('email') }}" required autocomplete="email">
                                             <span class="invalid-feedback" role="alert" id="email-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -185,7 +185,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group position-relative mb-3 pb-1">
                                             <h6>Password</h6>
-                                            <input id="password-reg" type="password" name="password" required autocomplete="new-password">
+                                            <input id="password-reg" type="password" name="password" maxlength="15" required autocomplete="new-password">
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>
                                                 <span class="hide-password">Hide</span>
@@ -200,7 +200,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group position-relative">
                                             <h6>Confirm</h6>
-                                            <input id="password-confirm-reg" type="password" name="password_confirmation" required autocomplete="new-cnf-password">
+                                            <input id="password-confirm-reg" type="password" name="password_confirmation" maxlength="15" required autocomplete="new-cnf-password">
 
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>

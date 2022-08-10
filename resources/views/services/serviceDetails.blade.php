@@ -183,7 +183,7 @@
         });
         $.ajax({
             type: 'POST',
-            url: "/services/getServiceInfoForModel/",
+            url: "/services/getServiceInfoForModel",
             data: {
                 'id': id
             },

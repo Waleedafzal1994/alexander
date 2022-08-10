@@ -408,4 +408,9 @@ class SellerController extends Controller
 
         return response('Success', 200);
     }
+
+    public function editProfileUser(){
+        // dd("Hello");
+        return view('services.edit-profile');
+    }
 }

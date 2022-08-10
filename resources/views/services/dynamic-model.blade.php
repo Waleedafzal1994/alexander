@@ -176,8 +176,9 @@
 
     function singleServiceForSelect(obj, id) {
 
-        // var id = $(obj).id;
-        // alert(id);
+        var id = $(obj).id;
+        console.log(id);
+        console.log(obj);
 
         $.ajaxSetup({
             headers: {

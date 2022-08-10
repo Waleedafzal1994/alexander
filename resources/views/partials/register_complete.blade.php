@@ -128,78 +128,78 @@
                                     <div class="newdropdown">
                                         <div class="dropdown w-100">
                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                <div class="game-title" id="drop_down_select">Month</div>
+                                                <div class="game-title" id="drop_down_select_month">Month</div>
                                             </a>
 
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
                                                 <div class="scroll-div month">
-                                                    <li role="presentation" class="active">
+                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
                                                         <a role="menuitem" tabindex="-1">
-                                                            <div class="">Jan</div>
+                                                            <div class="month_name">Jan</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_feb">
                                                         <a role="menuitem" tabindex="-1">
-                                                            <div class="">Feb</div>
+                                                            <div class="month_name">Feb</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_mar">
                                                         <a role="menuitem" tabindex="-1">
-                                                            <div class="">Mar</div>
+                                                            <div class="" data-setMonth="Mar">Mar</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_apr">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Apr</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_may">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">May</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_jun">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jun</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_jul">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Jul</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_aug">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Aug</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_sep">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Sep</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_oct">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Oct</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_nov">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Nov</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                         </a>
                                                     </li>
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="" id="month_li_dec">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">Dec</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -214,7 +214,7 @@
                                     <div class="newdropdown">
                                         <div class="dropdown w-100">
                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                <div class="game-title" id="drop_down_select">Date</div>
+                                                <div class="game-title" id="drop_down_select_date">Date</div>
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -236,7 +236,7 @@
                                     <div class="newdropdown">
                                         <div class="dropdown w-100">
                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                <div class="game-title" id="drop_down_select">Year</div>
+                                                <div class="game-title" id="drop_down_select_year">Year</div>
                                             </a>
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -279,12 +279,21 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // clear errors
+        document.getElementById('drop_down_select_month').innerText='Jan';
+        document.getElementById('drop_down_select_date').innerText='01';
+        document.getElementById('drop_down_select_year').innerText='2022';
+
+        var element=document.querySelector('ul.dropdown_month > li.active');
+
         $(".invalid-feedback").children("strong").text("");
         $(".is-invalid").removeClass("is-invalid");
 
             $('#profileFormModal').submit(function(e) {
                 e.preventDefault();
 
+                // var month = $('.month_hidden').val();
+                // var date = $('.date_hidden').val();
+                // var year = $('.year_hidden').val();
                 var month = $('.month_hidden').val();
                 var date = $('.date_hidden').val();
                 var year = $('.year_hidden').val();
@@ -324,21 +333,27 @@
 
     $('.scroll-div li a').click(function(){
         if($(this).parents('.scroll-div').hasClass('month')){
-          $(this).parents('.month').find('li').removeClass('active');  
+    
+            
+            $(this).parents('.month').find('li').removeClass('active');  
+            var month = $.trim($(this).text());
+            document.getElementById('drop_down_select_month').innerText = month;
+            var parent = $(this).parents('.month').find('li.active a div.month_name').text();
 
-          var month = $.trim($(this).text());
           $('.month_hidden').val(month);
         }
         else if($(this).parents('.scroll-div').hasClass('date')){
           $(this).parents('.date').find('li').removeClass('active');  
 
           var date = $.trim($(this).text());
+          document.getElementById('drop_down_select_date').innerText = date;
           $('.date_hidden').val(date);
         }
         else if($(this).parents('.scroll-div').hasClass('year')){
           $(this).parents('.year').find('li').removeClass('active');  
 
           var year = $.trim($(this).text());
+          document.getElementById('drop_down_select_year').innerText = year;
           $('.year_hidden').val(year);
         }
 
