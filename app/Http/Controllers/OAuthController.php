@@ -29,7 +29,7 @@ class OAuthController extends Controller
         if(Auth::check()) {
             return redirect('/');
         }
-        $user = Socialite::driver('discord')->user();
+        $user = Socialite::driver('discord')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('discord_id',$user->id)->first();
             if($userInDb) {
@@ -67,7 +67,7 @@ class OAuthController extends Controller
         if(Auth::check()) {
             return redirect('/');
         }
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver('facebook')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('facebook_id',$user->id)->first();
             if($userInDb) {
@@ -106,7 +106,7 @@ class OAuthController extends Controller
         if(Auth::check()) {
             return redirect('/');
         }
-        $user = Socialite::driver('google')->user();
+        $user = Socialite::driver('google')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('google_id',$user->id)->first();
             if($userInDb) {
@@ -143,7 +143,7 @@ class OAuthController extends Controller
         if(Auth::check()) {
             return redirect('/');
         }
-        $user = Socialite::driver('twitch')->user();
+        $user = Socialite::driver('twitch')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('twitch_id',$user->id)->first();
             if($userInDb) {
@@ -170,7 +170,7 @@ class OAuthController extends Controller
 
     public function loginUsingApple() {
         
-        return Socialite::driver('apple')->redirect();
+        return Socialite::driver('apple')->stateless()->redirect();
     }
 
     public function callbackFromApple(Request $request) {
