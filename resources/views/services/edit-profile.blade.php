@@ -28,8 +28,8 @@
                 </ul>
                 <div class="tab-content bg-white rounded p-3" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-edit-profile" role="tabpanel" aria-labelledby="pills-edit-profile-tab">
+                        <h3 class="mt-3 mb-5">Profile Information</h3>
                         <form action="">
-                            <h3 class="my-3">Profile Information</h3>
                             <div class="form-group mb-4">
                                 <label for="">Name</label>
                                 <input type="text" class="form-control" placeholder="Please enter your name">
@@ -205,8 +205,8 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+                        <h2 class="mt-3 mb-5">Account</h2>
                         <form action="">
-                            <h2 class="mb-5">Account</h2>
                             <p class="mb-4">Account Information</p>
                             <ul class="account-information pb-3">
                                 <li class="d-flex align-items-center">
@@ -249,81 +249,167 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-notification" role="tabpanel" aria-labelledby="pills-notification-tab">
+                        <h3 class="mt-3 mb-5">Notifications</h3>
                         <form action="">
                             <div class="form-group">
-                                <h3 class="my-3">Notifications</h3>
-                                <div class="form-group mb-4 d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
                                         <h6>E-mail Subscriptions:</h6>
                                         <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
                                     </div>
-                                    <div>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                             <hr>
                             <div class="form-group">
-                                <div class="form-group mb-4 d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
                                         <h6>ePal Recommendation:</h6>
                                         <p class="mb-0">Receive ePals recommended by the platform.</p>
                                     </div>
-                                    <div>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                             <hr>
                             <div class="form-group">
-                                <div class="form-group mb-4 d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
                                         <h6>Sound</h6>
                                     </div>
-                                    <div>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="form-group mb-4 d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
                                         <h6>Order</h6>
                                     </div>
-                                    <div>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="form-group mb-4 d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
                                         <h6>IM Message</h6>
                                     </div>
-                                    <div>
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">Privacy</div>
-                    <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">Settings</div>
+                    <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
+                        <h3 class="mt-3 mb-5">Privacy Setting</h3>
+                        <form action="">
+                            <div class="form-group">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mr-4">
+                                        <h6>Hide Birthday:</h6>
+                                        <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mr-4">
+                                        <h6>Anonymous on Leaderboard:</h6>
+                                        <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mr-4">
+                                        <h6>Turn Off Suggestions:</h6>
+                                        <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="mr-4">
+                                        <h6>Block List:</h6>
+                                        <p class="mb-0">You can manage the blocked users here, such as removing them from the list.</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
+                        <form action="">
+                            <h3 class="mt-3 mb-5">Auto Reply</h3>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 d-flex align-items-center">
+                                        <span class="online mr-1"></span> Online
+                                    </h6>
+                                    <p class="mb-0">No auto reply yet</p>
+                                </div>
+                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                            </div>
+                            <hr>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 d-flex align-items-center">
+                                        <span class="online offline mr-1"></span> Online
+                                    </h6>
+                                    <p class="mb-0">No auto reply yet</p>
+                                </div>
+                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                            </div>
+                            <hr>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 d-flex align-items-center">
+                                        <span class="online in-order mr-1"></span> Online
+                                    </h6>
+                                    <p class="mb-0">No auto reply yet</p>
+                                </div>
+                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                            </div>
+                            <hr>
+                            <div class="form-group d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="mb-0 d-flex align-items-center">
+                                        <span class="online resting mr-1"></span> Online
+                                    </h6>
+                                    <p class="mb-0">No auto reply yet</p>
+                                </div>
+                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                            </div>
+                            <hr>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
