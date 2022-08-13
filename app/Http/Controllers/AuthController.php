@@ -15,12 +15,12 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
             'remember_me' => 'boolean',
-            // 'captcha' => 'required|captcha'
+            'captcha' => 'required|captcha'
         ];
 
         $messages = [
-            // 'captcha.required' => "The captcha field is required.",
-            // 'captcha.captcha' => "Captcha entered is not correct."
+            'captcha.required' => "The captcha field is required.",
+            'captcha.captcha' => "Captcha entered is not correct."
 
         ];
         $this->validate($request, $rules, $messages);

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.seller')
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="{{ asset('css/style-services.css?v=') . time() }}" />
@@ -232,7 +232,7 @@
 
             <div class="profile-about mt-3">
 
-                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary font-weight-600 head-style-fst">
                     Socials
                 </h4>
 
@@ -275,6 +275,7 @@
 
                 </div>
 
+                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>0000123</p>
 
 
 
@@ -493,8 +494,8 @@
                                         Badges
                                     </a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="badges-tab" href="/edit-profile">
+                                <li class="nav-item ml-auto" role="presentation">
+                                    <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a>
                                 </li>
