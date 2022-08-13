@@ -275,7 +275,7 @@
 
                 </div>
 
-                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>0000123</p>
+                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
 
 
 
@@ -298,10 +298,6 @@
                     </a>
                     @endif
                 </div> -->
-                <div class="pl-3 social_icons mb-4">
-                    <p class="text-black">ID: {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
-                    
-                </div>
 
 
             </div>
