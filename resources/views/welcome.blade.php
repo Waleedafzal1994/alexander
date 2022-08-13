@@ -760,7 +760,7 @@
             }
             else
             {
-                window.location.href = "{{url('/services')}}";
+                window.location.href = "{{url('/gp')}}";
             }
                     
         });

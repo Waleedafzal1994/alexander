@@ -76,9 +76,17 @@ class HomeController extends Controller
             $day = $request->input('day');
             $year = $request->input('year');
             $date = $month.' '.$day.' '.$year;
+            $age = date('m',strtotime($month)).'/'.$day.'/'.$year;
+            
+            $checkAge = checkAge($age);
+            if ($checkAge < 13) 
+            {
+                array_push($response, array("result"=>'0' , "message" =>'The age cannot be less than 13 years old.'));
+                echo json_encode($response) ;
+                exit();
+            }
 
             $data['birth_date'] = date('Y-m-d', strtotime($date));
-           
             $id= Auth::id();
 
 

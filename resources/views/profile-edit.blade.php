@@ -96,7 +96,8 @@
                                     <select name="gender" class="form-control" required>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Non-Binary">Non-Binary</option>
+                                        <!-- <option value="Other">Other</option> -->
                                     </select>
                                 </div>
 
@@ -553,6 +554,11 @@
                             <label for="">Instagram</label>
                             <input type="url" name="instagram_profile" class="input" placeholder="@gamersplay"
                                 value="{{ $user->instagram_profile }}">
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <label for="">TikTok</label>
+                            <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/@gamersplay" value="{{ $user->tiktok_profile }}">
                         </div>
                         <!-- <div class="col-md-4">
                             <br>
