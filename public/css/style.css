@@ -193,11 +193,10 @@ p {
 
 
 .badge-points {
-    background-color: var(--color-secondary-gp);
+    background: linear-gradient(179deg, #c395f1 0%, #8224e3 75%) !important;
     color: #fff;
     padding: 5px 15px;
     vertical-align: middle;
-    box-shadow: 0 0 5px 5px #6b1daf;
 }
 
 
@@ -1870,7 +1869,7 @@ a.slider-link:hover {
     padding: 5px 0;
 }
 .nav-custom-nav .nav-item .nav-link.active{
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
 }
@@ -2131,7 +2130,7 @@ a.slider-link:hover {
     margin: 0 !important;
 }
 .badge-card{
-    background: linear-gradient(135deg, rgb(195, 149, 241) 0%, rgb(130, 36, 227) 75%) !important;
+    background: linear-gradient(359deg , #581c87, #b455ff ) !important;
 }
 .badge-card .gained{
     font-size: 20px;
@@ -2139,6 +2138,7 @@ a.slider-link:hover {
 .badge-card .badge{
     border-radius: 35px;
     font-size: 16px;
+    background: linear-gradient(359deg , #581c87, #b455ff ) !important;
 }
 .badge-cards .card{
     transition: all .4s ease-in-out;
@@ -2343,7 +2343,7 @@ a.slider-link:hover {
     border-bottom: 2px solid #581c87;
 }
 .follower-section li a.active{
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
     border-radius: 8px;
@@ -2790,4 +2790,23 @@ input:checked + .slider {
 }
 .form-group .resting{
     background-color: #3a3956;
+}
+
+.top-bg-section{
+    background: #581c87;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.top-bg-section .bg-img{
+    background-image: url("../images/gamers-logo.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    height: 800px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 70%;
 }

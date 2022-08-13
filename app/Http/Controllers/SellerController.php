@@ -409,8 +409,15 @@ class SellerController extends Controller
         return response('Success', 200);
     }
 
-    public function editProfileUser(){
+    public function editProfileUser(Request $request){
         // dd("Hello");
-        return view('services.edit-profile');
+        // dd($request->id);
+        $user = User::where('id', $request->id)->first();
+        // dd($user);
+        // if (!$user || $user->id != Auth::id()) {
+        //     return redirect('/');
+        // }
+
+        return view('services.edit-profile', compact('user'));
     }
 }
