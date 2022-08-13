@@ -232,7 +232,7 @@
 
             <div class="profile-about mt-3">
 
-                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary font-weight-600 head-style-fst">
                     Socials
                 </h4>
 
@@ -268,6 +268,7 @@
 
                 </div>
 
+                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>0000123</p>
 
 
 
