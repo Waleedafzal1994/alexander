@@ -27,6 +27,42 @@
   --text-h3: 14px;
 }
 
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #f3f3f4 !important;
+  outline: none;
+  background: #EDEDFB !important;
+  padding: 5px 10px;
+  transition: 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: #fff;
+  border-color: rgba(164, 44, 214, 0.4) !important;
+  border-top-color: rgba(164, 44, 214, 0.4) !important;
+  border-right-color: rgba(164, 44, 214, 0.4) !important;
+  border-bottom-color: rgba(164, 44, 214, 0.4) !important;
+  border-left-color: rgba(164, 44, 214, 0.4) !important;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%) !important;
+}
+input:hover, 
+textarea:hover{
+  border-color: #7041E6 !important;
+  background-color: #EDEDFB;
+  box-shadow: unset;
+}
+.newdropdown .dropdown .dropdown-toggle{
+  transition: all .3s ease-in-out;
+}
+.newdropdown .dropdown .dropdown-toggle:hover{
+  border: 1px solid #7041E6 !important;
+}
+
 body {
   background: var(--body-background);
 }

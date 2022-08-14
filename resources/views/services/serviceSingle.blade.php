@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.seller')
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="{{ asset('css/style-services.css?v=') . time() }}" />
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="profile-section-two numbers">
                                             <div class="review-body text-center">
-                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '0' }}
+                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '-' }}
                                             </div>
                                         </div>
                                     </div>
@@ -232,13 +232,13 @@
 
             <div class="profile-about mt-3">
 
-                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
+                <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary font-weight-600 head-style-fst">
                     Socials
                 </h4>
 
 
                 <div class="pl-3 social_icons mb-4">
-                    @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
+                    @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile) || !empty($service->user->tiktok_profile))
 
 
                     @if(!empty($service->user->facebook_profile))
@@ -261,6 +261,13 @@
                     </a>
                     @endif
 
+                    @if(!empty($service->user->tiktok_profile))
+
+                    <a href="{{$service->user->tiktok_profile}}" target=_blank>
+                        <i class="fab fa-tiktok text-white"></i>
+                    </a>
+                    @endif
+
 
                     @else
                     <p class="text-black">N/A</p>
@@ -268,6 +275,7 @@
 
                 </div>
 
+                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
 
 
 
@@ -290,6 +298,8 @@
                     </a>
                     @endif
                 </div> -->
+
+
             </div>
 
         </div>
@@ -480,8 +490,8 @@
                                         Badges
                                     </a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="badges-tab" href="/edit-profile">
+                                <li class="nav-item ml-auto" role="presentation">
+                                    <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a>
                                 </li>
@@ -883,7 +893,7 @@
         //     }
         // });
 
-        
+
     });
 </script>
 <script type="text/javascript">
@@ -1062,7 +1072,7 @@
 
                         // }
                         // else{
-                            $(".comment-section_" + post_id).first().before(response.data);
+                        $(".comment-section_" + post_id).first().before(response.data);
                         // }
 
                         // $(".comment-section_" + post_id).append(response.data);
@@ -1322,7 +1332,7 @@
             //Active Tab//
             $('#myTab a[href="#' + 'profile' + '"]').tab("show");
 
-        
+
             // activeTimeline
             //Change Url//
             let c_tab = '#profile';
@@ -1337,9 +1347,9 @@
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1354,7 +1364,7 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
             }
@@ -1370,15 +1380,14 @@
             $('#myTab a[href="#' + 'followers' + '"]').tab("show");
 
             var clickedTab = $(this).attr('id');
-            if(clickedTab == 'activefollowers'){
+            if (clickedTab == 'activefollowers') {
 
                 $('#pills-following-tab').removeClass('active');
                 $('#pills-following').removeClass('active show');
 
                 $('#pills-follower-tab').addClass('active');
                 $('#pills-follower').addClass('active show');
-            }
-            else if(clickedTab == 'activefollowing'){
+            } else if (clickedTab == 'activefollowing') {
 
                 $('#pills-follower-tab').removeClass('active');
                 $('#pills-follower').removeClass('active show');
@@ -1400,10 +1409,10 @@
                 $(window).scrollTop(0);
             }, 400);
 
-            
+
         });
 
-        
+
 
         $('.activeBadge').on("click", function() {
             //Active Tab//
@@ -1430,18 +1439,16 @@
             const hash = $(this).attr("href");
             if (hash == "#home") {
                 newUrl = url.split("#")[0];
-            }
-            else if(hash == "#profile")
-            {
+            } else if (hash == "#profile") {
                 newUrl = url.split("#")[0] + hash;
 
                 id = "{{ $service->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1456,11 +1463,10 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
-            }
-            else {
+            } else {
                 newUrl = url.split("#")[0] + hash;
             }
             newUrl += "/";

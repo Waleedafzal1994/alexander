@@ -30,7 +30,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <h6>Nick Name</h6>
-                                <input type="text" id="nickName" placeholder="Please enter your nickname" name="name" value="{{ Auth::user()->name }}" required autocomplete="name" autofocus>
+                                <input type="text" id="nickName" placeholder="Please enter your nickname" name="name" value="{{ Auth::user()->name }}" autocomplete="name" autofocus>
                             </div>
                         </div>
                         <div class="col-12">
@@ -67,7 +67,7 @@
                                     <option value="" selected="" disabled="">Please select you gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
+                                    <option value="NON-BINARY">NON-BINARY</option>
                                 </select>
                             </div>
                         </div>
@@ -241,7 +241,7 @@
 
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                                                 <div class="scroll-div year">
-                                                    @for($i = 1950; $i<= 2022; $i++)
+                                                    @for($i = 1950; $i<= date('Y'); $i++)
                                                     <li role="presentation" class="">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div id="year">{{$i}}</div>
@@ -279,9 +279,14 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // clear errors
+        var year  = "<?php $date = strtotime( ''.date('Y').' -13 year'); echo date('Y', $date); ?>";
         document.getElementById('drop_down_select_month').innerText='Jan';
         document.getElementById('drop_down_select_date').innerText='01';
-        document.getElementById('drop_down_select_year').innerText='2022';
+        document.getElementById('drop_down_select_year').innerText=year;
+
+        $('.month_hidden').val('Jan');
+        $('.date_hidden').val('01');
+        $('.year_hidden').val(year);
 
         var element=document.querySelector('ul.dropdown_month > li.active');
 
@@ -319,13 +324,18 @@
                         {
                             window.location.reload();
                         }
+                        else if (response[0].result == 0) 
+                        {
+                            $('.complete-error p').text(response[0].message);
+                            $('.complete-error').show();
+                        }
                         // else
                         // {
                         //     $.notify(response[0].message, 'error');
                         // }
                     },
                     error: (response) => {
-
+                        // alert();
                     }
                 })
             });

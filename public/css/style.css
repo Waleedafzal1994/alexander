@@ -109,7 +109,7 @@
     --color-light: white;
     --color-info: #83B5D1;
     --color-danger: #D80032;
-    --border-radius: 8px;
+    --border-radius: 4px;
 }
 
 body {
@@ -193,11 +193,10 @@ p {
 
 
 .badge-points {
-    background-color: var(--color-secondary-gp);
+    background: linear-gradient(179deg, #c395f1 0%, #8224e3 75%) !important;
     color: #fff;
     padding: 5px 15px;
     vertical-align: middle;
-    box-shadow: 0 0 5px 5px #6b1daf;
 }
 
 
@@ -384,7 +383,7 @@ textarea {
     width: 100%;
     border: 1px solid #f3f3f4;
     outline: none;
-    background: #f3f3f4;
+    background: #EDEDFB;
     padding: 5px 10px;
     border-radius: var(--border-radius);
     transition: 0.2s ease;
@@ -400,6 +399,10 @@ textarea:focus {
     border-bottom-color: rgba(164, 44, 214, 0.4);
     border-left-color: rgba(164, 44, 214, 0.4);
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+input[type="number"]::placeholder, 
+input[type="password"]::placeholder{
+    color: #581C87;
 }
 
 .button-primary {
@@ -1195,6 +1198,7 @@ table th {
     position: absolute;
     right: 10px;
     top: 32px;
+    cursor: pointer;
 }
 .hide-password {
     display: none
@@ -1294,8 +1298,12 @@ p.card-text {
 }
 .login-body .form-group input:hover,
 .login-body .form-group input:focus{
-    border-color: #581C87;
+    border-color: #7041E6;
+    background-color: #EDEDFB;
     box-shadow: unset;
+}
+.login-body .form-group input:active{
+    background: #EDEDFB;
 }
 
 .modal-close-btn {
@@ -1861,7 +1869,7 @@ a.slider-link:hover {
     padding: 5px 0;
 }
 .nav-custom-nav .nav-item .nav-link.active{
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
 }
@@ -2122,7 +2130,7 @@ a.slider-link:hover {
     margin: 0 !important;
 }
 .badge-card{
-    background: linear-gradient(135deg, rgb(195, 149, 241) 0%, rgb(130, 36, 227) 75%) !important;
+    background: linear-gradient(359deg , #581c87, #b455ff ) !important;
 }
 .badge-card .gained{
     font-size: 20px;
@@ -2130,6 +2138,7 @@ a.slider-link:hover {
 .badge-card .badge{
     border-radius: 35px;
     font-size: 16px;
+    background: linear-gradient(359deg , #581c87, #b455ff ) !important;
 }
 .badge-cards .card{
     transition: all .4s ease-in-out;
@@ -2334,7 +2343,7 @@ a.slider-link:hover {
     border-bottom: 2px solid #581c87;
 }
 .follower-section li a.active{
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
     border-radius: 8px;
@@ -2613,5 +2622,254 @@ a.slider-link:hover {
     text-align: center;
 }
 .games-cards .card .card-image .titles .card-title{
+    /* margin-bottom: 0; */
+    height: 44px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Edit profile page css */
+.edit-profile-page .dropdown a{
+    border: 0 !important;
+    color: #495057 !important;
+    height: 38px;
+    background: #EDEDFB !important;
+}
+.edit-profile-page .dropdown .dropdown-menu{
+    box-shadow: 0 0 11px #00000021 !important;
+    background: #fff !important;
+}
+.edit-profile-page .dropdown .dropdown-menu li a{
+    background: transparent !important;
+}
+.edit-profile-page .dropdown .dropdown-menu a svg{
+    background: #8224e3 !important;
+}
+.edit-profile-page .dropdown .dropdown-menu li.active a{
+    background: #ededfb !important;
+}
+.edit-profile-page .dropdown .dropdown-menu.show li a:hover{
+    background: #ededfb !important;
+}
+
+
+.text-box{
+    position: relative;
+}
+.text-box #the-count{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.text-box #the-count span{
+    color: #581c87 !important;
+}
+.account-information li{
+    margin-bottom: 16px;
+}
+.account-information li >div{
+    color: #727085;
+    min-width: 170px;
+    font-size: 14px;
+}
+.account-information li p{
+    color: #581C87;
     margin-bottom: 0;
+    font-size: 16px;
+    min-width: 320px;
+}
+.account-information li button{
+    min-width: 90px;
+}
+.account-information a{
+    background-color: #6b21a81c;
+    color: #000 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+}
+.account-information a::after{
+    display: none !important;
+}
+.delete-accnt p{
+    color: #727085;
+    margin-bottom: 0;
+    font-size: 14px;
+    min-width: 170px;
+}
+.delete-accnt a{
+    color: #581C87;
+    text-decoration: none !important;
+    font-size: 16px;
+}
+.number-change select{
+    width: 100px;
+    height: 48px;
+    border-radius: 8px;
+}
+
+
+
+/* Switch Toggle css */
+.switch input { 
+    display:none;
+}
+.switch {
+    display:inline-block;
+    width:50px;
+    height:26px;
+    margin:8px;
+    transform:translateY(17%);
+    position:relative;
+}
+/* Style Wired */
+.slider {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    border-radius:30px;
+    box-shadow:0 0 0 2px #8f57babf, 0 0 0 #8f57babf;
+    cursor:pointer;
+    border:4px solid transparent;
+    overflow:hidden;
+     transition:.4s;
+}
+.slider:before {
+    position:absolute;
+    content:"";
+    width:100%;
+    height:100%;
+    background:#8f57babf;
+    border-radius:30px;
+    transform:translateX(-24px);
+    transition:.4s;
+}
+
+input:checked + .slider:before {
+    transform:translateX(24px);
+    background:#581C87;
+}
+input:checked + .slider {
+    box-shadow:0 0 0 2px #581C87,0 0 0 #581C87;
+}
+
+/* Style Flat */
+.switch.flat .slider {
+ box-shadow:none;
+}
+.switch.flat .slider:before {
+  background:#FFF;
+}
+.switch.flat input:checked + .slider:before {
+ background:white;
+}
+.switch.flat input:checked + .slider {
+  background:#581C87;
+}
+
+#pills-notification h6{
+    font-size: 16px;
+    color: #581C87;
+}
+
+.form-group .online{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #53ac8c;
+}
+.form-group .offline{
+    background-color: #D80032;
+}
+.form-group .in-order{
+    background-color: #581C87;
+}
+.form-group .resting{
+    background-color: #3a3956;
+}
+
+.top-bg-section{
+    background: #581c87;
+    min-height: 200px;
+    position: relative;
+    /* overflow: hidden; */
+    box-shadow: inset 0 0px 20px -10px black;
+}
+.top-bg-section .bg-img{
+    background-image: url("../images/gamers-logo.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    height: 800px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -526px;
+}
+.top-bg-section ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 12px;
+    padding: 0 20px;
+}
+.top-bg-section ul .circle-link{
+    list-style-type: none;
+    background-color: #3a3956 !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 3px 15px -6px #000000b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.top-bg-section ul li a::after{
+    display: none;
+}
+
+.top-bg-section .dropdown .dropdown-menu{  
+    display:block; 
+    opacity: 0;  
+    visibility: hidden; 
+    transition:.3s; 
+    margin-top:0;  
+}
+.top-bg-section ul li >div:hover{
+    background-color: #e9ecef;
+}
+.top-bg-section .dropdown-menu.fade-down{ 
+    top:80%; 
+    transform: rotateX(-75deg); 
+    transform-origin: 0% 0%; 
+}
+
+.top-bg-section .dropdown-menu.fade-up{ 
+    top:180%;  
+    left: -115px;
+}
+
+.top-bg-section .nav-item:hover .dropdown-menu{ 
+    transition: .3s; 
+    opacity:1; 
+    visibility:visible; 
+    transform: rotateX(0deg); 
+    top: 110%;
+    left: -115px;
+    border-radius: 10px;
+}
+.top-bg-section .dropdown-menu.show{ 
+    transform: translate3d(-117px, 40px, 0px) !important;
+}
+
+.top-bg-section .dropdown:hover .dropdown-menu {
+    opacity:1;
 }

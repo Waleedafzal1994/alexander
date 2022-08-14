@@ -50,7 +50,7 @@ Route::middleware(['check_login'])->group(function () {
     Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
     Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
     Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
-    Route::get('/services', [ServicesController::class, 'index'])->name('services');
+    Route::get('/gp', [ServicesController::class, 'index'])->name('services');
     Route::get('/services/get', [ServicesController::class, 'search'])->name('get');
     Route::post('/services/getServiceInfoForModel', [ServicesController::class, 'getServiceInfoForModel']);
     Route::post('/services/getServiceDetailsForTab', [ServicesController::class, 'getServiceDetailsForTab']);
@@ -108,13 +108,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile/{id}/removeAvatar', [ProfileController::class, 'removeAvatar'])->name('removeAvatar');
     Route::get('/seller/apply', [SellerController::class, 'application'])->name('sellerApply');
 
-    Route::get('/edit-profile', [SellerController::class, 'editProfileUser'])->name('editProfileUser');
+    Route::get('/edit-profile/{id}', [SellerController::class, 'editProfileUser'])->name('editProfileUser');
     
     Route::get('/support', [TicketController::class, 'index'])->name('support');
     Route::get('/support/new', [TicketController::class, 'new'])->name('newTicket');
     Route::get('/support/ticket/{id}', [TicketController::class, 'show'])->name('showTicket');
     Route::get('/dispute/{id}', [PurchaseController::class, 'disputePage'])->name('disputePage');
-    Route::get('/service/{id}', [ServicesController::class, 'service'])->name('service');
+    Route::get('/gp/{id}', [ServicesController::class, 'service'])->name('service');
     Route::post('/profile/{id}/edit', [ProfileController::class, 'editProfile']);
     Route::post('/profile/{id}/editAvatar', [ProfileController::class, 'editAvatar'])->name('edit_avatar');
     Route::post('/seller/apply', [SellerController::class, 'applicationSubmit'])->name('applicationSubmit');

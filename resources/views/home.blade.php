@@ -23,6 +23,6 @@
 </div>
 
 <script>
-    window.location = '/services';
+    window.location = '/gp';
 </script>
 @endsection

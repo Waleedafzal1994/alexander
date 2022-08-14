@@ -21,7 +21,6 @@ class AuthController extends Controller
         $messages = [
             'captcha.required' => "The captcha field is required.",
             'captcha.captcha' => "Captcha entered is not correct."
-
         ];
         $this->validate($request, $rules, $messages);
 

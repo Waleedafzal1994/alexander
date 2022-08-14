@@ -59,6 +59,7 @@ class ProfileController extends Controller
             'facebook_profile' => 'max:64|nullable',
             'twitch_profile' => 'nullable',
             'instagram_profile' => 'nullable',
+            'tiktok_profile' => 'nullable',
             // 'discord_handle' => 'nullable',
         ]);
         $user->name = $validated['name'];
@@ -164,6 +165,9 @@ class ProfileController extends Controller
         }
         if (isset($validated['instagram_profile'])) {
             $user->instagram_profile = $validated['instagram_profile'];
+        }
+        if (isset($validated['tiktok_profile'])) {
+            $user->tiktok_profile = $validated['tiktok_profile'];
         }
         // if (isset($validated['discord_handle'])) {
         //     $dcHandle = explode('#', $validated['discord_handle']);
