@@ -25,7 +25,8 @@
                             </span>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- Remove this from registration -->
+                    <div class="form-group row d-none">
                         <label for="nameInput" class="col-md-12 col-form-label text-center">Full Name</label>
 
                         <div class="col-md-12">

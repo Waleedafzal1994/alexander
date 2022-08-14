@@ -59,7 +59,8 @@
                                             value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                 <!-- Remove this from registration -->
+                                <!-- <div class="col-md-12">
                                     <div class="form-group">
                                         <h6>Full Name</h6>
 
@@ -67,7 +68,7 @@
                                             name="real_name" value="{{ old('real_name') }}" required
                                             autocomplete="real_name" autofocus>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <h6>Email</h6>
