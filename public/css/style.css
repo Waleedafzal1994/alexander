@@ -2796,7 +2796,8 @@ input:checked + .slider {
     background: #581c87;
     min-height: 200px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    box-shadow: inset 0 0px 20px -10px black;
 }
 .top-bg-section .bg-img{
     background-image: url("../images/gamers-logo.png");
@@ -2807,6 +2808,68 @@ input:checked + .slider {
     width: 800px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
-    top: 70%;
+    transform: translateX(-50%);
+    top: -526px;
+}
+.top-bg-section ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 12px;
+    padding: 0 20px;
+}
+.top-bg-section ul .circle-link{
+    list-style-type: none;
+    background-color: #3a3956 !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 3px 15px -6px #000000b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.top-bg-section ul li a::after{
+    display: none;
+}
+
+.top-bg-section .dropdown .dropdown-menu{  
+    display:block; 
+    opacity: 0;  
+    visibility: hidden; 
+    transition:.3s; 
+    margin-top:0;  
+}
+.top-bg-section ul li >div:hover{
+    background-color: #e9ecef;
+}
+.top-bg-section .dropdown-menu.fade-down{ 
+    top:80%; 
+    transform: rotateX(-75deg); 
+    transform-origin: 0% 0%; 
+}
+
+.top-bg-section .dropdown-menu.fade-up{ 
+    top:180%;  
+    left: -115px;
+}
+
+.top-bg-section .nav-item:hover .dropdown-menu{ 
+    transition: .3s; 
+    opacity:1; 
+    visibility:visible; 
+    transform: rotateX(0deg); 
+    top: 110%;
+    left: -115px;
+    border-radius: 10px;
+}
+.top-bg-section .dropdown-menu.show{ 
+    transform: translate3d(-117px, 40px, 0px) !important;
+}
+
+.top-bg-section .dropdown:hover .dropdown-menu {
+    opacity:1;
 }
