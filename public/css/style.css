@@ -1575,7 +1575,7 @@ a.slider-link:hover {
 .main-category {
     margin-left: 0;
     padding-bottom: 0;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .main-category ul li {
@@ -1836,6 +1836,7 @@ a.slider-link:hover {
     width: 500px;
     max-width: 500px;
     margin-right: 20px;
+    margin-top: -83px;
 }
 .mainBody{
     width: 100%;
@@ -2799,7 +2800,13 @@ input:checked + .slider {
     /* overflow: hidden; */
     box-shadow: inset 0 0px 20px -10px black;
 }
-.top-bg-section .bg-img{
+.nav-tabs{
+    border-bottom: none !important;
+}
+button{
+    
+}
+/* .top-bg-section .bg-img{
     background-image: url("../images/gamers-logo.png");
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -2810,7 +2817,7 @@ input:checked + .slider {
     left: 50%;
     transform: translateX(-50%);
     top: -526px;
-}
+} */
 .top-bg-section ul{
     list-style-type: none;
     display: flex;

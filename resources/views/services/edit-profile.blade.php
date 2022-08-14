@@ -3,15 +3,13 @@
 <link rel="stylesheet" href="{{ asset('css/style.css?v=') . time() }}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
-@section('content')
-
-<div class="bg-content-clr h-100">
+<div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="container edit-profile-page">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-tab-nav mt-5">
                 <ul class="nav nav-tabs nav-custom-nav mb-3 pb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Edit Profile</a>
+                        <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Edit Profile</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">Account</a>
@@ -26,7 +24,7 @@
                         <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">IM Settings</a>
                     </li>
                     <li class="nav-item ml-auto" role="presentation">
-                        <a class="nav-link" id="pills-back-tab" href="/service/{{$user->id}}" role="tab" aria-controls="pills-settings" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
+                        <a class="nav-link" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
                     </li>
                 </ul>
                 <div class="tab-content bg-white rounded p-3" id="pills-tabContent">
@@ -35,12 +33,12 @@
                         <div class="row" style="padding:15px;">
                             <div class="col-md-4">
                                 <form method="POST" enctype="multipart/form-data" id="ajax-profile" action="javascript:void(0)">
-                                    <input type="hidden" name="id" value="{{ $user->id }}" style="display:none;">
+                                    <input type="hidden" name="id" value="{{ $service->id }}" style="display:none;">
                                     @csrf
-                                    @if ($user->profile_picture)
+                                    @if ($service->profile_picture)
                                         <div style="display:Flex; justify-content:center; flex-direction:column;">
                                             <div style="text-align: center;">
-                                                <img src="{{ $user->profile_picture }}"
+                                                <img src="{{ $service->profile_picture }}"
                                                     style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                     id="profile_picture_img">
                                                 <div>
@@ -57,7 +55,7 @@
                                                 <button class="btn btn-success" id="saveBtn" type="submit"
                                                     style="display:none;">Save</button>
                                                 <a class="btn btn-danger"
-                                                    href="/profile/{{ $user->id }}/removeAvatar">Remove</a>
+                                                    href="/profile/{{ $service->id }}/removeAvatar">Remove</a>
                                             </div>
 
                                         </div>
@@ -87,7 +85,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <form method="POST" action="/profile/{{ $user->id }}/edit">
+                                <form method="POST" action="/profile/{{ $service->id }}/edit">
                                     @csrf
                                     @if (session('error'))
                                         <div class="alert alert-danger">
@@ -97,13 +95,13 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">Nickname</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $user->name }}">
+                                        <input type="text" name="name" class="form-control" value="{{ $service->name }}">
                                     </div>
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">Profile Subtitle</label>
                                         <input type="text" name="title" class="form-control"
-                                            value="{{ $user->user_title }}">
+                                            value="{{ $service->user_title }}">
                                     </div>
                                     {{-- Form Element --}}
                                     <div class="form-group">
@@ -277,12 +275,12 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Full Name</label>
-                                    <input type="text" name="real_name" class="form-control" value="{{ $user->real_name }}">
+                                    <input type="text" name="real_name" class="form-control" value="{{ $service->real_name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Age</label>
-                                    <input type="date" name="birth_date" class="form-control" value="{{ $user->birth_date }}">
+                                    <input type="date" name="birth_date" class="form-control" value="{{ $service->birth_date }}">
                                 </div>
 
 
@@ -547,7 +545,7 @@
                                 <div class="form-group">
                                     <label for="">About Me</label>
                                     <textarea type="text" name="description" class="form-control"
-                                        rows="3">{{ $user->description }}</textarea>
+                                        rows="3">{{ $service->description }}</textarea>
                                 </div>
                             </div>
                             <div class="subheader-page rounded-top" style="margin-bottom:10px;">
@@ -557,16 +555,16 @@
                                 <br>
                                 <label for="">Facebook</label>
                                 <input type="url" name="facebook_profile" class="input" style="margin-bottom:10px;"
-                                    placeholder="facebook.com/gamersplay" value="{{ $user->facebook_profile }}">
+                                    placeholder="facebook.com/gamersplay" value="{{ $service->facebook_profile }}">
                                 <label for="">Twitch</label>
                                 <input type="url" name="twitch_profile" class="input"
-                                    placeholder="twitch.tv/gamersplay" value="{{ $user->twitch_profile }}">
+                                    placeholder="twitch.tv/gamersplay" value="{{ $service->twitch_profile }}">
                             </div>
                             <div class="col-md-4">
                                 <br>
                                 <label for="">Instagram</label>
                                 <input type="url" name="instagram_profile" class="input" placeholder="@gamersplay"
-                                    value="{{ $user->instagram_profile }}">
+                                    value="{{ $service->instagram_profile }}">
                             </div>
         
                             <div class="col-md-12" style="text-align:center;">
@@ -885,19 +883,36 @@
 
 <script>
     var profilePicChanged = false;
-    $(document).ready(function() {
-        @if ($user->country)
-            $('select[name="country"]').val('{{ $user->country }}');
-        @endif
-        @if ($user->gender)
-            $('select[name="gender"]').val('{{ $user->gender }}');
-        @endif
-        @if ($user->primary_language)
-            $('select[name="primary_language"]').val('{{ $user->primary_language }}');
-        @endif
-        @if ($user->secondary_language)
-            $('select[name="secondary_language"]').val('{{ $user->secondary_language }}');
-        @endif
+        $(document).ready(function() {
+            @if ($service->country)
+                $('select[name="country"]').val('{{ $service->country }}');
+            @endif
+            @if ($service->gender)
+                $('select[name="gender"]').val('{{ $service->gender }}');
+            @endif
+            @if ($service->primary_language)
+                $('select[name="primary_language"]').val('{{ $service->primary_language }}');
+            @endif
+            @if ($service->secondary_language)
+                $('select[name="secondary_language"]').val('{{ $service->secondary_language }}');
+            @endif
+        });
+    $("#pills-back-tab").click(function(){
+        
+        document.getElementById("profileBar_info").style.display = "block";
+        document.getElementById("services_navbar").style.display = "block";
+        document.getElementById("edit_profile").style.display = "none";
+
+        $("#edit_user_profile").removeClass('show active'); 
+        $("#pills-edit-profile-tab").removeClass('active');
+        $("#pills-back-tab").removeClass('active');
+
+        $("#home-tab").addClass('active');
+        $("#home").addClass('active show');
+
+        localStorage.removeItem("edit_seller_profile");
+        document.getElementById("home-tab").click();
+
     });
     $('#profile_picture_img').click(function(e) {
             e.preventDefault();
@@ -930,7 +945,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: 'POST',
-                url: "/profile/{{ $user->id }}/editAvatar",
+                url: "/profile/{{ $service->id }}/editAvatar",
                 data: formData,
                 cache: false,
                 contentType: false,
@@ -959,7 +974,6 @@
                 }
             });
         });
-
         @if (\Session::has('success'))
             Swal.fire('Success','{{ \Session::get('success') }}','success');
             {{ \Session::forget('success') }}

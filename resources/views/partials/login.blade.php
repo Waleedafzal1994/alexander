@@ -32,7 +32,7 @@
                     <!-- Nav tabs -->
                 <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3 login-modal-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active " data-toggle="tab" href="#loginPanel" role="tab">
+                        <a class="nav-link active" data-toggle="tab" href="#loginPanel" role="tab">
                             <img class="navs-icons-modal" src="{{ asset('temp-services/images/3d/circle.png') }}">
                             Login
                         </a>
@@ -285,6 +285,16 @@
         regbutton.attr('disabled', 'disabled');
         regbutton.css("cursor", "not-allowed");
 
+        // if(window.location.href.indexOf("login") > -1) {
+        //     $('#loginModal').addClass('show');
+        //     $('#loginPanel').modal('show');
+
+        //  }else if(window.location.href.indexOf("register") > -1) {
+        //     // $('#registerModal').modal('show');
+        //     console.log("Register")
+        // }else{
+        //     // $('#modal').modal('hide');
+        // }
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
