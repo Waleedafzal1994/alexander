@@ -164,10 +164,11 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <!-- Remove this from registration -->
+                                    <div class="col-md-12" style="display: none;">
                                         <div class="form-group">
                                             <h6>Full Name</h6>
-                                            <input id="real_name-reg" maxlength="30" type="text" name="real_name" value="{{ old('real_name') }}" required autocomplete="real_name" autofocus>
+                                            <input id="real_name-reg" maxlength="30" type="text" name="real_name" value="{{ old('real_name') }}"  autocomplete="real_name" autofocus>
                                             <span class="invalid-feedback" role="alert" id="real_name-reg-error">
                                                 <strong></strong>
                                             </span>

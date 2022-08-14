@@ -35,15 +35,15 @@ class OAuthController extends Controller
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
             } else {
-                $existingEmailInDb = User::where('email',$user->email)->first();
-                if(!empty($existingEmailInDb)){
-                   return redirect('/')->with('flash_errors','Email already exists.'); 
-                }
+                // $existingEmailInDb = User::where('email',$user->email)->first();
+                // if(!empty($existingEmailInDb)){
+                //    return redirect('/')->with('flash_errors','Email already exists.'); 
+                // }
                 
                 $newUser = new User();
                 $newUser->name = $user->name;
                 $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
-                $newUser->email = $user->email;
+                $newUser->email =  !empty($user->email) ? $user->email : NULL;
                 $newUser->discord_id = $user->id;
                 $newUser->email_verified_at = Carbon::now();
                 $newUser->profile_picture = $user->avatar;
@@ -74,15 +74,15 @@ class OAuthController extends Controller
                 Auth::loginUsingId($userInDb->id);
             } else {
 
-                $existingEmailInDb = User::where('email',$user->email)->first();
-                if(!empty($existingEmailInDb)){
-                   return redirect('/')->with('flash_errors','Email already exists.'); 
-                }
+                // $existingEmailInDb = User::where('email',$user->email)->first();
+                // if(!empty($existingEmailInDb)){
+                //    return redirect('/')->with('flash_errors','Email already exists.'); 
+                // }
 
                 $newUser = new User();
                 $newUser->name = $user->name;
                 $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
-                $newUser->email = $user->email;
+                $newUser->email =  !empty($user->email) ? $user->email : NULL;
                 $newUser->facebook_id = $user->id;
                 $newUser->email_verified_at = Carbon::now();
                 $newUser->profile_picture = $user->avatar;
@@ -112,14 +112,14 @@ class OAuthController extends Controller
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
             } else {
-                $existingEmailInDb = User::where('email',$user->email)->first();
-                if(!empty($existingEmailInDb)){
-                   return redirect('/')->with('flash_errors','Email already exists.'); 
-                }
+                // $existingEmailInDb = User::where('email',$user->email)->first();
+                // if(!empty($existingEmailInDb)){
+                //    return redirect('/')->with('flash_errors','Email already exists.'); 
+                // }
                 $newUser = new User();
                 $newUser->name = $user->name;
                 $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
-                $newUser->email = $user->email;
+                $newUser->email =  !empty($user->email) ? $user->email : NULL;
                 $newUser->google_id = $user->id;
                 $newUser->email_verified_at = Carbon::now();
                 $newUser->profile_picture = $user->avatar;
@@ -149,15 +149,15 @@ class OAuthController extends Controller
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
             } else {
-                $existingEmailInDb = User::where('email',$user->email)->first();
-                if(!empty($existingEmailInDb)){
-                   return redirect('/')->with('flash_errors','Email already exists.'); 
-                }
+                // $existingEmailInDb = User::where('email',$user->email)->first();
+                // if(!empty($existingEmailInDb)){
+                //    return redirect('/')->with('flash_errors','Email already exists.'); 
+                // }
 
                 $newUser = new User();
                 $newUser->name = $user->name;
                 $newUser->password = Hash::make('T0PSEC3RETD1SC0RDP4SSW0RD');
-                $newUser->email = $user->email;
+                $newUser->email =  !empty($user->email) ? $user->email : NULL;
                 $newUser->twitch_id = $user->id;
                 $newUser->email_verified_at = Carbon::now();
                 $newUser->profile_picture = $user->avatar;

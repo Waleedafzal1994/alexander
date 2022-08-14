@@ -55,7 +55,7 @@ class AuthController extends Controller
     {
         $rules = [
             'name' => ['required', 'string', 'min:3','max:30'],
-            'real_name' => ['required', 'string','min:3', 'max:30'],
+            // 'real_name' => ['required', 'string','min:3', 'max:30'],
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => [
                 'required', 'string', 'min:6',    'regex:/[a-z]/',      // must contain at least one lowercase letter
@@ -77,7 +77,7 @@ class AuthController extends Controller
         try {
             $user = User::create([
                 'name' => $request->name,
-                'real_name' => $request->real_name,
+                // 'real_name' => $request->real_name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'tnc' => 1

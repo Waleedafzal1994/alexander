@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->default('User');
             $table->string('real_name')->default('New User');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('country')->default('N/A');
             $table->string('gender')->nullable();
             $table->string('user_title')->default('GamersPlay User');
