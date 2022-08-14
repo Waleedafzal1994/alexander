@@ -884,7 +884,7 @@
         //     }
         // });
 
-        
+
     });
 </script>
 <script type="text/javascript">
@@ -1063,7 +1063,7 @@
 
                         // }
                         // else{
-                            $(".comment-section_" + post_id).first().before(response.data);
+                        $(".comment-section_" + post_id).first().before(response.data);
                         // }
 
                         // $(".comment-section_" + post_id).append(response.data);
@@ -1323,7 +1323,7 @@
             //Active Tab//
             $('#myTab a[href="#' + 'profile' + '"]').tab("show");
 
-        
+
             // activeTimeline
             //Change Url//
             let c_tab = '#profile';
@@ -1338,9 +1338,9 @@
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1355,7 +1355,7 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
             }
@@ -1371,15 +1371,14 @@
             $('#myTab a[href="#' + 'followers' + '"]').tab("show");
 
             var clickedTab = $(this).attr('id');
-            if(clickedTab == 'activefollowers'){
+            if (clickedTab == 'activefollowers') {
 
                 $('#pills-following-tab').removeClass('active');
                 $('#pills-following').removeClass('active show');
 
                 $('#pills-follower-tab').addClass('active');
                 $('#pills-follower').addClass('active show');
-            }
-            else if(clickedTab == 'activefollowing'){
+            } else if (clickedTab == 'activefollowing') {
 
                 $('#pills-follower-tab').removeClass('active');
                 $('#pills-follower').removeClass('active show');
@@ -1401,10 +1400,10 @@
                 $(window).scrollTop(0);
             }, 400);
 
-            
+
         });
 
-        
+
 
         $('.activeBadge').on("click", function() {
             //Active Tab//
@@ -1431,18 +1430,16 @@
             const hash = $(this).attr("href");
             if (hash == "#home") {
                 newUrl = url.split("#")[0];
-            }
-            else if(hash == "#profile")
-            {
+            } else if (hash == "#profile") {
                 newUrl = url.split("#")[0] + hash;
 
                 id = "{{ $service->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1457,11 +1454,10 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
-            }
-            else {
+            } else {
                 newUrl = url.split("#")[0] + hash;
             }
             newUrl += "/";
