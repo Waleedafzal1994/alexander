@@ -278,9 +278,42 @@ $noFooter = true;
             @include('partials.register_complete')
         @endif
 
-        <div class="top-bg-section w-100">
+        <div class="top-bg-section w-100 d-flex align-items-end">
             <div class="container">
                 <div class="bg-img"></div>
+                <ul class="list mb-4">
+                    <li class="circle-link">
+                        <a href="">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                    </li>
+                    <li class="circle-link">
+                        <a href="">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown circle-link">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="fas fa-ellipsis-h text-white"></i>
+                        </a>
+                        <ul class="dropdown-menu fade-up p-2">
+                            <li>
+                                <div class="d-flex align-items-center justify-content-between p-2 rounded">
+                                    <p class="mb-0">Block</p>
+                                    <label class="switch m-0 mb-2">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="dropdown-item p-2 mt-2 rounded" href="#">
+                                    <p class="mb-0">Report</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
 

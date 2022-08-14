@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="profile-section-two numbers">
                                             <div class="review-body text-center">
-                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '0' }}
+                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '-' }}
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +238,7 @@
 
 
                 <div class="pl-3 social_icons mb-4">
-                    @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile))
+                    @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile) || !empty($service->user->tiktok_profile))
 
 
                     @if(!empty($service->user->facebook_profile))
@@ -261,6 +261,13 @@
                     </a>
                     @endif
 
+                    @if(!empty($service->user->tiktok_profile))
+
+                    <a href="{{$service->user->tiktok_profile}}" target=_blank>
+                        <i class="fab fa-tiktok text-white"></i>
+                    </a>
+                    @endif
+
 
                     @else
                     <p class="text-black">N/A</p>
@@ -268,7 +275,7 @@
 
                 </div>
 
-                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>0000123</p>
+                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
 
 
 
@@ -291,6 +298,8 @@
                     </a>
                     @endif
                 </div> -->
+
+
             </div>
 
         </div>

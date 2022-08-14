@@ -205,7 +205,7 @@ $('body').on('click','.service-box',function (e) {
     e.preventDefault();
     var id = this.dataset.id;
     console.log("clicked on service");
-    window.open('/service/' + id,"_self");
+    window.open('/gp/' + id,"_self");
 });
 
 $('body').on('click','.service-audio-btn',function (e) { 
