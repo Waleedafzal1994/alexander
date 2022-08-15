@@ -16,6 +16,7 @@ use Session;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, Billable;
+    protected $appends = ['post_count'];
 
     /**
      * The attributes that are mass assignable.
@@ -101,5 +102,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function setProfileCompleteAttribute($value)
     {
         Session::put('profile_complete', $value);
+    }
+
+    public function getPostCountAttribute()
+    {
+        return $this->attributes['post_count'] = $this->posts->count();
     }
 }
