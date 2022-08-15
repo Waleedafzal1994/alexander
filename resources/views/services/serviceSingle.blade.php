@@ -33,7 +33,7 @@
 <div class="gamePlay" id="gamePlay">
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
-    <section class="service mt-4 mx-3" id="servicePage">
+    <section class="service" id="servicePage">
         <a class="right-bottom-arrow new-purple-gradient shadow" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <i class="fa fa-chevron-up text-white"></i>
@@ -41,7 +41,7 @@
         </a>
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
-            <div class="profileBar">
+            <div class="profileBar" id="profileBar_info">
                 <!-- START: Service Profile Side bar First Card -->
                 <div class="card shadow">
                     <div class="card-body p-0 m-0">
@@ -51,7 +51,8 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <!-- <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay"> -->
+                                    <img src="/temp-services/images/1.webp" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -451,7 +452,7 @@
 
 <div class="mainBody">
     <!-- START: First Card mianbody -->
-    <div class="card review-body shadow">
+    <div class="card review-body shadow" id="services_navbar">
         <div class="card-body ">
             <div class="service-game-main-body">
                 <div class="service-game-nav">
@@ -491,7 +492,10 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ml-auto" role="presentation">
-                                    <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
+                                    <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
+                                        Edit
+                                    </a> -->
+                                    <a class="nav-link" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
                                         Edit
                                     </a>
                                 </li>
@@ -567,9 +571,13 @@
 
         <div class="tab-pane fade following-result" id="following" role="tabpanel" aria-labelledby="following-tab">
             @include('services.following')
-
         </div>
         <!-- END: Followers -->
+        <!-- Edit Tab Start Here for user profile to edit -->
+        <div class="tab-pane fade" id="edit_user_profile" role="tabpanel" aria-labelledby="following-tab">
+            @include('services.edit-profile')
+        </div>
+        <!-- End Edit Tab End Here for user profile to edit -->
     </div>
     <!-- END: First Card mianbody -->
 
@@ -673,6 +681,26 @@
     //     }
 
     jQuery(document).ready(function($) {
+        
+        var seller_edit = localStorage.getItem("edit_seller_profile");
+        if(seller_edit){
+            document.getElementById("profileBar_info").style.display = "none";
+            document.getElementById("services_navbar").style.display = "none";
+            document.getElementById("edit_profile").style.display = "block";
+            
+            $("#pills-edit-profile-tab").addClass('active');
+            $("#pills-edit-profile").addClass('show active');
+            $("#edit_user_profile").addClass('show active');  
+            
+            $("#home").removeClass('active');    
+            $("#edit_user_profile-tab").removeClass('active');
+            $("#pills-back-tab").removeClass('active');
+            $("#pills-account").removeClass('active show');
+            $("#pills-notification").removeClass('active show');
+            $("#pills-privacy").removeClass('active show');
+            $("#pills-settings").removeClass('active show');
+        }
+
 
         jQuery(document).scroll(function() { // OR  $(window).scroll(function() {
             didScroll = true;
@@ -683,7 +711,27 @@
                 loadMorePost(); //load content   
             }
         });
+        $('#edit_user_profile-tab').click(function(){
 
+            localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
+            
+            document.getElementById("profileBar_info").style.display = "none";
+            document.getElementById("services_navbar").style.display = "none";
+            document.getElementById("edit_profile").style.display = "block";
+            
+            $("#pills-edit-profile-tab").addClass('active');
+            $("#pills-edit-profile").addClass('show active');
+            $("#edit_user_profile").addClass('show active');  
+            
+            $("#home").removeClass('active');    
+            $("#edit_user_profile-tab").removeClass('active');
+            $("#pills-back-tab").removeClass('active');
+            $("#pills-account").removeClass('active show');
+            $("#pills-notification").removeClass('active show');
+            $("#pills-privacy").removeClass('active show');
+            $("#pills-settings").removeClass('active show');
+              
+        });
         // $('#profile-tab').click(function(){
         //     $('.showmore-posts').attr('data-post-load_page','0');
         //     loadMorePost();
@@ -893,7 +941,7 @@
         //     }
         // });
 
-        
+
     });
 </script>
 <script type="text/javascript">
@@ -1072,7 +1120,7 @@
 
                         // }
                         // else{
-                            $(".comment-section_" + post_id).first().before(response.data);
+                        $(".comment-section_" + post_id).first().before(response.data);
                         // }
 
                         // $(".comment-section_" + post_id).append(response.data);
@@ -1332,7 +1380,7 @@
             //Active Tab//
             $('#myTab a[href="#' + 'profile' + '"]').tab("show");
 
-        
+
             // activeTimeline
             //Change Url//
             let c_tab = '#profile';
@@ -1347,9 +1395,9 @@
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1364,7 +1412,7 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
             }
@@ -1380,15 +1428,14 @@
             $('#myTab a[href="#' + 'followers' + '"]').tab("show");
 
             var clickedTab = $(this).attr('id');
-            if(clickedTab == 'activefollowers'){
+            if (clickedTab == 'activefollowers') {
 
                 $('#pills-following-tab').removeClass('active');
                 $('#pills-following').removeClass('active show');
 
                 $('#pills-follower-tab').addClass('active');
                 $('#pills-follower').addClass('active show');
-            }
-            else if(clickedTab == 'activefollowing'){
+            } else if (clickedTab == 'activefollowing') {
 
                 $('#pills-follower-tab').removeClass('active');
                 $('#pills-follower').removeClass('active show');
@@ -1410,10 +1457,10 @@
                 $(window).scrollTop(0);
             }, 400);
 
-            
+
         });
 
-        
+
 
         $('.activeBadge').on("click", function() {
             //Active Tab//
@@ -1440,18 +1487,16 @@
             const hash = $(this).attr("href");
             if (hash == "#home") {
                 newUrl = url.split("#")[0];
-            }
-            else if(hash == "#profile")
-            {
+            } else if (hash == "#profile") {
                 newUrl = url.split("#")[0] + hash;
 
                 id = "{{ $service->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
                 });
                 $.ajax({
                     type: 'POST',
@@ -1466,11 +1511,10 @@
                     },
 
                     error: function(data) {
-                        
+
                     }
                 });
-            }
-            else {
+            } else {
                 newUrl = url.split("#")[0] + hash;
             }
             newUrl += "/";
