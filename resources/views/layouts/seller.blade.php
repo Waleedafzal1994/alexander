@@ -99,7 +99,7 @@ $noFooter = true;
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="/services">
+                                <a class="nav-link" href="/gp">
                                     <div class="nav-link-icon-container">
                                         <img src="{{ asset('/imgs/icons/services.png') }}" class="nav-link-icon">
                                     </div>

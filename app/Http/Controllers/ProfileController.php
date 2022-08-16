@@ -11,9 +11,21 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
+use App\Models\Service;
+use App\Models\Order;
+use App\Models\Follower;
+use App\Models\GenericModel;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 class ProfileController extends Controller
 {
     //
+    function __construct()
+    {
+        $this->Generic_model = new GenericModel;
+        $this->Follower = new Follower;
+    }
 
 
     public function index(Request $request)
@@ -259,5 +271,88 @@ class ProfileController extends Controller
     {
         dd(User::whereJsonContains('languages', 'german')->first()->name);
         // unlink(public_path('storage/avatars/oMxUj0FyVMmSv8ocnWHGCpzwc4wG2sIBqzAzf5km.jpg'));
+    }
+
+    //By umar
+    public function user_timeline($id)
+    {
+        $id = intVal($id);
+
+        $user = User::with('services.category','getPosts')->where('id', $id)->first();
+        // echo "<pre>";
+        // print_r($user->seller_rank);die;
+        if ($user->seller_rank == 0  || empty($user->services[0]->id)) //means normal user//
+        {
+            $totalOrders = shortNumber(Order::where('buyer_id', $user->id)->count());
+            // $totalOrders = 500;
+
+            $totalFollowers = shortNumber(Follower::where('user_id', $user->id)->count());
+            $totalfollowing = shortNumber(Follower::where('follower_id', $user->id)->count());
+
+            $followersList = $this->Follower->getAllFollowers($user->id);
+            $followingList = $this->Follower->getAllFollowing($user->id);
+            if ((Auth::user()->id) && ($user->id)) {
+                $checkFollow = Follower::where('user_id', $user->id)->where('follower_id', Auth::user()->id)->first();
+            } else {
+                $checkFollow = '';
+            }
+            $service = '';
+
+            return view('services.user_timeline', compact('user','service','totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders'));
+        }
+        else
+        {
+            $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($user->services[0]->id)->first();
+            // echo "<pre>";
+            // print_r($service);die;
+            $data['category_id'] = $category_id = $service['category']->id;
+            $user_id = $service['user']->id;
+
+            //Fetch all remaining services//
+            $all_remaining_services =  Service::groupBy()
+                ->select('services.name', 'services.price', 'services.service_duration_type', 'services.id')
+                ->where('services.category_id', $category_id)
+                ->where('services.user_id', $user_id)
+                // ->where('services.id','!=', $id)
+                ->where('services.active', 1)
+                ->get();
+            //Fetch all subsicribe categories
+            $all_remaining_cats =  Service::groupBy('category_id', 'user_id')
+                ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
+                ->select('categories.name', 'categories.id', 'categories.image_1', 'services.service_duration_type', DB::raw('MIN(services.price) AS minPrice'))
+                ->where('services.user_id', $user_id)
+                ->where('services.category_id', '!=', $category_id)
+                ->where('services.active', 1)
+                ->get();
+
+            //Fetch min price for selected category//
+            // $minPrice = Service::select('services.service_duration_type','services.id', DB::raw('MIN(services.price) AS minPrice','id'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
+
+            $minPrice = Service::select('services.service_duration_type', 'services.id', 'price AS minPrice ')->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first();
+
+
+            // echo "<pre>";
+            // print_r($minPrice);die;
+
+            $totalOrders = shortNumber(Order::where('buyer_id', $service['user']->id)->count());
+            // $totalOrders = 500;
+
+            $totalFollowers = shortNumber(Follower::where('user_id', $service['user']->id)->count());
+            $totalfollowing = shortNumber(Follower::where('follower_id', $service['user']->id)->count());
+
+            $followersList = $this->Follower->getAllFollowers($service['user']->id);
+            $followingList = $this->Follower->getAllFollowing($service['user']->id);
+            if ((Auth::user()->id) && ($service['user']->id)) {
+                $checkFollow = Follower::where('user_id', $service['user']->id)->where('follower_id', Auth::user()->id)->first();
+            } else {
+                $checkFollow = '';
+            }
+
+            if ($service == null) {
+                return redirect('/');
+            }
+            // dd($service->images[0]->file_name);
+            return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice'));
+        }
     }
 }

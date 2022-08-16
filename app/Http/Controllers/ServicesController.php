@@ -243,7 +243,7 @@ class ServicesController extends Controller
         // $user = User::where('id', $request->id)->first();
 
         $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
-        
+
         $data['category_id'] = $category_id = $service['category']->id;
         $user_id = $service['user']->id;
 

@@ -115,6 +115,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/support/ticket/{id}', [TicketController::class, 'show'])->name('showTicket');
     Route::get('/dispute/{id}', [PurchaseController::class, 'disputePage'])->name('disputePage');
     Route::get('/gp/{id}', [ServicesController::class, 'service'])->name('service');
+
+    //by umar (15-08-22)//
+    Route::get('/user-profile/{id}', [ProfileController::class, 'user_timeline']);
+    //---//
     Route::post('/profile/{id}/edit', [ProfileController::class, 'editProfile']);
     Route::post('/profile/{id}/editAvatar', [ProfileController::class, 'editAvatar'])->name('edit_avatar');
     Route::post('/seller/apply', [SellerController::class, 'applicationSubmit'])->name('applicationSubmit');
