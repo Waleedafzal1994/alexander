@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Cashier\Billable;
+use Illuminate\Database\Eloquent\Model;
 use Session;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, Billable;
-    protected $appends = ['post_count'];
+    //protected $appends = ['post_count'];
 
     /**
      * The attributes that are mass assignable.
@@ -104,8 +105,8 @@ class User extends Authenticatable implements MustVerifyEmail
         Session::put('profile_complete', $value);
     }
 
-    public function getPostCountAttribute()
-    {
-        return $this->attributes['post_count'] = $this->posts->count();
-    }
+    // public function getPostCountAttribute()
+    // {
+    //     return $this->attributes['post_count'] = $this->services->count();
+    // }
 }
