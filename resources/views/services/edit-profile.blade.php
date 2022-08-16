@@ -4,33 +4,39 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
-    <div class="container edit-profile-page">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-tab-nav mt-5">
-                <ul class="nav nav-tabs nav-custom-nav mb-3 pb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Edit Profile</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">Account</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-notification-tab" data-toggle="pill" href="#pills-notification" role="tab" aria-controls="pills-notification" aria-selected="false">Notifications</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-privacy-tab" data-toggle="pill" href="#pills-privacy" role="tab" aria-controls="pills-privacy" aria-selected="false">Privacy</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">IM Settings</a>
-                    </li>
-                    <li class="nav-item ml-auto" role="presentation">
-                        <a class="nav-link" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
-                    </li>
-                </ul>
-                <div class="tab-content bg-white rounded p-3" id="pills-tabContent">
+    <div class="edit-profile-page d-flex align-items-center">
+        <div class="" style="width:500px; max-width:500px; margin-right:20px;"></div>
+            <div class="w-100 col-tab-nav">
+                <div class="card review-body shadow mb-3">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs nav-custom-nav border-bottom-0" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Edit Profile</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">Account</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-notification-tab" data-toggle="pill" href="#pills-notification" role="tab" aria-controls="pills-notification" aria-selected="false">Notifications</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-privacy-tab" data-toggle="pill" href="#pills-privacy" role="tab" aria-controls="pills-privacy" aria-selected="false">Privacy</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">IM Settings</a>
+                            </li>
+                            <li class="nav-item ml-auto" role="presentation">
+                                <a class="nav-link shadow edit_user_profile" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-content bg-white rounded pl-0 pr-3 pb-4 pt-5 border" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-edit-profile" role="tabpanel" aria-labelledby="pills-edit-profile-tab">
-                        <h3 class="my-3">Profile Information</h3>
-                        <div class="row" style="padding:15px;">
+                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                            <span>Profile Information</span>
+                        </h1>
+                        <div class="row mt-4 pl-3" style="padding:15px;">
                             <div class="col-md-4">
                                 <form method="POST" enctype="multipart/form-data" id="ajax-profile" action="javascript:void(0)">
                                     <input type="hidden" name="id" value="{{ $service->id }}" style="display:none;">
@@ -563,8 +569,11 @@
                             <div class="col-md-4">
                                 <br>
                                 <label for="">Instagram</label>
-                                <input type="url" name="instagram_profile" class="input" placeholder="@gamersplay"
+                                <input type="url" name="instagram_profile" class="input" style="margin-bottom:10px;" placeholder="@gamersplay"
                                     value="{{ $service->instagram_profile }}">
+                                <label for="">Tiktok</label>
+                                <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay"
+                                    value="">
                             </div>
         
                             <div class="col-md-12" style="text-align:center;">
@@ -576,8 +585,10 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
-                        <h2 class="mt-3 mb-5">Account</h2>
-                        <form action="">
+                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                            <span>Account</span>
+                        </h1>
+                        <form action="" class="mt-4 pl-3">
                             <p class="mb-4">Account Information</p>
                             <ul class="account-information pb-3">
                                 <li class="d-flex align-items-center">
@@ -620,8 +631,10 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-notification" role="tabpanel" aria-labelledby="pills-notification-tab">
-                        <h3 class="mt-3 mb-5">Notifications</h3>
-                        <form action="">
+                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                            <span>Notifications</span>
+                        </h1>
+                        <form action="" class="mt-4 pl-3">
                             <div class="form-group">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
@@ -684,8 +697,10 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
-                        <h3 class="mt-3 mb-5">Privacy Setting</h3>
-                        <form action="">
+                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                            <span>Privacy Setting</span>
+                        </h1>
+                        <form action="" class="mt-4 pl-3">
                             <div class="form-group">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
@@ -737,8 +752,10 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
-                        <form action="">
-                            <h3 class="mt-3 mb-5">Auto Reply</h3>
+                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                            <span>Auto Reply</span>
+                        </h1>
+                        <form action="" class="mt-4 pl-3">
                             <div class="form-group d-flex align-items-center justify-content-between">
                                 <div>
                                     <h6 class="mb-0 d-flex align-items-center">
@@ -783,7 +800,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 

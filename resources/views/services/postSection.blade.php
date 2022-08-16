@@ -180,7 +180,7 @@
 
                                     @if ($post->comments_count > 3)
                                     <li>
-                                        <a href="#" title="" class="showmore underline" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
+                                        <a href="#" title="" class="showmore text-decoration-none" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
                                         </a>
                                     </li>
                                     @endif

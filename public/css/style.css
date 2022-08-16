@@ -2083,6 +2083,7 @@ a.slider-link:hover {
 @media (max-width: 1024px){
     .service > div{
         display: block !important;
+
     }
     .service > .right-bottom-arrow{
         display: flex !important;
@@ -2109,6 +2110,10 @@ a.slider-link:hover {
     font-weight: bold !important;
     margin-right: 12px;
     color: var(--color-primary) !important;
+}
+.review-profile-heading a{
+    color: var(--color-primary) !important;
+    text-decoration: none !important;
 }
 .bg-gradient{
     background: #ededfb !important;
@@ -2160,8 +2165,8 @@ a.slider-link:hover {
     font-weight: bold;
 }
 .friend-info .carousel-inner{
-    width: 80%;
-    height: 450px;
+    width: 90%;
+    height: 550px;
     margin: auto;
     border-radius: 10px;
 }
@@ -2180,10 +2185,12 @@ a.slider-link:hover {
     font-size: 20px;
 }
 .friend-info .prev-icon{
-    transform: rotate(225deg);
+    transform: rotate(230deg);
+    margin-left: 4px;
 }
 .friend-info .next-icon{
-    transform: rotate(40deg);
+    transform: rotate(45deg);
+    margin-right: 4px;
 }
 .friend-info .carousel-indicators{
     bottom: -45px;
@@ -2309,10 +2316,10 @@ a.slider-link:hover {
     max-width: 450px !important;
 }
 .post-carousel.carousel .carousel-control-prev {
-    left: -30px;
+    left: -50px;
 }
 .post-carousel.carousel .carousel-control-next {
-    right: -30px;
+    right: -50px;
 }
 .post-carousel .carousel-inner .carousel-item{
     height: -webkit-fill-available;
@@ -2801,7 +2808,7 @@ input:checked + .slider {
     box-shadow: inset 0 0px 20px -10px black;
 }
 .nav-tabs{
-    border-bottom: none !important;
+    border-bottom: 1px dashed #581C87;
 }
 button{
     
@@ -2879,4 +2886,12 @@ button{
 
 .top-bg-section .dropdown:hover .dropdown-menu {
     opacity:1;
+}
+
+.nav-link.edit_user_profile{
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    color: #fff !important;
+}
+.nav-link.edit_user_profile:hover{
+    color: #fff !important;
 }

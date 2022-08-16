@@ -34,7 +34,7 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service" id="servicePage">
-        <a class="right-bottom-arrow new-purple-gradient shadow" style="display: none;" id="back_to_top">
+        <a class="right-bottom-arrow new-purple-gradient shadow text-decoration-none" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <i class="fa fa-chevron-up text-white"></i>
             </div>
@@ -349,7 +349,8 @@
     </div>
 </div>
 <!-- END: Service Profile Side bar First Card -->
-<div class="card mt-4 mb-4 shadow">
+
+<!-- <div class="card mt-4 mb-4 shadow">
     <div class="card table-card">
         <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
             Available Time
@@ -443,7 +444,8 @@
             </table>
         </div>
     </div>
-</div>
+</div> -->
+
 <!-- END: Service Profile Side bar SECOND Card -->
 </div>
 <!-- END: Service Profile Side bar -->
@@ -460,7 +462,7 @@
                     <div class="row">
                         <!-- START: Service main Menu -->
                         <div class="col-lg-12 col-md-12 col-sm-12 col-tab-nav">
-                            <ul class="nav nav-tabs nav-custom-nav" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs nav-custom-nav  border-bottom-0" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" href="#home" aria-selected="true">
                                         Service Details
@@ -491,11 +493,16 @@
                                         Badges
                                     </a>
                                 </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="block-list-tab" data-bs-toggle="tab" data-bs-target="#block-list" type="button" role="tab" aria-controls="block-list" aria-selected="false" href="#block-list">
+                                        Block
+                                    </a>
+                                </li>
                                 <li class="nav-item ml-auto" role="presentation">
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a> -->
-                                    <a class="nav-link" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
+                                    <a class="nav-link shadow edit_user_profile" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
                                         Edit
                                     </a>
                                 </li>
@@ -573,6 +580,14 @@
             @include('services.following')
         </div>
         <!-- END: Followers -->
+
+        <!-- START: Block List -->
+        <div class="tab-pane fade block-list-result shadow rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
+            @include('services.blockList')
+
+        </div>
+        <!-- END: Block List -->
+
         <!-- Edit Tab Start Here for user profile to edit -->
         <div class="tab-pane fade" id="edit_user_profile" role="tabpanel" aria-labelledby="following-tab">
             @include('services.edit-profile')

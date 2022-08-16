@@ -151,11 +151,11 @@ class Post extends BaseModel
         $content .= '<div class="comet-avatar"><img src="' . $value->user->getProfilePicture() . '" alt=""></div>';
         $content .= '<div class="we-comment pb-0 pl-3">';
         $content .= '<div class="d-flex align-items-center mt-3">';
-        $content .= '<h5 class="review-profile-heading mb-0"><a href="time-line.html" title="">' . $value->user->name . '</a></h5>';
+        $content .= '<h5 class="review-profile-heading mb-0 text-decoration-none"><a href="time-line.html" title="">' . $value->user->name . '</a></h5>';
         $content .= '<span>' . Carbon::parse($value->created_at)->format('F d, Y') . '</span>';
         $content .= '</div>';
         $content .= '<div class="inline-itms comment-action-box">';
-        $content .= '<p class="text-black my-3">' . $value->body . '</p>';
+        $content .= '<p class="text-black my-3 font-weight-normal">' . $value->body . '</p>';
         $content .= '<span class="comment-reaction likes heart';
         if ($value->userliked()) {
             $content .= ' active-heart';
