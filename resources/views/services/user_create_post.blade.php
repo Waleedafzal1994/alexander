@@ -47,15 +47,15 @@
                             </div>
                         @endif
                         <!-- END: Create post -->
-                        @if ($user->post_count > 0)
+                        @if ($user->getPost > 0)
                             <div class="loadMore post-box">
                                 <!-- {{$post_count}} -->
-                                @include('services.postSection', [
+                                <!-- @include('services.postSection', [
                                     'posts' => $posts->skip(0)->take(5),
-                                ])
+                                ]) -->
                             </div>
                         @endif
-                        @if ($post_count > 5)
+                        @if ($user->getPost > 5)
                             <div class="text-center">
                                 <a href="#" title="" class="showmore-posts underline font-weight-bold" data-post-load_page="1"
                                     data-post-service="{{ $id }}">

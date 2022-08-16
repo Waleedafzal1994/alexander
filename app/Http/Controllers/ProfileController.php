@@ -281,7 +281,7 @@ class ProfileController extends Controller
         $user = User::with('services.category','getPosts')->where('id', $id)->first();
         // echo "<pre>";
         // print_r($user->seller_rank);die;
-        if ($user->seller_rank == 0 ) //means normal user//
+        if ($user->seller_rank == 0  || empty($user->services[0]->id)) //means normal user//
         {
             $totalOrders = shortNumber(Order::where('buyer_id', $user->id)->count());
             // $totalOrders = 500;
@@ -303,6 +303,8 @@ class ProfileController extends Controller
         else
         {
             $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($user->services[0]->id)->first();
+            // echo "<pre>";
+            // print_r($service);die;
             $data['category_id'] = $category_id = $service['category']->id;
             $user_id = $service['user']->id;
 

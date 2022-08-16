@@ -421,8 +421,8 @@
             <div class="card mt-2 p-3">
                 <div class="card-body ">
                     <div class="service-main-body-content">
-                        @include('services.galleryImages', [
-                        'service' => $service,
+                        @include('services.normalUserGallery', [
+                        'user' => $user,
                         ])
                     </div>
                 </div>
@@ -433,12 +433,12 @@
 
         <!-- START: Followers -->
         <div class="tab-pane fade followers-result shadow rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
-            @include('services.followers')
+        <!-- @include('services.followers') -->
 
         </div>
 
         <div class="tab-pane fade following-result" id="following" role="tabpanel" aria-labelledby="following-tab">
-            @include('services.following')
+        <!-- @include('services.following') -->
 
         </div>
         <!-- END: Followers -->
@@ -643,7 +643,7 @@
 
         //By umar
         $('.follow').on("click", function() {
-            following_id = "{{ $service->user->id }}";
+            following_id = "{{ $user->id }}";
             // console.log(following_id);
             $.ajaxSetup({
                 headers: {
@@ -1215,7 +1215,7 @@
 
                 newUrl = url.split("#")[0] + c_tab;
 
-                id = "{{ $service->id }}";
+                id = "{{ $user->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
@@ -1317,7 +1317,7 @@
             {
                 newUrl = url.split("#")[0] + hash;
 
-                id = "{{ $service->id }}";
+                id = "{{ $user->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
@@ -1563,15 +1563,7 @@
         deleted_images.push(name);
         $('#image_to_' + id).remove();
     }
-    $('#buyBtn').click(function(e) {
-        var userBalance = document.getElementById('user_points').innerHTML;
-        // console.log(userBalance);
-        var serviceCost = parseFloat('{{ $service->price }}');
-        if (parseFloat(userBalance) < serviceCost) {
-            Swal.fire('Error', 'You do not have enough GP to order this service.', 'error');
-            e.preventDefault();
-        }
-    });
+        
     @if(\Session::has('success'))
     Swal.fire('Success', '{{ \Session::get('
         success ') }}', 'success'); {
