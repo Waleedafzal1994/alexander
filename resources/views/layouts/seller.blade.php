@@ -301,7 +301,7 @@ $noFooter = true;
                                 <div class="d-flex align-items-center justify-content-between p-2 rounded">
                                     <p class="mb-0">Block</p>
                                     <label class="switch m-0 mb-2">
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="block-toggle" value="confirm_block">
                                         <span class="slider"></span>
                                     </label>
                                 </div>
@@ -341,6 +341,116 @@ $noFooter = true;
                 $('#staticBackdrop').modal({
                     show: true
                 });
+
+                $('.block-toggle').click(function(){
+                    alert($(this).val());
+                    $(this).val() == "confirm_block" ? do_block() : do_unblock();
+                });
+
+                function do_block() 
+                {
+                    Swal.fire({
+                        title: "Blocked!!!",
+                        text: "Are you sure you want to block this person?",
+                        icon: "warning",
+                        // buttons: [
+                        //     'No, cancel it!',
+                        //     'Yes, I am sure!'
+                        // ],
+                        // dangerMode: true,
+                        confirmButtonText : 'Yes',
+                        showCancelButton: true,
+                        cancelButtonText: 'No, cancel it!'
+                    }).then(function(isConfirm) {
+                        if (isConfirm.isConfirmed === true) {
+                            block();
+                            //alert('sdf');
+                        } else {
+                            //Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    })
+                    //$('.block-toggle').val("confirm_block");
+                    // do block
+                }
+
+                function do_unblock() {
+                    Swal.fire({
+                        title: "Un-Block",
+                        text: "Are you sure you want to un-block this person?",
+                        icon: "info",
+                        
+                        // dangerMode: true,
+                        confirmButtonText : 'Yes',
+                        showCancelButton: true,
+                        cancelButtonText: 'No'
+                    }).then(function(isConfirm) {
+                        if (isConfirm.isConfirmed === true) {
+                            unblock();
+                            //alert('sdf');
+                        } else {
+                            //Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    })
+                    // do unblock
+                }
+
+
+                function block() 
+                {
+                    block_id = "{{ $service->user->id }}";
+                    // console.log(following_id);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: 'POST',
+                        url: "/block",
+                        data: {
+                            'block_id': block_id
+                        },
+                        success: function(response) {
+                            if (response.status === '1') {
+                                $('.block-toggle').val("confirm_unblock");
+                            }
+                            if (response.error === '1') {
+                                Swal.fire(response.msg);
+                            }
+                        },
+                        error: function(data) {
+                            //console.log(data);
+                        }
+                    });
+                }
+                function unblock() 
+                {
+                    block_id = "{{ $service->user->id }}";
+                    // console.log(following_id);
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: 'POST',
+                        url: "/block",
+                        data: {
+                            'block_id': block_id
+                        },
+                        success: function(response) {
+                            if (response.status === '1') {
+                                $('.block-toggle').val("confirm_block");
+                            }
+                            if (response.error === '1') {
+                                Swal.fire(response.msg);
+                            }
+                        },
+                        error: function(data) {
+                            //console.log(data);
+                        }
+                    });
+                }
             });
         </script>
         

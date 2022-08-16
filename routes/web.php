@@ -17,6 +17,7 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\BlockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -149,6 +150,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/follow', [FollowerController::class, 'index'])->name('follower.index');
     Route::post('/loginfollow', [FollowerController::class, 'loginFollow']);
     Route::post('/loadTimeline', [ServicesController::class, 'loadTimeline']);
+    //Block Person//
+    Route::post('/block', [BlockController::class, 'index'])->name('block.index');
 
     // Paypal routes
 
