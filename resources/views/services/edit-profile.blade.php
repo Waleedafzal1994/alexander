@@ -44,12 +44,12 @@
                         <div class="row mt-4 pl-3" style="padding:15px;">
                             <div class="col-md-4">
                                 <form method="POST" enctype="multipart/form-data" id="ajax-profile" action="javascript:void(0)">
-                                    <input type="hidden" name="id" value="{{ $service->id }}" style="display:none;">
+                                    <input type="hidden" name="id" value="{{ $service->user->id }}" style="display:none;">
                                     @csrf
-                                    @if ($service->profile_picture)
+                                    @if ($service->user->profile_picture)
                                         <div style="display:Flex; justify-content:center; flex-direction:column;">
                                             <div style="text-align: center;">
-                                                <img src="{{ $service->profile_picture }}"
+                                                <img src="{{ $service->user->profile_picture }}"
                                                     style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                     id="profile_picture_img">
                                                 <div>
@@ -66,7 +66,7 @@
                                                 <button class="btn btn-success" id="saveBtn" type="submit"
                                                     style="display:none;">Save</button>
                                                 <a class="btn btn-danger"
-                                                    href="/profile/{{ $service->id }}/removeAvatar">Remove</a>
+                                                    href="/profile/{{ $service->user->id }}/removeAvatar">Remove</a>
                                             </div>
 
                                         </div>
@@ -96,7 +96,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <form method="POST" action="/profile/{{ $service->id }}/edit">
+                                <form method="POST" action="/profile/{{ $service->user->id }}/edit">
                                     @csrf
                                     @if (session('error'))
                                         <div class="alert alert-danger">
@@ -106,13 +106,13 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">Nickname</label>
-                                        <input type="text" name="name" class="form-control" value="{{ $service->name }}">
+                                        <input type="text" name="name" class="form-control" value="{{ $service->user->name }}">
                                     </div>
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">Profile Subtitle</label>
                                         <input type="text" name="title" class="form-control"
-                                            value="{{ $service->user_title }}">
+                                        value="{{ $service->user->user_title }}">
                                     </div>
                                     {{-- Form Element --}}
                                     <div class="form-group">
@@ -286,12 +286,12 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Full Name</label>
-                                    <input type="text" name="real_name" class="form-control" value="{{ $service->real_name }}">
+                                    <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Age</label>
-                                    <input type="date" name="birth_date" class="form-control" value="{{ $service->birth_date }}">
+                                    <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
                                 </div>
 
 
@@ -556,7 +556,7 @@
                                 <div class="form-group">
                                     <label for="">About Me</label>
                                     <textarea type="text" name="description" class="form-control"
-                                        rows="3">{{ $service->description }}</textarea>
+                                        rows="3">{{ $service->user->description }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -570,19 +570,18 @@
                                 <br>
                                 <label for="">Facebook</label>
                                 <input type="url" name="facebook_profile" class="input" style="margin-bottom:10px;"
-                                    placeholder="facebook.com/gamersplay" value="{{ $service->facebook_profile }}">
+                                    placeholder="facebook.com/gamersplay" value="{{ $service->user->facebook_profile }}">
                                 <label for="">Twitch</label>
                                 <input type="url" name="twitch_profile" class="input"
-                                    placeholder="twitch.tv/gamersplay" value="{{ $service->twitch_profile }}">
+                                    placeholder="twitch.tv/gamersplay" value="{{ $service->user->twitch_profile }}">
                             </div>
                             <div class="col-md-4">
                                 <br>
                                 <label for="">Instagram</label>
                                 <input type="url" name="instagram_profile" class="input" style="margin-bottom:10px;" placeholder="@gamersplay"
-                                    value="{{ $service->instagram_profile }}">
+                                    value="{{ $service->user->instagram_profile }}">
                                 <label for="">Tiktok</label>
-                                <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay"
-                                    value="">
+                                <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
                             </div>
         
                             <div class="col-md-12" style="text-align:center;">
@@ -913,17 +912,17 @@
 <script>
     var profilePicChanged = false;
         $(document).ready(function() {
-            @if ($service->country)
-                $('select[name="country"]').val('{{ $service->country }}');
+            @if ($service->user->country)
+                $('select[name="country"]').val('{{ $service->user->country }}');
             @endif
-            @if ($service->gender)
-                $('select[name="gender"]').val('{{ $service->gender }}');
+            @if ($service->user->gender)
+                $('select[name="gender"]').val('{{ $service->user->gender }}');
             @endif
-            @if ($service->primary_language)
-                $('select[name="primary_language"]').val('{{ $service->primary_language }}');
+            @if ($service->user->primary_language)
+                $('select[name="primary_language"]').val('{{ $service->user->primary_language }}');
             @endif
-            @if ($service->secondary_language)
-                $('select[name="secondary_language"]').val('{{ $service->secondary_language }}');
+            @if ($service->user->secondary_language)
+                $('select[name="secondary_language"]').val('{{ $service->user->secondary_language }}');
             @endif
         });
     $("#pills-back-tab").click(function(){
@@ -974,7 +973,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: 'POST',
-                url: "/profile/{{ $service->id }}/editAvatar",
+                url: "/profile/{{ $service->user->id }}/editAvatar",
                 data: formData,
                 cache: false,
                 contentType: false,

@@ -24,7 +24,7 @@ class Block extends BaseModel
         $db = DB::table('blocks');
 
         $db->select('blocks.*','users.id','users.name','users.profile_picture')
-            ->join('users', 'users.id', '=', 'blocks.blocker_id');
+            ->join('users', 'users.id', '=', 'blocks.user_id');
         $db->where('blocks.blocker_id',$u_id);
         $query = $db->get();
         if ($query->isNotEmpty())

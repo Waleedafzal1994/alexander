@@ -290,11 +290,12 @@ class ServicesController extends Controller
         }
         $blockList = $this->Block->getAllBlockers($service['user']->id);
 
+
         if ($service == null) {
             return redirect('/');
         }
         // dd($service->images[0]->file_name);
-        return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice'));
+        return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice','blockList'));
     }
 
     public function loadTimeline(Request $request)
