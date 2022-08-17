@@ -316,7 +316,6 @@ $noFooter = true;
                 </ul>
             </div>
         </div>
-
         <div class="bg-content-clr">
             <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
                 @yield('content')

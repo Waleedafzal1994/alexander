@@ -5,15 +5,11 @@
                 <div class="col-sm-12">
                     <div class="post-box">
                         <div class="follower-section">
-                            <ul class="nav nav-pills mb-3 pb-3" id="block-list-tab" role="tablist">
+                            <!-- <ul class="nav nav-pills mb-3 pb-3" id="block-list-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <!-- <a class="nav-link active" id="pills-follower-tab" data-toggle="pill" href="#pills-follower" role="tab" aria-controls="pills-follower" aria-selected="true">Block List ({{!empty($followersList) ? count($followersList) : 0}})</a> -->
                                     <a class="nav-link active" id="pills-follower-tab" data-toggle="pill" role="tab" aria-controls="pills-follower" aria-selected="true">Block List</a>
                                 </li>
-                                <!-- <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="pills-following-tab" data-toggle="pill" href="#pills-following" role="tab" aria-controls="pills-following" aria-selected="false">Following ({{!empty($followingList) ? count($followingList) : 0}})</a>
-                                </li> -->
-                            </ul>
+                            </ul> -->
                             <div class="tab-content" id="followers-tabContent">
                                 <div class="tab-pane fade show active" id="pills-follower" role="tabpanel" aria-labelledby="pills-follower-tab">
                                     @if (!empty($followersList))

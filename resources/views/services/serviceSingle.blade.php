@@ -493,11 +493,6 @@
                                         Badges
                                     </a>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="block-list-tab" data-bs-toggle="tab" data-bs-target="#block-list" type="button" role="tab" aria-controls="block-list" aria-selected="false" href="#block-list">
-                                        Block
-                                    </a>
-                                </li>
                                 <li class="nav-item ml-auto" role="presentation">
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
@@ -580,13 +575,6 @@
             @include('services.following')
         </div>
         <!-- END: Followers -->
-
-        <!-- START: Block List -->
-        <div class="tab-pane fade block-list-result shadow rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
-            @include('services.blockList')
-
-        </div>
-        <!-- END: Block List -->
 
         <!-- Edit Tab Start Here for user profile to edit -->
         <div class="tab-pane fade" id="edit_user_profile" role="tabpanel" aria-labelledby="following-tab">
