@@ -1655,7 +1655,7 @@ a.slider-link:hover {
     height: 42px;
     width: 60px;
     text-align: center;
-    background: var(--color-lighter-primary);
+    background: var(--color-lighter-primary) !important;
     color: #fff;
     font-size: 26px;
     border-radius: 4px;
@@ -1688,6 +1688,7 @@ a.slider-link:hover {
     margin-top: 8px;
     transition: all .3s ease-in-out;
     border: 0;
+    background-color: var(--color-primary) !important;
 }
 .number-row-card{
     background: transparent !important;
@@ -1826,6 +1827,7 @@ a.slider-link:hover {
 }
 .img-two-btns-row a:hover{
     background-color: var(--color-primary-hover);
+    text-decoration: none;
 }
 .profile-background .pop img{
     height: 286px !important;
@@ -2453,9 +2455,15 @@ a.slider-link:hover {
 .gamer-puzzle-section .right-cards img:hover {
     transform: translateY(-10px);
 }
+
 @media (min-width: 1400px){
     .middle-puzzle img{
         width: 130px;
+    }
+    .gamePlay .service{
+        width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media (max-width: 1200px){

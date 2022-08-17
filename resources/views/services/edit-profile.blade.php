@@ -25,6 +25,11 @@
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">IM Settings</a>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="block-list-tab" data-bs-toggle="tab" data-bs-target="#block-list" type="button" role="tab" aria-controls="block-list" aria-selected="false" href="#block-list">
+                                        Block List
+                                    </a>
+                                </li>
                             <li class="nav-item ml-auto" role="presentation">
                                 <a class="nav-link shadow edit_user_profile" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
                             </li>
@@ -554,9 +559,13 @@
                                         rows="3">{{ $service->description }}</textarea>
                                 </div>
                             </div>
-                            <div class="subheader-page rounded-top" style="margin-bottom:10px;">
-                                <h4>Socials</h4>
-                            </div>
+                        </div>
+                        <div class="" style="margin-bottom:10px;">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Socials</span>
+                            </h1>
+                        </div>
+                        <div class="row mt-4 pl-3" style="padding:15px">
                             <div class="col-md-4">
                                 <br>
                                 <label for="">Facebook</label>
@@ -581,7 +590,6 @@
                                 <button type="submit" class="btn btn-success">Save</button>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
@@ -798,6 +806,11 @@
                             <hr>
                         </form>
                     </div>
+                     <!-- START: Block List -->
+                    <div class="tab-pane fade block-list-result shadow rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
+                        @include('services.blockList')
+                    </div>
+                    <!-- END: Block List -->
                 </div>
             </div>
     </div>
