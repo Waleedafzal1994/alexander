@@ -17,4 +17,24 @@ class Block extends BaseModel
         'user_id',
         'blocker_id'
     ];
+
+
+    public function getAllBlockers($u_id)
+    {
+        $db = DB::table('blocks');
+
+        $db->select('blocks.*','users.id','users.name','users.profile_picture')
+            ->join('users', 'users.id', '=', 'blocks.blocker_id');
+        $db->where('blocks.blocker_id',$u_id);
+        $query = $db->get();
+        if ($query->isNotEmpty())
+        {
+            $res = $query;
+            return $res;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 }

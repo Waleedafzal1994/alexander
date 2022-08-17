@@ -8,6 +8,7 @@ use App\Models\ServiceImage;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Models\Follower;
+use App\Models\Block;
 use App\Models\Order;
 use App\Models\GenericModel;
 use App\Models\Seller_general_category_info;
@@ -20,6 +21,7 @@ class ServicesController extends Controller
     function __construct()
     {
         $this->Generic_model = new GenericModel;
+        $this->Block = new Block;
         $this->Follower = new Follower;
     }
     //
@@ -286,6 +288,7 @@ class ServicesController extends Controller
         } else {
             $checkFollow = '';
         }
+        $blockList = $this->Block->getAllBlockers($service['user']->id);
 
         if ($service == null) {
             return redirect('/');

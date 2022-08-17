@@ -343,7 +343,7 @@ $noFooter = true;
                 });
 
                 $('.block-toggle').click(function(){
-                    alert($(this).val());
+                    //alert($(this).val());
                     $(this).val() == "confirm_block" ? do_block() : do_unblock();
                 });
 
