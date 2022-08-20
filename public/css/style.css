@@ -9,11 +9,18 @@
 /* #app{
     background-color: #f6f6ff;
 } */
+
+.w-90px{
+    width: 90px;
+}
 .bg-content-clr{
     background-color: #f6f6ff !important;
 }
 .bg-welcome-clr{
     background-color: #faf5ff !important;
+}
+a:hover{
+    color: #000 !important;
 }
 
 @keyframes pulse {
@@ -1417,7 +1424,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1360px;
+        max-width: 1360px !important;
     }
 }
 
@@ -1428,7 +1435,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1460px;
+        max-width: 1460px !important;
     }
 }
 
@@ -1439,7 +1446,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1460px;
+        max-width: 1460px !important;
     }
 }
 
@@ -1450,7 +1457,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1800px;
+        max-width: 1800px !important;
     }
 
     .cust-nab-left .btn-cust {
@@ -1466,7 +1473,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1800px;
+        max-width: 1800px !important;
     }
 }
 
@@ -1477,7 +1484,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1880px;
+        max-width: 1880px !important;
     }
 }
 
@@ -2460,11 +2467,11 @@ a.slider-link:hover {
     .middle-puzzle img{
         width: 130px;
     }
-    .gamePlay .service{
+    /* .gamePlay .service{
         width: 1300px;
         margin-left: auto;
         margin-right: auto;
-    }
+    } */
 }
 @media (max-width: 1200px){
     .ripple-section{
@@ -2809,7 +2816,10 @@ input:checked + .slider {
 }
 
 .top-bg-section{
-    background: #581c87;
+    background-image: url('../images/gaming-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #581c87; */
     min-height: 200px;
     position: relative;
     /* overflow: hidden; */
@@ -2839,7 +2849,7 @@ button{
     align-items: center;
     justify-content: end;
     gap: 12px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 .top-bg-section ul .circle-link{
     list-style-type: none;
@@ -2902,4 +2912,38 @@ button{
 }
 .nav-link.edit_user_profile:hover{
     color: #fff !important;
+}
+
+
+#blockModal .modal-footer{
+    background-color: #ededfb;
+}
+
+/* Block Model */
+.swal2-popup{
+    padding: 0;
+}
+.swal2-title{
+    background: #581c87;
+    padding: 1em;
+    text-align: left;
+    font-size: 1.25rem;
+    color: #fff;
+}
+.swal2-actions{
+    background: #ededfb;
+    justify-content: end;
+    padding: 16px 24px;
+    width: 100%;
+}
+.swal2-styled{
+    box-shadow: 0 0 0 3px rgb(112 102 224 / 0%) !important;
+    padding: 0.325em 1.1em;
+}
+.swal2-confirm{
+    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+}
+.swal2-cancel{
+    background-color: transparent !important;
+    color: #000 !important;
 }

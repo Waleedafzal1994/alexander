@@ -79,7 +79,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; z-index: 100;">
+        <nav class="navbar navbar-expand-md navbar-dark px-0" style="position:fixed; width:100%; z-index: 100;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style="height:40px;">
@@ -351,12 +351,13 @@ $noFooter = true;
                     Swal.fire({
                         title: "Blocked!!!",
                         text: "Are you sure you want to block this person?",
-                        icon: "warning",
+                        // icon: "warning",
                         // buttons: [
                         //     'No, cancel it!',
                         //     'Yes, I am sure!'
                         // ],
                         // dangerMode: true,
+                        showCloseButton: true,
                         confirmButtonText : 'Yes',
                         showCancelButton: true,
                         cancelButtonText: 'No, cancel it!'
@@ -473,5 +474,10 @@ $noFooter = true;
 
     @endif
     @stack('scripts')
+
+
+
+
+
 </body>
 </html>

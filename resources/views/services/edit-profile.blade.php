@@ -584,9 +584,14 @@
                                 <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
                             </div>
         
-                            <div class="col-md-12" style="text-align:center;">
-                                <br>
-                                <button type="submit" class="btn btn-success">Save</button>
+                            <div class="col-md-12 mt-4">
+                                <div class="d-flex justify-content-center">
+                                    <ul class="nav nav-custom-nav">
+                                        <li>
+                                            <a type="submit" class="nav-link shadow edit_user_profile">Save</a>
+                                        </li>
+                                    </ul>
+                                </div>
                                 </form>
                             </div>
                         </div>
@@ -705,7 +710,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
                         <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Privacy Setting</span>
+                            <span>Privacy Settings</span>
                         </h1>
                         <form action="" class="mt-4 pl-3">
                             <div class="form-group">
@@ -746,7 +751,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <hr>
+                            <!-- <hr>
                             <div class="form-group">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-4">
@@ -755,7 +760,7 @@
                                     </div>
                                     <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
@@ -817,7 +822,7 @@
 
 <!--Bind Modal -->
 <div class="modal fade" id="bindModal" tabindex="-1" aria-labelledby="bindModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="bindModalLabel">Modal title</h5>

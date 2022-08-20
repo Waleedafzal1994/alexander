@@ -1551,7 +1551,7 @@ p {
 }
 
 .heart:hover {
-  animation: pulse 0.6s linear;
+  /* animation: pulse 0.6s linear; */
 }
 
 .delete-gallery:hover {
@@ -1586,7 +1586,7 @@ p {
 } */
 
 .we-video-info>ul li span:hover i {
-  animation: 0.6s linear 0s normal none 1 running pulse;
+  /* animation: 0.6s linear 0s normal none 1 running pulse; */
 }
 
 .we-video-info>ul li span.comment {
