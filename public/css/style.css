@@ -19,9 +19,7 @@
 .bg-welcome-clr{
     background-color: #faf5ff !important;
 }
-a:hover{
-    color: #000 !important;
-}
+
 
 @keyframes pulse {
     0% {
@@ -2175,7 +2173,7 @@ a.slider-link:hover {
 }
 .friend-info .carousel-inner{
     width: 90%;
-    height: 550px;
+    height: 650px;
     margin: auto;
     border-radius: 10px;
 }
@@ -2322,7 +2320,7 @@ a.slider-link:hover {
     background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
 }
 .post-carousel.carousel{
-    max-width: 450px !important;
+    max-width: 575px !important;
 }
 .post-carousel.carousel .carousel-control-prev {
     left: -50px;
@@ -2364,6 +2362,9 @@ a.slider-link:hover {
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
     border-radius: 8px;
+}
+.follower-section li a:hover{
+    color: #000;
 }
 .follower-section .tab-content .follower-img img{
     margin-right: 12px;
@@ -2918,6 +2919,12 @@ button{
 #blockModal .modal-footer{
     background-color: #ededfb;
 }
+
+
+.comment-action-box p{
+    font-size: 1rem;
+}
+
 
 /* Block Model */
 .swal2-popup{

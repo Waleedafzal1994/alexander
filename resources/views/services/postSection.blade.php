@@ -229,9 +229,10 @@
 </div>
 <div class="post-item-box"></div>
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"> </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
     //show comment//
@@ -240,7 +241,7 @@ $(document).ready(function(){
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
         });
   // When strating hide prev arrow
-  $('.carousel-control-prev').hide();
+//   $('.carousel-control-prev').hide();
 
 
     jQuery(".post-comt-box form").on("submit", function(event) 

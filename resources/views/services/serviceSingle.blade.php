@@ -276,7 +276,7 @@
 
                 </div>
 
-                <p class="pl-3 mb-4 text-style-4 color-primary head-style-fst">ID: <br>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+                
 
 
 
@@ -304,8 +304,19 @@
             </div>
 
         </div>
+    </div>
 </div>
+
+<div class="card mt-4 mb-4 shadow">
+    <div class="card">
+        <div class="profile-info-counters">
+            <div class="social">
+            <p class="pl-3 mb-3 text-style-4 color-primary">ID: {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+            </div>
+        </div>
+    </div>
 </div>
+
 <div class="card mt-4 mb-4 shadow">
     <div class="card">
         <div class="profile-info-counters">
@@ -350,7 +361,7 @@
 </div>
 <!-- END: Service Profile Side bar First Card -->
 
-<!-- <div class="card mt-4 mb-4 shadow">
+<div class="card mt-4 mb-4 shadow">
     <div class="card table-card">
         <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
             Available Time
@@ -444,7 +455,7 @@
             </table>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- END: Service Profile Side bar SECOND Card -->
 </div>
