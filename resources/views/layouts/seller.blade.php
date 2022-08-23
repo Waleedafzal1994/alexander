@@ -164,7 +164,7 @@ $noFooter = true;
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
                                     <input type="text"
-                                        style="width:250px; text-align:center; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);"
+                                        style="width:250px; text-align:center; background:transparent !important; color:white; border:1px solid rgba(255,255,255,0.3) !important;"
                                         id="search" placeholder="Search">
                                     <div id="myDropdown" class="dropdown-content"
                                         style="border-radius:4px; width:250px; min-height:50px; margin-top:40px;">

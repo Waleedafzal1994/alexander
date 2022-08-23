@@ -31,7 +31,7 @@
                                     </a>
                                 </li>
                             <li class="nav-item ml-auto" role="presentation">
-                                <a class="nav-link shadow edit_user_profile" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
+                                <a class="nav-link button-anim shadow edit_user_profile" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
                             </li>
                         </ul>
                     </div>
@@ -42,7 +42,7 @@
                             <span>Profile Information</span>
                         </h1>
                         <div class="row mt-4 pl-3" style="padding:15px;">
-                            <div class="col-md-4">
+                            <div class="col-md-12 mb-5">
                                 <form method="POST" enctype="multipart/form-data" id="ajax-profile" action="javascript:void(0)">
                                     <input type="hidden" name="id" value="{{ $service->user->id }}" style="display:none;">
                                     @csrf
@@ -95,7 +95,7 @@
 
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <form method="POST" action="/profile/{{ $service->user->id }}/edit">
                                     @csrf
                                     @if (session('error'))
@@ -115,12 +115,21 @@
                                         value="{{ $service->user->user_title }}">
                                     </div>
                                     {{-- Form Element --}}
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="">Gender</label>
                                         <select name="gender" class="form-control" required>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                             <option value="Other">Non-Binary</option>
+                                        </select>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label for="">Gender</label>
+                                        <select name="gender" id="gender" required="">
+                                            <option value="" selected="" disabled="">Please select you gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="NON-BINARY">NON-BINARY</option>
                                         </select>
                                     </div>
 
@@ -283,17 +292,152 @@
 
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <label for="">Full Name</label>
                                     <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}">
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="">Age</label>
                                     <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
-                                </div>
+                                </div> -->
 
+                                <div class="form-group">
+                                    <label for="">Age</label>
+                                    <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
+                                        <div class="form-group w-100 mb-0 mr-2">
+                                            <div class="newdropdown">
+                                                <div class="dropdown w-100">
+                                                    <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                        <div class="game-title" id="drop_down_select_month">Month</div>
+                                                    </a>
+
+                                                    <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                        <div class="scroll-div month">
+                                                            <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="month_name">Jan</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_feb">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="month_name">Feb</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_mar">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="" data-setMonth="Mar">Mar</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_apr">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Apr</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_may">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">May</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_jun">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Jun</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_jul">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Jul</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_aug">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Aug</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_sep">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Sep</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_oct">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Oct</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_nov">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Nov</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            <li role="presentation" class="" id="month_li_dec">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">Dec</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group w-100 mb-0 mr-2">
+                                            <div class="newdropdown">
+                                                <div class="dropdown w-100">
+                                                    <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                        <div class="game-title" id="drop_down_select_date">Date</div>
+                                                    </a>
+
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                        <div class="scroll-div date">
+                                                            @for($d = 01; $d<=31; $d++)
+                                                            <li role="presentation" class="">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div class="">{{$d}}</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            @endfor
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group w-100 mb-0">
+                                            <div class="newdropdown">
+                                                <div class="dropdown w-100">
+                                                    <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                        <div class="game-title" id="drop_down_select_year">Year</div>
+                                                    </a>
+
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                                        <div class="scroll-div year">
+                                                            @for($i = 1950; $i<= date('Y'); $i++)
+                                                            <li role="presentation" class="">
+                                                                <a role="menuitem" tabindex="-1">
+                                                                    <div id="year">{{$i}}</div>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                </a>
+                                                            </li>
+                                                            @endfor
+                                                        </div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 {{-- Form Element --}}
@@ -555,8 +699,20 @@
                                 {{-- Form Element --}}
                                 <div class="form-group">
                                     <label for="">About Me</label>
-                                    <textarea type="text" name="description" class="form-control"
+                                    <textarea type="text" id="field" name="description" class="form-control textarea" onkeyup="countCount(this)"
                                         rows="3">{{ $service->user->description }}</textarea>
+                                        <div id="charCount" class="counter"> </div>
+
+                                        <script>
+                                        function countCount(val) {
+                                            var len = val.value.length;
+                                            if (len >= 500) {
+                                                val.value = val.value.substring(0, 500);
+                                            } else {
+                                                $('#charCount').text(500 - len);
+                                            }
+                                        };
+                                        </script>
                                 </div>
                             </div>
                         </div>

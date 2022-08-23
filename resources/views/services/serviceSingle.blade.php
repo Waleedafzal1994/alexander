@@ -311,7 +311,7 @@
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
-            <p class="pl-3 mb-3 text-style-4 color-primary">ID: {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+            <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
             </div>
         </div>
     </div>
@@ -508,7 +508,7 @@
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a> -->
-                                    <a class="nav-link shadow edit_user_profile" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
+                                    <a class="nav-link button-anim shadow edit_user_profile" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
                                         Edit
                                     </a>
                                 </li>
