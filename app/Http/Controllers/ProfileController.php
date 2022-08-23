@@ -355,4 +355,19 @@ class ProfileController extends Controller
             return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice'));
         }
     }
+
+    public function is_delete(Request $request)
+    {
+        // Logic to deactive
+        if (isset($request->id) && is_numeric($request->id)) 
+        {
+            $user = User::whereId($request->id)->first();
+            if ($user == null) return redirect()->back()->with(['error' => 'User does not exist.']);
+            // if ($user->id == Auth::id()) return redirect()->back()->with(['error' => 'You cannot ban yourself.']);
+            $user->is_deleted = 1;
+            $user->save();
+            Auth::logout();
+            return redirect('/login');
+        }
+    }
 }

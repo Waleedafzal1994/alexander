@@ -1025,7 +1025,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/user/is_delete" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{Auth::id()}}">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group number-change">
@@ -1041,7 +1043,7 @@
                     </div>
 
                     <div class="text-center mt-4 mx-auto">
-                        <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2" data-dismiss="modal" aria-label="Close">Delete</button>
+                        <button type="submit" class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2" >Delete</button>
                     </div>
                 </form>
             </div>
