@@ -125,7 +125,7 @@
                                     </div> -->
                                     <div class="form-group">
                                         <label for="">Gender</label>
-                                        <select name="gender" id="gender" required="">
+                                        <select name="gender" id="gender" class="form-control" required="">
                                             <option value="" selected="" disabled="">Please select you gender</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -744,7 +744,7 @@
                                 <div class="d-flex justify-content-center">
                                     <ul class="nav nav-custom-nav">
                                         <li>
-                                            <a type="submit" class="nav-link shadow edit_user_profile">Save</a>
+                                            <a type="submit" class="nav-link shadow button-anim edit_user_profile">Save</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -794,7 +794,7 @@
                             <hr>
                             <div class="delete-accnt pt-3 d-flex align-items-center">
                                 <p>Delete Account</p>
-                                <a href="">Delete</a>
+                                <a type="button" data-toggle="modal" data-target="#deleteModal">Delete</a>
                             </div>
                         </form>
                     </div>
@@ -981,7 +981,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bindModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="bindModalLabel">Bind Number</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1006,7 +1006,42 @@
                     </div>
 
                     <div class="text-center mt-4 mx-auto">
-                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-5 py-2">Next</button>
+                        <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group number-change">
+                                <p>
+                                    Deleting your account will remove all of your income and balance. 
+                                    If you have subscribed to VIP, you need to cancel it through your payment methods.
+                                </p>
+                                <p>
+                                    ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4 mx-auto">
+                        <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2" data-dismiss="modal" aria-label="Close">Delete</button>
                     </div>
                 </form>
             </div>
@@ -1020,7 +1055,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="passwordChangeModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="passwordChangeModalLabel">Change Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1057,7 +1092,7 @@
                     </div>
 
                     <div class="text-center mt-4 mx-auto">
-                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-5 py-2">Change</button>
+                        <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2">Change</button>
                     </div>
                 </form>
             </div>

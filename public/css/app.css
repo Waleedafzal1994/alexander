@@ -1986,12 +1986,12 @@ pre code {
   color: transparent;
   text-shadow: 0 0 0 #495057;
 }
-.form-control:focus {
+.form-control:focus, input:focus, select:focus, textarea:focus {
   color: #495057;
   background-color: #fff;
-  border-color: var(--color-primary);
+  border-color: #7041E6 !important;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(164, 44, 214, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(164, 44, 214, 0) !important;
 }
 .form-control::-moz-placeholder {
   color: #6c757d;
