@@ -377,7 +377,7 @@ $noFooter = true;
                     Swal.fire({
                         title: "Un-Block",
                         text: "Are you sure you want to un-block this person?",
-                        icon: "info",
+                        // icon: "info",
                         
                         // dangerMode: true,
                         confirmButtonText : 'Yes',

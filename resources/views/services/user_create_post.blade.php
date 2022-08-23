@@ -1,6 +1,6 @@
 
 <div class="timiline-cards">
-    <div class="card bg-transparent mt-2 p-0">
+    <div class="bg-transparent mt-2 p-0">
         <div class="card-body bg-transparent p-0">
             <div class="service-main-body-content">
                 <div class="row">
