@@ -75,7 +75,7 @@
         <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
 
-        <div class="card mt-4">
+        <div class="card shadow mt-4">
             <div class="card-body py-4 pr-4 pl-0">
                 <div class="service-main-body-content">
                     <div class="row">

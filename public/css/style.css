@@ -442,7 +442,7 @@ textarea {
     transition: 0.2s ease;
 }
 
-input:focus,
+/* input:focus,
 select:focus,
 textarea:focus {
     background-color: #fff;
@@ -452,7 +452,7 @@ textarea:focus {
     border-bottom-color: rgba(164, 44, 214, 0.4);
     border-left-color: rgba(164, 44, 214, 0.4);
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-}
+} */
 input[type="number"]::placeholder, 
 input[type="password"]::placeholder{
     color: #581C87;
@@ -1661,6 +1661,10 @@ a.slider-link:hover {
     box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
 }
 
+.main-services .tab-content{
+    background-clip: unset !important;
+}
+
 .main-services .box-styling {
     background-color: #6b21a81c;
     border-radius: 4px;
@@ -2778,7 +2782,12 @@ a.slider-link:hover {
 .delete-accnt a{
     color: #581C87;
     text-decoration: none !important;
+    transition: 0.5s;
     font-size: 16px;
+    cursor: pointer;
+}
+.delete-accnt a:hover{
+    color: #9944df;
 }
 .number-change select{
     width: 100px;
