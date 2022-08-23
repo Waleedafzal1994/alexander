@@ -3886,6 +3886,7 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  font-size: 14px;
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
@@ -3978,7 +3979,7 @@ input[type=button].btn-block {
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
 }

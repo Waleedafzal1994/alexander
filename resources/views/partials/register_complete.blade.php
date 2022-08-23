@@ -36,33 +36,6 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <h6>Gender</h6>
-                                <!-- <div class="newdropdown">
-                                    <div class="dropdown w-100">
-                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                            <div class="game-title" id="drop_down_select">Please select you gender</div>
-                                        </a>
-
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                                            <div class="scroll-div">
-                                                <li role="presentation" class="">
-                                                    <a role="menuitem" tabindex="-1">
-                                                        <div class="">Male</div>
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="">
-                                                    <a role="menuitem" tabindex="-1">
-                                                        <div class="">Female</div>
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="">
-                                                    <a role="menuitem" tabindex="-1">
-                                                        <div class="">Other</div>
-                                                    </a>
-                                                </li>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                </div> -->
                                 <select name="gender" id="gender" required="">
                                     <option value="" selected="" disabled="">Please select you gender</option>
                                     <option value="Male">Male</option>
@@ -77,51 +50,6 @@
                         <input class="year_hidden" type="hidden" name="year">
                         <div class="col-12">
                             <h6>Birthday</h6>
-                            <!-- <select name="month" id="month" required="" class="col-4">
-                                <option value="" selected="" disabled="">Month</option>
-                                <option value="01">Jan</option>
-                                <option value="02">Feb</option>
-                                <option value="03">Mar</option>
-                                <option value="04">Apr</option>
-                                <option value="05">May</option>
-                                <option value="06">Jun</option>
-                                <option value="07">Jul</option>
-                                <option value="08">Aug</option>
-                                <option value="09">Sep</option>
-                                <option value="10">Oct</option>
-                                <option value="11">Nov</option>
-                                <option value="12">Dec</option>
-                            </select>
-                            <select name="day" id="date" required="" class="col-4">
-                                <option value="" selected="" disabled="">Date</option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <select name="year" id="year" required="" class="col-3">
-                                <option value="" selected="" disabled="">Year</option>
-                                <option value="1991">1991</option>
-                                <option value="1992">1992</option>
-                                <option value="1993">1993</option>
-                                <option value="1994">1994</option>
-                                <option value="1995">1995</option>
-                                <option value="1996">1996</option>
-                                <option value="1997">1997</option>
-                                <option value="1998">1998</option>
-                                <option value="1999">1999</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                            </select> -->
 
                             <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
                                 <div class="form-group w-100 mr-2">
@@ -266,7 +194,7 @@
                         </div>
 
                         <div class="col-12 text-center mt-4 completeBtn">
-                            <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="completeBtn">Complete</button>
+                            <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2" id="completeBtn">Complete</button>
                         </div>
                     </div>
                 </form>

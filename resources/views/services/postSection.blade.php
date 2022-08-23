@@ -197,15 +197,27 @@
                                             </div>
                                             <div class="post-comt-box">
                                                 <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
-                                                    
-                                                    <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
-                                                    <textarea name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment"></textarea>
-
-                                                    <!-- <button class="btn btn-primary"  type="buton">Post</button> -->
+                                                    <div class="position-relative">
+                                                        <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
+                                                        <textarea name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="charCount(this)"></textarea>
+                                                        <div id="charNum" class="counter"> </div>
+                                                    </div>
                                                     <input type="submit" class="btn btn-primary mt-2" name="" value="Post Comment">
+                                                    
 
+                                                    <script>
+                                                        function charCount(val) {
+                                                            var len = val.value.length;
+                                                            if (len >= 500) {
+                                                                val.value = val.value.substring(0, 500);
+                                                            } else {
+                                                                $('#charNum').text(500 - len);
+                                                            }
+                                                        };
+                                                    </script>
                                                 </form>
                                             </div>
+                                            
                                         </div>
                                     </li>
                                 </ul>
