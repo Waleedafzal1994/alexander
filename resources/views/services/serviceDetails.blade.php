@@ -218,11 +218,19 @@
 
         // Active and de-active class on more functionality Is one
         const li = document.querySelectorAll('#pills-tab li');
+        // alert(li.length);
         for (let i = 0; i < li.length; i++) {
             if (id == li[i].id) {
                 document.getElementById('' + li[i].id).className = "active";
             } else {
-                document.getElementById('' + li[i].id).className = "";
+                //document.getElementById('' + li[i].id).className = "";
+                //by umar
+                const el = document.getElementById('' + li[i].id);
+                if (el) 
+                {
+                    el.className = "";
+                }
+                
             }
         }
 
