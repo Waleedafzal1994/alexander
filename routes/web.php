@@ -119,6 +119,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //by umar (15-08-22)//
     Route::get('/user-profile/{id}', [ProfileController::class, 'user_timeline']);
+    Route::post('/user/is_delete', [ProfileController::class, 'is_delete']);
     //---//
     Route::post('/profile/{id}/edit', [ProfileController::class, 'editProfile']);
     Route::post('/profile/{id}/editAvatar', [ProfileController::class, 'editAvatar'])->name('edit_avatar');

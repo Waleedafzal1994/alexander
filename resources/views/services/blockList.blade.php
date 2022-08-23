@@ -45,32 +45,7 @@
 </div>
 
 <script type="text/javascript">
-    function loginFollow(user_id) {
-            // console.log(following_id);
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: 'POST',
-                url: "/loginfollow/",
-                data: {
-                    'following_id':user_id
-                },
-                success: function(response) {
-                    if (response.status === '1') {
-                        $('.loginUserFollows-'+user_id).html(response.msg);
-                    }
-                    if (response.error === '1') {
-                        Swal.fire(response.msg);
-                    }
-                },
-                error: function(data) {
-                    //console.log(data);
-                }
-            });
-        }
+    
         function do_unblock(user_id)
         {
             Swal.fire({
