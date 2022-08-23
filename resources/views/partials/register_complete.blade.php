@@ -220,7 +220,7 @@
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                                                 <div class="scroll-div date">
                                                     @for($d = 01; $d<=31; $d++)
-                                                    <li role="presentation" class="">
+                                                    <li role="presentation" class="<?= ($d == 1) ? 'active' : ''?>">
                                                         <a role="menuitem" tabindex="-1">
                                                             <div class="">{{$d}}</div>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -287,6 +287,8 @@
         $('.month_hidden').val('Jan');
         $('.date_hidden').val('01');
         $('.year_hidden').val(year);
+
+        $('.scroll-div.year').find('li:contains('+year+')').addClass('active');
 
         var element=document.querySelector('ul.dropdown_month > li.active');
 
