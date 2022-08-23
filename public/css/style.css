@@ -1485,25 +1485,25 @@ p.card-text {
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1600px) {
 
     .container-xl,
     .container-lg,
     .container-md,
     .container-sm,
     .container {
-        max-width: 1460px !important;
+        max-width: 1600px !important;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
 
     .container-xl,
     .container-lg,
     .container-md,
     .container-sm,
     .container {
-        max-width: 1800px !important;
+        max-width: 1540px !important;
     }
 
     .cust-nab-left .btn-cust {
@@ -1519,7 +1519,7 @@ p.card-text {
     .container-md,
     .container-sm,
     .container {
-        max-width: 1800px !important;
+        max-width: 2170px !important;
     }
 }
 
