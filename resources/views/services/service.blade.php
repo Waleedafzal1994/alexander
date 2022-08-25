@@ -72,7 +72,7 @@
         </div>
 
         <div id="filters"
-            style="display:none; align-items:center; justify-content:flex-end; background:white; border-radius:20px; padding:20px 15px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+            style="display:none; align-items:center; justify-content:flex-end; background:white; border-radius:20px; padding:20px 15px; box-shadows: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
             <div class="services_filterable">
                 <label for="">Language</label>
                 <select name="" id="language" class="select">

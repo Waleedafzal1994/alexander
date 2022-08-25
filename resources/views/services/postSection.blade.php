@@ -8,7 +8,7 @@
 </style>
 @foreach ($posts as $post)
 @if (!empty($post))
-<div class="central-meta item shadow remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
+<div class="central-meta item shadows remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">
@@ -202,7 +202,7 @@
                                                         <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="charCount(this)"></textarea>
                                                         <div id="charNum" class="counter"> </div>
                                                     </div>
-                                                    <input type="submit" class="nav-link button-anim shadow edit_user_profile mt-2" name="" value="Post Comment">
+                                                    <input type="submit" class="nav-link button-anim shadows edit_user_profile mt-2" name="" value="Post Comment">
                                                     
 
                                                     <script>

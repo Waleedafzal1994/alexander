@@ -10,8 +10,8 @@ $userGallery = $service->user->imagesAsArray;
         @foreach ($userGallery as $galleryImage)
         <div class="col-lg-4 my-1 gallery-img-item" id="gallery-id-{{ $galleryImage->id }}">
             <div class="position-relative photos-section">
-                <img src="{{ $galleryImage->file_name }}" data-mdb-img="{{ $galleryImage->file_name }}" alt="" class="w-100 shadow-1-strong rounded img-bg-overlay">
-                <div class="box-shadow"></div>
+                <img src="{{ $galleryImage->file_name }}" data-mdb-img="{{ $galleryImage->file_name }}" alt="" class="w-100 shadows-1-strong rounded img-bg-overlay">
+                <div class="box-shadows"></div>
             </div>
             <div class="likes gallery-reaction " data-gallery-image-id="{{ $galleryImage->id }}" data-gallery-reaction-id="{{ $galleryImage->likedPost() }}">
                 <span class="gallery-like-heart heart float-left {{ $galleryImage->userliked() ? 'active-heart' : '' }}"><i class="fas fa-heart"></i></span>
@@ -33,7 +33,7 @@ $userGallery = $service->user->imagesAsArray;
             @foreach ($userGallery as $galleryImage)
             <div class="position-relative photos-section">
                 <img src="{{ $galleryImage->file_name }}" class="img-responsive">
-                <div class="box-shadow"></div>
+                <div class="box-shadows"></div>
                 <div class="likes gallery-reaction " data-gallery-image-id="{{ $galleryImage->id }}" data-gallery-reaction-id="{{ $galleryImage->likedPost() }}">
                     <span class="gallery-like-heart heart float-left {{ $galleryImage->userliked() ? 'active-heart' : '' }}"><i class="fas fa-heart"></i></span>
                     <span class="liked_gallery_count" id="liked_gallery_count-{{ $galleryImage->id }}">{{ $galleryImage->likes->count() }}</span>
