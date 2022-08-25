@@ -16,14 +16,14 @@
             <div class="d-flex align-items-center">
                 <div class="font-weight-600 margin-bottom-1rem">
                     <span id="{{$minPrice->id}}" onclick="openComfirmOrderModel(this.id)">
-                        <button id="buyBtn" class="btn-block btn-primary btn-right-50 mt-0">PLAY</button>
+                        <button id="buyBtn" class="btn-right-50 mt-0"> <i class="far fa-play-circle"></i> PLAY</button>
                         <!-- <button id="buyBtn" class="btn-block btn-primary btn-right-50">Order
                                         ({{ $service->price ?: '0' }} GP)
                                     </button> -->
                     </span>
                 </div>
                 <div class="served ml-3">
-                    <div class="new-btn new-purple-gradient text-white border-0 py-3 br-10 h-40 number-row-card">
+                    <div class="new-btn new-purple-gradient text-white border-0 number-row-card">
                         <i class="fas fa-star"></i> 5.0 <span class="dot"> . </span> 1258 Served
                     </div>
                 </div>

@@ -311,16 +311,6 @@
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
-            <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="card mt-4 mb-4 shadow">
-    <div class="card">
-        <div class="profile-info-counters">
-            <div class="social">
                 <div class="item activeTimeline" id="activeTimeline">
                     <div class="count">{{$service->post_count}}</div>
                     <div class="socialName">Posts</div>
@@ -359,9 +349,19 @@
         </div>
     </div>
 </div>
-<!-- END: Service Profile Side bar First Card -->
 
 <div class="card mt-4 mb-4 shadow">
+    <div class="card">
+        <div class="profile-info-counters">
+            <div class="social">
+            <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Service Profile Side bar First Card -->
+
+<!-- <div class="card mt-4 mb-4 shadow">
     <div class="card table-card">
         <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
             Available Time
@@ -455,7 +455,7 @@
             </table>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- END: Service Profile Side bar SECOND Card -->
 </div>
@@ -508,8 +508,8 @@
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a> -->
-                                    <a class="nav-link button-anim shadow edit_user_profile" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
-                                        Edit
+                                    <a class="nav-link button-anim shadow btn-solid" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
+                                        Settings
                                     </a>
                                 </li>
                             </ul>
