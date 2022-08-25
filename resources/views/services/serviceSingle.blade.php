@@ -474,11 +474,13 @@
                         <!-- START: Service main Menu -->
                         <div class="col-lg-12 col-md-12 col-sm-12 col-tab-nav">
                             <ul class="nav nav-tabs nav-custom-nav  border-bottom-0" id="myTab" role="tablist">
+                                @if(Request::segment(1) !='user-profile')
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" href="#home" aria-selected="true">
                                         Service Details
                                     </a>
                                 </li>
+                                @endif
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
                                         Timeline
@@ -541,11 +543,13 @@
     </div>
 
     <div class="tab-content" id="myTabContent">
+        @if(Request::segment(1) !='user-profile')
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('services.serviceDetails', [
             'service' => $service,
             ])
         </div>
+        @endif
 
         <!-- START: Timeline Tab Start here -->
         <div class="tab-pane fade posttimeline" id="profile" role="tabpanel" aria-labelledby="profile-tab">

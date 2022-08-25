@@ -47,7 +47,7 @@
                             </div>
                         @endif
                         <!-- END: Create post -->
-                        @if ($service->post_count > 0)
+                        @if ($service->post_count >= 0)
                             <div class="loadMore post-box">
                                 <!-- {{$service->post_count}} -->
                                 @include('services.postSection', [

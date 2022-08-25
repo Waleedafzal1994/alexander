@@ -6,8 +6,9 @@
         display: block !important;
     }
 </style>
+
+@if (!empty($posts))
 @foreach ($posts as $post)
-@if (!empty($post))
 <div class="central-meta item shadow remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
     <div class="user-post">
         <div class="friend-info">
@@ -232,9 +233,9 @@
     </div>
 </div>
 
-
-@endif
 @endforeach
+@endif
+
 <!-- more post data -->
 <div class="loader" style="display: none;">
     <img src="/imgs/loader.gif">
@@ -378,9 +379,6 @@ $(document).ready(function(){
 });
 
 
-
-var post_id ='{{$post->id}}';
-// alert(post_id);
 $('.post-carousel').on('slide.bs.carousel', function (e) {
 
   // var slidingItemsAsIndex = $('.carousel-item').length - 1;
