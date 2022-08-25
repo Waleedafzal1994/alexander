@@ -164,6 +164,7 @@ $noFooter = true;
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
                                     <input type="text"
+                                        class="font-15"
                                         style="width:250px; text-align:center; background:transparent !important; color:white; border:1px solid rgba(255,255,255,0.3) !important;"
                                         id="search" placeholder="Search">
                                     <div id="myDropdown" class="dropdown-content"
@@ -199,7 +200,7 @@ $noFooter = true;
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
                                     @if (Auth::user()->profile_picture)
-                                        <img src="{{URL::to('/')}}/{{Auth::user()->profile_picture}}" class="nav_avatar_container">
+                                        <img src="{{Auth::user()->profile_picture}}" class="nav_avatar_container">
                                     @endif
                                     <span class="nav_profile_name">{{ Auth::user()->name }}</span>
                                 </a>

@@ -34,7 +34,7 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service" id="servicePage">
-        <a class="right-bottom-arrow new-purple-gradient shadow text-decoration-none" style="display: none;" id="back_to_top">
+        <a class="right-bottom-arrow new-purple-gradient shadows text-decoration-none" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <i class="fa fa-chevron-up text-white"></i>
             </div>
@@ -43,7 +43,7 @@
             <!-- START: Service Profile Side bar -->
             <div class="profileBar" id="profileBar_info">
                 <!-- START: Service Profile Side bar First Card -->
-                <div class="card shadow">
+                <div class="card shadows">
                     <div class="card-body p-0 m-0">
                         <div class="profile-image-part">
                             <div class="profile-background">
@@ -51,8 +51,8 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <!-- <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay"> -->
-                                    <img src="/temp-services/images/1.webp" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <!-- <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadows-1-strong rounded mb-2 img-bg-overlay"> -->
+                                    <img src="/temp-services/images/1.webp" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadows-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -307,17 +307,7 @@
     </div>
 </div>
 
-<div class="card mt-4 mb-4 shadow">
-    <div class="card">
-        <div class="profile-info-counters">
-            <div class="social">
-            <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="card mt-4 mb-4 shadow">
+<div class="card mt-4 mb-4 shadows">
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
@@ -359,9 +349,19 @@
         </div>
     </div>
 </div>
+
+<div class="card mt-4 mb-4 shadows">
+    <div class="card">
+        <div class="profile-info-counters">
+            <div class="social">
+            <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- END: Service Profile Side bar First Card -->
 
-<div class="card mt-4 mb-4 shadow">
+<!-- <div class="card mt-4 mb-4 shadows">
     <div class="card table-card">
         <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary head-style-fst">
             Available Time
@@ -455,7 +455,7 @@
             </table>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- END: Service Profile Side bar SECOND Card -->
 </div>
@@ -465,7 +465,7 @@
 
 <div class="mainBody">
     <!-- START: First Card mianbody -->
-    <div class="card review-body shadow" id="services_navbar">
+    <div class="card review-body shadows" id="services_navbar">
         <div class="card-body ">
             <div class="service-game-main-body">
                 <div class="service-game-nav">
@@ -510,8 +510,8 @@
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a> -->
-                                    <a class="nav-link button-anim shadow edit_user_profile" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
-                                        Edit
+                                    <a class="nav-link button-anim shadows btn-solid" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
+                                        Settings
                                     </a>
                                 </li>
                             </ul>
@@ -581,7 +581,7 @@
         <!-- END: Gallery -->
 
         <!-- START: Followers -->
-        <div class="tab-pane fade followers-result shadow rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+        <div class="tab-pane fade followers-result shadows rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
             @include('services.followers')
 
         </div>

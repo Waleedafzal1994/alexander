@@ -34,7 +34,7 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service mt-4 mx-3" id="servicePage">
-        <a class="right-bottom-arrow new-purple-gradient shadow" style="display: none;" id="back_to_top">
+        <a class="right-bottom-arrow new-purple-gradient shadows" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <i class="fa fa-chevron-up text-white"></i>
             </div>
@@ -43,7 +43,7 @@
             <!-- START: Service Profile Side bar -->
             <div class="profileBar">
                 <!-- START: Service Profile Side bar First Card -->
-                <div class="card shadow">
+                <div class="card shadows">
                     <div class="card-body p-0 m-0">
                         <div class="profile-image-part">
                             <div class="profile-background">
@@ -51,7 +51,7 @@
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
                                 </a> -->
                                 <div class="lightbox lightbox-user-gallery">
-                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadow-1-strong rounded mb-2 img-bg-overlay">
+                                    <img src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="pointer w-100 shadows-1-strong rounded mb-2 img-bg-overlay">
                                 </div>
                             </div>
                         </div>
@@ -305,7 +305,7 @@
         </div>
 </div>
 </div>
-<div class="card mt-4 mb-4 shadow">
+<div class="card mt-4 mb-4 shadows">
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
@@ -332,7 +332,7 @@
 
 <div class="mainBody">
     <!-- START: First Card mianbody -->
-    <div class="card review-body shadow">
+    <div class="card review-body shadows">
         <div class="card-body ">
             <div class="service-game-main-body">
                 <div class="service-game-nav">
@@ -432,7 +432,7 @@
         <!-- END: Gallery -->
 
         <!-- START: Followers -->
-        <div class="tab-pane fade followers-result shadow rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+        <div class="tab-pane fade followers-result shadows rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
         <!-- @include('services.followers') -->
 
         </div>
