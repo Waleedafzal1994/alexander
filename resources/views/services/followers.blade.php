@@ -88,7 +88,7 @@
             });
             $.ajax({
                 type: 'POST',
-                url: "/loginfollow/",
+                url: "/loginfollow",
                 data: {
                     'following_id':user_id
                 },
