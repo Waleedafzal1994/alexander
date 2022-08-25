@@ -369,8 +369,8 @@ ul {
 }
 
 .nav-custom-nav li a {
-  background: var(--color-lighter-primary-opacity) !important;
-  color: #8f57babf !important;
+  background: var(--color-lighter-primary-opacity);
+  color: #8f57babf;
   border-radius: var(--border-radius) !important;
   padding: 10px 15px;
   font-weight: 500;
@@ -384,7 +384,7 @@ ul {
   border: none !important;
   border-color: none !important;
   font-weight: 500;
-  color: var(--color-lighter-primary) !important;
+  color: var(--color-lighter-primary);
   /* border-bottom: 2px solid var(--color-lighter-primary) !important; */
   /* color: var(--color-dark); */
   /* font-weight: bold; */

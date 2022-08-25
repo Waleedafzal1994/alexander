@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="">
                                             <!-- <button class="new-btn btn-primary mr-3 loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button> -->
-                                            <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2" onclick="do_unblock('<?= $row->id;?>')">Unblock</button>
+                                            <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2" onclick="do_unblock('<?= $row->id;?>')">Unblock</button>
                                         </div>
                                     </div>
                                     @endforeach    

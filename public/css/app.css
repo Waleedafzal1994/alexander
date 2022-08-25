@@ -4347,7 +4347,7 @@ input[type=button].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: none !important;
   border-radius: 0.25rem;
 }
 .card > hr {
@@ -7423,7 +7423,7 @@ button.bg-dark:focus {
 }
 
 .shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(28 27 30 / 5%) !important;
 }
 
 .shadow-lg {

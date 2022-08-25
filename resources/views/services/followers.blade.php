@@ -35,8 +35,8 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
-                                                <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    
@@ -59,8 +59,8 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
-                                                <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    

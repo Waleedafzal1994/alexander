@@ -118,7 +118,7 @@
             </div>
             <div class="services_filterable">
                 <p>&nbsp;</p>
-                <a href="" class="new-btn font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2" id="filterBtn" style="height:35px; position:relative; top:5px;">Apply</a>
+                <a href="" class="new-btn font-weight-bold button-anim btn-solid text-white px-4 py-2" id="filterBtn" style="height:35px; position:relative; top:5px;">Apply</a>
             </div>
 
         </div>
