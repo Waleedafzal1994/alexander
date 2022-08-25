@@ -14,7 +14,7 @@
 
         <!-- <div class="tab-pane more_section"> -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="card-body bg-white br-10 shadow">
+            <div class="card-body bg-white br-10 shadows">
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
                     <div class="service_category main-category more-cards">
@@ -75,7 +75,7 @@
         <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
 
-        <div class="card shadow mt-4">
+        <div class="card shadows mt-4">
             <div class="card-body py-4 pr-4 pl-0">
                 <div class="service-main-body-content">
                     <div class="row">

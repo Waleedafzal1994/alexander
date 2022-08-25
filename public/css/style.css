@@ -22,6 +22,9 @@
 a:hover{
     text-decoration: none !important;
 }
+.font-15{
+    font-size: 15px !important;
+}
 
 @keyframes pulse {
     0% {
@@ -1774,7 +1777,7 @@ a.slider-link:hover {
     padding: 0 !important;
     margin-left: 0 !important;
     color: #000 !important;
-    font-size: 18px !important;
+    font-size: 17px !important;
     font-weight: 700;
 }
 .number-row-card i{
@@ -3058,3 +3061,17 @@ button{
 .change-password input::placeholder{
     color: #727085;
 }
+
+
+
+
+
+
+
+
+
+
+
+.shadows {
+    box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(28 27 30 / 5%) !important;
+  }

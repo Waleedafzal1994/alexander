@@ -7,7 +7,7 @@
     <div class="edit-profile-page d-flex align-items-center">
         <div class="" style="width:500px; max-width:500px; margin-right:20px;"></div>
             <div class="w-100 col-tab-nav">
-                <div class="card review-body shadow mb-3">
+                <div class="card review-body shadows mb-3">
                     <div class="card-body">
                         <ul class="nav nav-tabs nav-custom-nav border-bottom-0" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -31,14 +31,14 @@
                                     </a>
                                 </li>
                             <li class="nav-item ml-auto" role="presentation">
-                                <a class="nav-link button-anim shadow btn-solid" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
+                                <a class="nav-link button-anim shadows btn-solid" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-edit-profile" role="tabpanel" aria-labelledby="pills-edit-profile-tab">
-                        <div class="bg-white shadow rounded pl-0 pr-3 pb-4 pt-5">
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                 <span>Profile Information</span>
                             </h1>
@@ -719,7 +719,7 @@
                             </div>
                         </div>
                         
-                        <div class="bg-white rounded shadow pl-0 pr-3 pb-4 pt-5 mt-4">
+                        <div class="bg-white rounded shadows pl-0 pr-3 pb-4 pt-5 mt-4">
                             <div class="" style="margin-bottom:10px;">
                                 <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                     <span>Socials</span>
@@ -748,7 +748,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ul class="nav nav-custom-nav">
                                             <li>
-                                                <a type="submit" class="nav-link shadow button-anim btn-solid">Save</a>
+                                                <a type="submit" class="nav-link shadows button-anim btn-solid">Save</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -759,7 +759,7 @@
                     </div>
                     
                     <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
-                        <div class="bg-white shadow rounded pl-0 pr-3 pb-4 pt-5">
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                 <span>Account Information</span>
                             </h1>
@@ -976,7 +976,7 @@
                         </form>
                     </div>
                      <!-- START: Block List -->
-                    <div class="tab-pane fade block-list-result shadow rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
+                    <div class="tab-pane fade block-list-result shadows rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
                         @include('services.blockList')
                     </div>
                     <!-- END: Block List -->

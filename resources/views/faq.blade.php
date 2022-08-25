@@ -19,8 +19,8 @@
 
         #main #faq .card .card-header {
             border: 0;
-            -webkit-box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
-            box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            -webkit-box-shadows: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            box-shadows: 0 0 20px 0 rgba(213, 213, 213, 0.5);
             border-radius: 2px;
             padding: 0;
         }
