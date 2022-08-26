@@ -768,8 +768,8 @@
         function loadMorePost() {
             // alert('loadmore');
             let page = $('.showmore-posts').attr('data-post-load_page');
-            let service = $('.showmore-posts').attr('data-post-service');
-            // alert(page+'service'+service);
+            let service = $('.showmore-posts').attr('data-post-service');//umar change it to user id
+            //alert(page+'service'+service);
             if (!page && !service) return false;
             $.ajaxSetup({
                 headers: {
@@ -1410,7 +1410,7 @@
 
                 newUrl = url.split("#")[0] + c_tab;
 
-                id = "{{ $service->id }}";
+                id = "{{ $service->user->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
@@ -1509,8 +1509,8 @@
             } else if (hash == "#profile") {
                 newUrl = url.split("#")[0] + hash;
 
-                id = "{{ $service->id }}";
-                //alert(id);
+                id = "{{ $service->user->id }}";
+                // alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
                     headers: {

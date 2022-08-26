@@ -355,7 +355,8 @@ class PostController extends Controller
         }
         $limit = 5;
         $offset = $request->page * $limit;
-        $posts = Post::where('service_id', $request->service)->skip($offset)->take($limit)->latest()->get();
+        //$posts = Post::where('service_id', $request->service)->skip($offset)->take($limit)->latest()->get();
+        $posts = Post::where('user_id', $request->service)->skip($offset)->take($limit)->latest()->get();
         // echo $posts->count();
         // die();
         if (!empty($posts) && $posts->count() > 0) {
