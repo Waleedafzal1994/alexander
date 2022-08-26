@@ -312,7 +312,7 @@
         <div class="profile-info-counters">
             <div class="social">
                 <div class="item activeTimeline" id="activeTimeline">
-                    <div class="count">{{$service->post_count}}</div>
+                    <div class="count">{{$service->user->post_count}}</div>
                     <div class="socialName">Posts</div>
                 </div>
                 <div class="item activeFollowers" id="activefollowers">
@@ -481,8 +481,9 @@
                                     </a>
                                 </li>
                                 @endif
+
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
+                                    <a class="nav-link <?= (Request::segment(1) =='user-profile') ? 'active' : '' ?> " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
                                         Timeline
                                     </a>
                                 </li>
@@ -552,7 +553,7 @@
         @endif
 
         <!-- START: Timeline Tab Start here -->
-        <div class="tab-pane fade posttimeline" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade posttimeline <?= (Request::segment(1) =='user-profile') ? 'show active' : '' ?> " id="profile" role="tabpanel" aria-labelledby="profile-tab">
             @include('services.servicesPost', [
             'service' => $service,
             ])

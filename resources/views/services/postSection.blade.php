@@ -255,7 +255,7 @@ $(document).ready(function(){
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
         });
   // When strating hide prev arrow
-//   $('.carousel-control-prev').hide();
+    $('.carousel-control-prev').hide();
 
 
     jQuery(".post-comt-box form").on("submit", function(event) 
