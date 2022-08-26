@@ -10,7 +10,7 @@
 @if (!empty($posts))
 @foreach ($posts as $post)
 
-@if (!empty($post))
+<!-- @if (!empty($post)) -->
 <div class="central-meta item remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
 
     <div class="user-post">
@@ -235,7 +235,7 @@
         </div>
     </div>
 </div>
-
+<!-- @endif -->
 @endforeach
 @endif
 

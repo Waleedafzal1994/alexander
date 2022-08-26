@@ -245,6 +245,7 @@ class ServicesController extends Controller
     public function service($id)
     {
         $id = intVal($id);
+        // echo $id;die();
         // $user = User::where('id', $request->id)->first();
 
         $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
@@ -254,6 +255,7 @@ class ServicesController extends Controller
 
         $data['category_id'] = $category_id = $service['category']->id;
         $user_id = $service['user']->id;
+
 
         //Fetch all remaining services//
         $all_remaining_services =  Service::groupBy()
@@ -300,6 +302,8 @@ class ServicesController extends Controller
         if ($service == null) {
             return redirect('/');
         }
+
+
         // dd($service->images[0]->file_name);
         return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice','blockList'));
     }

@@ -359,6 +359,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- END: Service Profile Side bar First Card -->
 
 <!-- <div class="card mt-4 mb-4 shadows">
@@ -543,6 +545,7 @@
         </div>
     </div>
 
+
     <div class="tab-content" id="myTabContent">
         @if(Request::segment(1) !='user-profile')
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -553,11 +556,12 @@
         @endif
 
         <!-- START: Timeline Tab Start here -->
-        <div class="tab-pane fade posttimeline <?= (Request::segment(1) =='user-profile') ? 'show active' : '' ?> " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            @include('services.servicesPost', [
+        <div class="tab-pane fade posttimeline " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+           @include('services.servicesPost', [
             'service' => $service,
-            ])
+            ]) 
         </div>
+
         <!-- END: Timeline Tab END here -->
         <!-- Badges -->
         <div class="tab-pane fade" id="badges" role="tabpanel" aria-labelledby="badges-tab">
@@ -580,6 +584,7 @@
 
         </div>
         <!-- END: Gallery -->
+
 
         <!-- START: Followers -->
         <div class="tab-pane fade followers-result shadows rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
@@ -607,6 +612,7 @@
 <!-- END: Service main Body -->
 </div>
 </section>
+
 <!-- END: Service Section  -->
 
 <div class="modal fade modal-body-custom" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
