@@ -6,9 +6,13 @@
         display: block !important;
     }
 </style>
+
+@if (!empty($posts))
 @foreach ($posts as $post)
+
 @if (!empty($post))
 <div class="central-meta item remove-when-timeline-clicked" style="display: inline-block;" id="post-item-box-{{ $post->id }}">
+
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">
@@ -232,9 +236,9 @@
     </div>
 </div>
 
-
-@endif
 @endforeach
+@endif
+
 <!-- more post data -->
 <div class="loader" style="display: none;">
     <img src="/imgs/loader.gif">
@@ -253,7 +257,7 @@ $(document).ready(function(){
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
         });
   // When strating hide prev arrow
-//   $('.carousel-control-prev').hide();
+    $('.carousel-control-prev').hide();
 
 
     jQuery(".post-comt-box form").on("submit", function(event) 
@@ -378,9 +382,6 @@ $(document).ready(function(){
 });
 
 
-
-var post_id ='{{$post->id}}';
-// alert(post_id);
 $('.post-carousel').on('slide.bs.carousel', function (e) {
 
   // var slidingItemsAsIndex = $('.carousel-item').length - 1;

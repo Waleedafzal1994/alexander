@@ -10,6 +10,9 @@ use App\Models\Category;
 use App\Models\Follower;
 use App\Models\Block;
 use App\Models\Order;
+//by umar
+use App\Models\User;
+// 
 use App\Models\GenericModel;
 use App\Models\Seller_general_category_info;
 use Carbon\Carbon;
@@ -246,6 +249,9 @@ class ServicesController extends Controller
 
         $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
 
+        // echo "<pre>";
+        //     print_r($service);die;
+
         $data['category_id'] = $category_id = $service['category']->id;
         $user_id = $service['user']->id;
 
@@ -305,7 +311,11 @@ class ServicesController extends Controller
         }
         $id = $request->input('id');
         if (!empty($id)) {
-            $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
+            //$service = Service::with('images', 'category', 'user', 'ratings','posts')->whereId($id)->first();
+            $service = new User();
+            $user = User::with('getPosts')->where('id', $id)->first();
+            $service->user= User::where('id', $id)->first();
+            $service->posts = $user->getPosts;
             if ($service) 
             {
                 $data['service'] = $service;
@@ -314,6 +324,30 @@ class ServicesController extends Controller
             }
         }
     }
+
+    // public function loadUserTimeline(Request $request)
+    // {
+    //     if (!$request->ajax()) {
+    //         return response('', 405);
+    //     }
+    //     $id = $request->input('id');
+    //     if (!empty($id)) {
+
+    //         $user = User::with('getPosts')->where('id', $id)->first();
+
+    //         $service = new User();
+    //         $service->user= User::where('id', $id)->first();
+    //         $service->posts = $user->getPosts;
+    //         //print_r($user->getPosts);die;
+            
+    //         if ($service) 
+    //         {
+    //             $data['service'] = $service;
+    //             $html = view('services/servicesPost', $data)->render();
+    //             return response()->json($html);
+    //         }
+    //     }
+    // }
 
     public function serviceCategoryInfo(Request $request)
     {
@@ -388,9 +422,6 @@ class ServicesController extends Controller
 
     public function getServiceDetailsForTab(Request $request)
     {
-
-
-
         if (!$request->ajax()) {
             return response('', 405);
         }
@@ -401,6 +432,8 @@ class ServicesController extends Controller
         $user_id = $request->input('user_id');
         if (!empty($category_id)) {
             $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->where(array('category_id' => $category_id, 'user_id' => $user_id))->first();
+
+
 
             if ($service) {
 

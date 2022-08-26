@@ -200,7 +200,7 @@ $noFooter = true;
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
                                     @if (Auth::user()->profile_picture)
-                                        <img src="{{URL::to('/')}}/{{Auth::user()->profile_picture}}" class="nav_avatar_container">
+                                        <img src="{{Auth::user()->profile_picture}}" class="nav_avatar_container">
                                     @endif
                                     <span class="nav_profile_name">{{ Auth::user()->name }}</span>
                                 </a>

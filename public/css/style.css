@@ -2900,7 +2900,7 @@ input:checked + .slider {
 
 .btn-post{
     width: 140px;
-    margin-left: auto;
+    margin: auto;
 }
 
 .form-group .online{

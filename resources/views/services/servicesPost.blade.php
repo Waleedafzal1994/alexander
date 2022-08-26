@@ -47,7 +47,7 @@
                             </div>
                         @endif
                         <!-- END: Create post -->
-                        @if ($service->post_count > 0)
+                        @if ($service->user->post_count >= 0)
                             <div class="loadMore post-box">
                                 <!-- {{$service->post_count}} -->
                                 @include('services.postSection', [
@@ -55,10 +55,10 @@
                                 ])
                             </div>
                         @endif
-                        @if ($service->post_count > 5)
+                        @if ($service->user->post_count > 5)
                             <div class="text-center">
                                 <a href="#" title="" class="showmore-posts underline font-weight-bold" data-post-load_page="1"
-                                    data-post-service="{{ $service->id }}">
+                                    data-post-service="{{ $service->user->id }}">
                                     <!-- more posts+ -->
                                 </a>
                             </div>

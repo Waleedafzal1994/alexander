@@ -17,6 +17,8 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
+    protected $appends = ['post_count'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -60,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getPosts()
     {
-        return $this->hasMany('App\Models\Post', 'user_id', 'id');
+        return $this->hasMany('App\Models\Post', 'user_id', 'id')->orderBy("id", "DESC");
     }
     public function imagesAsArray()
     {
@@ -101,5 +103,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function setProfileCompleteAttribute($value)
     {
         Session::put('profile_complete', $value);
+    }
+
+    public function getPostCountAttribute()
+    {
+        return $this->attributes['post_count'] = $this->getPosts->count();
     }
 }

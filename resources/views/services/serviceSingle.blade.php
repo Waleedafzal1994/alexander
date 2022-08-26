@@ -312,7 +312,7 @@
         <div class="profile-info-counters">
             <div class="social">
                 <div class="item activeTimeline" id="activeTimeline">
-                    <div class="count">{{$service->post_count}}</div>
+                    <div class="count">{{$service->user->post_count}}</div>
                     <div class="socialName">Posts</div>
                 </div>
                 <div class="item activeFollowers" id="activefollowers">
@@ -474,13 +474,16 @@
                         <!-- START: Service main Menu -->
                         <div class="col-lg-12 col-md-12 col-sm-12 col-tab-nav">
                             <ul class="nav nav-tabs nav-custom-nav  border-bottom-0" id="myTab" role="tablist">
+                                @if(Request::segment(1) !='user-profile')
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" href="#home" aria-selected="true">
                                         Service Details
                                     </a>
                                 </li>
+                                @endif
+
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
+                                    <a class="nav-link <?= (Request::segment(1) =='user-profile') ? 'active' : '' ?> " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
                                         Timeline
                                     </a>
                                 </li>
@@ -541,14 +544,16 @@
     </div>
 
     <div class="tab-content" id="myTabContent">
+        @if(Request::segment(1) !='user-profile')
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('services.serviceDetails', [
             'service' => $service,
             ])
         </div>
+        @endif
 
         <!-- START: Timeline Tab Start here -->
-        <div class="tab-pane fade posttimeline" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade posttimeline <?= (Request::segment(1) =='user-profile') ? 'show active' : '' ?> " id="profile" role="tabpanel" aria-labelledby="profile-tab">
             @include('services.servicesPost', [
             'service' => $service,
             ])
@@ -763,8 +768,8 @@
         function loadMorePost() {
             // alert('loadmore');
             let page = $('.showmore-posts').attr('data-post-load_page');
-            let service = $('.showmore-posts').attr('data-post-service');
-            // alert(page+'service'+service);
+            let service = $('.showmore-posts').attr('data-post-service');//umar change it to user id
+            //alert(page+'service'+service);
             if (!page && !service) return false;
             $.ajaxSetup({
                 headers: {
@@ -1405,7 +1410,7 @@
 
                 newUrl = url.split("#")[0] + c_tab;
 
-                id = "{{ $service->id }}";
+                id = "{{ $service->user->id }}";
                 //alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
@@ -1504,8 +1509,8 @@
             } else if (hash == "#profile") {
                 newUrl = url.split("#")[0] + hash;
 
-                id = "{{ $service->id }}";
-                //alert(id);
+                id = "{{ $service->user->id }}";
+                // alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
                     headers: {
