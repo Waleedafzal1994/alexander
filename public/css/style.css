@@ -345,7 +345,7 @@ p {
 }
 
 
-.button-anim {
+/* .button-anim {
     display: inline-flex;
     align-items: center;
     border: 1px solid var(--color-primary);
@@ -357,7 +357,7 @@ p {
     text-decoration: none;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     will-change: transform;
-}
+} */
 
 .button-anim:hover {
     background: #581C87;
@@ -1754,7 +1754,7 @@ a.slider-link:hover {
     font-weight: 700;
 }
 #buyBtn{
-    width: 160px !important;
+    width: 140px !important;
     height: 48px;
     border-radius: 50px;
     font-size: 15px;
@@ -1958,6 +1958,11 @@ a.slider-link:hover {
     color: #fff !important;
     box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
 }
+.btn-active{
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
+    color: #fff !important;
+    box-shadow: rgb(34 23 43 / 70%) 0px 10px 20px -8px;
+}
 .nav-custom-nav li{
     margin-top: 4px;
     margin-bottom: 4px;
@@ -2008,6 +2013,9 @@ a.slider-link:hover {
 }
 .dob-dropdown .dropdown .dropdown-menu{
     transform: translateY(-216px) !important;
+}
+.custom-dropdown .dropdown .dropdown-menu{
+    transform: translateY(-130px) !important;
 }
 .newdropdown .dropdown .dropdown-menu{
     padding: 6px !important;
@@ -2300,8 +2308,12 @@ a.slider-link:hover {
     padding: 16px;
     border-radius: 10px;
 } */
+.modal{
+    background-color: rgba(175, 147, 239, 0.4);
+}
 .post-comt-box textarea{
     background-color: transparent !important;
+    border-color: #7041E6 !important;
     padding-right: 0 !important;
     padding-bottom: 0 !important;
     color: #000 !important;
@@ -2738,6 +2750,10 @@ a.slider-link:hover {
     color: #495057 !important;
     height: 38px;
     background: #EDEDFB !important;
+    border: 1px solid #c6c5d7 !important;
+}
+.edit-profile-page .dropdown ul li a{
+    border: none !important;
 }
 .edit-profile-page .dropdown .dropdown-menu{
     box-shadow: 0 0 11px #00000021 !important;
@@ -2880,6 +2896,11 @@ input:checked + .slider {
 #pills-notification h6{
     font-size: 16px;
     color: #581C87;
+}
+
+.btn-post{
+    width: 140px;
+    margin-left: auto;
 }
 
 .form-group .online{

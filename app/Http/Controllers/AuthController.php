@@ -15,7 +15,7 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
             'remember_me' => 'boolean',
-            'captcha' => 'required|captcha'
+            // 'captcha' => 'required|captcha'
         ];
 
         $messages = [

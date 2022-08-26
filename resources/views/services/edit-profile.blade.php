@@ -5,16 +5,16 @@
 
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="edit-profile-page d-flex align-items-center">
-        <div class="" style="width:500px; max-width:500px; margin-right:20px;"></div>
+        <div class="" style="width:0; max-width:500px; margin-right:20px;"></div>
             <div class="w-100 col-tab-nav">
                 <div class="card review-body shadows mb-3">
                     <div class="card-body">
                         <ul class="nav nav-tabs nav-custom-nav border-bottom-0" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Edit Profile</a>
+                                <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Profile</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">Account</a>
+                                <a class="nav-link" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="false">Discord Account</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="pills-notification-tab" data-toggle="pill" href="#pills-notification" role="tab" aria-controls="pills-notification" aria-selected="false">Notifications</a>
@@ -31,7 +31,7 @@
                                     </a>
                                 </li>
                             <li class="nav-item ml-auto" role="presentation">
-                                <a class="nav-link button-anim shadows btn-solid" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="false"><i class="fa fa-chevon-left"></i> Back</a>
+                                <a class="nav-link btn-active" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="true"><i class="fa fa-chevon-left"></i> Back</a>
                             </li>
                         </ul>
                     </div>
@@ -124,7 +124,7 @@
                                                 <option value="Other">Non-Binary</option>
                                             </select>
                                         </div> -->
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="">Gender</label>
                                             <select name="gender" id="gender" class="form-control" required="">
                                                 <option value="" selected="" disabled="">Please select you gender</option>
@@ -132,9 +132,139 @@
                                                 <option value="Female">Female</option>
                                                 <option value="NON-BINARY">NON-BINARY</option>
                                             </select>
+                                        </div> -->
+
+                                        <div class="form-group">
+                                            <label for="">Gender</label>
+                                            <div class="w-100 custom-dropdown">
+                                                <div class="form-group w-100 mb-0 mr-2">
+                                                    <div class="newdropdown">
+                                                        <div class="dropdown w-100">
+                                                            <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                                <div class="game-title" id="drop_down_select_month">Please select your gender</div>
+                                                            </a>
+
+                                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                                <div class="scroll-div month">
+                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Male</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_feb">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Female</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">NON-BINARY</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="">Primary & Secondary Language</label>
+                                            <div class="w-100 dob-dropdown">
+                                                <div class="form-group w-100 mb-0 mr-2">
+                                                    <div class="newdropdown">
+                                                        <div class="dropdown w-100">
+                                                            <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                                <div class="game-title" id="drop_down_select_month">English</div>
+                                                            </a>
+
+                                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                                <div class="scroll-div month">
+                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Afrikaans</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_feb">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Albanian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Armenian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Arabic</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Basque</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bosnian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bengali</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bulgarian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Catalan</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Cambodian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Czech</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Czech</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="form-group">
                                             <label for="">Primary & Secondary Language</label>
                                             <select name="primary_language" class="form-control">
                                                 <option value="">Select</option>
@@ -289,7 +419,7 @@
                                                 <option value="Welsh">Welsh</option>
                                                 <option value="Xhosa">Xhosa</option>
                                             </select>
-                                        </div>
+                                        </div> -->
 
                                 </div>
 
@@ -443,6 +573,97 @@
 
                                     {{-- Form Element --}}
                                     <div class="form-group">
+                                            <label for="">Country</label>
+                                            <div class="w-100 dob-dropdown">
+                                                <div class="form-group w-100 mb-0 mr-2">
+                                                    <div class="newdropdown">
+                                                        <div class="dropdown w-100">
+                                                            <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                                <div class="game-title" id="drop_down_select_month">N/A</div>
+                                                            </a>
+
+                                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                                <div class="scroll-div month">
+                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Afrikaans</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_feb">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">Albanian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Armenian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Arabic</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Basque</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bosnian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bengali</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Bulgarian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Catalan</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Cambodian</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Czech</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" id="month_li_mar">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="" data-setMonth="Mar">Czech</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- <div class="form-group">
                                         <label for="">Country</label>
                                         <select name="country" class="form-control">
                                             <option value="N/A">N/A</option>
@@ -696,7 +917,7 @@
                                             <option value="ZM">Zambia</option>
                                             <option value="ZW">Zimbabwe</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">About Me</label>
@@ -748,7 +969,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ul class="nav nav-custom-nav">
                                             <li>
-                                                <a type="submit" class="nav-link shadows button-anim btn-solid">Save</a>
+                                                <a type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Save</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -793,7 +1014,7 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <p>********</p>
                                             <div>
-                                                <button type="button" data-toggle="modal" data-target="#passwordChangeModal" class="new-btn rounded-pill py-2 px-3 float-none">Change</button>
+                                                <button type="button" data-toggle="modal" data-target="#passwordChangeModal" class="btn-solid rounded-pill py-2 px-3 float-none">Change</button>
                                             </div>
                                         </div>
                                     </li>
