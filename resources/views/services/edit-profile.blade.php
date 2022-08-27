@@ -141,7 +141,7 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_month">Please select your gender</div>
+                                                                <div class="game-title" id="drop_down_select_gender">Please select your gender</div>
                                                             </a>
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
@@ -179,7 +179,7 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_month">English</div>
+                                                                <div class="game-title" id="drop_down_select_language">English</div>
                                                             </a>
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
@@ -433,7 +433,9 @@
                                         <label for="">Age</label>
                                         <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
                                     </div> -->
-
+                                    <input class="month_hidden" type="hidden" name="month">
+                                    <input class="date_hidden" type="hidden" name="day">
+                                     <input class="year_hidden" type="hidden" name="year">
                                     <div class="form-group">
                                         <label for="">Age</label>
                                         <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
@@ -441,7 +443,7 @@
                                                 <div class="newdropdown">
                                                     <div class="dropdown w-100">
                                                         <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                            <div class="game-title" id="drop_down_select_month">Month</div>
+                                                            <div class="game-title drop_down_select_month" id="drop_down_select_month">Month</div>
                                                         </a>
 
                                                         <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
@@ -527,7 +529,7 @@
                                                 <div class="newdropdown">
                                                     <div class="dropdown w-100">
                                                         <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                            <div class="game-title" id="drop_down_select_date">Date</div>
+                                                            <div class="game-title drop_down_select_date" id="drop_down_select_date">Date</div>
                                                         </a>
 
                                                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -549,7 +551,7 @@
                                                 <div class="newdropdown">
                                                     <div class="dropdown w-100">
                                                         <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                            <div class="game-title" id="drop_down_select_year">Year</div>
+                                                            <div class="game-title drop_down_select_year" id="drop_down_select_year">Year</div>
                                                         </a>
 
                                                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
@@ -579,7 +581,7 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_month">N/A</div>
+                                                                <div class="game-title" id="drop_down_select_country">N/A</div>
                                                             </a>
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
@@ -1488,4 +1490,45 @@
         }
     });
 
+
+    // Age DropDowns
+    
+    $(document).ready(function() {
+    
+       $('.scroll-div li a').click(function(){
+            if($(this).parents('.scroll-div').hasClass('month')){
+        
+                
+                $(this).parents('.month').find('li').removeClass('active');  
+                var month = $.trim($(this).text());
+
+                $('.drop_down_select_month').text(month) ;
+                // var parent = $(this).parents('.month').find('li.active a div.month_name').text();
+             
+
+                $('.month_hidden').val(month);
+            }
+            else if($(this).parents('.scroll-div').hasClass('date')){
+              $(this).parents('.date').find('li').removeClass('active');  
+
+              var date = $.trim($(this).text());
+              $('.drop_down_select_date').text(date) ;
+              // document.getElementById('drop_down_select_date').innerText = date;
+              $('.date_hidden').val(date);
+            }
+            else if($(this).parents('.scroll-div').hasClass('year')){
+              $(this).parents('.year').find('li').removeClass('active');  
+
+              var year = $.trim($(this).text());
+              $('.drop_down_select_year').text(year) ;
+              // document.getElementsByClassName('drop_down_select_year').innerText = year;
+              $('.year_hidden').val(year);
+            }
+
+            
+            
+            $(this).parent('li').addClass('active');
+        });
+ 
+    });
 </script>
