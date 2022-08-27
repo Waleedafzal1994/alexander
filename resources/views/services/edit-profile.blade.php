@@ -110,6 +110,7 @@
                                             <input type="text" name="name" class="form-control" value="{{ $service->user->name }}">
                                         </div>
                                         {{-- Form Element --}}
+                                       
                                         <div class="form-group">
                                             <label for="">Member Status</label>
                                             <input type="text" name="title" class="form-control"

@@ -141,6 +141,7 @@ function fetchCategoryItems() {
     }
     if(!locked && page <= maxPages) {
     var services_container = $('#services');
+    alert();
     $.ajax({
         type: "GET",
         url: "/services/get",
@@ -175,8 +176,8 @@ function fetchCategoryItems() {
        
             }
         },
-        error: function() {
-            
+        error: function(err) {
+            console.log(err);
         }
     });
 }
