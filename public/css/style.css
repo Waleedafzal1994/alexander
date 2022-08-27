@@ -359,7 +359,7 @@ p {
     will-change: transform;
 } */
 
-.button-anim:hover {
+/* .button-anim:hover {
     background: #581C87;
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -2px, 0);
@@ -369,7 +369,7 @@ p {
 .button-anim:active {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     transform: translate3d(0, 1px, 0);
-}
+} */
 
 
 /* cutted button style bellow images */
@@ -437,7 +437,7 @@ input,
 select,
 textarea {
     width: 100%;
-    border: 1px solid #f3f3f4;
+    border: 1px solid #c6c5d7;
     outline: none;
     background: #EDEDFB;
     padding: 5px 10px;
@@ -1193,7 +1193,9 @@ table th {
 .modal {
     z-index: 999999;
 }
-
+.modal-backdrop {
+    background-color: rgba(0,0,0,.0001) !important;
+}
 .frontpage-hero-box {
     Width:100%;	
     background: white;
@@ -1744,6 +1746,7 @@ a.slider-link:hover {
 .btn-solid{
     background-color: var(--color-primary) !important;
     color: #fff !important;
+    border: none;
 }
 .btn-solid:hover{
     background-color: #8e26bb !important;
@@ -2462,7 +2465,7 @@ a.slider-link:hover {
     font-size: 18px;
 }
 .follower-section .tab-content button{
-    width: 120px !important;
+    width: 122px !important;
     height: 40px;
     border-radius: 50px;
     font-size: 15px;
@@ -2927,7 +2930,7 @@ input:checked + .slider {
     min-height: 200px;
     position: relative;
     /* overflow: hidden; */
-    box-shadow: inset 0 0px 20px -10px black;
+    box-shadow: inset -5px -10px 28px 0px black;
 }
 .nav-tabs{
     border-bottom: 1px dashed #581C87;
@@ -3063,7 +3066,7 @@ button{
 .password-showhide{
     position: absolute;
     right: 10px;
-    top: 40px;
+    top: 35px;
     cursor: pointer;
 }
 .hide-password {

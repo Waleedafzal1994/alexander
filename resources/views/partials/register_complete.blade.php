@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="col-12 text-center mt-4 completeBtn">
-                            <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-4 py-2" id="completeBtn">Complete</button>
+                            <button class="btn-solid rounded-pill font-weight-bold text-white px-4 py-2" id="completeBtn">Complete</button>
                         </div>
                     </div>
                 </form>

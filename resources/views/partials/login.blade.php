@@ -105,7 +105,7 @@
                                     </span>
                                 </div>
                                 <div class="text-center mt-4">
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-5 py-2 button-anim" id="login-submit-btn">Login</button>
+                                    <button class="btn-solid rounded-pill font-weight-bold text-white px-5 py-2 button-anim" id="login-submit-btn">Login</button>
                                 </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
 
                                 <div class="row ">
                                     <div class="col-md-12 text-center">                                  
-                                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" type="submit" id="reg-submit-btn" data-toggle="modal" data-target="#dotModal" data-backdrop="static" data-keyboard="false">Create
+                                        <button class="btn-solid rounded-pill font-weight-bold text-white px-4 py-2" type="submit" id="reg-submit-btn" data-toggle="modal" data-target="#dotModal" data-backdrop="static" data-keyboard="false">Create
                                             Account</button>
                                             <!-- <button class="button-primary w-100" type="submit" id="reg-submit-btn">Create
                                             Account</button> -->

@@ -1236,7 +1236,7 @@
                     </div>
 
                     <div class="text-center mt-4 mx-auto">
-                        <button class="new-btn rounded-pill font-weight-bold button-anim bg-purple-gradient text-white px-5 py-2">Next</button>
+                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-5 py-2">Next</button>
                     </div>
                 </form>
             </div>
@@ -1276,7 +1276,7 @@
             <div class="modal-footer model-footer-bg">
                 <div class="text-end delete-accnt">
                     <a href="" class="mr-3" data-dismiss="modal" aria-label="Close">Cancel</a>
-                    <button type="submit" class="btn-danger rounded-pill font-weight-bold button-anim text-white px-3 py-1" >Delete</button>
+                    <button type="submit" class="btn-danger rounded-pill font-weight-bold text-white px-3 py-1" >Delete</button>
                 </div>
             </div>
         </div>
@@ -1329,7 +1329,7 @@
             <div class="modal-footer model-footer-bg">
                 <div class="text-end delete-accnt">
                     <a href="" class="mr-3" data-dismiss="modal" aria-label="Close">Cancel</a>
-                    <button type="submit" class="btn-danger rounded-pill font-weight-bold button-anim text-white px-3 py-1" >Change</button>
+                    <button type="submit" class="btn-danger rounded-pill font-weight-bold text-white px-3 py-1" >Change</button>
                 </div>
             </div>
         </div>

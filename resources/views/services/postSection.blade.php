@@ -206,7 +206,7 @@
                                                         <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="charCount(this)"></textarea>
                                                         <div id="charNum" class="counter"> </div>
                                                     </div>
-                                                    <input type="submit" class="nav-link btn-post shadows edit_user_profile mt-2" name="" value="Post Comment">
+                                                    <input type="submit" class="nav-link btn-post btn-solid mt-2" name="" value="Post Comment">
                                                     
 
                                                     <script>
