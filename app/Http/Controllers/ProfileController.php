@@ -54,6 +54,9 @@ class ProfileController extends Controller
 
     public function editProfile(Request $request)
     {
+        echo "<pre>";
+        print_r($_POST);
+        die();
         $user = User::where('id', $request->id)->first();
         if (!$user || $user->id != Auth::id()) {
             return redirect('/');
@@ -79,7 +82,21 @@ class ProfileController extends Controller
         $user->user_title = $validated['title'];
         $user->country = $validated['country'];
         $user->gender = $validated['gender'];
-        $user->birth_date = $validated['birth_date'];
+
+        $month = $request->input('month');
+        $day = $request->input('day');
+        $year = $request->input('year');
+        $date = $month.' '.$day.' '.$year;
+        $age = date('m',strtotime($month)).'/'.$day.'/'.$year;
+        
+        $checkAge = checkAge($age);
+        if ($checkAge < 13) 
+        {
+            return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
+        }
+
+        $data['birth_date'] = date('Y-m-d', strtotime($date));  
+        // $user->birth_date = $validated['birth_date'];
         $user->description = $validated['description'];
         $languages = [
             'Afrikaans',

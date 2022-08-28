@@ -110,11 +110,17 @@
                                             <input type="text" name="name" class="form-control" value="{{ $service->user->name }}">
                                         </div>
                                         {{-- Form Element --}}
-                                       
+                                       @if($service->user->seller_rank == 0 && $service->user->usaer_group == 3)
+                                        @php $user_rank = 'admin' @endphp
+                                       @elseif($service->user->seller_rank == 0)
+                                        @php $user_rank = 'user' @endphp
+                                       @else
+                                        @php $user_rank = 'seller' @endphp
+                                       @endif
                                         <div class="form-group">
                                             <label for="">Member Status</label>
                                             <input type="text" name="title" class="form-control"
-                                            value="{{ $service->user->user_title }}" disabled>
+                                            value="{{ $user_rank }}" disabled>
                                         </div>
                                         {{-- Form Element --}}
                                         <!-- <div class="form-group">
@@ -573,7 +579,7 @@
                                         </div>
                                     </div>
 
-
+                                    <input class="country_hidden" type="hidden" name="country">
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                             <label for="">Country</label>
@@ -582,12 +588,12 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_country">N/A</div>
+                                                                <div class="game-title drop_down_select_country"  id="drop_down_select_country">N/A</div>
                                                             </a>
 
-                                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                                <div class="scroll-div month">
-                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                            <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                                <div class="scroll-div country">
+                                                                    <li role="presentation" class="active">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Afrikaans</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -972,7 +978,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ul class="nav nav-custom-nav">
                                             <li>
-                                                <a type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Save</a>
+                                                <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" value="Save">
                                             </li>
                                         </ul>
                                     </div>
@@ -1524,6 +1530,16 @@
               $('.drop_down_select_year').text(year) ;
               // document.getElementsByClassName('drop_down_select_year').innerText = year;
               $('.year_hidden').val(year);
+            }
+            else if($(this).parents('.scroll-div').hasClass('country')){
+
+              $(this).parents('.country').find('li').removeClass('active');  
+
+              var country = $.trim($(this).text());
+        
+              $('.drop_down_select_country').text(country) ;
+              
+              $('.country_hidden').val(country);
             }
 
             
