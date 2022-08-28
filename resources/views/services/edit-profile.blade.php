@@ -140,7 +140,7 @@
                                                 <option value="NON-BINARY">NON-BINARY</option>
                                             </select>
                                         </div> -->
-
+                                        <input class="gender_hidden" type="hidden" name="gender">
                                         <div class="form-group">
                                             <label for="">Gender</label>
                                             <div class="w-100 custom-dropdown">
@@ -148,11 +148,11 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_gender">Please select your gender</div>
+                                                                <div class="game-title drop_down_select_gender" id="drop_down_select_gender">Please select your gender</div>
                                                             </a>
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                                <div class="scroll-div month">
+                                                                <div class="scroll-div gender">
                                                                     <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Male</div>
@@ -1540,6 +1540,16 @@
               $('.drop_down_select_country').text(country) ;
               
               $('.country_hidden').val(country);
+            }
+            else if($(this).parents('.scroll-div').hasClass('gender')){
+
+              $(this).parents('.gender').find('li').removeClass('active');  
+
+              var gender = $.trim($(this).text());
+        
+              $('.drop_down_select_gender').text(gender) ;
+              
+              $('.gender_hidden').val(gender);
             }
 
             
