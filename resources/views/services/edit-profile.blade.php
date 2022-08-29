@@ -1390,7 +1390,7 @@
         $("#home-tab").addClass('active');
         $("#home").addClass('active show');
 
-        // localStorage.removeItem("edit_seller_profile");
+        localStorage.removeItem("edit_seller_profile");
         document.getElementById("home-tab").click();
 
     });
