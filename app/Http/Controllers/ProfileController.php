@@ -86,6 +86,22 @@ class ProfileController extends Controller
             die();
         } 
 
+            $validated = $request->validate([
+                'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
+                'real_name' => 'required|string|min:4|max:32',
+                'title' => 'nullable|string|min:2',
+                'country' => 'required|string|min:2',
+                'description' => 'nullable|string|max:180',
+                'gender' => 'nullable',
+                'birth_date' => 'nullable',
+                'primary_language' => 'nullable',
+                'secondary_language' => 'nullable',
+                'facebook_profile' => 'max:64|nullable',
+                'twitch_profile' => 'nullable',
+                'instagram_profile' => 'nullable',
+                'tiktok_profile' => 'nullable',
+                // 'discord_handle' => 'nullable',
+            ]);
         
         if (!$user || $user->id != Auth::id()) {
             // return redirect('/');
@@ -223,7 +239,7 @@ class ProfileController extends Controller
         //     }
         // }
         $user->save();
-        echo "success";
+        echo 1;//for success
         die();
         // return redirect()->back()->with(['success' => 'Profile has been updated.']);
     }

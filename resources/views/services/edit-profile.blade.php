@@ -1610,9 +1610,9 @@
 
                         alertify.error('The age cannot be less than 13 years old');
                     }
-                    else if(response == "success"){
+                    else if(response === 1){
                         
-                        alertify.error('Profile has been updated.');
+                        alertify.success('Profile has been updated.');
                     }
                     else{
 
