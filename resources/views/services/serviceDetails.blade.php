@@ -193,6 +193,7 @@
 
                 $('#exampleModal').html(response);
                 $('#exampleModal').modal({ keyboard: false });
+                $('#exampleModal').modal("show");
 
                 const li = document.querySelectorAll('#lists_li li');
                 for (let i = 0; i < li.length; i++) {
