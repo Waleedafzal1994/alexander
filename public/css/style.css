@@ -3119,6 +3119,14 @@ button{
     background-color: #ededfb !important;
     border: 1px solid #c6c5d7 !important;
     border-radius: 6px !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition-property: border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+  }
+  .choices__inner:hover{
+    border-color: #7041E6 !important;
   }
   .choices__list--multiple .choices__item.is-highlighted{
     background-color: #f6f6ff !important;
