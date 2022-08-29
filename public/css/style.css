@@ -76,10 +76,10 @@ background: #888;
 }
 
 .service_category ul li {
-    margin-right: 16px;
-    width: 132px;
+    margin-right: 5px;
+    width: 118px;
     height: 51px;
-    overflow: hidden;    
+    overflow: hidden;  
 }
 .service_category ul li:last-child{
     margin-right: 0;
@@ -100,7 +100,7 @@ background: #888;
 
 .service_category ul li .categories_box_holder p {
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .btn-cust {
@@ -1873,7 +1873,7 @@ a.slider-link:hover {
     border-radius: 10px;
 } */
 .top-head-cate li.active{
-    width: 160px;
+    width: 136px;
     height: 63px;
     border: 2px solid #7041e6;
     background-color: #714878 !important;

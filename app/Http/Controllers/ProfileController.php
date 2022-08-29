@@ -17,6 +17,7 @@ use App\Models\Follower;
 use App\Models\GenericModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -54,11 +55,12 @@ class ProfileController extends Controller
 
     public function editProfile(Request $request)
     {
+        // echo "<pre>";
+        // print_r($_POST);
+        // die();
         $user = User::where('id', $request->id)->first();
-        if (!$user || $user->id != Auth::id()) {
-            return redirect('/');
-        }
-        $validated = $request->validate([
+
+        $validated = [
             'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
             'real_name' => 'required|string|min:4|max:32',
             'title' => 'nullable|string|min:2',
@@ -73,13 +75,62 @@ class ProfileController extends Controller
             'instagram_profile' => 'nullable',
             'tiktok_profile' => 'nullable',
             // 'discord_handle' => 'nullable',
-        ]);
+        ];
+
+    
+        $validator = Validator::make($request->all(), $validated);
+
+        if ($validator->fails()) {
+
+            echo $validator->errors();
+            die();
+        } 
+
+            $validated = $request->validate([
+                'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
+                'real_name' => 'required|string|min:4|max:32',
+                'title' => 'nullable|string|min:2',
+                'country' => 'required|string|min:2',
+                'description' => 'nullable|string|max:180',
+                'gender' => 'nullable',
+                'birth_date' => 'nullable',
+                'primary_language' => 'nullable',
+                'secondary_language' => 'nullable',
+                'facebook_profile' => 'max:64|nullable',
+                'twitch_profile' => 'nullable',
+                'instagram_profile' => 'nullable',
+                'tiktok_profile' => 'nullable',
+                // 'discord_handle' => 'nullable',
+            ]);
+        
+        if (!$user || $user->id != Auth::id()) {
+            // return redirect('/');
+            echo "redirect";
+            die();
+        }
+
         $user->name = $validated['name'];
         $user->real_name = $validated['real_name'];
         $user->user_title = $validated['title'];
         $user->country = $validated['country'];
         $user->gender = $validated['gender'];
-        $user->birth_date = $validated['birth_date'];
+
+        $month = $request->input('month');
+        $day = $request->input('day');
+        $year = $request->input('year');
+        $date = $month.' '.$day.' '.$year;
+        $age = date('m',strtotime($month)).'/'.$day.'/'.$year;
+        
+        $checkAge = checkAge($age);
+        if ($checkAge < 13) 
+        {
+            // return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
+            echo "age_error";
+            die();
+        }
+
+        $data['birth_date'] = date('Y-m-d', strtotime($date));  
+        // $user->birth_date = $validated['birth_date'];
         $user->description = $validated['description'];
         $languages = [
             'Afrikaans',
@@ -188,7 +239,9 @@ class ProfileController extends Controller
         //     }
         // }
         $user->save();
-        return redirect()->back()->with(['success' => 'Profile has been updated.']);
+        echo 1;//for success
+        die();
+        // return redirect()->back()->with(['success' => 'Profile has been updated.']);
     }
 
     public function editAvatar(Request $request)

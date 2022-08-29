@@ -572,7 +572,7 @@
 
         <!-- START: Gallery -->
         <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-            <div class="card mt-2 p-3">
+            <div class="card mt-2 p-3 shadows">
                 <div class="card-body ">
                     <div class="service-main-body-content">
                         @include('services.galleryImages', [
@@ -647,8 +647,10 @@
 <script src="{{ asset('js/mdb.min.js') }}"></script>
 
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script> -->
+<!-- </script> -->
+
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
 
 <script>
@@ -755,7 +757,6 @@
             $("#pills-notification").removeClass('active show');
             $("#pills-privacy").removeClass('active show');
             $("#pills-settings").removeClass('active show');
-              
         });
         // $('#profile-tab').click(function(){
         //     $('.showmore-posts').attr('data-post-load_page','0');
