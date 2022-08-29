@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/style.css?v=') . time() }}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="edit-profile-page d-flex align-items-center">
@@ -180,7 +181,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="hidden" class="language_hidden" name="primary_language">
+                                        <!-- <input type="hidden" class="language_hidden" name="primary_language">
                                         <div class="form-group">
                                             <label for="">Language</label>
                                             <div class="w-100 dob-dropdown">
@@ -193,7 +194,13 @@
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
                                                                 <div class="scroll-div language">
-                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                    <li role="presentation" class="active" value="english" data-month="Jan">
+                                                                        <a role="menuitem" tabindex="-1">
+                                                                            <div class="month_name">English</div>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li role="presentation" class="" value="afrikaans" data-month="Jan">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Afrikaans</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -271,7 +278,42 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> -->
+                                        <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+                                        <div class="form-group">
+                                            <label>Language</label>
+                                                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
+                                                    <option value="English" selected>English</option>
+                                                    <option value="Afrikaans">Afrikaans</option>
+                                                    <option value="Albanian">Albanian</option>
+                                                    <option value="Armenian">Armenian</option>
+                                                    <option value="Arabic">Arabic</option>
+                                                    <option value="Basque">Basque</option>
+                                                    <option value="Bosnian">Bosnian</option>
+                                                    <option value="Bengali">Bengali</option>
+                                                    <option value="Bulgarian">Bulgarian</option>
+                                                    <option value="Catalan">Catalan</option>
+                                                    <option value="Cambodian">Cambodian</option>
+                                                    <option value="Czech">Czech</option>
+                                                    <option value="Spanish">Spanish</option>
+                                                </select> 
                                         </div>
+
+                                        <script>
+                                            $(document).ready(function(){
+    
+                                                var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+                                                removeItemButton: true,
+                                                placeholder: true,
+                                                resetScrollPosition: true,
+                                                // maxItemCount:5,
+                                                // searchResultLimit:5,
+                                                // renderChoiceLimit:5
+                                                }); 
+                                                
+                                                
+                                            });
+                                        </script>
 
                                         <!-- <div class="form-group">
                                             <label for="">Primary & Secondary Language</label>
@@ -934,8 +976,9 @@
                                         <label for="">About Me</label>
                                         <textarea type="text" id="field" name="description" class="form-control textarea" onkeyup="countCount(this)"
                                             rows="3">{{ $service->user->description }}</textarea>
-                                            <div>
-                                            <span id="charCount" class="counter">0</span><span>/500</span>
+                                            <div class="text-counter">
+                                                <span id="charCount" class="counter">0</span>
+                                                <span class="fix-count">/500</span>
                                             </div>
                                             <script>
                                             function countCount(val) {
@@ -1288,7 +1331,7 @@
             <div class="modal-footer model-footer-bg">
                 <div class="text-end delete-accnt">
                     <a href="" class="mr-3" data-dismiss="modal" aria-label="Close">Cancel</a>
-                    <button type="submit" class="btn-danger rounded-pill font-weight-bold text-white px-3 py-1" >Delete</button>
+                    <button type="submit" class="btn-danger rounded-pill text-white px-3 py-1" >Delete</button>
                 </div>
             </div>
         </div>
@@ -1341,7 +1384,7 @@
             <div class="modal-footer model-footer-bg">
                 <div class="text-end delete-accnt">
                     <a href="" class="mr-3" data-dismiss="modal" aria-label="Close">Cancel</a>
-                    <button type="submit" class="btn-danger rounded-pill font-weight-bold text-white px-3 py-1" >Change</button>
+                    <button type="submit" class="btn-danger rounded-pill text-white px-3 py-1" >Change</button>
                 </div>
             </div>
         </div>
