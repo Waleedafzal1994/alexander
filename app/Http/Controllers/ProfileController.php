@@ -17,6 +17,7 @@ use App\Models\Follower;
 use App\Models\GenericModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -54,14 +55,12 @@ class ProfileController extends Controller
 
     public function editProfile(Request $request)
     {
-        echo "<pre>";
-        print_r($_POST);
-        die();
+        // echo "<pre>";
+        // print_r($_POST);
+        // die();
         $user = User::where('id', $request->id)->first();
-        if (!$user || $user->id != Auth::id()) {
-            return redirect('/');
-        }
-        $validated = $request->validate([
+
+        $validated = [
             'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
             'real_name' => 'required|string|min:4|max:32',
             'title' => 'nullable|string|min:2',
@@ -76,7 +75,24 @@ class ProfileController extends Controller
             'instagram_profile' => 'nullable',
             'tiktok_profile' => 'nullable',
             // 'discord_handle' => 'nullable',
-        ]);
+        ];
+
+    
+        $validator = Validator::make($request->all(), $validated);
+
+        if ($validator->fails()) {
+
+            echo $validator->errors();
+            die();
+        } 
+
+        
+        if (!$user || $user->id != Auth::id()) {
+            // return redirect('/');
+            echo "redirect";
+            die();
+        }
+
         $user->name = $validated['name'];
         $user->real_name = $validated['real_name'];
         $user->user_title = $validated['title'];
@@ -92,7 +108,9 @@ class ProfileController extends Controller
         $checkAge = checkAge($age);
         if ($checkAge < 13) 
         {
-            return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
+            // return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
+            echo "age_error";
+            die();
         }
 
         $data['birth_date'] = date('Y-m-d', strtotime($date));  
@@ -205,7 +223,9 @@ class ProfileController extends Controller
         //     }
         // }
         $user->save();
-        return redirect()->back()->with(['success' => 'Profile has been updated.']);
+        echo "success";
+        die();
+        // return redirect()->back()->with(['success' => 'Profile has been updated.']);
     }
 
     public function editAvatar(Request $request)

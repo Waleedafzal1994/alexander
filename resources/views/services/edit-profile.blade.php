@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/style-services.css?v=') . time() }}" />
 <link rel="stylesheet" href="{{ asset('css/style.css?v=') . time() }}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="edit-profile-page d-flex align-items-center">
@@ -97,7 +98,7 @@
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <form method="POST" action="/profile/{{ $service->user->id }}/edit">
+                                    <form method="POST" id="ajax_edit_profile" action="/profile/{{ $service->user->id }}/edit">
                                         @csrf
                                         @if (session('error'))
                                             <div class="alert alert-danger">
@@ -121,6 +122,7 @@
                                             <label for="">Member Status</label>
                                             <input type="text" name="title" class="form-control"
                                             value="{{ $user_rank }}" disabled>
+                                            <input type="hidden" name="title" value="{{ $user_rank }}">
                                         </div>
                                         {{-- Form Element --}}
                                         <!-- <div class="form-group">
@@ -178,7 +180,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <input type="hidden" class="language_hidden" name="primary_language">
                                         <div class="form-group">
                                             <label for="">Primary & Secondary Language</label>
                                             <div class="w-100 dob-dropdown">
@@ -186,11 +188,11 @@
                                                     <div class="newdropdown">
                                                         <div class="dropdown w-100">
                                                             <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title" id="drop_down_select_language">English</div>
+                                                                <div class="game-title drop_down_select_language" id="drop_down_select_language">English</div>
                                                             </a>
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                                <div class="scroll-div month">
+                                                                <div class="scroll-div language">
                                                                     <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Afrikaans</div>
@@ -978,7 +980,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ul class="nav nav-custom-nav">
                                             <li>
-                                                <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" value="Save">
+                                                <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="edit_profile_btn" value="Save">
                                             </li>
                                         </ul>
                                     </div>
@@ -1349,8 +1351,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>
+   
     var profilePicChanged = false;
         $(document).ready(function() {
             @if ($service->user->country)
@@ -1501,7 +1504,9 @@
     // Age DropDowns
     
     $(document).ready(function() {
-    
+        
+        
+
        $('.scroll-div li a').click(function(){
             if($(this).parents('.scroll-div').hasClass('month')){
         
@@ -1511,7 +1516,6 @@
 
                 $('.drop_down_select_month').text(month) ;
                 // var parent = $(this).parents('.month').find('li.active a div.month_name').text();
-             
 
                 $('.month_hidden').val(month);
             }
@@ -1551,10 +1555,102 @@
               
               $('.gender_hidden').val(gender);
             }
+            else if($(this).parents('.scroll-div').hasClass('language')){
+
+              $(this).parents('.language').find('li').removeClass('active');  
+
+              var language = $.trim($(this).text());
+        
+              $('.drop_down_select_language').text(language) ;
+              
+              $('.language_hidden').val(gender);
+            }
 
             
             
             $(this).parent('li').addClass('active');
+        });
+
+       $('#ajax_edit_profile').submit(function(e) {
+            e.preventDefault();
+
+            // var month = $('.month_hidden').val();
+            // var date = $('.date_hidden').val();
+            // var year = $('.year_hidden').val();
+            // var month = $('.month_hidden').val();
+            // var date = $('.date_hidden').val();
+            // var year = $('.year_hidden').val();
+            // if(month =='' && date =='' && year ==''){
+            //     $('.complete-error').show();
+            //     $('.completeBtn').attr('disabled',true);
+            // }
+            // else{
+            //     $('.complete-error').hide();
+            //      $('.completeBtn').attr('disabled',false);
+            // }
+            let formData = $(this).serializeArray();
+            $.ajax({
+                type: "POST",
+                url: "/profile/{{ $service->user->id }}/edit",
+                headers: {
+                    Accept: "application/json"
+                },
+                dataType:"JSON",
+                data: formData,
+                beforeSend: function() {
+                    
+                    $('#edit_profile_btn').text('Processing');
+                },
+                complete: function() {
+                    $('#edit_profile_btn').text('Save');
+                },
+                success: (response) => {
+
+                    if(response == "age_error"){
+
+                        alertify.error('The age cannot be less than 13 years old');
+                    }
+                    else if(response == "success"){
+                        
+                        alertify.error('Profile has been updated.');
+                    }
+                    else{
+
+                        if(typeof response =='object'){
+                            $.each(response,function(index,value){
+                                
+                                console.log(value);
+                                alertify.error("All fields are required");
+                             });
+                        }
+                        else{
+
+                            alertify.error('Try again later');
+                        }
+                        
+                        
+                        return false;
+                    } 
+                    // console.log(response);
+                    // if (response[0].result == 1) 
+                    // {
+                    //     window.location.reload();
+                    // }
+                    // else if (response[0].result == 0) 
+                    // {
+                    //     $('.complete-error p').text(response[0].message);
+                    //     $('.complete-error').show();
+                    // }
+                    // else
+                    // {
+                    //     $.notify(response[0].message, 'error');
+                    // }
+
+                },
+                error: (response) => {
+                    // alert();
+                }
+            })
         });
  
     });
