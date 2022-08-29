@@ -709,7 +709,7 @@
 
     jQuery(document).ready(function($) {
         
-        // var seller_edit = localStorage.getItem("edit_seller_profile");
+        var seller_edit = localStorage.getItem("edit_seller_profile");
         if(seller_edit){
             document.getElementById("profileBar_info").style.display = "none";
             document.getElementById("services_navbar").style.display = "none";
@@ -740,7 +740,7 @@
         });
         $('#edit_user_profile-tab').click(function(){
 
-            // localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
+            localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
             
             document.getElementById("profileBar_info").style.display = "none";
             document.getElementById("services_navbar").style.display = "none";
@@ -757,7 +757,6 @@
             $("#pills-notification").removeClass('active show');
             $("#pills-privacy").removeClass('active show');
             $("#pills-settings").removeClass('active show');
-              
         });
         // $('#profile-tab').click(function(){
         //     $('.showmore-posts').attr('data-post-load_page','0');
