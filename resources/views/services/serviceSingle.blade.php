@@ -572,7 +572,7 @@
 
         <!-- START: Gallery -->
         <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-            <div class="card mt-2 p-3">
+            <div class="card mt-2 p-3 shadows">
                 <div class="card-body ">
                     <div class="service-main-body-content">
                         @include('services.galleryImages', [
