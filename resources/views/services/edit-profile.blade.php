@@ -1044,7 +1044,7 @@
                                 <ul class="account-information pb-3">
                                     <li class="d-flex align-items-center">
                                         <div>ID:</div> 
-                                        <p>1521932024</p>
+                                        <p>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
                                     </li>
                                     <li class="d-flex align-items-center">
                                         <div>Registration Time:</div> 
