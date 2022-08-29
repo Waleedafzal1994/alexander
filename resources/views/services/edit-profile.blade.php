@@ -108,7 +108,7 @@
                                         {{-- Form Element --}}
                                         <div class="form-group">
                                             <label for="">Nickname</label>
-                                            <input type="text" name="name" class="form-control" value="{{ $service->user->name }}">
+                                            <input type="text" name="name" class="form-control" value="{{ $service->user->name }}" minlength="3" maxlength="30">
                                         </div>
                                         {{-- Form Element --}}
                                        @if($service->user->seller_rank == 0 && $service->user->usaer_group == 3)
@@ -182,7 +182,7 @@
                                         </div>
                                         <input type="hidden" class="language_hidden" name="primary_language">
                                         <div class="form-group">
-                                            <label for="">Primary & Secondary Language</label>
+                                            <label for="">Language</label>
                                             <div class="w-100 dob-dropdown">
                                                 <div class="form-group w-100 mb-0 mr-2">
                                                     <div class="newdropdown">
@@ -435,7 +435,7 @@
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="">Full Name</label>
-                                        <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}">
+                                        <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -934,8 +934,9 @@
                                         <label for="">About Me</label>
                                         <textarea type="text" id="field" name="description" class="form-control textarea" onkeyup="countCount(this)"
                                             rows="3">{{ $service->user->description }}</textarea>
-                                            <div id="charCount" class="counter"> </div>
-
+                                            <div>
+                                            <span id="charCount" class="counter">0</span><span>/500</span>
+                                            </div>
                                             <script>
                                             function countCount(val) {
                                                 var len = val.value.length;
@@ -1346,14 +1347,21 @@
         </div>
     </div>
 </div>
-
+<!-- This commented -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- End here -->
+
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>
-   
+   $(document).ready(function() {
+    // field
+    const length_textarea = document.getElementById("field").value.length;
+    // console.log(a.length,'Value')
+    $('#charCount').text(500 - length_textarea);
+    });
     var profilePicChanged = false;
         $(document).ready(function() {
             @if ($service->user->country)
