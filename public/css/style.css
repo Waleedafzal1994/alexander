@@ -3074,7 +3074,13 @@ button{
 .password-showhide{
     position: absolute;
     right: 10px;
-    top: 35px;
+    top: 31px;
+    cursor: pointer;
+}
+.password-showhide-change{
+    position: absolute;
+    right: 10px;
+    top: 40px;
     cursor: pointer;
 }
 .hide-password {

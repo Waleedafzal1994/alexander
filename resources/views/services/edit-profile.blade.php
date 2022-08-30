@@ -1362,7 +1362,7 @@
                             <div class="form-group position-relative mb-3 pb-1">
                                 <label>Old Password*</label>
                                 <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
-                                <span class="password-showhide">
+                                <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
                                 </span>
@@ -1378,7 +1378,7 @@
                                 <label>New Password*</label>
                                 <input id="password-confirm-reg" class="border-input" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
 
-                                <span class="password-showhide">
+                                <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
                                 </span>

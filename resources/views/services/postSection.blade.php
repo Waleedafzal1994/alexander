@@ -203,22 +203,13 @@
                                                 <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
                                                     <div class="position-relative">
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
-                                                        <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="charCount(this)"></textarea>
-                                                        <div id="charNum" class="counter"> </div>
+                                                        <textarea class="textarea border-input" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="countCount(this)"></textarea>
+                                                        <div class="text-counter">
+                                                            <span id="charCounts" class="counter">0</span>
+                                                            <span class="fix-count">/500</span>
+                                                        </div>
                                                     </div>
                                                     <input type="submit" class="nav-link btn-post btn-solid mt-2" name="" value="Post Comment">
-                                                    
-
-                                                    <script>
-                                                        function charCount(val) {
-                                                            var len = val.value.length;
-                                                            if (len >= 500) {
-                                                                val.value = val.value.substring(0, 500);
-                                                            } else {
-                                                                $('#charNum').text(500 - len);
-                                                            }
-                                                        };
-                                                    </script>
                                                 </form>
                                             </div>
                                             
@@ -258,7 +249,6 @@ $(document).ready(function(){
         });
   // When strating hide prev arrow
     $('.carousel-control-prev').hide();
-
 
     jQuery(".post-comt-box form").on("submit", function(event) 
     {
@@ -380,6 +370,16 @@ $(document).ready(function(){
 
 
 });
+
+function countCount(val) {
+        console.log(val,'Hello');
+        var len = val.value.length;
+        if (len >= 500) {
+            val.value = val.value.substring(0, 500);
+        } else {
+            $('#charCounts').text(500 - len);
+        }
+    };
 
 
 $('.post-carousel').on('slide.bs.carousel', function (e) {
