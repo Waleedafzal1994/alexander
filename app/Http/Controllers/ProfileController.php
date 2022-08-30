@@ -62,9 +62,9 @@ class ProfileController extends Controller
 
         $validated = [
             'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
-            'real_name' => 'required|string|min:4|max:32',
+            'real_name' => 'required|string|min:3|max:30',
             'title' => 'nullable|string|min:2',
-            'country' => 'required|string|min:2',
+            //'country' => 'required|string|min:2',
             'description' => 'nullable|string|max:180',
             'gender' => 'nullable',
             'birth_date' => 'nullable',
@@ -86,34 +86,17 @@ class ProfileController extends Controller
             die();
         } 
 
-            $validated = $request->validate([
-                'name' => 'required|string|min:4|max:32|unique:users,id,' . $user->id,
-                'real_name' => 'required|string|min:4|max:32',
-                'title' => 'nullable|string|min:2',
-                'country' => 'required|string|min:2',
-                'description' => 'nullable|string|max:180',
-                'gender' => 'nullable',
-                'birth_date' => 'nullable',
-                'primary_language' => 'nullable',
-                'secondary_language' => 'nullable',
-                'facebook_profile' => 'max:64|nullable',
-                'twitch_profile' => 'nullable',
-                'instagram_profile' => 'nullable',
-                'tiktok_profile' => 'nullable',
-                // 'discord_handle' => 'nullable',
-            ]);
-        
         if (!$user || $user->id != Auth::id()) {
             // return redirect('/');
             echo "redirect";
             die();
         }
 
-        $user->name = $validated['name'];
-        $user->real_name = $validated['real_name'];
-        $user->user_title = $validated['title'];
-        $user->country = $validated['country'];
-        $user->gender = $validated['gender'];
+        $user->name = $request->input('name');
+        $user->real_name = $request->input('real_name');
+        $user->user_title = $request->input('title'); 
+        //$user->country = $validated['country'];
+        $user->gender = $request->input('gender');
 
         $month = $request->input('month');
         $day = $request->input('day');
@@ -131,7 +114,7 @@ class ProfileController extends Controller
 
         $data['birth_date'] = date('Y-m-d', strtotime($date));  
         // $user->birth_date = $validated['birth_date'];
-        $user->description = $validated['description'];
+        $user->description = $request->input('description');
         $languages = [
             'Afrikaans',
             'Albanian',
@@ -208,34 +191,34 @@ class ProfileController extends Controller
             'Xhosa'
         ];
 
-        if (isset($validated['primary_language']) && in_array($validated['primary_language'], $languages)) {
-            $user->primary_language = $validated['primary_language'];
+        if ($request->input('primary_language') && in_array($request->input('primary_language'), $languages)) {
+            $user->primary_language = $request->input('primary_language');
         } else {
             $user->primary_language = null;
         }
-        if (isset($validated['secondary_language']) && in_array($validated['secondary_language'], $languages)) {
-            $user->secondary_language = $validated['secondary_language'];
+        if ($request->input('secondary_language') && in_array($request->input('secondary_language'), $languages)) {
+            $user->secondary_language = $request->input('secondary_language');
         } else {
             $user->secondary_language = null;
         }
 
         // user socials
-        if (isset($validated['facebook_profile'])) {
-            $user->facebook_profile = $validated['facebook_profile'];
+        if ($request->input('facebook_profile')) {
+            $user->facebook_profile = $request->input('facebook_profile');
         }
-        if (isset($validated['twitch_profile'])) {
-            $user->twitch_profile = $validated['twitch_profile'];
+        if ($request->input('twitch_profile')) {
+            $user->twitch_profile = $request->input('twitch_profile');
         }
-        if (isset($validated['instagram_profile'])) {
-            $user->instagram_profile = $validated['instagram_profile'];
+        if ($request->input('instagram_profile')) {
+            $user->instagram_profile = $request->input('instagram_profile');
         }
-        if (isset($validated['tiktok_profile'])) {
-            $user->tiktok_profile = $validated['tiktok_profile'];
+        if ($request->input('tiktok_profile')) {
+            $user->tiktok_profile = $request->input('tiktok_profile');
         }
-        // if (isset($validated['discord_handle'])) {
-        //     $dcHandle = explode('#', $validated['discord_handle']);
+        // if ($request->input('discord_handle')) {
+        //     $dcHandle = explode('#', $request->input('discord_handle'));
         //     if (is_array($dcHandle) && count($dcHandle) == 2) {
-        //         $user->discord_handle = $validated['discord_handle'];
+        //         $user->discord_handle = $request->input('discord_handle');
         //     }
         // }
         $user->save();
