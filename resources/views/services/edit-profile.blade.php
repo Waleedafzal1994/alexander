@@ -156,7 +156,7 @@
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
                                                                 <div class="scroll-div gender">
-                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                    <li role="presentation" id="month_li_jan" data-month="Jan">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Male</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -623,7 +623,7 @@
                                         </div>
                                     </div>
 
-                                    <input class="country_hidden" type="hidden" name="country">
+                                    <input class="country_hidden" type="hidden" name="">
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                             <label for="">Country</label>
@@ -637,7 +637,7 @@
 
                                                             <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
                                                                 <div class="scroll-div country">
-                                                                    <li role="presentation" class="active">
+                                                                    <li role="presentation">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Afrikaans</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -1481,7 +1481,8 @@
                 processData: false,
                 success: (data) => {
                     this.reset();
-                    window.location.reload();
+                    //window.location.reload();
+                    alertify.success('Profile Image Update Successfully.');
                 },
                 error: function(response) {
                     console.log("error1", response);
@@ -1498,6 +1499,7 @@
                             "is-invalid d-block").children(
                             "strong").text(errors[key][0]);
                     } else {
+                        //alertify.success('Profile Image Update Successfully.');
                         window.location.reload();
                     }
                 }
@@ -1562,7 +1564,36 @@
     
     $(document).ready(function() {
         
-        
+        @if ($service->user->gender)
+        var gender = '<?= $service->user->gender; ?>';
+            $('.drop_down_select_gender').text(gender) ;
+            $('.scroll-div.gender').find('li:contains('+gender+')').addClass('active');
+        @endif
+
+        @if ($service->user->birth_date)
+            var birth_date = '<?= $service->user->birth_date; ?>';
+            var day = '<?= date('d',strtotime($service->user->birth_date)); ?>';
+            var month = '<?= date('M',strtotime($service->user->birth_date)); ?>';
+            var year = '<?= date('Y',strtotime($service->user->birth_date)); ?>';
+            //alert(birth_date+'-'+day+'-'+month+'-'+year);
+            $('.drop_down_select_month').text(month) ;
+            $('.scroll-div.month').find('li:contains('+month+')').addClass('active');
+            $('.month_hidden').val(month);
+
+            $('.drop_down_select_date').text(day) ;
+            $('.scroll-div.date').find('li:contains('+day+')').addClass('active');
+            $('.date_hidden').val(day);
+
+            $('.drop_down_select_year').text(year) ;
+            $('.scroll-div.year').find('li:contains('+year+')').addClass('active');
+            $('.year_hidden').val(year);
+        @endif
+
+        @if ($service->user->country)
+            var country = '<?= $service->user->country; ?>';
+            $('.drop_down_select_country').text(country) ;
+            $('.scroll-div.country').find('li:contains('+country+')').addClass('active');
+        @endif  
 
        $('.scroll-div li a').click(function(){
             if($(this).parents('.scroll-div').hasClass('month')){
@@ -1629,6 +1660,7 @@
         });
 
        $('#ajax_edit_profile').submit(function(e) {
+        // alert();
             e.preventDefault();
 
             // var month = $('.month_hidden').val();
@@ -1676,8 +1708,8 @@
                         if(typeof response =='object'){
                             $.each(response,function(index,value){
                                 
-                                console.log(value);
-                                alertify.error("All fields are required");
+                                // console.log(value);
+                                alertify.error(value[0]);
                              });
                         }
                         else{
