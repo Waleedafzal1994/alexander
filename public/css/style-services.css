@@ -29,8 +29,7 @@
 
 
 input,
-select,
-textarea {
+select {
   width: 100%;
   border: 1px solid #c6c5d7 !important;
   outline: none;
@@ -53,8 +52,7 @@ textarea:focus {
   border-left-color: rgba(164, 44, 214, 0.4) !important;
   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%) !important;
 } */
-input:hover, 
-textarea:hover{
+input:hover{
   border-color: #7041E6 !important;
   background-color: #EDEDFB;
   box-shadow: unset;
@@ -720,7 +718,7 @@ figure {
   border: none;
 }
 
-textarea {
+/* textarea {
   border: 1px solid #eeeeee;
   border-radius: 6px 6px 0 0;
   padding: 10px;
@@ -735,7 +733,7 @@ textarea {
 textarea {
   overflow: auto;
   resize: vertical;
-}
+} */
 
 #people-list figure img,
 .new-postbox>figure img,

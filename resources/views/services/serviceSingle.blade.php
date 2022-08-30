@@ -121,7 +121,7 @@
                                         <span>1258 Served</span>
                                         <span class="number-row-card"><i class="fas fa-star"></i> 5.0 </span>
                                     </div>
-                                </div>
+                                </div>pills-back-tab
 
                                 <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between pb-5">
 
@@ -509,6 +509,7 @@
                                         Badges
                                     </a>
                                 </li>
+                                @if(!empty(Auth::id()) && (Auth::id() == $service->user->id))
                                 <li class="nav-item ml-auto" role="presentation">
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
@@ -517,6 +518,7 @@
                                         Settings
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                         <!-- END: Service main Menu -->

@@ -109,7 +109,7 @@
                                         {{-- Form Element --}}
                                         <div class="form-group">
                                             <label for="">Nickname</label>
-                                            <input type="text" name="name" class="form-control" value="{{ $service->user->name }}" minlength="3" maxlength="30">
+                                            <input type="text" name="name" class="form-control border-input" value="{{ $service->user->name }}" minlength="3" maxlength="30">
                                         </div>
                                         {{-- Form Element --}}
                                        @if($service->user->seller_rank == 0 && $service->user->usaer_group == 3)
@@ -156,7 +156,7 @@
 
                                                             <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
                                                                 <div class="scroll-div gender">
-                                                                    <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                    <li role="presentation" id="month_li_jan" data-month="Jan">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Male</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -477,7 +477,7 @@
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="">Full Name</label>
-                                        <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
+                                        <input type="text" name="real_name" class="form-control border-input" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -623,7 +623,7 @@
                                         </div>
                                     </div>
 
-                                    <input class="country_hidden" type="hidden" name="country">
+                                    <input class="country_hidden" type="hidden" name="">
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                             <label for="">Country</label>
@@ -637,7 +637,7 @@
 
                                                             <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
                                                                 <div class="scroll-div country">
-                                                                    <li role="presentation" class="active">
+                                                                    <li role="presentation">
                                                                         <a role="menuitem" tabindex="-1">
                                                                             <div class="month_name">Afrikaans</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -974,22 +974,24 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">About Me</label>
-                                        <textarea type="text" id="field" name="description" class="form-control textarea" onkeyup="countCount(this)"
-                                            rows="3">{{ $service->user->description }}</textarea>
-                                            <div class="text-counter">
-                                                <span id="charCount" class="counter">0</span>
-                                                <span class="fix-count">/500</span>
+                                        <div class="textArea-body">
+                                            <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)"
+                                                rows="3">{{ $service->user->description }}</textarea>
+                                                <div class="text-counter">
+                                                    <span id="charCount" class="counter">0</span>
+                                                    <span class="fix-count">/500</span>
                                             </div>
-                                            <script>
+                                        </div>
+                                        <script>
                                             function countCount(val) {
                                                 var len = val.value.length;
                                                 if (len >= 500) {
                                                     val.value = val.value.substring(0, 500);
                                                 } else {
                                                     $('#charCount').text(500 - len);
-                                                }
+                                                };
                                             };
-                                            </script>
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -1005,19 +1007,19 @@
                                 <div class="col-md-4">
                                     <br>
                                     <label for="">Facebook</label>
-                                    <input type="url" name="facebook_profile" class="input" style="margin-bottom:10px;"
+                                    <input type="url" name="facebook_profile" class="input border-input" style="margin-bottom:10px;"
                                         placeholder="facebook.com/gamersplay" value="{{ $service->user->facebook_profile }}">
                                     <label for="">Twitch</label>
-                                    <input type="url" name="twitch_profile" class="input"
+                                    <input type="url" name="twitch_profile" class="input border-input"
                                         placeholder="twitch.tv/gamersplay" value="{{ $service->user->twitch_profile }}">
                                 </div>
                                 <div class="col-md-4">
                                     <br>
                                     <label for="">Instagram</label>
-                                    <input type="url" name="instagram_profile" class="input" style="margin-bottom:10px;" placeholder="@gamersplay"
+                                    <input type="url" name="instagram_profile" class="input border-input" style="margin-bottom:10px;" placeholder="@gamersplay"
                                         value="{{ $service->user->instagram_profile }}">
                                     <label for="">Tiktok</label>
-                                    <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
+                                    <input type="url" name="tiktok_profile" class="input border-input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
                                 </div>
             
                                 <div class="col-md-12 mt-4">
@@ -1044,7 +1046,7 @@
                                 <ul class="account-information pb-3">
                                     <li class="d-flex align-items-center">
                                         <div>ID:</div> 
-                                        <p>1521932024</p>
+                                        <p>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
                                     </li>
                                     <li class="d-flex align-items-center">
                                         <div>Registration Time:</div> 
@@ -1084,172 +1086,178 @@
                         
                     </div>
                     <div class="tab-pane fade" id="pills-notification" role="tabpanel" aria-labelledby="pills-notification-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Notifications</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>E-mail Subscriptions:</h6>
-                                        <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Notifications</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>E-mail Subscriptions:</h6>
+                                            <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>ePal Recommendation:</h6>
-                                        <p class="mb-0">Receive ePals recommended by the platform.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>ePal Recommendation:</h6>
+                                            <p class="mb-0">Receive ePals recommended by the platform.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Sound</h6>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Sound</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Order</h6>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Order</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>IM Message</h6>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>IM Message</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Privacy Settings</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Hide Birthday:</h6>
-                                        <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Privacy Settings</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Hide Birthday:</h6>
+                                            <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Anonymous on Leaderboard:</h6>
-                                        <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Anonymous on Leaderboard:</h6>
+                                            <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Turn Off Suggestions:</h6>
-                                        <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Turn Off Suggestions:</h6>
+                                            <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <!-- <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Block List:</h6>
-                                        <p class="mb-0">You can manage the blocked users here, such as removing them from the list.</p>
+                                <!-- <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Block List:</h6>
+                                            <p class="mb-0">You can manage the blocked users here, such as removing them from the list.</p>
+                                        </div>
+                                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
-                                </div>
-                            </div> -->
-                        </form>
+                                </div> -->
+                            </form>
+                        </div>    
                     </div>
                     <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Auto Reply</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Auto Reply</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online offline mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online offline mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online in-order mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online in-order mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online resting mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online resting mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                        </form>
+                                <hr>
+                            </form>
+                        </div>
                     </div>
                      <!-- START: Block List -->
                     <div class="tab-pane fade block-list-result shadows rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
@@ -1355,8 +1363,8 @@
                         <div class="col-12">
                             <div class="form-group position-relative mb-3 pb-1">
                                 <label>Old Password*</label>
-                                <input id="password-reg" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
-                                <span class="password-showhide">
+                                <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
+                                <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
                                 </span>
@@ -1370,9 +1378,9 @@
                         <div class="col-12">
                             <div class="form-group position-relative">
                                 <label>New Password*</label>
-                                <input id="password-confirm-reg" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
+                                <input id="password-confirm-reg" class="border-input" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
 
-                                <span class="password-showhide">
+                                <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
                                 </span>
@@ -1433,7 +1441,7 @@
         $("#home-tab").addClass('active');
         $("#home").addClass('active show');
 
-        // localStorage.removeItem("edit_seller_profile");
+        localStorage.removeItem("edit_seller_profile");
         document.getElementById("home-tab").click();
 
     });
@@ -1475,7 +1483,8 @@
                 processData: false,
                 success: (data) => {
                     this.reset();
-                    window.location.reload();
+                    //window.location.reload();
+                    alertify.success('Profile Image Update Successfully.');
                 },
                 error: function(response) {
                     console.log("error1", response);
@@ -1492,6 +1501,7 @@
                             "is-invalid d-block").children(
                             "strong").text(errors[key][0]);
                     } else {
+                        //alertify.success('Profile Image Update Successfully.');
                         window.location.reload();
                     }
                 }
@@ -1556,7 +1566,36 @@
     
     $(document).ready(function() {
         
-        
+        @if ($service->user->gender)
+        var gender = '<?= $service->user->gender; ?>';
+            $('.drop_down_select_gender').text(gender) ;
+            $('.scroll-div.gender').find('li:contains('+gender+')').addClass('active');
+        @endif
+
+        @if ($service->user->birth_date)
+            var birth_date = '<?= $service->user->birth_date; ?>';
+            var day = '<?= date('d',strtotime($service->user->birth_date)); ?>';
+            var month = '<?= date('M',strtotime($service->user->birth_date)); ?>';
+            var year = '<?= date('Y',strtotime($service->user->birth_date)); ?>';
+            //alert(birth_date+'-'+day+'-'+month+'-'+year);
+            $('.drop_down_select_month').text(month) ;
+            $('.scroll-div.month').find('li:contains('+month+')').addClass('active');
+            $('.month_hidden').val(month);
+
+            $('.drop_down_select_date').text(day) ;
+            $('.scroll-div.date').find('li:contains('+day+')').addClass('active');
+            $('.date_hidden').val(day);
+
+            $('.drop_down_select_year').text(year) ;
+            $('.scroll-div.year').find('li:contains('+year+')').addClass('active');
+            $('.year_hidden').val(year);
+        @endif
+
+        @if ($service->user->country)
+            var country = '<?= $service->user->country; ?>';
+            $('.drop_down_select_country').text(country) ;
+            $('.scroll-div.country').find('li:contains('+country+')').addClass('active');
+        @endif  
 
        $('.scroll-div li a').click(function(){
             if($(this).parents('.scroll-div').hasClass('month')){
@@ -1623,6 +1662,7 @@
         });
 
        $('#ajax_edit_profile').submit(function(e) {
+        // alert();
             e.preventDefault();
 
             // var month = $('.month_hidden').val();
@@ -1670,8 +1710,8 @@
                         if(typeof response =='object'){
                             $.each(response,function(index,value){
                                 
-                                console.log(value);
-                                alertify.error("All fields are required");
+                                // console.log(value);
+                                alertify.error(value[0]);
                              });
                         }
                         else{

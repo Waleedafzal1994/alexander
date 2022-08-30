@@ -292,6 +292,7 @@ $noFooter = true;
                             <i class="fab fa-twitter text-white"></i>
                         </a>
                     </li>
+                    @if(!empty(Auth::id()) && !empty($service->user->id) && (Auth::id() != $service->user->id))
                     <li class="nav-item dropdown circle-link">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             <i class="fas fa-ellipsis-h text-white"></i>
@@ -313,6 +314,7 @@ $noFooter = true;
                             </li>
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>

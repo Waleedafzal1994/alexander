@@ -43,18 +43,7 @@ a:hover{
     }
 }
 
-.textarea{
-    padding-bottom: 22px !important;
-}
-.textarea::-webkit-scrollbar {
-    width: 2px;
-}
-.textarea::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
-.textarea::-webkit-scrollbar-thumb {
-background: #888; 
-}
+
 .text-counter{
     display: flex;
     align-items: center;
@@ -437,8 +426,8 @@ spanb:nth-child(2) {
 
 
 input,
-select,
-textarea {
+select
+ {
     width: 100%;
     border: 1px solid #c6c5d7;
     outline: none;
@@ -3074,7 +3063,13 @@ button{
 .password-showhide{
     position: absolute;
     right: 10px;
-    top: 35px;
+    top: 31px;
+    cursor: pointer;
+}
+.password-showhide-change{
+    position: absolute;
+    right: 10px;
+    top: 40px;
     cursor: pointer;
 }
 .hide-password {
@@ -3097,7 +3092,48 @@ button{
 
 
 
+/* Text Area */
+.textArea-body{
+    width: 100%;
+    border: 1px solid #c6c5d7;
+    outline: none;
+    background: #EDEDFB;
+    border-radius: var(--border-radius);
+    transition: 0.2s ease;
+    position: relative;
+    display: flex;
+    min-height: 32px;
+    height: 110px;
+}
+.textArea-body .textarea{
+    width: 100%;
+    border: none;
+    resize: none;
+    box-shadow: none!important;
+    padding: 0 12px;
+    margin: 12px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: #ededfb;
+    color: #120e1b;
+}
+.textarea{
+    height: 60px;
+    min-height: 60px;
+    max-height: 200px;
+    resize: none;
+}
 
+.textarea::-webkit-scrollbar {
+    width: 2px;
+}
+.textarea::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.textarea::-webkit-scrollbar-thumb {
+background: #888; 
+}
 
 
 
@@ -3149,6 +3185,22 @@ button{
     z-index: 2 !important;
   }
 
+
   /* .choices__list--dropdown .choices__item--selectable:after{
     content: 'f00c' !important;
   } */
+
+  /* .border-input:focus {
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2pxrgba(112,65,230,.2);
+} */
+
+.border-input:focus{
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2px rgb(112 65 230 / 20%) !important;
+}
+
