@@ -307,8 +307,8 @@
                             <div class="card-image position-relative br-10">
                                 <img src="/imgs/league-of-legends-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-normal">League of Legends</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows">5.780 GP+ Gamers</div>
+                                    <div class="card-sub-title font-weight-bold">League of Legends</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-weight-bold">5.780 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -320,8 +320,8 @@
                             <div class="card-image position-relative br-10">
                                 <img src="/imgs/Valorant-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-normal">Valorant</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows">4.639 GP+ Gamers</div>
+                                    <div class="card-sub-title font-weight-bold">Valorant</div>
+                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">4.639 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -333,8 +333,8 @@
                             <div class="card-image position-relative br-10">
                                 <img src="/imgs/Fortnite-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-normal">Fortnite</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows">3.738 GP+ Gamers</div>
+                                    <div class="card-sub-title font-weight-bold">Fortnite</div>
+                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">3.738 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -346,8 +346,8 @@
                             <div class="card-image position-relative br-10">
                                 <img src="/imgs/Apex-Legends-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-normal">Apex Legends</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows">2.367 GP+ Gamers</div>
+                                    <div class="card-sub-title font-weight-bold">Apex Legends</div>
+                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">2.367 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -359,8 +359,8 @@
                             <div class="card-image position-relative br-10">
                                 <img src="/imgs/Overwatch-lfg.png" class="w-100" alt="">
                                 <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-normal">Overwatch 2</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows">1.457 GP+ Gamers</div>
+                                    <div class="card-sub-title font-weight-bold">Overwatch 2</div>
+                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">1.457 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
