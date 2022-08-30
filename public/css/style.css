@@ -3140,3 +3140,17 @@ button{
   .choices__list--dropdown{
     z-index: 2 !important;
   }
+
+  .border-input:focus {
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2pxrgba(112,65,230,.2);
+}
+
+.border-input:focus{
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2px rgb(112 65 230 / 20%) !important;
+}

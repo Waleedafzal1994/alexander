@@ -109,7 +109,7 @@
                                         {{-- Form Element --}}
                                         <div class="form-group">
                                             <label for="">Nickname</label>
-                                            <input type="text" name="name" class="form-control" value="{{ $service->user->name }}" minlength="3" maxlength="30">
+                                            <input type="text" name="name" class="form-control border-input" value="{{ $service->user->name }}" minlength="3" maxlength="30">
                                         </div>
                                         {{-- Form Element --}}
                                        @if($service->user->seller_rank == 0 && $service->user->usaer_group == 3)
@@ -477,7 +477,7 @@
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="">Full Name</label>
-                                        <input type="text" name="real_name" class="form-control" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
+                                        <input type="text" name="real_name" class="form-control border-input" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -974,7 +974,7 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">About Me</label>
-                                        <textarea type="text" id="field" name="description" class="form-control textarea" onkeyup="countCount(this)"
+                                        <textarea type="text" id="field" name="description" class="border-input form-control textarea" onkeyup="countCount(this)"
                                             rows="3">{{ $service->user->description }}</textarea>
                                             <div class="text-counter">
                                                 <span id="charCount" class="counter">0</span>
@@ -1005,19 +1005,19 @@
                                 <div class="col-md-4">
                                     <br>
                                     <label for="">Facebook</label>
-                                    <input type="url" name="facebook_profile" class="input" style="margin-bottom:10px;"
+                                    <input type="url" name="facebook_profile" class="input border-input" style="margin-bottom:10px;"
                                         placeholder="facebook.com/gamersplay" value="{{ $service->user->facebook_profile }}">
                                     <label for="">Twitch</label>
-                                    <input type="url" name="twitch_profile" class="input"
+                                    <input type="url" name="twitch_profile" class="input border-input"
                                         placeholder="twitch.tv/gamersplay" value="{{ $service->user->twitch_profile }}">
                                 </div>
                                 <div class="col-md-4">
                                     <br>
                                     <label for="">Instagram</label>
-                                    <input type="url" name="instagram_profile" class="input" style="margin-bottom:10px;" placeholder="@gamersplay"
+                                    <input type="url" name="instagram_profile" class="input border-input" style="margin-bottom:10px;" placeholder="@gamersplay"
                                         value="{{ $service->user->instagram_profile }}">
                                     <label for="">Tiktok</label>
-                                    <input type="url" name="tiktok_profile" class="input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
+                                    <input type="url" name="tiktok_profile" class="input border-input" placeholder="tiktok.com/gamersplay" value="{{ $service->user->tiktok_profile }}">
                                 </div>
             
                                 <div class="col-md-12 mt-4">
@@ -1084,172 +1084,178 @@
                         
                     </div>
                     <div class="tab-pane fade" id="pills-notification" role="tabpanel" aria-labelledby="pills-notification-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Notifications</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>E-mail Subscriptions:</h6>
-                                        <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Notifications</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>E-mail Subscriptions:</h6>
+                                            <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>ePal Recommendation:</h6>
-                                        <p class="mb-0">Receive ePals recommended by the platform.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>ePal Recommendation:</h6>
+                                            <p class="mb-0">Receive ePals recommended by the platform.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Sound</h6>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Sound</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Order</h6>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Order</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>IM Message</h6>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>IM Message</h6>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Privacy Settings</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Hide Birthday:</h6>
-                                        <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Privacy Settings</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Hide Birthday:</h6>
+                                            <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Anonymous on Leaderboard:</h6>
-                                        <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Anonymous on Leaderboard:</h6>
+                                            <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Turn Off Suggestions:</h6>
-                                        <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Turn Off Suggestions:</h6>
+                                            <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
                                     </div>
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider"></span>
-                                    </label>
                                 </div>
-                            </div>
-                            <!-- <hr>
-                            <div class="form-group">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="mr-4">
-                                        <h6>Block List:</h6>
-                                        <p class="mb-0">You can manage the blocked users here, such as removing them from the list.</p>
+                                <!-- <hr>
+                                <div class="form-group">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-4">
+                                            <h6>Block List:</h6>
+                                            <p class="mb-0">You can manage the blocked users here, such as removing them from the list.</p>
+                                        </div>
+                                        <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Expand</button>
-                                </div>
-                            </div> -->
-                        </form>
+                                </div> -->
+                            </form>
+                        </div>    
                     </div>
                     <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
-                        <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                            <span>Auto Reply</span>
-                        </h1>
-                        <form action="" class="mt-4 pl-3">
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                        <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
+                            <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
+                                <span>Auto Reply</span>
+                            </h1>
+                            <form action="" class="mt-4 pl-3">
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online offline mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online offline mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online in-order mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online in-order mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="mb-0 d-flex align-items-center">
-                                        <span class="online resting mr-1"></span> Online
-                                    </h6>
-                                    <p class="mb-0">No auto reply yet</p>
+                                <hr>
+                                <div class="form-group d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0 d-flex align-items-center">
+                                            <span class="online resting mr-1"></span> Online
+                                        </h6>
+                                        <p class="mb-0">No auto reply yet</p>
+                                    </div>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
                                 </div>
-                                <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
-                            </div>
-                            <hr>
-                        </form>
+                                <hr>
+                            </form>
+                        </div>
                     </div>
                      <!-- START: Block List -->
                     <div class="tab-pane fade block-list-result shadows rounded" id="block-list" role="tabpanel" aria-labelledby="block-list-tab">
@@ -1355,7 +1361,7 @@
                         <div class="col-12">
                             <div class="form-group position-relative mb-3 pb-1">
                                 <label>Old Password*</label>
-                                <input id="password-reg" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
+                                <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
                                 <span class="password-showhide">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
@@ -1370,7 +1376,7 @@
                         <div class="col-12">
                             <div class="form-group position-relative">
                                 <label>New Password*</label>
-                                <input id="password-confirm-reg" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
+                                <input id="password-confirm-reg" class="border-input" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
 
                                 <span class="password-showhide">
                                     <span class="show-password">Show</span>

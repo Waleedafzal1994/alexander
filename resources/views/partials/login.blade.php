@@ -10,7 +10,7 @@
         font-weight:600;
     }
 </style>
-<div class="modal fade mt-4" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-close-btn">
@@ -59,7 +59,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <h6>Email</h6>
-                                            <input id="login-email" type="email" name="email" value="{{ old('email') }}" required autocomplete="new-email" autofocus>
+                                            <input id="login-email" class="border-input" type="email" name="email" value="{{ old('email') }}" required autocomplete="new-email" autofocus>
                                             <span class="invalid-feedback" role="alert" id="name-login-error">
                                                 <strong></strong>
                                             </span>
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h6>Password</h6>
-                                            <input id="login-password" type="password" name="password" required autocomplete="login-current-password">
+                                            <input id="login-password" class="border-input" type="password" name="password" required autocomplete="login-current-password">
                                             
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha" required>
+                                    <input id="captcha" type="text" class="form-control border-input" placeholder="Enter Captcha" name="captcha" required>
                                     <span class="invalid-feedback" role="alert" id="captcha-login-error">
                                         <strong></strong>
                                     </span>
@@ -158,7 +158,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h6>Nickname</h6>
-                                            <input id="name-reg" maxlength="30" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                            <input id="name-reg" class="border-input" maxlength="30" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                             <span class="invalid-feedback" role="alert" id="name-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -168,7 +168,7 @@
                                     <div class="col-md-12" style="display: none;">
                                         <div class="form-group">
                                             <h6>Full Name</h6>
-                                            <input id="real_name-reg" maxlength="30" type="text" name="real_name" value="{{ old('real_name') }}"  autocomplete="real_name" autofocus>
+                                            <input id="real_name-reg" class="border-input" maxlength="30" type="text" name="real_name" value="{{ old('real_name') }}"  autocomplete="real_name" autofocus>
                                             <span class="invalid-feedback" role="alert" id="real_name-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -177,7 +177,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h6>Email</h6>
-                                            <input id="email-reg" type="email" name="email" maxlength="50" value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="email-reg" class="border-input" type="email" name="email" maxlength="50" value="{{ old('email') }}" required autocomplete="email">
                                             <span class="invalid-feedback" role="alert" id="email-reg-error">
                                                 <strong></strong>
                                             </span>
@@ -186,7 +186,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group position-relative mb-3 pb-1">
                                             <h6>Password</h6>
-                                            <input id="password-reg" type="password" name="password" maxlength="15" required autocomplete="new-password">
+                                            <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" required autocomplete="new-password">
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>
                                                 <span class="hide-password">Hide</span>
@@ -201,7 +201,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group position-relative">
                                             <h6>Confirm</h6>
-                                            <input id="password-confirm-reg" type="password" name="password_confirmation" maxlength="15" required autocomplete="new-cnf-password">
+                                            <input id="password-confirm-reg" class="border-input" type="password" name="password_confirmation" maxlength="15" required autocomplete="new-cnf-password">
 
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>
