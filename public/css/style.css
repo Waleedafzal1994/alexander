@@ -3148,3 +3148,7 @@ button{
   .choices__list--dropdown{
     z-index: 2 !important;
   }
+
+  /* .choices__list--dropdown .choices__item--selectable:after{
+    content: 'f00c' !important;
+  } */
