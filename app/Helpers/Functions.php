@@ -29,6 +29,7 @@ function checkLoginFollows($user_id,$login_id)
 function getUsercountry(){
 
     $ip = $_SERVER['REMOTE_ADDR'];
+    // $ip = "39.46.43.153";
     $apidata =  Http::get('https://ipinfo.io/'.$ip.'?token=f51a846eaaa5a7');
     $json     = json_decode($apidata, true);
 

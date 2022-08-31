@@ -297,7 +297,7 @@ class ServicesController extends Controller
             $checkFollow = '';
         }
         $blockList = $this->Block->getAllBlockers($service['user']->id);
-
+    
 
         if ($service == null) {
             return redirect('/');

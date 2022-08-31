@@ -338,13 +338,14 @@ $noFooter = true;
 
         <script>
             $(document).ready(function() {
-
+                // alert();
                 $('#staticBackdrop').modal({
-                    show: true
+                    show: true,
+                    keyboard:false
                 });
 
                 $('.block-toggle').click(function(){
-                    //alert($(this).val());
+                    // alert($(this).val());
                     $(this).val() == "confirm_block" ? do_block() : do_unblock();
                 });
 

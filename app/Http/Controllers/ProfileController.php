@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Block;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -26,6 +27,7 @@ class ProfileController extends Controller
     {
         $this->Generic_model = new GenericModel;
         $this->Follower = new Follower;
+        $this->Block = new Block;
     }
 
 
@@ -345,7 +347,10 @@ class ProfileController extends Controller
                 $checkFollow = '';
             }
 
-            return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders'));
+            $blockList = $this->Block->getAllBlockers($service['user']->id);
+         
+
+            return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders','blockList'));
 
             //return view('services.user_timeline', compact('user','service','totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders'));
         }
