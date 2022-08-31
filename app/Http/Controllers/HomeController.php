@@ -94,6 +94,8 @@ class HomeController extends Controller
             if(!empty($getCountry['country'])){
              $data['country'] = $getCountry['country'];
             }
+
+            print_r($getCountry);die;
             //$data['referal_code'] = $request->input('referal_code');
             $update = $this->Generic_model->updateRecord('users',$data,array('id'=>$id));
             if (!empty($update))

@@ -283,19 +283,25 @@
                                         <div class="form-group">
                                             <label>Language</label>
                                                 <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" name="primary_language[]" multiple>
-                                                    <option value="English" selected>English</option>
-                                                    <option value="Afrikaans">Afrikaans</option>
-                                                    <option value="Albanian">Albanian</option>
-                                                    <option value="Armenian">Armenian</option>
-                                                    <option value="Arabic">Arabic</option>
-                                                    <option value="Basque">Basque</option>
-                                                    <option value="Bosnian">Bosnian</option>
-                                                    <option value="Bengali">Bengali</option>
-                                                    <option value="Bulgarian">Bulgarian</option>
-                                                    <option value="Catalan">Catalan</option>
-                                                    <option value="Cambodian">Cambodian</option>
-                                                    <option value="Czech">Czech</option>
-                                                    <option value="Spanish">Spanish</option>
+                                                    <?php if(!empty($service->user->primary_language)): 
+                                                        $pl = explode(',', $service->user->primary_language);
+                                                    ?>
+                                                        
+                                                    <?php endif;?>
+
+                                                    <option value="English" <?= (in_array("English", $pl) == '1') ? 'selected' : '';?> > English</option>
+                                                    <option value="Afrikaans" <?= (in_array("Afrikaans", $pl) == '1') ? 'selected' : '';?> >Afrikaans</option>
+                                                    <option value="Albanian" <?= (in_array("Albanian", $pl) == '1') ? 'selected' : '';?> >Albanian</option>
+                                                    <option value="Armenian" <?= (in_array("Armenian", $pl) == '1') ? 'selected' : '';?> >Armenian</option>
+                                                    <option value="Arabic" <?= (in_array("Arabic", $pl) == '1') ? 'selected' : '';?> >Arabic</option>
+                                                    <option value="Basque" <?= (in_array("Basque", $pl) == '1') ? 'selected' : '';?> >Basque</option>
+                                                    <option value="Bosnian" <?= (in_array("Bosnian", $pl) == '1') ? 'selected' : '';?> >Bosnian</option>
+                                                    <option value="Bengali" <?= (in_array("Bengali", $pl) == '1') ? 'selected' : '';?> >Bengali</option>
+                                                    <option value="Bulgarian" <?= (in_array("Bulgarian", $pl) == '1') ? 'selected' : '';?> >Bulgarian</option>
+                                                    <option value="Catalan" <?= (in_array("Catalan", $pl) == '1') ? 'selected' : '';?> >Catalan</option>
+                                                    <option value="Cambodian" <?= (in_array("Cambodian", $pl) == '1') ? 'selected' : '';?> >Cambodian</option>
+                                                    <option value="Czech" <?= (in_array("Czech", $pl) == '1') ? 'selected' : '';?> >Czech</option>
+                                                    <option value="Spanish" <?= (in_array("Spanish", $pl) == '1') ? 'selected' : '';?> >Spanish</option>
                                                 </select> 
                                         </div>
 
@@ -1419,9 +1425,10 @@
                 $('select[name="country"]').val('{{ $service->user->country }}');
             @endif
             @if ($service->user->gender)
-                $('select[name="gender"]').val('{{ $service->user->gender }}');
+                $('input[name="gender"]').val('{{ $service->user->gender }}');
             @endif
             @if ($service->user->primary_language)
+            // var 
                 $('select[name="primary_language"]').val('{{ $service->user->primary_language }}');
             @endif
             @if ($service->user->secondary_language)
