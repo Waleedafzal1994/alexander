@@ -234,7 +234,7 @@ $noFooter = true;
                                             <span style="font-weight:bold;">Seller Application</span>
                                         </a>
                                     @endif
-                                    <a class="dropdown-item" href="/profile/{{ Auth::id() }}">
+                                    <a class="dropdown-item" href="/user-profile/{{ Auth::id() }}#edit_user_profile/">
                                         My Profile
                                     </a>
                                     <a class="dropdown-item" href="/points">

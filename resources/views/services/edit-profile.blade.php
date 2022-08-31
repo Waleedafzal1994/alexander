@@ -282,7 +282,7 @@
                                         <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
                                         <div class="form-group">
                                             <label>Language</label>
-                                                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
+                                                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" name="primary_language[]" multiple>
                                                     <option value="English" selected>English</option>
                                                     <option value="Afrikaans">Afrikaans</option>
                                                     <option value="Albanian">Albanian</option>
@@ -1210,7 +1210,7 @@
                             </form>
                         </div>    
                     </div>
-                    <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
+                    <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-s-tab">
                         <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                 <span>Auto Reply</span>

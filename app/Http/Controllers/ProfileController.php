@@ -66,9 +66,9 @@ class ProfileController extends Controller
             'title' => 'nullable|string|min:2',
             //'country' => 'required|string|min:2',
             'description' => 'nullable|string|max:180',
-            'gender' => 'nullable',
+            'gender' => 'required',
             'birth_date' => 'nullable',
-            'primary_language' => 'nullable',
+            'primary_language' => 'required',
             'secondary_language' => 'nullable',
             'facebook_profile' => 'max:64|nullable',
             'twitch_profile' => 'nullable',
@@ -191,11 +191,13 @@ class ProfileController extends Controller
             'Xhosa'
         ];
 
-        if ($request->input('primary_language') && in_array($request->input('primary_language'), $languages)) {
-            $user->primary_language = $request->input('primary_language');
-        } else {
-            $user->primary_language = null;
-        }
+        // if ($request->input('primary_language') && in_array($request->input('primary_language'), $languages)) {
+        //     $user->primary_language = $request->input('primary_language');
+        // } else {
+        //     $user->primary_language = null;
+        // }
+
+        $user->primary_language = implode(',',$request->input('primary_language'));
         if ($request->input('secondary_language') && in_array($request->input('secondary_language'), $languages)) {
             $user->secondary_language = $request->input('secondary_language');
         } else {
