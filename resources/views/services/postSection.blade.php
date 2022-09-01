@@ -254,6 +254,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
+
     //show comment//
     $('.comment').off().on('click', function(e) {
         e.stopImmediatePropagation();
@@ -289,10 +290,14 @@ $(document).ready(function(){
                     let comment_HTML = response.data;
                     // $("#comment-box_" + post_id).prepend(comment_HTML);
 
-                    if($("#comment-box_" + post_id).first().length > 0){
-
-                        $(".comment-section_" + post_id).last().after(response.data);
+                    if(response.count == 1){
+                       
+                       $("#append_comment_" + post_id).append(comment_HTML);
                      
+                    }
+                    else if($("#comment-box_" + post_id).first().length > 0 ){
+                        
+                        $(".comment-section_" + post_id).last().after(response.data);
                     }
                     else{
                         $("#append_comment_" + post_id).append(comment_HTML);
