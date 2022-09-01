@@ -1743,13 +1743,20 @@ a.slider-link:hover {
 .btn-solid:hover{
     background-color: #8e26bb !important;
 }
+/* .more-comment{
+    background-color: var(--color-primary) !important;
+} */
+.more-comment:hover{
+    color: #8e26bb !important;
+}
 
 #categoryName{
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
 }
 #buyBtn{
-    width: 140px !important;
+    width: 160px !important;
+    padding: 0 24px;
     height: 48px;
     border-radius: 50px;
     font-size: 15px;
@@ -1962,6 +1969,32 @@ a.slider-link:hover {
     margin-top: 4px;
     margin-bottom: 4px;
 }
+/* For Users */
+.skew-bg-users{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 11px;
+    color: #FFF !important;
+    background: #581c87;
+    min-height: 40px;
+    background-image: linear-gradient(to right, #581c87, #8e5cb5);
+    border-radius: 10px;
+}
+/* .skew-bg-users::before{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -30px;
+    width: 80%;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
+    background-image: linear-gradient(to right, #581c87, #8e5cb5);
+} */
+/* End For Users */
 .skew-bg{
     position: relative;
     display: flex;
@@ -2111,7 +2144,8 @@ a.slider-link:hover {
     transition: all .3s ease-in-out;
 }
 .social_icons a:hover{
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    /* box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%); */
+    box-shadow: 1px -1px 2px 0px rgb(122 113 113 / 75%);
     background-color: var(--color-primary-hover);
 }
 /* .social_icons a img{
@@ -2900,6 +2934,10 @@ input:checked + .slider {
     width: 140px;
     margin: auto;
 }
+.post-btn-border{
+    border-radius: 20px !important;
+    margin-right: 0px;
+}
 
 .form-group .online{
     width: 12px;
@@ -3104,6 +3142,13 @@ button{
     display: flex;
     min-height: 32px;
     height: 110px;
+    border-color: #7041e6 !important;
+}
+.textArea-body:focus{
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2px rgb(112 65 230 / 20%) !important;
 }
 .textArea-body .textarea{
     width: 100%;
@@ -3122,7 +3167,7 @@ button{
     height: 60px;
     min-height: 60px;
     max-height: 200px;
-    resize: none;
+    /* resize: none; */
 }
 
 .textarea::-webkit-scrollbar {
@@ -3174,6 +3219,7 @@ background: #888;
     color: #000 !important;
     border-radius: 0 !important;
     border: none !important;
+    font-size: 14px !important;
   }
   .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button{
     background-image: url('../images/close.png') !important;
@@ -3196,6 +3242,9 @@ background: #888;
     outline: 0 !important;
     box-shadow: 0 0 0 2pxrgba(112,65,230,.2);
 } */
+.choices__list--dropdown .choices__item{
+    color: #000;
+}
 
 .border-input:focus{
     border-color: #966bf2 !important;
@@ -3203,4 +3252,20 @@ background: #888;
     outline: 0 !important;
     box-shadow: 0 0 0 2px rgb(112 65 230 / 20%) !important;
 }
-
+.save_btn_hover:hover{
+    border-color: #966bf2 !important;
+    border-right-width: 1px!important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 2px rgb(112 65 230 / 20%) !important;
+}
+.btn-actives{
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
+}
+.btn-follower{
+    background-color: #ededfb !important;
+    color: #000 !important;
+}
+.btn-follower:hover{
+    background-color: #c6c5d7 !important;
+    color: #000 !important;
+}

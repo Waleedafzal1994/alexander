@@ -62,9 +62,14 @@
 
                         <div class="nav-button-side mt-2 mx-3">
                             <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
-                                <div class="mt-4">
-                                    <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
-                                </div>
+                            @if(Request::segment(1) !='user-profile')
+                                    <div class="mt-4">
+                                        <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
+                                    </div>
+                                @else    
+                                <div class="mt-4"></div>
+                                @endif
+                                
                                 <div class="center-img">
                                     <div class="">
                                         <!-- <a href="#" class="pop"> -->
@@ -74,9 +79,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if(Request::segment(1) !='user-profile')
                                 <div class="mt-4">
                                     <a class="btn-cust" type="button">Chat</a>
                                 </div>
+                                @else    
+                                <div class="mt-4"></div>
+                                @endif
                             </div>
                         </div>
 
@@ -90,7 +99,7 @@
                                     <div class=" profile-section-two">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'N/A' }}
-                                            {{ !empty($service->user->secondary_language) ? ' 1/ '.$service->user->secondary_language : '' }}
+                                            {{ !empty($service->user->secondary_language) ? '1/'.$service->user->secondary_language : '' }}
                                         </div>
                                     </div>
                                     <div class="my-1 d-flex align-items-center justify-content-between">
@@ -121,7 +130,7 @@
                                         <span>1258 Served</span>
                                         <span class="number-row-card"><i class="fas fa-star"></i> 5.0 </span>
                                     </div>
-                                </div>pills-back-tab
+                                </div>
 
                                 <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between pb-5">
 
@@ -515,7 +524,7 @@
                                         Edit
                                     </a> -->
                                     <a class="nav-link btn-active" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
-                                        Settings
+                                    <i class="fa fa-cog mr-1" aria-hidden="true"></i>Settings
                                     </a>
                                 </li>
                                 {{-- @endif --}}

@@ -42,7 +42,7 @@
                     <div class="tab-pane fade show active" id="pills-edit-profile" role="tabpanel" aria-labelledby="pills-edit-profile-tab">
                         <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                                <span>Profile Information</span>
+                                <span>Profile</span>
                             </h1>
                             <div class="row mt-4 pl-3" style="padding:15px;">
                                 <div class="col-md-12 mb-5">
@@ -121,8 +121,13 @@
                                        @endif
                                         <div class="form-group">
                                             <label for="">Member Status</label>
-                                            <input type="text" name="title" class="form-control"
-                                            value="{{ $user_rank }}" disabled>
+                                            <!-- <input type="text" name="title" class="form-control"
+                                            value="{{ $user_rank }}" disabled> -->
+                                            @if($user_rank == 'user')
+                                            <div class="skew-bg-users">GamersPlay</div>
+                                            @else
+                                            <div class="skew-bg-users">GamersPlay+</div>
+                                            @endif
                                             <input type="hidden" name="title" value="{{ $user_rank }}">
                                         </div>
                                         {{-- Form Element --}}
@@ -170,7 +175,7 @@
                                                                     </li>
                                                                     <li role="presentation" class="" id="month_li_mar">
                                                                         <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">NON-BINARY</div>
+                                                                            <div class="" data-setMonth="Mar">Non-Binary</div>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
                                                                         </a>
                                                                     </li>
@@ -282,7 +287,7 @@
                                         <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
                                         <div class="form-group">
                                             <label>Language</label>
-                                                <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" name="primary_language[]" multiple>
+                                                <select id="choices-multiple-remove-button" placeholder="Select languages" name="primary_language[]" multiple>
                                                     <?php if(!empty($service->user->primary_language)): 
                                                         $pl = explode(',', $service->user->primary_language);
                                                     ?>
@@ -307,18 +312,17 @@
 
                                         <script>
                                             $(document).ready(function(){
-    
+                        
                                                 var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
                                                 removeItemButton: true,
                                                 placeholder: true,
                                                 resetScrollPosition: true,
-                                                // maxItemCount:5,
+                                                maxItemCount:2,
                                                 // searchResultLimit:5,
                                                 // renderChoiceLimit:5
-                                                }); 
-                                                
-                                                
+                                                });
                                             });
+    
                                         </script>
 
                                         <!-- <div class="form-group">
@@ -477,7 +481,7 @@
                                                 <option value="Xhosa">Xhosa</option>
                                             </select>
                                         </div> -->
-
+                                    </form>
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -490,9 +494,102 @@
                                         <label for="">Age</label>
                                         <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
                                     </div> -->
+                                    <input class="country_hidden" type="hidden" name="">
+                                    {{-- Form Element --}}
+                                    <div class="form-group">
+                                        <label for="">Country</label>
+                                        <div class="w-100 dob-dropdown">
+                                            <div class="form-group w-100 mb-0 mr-2">
+                                                <div class="newdropdown">
+                                                    <div class="dropdown w-100">
+                                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                            <div class="game-title drop_down_select_country"  id="drop_down_select_country">N/A</div>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
+                                                            <div class="scroll-div country">
+                                                                <li role="presentation">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="month_name">Afrikaans</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_feb">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="month_name">Albanian</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Armenian</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Arabic</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Basque</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Bosnian</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Bengali</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Bulgarian</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Catalan</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Cambodian</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Czech</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                                <li role="presentation" class="" id="month_li_mar">
+                                                                    <a role="menuitem" tabindex="-1">
+                                                                        <div class="" data-setMonth="Mar">Czech</div>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
+                                                                    </a>
+                                                                </li>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <input class="month_hidden" type="hidden" name="month">
                                     <input class="date_hidden" type="hidden" name="day">
-                                     <input class="year_hidden" type="hidden" name="year">
+                                    <input class="year_hidden" type="hidden" name="year">
                                     <div class="form-group">
                                         <label for="">Age</label>
                                         <div class="w-100 d-flex align-items-center justify-content-between dob-dropdown">
@@ -629,99 +726,7 @@
                                         </div>
                                     </div>
 
-                                    <input class="country_hidden" type="hidden" name="">
-                                    {{-- Form Element --}}
-                                    <div class="form-group">
-                                            <label for="">Country</label>
-                                            <div class="w-100 dob-dropdown">
-                                                <div class="form-group w-100 mb-0 mr-2">
-                                                    <div class="newdropdown">
-                                                        <div class="dropdown w-100">
-                                                            <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title drop_down_select_country"  id="drop_down_select_country">N/A</div>
-                                                            </a>
-
-                                                            <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                                <div class="scroll-div country">
-                                                                    <li role="presentation">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="month_name">Afrikaans</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_feb">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="month_name">Albanian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Armenian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Arabic</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Basque</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bosnian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bengali</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bulgarian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Catalan</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Cambodian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Czech</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Czech</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                </div>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
                                     <!-- <div class="form-group">
                                         <label for="">Country</label>
                                         <select name="country" class="form-control">
@@ -980,13 +985,13 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">About Me</label>
-                                        <div class="textArea-body">
+                                        <div class="textArea-body" id="focus_textarea">
                                             <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)"
                                                 rows="3">{{ $service->user->description }}</textarea>
                                                 <div class="text-counter">
                                                     <span id="charCount" class="counter">0</span>
                                                     <span class="fix-count">/500</span>
-                                            </div>
+                                                </div>
                                         </div>
                                         <script>
                                             function countCount(val) {
@@ -1032,20 +1037,20 @@
                                     <div class="d-flex justify-content-center">
                                         <ul class="nav nav-custom-nav">
                                             <li>
-                                                <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="edit_profile_btn" value="Save">
+                                                <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
                                             </li>
                                         </ul>
                                     </div>
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+                <!-- </div> -->
                     <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
                         <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
-                                <span>Account Information</span>
+                                <span>Account</span>
                             </h1>
                             <form action="" class="mt-4 pl-3">
                                 <p class="mb-4">Account Information</p>
@@ -1077,17 +1082,24 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <p>********</p>
                                             <div>
-                                                <button type="button" data-toggle="modal" data-target="#passwordChangeModal" class="btn-solid rounded-pill py-2 px-3 float-none">Change</button>
+                                                <button type="button" data-toggle="modal" data-target="#passwordChangeModal" class="btn-solid rounded-pill py-2 px-3 float-none btn-actives save_btn_hover">Change</button>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-                                <hr style="background-color: #c47aff;">
+                                <hr>
                                 <div class="delete-accnt pt-3 d-flex align-items-center">
                                     <p>Delete Account</p>
                                     <a type="button" data-toggle="modal" data-target="#deleteModal">Delete</a>
                                 </div>
                             </form>
+                            <div class="d-flex justify-content-center">
+                                <ul class="nav nav-custom-nav">
+                                    <li>
+                                        <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         
                     </div>
@@ -1113,8 +1125,8 @@
                                 <div class="form-group">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
-                                            <h6>ePal Recommendation:</h6>
-                                            <p class="mb-0">Receive ePals recommended by the platform.</p>
+                                            <h6>GamersPlay+ Recommendation:</h6>
+                                            <p class="mb-0">Receive GamersPlay+ recommended by the platform.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -1157,6 +1169,13 @@
                                     </div>
                                 </div>
                             </form>
+                            <div class="d-flex justify-content-center">
+                                <ul class="nav nav-custom-nav">
+                                    <li>
+                                        <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-privacy" role="tabpanel" aria-labelledby="pills-privacy-tab">
@@ -1214,6 +1233,13 @@
                                     </div>
                                 </div> -->
                             </form>
+                            <div class="d-flex justify-content-center">
+                                <ul class="nav nav-custom-nav">
+                                    <li>
+                                        <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>    
                     </div>
                     <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-s-tab">
@@ -1229,9 +1255,9 @@
                                         </h6>
                                         <p class="mb-0">No auto reply yet</p>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
-                                <hr>
+                                <!-- <hr> -->
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         <h6 class="mb-0 d-flex align-items-center">
@@ -1239,9 +1265,9 @@
                                         </h6>
                                         <p class="mb-0">No auto reply yet</p>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
-                                <hr>
+                                <!-- <hr> -->
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         <h6 class="mb-0 d-flex align-items-center">
@@ -1249,9 +1275,9 @@
                                         </h6>
                                         <p class="mb-0">No auto reply yet</p>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
-                                <hr>
+                                <!-- <hr> -->
                                 <div class="form-group d-flex align-items-center justify-content-between">
                                     <div>
                                         <h6 class="mb-0 d-flex align-items-center">
@@ -1259,10 +1285,17 @@
                                         </h6>
                                         <p class="mb-0">No auto reply yet</p>
                                     </div>
-                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2">Edit</button>
+                                    <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
-                                <hr>
+                                <!-- <hr> -->
                             </form>
+                            <div class="d-flex justify-content-center">
+                                <ul class="nav nav-custom-nav">
+                                    <li>
+                                        <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                      <!-- START: Block List -->
@@ -1317,11 +1350,21 @@
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
                 <h5 class="modal-title" id="deleteModalLabel">Delete Account</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            </div> -->
+            <div class="modal-close-btn" style="margin-bottom: -6px !important;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-header header-page login-header rounded-top">
+                <div class="header-img-modal-login-center custom-set">
+                    <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                </div>
             </div>
             <div class="modal-body">
                 <form action="/user/is_delete" method="POST">
@@ -1357,13 +1400,24 @@
 <div class="modal fade" id="passwordChangeModal" tabindex="-1" aria-labelledby="passwordChangeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content change-password">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
                 <h5 class="modal-title" id="passwordChangeModalLabel">Change Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            </div> -->
+            <div class="modal-close-btn" style="margin-bottom: -6px !important;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-header header-page login-header rounded-top">
+                <div class="header-img-modal-login-center custom-set">
+                    <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                </div>
             </div>
             <div class="modal-body">
+                <!-- <h5 class="modal-title" id="passwordChangeModalLabel">Change Password</h5> -->
                 <form>
                     <div class="row">
                         <div class="col-12">
@@ -1567,6 +1621,11 @@
             $(this).parent().find(".show-password").show();
         }
     });
+
+    // $('#field').click(function() { 
+    //     console.log("Hello")
+    //     document.getElementById('focus_textarea').focus();
+    // }); 
 
 
     // Age DropDowns
