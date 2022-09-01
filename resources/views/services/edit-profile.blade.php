@@ -66,9 +66,9 @@
                                                 </div>
                                                 <br>
                                                 <div style="margin:2px auto;">
-                                                    <button class="btn btn-success" id="saveBtn" type="submit"
+                                                    <button class="btn-success py-2 px-3 rounded" id="saveBtn" type="submit"
                                                         style="display:none;">Save</button>
-                                                    <a class="btn btn-danger"
+                                                    <a class="btn-danger py-2 px-3 rounded"
                                                         href="/profile/{{ $service->user->id }}/removeAvatar">Remove</a>
                                                 </div>
 
@@ -87,7 +87,7 @@
                                                 </div>
                                                 <br>
                                                 <div style="margin:2px auto;">
-                                                    <button class="btn btn-success" type="submit" id="saveBtn"
+                                                    <button class="btn-success py-2 px-3 rounded" type="submit" id="saveBtn"
                                                         style="display:none;">Save</button>
                                                 </div>
 
@@ -986,7 +986,7 @@
                                     <div class="form-group">
                                         <label for="">About Me</label>
                                         <div class="textArea-body" id="focus_textarea">
-                                            <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)"
+                                            <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)" oninput="auto_grow(this)"
                                                 rows="3">{{ $service->user->description }}</textarea>
                                                 <div class="text-counter">
                                                     <span id="charCount" class="counter">0</span>
@@ -1622,10 +1622,18 @@
         }
     });
 
-    // $('#field').click(function() { 
-    //     console.log("Hello")
-    //     document.getElementById('focus_textarea').focus();
-    // }); 
+    // Textarea
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
+    };
+
+    $('.textarea').focus(function() { 
+        $(this).parent().removeClass("inputFocus");
+        $(this).parent().addClass("inputFocus");
+    }).blur(function(){
+        $(this).parent().removeClass("inputFocus");
+    }); 
 
 
     // Age DropDowns

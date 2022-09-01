@@ -39,7 +39,7 @@
                                         </div>
                                         <br>
                                         <div style="margin:2px auto;">
-                                            <button class="btn btn-success" id="saveBtn" type="submit"
+                                            <button class="btn-success py-2 px-3 rounded" id="saveBtn" type="submit"
                                                 style="display:none;">Save</button>
                                             <a class="btn btn-danger"
                                                 href="/profile/{{ $user->id }}/removeAvatar">Remove</a>
@@ -60,7 +60,7 @@
                                         </div>
                                         <br>
                                         <div style="margin:2px auto;">
-                                            <button class="btn btn-success" type="submit" id="saveBtn"
+                                            <button class="btn-success py-2 px-3 rounded" type="submit" id="saveBtn"
                                                 style="display:none;">Save</button>
                                         </div>
 
@@ -567,7 +567,7 @@
                         </div> -->
                         <div class="col-md-12" style="text-align:center;">
                             <br>
-                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="submit" class="btn-success py-2 px-3 rounded">Save</button>
                             </form>
                         </div>
 

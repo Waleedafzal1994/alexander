@@ -204,7 +204,7 @@
                                                     <div class="position-relative">
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                         <div class="textArea-body">
-                                                            <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)"></textarea>
+                                                            <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
                                                             <div class="text-counter">
                                                                 <span id="wordsCounts" class="counter">0</span>
                                                                 <span class="fix-count">/500</span>
@@ -388,15 +388,28 @@ $(document).ready(function(){
 
 });
 
-function countCount(val) {
-        console.log(val,'Hello');
-        var len = val.value.length;
-        if (len >= 500) {
-            val.value = val.value.substring(0, 500);
-        } else {
-            $('#charCounts').text(500 - len);
-        }
+    // Textarea
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
     };
+
+    $('.textarea').focus(function() { 
+        $(this).parent().removeClass("inputFocus");
+        $(this).parent().addClass("inputFocus");
+    }).blur(function(){
+        $(this).parent().removeClass("inputFocus");
+    });
+
+// function countCount(val) {
+//         console.log(val,'Hello');
+//         var len = val.value.length;
+//         if (len >= 500) {
+//             val.value = val.value.substring(0, 500);
+//         } else {
+//             $('#charCounts').text(500 - len);
+//         }
+//     };
 
 
 $('.post-carousel').on('slide.bs.carousel', function (e) {
