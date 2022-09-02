@@ -2553,7 +2553,6 @@ form button {
   background: var(red);
   border-radius: 4px;
   display: flex;
-  padding: 12px 0;
   margin-top: 16px;
 }
 
@@ -2561,6 +2560,33 @@ form button {
   flex: 1 1;
   text-align: center;
   cursor: pointer;
+  padding: 12px 4px;
+  position: relative;
+}
+.profile-info-counters .social .activeFollowers::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 16px;
+  background: #c6c5d7;
+  margin-top: -8px;
+  z-index: 10;
+}
+.profile-info-counters .social .activeTimeline{
+  padding: 12px 0px;
+}
+.profile-info-counters .social .activeFollowers{
+  padding: 12px 0px;
+}
+.profile-info-counters .social .activeFollowers:hover{
+  background-color: #e2e1f3;
+  border-radius: 4px;
+}
+.profile-info-counters .social .activeTimeline:hover{
+  background-color: #e2e1f3;
+  border-radius: 4px;
 }
 
 .profile-info-counters .social .item .count {

@@ -64,7 +64,7 @@
                             <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
                             @if(Request::segment(1) !='user-profile')
                                     <div class="mt-4">
-                                        <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
+                                        <a class="btn-follower follow d-flex align-items-center justify-content-center" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
                                     </div>
                                 @else    
                                 <div class="mt-4"></div>
@@ -105,6 +105,7 @@
                                     <div class="my-1 d-flex align-items-center justify-content-between">
                                         <div class="profile-section-two gender">
                                             <div class="review-body text-center">
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
                                                 {{ $service->user->gender ?: 'N/A' }}
                                             </div>
                                         </div>
@@ -319,40 +320,49 @@
 <div class="card mt-4 mb-4 shadows">
     <div class="card">
         <div class="profile-info-counters">
-            <div class="social">
-                <div class="item activeTimeline" id="activeTimeline">
-                    <div class="count">{{$service->user->post_count}}</div>
-                    <div class="socialName">Posts</div>
-                </div>
-                <div class="item activeFollowers" id="activefollowers">
-                    <div class="count count-followers">{{ !empty($totalFollowers) ? $totalFollowers : '0' }} </div>
-                    <div class="socialName">Followers</div>
-                </div>
-                <div class="item activeFollowers" id="activefollowing">
-                    <div class="count count-following">{{ !empty($totalfollowing) ? $totalfollowing : '0' }} </div>
-                    <div class="socialName">Following</div>
-                </div>
-                <div class="item activeBadge">
-                    <div class="count">
-
-                        @if(!empty($service->user->general_badge))
-                        @php
-                        $g_badge = count(explode(',',$service->user->general_badge));
-                        @endphp
-                        @else
-                        @php
-                        $g_badge = 0;
-                        @endphp
-                        @endif
-
-
-                        @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
-                                    {{ 4 + $g_badge}}
-                                    @else
-                                    {{ 0 + $g_badge}}
-                                    @endif
+            <div class="social mt-0">
+                <div class="item" id="activeTimeline">
+                    <div class="activeTimeline">
+                        <div class="count">{{$service->user->post_count}}</div>
+                        <div class="socialName">Posts</div>
                     </div>
-                    <div class="socialName">Badge</div>
+                </div>
+                <div class="item" id="activefollowers">
+                    <div class="activeFollowers">
+                        <div class="count count-followers">{{ !empty($totalFollowers) ? $totalFollowers : '0' }} </div>
+                        <div class="socialName">Followers</div>
+                    </div>
+                    
+                </div>
+                <div class="item" id="activefollowing">
+                    <div class="activeFollowers">
+                        <div class="count count-following">{{ !empty($totalfollowing) ? $totalfollowing : '0' }} </div>
+                        <div class="socialName">Following</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="activeFollowers">
+                        <div class="count">
+
+                            @if(!empty($service->user->general_badge))
+                            @php
+                            $g_badge = count(explode(',',$service->user->general_badge));
+                            @endphp
+                            @else
+                            @php
+                            $g_badge = 0;
+                            @endphp
+                            @endif
+
+
+                            @if($totalOrders >= 50 && $totalOrders < 100) {{ 1 + $g_badge }} @elseif($totalOrders>= 100 && $totalOrders < 500) {{ 2 + $g_badge}} @elseif($totalOrders>= 500 && $totalOrders < 1000) {{ 3 + $g_badge}} @elseif($totalOrders>= 1000)
+                                        {{ 4 + $g_badge}}
+                                        @else
+                                        {{ 0 + $g_badge}}
+                                        @endif
+                        </div>
+                        <div class="socialName">Badge</div>
+                    </div>
                 </div>
             </div>
         </div>
