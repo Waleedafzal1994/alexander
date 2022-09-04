@@ -498,7 +498,7 @@
                                     {{-- Form Element --}}
                                     <div class="form-group">
                                         <label for="">Country</label>
-                                        <input type="text" name="country" value="PK" class="form-control border-input" disabled/>
+                                        <input type="text" name="country" value="{{ getCountryFullName($service->user->country) }}" class="form-control border-input" disabled/>
                                         <!-- <div class="w-100 dob-dropdown">
                                             <div class="form-group w-100 mb-0 mr-2">
                                                 <div class="newdropdown">

@@ -308,7 +308,7 @@ $noFooter = true;
                                         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
                                         @if(!empty($checkBlockedUser))
 
-                                            {{$checkBlockedUser}}
+                                            {{"checked"}}
                                             value="confirm_unblock"
                                         @else
                                             value="confirm_block"    

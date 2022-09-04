@@ -20,7 +20,9 @@
                     <div class="service_category main-category more-cards">
 
                         <div class="row">
-
+                            <div class="col-md-12">
+                                
+                            </div>
                             <div class="col-4 mb-4 pb-5 pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                 @if ($service->category->image_1 != null)
 

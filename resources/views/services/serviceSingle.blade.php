@@ -533,7 +533,7 @@
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
                                     </a> -->
-                                    <a class="nav-link btn-active" id="edit_user_profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="" aria-selected="false" href="#edit_user_profile">
+                                    <a class="nav-link btn-active" id="edit_user_profile-tab"  type="button" role="tab" aria-controls="" aria-selected="false" href="/user-profile/{{Auth::id()}}/#edit_user_profile">
                                     <i class="fa fa-cog mr-1" aria-hidden="true"></i>Settings
                                     </a>
                                 </li>
