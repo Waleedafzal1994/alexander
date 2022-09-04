@@ -300,9 +300,20 @@ $noFooter = true;
                         <ul class="dropdown-menu fade-up p-2">
                             <li>
                                 <div class="d-flex align-items-center justify-content-between p-2 rounded">
+
                                     <p class="mb-0">Block</p>
                                     <label class="switch m-0 mb-2">
-                                        <input type="checkbox" class="block-toggle" value="confirm_block">
+                                        <input type="checkbox" name="block" class="block-toggle" 
+                                        
+                                        <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
+                                        @if(!empty($checkBlockedUser))
+
+                                            {{$checkBlockedUser}}
+                                            value="confirm_unblock"
+                                        @else
+                                            value="confirm_block"    
+                                        @endif
+                                        >
                                         <span class="slider"></span>
                                     </label>
                                 </div>
@@ -344,7 +355,9 @@ $noFooter = true;
                     keyboard:false
                 });
 
+
                 $('.block-toggle').click(function(){
+                    // alert($('input[name=block]:checked').length > 0);
                     // alert($(this).val());
                     $(this).val() == "confirm_block" ? do_block() : do_unblock();
                 });

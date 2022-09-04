@@ -1,6 +1,7 @@
 <?php
 use App\Models\GenericModel;
 use App\Models\Follower;
+use App\Models\Block;
 use Illuminate\Support\Facades\Http;
 
 if (! function_exists('getName'))
@@ -24,6 +25,12 @@ function checkLoginFollows($user_id,$login_id)
 {
 	$checkFollow = Follower::where('user_id', $user_id)->where('follower_id', $login_id)->first();
 	return !empty($checkFollow) ? 'Following' : 'Follow';
+}
+
+function checkUserBloked($user_id)
+{
+  $check = Block::where('user_id', $user_id)->first();
+  return !empty($check) ? 'checked' : '';
 }
 
 function getUsercountry(){
