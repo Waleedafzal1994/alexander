@@ -184,13 +184,13 @@
 
                                     @if ($post->comments_count > 3)
                                     <li>
-                                        <a href="#" title="" class="showmore text-decoration-none" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
+                                        <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
                                         </a>
                                     </li>
                                     @endif
 
                                     <li class="show-less show-less-{{ $post->id }}">
-                                        <a href="#" title="" class="showmore underline" data-comment-load_page="0" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
+                                        <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="0" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
                                         </a>
                                     </li>
 
@@ -204,7 +204,7 @@
                                                     <div class="position-relative">
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                         <div class="textArea-body">
-                                                            <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="Write a Comment" onkeyup="wordCount(this)"></textarea>
+                                                            <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
                                                             <div class="text-counter">
                                                                 <span id="wordsCounts" class="counter">0</span>
                                                                 <span class="fix-count">/500</span>
@@ -221,7 +221,7 @@
                                                             };
                                                         </script>
                                                     </div>
-                                                    <input type="submit" class="nav-link btn-post btn-solid mt-2" name="" value="Post Comment">
+                                                    <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">
                                                 </form>
                                             </div>
                                             
@@ -388,15 +388,28 @@ $(document).ready(function(){
 
 });
 
-function countCount(val) {
-        console.log(val,'Hello');
-        var len = val.value.length;
-        if (len >= 500) {
-            val.value = val.value.substring(0, 500);
-        } else {
-            $('#charCounts').text(500 - len);
-        }
+    // Textarea
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
     };
+
+    $('.textarea').focus(function() { 
+        $(this).parent().removeClass("inputFocus");
+        $(this).parent().addClass("inputFocus");
+    }).blur(function(){
+        $(this).parent().removeClass("inputFocus");
+    });
+
+// function countCount(val) {
+//         console.log(val,'Hello');
+//         var len = val.value.length;
+//         if (len >= 500) {
+//             val.value = val.value.substring(0, 500);
+//         } else {
+//             $('#charCounts').text(500 - len);
+//         }
+//     };
 
 
 $('.post-carousel').on('slide.bs.carousel', function (e) {

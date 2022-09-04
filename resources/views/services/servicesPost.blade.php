@@ -15,12 +15,34 @@
                                     <input type="hidden" name="service_id" value="{{ $service->id }}">
                                     <input type="hidden" name="url" value="">
                                     <div class="new-postbox">
-                                        <figure>
-                                            <img src="/temp-services/images/admin.jpg" alt="">
-                                        </figure>
-                                        <div class="newpst-input">
-                                            <textarea rows="5" name="content" id="post-content" placeholder="Share some what you are thinking?"></textarea>
+                                        <div class="d-flex">
+                                            <figure class="mr-2">
+                                                <img src="/temp-services/images/admin.jpg" alt="">
+                                            </figure>
+                                            <!-- <div class="newpst-input">
+                                                <textarea rows="5" name="content" id="post-content" placeholder="Share some what you are thinking?"></textarea>
+                                            </div> -->
+                                            <div class="textArea-body">
+                                                <textarea type="text" name="content" id="post-content" placeholder="Share some what you are thinking?" 
+                                                class="textarea" onkeyup="postCount(this)" oninput="auto_grow(this)"
+                                                    rows="3"></textarea>
+                                                    <div class="text-counter">
+                                                        <span id="charCount" class="counter">0</span>
+                                                        <span class="fix-count">/500</span>
+                                                    </div>
+                                            </div>
                                         </div>
+                                        
+                                        <script>
+                                            function postCount(val) {
+                                                var len = val.value.length;
+                                                if (len >= 500) {
+                                                    val.value = val.value.substring(0, 500);
+                                                } else {
+                                                    $('#charCount').text(500 - len);
+                                                };
+                                            };
+                                        </script>
                                         <div class="row" id="videoObject"></div>
                                         <div class="row">
                                             <div id="image-holder"></div>
@@ -72,3 +94,17 @@
 
 
 
+<script>
+    // Textarea
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (element.scrollHeight)+"px";
+    };
+
+    $('.textarea').focus(function() { 
+        $(this).parent().removeClass("inputFocus");
+        $(this).parent().addClass("inputFocus");
+    }).blur(function(){
+        $(this).parent().removeClass("inputFocus");
+    });
+</script>

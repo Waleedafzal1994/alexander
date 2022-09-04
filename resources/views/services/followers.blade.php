@@ -24,7 +24,7 @@
                                         @foreach ($followersList as $row)
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
-                                                <img src="{{$row->profile_picture}}" class="rounded-circle" width="80" alt="">
+                                                <img src="{{$row->profile_picture}}" class="rounded-circle w-100px" alt="">
                                                 <p class="text-black">{{$row->name}}</p>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
@@ -35,8 +35,8 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill font-weight-bold btn-solid text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
-                                                <button class="new-btn rounded-pill font-weight-bold btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    
@@ -59,8 +59,8 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill font-weight-bold btn-solid text-white px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
-                                                <button class="new-btn rounded-pill font-weight-bold btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    
