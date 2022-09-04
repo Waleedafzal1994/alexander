@@ -603,7 +603,7 @@
 
                                                         <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
                                                             <div class="scroll-div month">
-                                                                <li role="presentation" class="active" id="month_li_jan" data-month="Jan">
+                                                                <li role="presentation"  id="month_li_jan" data-month="Jan">
                                                                     <a role="menuitem" tabindex="-1">
                                                                         <div class="month_name">Jan</div>
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
@@ -1797,20 +1797,7 @@
                         
                         return false;
                     } 
-                    // console.log(response);
-                    // if (response[0].result == 1) 
-                    // {
-                    //     window.location.reload();
-                    // }
-                    // else if (response[0].result == 0) 
-                    // {
-                    //     $('.complete-error p').text(response[0].message);
-                    //     $('.complete-error').show();
-                    // }
-                    // else
-                    // {
-                    //     $.notify(response[0].message, 'error');
-                    // }
+                   
 
                 },
                 error: (response) => {
