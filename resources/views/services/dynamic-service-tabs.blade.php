@@ -1,5 +1,15 @@
 <div class="card-body bg-white shadows rounded py-5 pl-0">
     <div class="service-main-body-content">
+
+        <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
+
+        @if(!empty($checkBlockedUser))
+
+            <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
+            <div class="col-md-12">
+                <p>This user is blocked by <a href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+            </div>  
+        @endif
         <div class="d-flex align-items-center justify-content-between flex-wrap">
             <div class="font-weight-600 margin-bottom-1rem d-flex align-items-center">
                 <h1 id="categoryName" class="skew-bg py-4 mr-5">

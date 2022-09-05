@@ -13,6 +13,9 @@
 .w-90px{
     width: 90px;
 }
+.w-100px{
+    width: 100px;
+}
 .bg-content-clr{
     background-color: #f6f6ff !important;
 }
@@ -57,7 +60,7 @@ a:hover{
 
 .service_category {
     margin-left: 15px;
-    padding: 15px 0;
+    padding: 30px 0;
     user-select: none;
 }
 
@@ -102,6 +105,19 @@ a:hover{
     margin-left: 0px !important;
 }
 
+.img-two-btns-row .follow{
+    width: 110px !important;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+    color: #000 !important;
+}
+.img-two-btns-row .follow:hover{
+    background-color: #c6c5d7 !important;
+    color: #000 !important;
+}
 .gift-image {
     position: absolute;
     right: -50px;
@@ -1627,7 +1643,7 @@ a.slider-link:hover {
 .main-category {
     margin-left: 0;
     padding-bottom: 0;
-    margin-bottom: 16px;
+    margin-bottom: 29px;
 }
 
 .main-category ul li {
@@ -1958,6 +1974,14 @@ a.slider-link:hover {
 .profile-section-two .review-body{
     min-width: 80px;
     padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-section-two .review-body img{
+    border-radius: 20px;
+    margin-right: 4px;
+    width: 16px;
 }
 .nav-custom-nav .nav-item .nav-link.active{
     background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
@@ -3175,6 +3199,9 @@ button{
 }
 .textarea:focus{
     background-color: transparent;
+}
+.textarea::placeholder{
+    color: #949aa0;
 }
 .inputFocus{
     border-color: #966bf2 !important;
