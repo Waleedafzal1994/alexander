@@ -316,6 +316,7 @@ class ProfileController extends Controller
     //By umar
     public function user_timeline($id)
     {
+        // dd("1");
         $id = intVal($id);
         
         $user = User::with('services.category','getPosts')->where('id', $id)->first();

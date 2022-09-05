@@ -43,7 +43,7 @@
                 </div>
             </div>
             @else
-            <div></div>
+            <div style="height:100px"></div>
             @endif
         </div>
 
