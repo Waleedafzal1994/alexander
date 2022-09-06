@@ -1476,14 +1476,6 @@ p {
   vertical-align: sub;
 }
 
-.heart::before {
-  content: "❤";
-  /* content: "â¤"; */
-  position: absolute;
-  color: rgb(161, 43, 43);
-  opacity: 0;
-}
-
 .heart {
   height: 20px;
   transform: translateZ(0);
@@ -1494,7 +1486,14 @@ p {
   transition: all 0.3s ease;
 }
 
-.heart:hover i {
+.heart::before {
+  content: "❤";
+  position: absolute;
+  color: rgb(161, 43, 43);
+  opacity: 0;
+}
+
+/* .heart:hover i {
   color: red !important;
 }
 
@@ -1504,15 +1503,16 @@ p {
 
 .active-heart:hover i {
   color: #b3b1c5 !important;
-}
+} */
 
 .we-video-info ul li .heart>span {
   color: inherit;
   font-size: 11px;
-  left: 20px;
+  left: 36px;
   position: absolute;
-  top: -10px;
+  top: 5px;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .gallery-like-heart {
@@ -1532,8 +1532,9 @@ p {
 }
 
 .gallery-reaction {
-  bottom: 2px;
+  bottom: -18px;
   left: -10px;
+  right: 0;
   position: absolute;
 }
 
@@ -2900,3 +2901,35 @@ form button {
 }
 
 /* custom css : Amit Singh */
+
+
+.HeartAnimation {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/web_heart_animation.png');
+	background-repeat: no-repeat;
+	background-size: 2900%;
+  background-position: left;
+	height: 50px;
+	width: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.heart .HeartAnimation{
+  margin: -14px;
+  margin-left: -17px;
+}
+.gallery-reaction .HeartAnimation{
+  margin: -7px -12px;
+}
+.animate {
+  animation: heart-burst .8s steps(28) forwards;
+}
+
+@keyframes heart-burst {
+	0% {
+		background-position: left
+	}
+	100% {
+		background-position: right
+	}
+}

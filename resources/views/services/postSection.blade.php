@@ -149,8 +149,9 @@
                                                 </span>
                                             </li> --}}
                                         <li>
-                                            <div class="likes heart post-reaction {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
-                                                <i class="fas fa-heart"></i>
+                                            <div class="likes heart post-reaction HeartAnimation {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
+                                                <!-- <i class="fas fa-heart"></i> -->
+                                                <!-- <div class="HeartAnimation"></div> -->
                                                 <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
                                             </div>
                                         </li>
@@ -161,10 +162,9 @@
                                             </span>
                                         </li>
 
-                                        {{-- <li><span><a class="share-pst"
-                                                                                href="#" title="Share"><i
-                                                                                    class="fa fa-share-alt"></i></a><ins>20</ins></span>
-                                                                            </li> --}}
+                                        {{-- <li><span><a class="share-pst" href="#" title="Share">
+                                                <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
+                                            </li> --}}
                                     </ul>
                                     <div class="users-thumb-list" id="people-liked-post-{{ $post->id }}">
                                         {!! $post->postLikedUserNames() !!}
@@ -253,8 +253,11 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"> </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
+    
 $(document).ready(function(){
-
+    $(".HeartAnimation").click(function() {
+        $(this).toggleClass("animate");
+    });
     //show comment//
     $('.comment').off().on('click', function(e) {
         e.stopImmediatePropagation();
@@ -435,6 +438,7 @@ $('.post-carousel').on('slide.bs.carousel', function (e) {
     }
 
 })
+
 </script>
 
 

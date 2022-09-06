@@ -1972,8 +1972,8 @@ a.slider-link:hover {
     color: grey;
 }
 .profile-section-two .review-body{
-    min-width: 80px;
-    padding: 5px 0;
+    min-width: 90px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3308,7 +3308,12 @@ background: #888;
 .btn-follower:hover{
     background-color: #c6c5d7 !important;
     color: #000 !important;
+    /* font-size: 0; */
 }
+/* .btn-follower:hover::before{
+    content: attr(data-hover);
+    font-size: 16px;
+} */
 .block-person:hover{
     color: #8e26bb !important;
 }
