@@ -1411,14 +1411,16 @@
                     <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
                 </div>
             </div>
+            <form method="POST" id="change_password" action="/profile/{{ $service->user->id }}/edit">
             <div class="modal-body">
                 <!-- <h5 class="modal-title" id="passwordChangeModalLabel">Change Password</h5> -->
-                <form>
+                
+                    @csrf
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group position-relative mb-3 pb-1">
                                 <label>Old Password*</label>
-                                <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
+                                <input id="password-reg" class="border-input" type="password" name="current_password" maxlength="15" placeholder="Please enter your current password" required autocomplete="new-password">
                                 <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
                                     <span class="hide-password">Hide</span>
@@ -1433,7 +1435,7 @@
                         <div class="col-12">
                             <div class="form-group position-relative">
                                 <label>New Password*</label>
-                                <input id="password-confirm-reg" class="border-input" type="password" name="password_confirmation" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
+                                <input id="password-confirm-reg" class="border-input" type="password" name="new_password" maxlength="15" placeholder="Please enter your password" required autocomplete="new-cnf-password">
 
                                 <span class="password-showhide-change">
                                     <span class="show-password">Show</span>
@@ -1442,14 +1444,16 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                
             </div>
             <div class="modal-footer model-footer-bg">
                 <div class="text-end delete-accnt">
                     <a href="" class="mr-3" data-dismiss="modal" aria-label="Close">Cancel</a>
-                    <button type="submit" class="btn-danger rounded-pill text-white px-3 py-1" >Change</button>
+                    <button type="submit" class="btn-danger rounded-pill text-white px-3 py-1 update-submit" >Change</button>
                 </div>
             </div>
+
+            </form>
         </div>
     </div>
 </div>
@@ -1544,9 +1548,12 @@
                     alertify.success('Profile Image Update Successfully.');
                 },
                 error: function(response) {
-                    console.log("error1", response);
+
+                    // console.log("error1", response);
                     if (response.status === 422) {
                         let errors = response.responseJSON.errors;
+                        console.log(errors);
+                        alertify.error(errors.profile_picture[0]);
                         Object.keys(errors).forEach(function(key) {
                             $("#" + key + "-uploaderror").addClass(
                                 "is-invalid d-block");
@@ -1812,4 +1819,44 @@
             $('#charCounting').text(len);
         };
     };
+
+    //by umar
+    $('#change_password').submit(function(e) {
+        //alert();
+            e.preventDefault();
+
+            
+            let formData = $(this).serializeArray();
+            $.ajax({
+                type: "POST",
+                url: "/profile/{{ $service->user->id }}/updateUserPass",
+                headers: {
+                    Accept: "application/json"
+                },
+                dataType:"JSON",
+                data: formData,
+                beforeSend: function() {
+                    
+                    $('#update-submit').text('Processing');
+                },
+                complete: function() {
+                    $('#update-submit').text('Change');
+                },
+                success: (response) => {
+                    if (response.success==true) 
+                    {
+                        alertify.success(response.message);
+                        //$('#passwordChangeModal').modal('toggle');
+                    }
+                    else
+                    {
+                        alertify.error(response.message);
+                    }
+                },
+                error: (response) => {
+                    // alert();
+                }
+            })
+        });
+
 </script>

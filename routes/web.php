@@ -135,6 +135,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/support/ticket/{id}/close', [TicketController::class, 'ticketClose']);
     Route::post('/dispute/{id}/addReply', [PurchaseController::class, 'disputeReply'])->name('disputeReply');
 
+    Route::post('/profile/{id}/updateUserPass', [ProfileController::class, 'changePassword']);
+
     //post routes
     Route::post('/post/like', [PostController::class, 'likePost'])->name('likePost');
     Route::post('/gallery/like', [PostController::class, 'likePost'])->name('gallerylikePost');
