@@ -68,9 +68,7 @@ function checkAge($bd)
 }
 
 function getCountryFullName($abbr){
-  
-  $country = array(
-     
+    $country = array(  
      'AF' => 'Afghanistan' ,
      'AX' => 'Aland Islands' ,
      'AL' => 'Albania' ,
@@ -317,10 +315,13 @@ function getCountryFullName($abbr){
      'YE' => 'Yemen' ,
      'ZM' => 'Zambia' ,
      'ZW' => 'Zimbabwe' );
+     if (array_key_exists($abbr,$country)){
+	    return $country[$abbr];
+    }else{
+	    return false;
+    }
 
-    return $country[$abbr];
-
-}
+  }
 
 
 

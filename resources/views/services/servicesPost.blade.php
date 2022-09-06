@@ -39,7 +39,7 @@
                                                 if (len >= 500) {
                                                     val.value = val.value.substring(0, 500);
                                                 } else {
-                                                    $('#charCount').text(500 - len);
+                                                    $('#charCount').text(len);
                                                 };
                                             };
                                         </script>

@@ -216,7 +216,7 @@
                                                                 if (len >= 500) {
                                                                     val.value = val.value.substring(0, 500);
                                                                 } else {
-                                                                    $('#wordsCounts').text(500 - len);
+                                                                    $('#wordsCounts').text(len);
                                                                 };
                                                             };
                                                         </script>

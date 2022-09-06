@@ -495,10 +495,14 @@
                                         <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
                                     </div> -->
                                     <input class="country_hidden" type="hidden" name="">
-                                    {{-- Form Element --}}
+                                    <!-- {{-- Form Element --}} -->
                                     <div class="form-group">
                                         <label for="">Country</label>
+                                        @if(!empty($service->user->country))
                                         <input type="text" name="country" value="{{ getCountryFullName($service->user->country) }}" class="form-control border-input" disabled/>
+                                        @else
+                                        <input type="text" name="country" value="N/A" class="form-control border-input" disabled/>
+                                        @endif        
                                         <!-- <div class="w-100 dob-dropdown">
                                             <div class="form-group w-100 mb-0 mr-2">
                                                 <div class="newdropdown">
@@ -990,20 +994,10 @@
                                             <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)" oninput="auto_grow(this)"
                                                 rows="3">{{ $service->user->description }}</textarea>
                                                 <div class="text-counter">
-                                                    <span id="charCount" class="counter">0</span>
+                                                    <span id="charCounting" class="counter">0</span>
                                                     <span class="fix-count">/500</span>
                                                 </div>
                                         </div>
-                                        <script>
-                                            function countCount(val) {
-                                                var len = val.value.length;
-                                                if (len >= 500) {
-                                                    val.value = val.value.substring(0, 500);
-                                                } else {
-                                                    $('#charCount').text(500 - len);
-                                                };
-                                            };
-                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -1471,8 +1465,9 @@
    $(document).ready(function() {
     // field
     const length_textarea = document.getElementById("field").value.length;
-    // console.log(a.length,'Value')
-    $('#charCount').text(500 - length_textarea);
+
+    console.log(length_textarea,'Value')
+    $('#charCounting').text(length_textarea);
     });
     var profilePicChanged = false;
         $(document).ready(function() {
@@ -1807,4 +1802,14 @@
         });
  
     });
+
+    function countCount(val) {
+        console.log("Hello");
+        var len = val.value.length;
+        if (len >= 500) {
+            val.value = val.value.substring(0, 500);
+        } else {
+            $('#charCounting').text(len);
+        };
+    };
 </script>

@@ -105,8 +105,18 @@
                                     <div class="my-1 d-flex align-items-center justify-content-between">
                                         <div class="profile-section-two gender">
                                             <div class="review-body text-center">
+                                                @if($service->user->gender == 'Male')
                                                 <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
                                                 {{ $service->user->gender ?: 'N/A' }}
+                                                @elseif($service->user->gender == 'Female')
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                {{ $service->user->gender ?: 'N/A' }}
+                                                @elseif($service->user->gender == 'Non-Binary')
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                {{ $service->user->gender ?: 'N/A' }}
+                                                @else
+                                                N/A
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="profile-section-two w-100 mx-2">

@@ -7,7 +7,7 @@
 
             <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
             <div class="col-md-12">
-                <p>This user is blocked by <a href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+                <p>This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
             </div>  
         @endif
         <div class="d-flex align-items-center justify-content-between flex-wrap">
@@ -42,7 +42,7 @@
         </div>
         <div class="row mt-5 pl-20">
             <div class="col-sm-12 col-md-7 mt-1 text-justify margin-bottom-1rem">
-                <p class="text-black">{{$service->category->description}}</p>
+                <p class="text-black">{{$service->category->description ?: 'N/A'}}</p>
             </div>
             @if (!empty($service->category) && isset($service->category->image_1) && !empty($service->category->image_1))
             <div class="col-12 col-md-5 text-right mb-5">

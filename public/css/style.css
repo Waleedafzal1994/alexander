@@ -3309,3 +3309,10 @@ background: #888;
     background-color: #c6c5d7 !important;
     color: #000 !important;
 }
+.block-person:hover{
+    color: #8e26bb !important;
+}
+
+/* .hover-text-change::after{
+    content: "Unfollow"
+} */

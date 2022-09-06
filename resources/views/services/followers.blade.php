@@ -35,8 +35,8 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
-                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}} hover-text-change" onclick="loginFollow('<?= $row->id;?>')"><span id="follow-check">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</span><span id="unfollow-span" style="display: none;">Unfollow</span></button>
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chatsss</button>
                                             </div>
                                         </div>
                                         @endforeach    
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center hover-text-change loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')"><span>{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</span></button>
                                                 <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
@@ -105,4 +105,22 @@
                 }
             });
         }
+        // $("#follow-check").hover(function(){
+        //     var follow_check = document.getElementById("follow-check").innerHTML;
+        //     if(follow_check == 'Following'){
+        //         // document.getElementById("follow-check").innerHTML = "Unfollow";
+        //         // unfollow-span
+        //         $("#follow-check").css("display", "none");
+        //         $("#unfollow-span").css("display", "");
+        //     }else if(follow_check == 'Unfollow'){
+        //         // document.getElementById("follow-check").innerHTML = "Follow";
+        //         $("#follow-check").css("display", "");
+        //         $("#unfollow-span").css("display", "none");
+        //     }else{
+        //         $("#unfollow-span").css("display", "none");
+        //     }
+        //     }, function(){
+        //     console.log("Follow out")
+        //         // $(this).css("background-color", "pink");
+        // });  
 </script>
