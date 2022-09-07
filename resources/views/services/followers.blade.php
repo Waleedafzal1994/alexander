@@ -35,8 +35,9 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}} hover-text-change" onclick="loginFollow('<?= $row->id;?>')"><span id="follow-check">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</span><span id="unfollow-span" style="display: none;">Unfollow</span></button>
-                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chatsss</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center loginUserFollows-{{$row->id}} hover-text-change" onclick="loginFollow('<?= $row->id;?>')" id="follow-check">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <input type="hidden" id="check-follow-toggle" value= "{{$checkFlow}}">
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    
@@ -59,8 +60,9 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex">
-                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center hover-text-change loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')"><span>{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</span></button>
-                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
+                                                <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center hover-text-change loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')" id="follow-checks">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
+                                                <input type="hidden" id="check-follow-toggles" value= "{{$checkFlow}}">
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat22</button>
                                             </div>
                                         </div>
                                         @endforeach    
@@ -93,8 +95,11 @@
                     'following_id':user_id
                 },
                 success: function(response) {
+                    console.log(response,'Click Response');
                     if (response.status === '1') {
                         $('.loginUserFollows-'+user_id).html(response.msg);
+                        document.getElementById("check-follow-toggle").value = response.msg;
+                        document.getElementById("check-follow-toggles").value = response.msg;
                     }
                     if (response.error === '1') {
                         Swal.fire(response.msg);
@@ -105,22 +110,36 @@
                 }
             });
         }
-        // $("#follow-check").hover(function(){
-        //     var follow_check = document.getElementById("follow-check").innerHTML;
-        //     if(follow_check == 'Following'){
-        //         // document.getElementById("follow-check").innerHTML = "Unfollow";
-        //         // unfollow-span
-        //         $("#follow-check").css("display", "none");
-        //         $("#unfollow-span").css("display", "");
-        //     }else if(follow_check == 'Unfollow'){
-        //         // document.getElementById("follow-check").innerHTML = "Follow";
-        //         $("#follow-check").css("display", "");
-        //         $("#unfollow-span").css("display", "none");
-        //     }else{
-        //         $("#unfollow-span").css("display", "none");
-        //     }
-        //     }, function(){
-        //     console.log("Follow out")
-        //         // $(this).css("background-color", "pink");
-        // });  
+        $("#follow-check").hover(function(){
+            console.log("H111");
+            var follow_check = document.getElementById("follow-check").innerHTML;
+            if(follow_check == 'Following'){
+                document.getElementById("follow-check").innerHTML = "Unfollow";
+            }else{
+                document.getElementById("follow-check").innerHTML = "Follow";
+            }
+            }, function(){
+                let follow_status = document.getElementById("check-follow-toggle").value;
+                if(follow_status == 'Following'){
+                    document.getElementById("follow-check").innerHTML = "Following";
+                }else{
+                    document.getElementById("follow-check").innerHTML = "Follow";
+                }
+        });
+        $("#follow-checks").hover(function(){
+            console.log("H111");
+            var follow_check = document.getElementById("follow-checks").innerHTML;
+            if(follow_check == 'Following'){
+                document.getElementById("follow-checks").innerHTML = "Unfollow";
+            }else{
+                document.getElementById("follow-checks").innerHTML = "Follow";
+            }
+            }, function(){
+                let follow_status = document.getElementById("check-follow-toggles").value;
+                if(follow_status == 'Following'){
+                    document.getElementById("follow-checks").innerHTML = "Following";
+                }else{
+                    document.getElementById("follow-checks").innerHTML = "Follow";
+                }
+        });  
 </script>
