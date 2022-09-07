@@ -7,7 +7,7 @@
 
             <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
             <div class="col-md-12">
-                <p>This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+                <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
             </div>  
         @endif
         <div class="d-flex align-items-center justify-content-between flex-wrap">
