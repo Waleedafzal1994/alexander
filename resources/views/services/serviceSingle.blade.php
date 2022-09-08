@@ -538,7 +538,7 @@
                                         Badges
                                     </a>
                                 </li>
-                                {{-- @if(!empty(Auth::id()) && (Auth::id() == $service->user->id)) --}}
+                                 @if(!empty(Auth::id()) && (Auth::id() == $service->user->id)) 
                                 <li class="nav-item ml-auto" role="presentation">
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
@@ -547,7 +547,7 @@
                                     <i class="fa fa-cog mr-1" aria-hidden="true"></i>Settings
                                     </a>
                                 </li>
-                                {{-- @endif --}}
+                                @endif 
                             </ul>
                         </div>
                         <!-- END: Service main Menu -->

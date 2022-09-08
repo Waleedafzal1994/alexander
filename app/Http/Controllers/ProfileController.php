@@ -280,22 +280,31 @@ class ProfileController extends Controller
 
         $rules = [
             'current_password' => 'required',
-            'new_password'=>['required', 'string', 'min:8',    'regex:/[a-z]/',      // must contain at least one lowercase letter
+            'new_password'=>['required', 'string', 'min:6',    'regex:/[a-z]/',      // must contain at least one lowercase letter
             'regex:/[A-Z]/',      // must contain at least one uppercase letter
             'regex:/[0-9]/',      // must contain at least one digit
             'regex:/[@$!%*#?&]/', // must contain a special character
-                 'max:255'],
+                 'max:15'],
         ];
 
         $messages = [
             'current_password.required' => 'Please enter your current password',
             'new_password.required' => 'Please enter a new password',
+            'new_password.min' => 'Password must be at least 6 characters. ',
+            'new_password.max' => 'Password must be at least 15 characters. ',
+            'new_password.regex' => 'Password must contain at least one Uppercase, Number, & Special character.'
             //'new-password-confirmation.not_in' => 'Sorry, common passwords are not allowed. Please try a different new password.'
         ];
 
-        $valid = $this->validate($request, $rules, $messages);
+        // $validator = $this->validate($request, $rules, $messages);
 
+        $validator = Validator::make($request->all(), $rules,$messages);
 
+        if ($validator->fails()) {
+
+            echo $validator->errors();
+            die();
+        } 
         
         //$validator = $this->validatePasswords($requestData);
         //print_r($valid);
@@ -324,7 +333,7 @@ class ProfileController extends Controller
             {
                 return Response()->json([
                 "success" => false,
-                    "message" => 'Password not match.Enter correct password'
+                    "message" => 'Old Password not match.Enter correct password'
                 ]);
             }
         //}

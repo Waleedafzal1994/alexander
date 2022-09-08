@@ -99,7 +99,7 @@
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <form method="POST" id="ajax_edit_profile" action="/profile/{{ $service->user->id }}/edit">
+                                    <form method="POST" id="ajax_edit_profile" onsubmit="abc()" action="/profile/{{ $service->user->id }}/edit">
                                         @csrf
                                         @if (session('error'))
                                             <div class="alert alert-danger">
@@ -1287,7 +1287,9 @@
                             <div class="d-flex justify-content-center">
                                 <ul class="nav nav-custom-nav">
                                     <li>
-                                        <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button>
+                                        <!-- <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button> -->
+
+                                        <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="edit_profile_btn" value="Save">
                                     </li>
                                 </ul>
                             </div>
@@ -1457,6 +1459,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+     function abc(){
+        alert()
+    }
+</script>
 <!-- This commented -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1467,6 +1474,10 @@
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>
    $(document).ready(function() {
+
+    function abc(){
+        alert()
+    }
     // field
     const length_textarea = document.getElementById("field").value.length;
 
@@ -1739,7 +1750,7 @@
         });
 
        $('#ajax_edit_profile').submit(function(e) {
-        // alert();
+        alert();
             e.preventDefault();
 
             // var month = $('.month_hidden').val();
@@ -1822,9 +1833,7 @@
 
     //by umar
     $('#change_password').submit(function(e) {
-        //alert();
             e.preventDefault();
-
             
             let formData = $(this).serializeArray();
             $.ajax({
@@ -1843,14 +1852,32 @@
                     $('#update-submit').text('Change');
                 },
                 success: (response) => {
+                 
                     if (response.success==true) 
                     {
                         alertify.success(response.message);
                         //$('#passwordChangeModal').modal('toggle');
                     }
+                    else if(response.success==false){
+
+                        alertify.error(response.message);
+                    }
                     else
                     {
-                        alertify.error(response.message);
+                        if(typeof response =='object'){
+                            $.each(response,function(index,value){
+                                
+                                // console.log(value);
+                                alertify.error(value[0]);
+                             });
+                        }
+                        else{
+
+                            alertify.error('Try again later');
+                        }
+                        
+                        
+                        return false;
                     }
                 },
                 error: (response) => {
