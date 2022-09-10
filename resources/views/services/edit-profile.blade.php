@@ -94,10 +94,7 @@
                                             </div>
                                         @endif
                                     </form>
-
-
                                 </div>
-
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <form method="POST" id="ajax_edit_profile" onsubmit="abc()" action="/profile/{{ $service->user->id }}/edit">
                                         @csrf
@@ -131,23 +128,6 @@
                                             <input type="hidden" name="title" value="{{ $user_rank }}">
                                         </div>
                                         {{-- Form Element --}}
-                                        <!-- <div class="form-group">
-                                            <label for="">Gender</label>
-                                            <select name="gender" class="form-control" required>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Other">Non-Binary</option>
-                                            </select>
-                                        </div> -->
-                                        <!-- <div class="form-group">
-                                            <label for="">Gender</label>
-                                            <select name="gender" id="gender" class="form-control" required="">
-                                                <option value="" selected="" disabled="">Please select you gender</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="NON-BINARY">NON-BINARY</option>
-                                            </select>
-                                        </div> -->
                                         <input class="gender_hidden" type="hidden" name="gender">
                                         <div class="form-group">
                                             <label for="">Gender</label>
@@ -186,104 +166,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <input type="hidden" class="language_hidden" name="primary_language">
-                                        <div class="form-group">
-                                            <label for="">Language</label>
-                                            <div class="w-100 dob-dropdown">
-                                                <div class="form-group w-100 mb-0 mr-2">
-                                                    <div class="newdropdown">
-                                                        <div class="dropdown w-100">
-                                                            <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                                <div class="game-title drop_down_select_language" id="drop_down_select_language">English</div>
-                                                            </a>
 
-                                                            <ul class="dropdown-menu dropdown_month" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                                <div class="scroll-div language">
-                                                                    <li role="presentation" class="active" value="english" data-month="Jan">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="month_name">English</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" value="afrikaans" data-month="Jan">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="month_name">Afrikaans</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_feb">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="month_name">Albanian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Armenian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Arabic</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Basque</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bosnian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bengali</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Bulgarian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Catalan</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Cambodian</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Czech</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li role="presentation" class="" id="month_li_mar">
-                                                                        <a role="menuitem" tabindex="-1">
-                                                                            <div class="" data-setMonth="Mar">Czech</div>
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                        </a>
-                                                                    </li>
-                                                                </div>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                         <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
                                         <div class="form-group">
                                             <label>Language</label>
@@ -325,163 +208,7 @@
     
                                         </script>
 
-                                        <!-- <div class="form-group">
-                                            <label for="">Primary & Secondary Language</label>
-                                            <select name="primary_language" class="form-control">
-                                                <option value="">Select</option>
-                                                <option value="Afrikaans">Afrikaans</option>
-                                                <option value="Albanian">Albanian</option>
-                                                <option value="Arabic">Arabic</option>
-                                                <option value="Armenian">Armenian</option>
-                                                <option value="Basque">Basque</option>
-                                                <option value="Bosnian">Bosnian</option>
-                                                <option value="Bengali">Bengali</option>
-                                                <option value="Bulgarian">Bulgarian</option>
-                                                <option value="Catalan">Catalan</option>
-                                                <option value="Cambodian">Cambodian</option>
-                                                <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
-                                                <option value="Croatian">Croatian</option>
-                                                <option value="Czech">Czech</option>
-                                                <option value="Danish">Danish</option>
-                                                <option value="Dutch">Dutch</option>
-                                                <option value="English">English</option>
-                                                <option value="Estonian">Estonian</option>
-                                                <option value="Fiji">Fiji</option>
-                                                <option value="Finnish">Finnish</option>
-                                                <option value="French">French</option>
-                                                <option value="Georgian">Georgian</option>
-                                                <option value="German">German</option>
-                                                <option value="Greek">Greek</option>
-                                                <option value="Gujarati">Gujarati</option>
-                                                <option value="Hebrew">Hebrew</option>
-                                                <option value="Hindi">Hindi</option>
-                                                <option value="Hungarian">Hungarian</option>
-                                                <option value="Icelandic">Icelandic</option>
-                                                <option value="Indonesian">Indonesian</option>
-                                                <option value="Irish">Irish</option>
-                                                <option value="Italian">Italian</option>
-                                                <option value="Japanese">Japanese</option>
-                                                <option value="Javanese">Javanese</option>
-                                                <option value="Korean">Korean</option>
-                                                <option value="Latin">Latin</option>
-                                                <option value="Latvian">Latvian</option>
-                                                <option value="Lithuanian">Lithuanian</option>
-                                                <option value="Macedonian">Macedonian</option>
-                                                <option value="Malay">Malay</option>
-                                                <option value="Malayalam">Malayalam</option>
-                                                <option value="Maltese">Maltese</option>
-                                                <option value="Maori">Maori</option>
-                                                <option value="Marathi">Marathi</option>
-                                                <option value="Mongolian">Mongolian</option>
-                                                <option value="Nepali">Nepali</option>
-                                                <option value="Norwegian">Norwegian</option>
-                                                <option value="Persian">Persian</option>
-                                                <option value="Polish">Polish</option>
-                                                <option value="Portuguese">Portuguese</option>
-                                                <option value="Punjabi">Punjabi</option>
-                                                <option value="Quechua">Quechua</option>
-                                                <option value="Romanian">Romanian</option>
-                                                <option value="Russian">Russian</option>
-                                                <option value="Samoan">Samoan</option>
-                                                <option value="Serbian">Serbian</option>
-                                                <option value="Slovak">Slovak</option>
-                                                <option value="Slovenian">Slovenian</option>
-                                                <option value="Spanish">Spanish</option>
-                                                <option value="Swahili">Swahili</option>
-                                                <option value="Swedish ">Swedish </option>
-                                                <option value="Tamil">Tamil</option>
-                                                <option value="Tatar">Tatar</option>
-                                                <option value="Telugu">Telugu</option>
-                                                <option value="Thai">Thai</option>
-                                                <option value="Tibetan">Tibetan</option>
-                                                <option value="Tonga">Tonga</option>
-                                                <option value="Turkish">Turkish</option>
-                                                <option value="Ukrainian">Ukrainian</option>
-                                                <option value="Urdu">Urdu</option>
-                                                <option value="Uzbek">Uzbek</option>
-                                                <option value="Vietnamese">Vietnamese</option>
-                                                <option value="Welsh">Welsh</option>
-                                                <option value="Xhosa">Xhosa</option>
-                                            </select>
-                                            <br>
-                                            <select name="secondary_language" class="form-control">
-                                                <option value="">Select</option>
-                                                <option value="Afrikaans">Afrikaans</option>
-                                                <option value="Albanian">Albanian</option>
-                                                <option value="Arabic">Arabic</option>
-                                                <option value="Armenian">Armenian</option>
-                                                <option value="Basque">Basque</option>
-                                                <option value="Bosnian">Bosnian</option>
-                                                <option value="Bengali">Bengali</option>
-                                                <option value="Bulgarian">Bulgarian</option>
-                                                <option value="Catalan">Catalan</option>
-                                                <option value="Cambodian">Cambodian</option>
-                                                <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
-                                                <option value="Croatian">Croatian</option>
-                                                <option value="Czech">Czech</option>
-                                                <option value="Danish">Danish</option>
-                                                <option value="Dutch">Dutch</option>
-                                                <option value="English">English</option>
-                                                <option value="Estonian">Estonian</option>
-                                                <option value="Fiji">Fiji</option>
-                                                <option value="Finnish">Finnish</option>
-                                                <option value="French">French</option>
-                                                <option value="Georgian">Georgian</option>
-                                                <option value="German">German</option>
-                                                <option value="Greek">Greek</option>
-                                                <option value="Gujarati">Gujarati</option>
-                                                <option value="Hebrew">Hebrew</option>
-                                                <option value="Hindi">Hindi</option>
-                                                <option value="Hungarian">Hungarian</option>
-                                                <option value="Icelandic">Icelandic</option>
-                                                <option value="Indonesian">Indonesian</option>
-                                                <option value="Irish">Irish</option>
-                                                <option value="Italian">Italian</option>
-                                                <option value="Japanese">Japanese</option>
-                                                <option value="Javanese">Javanese</option>
-                                                <option value="Korean">Korean</option>
-                                                <option value="Latin">Latin</option>
-                                                <option value="Latvian">Latvian</option>
-                                                <option value="Lithuanian">Lithuanian</option>
-                                                <option value="Macedonian">Macedonian</option>
-                                                <option value="Malay">Malay</option>
-                                                <option value="Malayalam">Malayalam</option>
-                                                <option value="Maltese">Maltese</option>
-                                                <option value="Maori">Maori</option>
-                                                <option value="Marathi">Marathi</option>
-                                                <option value="Mongolian">Mongolian</option>
-                                                <option value="Nepali">Nepali</option>
-                                                <option value="Norwegian">Norwegian</option>
-                                                <option value="Persian">Persian</option>
-                                                <option value="Polish">Polish</option>
-                                                <option value="Portuguese">Portuguese</option>
-                                                <option value="Punjabi">Punjabi</option>
-                                                <option value="Quechua">Quechua</option>
-                                                <option value="Romanian">Romanian</option>
-                                                <option value="Russian">Russian</option>
-                                                <option value="Samoan">Samoan</option>
-                                                <option value="Serbian">Serbian</option>
-                                                <option value="Slovak">Slovak</option>
-                                                <option value="Slovenian">Slovenian</option>
-                                                <option value="Spanish">Spanish</option>
-                                                <option value="Swahili">Swahili</option>
-                                                <option value="Swedish ">Swedish </option>
-                                                <option value="Tamil">Tamil</option>
-                                                <option value="Tatar">Tatar</option>
-                                                <option value="Telugu">Telugu</option>
-                                                <option value="Thai">Thai</option>
-                                                <option value="Tibetan">Tibetan</option>
-                                                <option value="Tonga">Tonga</option>
-                                                <option value="Turkish">Turkish</option>
-                                                <option value="Ukrainian">Ukrainian</option>
-                                                <option value="Urdu">Urdu</option>
-                                                <option value="Uzbek">Uzbek</option>
-                                                <option value="Vietnamese">Vietnamese</option>
-                                                <option value="Welsh">Welsh</option>
-                                                <option value="Xhosa">Xhosa</option>
-                                            </select>
-                                        </div> -->
-                                    </form>
+                                    <!-- </form> -->
                                 </div>
 
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -490,10 +217,6 @@
                                         <input type="text" name="real_name" class="form-control border-input" value="{{ $service->user->real_name }}" minlength="3" maxlength="30">
                                     </div>
 
-                                    <!-- <div class="form-group">
-                                        <label for="">Age</label>
-                                        <input type="date" name="birth_date" class="form-control" value="{{ $service->user->birth_date }}">
-                                    </div> -->
                                     <input class="country_hidden" type="hidden" name="">
                                     <!-- {{-- Form Element --}} -->
                                     <div class="form-group">
@@ -502,95 +225,7 @@
                                         <input type="text" name="country" value="{{ getCountryFullName($service->user->country) }}" class="form-control border-input" disabled/>
                                         @else
                                         <input type="text" name="country" value="N/A" class="form-control border-input" disabled/>
-                                        @endif        
-                                        <!-- <div class="w-100 dob-dropdown">
-                                            <div class="form-group w-100 mb-0 mr-2">
-                                                <div class="newdropdown">
-                                                    <div class="dropdown w-100">
-                                                        <a id="drop1" href="#" class="dropdown-toggle d-flex align-items-center justify-content-between" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                            <div class="game-title drop_down_select_country"  id="drop_down_select_country">N/A</div>
-                                                        </a>
-
-                                                        <ul class="dropdown-menu dropdown_country" role="menu" aria-labelledby="drop1" id="month_ul">
-                                                            <div class="scroll-div country">
-                                                                <li role="presentation">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="month_name">Afrikaans</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_feb">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="month_name">Albanian</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Armenian</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Arabic</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Basque</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Bosnian</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Bengali</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Bulgarian</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Catalan</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Cambodian</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Czech</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                                <li role="presentation" class="" id="month_li_mar">
-                                                                    <a role="menuitem" tabindex="-1">
-                                                                        <div class="" data-setMonth="Mar">Czech</div>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#fff"/></svg>
-                                                                    </a>
-                                                                </li>
-                                                            </div>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
+                                        @endif   
                                     </div>
                                     <input class="month_hidden" type="hidden" name="month">
                                     <input class="date_hidden" type="hidden" name="day">
@@ -1036,7 +671,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- </form> -->
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1744,7 +1379,7 @@
         });
 
        $('#ajax_edit_profile').submit(function(e) {
-        alert();
+        // alert();
             e.preventDefault();
 
             // var month = $('.month_hidden').val();

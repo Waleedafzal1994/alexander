@@ -303,15 +303,18 @@ $noFooter = true;
 
                                     <p class="mb-0">Block</p>
                                     <label class="switch m-0 mb-2">
-                                        <input type="checkbox" name="block" class="block-toggle" 
+
+                                        <?php $getUser = getUserById($service->user->id)?>
+
+                                        <input type="checkbox" name="{{ !empty($getUser->name) ? $getUser->name : 'this person' }}" class="block-toggle" 
                                         
                                         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
                                         @if(!empty($checkBlockedUser))
 
                                             {{"checked"}}
-                                            value="confirm_unblock"
+                                            value="confirm_unblock" 
                                         @else
-                                            value="confirm_block"    
+                                            value="confirm_block"
                                         @endif
                                         >
                                         <span class="slider"></span>
@@ -357,16 +360,17 @@ $noFooter = true;
 
 
                 $('.block-toggle').click(function(){
+                    user = $(this).attr("name");
                     // alert($('input[name=block]:checked').length > 0);
                     // alert($(this).val());
-                    $(this).val() == "confirm_block" ? do_block() : do_unblock();
+                    $(this).val() == "confirm_block" ? do_block(user) : do_unblock(user);
                 });
 
-                function do_block() 
+                function do_block(user) 
                 {
                     Swal.fire({
-                        title: "Blocked!!!",
-                        text: "Are you sure you want to block this person?",
+                        title: "Block "+ user,
+                        text: "Are you sure you want to block "+user+"?",
                         // icon: "warning",
                         // buttons: [
                         //     'No, cancel it!',
@@ -391,8 +395,8 @@ $noFooter = true;
 
                 function do_unblock() {
                     Swal.fire({
-                        title: "Un-Block",
-                        text: "Are you sure you want to un-block this person?",
+                        title: "Unblock "+ user,
+                        text: "Are you sure you want to unblock "+user+"?",
                         // icon: "info",
                         
                         // dangerMode: true,
