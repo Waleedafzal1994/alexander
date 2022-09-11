@@ -110,7 +110,6 @@ class ProfileController extends Controller
         if ($checkAge < 13) 
         {
             // return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
-            // echo "age_error";
             echo 0;//age error
             die();
         }
