@@ -96,7 +96,7 @@
                                     </form>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <form method="POST" id="ajax_edit_profile" onsubmit="abc()" action="/profile/{{ $service->user->id }}/edit">
+                                    <form method="POST" id="ajax_edit_profile" action="/profile/{{ $service->user->id }}/edit">
                                         @csrf
                                         @if (session('error'))
                                             <div class="alert alert-danger">
@@ -1415,7 +1415,7 @@
                 },
                 success: (response) => {
 
-                    if(response == "age_error"){
+                    if(response === 0){
 
                         alertify.error('The age cannot be less than 13 years old');
                     }
