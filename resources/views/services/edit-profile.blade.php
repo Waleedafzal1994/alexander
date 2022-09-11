@@ -1132,7 +1132,8 @@
     $("#pills-back-tab").click(function(){
         
         document.getElementById("profileBar_info").style.display = "block";
-        document.getElementById("services_navbar").style.display = "block";
+        $('#services_navbar').addClass('show-on-unblock');
+        // document.getElementById("services_navbar").style.display = "block";
         document.getElementById("edit_profile").style.display = "none";
 
         $("#edit_user_profile").removeClass('show active'); 

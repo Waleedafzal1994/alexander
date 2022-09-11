@@ -433,6 +433,17 @@ $noFooter = true;
                         success: function(response) {
                             if (response.status === '1') {
                                 $('.block-toggle').val("confirm_unblock");
+
+                                $('#services_navbar').removeClass('show-on-unblock');
+                                $('#myTabContent').removeClass('show-on-unblock');
+                                $('#block-msg').removeClass('show-on-unblock');
+
+                                $('#services_navbar').addClass('hide-on-block');
+                                $('#myTabContent').addClass('hide-on-block');
+                                $('#block-msg').addClass('hide-on-block');
+
+                                $('#hide-show-on-block').css('display','flex');
+                                
                             }
                             if (response.error === '1') {
                                 Swal.fire(response.msg);
@@ -461,6 +472,16 @@ $noFooter = true;
                         success: function(response) {
                             if (response.status === '1') {
                                 $('.block-toggle').val("confirm_block");
+
+                                $('#services_navbar').removeClass('hide-on-block');
+                                $('#myTabContent').removeClass('hide-on-block');
+                                $('#block-msg').removeClass('hide-on-block');
+                                
+                                $('#services_navbar').addClass('show-on-unblock');
+                                $('#myTabContent').addClass('show-on-unblock');
+                                $('#block-msg').addClass('show-on-unblock');
+
+                                $('#hide-show-on-block').css('display','none');
                             }
                             if (response.error === '1') {
                                 Swal.fire(response.msg);

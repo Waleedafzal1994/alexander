@@ -3345,3 +3345,18 @@ footer{
     height: auto;
     width: 100%;
 }
+
+.hide-on-block{
+    display: none !important;
+}
+
+.show-on-unblock{
+    display: block !important;
+}
+
+#hide-show-on-block{
+    display: none;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 100%;
+}
