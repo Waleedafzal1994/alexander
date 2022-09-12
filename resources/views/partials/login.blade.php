@@ -186,6 +186,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group position-relative mb-3 pb-1">
                                             <h6>Password</h6>
+                                            <!-- 8 character length minimum -->
                                             <input id="password-reg" class="border-input" type="password" name="password" maxlength="15" required autocomplete="new-password">
                                             <span class="password-showhide">
                                                 <span class="show-password">Show</span>

@@ -62,7 +62,7 @@
                                             <div class="d-flex">
                                                 <button class="new-btn rounded-pill btn-follower px-4 py-2 mr-2 d-flex justify-content-center hover-text-change loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')" id="follow-checks">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button>
                                                 <input type="hidden" id="check-follow-toggles" value= "{{$checkFlow}}">
-                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat22</button>
+                                                <button class="new-btn rounded-pill btn-solid text-white px-4 py-2 d-flex justify-content-center">Chat</button>
                                             </div>
                                         </div>
                                         @endforeach    
