@@ -25,7 +25,7 @@
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
                                                 <img src="{{$row->profile_picture}}" class="rounded-circle w-100px" alt="">
-                                                <p class="text-black">{{$row->name}}</p>
+                                                <a href="/user-profile/{{ $row->id }}#edit_user_profile/">{{$row->name}}</a>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
                                                 </div> -->
@@ -50,7 +50,7 @@
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
                                                 <img src="{{$row->profile_picture}}" class="rounded-circle" width="80" alt="">
-                                                <p class="text-black">{{$row->name}}</p>
+                                                <a href="/user-profile/{{ $row->id }}#edit_user_profile/">{{$row->name}}</a>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
                                                 </div> -->

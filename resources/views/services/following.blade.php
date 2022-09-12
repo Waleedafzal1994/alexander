@@ -18,7 +18,7 @@
                                                 <div class="friend-name">
                                                 
                                                     <ins>
-                                                        <a href="javascript:void(0);" title="">{{$row->name}}</a>
+                                                        <a href="/user-profile/{{ $row->id }}#edit_user_profile/">{{$row->name}}</a>
                                                     </ins>
                                                 </div>
                     

@@ -493,10 +493,11 @@
 <!-- END: Service Profile Side bar -->
 
 <!-- START: Service main Body-->
-
+<?php $checkBlockedUser = checkUserBloked($service->user->id)?>
 <div class="mainBody">
+
     <!-- START: First Card mianbody -->
-    <div class="card review-body shadows" id="services_navbar">
+    <div class="card review-body shadows {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="services_navbar">
         <div class="card-body ">
             <div class="service-game-main-body">
                 <div class="service-game-nav">
@@ -538,7 +539,7 @@
                                         Badges
                                     </a>
                                 </li>
-                                {{-- @if(!empty(Auth::id()) && (Auth::id() == $service->user->id)) --}}
+                                 @if(!empty(Auth::id()) && (Auth::id() == $service->user->id)) 
                                 <li class="nav-item ml-auto" role="presentation">
                                     <!-- <a class="nav-link" id="badges-tab" href="/edit-profile/{{$service->id}}">
                                         Edit
@@ -547,7 +548,7 @@
                                     <i class="fa fa-cog mr-1" aria-hidden="true"></i>Settings
                                     </a>
                                 </li>
-                                {{-- @endif --}}
+                                @endif 
                             </ul>
                         </div>
                         <!-- END: Service main Menu -->
@@ -577,7 +578,7 @@
     </div>
 
 
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="myTabContent">
         @if(Request::segment(1) !='user-profile')
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('services.serviceDetails', [
@@ -634,6 +635,21 @@
         </div>
         <!-- End Edit Tab End Here for user profile to edit -->
     </div>
+
+    <div class="" id="hide-show-on-block">
+        <div class="col-md-12">
+            <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
+        </div>  
+    </div>
+
+
+    @if(!empty($checkBlockedUser))
+
+        <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
+        <div class="col-md-12">
+            <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+        </div>  
+    @endif
     <!-- END: First Card mianbody -->
 
     <!-- START: SECOND Card mianbody -->
@@ -743,7 +759,9 @@
         var seller_edit = localStorage.getItem("edit_seller_profile");
         if(seller_edit){
             document.getElementById("profileBar_info").style.display = "none";
-            document.getElementById("services_navbar").style.display = "none";
+            $('#services_navbar').removeClass('show-on-unblock');
+            $('#services_navbar').addClass('hide-on-block');
+            // document.getElementById("services_navbar").style.display = "none";
             document.getElementById("edit_profile").style.display = "block";
             
             $("#pills-edit-profile-tab").addClass('active');
@@ -774,7 +792,10 @@
             localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
             
             document.getElementById("profileBar_info").style.display = "none";
-            document.getElementById("services_navbar").style.display = "none";
+            $('#services_navbar').removeClass('show-on-unblock');
+            $('#services_navbar').addClass('hide-on-block');
+            // document.getElementById("services_navbar").style.display = "none";
+            // document.getElementById("services_navbar").style.display = "none";
             document.getElementById("edit_profile").style.display = "block";
             
             $("#pills-edit-profile-tab").addClass('active');

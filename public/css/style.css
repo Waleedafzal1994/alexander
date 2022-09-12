@@ -150,6 +150,11 @@ a:hover{
     --border-radius: 4px;
 }
 
+html{
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background: #FAF5FF !important;
     font-family: 'Poppins', sans-serif;
@@ -3321,3 +3326,37 @@ background: #888;
 /* .hover-text-change::after{
     content: "Unfollow"
 } */
+
+footer{
+    padding-top: 3rem;
+}
+
+@media (max-width: 76px){
+    footer{
+        padding-top: 13rem;
+    }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+}
+
+.hide-on-block{
+    display: none !important;
+}
+
+.show-on-unblock{
+    display: block !important;
+}
+
+#hide-show-on-block{
+    display: none;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 100%;
+}

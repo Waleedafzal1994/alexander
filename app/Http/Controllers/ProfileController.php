@@ -110,7 +110,7 @@ class ProfileController extends Controller
         if ($checkAge < 13) 
         {
             // return redirect()->back()->with(['success' => 'The age cannot be less than 13 years old.']);
-            echo "age_error";
+            echo 0;//age error
             die();
         }
 
@@ -231,10 +231,130 @@ class ProfileController extends Controller
         // return redirect()->back()->with(['success' => 'Profile has been updated.']);
     }
 
+    public function validatePasswords(array $data)
+    {
+        $messages = [
+            'current_password.required' => 'Please enter your current password',
+            'current_password.required' => 'Please enter a new password',
+            //'new-password-confirmation.not_in' => 'Sorry, common passwords are not allowed. Please try a different new password.'
+        ];
+
+        $validator = Validator::make($data, [
+            'current_password' => 'required',
+            'current_password'=>['required', 'string', 'min:8',    'regex:/[a-z]/',      // must contain at least one lowercase letter
+            'regex:/[A-Z]/',      // must contain at least one uppercase letter
+            'regex:/[0-9]/',      // must contain at least one digit
+            'regex:/[@$!%*#?&]/', // must contain a special character
+                 'max:255']
+            // 'new-password-confirmation' => 'required|same:new-password',
+        ], $messages);
+
+
+        $rules = [
+            'current_password' => 'required',
+            'current_password'=>['required', 'string', 'min:8',    'regex:/[a-z]/',      // must contain at least one lowercase letter
+            'regex:/[A-Z]/',      // must contain at least one uppercase letter
+            'regex:/[0-9]/',      // must contain at least one digit
+            'regex:/[@$!%*#?&]/', // must contain a special character
+                 'max:255'],
+        ];
+
+        return $this->validate($data, $rules, $messages);
+
+        //return $validator;
+    }
+
+
+    //By Umar//
+    public function changePassword(Request $request)
+    {
+        if (Auth::id() != $request->id) {
+            return Response()->json([
+                "success" => false,
+                "message"=> "Sorry! something went wrong"
+            ]);
+        }
+
+
+        $requestData = $request->All();
+
+        $rules = [
+            'current_password' => 'required',
+            'new_password'=>['required', 'string', 'min:6',    'regex:/[a-z]/',      // must contain at least one lowercase letter
+            'regex:/[A-Z]/',      // must contain at least one uppercase letter
+            'regex:/[0-9]/',      // must contain at least one digit
+            'regex:/[@$!%*#?&]/', // must contain a special character
+                 'max:15'],
+        ];
+
+        $messages = [
+            'current_password.required' => 'Please enter your current password',
+            'new_password.required' => 'Please enter a new password',
+            'new_password.min' => 'Password must be at least 6 characters. ',
+            'new_password.max' => 'Password must be at least 15 characters. ',
+            'new_password.regex' => 'Password must contain at least one Uppercase, Number, & Special character.'
+            //'new-password-confirmation.not_in' => 'Sorry, common passwords are not allowed. Please try a different new password.'
+        ];
+
+        // $validator = $this->validate($request, $rules, $messages);
+
+        $validator = Validator::make($request->all(), $rules,$messages);
+
+        if ($validator->fails()) {
+
+            echo $validator->errors();
+            die();
+        } 
+        
+        //$validator = $this->validatePasswords($requestData);
+        //print_r($valid);
+        //die;
+        // if($validator->fails())
+        // {
+        //     return back()->withErrors($validator->getMessageBag());
+        // }
+        // else
+        // {
+            $currentPassword = Auth::User()->password;
+            if(Hash::check($requestData['current_password'], $currentPassword))
+            {
+                $userId = Auth::User()->id;
+                $user = User::find($userId);
+                $user->password = Hash::make($requestData['new_password']);;
+                $user->save();
+                //return back()->with('message', 'Your password has been updated successfully.');
+
+                return Response()->json([
+                "success" => true,
+                    "message" => 'Your password has been updated successfully.'
+                ]);
+            }
+            else
+            {
+                return Response()->json([
+                "success" => false,
+                    "message" => 'Old Password not match.Enter correct password'
+                ]);
+            }
+        //}
+    }
+
     public function editAvatar(Request $request)
     {
+        if (Auth::id() != $request->id) {
+            return Response()->json([
+                "success" => false,
+                "file" => ''
+            ]);
+        }
+
+        $user = User::whereId($request->id)->first();
+        // print_r($user);die;
+        $seller_rank = $user->seller_rank;
+        $mimes = ($seller_rank == 1) ? 'jpeg,png,jpg,gif' : 'jpeg,png,jpg';
+
         $rules = [
-            'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096|dimensions:min_width=350,min_height=350',
+            'profile_picture' => 'required|image|mimes:'.$mimes.'|max:4096|dimensions:min_width=350,min_height=350',
             // 'profile_picture'  => 'required|mimes:jpg,png|max:4096',
             'id'  => 'required|numeric',
         ];
@@ -245,14 +365,14 @@ class ProfileController extends Controller
         ];
         $this->validate($request, $rules, $messages);
 
-        if (Auth::id() != $request->id) {
-            return Response()->json([
-                "success" => false,
-                "file" => ''
-            ]);
-        }
+        // if (Auth::id() != $request->id) {
+        //     return Response()->json([
+        //         "success" => false,
+        //         "file" => ''
+        //     ]);
+        // }
 
-        $user = User::whereId($request->id)->first();
+        //$user = User::whereId($request->id)->first();
         if ($files = $request->profile_picture) {
 
             //store file into document folder
@@ -375,4 +495,6 @@ class ProfileController extends Controller
             return redirect('/login');
         }
     }
+
+
 }

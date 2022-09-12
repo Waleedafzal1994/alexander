@@ -30,8 +30,9 @@
                                             </div> -->
                                         </div>
                                         <div class="">
+                                            <?php $getUser = getUserById($row->id); $u_name = (!empty($getUser)) ? $getUser->name : 'this person'; ?>
                                             <!-- <button class="new-btn btn-primary mr-3 loginUserFollows-{{$row->id}}" onclick="loginFollow('<?= $row->id;?>')">{{ $checkFlow = checkLoginFollows($row->id,Auth::user()->id);}}</button> -->
-                                            <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2" onclick="do_unblock('<?= $row->id;?>')">Unblock</button>
+                                            <button class="new-btn rounded-pill font-weight-bold button-anim btn-solid text-white px-4 py-2" onclick="do_unblock('<?= $row->id;?>','<?= $u_name;?>')">Unblock</button>
                                         </div>
                                     </div>
                                     @endforeach    
@@ -49,11 +50,13 @@
 
 <script type="text/javascript">
     
-        function do_unblock(user_id)
+        function do_unblock(user_id,u_name)
         {
+            
+            //alert(u_name);
             Swal.fire({
-                title: "Un-Block",
-                text: "Are you sure you want to un-block this person?",
+                title: "Unblock "+u_name,
+                text: "Are you sure you want to unblock "+u_name+"?",
                 // icon: "info",
                 
                 // dangerMode: true,

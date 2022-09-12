@@ -1526,9 +1526,9 @@ p {
 .gallery-reaction .liked_gallery_count {
   color: #b3b1c5;
   font-size: 12px;
-  left: 42px;
+  left: 36px;
   position: absolute;
-  top: -12px;
+  top: 10px;
 }
 
 .gallery-reaction {
