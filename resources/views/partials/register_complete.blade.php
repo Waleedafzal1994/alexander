@@ -40,7 +40,7 @@
                                     <option value="" selected="" disabled="">Please select you gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-                                    <option value="NON-BINARY">NON-BINARY</option>
+                                    <option value="NON-BINARY">Non-Binary</option>
                                 </select>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="col-12 text-center mt-4 completeBtn">
-                            <button class="btn-solid rounded-pill font-weight-bold text-white px-4 py-2" id="completeBtn">Complete</button>
+                            <button class="btn-solid rounded-pill font-weight-bold text-white px-4 py-2 btn-actives save_btn_hover" id="completeBtn">Complete</button>
                         </div>
                     </div>
                 </form>

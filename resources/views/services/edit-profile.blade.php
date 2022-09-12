@@ -56,7 +56,7 @@
                                                         style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                         id="profile_picture_img">
                                                     <div>
-                                                        <small>Click on the image to change profile photo.</small>
+                                                        <small style="color: #000;">Avatar must be JPG, JPEG or PNG and cannot exceed 5MB <strong>VIP+</strong> can upload GIF profile photo</small>
                                                     </div>
                                                     <span class="invalid-feedback" role="alert" id="profile_picture-uploaderror">
                                                         <strong></strong>
@@ -80,7 +80,7 @@
                                                         style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                         id="profile_picture_img">
                                                     <div>
-                                                        <small>Click on the image to change profile photo.</small>
+                                                    <small style="color: #000;">Avatar must be JPG, JPEG or PNG and cannot exceed 5MB <strong>VIP+</strong> can upload GIF profile photo</small>
                                                     </div>
                                                     <input type="file" name="profile_picture" id="profile_picture"
                                                         style="display:none;">

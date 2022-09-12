@@ -13,8 +13,8 @@
 .w-90px{
     width: 90px;
 }
-.w-100px{
-    width: 100px;
+.w-60px{
+    width: 60px;
 }
 .bg-content-clr{
     background-color: #f6f6ff !important;
@@ -2542,7 +2542,7 @@ a.slider-link:hover {
     background: red;
     border-radius: 50%;
     bottom: -4px;
-    left: 65px;
+    left: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3338,7 +3338,7 @@ footer{
 }
 
 .footer{
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     right: 0;
@@ -3359,4 +3359,7 @@ footer{
     justify-content: center;
     /*align-items: center;*/
     height: 100%;
+}
+.hover-black:hover{
+    color: #8e26bb !important;
 }
