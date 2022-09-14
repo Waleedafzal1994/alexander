@@ -1110,7 +1110,7 @@
     // field
     const length_textarea = document.getElementById("field").value.length;
 
-    console.log(length_textarea,'Value')
+    // console.log(length_textarea,'Value')
     $('#charCounting').text(length_textarea);
     });
     var profilePicChanged = false;
