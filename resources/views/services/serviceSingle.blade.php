@@ -65,6 +65,7 @@
                             @if(Request::segment(1) !='user-profile')
                                     <div class="mt-4">
                                         <a class="btn-follower follow d-flex align-items-center justify-content-center" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
+                                        <input type="hidden" id="check-follow-toggless" value= "{{$checkFlow}}">
                                     </div>
                                 @else    
                                 <div class="mt-4"></div>
@@ -81,7 +82,7 @@
                                 </div>
                                 @if(Request::segment(1) !='user-profile')
                                 <div class="mt-4">
-                                    <a class="btn-cust" type="button">Chat</a>
+                                    <a class="btn-cust btn-width" type="button">Chat</a>
                                 </div>
                                 @else    
                                 <div class="mt-4"></div>
@@ -105,18 +106,18 @@
                                     <div class="my-1 d-flex align-items-center justify-content-between">
                                         <div class="profile-section-two gender">
                                             <div class="review-body text-center">
-                                                @if($service->user->gender == 'Male')
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                <!-- @if($service->user->gender == 'Male') -->
+                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}"> -->
                                                 {{ $service->user->gender ?: 'N/A' }}
-                                                @elseif($service->user->gender == 'Female')
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
-                                                {{ $service->user->gender ?: 'N/A' }}
-                                                @elseif($service->user->gender == 'Non-Binary')
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
-                                                {{ $service->user->gender ?: 'N/A' }}
-                                                @else
-                                                N/A
-                                                @endif
+                                                <!-- @elseif($service->user->gender == 'Female') -->
+                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}"> -->
+                                                <!-- {{ $service->user->gender ?: 'N/A' }} -->
+                                                <!-- @elseif($service->user->gender == 'Non-Binary') -->
+                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}"> -->
+                                                <!-- {{ $service->user->gender ?: 'N/A' }} -->
+                                                <!-- @else -->
+                                                <!-- N/A -->
+                                                <!-- @endif -->
                                             </div>
                                         </div>
                                         <div class="profile-section-two w-100 mx-2">
@@ -701,6 +702,21 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
 
 <script>
+    // $("#follow-check-profile").hover(function(){
+    //     var follow_check = document.getElementById("follow-check-profile").innerHTML;
+    //     if(follow_check == 'Following'){
+    //         document.getElementById("follow-check-profile").innerHTML = "Unfollow";
+    //     }else{
+    //         document.getElementById("follow-check-profile").innerHTML = "Follow";
+    //     }
+    //     }, function(){
+    //         let follow_status = document.getElementById("check-follow-toggle").value;
+    //         if(follow_status == 'Following'){
+    //             document.getElementById("follow-check-profile").innerHTML = "Following";
+    //         }else{
+    //             document.getElementById("follow-check-profile").innerHTML = "Follow";
+    //         }
+    // });
     // alert(jQuery(window).scrollTop()+'window-height'+jQuery(window).height()+'document-height'+jQuery(document).height());
     // jQuery(window).scroll(function() { //detect page scroll
 
