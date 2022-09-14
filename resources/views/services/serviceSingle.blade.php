@@ -589,7 +589,7 @@
         @endif
 
         <!-- START: Timeline Tab Start here -->
-        <div class="tab-pane fade posttimeline " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade posttimeline <?= (Request::segment(1) =='user-profile') ? 'show active' : '' ?> " id="profile" role="tabpanel" aria-labelledby="profile-tab">
            @include('services.servicesPost', [
             'service' => $service,
             ]) 
@@ -1585,7 +1585,6 @@
                 newUrl = url.split("#")[0] + hash;
 
                 id = "{{ $service->user->id }}";
-                // alert(id);
                 //reset timeline page with ajax//
                 $.ajaxSetup({
                     headers: {

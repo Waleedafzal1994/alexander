@@ -441,17 +441,10 @@ class ProfileController extends Controller
         
         $user = User::with('services.category','getPosts')->where('id', $id)->first();
         
-        //$service->user = User::where('id', $id)->first();
 
         $service = new User();
         $service->user= User::where('id', $id)->first();
         $service->posts = $user->getPosts;
-
-        
-        //echo $service->user->id;die;
-        // return redirect('user/'.$user->services[0]->id);
-        // echo "<pre>";
-        // print_r($service->user);die;
         if ($user->seller_rank == 0  || empty($user->services[0]->id)) //means normal user//
         {
             $totalOrders = shortNumber(Order::where('buyer_id', $user->id)->count());
@@ -469,6 +462,8 @@ class ProfileController extends Controller
             }
 
             $blockList = $this->Block->getAllBlockers($service['user']->id);
+            // echo "<pre>";
+            // print_r($service);die;
          
 
             return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders','blockList'));
