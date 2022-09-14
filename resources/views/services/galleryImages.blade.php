@@ -31,7 +31,7 @@ $userGallery = $service->user->imagesAsArray;
     <div id="gallery" class="gallery-section sadasdasd">
         <div class="w-100 bg-white">
             @foreach ($userGallery as $galleryImage)
-            <div class="position-relative photos-section">
+            <div class="position-relative photos-section mb-4">
                 <img src="{{ $galleryImage->file_name }}" class="img-responsive">
                 <div class="box-shadows"></div>
                 <div class="likes gallery-reaction " data-gallery-image-id="{{ $galleryImage->id }}" data-gallery-reaction-id="{{ $galleryImage->likedPost() }}">

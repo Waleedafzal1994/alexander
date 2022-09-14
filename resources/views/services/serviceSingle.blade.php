@@ -65,7 +65,6 @@
                             @if(Request::segment(1) !='user-profile')
                                     <div class="mt-4">
                                         <a class="btn-follower follow d-flex align-items-center justify-content-center" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
-                                        <input type="hidden" id="check-follow-toggless" value= "{{$checkFlow}}">
                                     </div>
                                 @else    
                                 <div class="mt-4"></div>
@@ -647,8 +646,8 @@
     @if(!empty($checkBlockedUser))
 
         <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
-        <div class="col-md-12">
-            <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+        <div class="col-md-12 bg-white rounded shadow vh-100 d-flex align-items-center justify-content-center block-text">
+            <p class="text-center mb-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
         </div>  
     @endif
     <!-- END: First Card mianbody -->

@@ -5,6 +5,10 @@
     font-family: "Poppins";
     src: url("/fonts/Poppins-Regular.ttf") format("truetype");
 }
+@font-face {
+    font-family: "spacemono";
+    src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+}
 
 /* #app{
     background-color: #f6f6ff;
@@ -1660,8 +1664,8 @@ a.slider-link:hover {
 
 .main-category ul li:first-child {
     margin-left: 0;
+    clip-path: path('m 16 0 l 120 0 c 0 0 4 0 4 4 l 0 69 c 0 2 -2 4 -2 4 l -10 10 c 0 0 -2 2 -4 2 l -120 0 c 0 0 -4 0 -4 -4 l 0 -69 c 0 -2 2 -4 2 -4 l 10 -10 c 0 0 2 -2 4 -2');
 }
-
 .main-category ul li>div {
     margin-left: 0 !important;
 }
@@ -3368,4 +3372,86 @@ footer{
     width: 110px;
     height: 40px;
     align-items: center;
+}
+
+/* Play btn animation start */
+.video-play-button {
+    position: absolute;
+    z-index: 10;
+    top: 35%;
+    left: 10px;
+    box-sizing: content-box;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 0;
+}
+.video-play-button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #581c87;
+    border-radius: 50%;
+}
+.games-cards .card:hover .video-play-button:before{
+    animation: pulse-border 1500ms ease-out infinite;
+}
+.video-play-button:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: #8e5cb5;
+    border-radius: 50%;
+    transition: all 200ms;
+}
+.video-play-button:hover:after {
+    background-color: darken(#fa183d, 10%);
+}
+.video-play-button span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 16px solid #fff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+@keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+    }
+}
+.card-sub-title{
+    font-family: 'spacemono';
+    font-size: 18px;
+}
+/* play btn animation end */
+.block-text{
+    font-weight: 600;
+    font-size: 18px;
+}
+.block-text a{
+    color: #581c87 !important;
 }
