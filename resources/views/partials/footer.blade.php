@@ -13,7 +13,7 @@
                         <div style="display:flex;" class="mobile_ul_nav">
                             <ul class="footer-menu my-0">
                                 <li><a href="/">Home</a></li>
-                                {{-- <li><a href="/gp">Services</a></li> --}}
+                                <!-- {{-- <li><a href="/gp">Services</a></li> --}} -->
                                 <li><a href="#">Services</a></li>
                                 <li><a href="/news">News</a></li>
                             </ul>

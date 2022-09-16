@@ -56,7 +56,7 @@
                                                         style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                         id="profile_picture_img">
                                                     <div>
-                                                        <small style="color: #000;">Avatar must be JPG, JPEG or PNG and cannot exceed 5MB <strong>VIP+</strong> can upload GIF profile photo</small>
+                                                        <small style="color: #000;">Avatar must be JPG, JPEG or PNG and cannot exceed 5MB<br> <strong>VIP+</strong> can upload GIF profile photo</small>
                                                     </div>
                                                     <span class="invalid-feedback" role="alert" id="profile_picture-uploaderror">
                                                         <strong></strong>
@@ -626,7 +626,7 @@
                                     <div class="form-group">
                                         <label for="">About Me</label>
                                         <div class="textArea-body" id="focus_textarea">
-                                            <textarea type="text" id="field" name="description" class="textarea" onkeyup="countCount(this)" oninput="auto_grow(this)"
+                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss" onkeyup="countCount(this)" oninput="auto_grow(this)"
                                                 rows="3">{{ $service->user->description }}</textarea>
                                                 <div class="text-counter">
                                                     <span id="charCounting" class="counter">0</span>
@@ -683,18 +683,18 @@
                                 <span>Account</span>
                             </h1>
                             <form action="" class="mt-4 pl-3">
-                                <p class="mb-4">Account Information</p>
+                                <p class="mb-4 text-dark">Account Information</p>
                                 <ul class="account-information pb-3">
                                     <li class="d-flex align-items-center">
-                                        <div>ID:</div> 
-                                        <p>{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+                                        <div class="text-dark">ID:</div> 
+                                        <p class="">{{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <div>Registration Time:</div> 
+                                        <div class="text-dark">Registration Time:</div> 
                                         <p>Jul 20, 2022</p>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <div>Account:</div> 
+                                        <div class="text-dark">Account:</div> 
                                         <p>tehswarm@gmail.com</p>
                                     </li>
                                     <!-- <li class="d-flex align-items-center">
@@ -708,7 +708,7 @@
                                         </div>
                                     </li> -->
                                     <li class="d-flex align-items-center">
-                                        <div>Password:</div> 
+                                        <div class="text-dark">Password:</div> 
                                         <div class="d-flex align-items-center justify-content-between">
                                             <p>********</p>
                                             <div>
@@ -719,7 +719,7 @@
                                 </ul>
                                 <hr>
                                 <div class="delete-accnt pt-3 d-flex align-items-center">
-                                    <p>Delete Account</p>
+                                    <p class="text-dark">Delete Account</p>
                                     <a type="button" data-toggle="modal" data-target="#deleteModal">Delete</a>
                                 </div>
                             </form>
@@ -743,7 +743,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
                                             <h6>E-mail Subscriptions:</h6>
-                                            <p class="mb-0">Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                                            <p class="mb-0 text-dark">Subscribe to receive order notifications, news, major updates and promotional events.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -756,7 +756,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
                                             <h6>GamersPlay+ Recommendation:</h6>
-                                            <p class="mb-0">Receive GamersPlay+ recommended by the platform.</p>
+                                            <p class="mb-0 text-dark">Receive GamersPlay+ recommended by the platform.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -818,7 +818,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
                                             <h6>Hide Birthday:</h6>
-                                            <p class="mb-0">Activate to stop other users from seeing your birthday.</p>
+                                            <p class="mb-0 text-dark">Activate to stop other users from seeing your birthday.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -831,7 +831,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
                                             <h6>Anonymous on Leaderboard:</h6>
-                                            <p class="mb-0">When activated, you’ll not be shown on the Client leaderboard.</p>
+                                            <p class="mb-0 text-dark">When activated, you’ll not be shown on the Client leaderboard.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -844,7 +844,7 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-4">
                                             <h6>Turn Off Suggestions:</h6>
-                                            <p class="mb-0">When activated, the system won’t suggest you to anyone.</p>
+                                            <p class="mb-0 text-dark">When activated, the system won’t suggest you to anyone.</p>
                                         </div>
                                         <label class="switch">
                                             <input type="checkbox">
@@ -883,7 +883,7 @@
                                         <h6 class="mb-0 d-flex align-items-center">
                                             <span class="online mr-1"></span> Online
                                         </h6>
-                                        <p class="mb-0">No auto reply yet</p>
+                                        <p class="mb-0 text-dark">No auto reply yet</p>
                                     </div>
                                     <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
@@ -893,7 +893,7 @@
                                         <h6 class="mb-0 d-flex align-items-center">
                                             <span class="online offline mr-1"></span> Online
                                         </h6>
-                                        <p class="mb-0">No auto reply yet</p>
+                                        <p class="mb-0 text-dark">No auto reply yet</p>
                                     </div>
                                     <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
@@ -903,7 +903,7 @@
                                         <h6 class="mb-0 d-flex align-items-center">
                                             <span class="online in-order mr-1"></span> Online
                                         </h6>
-                                        <p class="mb-0">No auto reply yet</p>
+                                        <p class="mb-0 text-dark">No auto reply yet</p>
                                     </div>
                                     <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
@@ -913,7 +913,7 @@
                                         <h6 class="mb-0 d-flex align-items-center">
                                             <span class="online resting mr-1"></span> Online
                                         </h6>
-                                        <p class="mb-0">No auto reply yet</p>
+                                        <p class="mb-0 text-dark">No auto reply yet</p>
                                     </div>
                                     <button class="new-btn rounded-pill font-weight-bold bg-purple-gradient btn-actives text-white px-4 py-2">Edit</button>
                                 </div>
@@ -1105,8 +1105,6 @@
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script>
    $(document).ready(function() {
-
-    
     // field
     const length_textarea = document.getElementById("field").value.length;
 
@@ -1143,7 +1141,7 @@
         $("#home-tab").addClass('active');
         $("#home").addClass('active show');
 
-        localStorage.removeItem("edit_seller_profile");
+        // localStorage.removeItem("edit_seller_profile");
         document.getElementById("home-tab").click();
 
     });
@@ -1451,15 +1449,25 @@
  
     });
 
-    function countCount(val) {
-        console.log("Hello");
-        var len = val.value.length;
-        if (len >= 500) {
-            val.value = val.value.substring(0, 500);
-        } else {
-            $('#charCounting').text(len);
-        };
-    };
+    // function countCount(val) {
+    //     console.log("Hello");
+    //     var len = val.value.length;
+    //     if (len >= 500) {
+    //         val.value = val.value.substring(0, 500);
+    //     } else {
+    //         $('#charCounting').text(len);
+    //     };
+    // };
+    $(function() {
+        window.charCount = 0;
+        setInterval(function() {
+            var c = $(".content-countss").val().length;
+            if(c != window.charCount) {
+                window.charCount = c;
+                $("#charCounting").html(window.charCount); 
+            }
+            }, 500);
+    });
 
     //by umar
     $('#change_password').submit(function(e) {
