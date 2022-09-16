@@ -242,20 +242,23 @@ class ServicesController extends Controller
         return response()->json($services);
     }
 
-    public function service($id)
+    public function service($id, Request $request)
     {
         $id = intVal($id);
+
+        // dump($id,"2");
         // echo $id;die();
         // $user = User::where('id', $request->id)->first();
 
         $service = Service::with('images', 'category', 'user', 'ratings', 'posts')->whereId($id)->first();
-
+        // dump($service,"3");
         // echo "<pre>";
         //     print_r($service);die;
 
         $data['category_id'] = $category_id = $service['category']->id;
+        // dump($data['category_id'],"4");
         $user_id = $service['user']->id;
-
+        // dump($user_id,"5");
 
         //Fetch all remaining services//
         $all_remaining_services =  Service::groupBy()
@@ -265,6 +268,7 @@ class ServicesController extends Controller
             // ->where('services.id','!=', $id)
             ->where('services.active', 1)
             ->get();
+        // dump($all_remaining_services,"6");
         //Fetch all subsicribe categories
         $all_remaining_cats =  Service::groupBy('category_id', 'user_id')
             ->leftJoin('categories', 'categories.id', '=', 'services.category_id')
@@ -273,39 +277,59 @@ class ServicesController extends Controller
             ->where('services.category_id', '!=', $category_id)
             ->where('services.active', 1)
             ->get();
-
+        // dump($all_remaining_cats,"7");
         //Fetch min price for selected category//
         // $minPrice = Service::select('services.service_duration_type','services.id', DB::raw('MIN(services.price) AS minPrice','id'))->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->first();
 
         $minPrice = Service::select('services.service_duration_type', 'services.id', 'price AS minPrice ')->where('services.user_id', $service->user->id)->where('services.category_id', $service->category->id)->orderBy('price', 'asc')->first();
 
-
+        // dump($minPrice,"8");
         // echo "<pre>";
         // print_r($minPrice);die;
 
         $totalOrders = shortNumber(Order::where('buyer_id', $service['user']->id)->count());
         // $totalOrders = 500;
-
+        // dump($totalOrders,"9");
         $totalFollowers = shortNumber(Follower::where('user_id', $service['user']->id)->count());
+        // dump($totalFollowers,"10");
         $totalfollowing = shortNumber(Follower::where('follower_id', $service['user']->id)->count());
-
+        // dump($totalfollowing,"11");
         $followersList = $this->Follower->getAllFollowers($service['user']->id);
+        // dump($followersList,"12");
         $followingList = $this->Follower->getAllFollowing($service['user']->id);
+        // dump($followingList,"13");
         if ((Auth::user()->id) && ($service['user']->id)) {
+            // dump("14");
             $checkFollow = Follower::where('user_id', $service['user']->id)->where('follower_id', Auth::user()->id)->first();
+            // dump($checkFollow,"15");      
         } else {
+            // dump("16");
             $checkFollow = '';
+            // dump($checkFollow,"17");
         }
+        // dump("18");
+        // dd($service);
         $blockList = $this->Block->getAllBlockers($service['user']->id);
-    
-
+        // dump($blockList,"19");
         if ($service == null) {
             return redirect('/');
         }
-
-
+        // dump("21");
         // dd($service->images[0]->file_name);
-        return view('services.serviceSingle', compact('service', 'totalfollowing', 'totalFollowers', 'followersList', 'followingList', 'checkFollow', 'totalOrders', 'all_remaining_services', 'all_remaining_cats', 'minPrice','blockList'));
+        // dd($service);
+        // dd($totalfollowing);
+        // dd($totalFollowers);
+        // dd($followersList);
+        // dd($followingList);
+        // dd($checkFollow);
+        // dd($totalOrders);
+        // dd($all_remaining_services);
+        // dd($all_remaining_cats);
+        // dd($minPrice);
+        // dd($blockList);
+        return view('services.serviceSingle', compact('service','totalfollowing','totalFollowers','followersList','followingList','checkFollow','totalOrders','all_remaining_services','all_remaining_cats','minPrice','blockList'));
+
+        // return view('welcome');
     }
 
     public function loadTimeline(Request $request)

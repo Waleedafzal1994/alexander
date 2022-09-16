@@ -117,7 +117,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dispute/{id}', [PurchaseController::class, 'disputePage'])->name('disputePage');
     Route::get('/gp/{id}', [ServicesController::class, 'service'])->name('service');
 
-    //by umar (15-08-22)//
     Route::get('/user-profile/{id}', [ProfileController::class, 'user_timeline']);
     Route::post('/user/is_delete', [ProfileController::class, 'is_delete']);
     //---//

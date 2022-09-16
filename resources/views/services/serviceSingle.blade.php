@@ -62,10 +62,10 @@
 
                         <div class="nav-button-side mt-2 mx-3">
                             <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
-                            @if(Request::segment(1) !='user-profile')
+                                @if(Request::segment(1) !='user-profile')
                                     <div class="mt-4">
                                         <a class="btn-follower follow d-flex align-items-center justify-content-center" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
-                                        <input type="hidden" id="check-follow-toggless" value= "{{$checkFlow}}">
+                                        <input type="hidden" id="check-follow-toggless" value= "{{$checkFollow}}">
                                     </div>
                                 @else    
                                 <div class="mt-4"></div>
@@ -694,84 +694,9 @@
 @push('scripts')
 <script src="{{ asset('js/mdb.min.js') }}"></script>
 
-<!-- JavaScript Bundle with Popper -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script> -->
-<!-- </script> -->
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script> -->
-
 <script>
-    // $("#follow-check-profile").hover(function(){
-    //     var follow_check = document.getElementById("follow-check-profile").innerHTML;
-    //     if(follow_check == 'Following'){
-    //         document.getElementById("follow-check-profile").innerHTML = "Unfollow";
-    //     }else{
-    //         document.getElementById("follow-check-profile").innerHTML = "Follow";
-    //     }
-    //     }, function(){
-    //         let follow_status = document.getElementById("check-follow-toggle").value;
-    //         if(follow_status == 'Following'){
-    //             document.getElementById("follow-check-profile").innerHTML = "Following";
-    //         }else{
-    //             document.getElementById("follow-check-profile").innerHTML = "Follow";
-    //         }
-    // });
-    // alert(jQuery(window).scrollTop()+'window-height'+jQuery(window).height()+'document-height'+jQuery(document).height());
-    // jQuery(window).scroll(function() { //detect page scroll
-
-    //     });  
-
-    // $('#profile-tab').click(function(){
-
-    //         $('.showmore-posts').attr('data-post-load_page','0');
-    //         loadMorePostForTimelineTab();
-    //     });
-    // function loadMorePostForTimelineTab() {
-    //         // alert('loadmore');
-    //         // let page = $('.showmore-posts').attr('data-post-load_page','0');
-    //         let page = 0;
-    //         let service = $('.showmore-posts').attr('data-post-service');
-    //         alert(page+'service'+service);
-    //         if (!service) return false;
-    //         $.ajaxSetup({
-    //             headers: {
-    //                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //             }
-    //         });
-    //         $.ajax({
-    //             method: 'post',
-    //             url: `/posts/load`,
-    //             data: {
-    //                 page,
-    //                 service
-    //             },
-    //             // beforeSend:function(){
-    //             //     $('.loader').show();
-    //             // },
-    //             // complete:function(){
-    //             //     $('.loader').hide();
-    //             // },
-    //             success: function(response) {
-    //                 if (response.status === true && response.code === 200) {
-    //                     alert();
-    //                      $('.remove-when-timeline-clicked').remove();
-    //                     $(".post-item-box").after(response.data);
-    //                     // $(".post-item-box").last().after(response.data);
-    //                     $('.showmore-posts').attr("data-post-load_page", response.page);
-    //                     if (response.last_page === true) {
-    //                         $(".showmore-posts").hide();
-    //                     }
-    //                 }
-    //             },
-    //             error: function(XMLHttpRequest) {
-    //                 Swal.fire('An error occured while attempting this action.');
-    //             }
-    //         });
-    //     }
-
     jQuery(document).ready(function($) {
-        
+        console.log("Hello");
         var seller_edit = localStorage.getItem("edit_seller_profile");
         if(seller_edit){
             document.getElementById("profileBar_info").style.display = "none";
