@@ -204,21 +204,32 @@
                                                     <div class="position-relative">
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                         <div class="textArea-body">
-                                                            <textarea class="textarea" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
+                                                            <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
                                                             <div class="text-counter">
                                                                 <span id="wordsCounts" class="counter">0</span>
                                                                 <span class="fix-count">/500</span>
                                                             </div>
                                                         </div>
                                                         <script>
-                                                            function wordCount(val) {
-                                                                var len = val.value.length;
-                                                                if (len >= 500) {
-                                                                    val.value = val.value.substring(0, 500);
-                                                                } else {
-                                                                    $('#wordsCounts').text(len);
-                                                                };
-                                                            };
+                                                            // function wordCount(val) {
+                                                            //     var len = val.value.length;
+                                                            //     console.log(len,'Leng')
+                                                            //     if (len >= 500) {
+                                                            //         val.value = val.value.substring(0, 500);
+                                                            //     } else {
+                                                            //         $('#wordsCounts').text(len);
+                                                            //     };
+                                                            // };
+                                                            $(function() {
+                                                                window.charCount = 0;
+                                                                setInterval(function() {
+                                                                    var c = $(".content-count").val().length;
+                                                                    if(c != window.charCount) {
+                                                                        window.charCount = c;
+                                                                        $("#wordsCounts").html(window.charCount); 
+                                                                    }
+                                                                    }, 500);
+                                                            });
                                                         </script>
                                                     </div>
                                                     <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">

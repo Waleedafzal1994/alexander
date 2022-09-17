@@ -1,4 +1,3 @@
-
 <div class="timiline-cards">
     <div class="bg-transparent mt-2 p-0">
         <div class="card-body bg-transparent p-0">
@@ -23,8 +22,8 @@
                                                 <textarea rows="5" name="content" id="post-content" placeholder="Share some what you are thinking?"></textarea>
                                             </div> -->
                                             <div class="textArea-body">
-                                                <textarea type="text" name="content" id="post-content" placeholder="Share some what you are thinking?" 
-                                                class="textarea" onkeyup="postCount(this)" oninput="auto_grow(this)"
+                                                <textarea type="text" maxlength="500" name="content" id="post-content" placeholder="Share some what you are thinking?" 
+                                                class="textarea content-counts" onkeyup="postCount(this)" oninput="auto_grow(this)"
                                                     rows="3"></textarea>
                                                     <div class="text-counter">
                                                         <span id="charCount" class="counter">0</span>
@@ -34,14 +33,24 @@
                                         </div>
                                         
                                         <script>
-                                            function postCount(val) {
-                                                var len = val.value.length;
-                                                if (len >= 500) {
-                                                    val.value = val.value.substring(0, 500);
-                                                } else {
-                                                    $('#charCount').text(len);
-                                                };
-                                            };
+                                            // function postCount(val) {
+                                            //     var len = val.value.length;
+                                            //     if (len >= 500) {
+                                            //         val.value = val.value.substring(0, 500);
+                                            //     } else {
+                                            //         $('#charCount').text(len);
+                                            //     };
+                                            // };
+                                            $(function() {
+                                                window.charCount = 0;
+                                                setInterval(function() {
+                                                    var c = $(".content-counts").val().length;
+                                                    if(c != window.charCount) {
+                                                        window.charCount = c;
+                                                        $("#charCount").html(window.charCount); 
+                                                    }
+                                                    }, 500);
+                                            });
                                         </script>
                                         <div class="row" id="videoObject"></div>
                                         <div class="row">
