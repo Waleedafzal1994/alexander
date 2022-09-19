@@ -83,7 +83,9 @@ a:hover{
 .service_category ul li:last-child{
     margin-right: 0;
 }
-
+.service_category ul li.active .categories_box_holder {
+    clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
+}
 .service_category ul li .categories_box_holder {
     background-position: center;
     background-size: cover !important;
@@ -1660,11 +1662,12 @@ a.slider-link:hover {
     position: relative;
     margin-bottom: 4px;
     cursor: pointer;
+    -webkit-clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
+    clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
 }
 
 .main-category ul li:first-child {
     margin-left: 0;
-    clip-path: path('m 16 0 l 120 0 c 0 0 4 0 4 4 l 0 69 c 0 2 -2 4 -2 4 l -10 10 c 0 0 -2 2 -4 2 l -120 0 c 0 0 -4 0 -4 -4 l 0 -69 c 0 -2 2 -4 2 -4 l 10 -10 c 0 0 2 -2 4 -2');
 }
 .main-category ul li>div {
     margin-left: 0 !important;
@@ -1903,9 +1906,10 @@ a.slider-link:hover {
 .top-head-cate li.active{
     width: 136px;
     height: 63px;
-    border: 2px solid #7041e6;
-    background-color: #714878 !important;
+    border: 3px solid #7041e6;
+    background-color: #7041e6 !important;
     border-radius: 10px;
+    clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
 }
 #more_section_content{
     display: none;
@@ -1918,8 +1922,8 @@ a.slider-link:hover {
 }
 .nav-button-side .center-img{
     position: absolute;
-    height: 88px;
-    width: 88px;
+    height: 82px;
+    width: 90px;
     border-radius: 50%;
     text-align: center;
     border: 4px solid white;
@@ -2803,6 +2807,7 @@ a.slider-link:hover {
 .games-cards .card .card-image .titles .card-title{
     /* margin-bottom: 0; */
     height: 44px;
+    max-height: 170px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -3445,7 +3450,8 @@ footer{
 }
 .card-sub-title{
     font-family: 'spacemono';
-    font-size: 18px;
+    font-size: 20px;
+    word-spacing: -6px;
 }
 /* play btn animation end */
 .block-text{

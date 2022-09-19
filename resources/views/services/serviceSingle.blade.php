@@ -638,8 +638,8 @@
     </div>
 
     <div class="" id="hide-show-on-block">
-        <div class="col-md-12">
-            <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
+        <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text">
+            <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
         </div>  
     </div>
 
@@ -647,8 +647,8 @@
     @if(!empty($checkBlockedUser))
 
         <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
-        <div class="col-md-12 bg-white rounded shadow vh-100 d-flex align-items-center justify-content-center block-text">
-            <p class="text-center mb-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
+        <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text">
+            <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
         </div>  
     @endif
     <!-- END: First Card mianbody -->
