@@ -353,6 +353,7 @@ $noFooter = true;
         <script>
             $(document).ready(function() {
                 // alert();
+                $('#block-user-message').attr("style", "display: ");
                 $('#staticBackdrop').modal({
                     show: true,
                     keyboard:false
@@ -417,6 +418,7 @@ $noFooter = true;
 
                 function block() 
                 {
+                    // console.log("Block");
                     block_id = "{{ $service->user->id }}";
                     // console.log(following_id);
                     $.ajaxSetup({
@@ -435,14 +437,17 @@ $noFooter = true;
                                 $('.block-toggle').val("confirm_unblock");
 
                                 $('#services_navbar').removeClass('show-on-unblock');
+                                $('#profileBar_info').removeClass('show-on-unblock');
                                 $('#myTabContent').removeClass('show-on-unblock');
                                 $('#block-msg').removeClass('show-on-unblock');
 
                                 $('#services_navbar').addClass('hide-on-block');
                                 $('#myTabContent').addClass('hide-on-block');
                                 $('#block-msg').addClass('hide-on-block');
+                                $('#profileBar_info').addClass('hide-on-block');
 
-                                $('#hide-show-on-block').css('display','flex');
+                                $('#block-user-message').attr("style", "display: none !important");
+                                $('#hide-show-on-block').css('display','block');
                                 
                             }
                             if (response.error === '1') {
@@ -456,6 +461,7 @@ $noFooter = true;
                 }
                 function unblock() 
                 {
+                    console.log("Un block");
                     block_id = "{{ $service->user->id }}";
                     // console.log(following_id);
                     $.ajaxSetup({
@@ -474,12 +480,17 @@ $noFooter = true;
                                 $('.block-toggle').val("confirm_block");
 
                                 $('#services_navbar').removeClass('hide-on-block');
+                                $('#profileBar_info').removeClass('hide-on-block');
                                 $('#myTabContent').removeClass('hide-on-block');
                                 $('#block-msg').removeClass('hide-on-block');
+
                                 
                                 $('#services_navbar').addClass('show-on-unblock');
+                                $('#profileBar_info').removeClass('show-on-unblock');
                                 $('#myTabContent').addClass('show-on-unblock');
                                 $('#block-msg').addClass('show-on-unblock');
+                                
+                                $('#block-user-message').attr("style", "display: none !important");
 
                                 $('#hide-show-on-block').css('display','none');
                             }

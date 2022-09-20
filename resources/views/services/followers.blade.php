@@ -126,7 +126,6 @@
                 }
         });
         $("#follow-checks").hover(function(){
-            console.log("H111");
             var follow_check = document.getElementById("follow-checks").innerHTML;
             if(follow_check == 'Following'){
                 document.getElementById("follow-checks").innerHTML = "Unfollow";

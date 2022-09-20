@@ -30,6 +30,7 @@
 @endsection
 @section('content')
 <!-- {{-- NEW CONTENT START --}} -->
+<?php $checkBlockedUser = checkUserBloked($service->user->id)?>
 <div class="gamePlay" id="gamePlay">
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
@@ -39,9 +40,10 @@
                 <i class="fa fa-chevron-up text-white"></i>
             </div>
         </a>
+
         <div class="d-flex justify-content-between">
             <!-- START: Service Profile Side bar -->
-            <div class="profileBar" id="profileBar_info">
+            <div class="profileBar {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="profileBar_info">
                 <!-- START: Service Profile Side bar First Card -->
                 <div class="card shadows">
                     <div class="card-body p-0 m-0">
@@ -494,7 +496,7 @@
 <!-- END: Service Profile Side bar -->
 
 <!-- START: Service main Body-->
-<?php $checkBlockedUser = checkUserBloked($service->user->id)?>
+
 <div class="mainBody">
 
     <!-- START: First Card mianbody -->
@@ -639,15 +641,15 @@
 
     <div class="" id="hide-show-on-block">
         <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text">
+           <!-- <h1>1</h1> -->
             <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
         </div>  
     </div>
-
-
+    
     @if(!empty($checkBlockedUser))
-
         <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
-        <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text">
+        <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text" id="block-user-message">
+           <!-- <h1>2</h1> -->
             <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
         </div>  
     @endif
@@ -842,7 +844,6 @@
             $(this).siblings(".smiles-bunch").toggleClass("active");
         });
 
-        //By umar
         $('.follow').on("click", function() {
             following_id = "{{ $service->user->id }}";
             // console.log(following_id);
@@ -966,23 +967,26 @@
         //     }
         // });
 
-
-    });
-
-    $("#follow-checkss").hover(function(){
-        var follow_check = document.getElementById("follow-checkss").innerHTML;
-        if(follow_check == 'Following'){
-            document.getElementById("follow-checkss").innerHTML = "Unfollow";
-        }else{
-            document.getElementById("follow-checkss").innerHTML = "Follow";
-        }
-        }, function(){
-            let follow_status = document.getElementById("check-follow-toggle").value;
-            if(follow_status == 'Following'){
-                document.getElementById("follow-checkss").innerHTML = "Following";
-            }else{
+        $("#follow-checkss").hover(function(){
+            var follow_checking = document.getElementById("follow-checkss").innerHTML;
+            if(follow_checking == 'Following'){
+                document.getElementById("follow-checkss").innerHTML = "Unfollow";
+                console.log(follow_checking,'1');
+            }else if(follow_checking == 'Follow'){
                 document.getElementById("follow-checkss").innerHTML = "Follow";
+                console.log(follow_checking,'2');
+            }else{
             }
+            }, function(){
+                let follow_status = document.getElementById("check-follow-toggle").value;
+                if(follow_status == 'Following'){
+                    document.getElementById("follow-checkss").innerHTML = "Following";
+                    console.log(follow_status,'3');
+                }else{
+                    document.getElementById("follow-checkss").innerHTML = "Follow";
+                    console.log(follow_status,'4');
+                }
+        });
     });
 </script>
 <script type="text/javascript">
