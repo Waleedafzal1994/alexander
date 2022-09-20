@@ -385,7 +385,8 @@
         </div>
 
         <div class="container pb-5 mb-5">
-            <div class="d-flex align-items-center justify-content-between flex-wrap diff-btns">
+            <!-- <div class="d-flex align-items-center justify-content-between flex-wrap diff-btns"> -->
+            <div class="d-flex align-items-center diff-btns flex-wrap">
                 <svg class="liquid-button"
                     data-text="#MATCH"
                     data-force-factor="0.1"
@@ -791,11 +792,11 @@
             this.constructor.id++;
             this.xmlns = 'http://www.w3.org/2000/svg';
             this.tension = options.tension * 1 || 0.4;
-            this.width   = options.width   * 1 || 200;
+            this.width   = options.width   * 1 || 150;
             this.height  = options.height  * 1 ||  50;
-            this.margin  = options.margin  ||  50;
+            this.margin  = options.margin  ||  10;
             this.hoverFactor = options.hoverFactor || -0.1;
-            this.gap     = options.gap     ||   5;
+            this.gap     = options.gap     ||   3;
             this.debug   = options.debug   || false;
             this.forceFactor = options.forceFactor || 0.2;
             this.color1 = options.color1 || '#36DFE7';
