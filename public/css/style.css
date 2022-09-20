@@ -72,19 +72,25 @@ a:hover{
     display: flex;
     align-items: center;
     list-style: none;
+    min-height: 95px;
 }
 
 .service_category ul li {
     margin-right: 5px;
-    width: 118px;
-    height: 51px;
-    overflow: hidden;  
+    width: 135px;
+    height: 63px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .service_category ul li:last-child{
     margin-right: 0;
 }
 .service_category ul li.active .categories_box_holder {
     clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
+    border-top-left-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
 }
 .service_category ul li .categories_box_holder {
     background-position: center;
@@ -101,7 +107,8 @@ a:hover{
 
 .service_category ul li .categories_box_holder p {
     color: #fff;
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .btn-cust {
@@ -1904,12 +1911,14 @@ a.slider-link:hover {
     border-radius: 10px;
 } */
 .top-head-cate li.active{
-    width: 136px;
-    height: 63px;
+    width: 140px;
+    height: 89px;
     border: 3px solid #7041e6;
     background-color: #7041e6 !important;
     border-radius: 10px;
     clip-path: polygon(12% 0, 100% 0, 100% 20%, 100% 80%, 88% 100%, 0 100%, 0% 80%, 0 25%);
+    border-top-left-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
 }
 #more_section_content{
     display: none;
@@ -2426,6 +2435,9 @@ a.slider-link:hover {
     padding-right: 4px;
     text-align: center;
 }
+.photos-section img{
+    width: 100%;
+}
 .photos-section .box-shadow{
     position: absolute;
     left: 0;
@@ -2805,7 +2817,7 @@ a.slider-link:hover {
     text-align: center;
 }
 .games-cards .card .card-image .titles .card-title{
-    /* margin-bottom: 0; */
+    margin-bottom: 0;
     height: 44px;
     max-height: 170px;
     font-weight: 500;
@@ -2814,6 +2826,17 @@ a.slider-link:hover {
     justify-content: center;
 }
 
+.diff-btns .svg{
+    min-width: 170px;
+    margin-right: 6px;
+    margin-bottom: 24px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.diff-btns .btn:last-child{
+    margin-right: 0;
+}
 
 /* Edit profile page css */
 .edit-profile-page .dropdown a{
@@ -3383,12 +3406,13 @@ footer{
 .video-play-button {
     position: absolute;
     z-index: 10;
-    top: 35%;
-    left: 10px;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     box-sizing: content-box;
     display: block;
-    width: 44px;
-    height: 44px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     padding: 0;
 }
@@ -3400,8 +3424,8 @@ footer{
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: #581c87;
     border-radius: 50%;
 }
@@ -3416,11 +3440,12 @@ footer{
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     display: block;
-    width: 42px;
-    height: 42px;
-    background: #8e5cb5;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     border-radius: 50%;
     transition: all 200ms;
+    box-shadow: 1px 7px 6px -5px #8224e3;
 }
 .video-play-button:hover:after {
     background-color: darken(#fa183d, 10%);
@@ -3449,9 +3474,11 @@ footer{
     }
 }
 .card-sub-title{
-    font-family: 'spacemono';
+    /* font-family: 'spacemono'; */
+    font-family: Poppins,Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 20px;
-    word-spacing: -6px;
+    /* word-spacing: -6px; */
+    font-weight: 500;
 }
 /* play btn animation end */
 .block-text{
