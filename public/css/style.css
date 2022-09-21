@@ -2819,16 +2819,22 @@ a.slider-link:hover {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -65px;
+    /* top: -65px; */
+    top: -77px;
     font-size: 14px;
     text-align: center;
     width: 95%;
 }
+.bigger-screen-alignment{
+    /* margin-top: 20px !important; */
+}
 .games-cards .card .card-image .titles .card-title{
     margin-bottom: 0;
-    height: 44px;
+    /* height: 44px; */
+    height: 55px;
     max-height: 170px;
-    max-width: 160px;
+    /* max-width: 160px; */
+    max-width: 202px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -3414,7 +3420,8 @@ footer{
     position: absolute;
     z-index: 10;
     top: 62%;
-    left: 50%;
+    /* left: 50%; */
+    left: 26%;
     transform: translate(-50%,-50%);
     box-sizing: content-box;
     display: block;
@@ -3433,7 +3440,8 @@ footer{
     display: block;
     width: 50px;
     height: 50px;
-    background: #581c87;
+    /* background: #581c87; */
+    background: #83D475;
     border-radius: 50%;
 }
 .games-cards .card:hover .video-play-button:before{
@@ -3449,10 +3457,12 @@ footer{
     display: block;
     width: 52px;
     height: 52px;
-    background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
+    /* background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important; */
+    background: linear-gradient(181deg,   #83D475 0%, #53ac8c  100%) !important;
     border-radius: 50%;
     transition: all 200ms;
-    box-shadow: 1px 7px 6px -5px #8224e3;
+    /* box-shadow: 1px 7px 6px -5px #8224e3; */
+    box-shadow: 1px 7px 6px -5px #00000075
 }
 .video-play-button:hover:after {
     background-color: darken(#fa183d, 10%);

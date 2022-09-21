@@ -15,6 +15,49 @@
     .slick-slide {
         padding: 25px !important;
     }
+    @media screen and (min-width: 1400px) {
+        .font-heading {
+            font-size: 24px !important;
+     }
+     .font-desc{
+        height: 69px !important;
+        max-width: 289px !important;
+        font-size: 20px !important;
+     }
+     .adding-gap{
+        top: -100px !important;
+     }
+     .bigger-screen-alignment{
+        margin-top: 120px !important;
+     }
+     .video-play-button:before{
+        width: 78px !important;
+        height: 78px !important;
+     }
+     .video-play-button:after{
+        width: 78px !important;
+        height: 78px !important;
+     }
+     .video-play-button span{
+        height: 30px !important;
+        border-left: 25px solid #fff !important;
+        border-top: 15px solid transparent !important;
+        border-bottom: 15px solid transparent !important;
+     }
+     .dashed-heading{
+        font-size: 18px;
+     }
+    }
+/* @media screen and (min-width: 1600px) {
+  .container {
+    width: 1570px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .container {
+    width: 1870px;
+  }
+} */
 </style>
 
 <!-- <link rel="stylesheet" type="text/css" href="/css/slick.css" />
@@ -31,7 +74,9 @@
                             <h1 class="text-white">Welcome to GamersPlay</h1>
                             <p class="text-white">Your premier destination for finding gamer friends to play with!</p>
                             <br>
-                            <a type="button" data-target="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="button-pu pulse">Get started</a>
+                                <!-- <a href="/gp" class="button-pu pulse">Get started</a> -->
+                                <a type="button" data-target="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="button-pu pulse">Get started</a>
+                            <!-- <a type="button" data-target="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="button-pu pulse">Get started</a> -->
                             <!-- <a href="/services" class="button-pu pulse">Get started</a> -->
                             <a href="#learnMore" class="button-pub text-white">Learn more</a>
                         </div>
@@ -299,7 +344,7 @@
         <div style="height:70px;">
         </div>
 
-        <div class="container mt-5 pt-5">
+        <div class="container mt-5 pt-5 bigger-screen-alignment">
             <div class="row d-flex align-items-center justify-content-center games-cards flex-wrap">
                 <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
@@ -309,9 +354,9 @@
                                 <div id="play-video" class="video-play-button" href="#">
                                     <span></span>
                                 </div>
-                                <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-medium">League of Legends</div>
-                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-weight-bold">5.780 GP+ Gamers</div>
+                                <div class="titles text-white font-weight-bold adding-gap">
+                                    <div class="card-sub-title font-weight-medium font-heading">League of Legends</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-desc">5.780 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -325,9 +370,9 @@
                                 <div id="play-video" class="video-play-button" href="#">
                                     <span></span>
                                 </div>
-                                <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-medium">Valorant</div>
-                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">4.639 GP+ Gamers</div>
+                                <div class="titles text-white font-weight-bold adding-gap">
+                                    <div class="card-sub-title font-weight-medium font-heading">Valorant</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-desc">4.639 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -341,9 +386,9 @@
                                 <div id="play-video" class="video-play-button" href="#">
                                     <span></span>
                                 </div>
-                                <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-medium">Fortnite</div>
-                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">3.738 GP+ Gamers</div>
+                                <div class="titles text-white font-weight-bold adding-gap">
+                                    <div class="card-sub-title font-weight-medium font-heading">Fortnite</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-desc">3.738 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -357,9 +402,9 @@
                                 <div id="play-video" class="video-play-button" href="#">
                                     <span></span>
                                 </div>
-                                <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-medium">Apex Legends</div>
-                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">2.367 GP+ Gamers</div>
+                                <div class="titles text-white font-weight-bold adding-gap">
+                                    <div class="card-sub-title font-weight-medium font-heading">Apex Legends</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-desc">2.367 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
@@ -373,9 +418,9 @@
                                 <div id="play-video" class="video-play-button" href="#">
                                     <span></span>
                                 </div>
-                                <div class="titles text-white font-weight-bold">
-                                    <div class="card-sub-title font-weight-medium">Overwatch 2</div>
-                                    <div class="card-title new-purple-gradient font-weight-bold br-10 px-2 py-1 shadows">1.457 GP+ Gamers</div>
+                                <div class="titles text-white font-weight-bold adding-gap">
+                                    <div class="card-sub-title font-weight-medium font-heading">Overwatch 2</div>
+                                    <div class="card-title new-purple-gradient br-10 px-2 py-1 shadows font-desc">1.457 GP+ Gamers</div>
                                 </div>
                             </div>
                         </div>
