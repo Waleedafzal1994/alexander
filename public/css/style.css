@@ -2653,6 +2653,12 @@ a.slider-link:hover {
         width: 60%;
         margin-left: 75px;
     }
+    .card-sub-title{
+        font-size: 17px !important;
+    }
+    .games-cards .card .card-image .titles .card-title{
+        font-size: 13px !important;
+    }
 }
 @media (max-width: 1050px) and (min-width: 991px){
     .gift-image {
@@ -2811,19 +2817,23 @@ a.slider-link:hover {
 }
 .games-cards .card .card-image .titles{
     position: absolute;
-    left: 10px;
-    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -65px;
     font-size: 14px;
     text-align: center;
+    width: 95%;
 }
 .games-cards .card .card-image .titles .card-title{
     margin-bottom: 0;
     height: 44px;
     max-height: 170px;
+    max-width: 160px;
     font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 .diff-btns .svg{
@@ -3034,9 +3044,6 @@ input:checked + .slider {
     }
 .nav-tabs{
     border-bottom: 1px dashed #581C87;
-}
-button{
-    
 }
 /* .top-bg-section .bg-img{
     background-image: url("../images/gamers-logo.png");
@@ -3476,9 +3483,10 @@ footer{
 .card-sub-title{
     /* font-family: 'spacemono'; */
     font-family: Poppins,Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     /* word-spacing: -6px; */
-    font-weight: 500;
+    font-weight: 600;
+    color: #120e1b;
 }
 /* play btn animation end */
 .block-text{

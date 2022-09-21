@@ -299,9 +299,9 @@
         <div style="height:70px;">
         </div>
 
-        <div class="container mb-5 pb-5">
+        <div class="container mt-5 pt-5">
             <div class="row d-flex align-items-center justify-content-center games-cards flex-wrap">
-                <div class="col-lg col-md-4 col-sm-6">
+                <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
                         <div class="card-body p-0">
                             <div class="card-image position-relative br-10">
@@ -317,7 +317,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-4 col-sm-6">
+                <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
                         <div class="card-body p-0">
                             <div class="card-image position-relative br-10">
@@ -333,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-4 col-sm-6">
+                <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
                         <div class="card-body p-0">
                             <div class="card-image position-relative br-10">
@@ -349,7 +349,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-4 col-sm-6">
+                <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
                         <div class="card-body p-0">
                             <div class="card-image position-relative br-10">
@@ -365,7 +365,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg col-md-4 col-sm-6">
+                <div class="col-lg col-md-4 col-sm-6 px-2 mb-5 pb-5">
                     <div class="card border-0 p-0">
                         <div class="card-body p-0">
                             <div class="card-image position-relative br-10">
@@ -386,7 +386,7 @@
 
         <div class="container pb-5 mb-5">
             <!-- <div class="d-flex align-items-center justify-content-between flex-wrap diff-btns"> -->
-            <div class="d-flex align-items-center diff-btns flex-wrap">
+            <div class="d-flex align-items-center justify-content-between diff-btns flex-wrap">
                 <svg class="liquid-button"
                     data-text="#MATCH"
                     data-force-factor="0.1"
