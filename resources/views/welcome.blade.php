@@ -24,9 +24,6 @@
         max-width: 289px !important;
         font-size: 20px !important;
      }
-     .adding-gap{
-        top: -100px !important;
-     }
      .bigger-screen-alignment{
         margin-top: 120px !important;
      }
@@ -341,7 +338,7 @@
             </div>
         </div>
 
-        <div style="height:70px;">
+        <div style="height:120px;">
         </div>
 
         <div class="container mt-5 pt-5 bigger-screen-alignment">

@@ -114,22 +114,22 @@
                     <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-4">
                         <p>Or log in with</p>
                         <div class="social-links d-flex align-items-center">
-                            <div class="mr-2">
+                            <div class="mr-3">
                                 <a href="/auth/discord">
                                     <img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt="">
                                 </a>
                             </div>
-                            <div class="mr-2">
+                            <div class="mr-3">
                                 <a href="{{route('facebook.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/facebook.svg') }}" alt="">
                                 </a>
                             </div>
-                            <div class="mr-2">
+                            <div class="mr-3">
                                 <a href="{{route('google.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
                                 </a>
                             </div>
-                            <div class="mr-2">
+                            <div class="mr-3">
                                 <a href="{{route('twitch.login')}}">
                                     <img class="discord-img-height" src="{{ asset('imgs/icons/twitch.png') }}" alt="">
                                 </a>
@@ -239,7 +239,7 @@
                         <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-4">
                         <p>Or log in with</p>
                         <div class="social-links d-flex align-items-center">
-                            <div class="mr-2">
+                            <div class="mr-3">
                                 <a href="/auth/discord">
                                     <img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt="">
                                 </a>
