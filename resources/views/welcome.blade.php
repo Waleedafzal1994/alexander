@@ -338,7 +338,7 @@
             </div>
         </div>
 
-        <div style="height:120px;">
+        <div style="height:128px;">
         </div>
 
         <div class="container mt-5 pt-5 bigger-screen-alignment">

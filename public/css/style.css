@@ -1318,7 +1318,8 @@ table th {
     background-color: #fff;
 }
 .social-links > div:nth-child(4) a{
-    background-color: #9146ff;
+    /* background-color: #9146ff; */
+    background-color: #6438BB;
 }
 .social-links > div:last-child a{
     background-color: #fff;
