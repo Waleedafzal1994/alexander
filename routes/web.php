@@ -35,6 +35,9 @@ Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login')
 Route::post('/auth/register', [AuthController::class, 'signup'])->name('auth.register');
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha'])->name('reload-captcha');
 
+Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
+Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
 
 Route::middleware(['profile_complete'])->group(function () {
     Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
@@ -48,9 +51,7 @@ Route::middleware(['check_login'])->group(function () {
     Route::get('/news/{post}', [HomeController::class, 'post'])->name('post');
     Route::get('/users', [HomeController::class, 'news'])->name('users');
     Route::get('/frequently-asked-questions', [HomeController::class, 'faq'])->name('faq');
-    Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
-    Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
-    Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
+  
     Route::get('/gp', [ServicesController::class, 'index'])->name('services');
     Route::get('/services/get', [ServicesController::class, 'search'])->name('get');
     Route::post('/services/getServiceInfoForModel', [ServicesController::class, 'getServiceInfoForModel']);

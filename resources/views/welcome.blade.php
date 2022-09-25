@@ -72,7 +72,11 @@
                             <p class="text-white">Your premier destination for finding gamer friends to play with!</p>
                             <br>
                                 <!-- <a href="/gp" class="button-pu pulse">Get started</a> -->
+                            @if(!empty(Auth::id()))  
+                                <a type="button" href="/gp" data-keyboard="false" class="button-pu pulse">Get started</a>
+                            @else
                                 <a type="button" data-target="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="button-pu pulse">Get started</a>
+                            @endif    
                             <!-- <a type="button" data-target="#loginModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="button-pu pulse">Get started</a> -->
                             <!-- <a href="/services" class="button-pu pulse">Get started</a> -->
                             <a href="#learnMore" class="button-pub text-white">Learn more</a>
