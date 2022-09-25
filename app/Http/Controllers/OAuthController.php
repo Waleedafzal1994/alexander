@@ -32,9 +32,22 @@ class OAuthController extends Controller
         $user = Socialite::driver('discord')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('discord_id',$user->id)->first();
+            $existingEmailInDb = User::where('email',$user->email)->first();
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
-            } else {
+            }
+            else if(!empty($existingEmailInDb)){
+                
+                $updateUser = $existingEmailInDb;
+                $updateUser->google_id  = NULL;
+                $updateUser->discord_id  = $user->id;
+                $updateUser->twitch_id  = NULL;
+                $updateUser->facebook_id  = NULL;
+                $updateUser->apple_id  = NULL;
+                $updateUser->save();
+                Auth::loginUsingId($updateUser->id);
+            }  
+            else {
                 // $existingEmailInDb = User::where('email',$user->email)->first();
                 // if(!empty($existingEmailInDb)){
                 //    return redirect('/')->with('flash_errors','Email already exists.'); 
@@ -70,9 +83,22 @@ class OAuthController extends Controller
         $user = Socialite::driver('facebook')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('facebook_id',$user->id)->first();
+            $existingEmailInDb = User::where('email',$user->email)->first();
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
-            } else {
+            }
+            else if(!empty($existingEmailInDb)){
+
+                $updateUser = $existingEmailInDb;
+                $updateUser->google_id  = NULL;
+                $updateUser->discord_id  = NULL;
+                $updateUser->twitch_id  = NULL;
+                $updateUser->facebook_id  = $user->id;
+                $updateUser->apple_id  = NULL;
+                $updateUser->save();
+                Auth::loginUsingId($updateUser->id);
+            } 
+            else {
 
                 // $existingEmailInDb = User::where('email',$user->email)->first();
                 // if(!empty($existingEmailInDb)){
@@ -109,9 +135,21 @@ class OAuthController extends Controller
         $user = Socialite::driver('google')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('google_id',$user->id)->first();
+            $existingEmailInDb = User::where('email',$user->email)->first();
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
-            } else {
+            }
+            else if(!empty($existingEmailInDb)){
+                $updateUser = $existingEmailInDb;
+                $updateUser->google_id  = $user->id;
+                $updateUser->discord_id  = NULL;
+                $updateUser->twitch_id  = NULL;
+                $updateUser->facebook_id  = NULL;
+                $updateUser->apple_id  = NULL;
+                $updateUser->save();
+                Auth::loginUsingId($updateUser->id);
+            }
+            else {
                 // $existingEmailInDb = User::where('email',$user->email)->first();
                 // if(!empty($existingEmailInDb)){
                 //    return redirect('/')->with('flash_errors','Email already exists.'); 
@@ -146,9 +184,22 @@ class OAuthController extends Controller
         $user = Socialite::driver('twitch')->stateless()->user();
         if(isset($user) && isset($user->id)) {
             $userInDb = User::where('twitch_id',$user->id)->first();
+            $existingEmailInDb = User::where('email',$user->email)->first();
             if($userInDb) {
                 Auth::loginUsingId($userInDb->id);
-            } else {
+            }
+            else if(!empty($existingEmailInDb)){
+                
+                $updateUser = $existingEmailInDb;
+                $updateUser->google_id  = NULL;
+                $updateUser->discord_id  = NULL;
+                $updateUser->twitch_id  = $user->id;
+                $updateUser->facebook_id  = NULL;
+                $updateUser->apple_id  = NULL;
+                $updateUser->save();
+                Auth::loginUsingId($updateUser->id);
+            }  
+            else {
                 // $existingEmailInDb = User::where('email',$user->email)->first();
                 // if(!empty($existingEmailInDb)){
                 //    return redirect('/')->with('flash_errors','Email already exists.'); 
@@ -176,7 +227,7 @@ class OAuthController extends Controller
     public function callbackFromApple(Request $request) {
         
          $user =  Socialite::driver('apple')->user();   
-         dd($user);
+         // dd($user);
     }
 
 }
