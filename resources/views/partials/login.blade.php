@@ -116,22 +116,22 @@
                         <div class="social-links d-flex align-items-center">
                             <div class="mr-3">
                                 <a href="/auth/discord">
-                                    <img class="discord-img-height" src="{{ asset('imgs/auth/discord.jpg') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/Discord1.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="mr-3">
                                 <a href="{{route('facebook.login')}}">
-                                    <img class="discord-img-height" src="{{ asset('imgs/icons/facebook.svg') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/Facebook1.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="mr-3">
                                 <a href="{{route('google.login')}}">
-                                    <img class="discord-img-height" src="{{ asset('imgs/icons/google.svg') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/Gmail1.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="mr-3">
                                 <a href="{{route('twitch.login')}}">
-                                    <img class="discord-img-height" src="{{ asset('imgs/icons/twitch2.png') }}" alt="">
+                                    <img class="discord-img-height" src="{{ asset('imgs/icons/Twitch11.png') }}" alt="">
                                 </a>
                             </div>
                             <div class="">
