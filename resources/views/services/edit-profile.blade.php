@@ -43,6 +43,15 @@
                         <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                 <span>Profile</span>
+                                @if(!empty(Auth::user()->google_id)) 
+                                    {{"(SignedIn with Google)"}}
+                                @elseif(!empty(Auth::user()->facebook_id))
+                                    {{"(SignedIn with Facebook)"}}
+                                @elseif(!empty(Auth::user()->discord_id))
+                                    {{"(SignedIn with Discord)"}} 
+                                @elseif(!empty(Auth::user()->twitch_id)))
+                                    {{"(SignedIn with Twitch)"}}
+                                @endif
                             </h1>
                             <div class="row mt-4 pl-3" style="padding:15px;">
                                 <div class="col-md-12 mb-5">
