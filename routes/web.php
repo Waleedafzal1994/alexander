@@ -51,7 +51,11 @@ Route::middleware(['check_login'])->group(function () {
     Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
     Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
     Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
-    Route::get('/gp', [ServicesController::class, 'index'])->name('services');
+    
+    Route::middleware(['check_rank'])->group(function () {
+        Route::get('/gp', [ServicesController::class, 'index'])->name('services');
+    });
+    Route::get('/gpplus', [ServicesController::class, 'index'])->name('services');
     Route::get('/services/get', [ServicesController::class, 'search'])->name('get');
     Route::post('/services/getServiceInfoForModel', [ServicesController::class, 'getServiceInfoForModel']);
     Route::post('/services/getServiceDetailsForTab', [ServicesController::class, 'getServiceDetailsForTab']);
@@ -115,7 +119,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/support/new', [TicketController::class, 'new'])->name('newTicket');
     Route::get('/support/ticket/{id}', [TicketController::class, 'show'])->name('showTicket');
     Route::get('/dispute/{id}', [PurchaseController::class, 'disputePage'])->name('disputePage');
-    Route::get('/gp/{id}', [ServicesController::class, 'service'])->name('service');
+    
+    Route::middleware(['check_rank'])->group(function () {
+        Route::get('/gp/{id}', [ServicesController::class, 'service'])->name('service');
+    });
+    Route::get('/gpplus/{id}', [ServicesController::class, 'service'])->name('service');
 
     Route::get('/user-profile/{id}', [ProfileController::class, 'user_timeline']);
     Route::post('/user/is_delete', [ProfileController::class, 'is_delete']);

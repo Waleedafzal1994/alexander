@@ -72,5 +72,6 @@ class Kernel extends HttpKernel
         'cors' => \App\Http\Middleware\Cors::class,
         'check_login' => \App\Http\Middleware\checkLogin::class,
         'profile_complete' => \App\Http\Middleware\completlyRegistered::class,
+        'check_rank' => \App\Http\Middleware\checkRank::class,
     ];
 }
