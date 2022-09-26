@@ -17,7 +17,7 @@ class checkRank
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->seller_rank == '2') 
+        if (Auth::user()->seller_rank != '0') 
         {
             if (!empty($request->route('id'))) 
             {

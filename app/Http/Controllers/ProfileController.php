@@ -351,7 +351,7 @@ class ProfileController extends Controller
         $user = User::whereId($request->id)->first();
         // print_r($user);die;
         $seller_rank = $user->seller_rank;
-        $mimes = ($seller_rank == 1) ? 'jpeg,png,jpg,gif' : 'jpeg,png,jpg';
+        $mimes = ($seller_rank != 0) ? 'jpeg,png,jpg,gif' : 'jpeg,png,jpg';
 
         $rules = [
             'profile_picture' => 'required|image|mimes:'.$mimes.'|max:4096|dimensions:min_width=350,min_height=350',
