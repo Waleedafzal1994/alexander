@@ -354,7 +354,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="activeFollowers">
+                    <div class="activeBadge">
                         <div class="count">
 
                             @if(!empty($service->user->general_badge))
@@ -1475,7 +1475,8 @@
             //Active Tab//
             $('#myTab a[href="#' + 'followers' + '"]').tab("show");
 
-            var clickedTab = $(this).attr('id');
+            var clickedTab = $(this).parent().attr('id');
+         
             if (clickedTab == 'activefollowers') {
 
                 $('#pills-following-tab').removeClass('active');

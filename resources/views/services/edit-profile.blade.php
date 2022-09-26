@@ -1431,6 +1431,7 @@
                     else if(response === 1){
                         
                         alertify.success('Profile has been updated.');
+                        location.reload(true);
                     }
                     else{
 

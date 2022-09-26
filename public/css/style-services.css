@@ -2564,7 +2564,8 @@ form button {
   padding: 12px 4px;
   position: relative;
 }
-.profile-info-counters .social .activeFollowers::before{
+.profile-info-counters .social .activeFollowers::before,
+.profile-info-counters .social .activeBadge::before{
   content: "";
   position: absolute;
   left: 0;
@@ -2586,6 +2587,13 @@ form button {
   border-radius: 4px;
 }
 .profile-info-counters .social .activeTimeline:hover{
+  background-color: #e2e1f3;
+  border-radius: 4px;
+}
+.profile-info-counters .social .activeBadge{
+  padding: 12px 0px;
+}
+.profile-info-counters .social .activeBadge:hover{
   background-color: #e2e1f3;
   border-radius: 4px;
 }
