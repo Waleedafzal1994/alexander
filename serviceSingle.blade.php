@@ -722,6 +722,7 @@
         
         var seller_edit = localStorage.getItem("edit_seller_profile");
         if(seller_edit){
+            console.log("1");
             document.getElementById("profileBar_info").style.display = "none";
             document.getElementById("services_navbar").style.display = "none";
             document.getElementById("edit_profile").style.display = "block";
@@ -750,7 +751,7 @@
             }
         });
         $('#edit_user_profile-tab').click(function(){
-
+            console.log("2")
             localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
             
             document.getElementById("profileBar_info").style.display = "none";

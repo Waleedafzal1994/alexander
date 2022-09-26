@@ -43,15 +43,7 @@
                         <div class="bg-white shadows rounded pl-0 pr-3 pb-4 pt-5">
                             <h1 id="categoryName" class="d-inline-block skew-bg py-4 mr-5">
                                 <span>Profile</span>
-                                @if(!empty(Auth::user()->google_id)) 
-                                    {{"(SignedIn with Google)"}}
-                                @elseif(!empty(Auth::user()->facebook_id))
-                                    {{"(SignedIn with Facebook)"}}
-                                @elseif(!empty(Auth::user()->discord_id))
-                                    {{"(SignedIn with Discord)"}} 
-                                @elseif(!empty(Auth::user()->twitch_id)))
-                                    {{"(SignedIn with Twitch)"}}
-                                @endif
+            
                             </h1>
                             <div class="row mt-4 pl-3" style="padding:15px;">
                                 <div class="col-md-12 mb-5">
@@ -704,7 +696,17 @@
                                     </li>
                                     <li class="d-flex align-items-center">
                                         <div class="text-dark">Account:</div> 
-                                        <p>tehswarm@gmail.com</p>
+                                        <p>@if(!empty(Auth::user()->google_id)) 
+                                            {{"(SignedIn with Google)"}}
+                                        @elseif(!empty(Auth::user()->facebook_id))
+                                            {{"(SignedIn with Facebook)"}}
+                                        @elseif(!empty(Auth::user()->discord_id))
+                                            {{"(SignedIn with Discord)"}} 
+                                        @elseif(!empty(Auth::user()->twitch_id)))
+                                            {{"(SignedIn with Twitch)"}}
+                                        @else
+                                            {{"(tehswarm@gmail.com)"}}
+                                        @endif</p>
                                     </li>
                                     <!-- <li class="d-flex align-items-center">
                                         <div>Phone:</div> 
@@ -933,7 +935,7 @@
                                     <li>
                                         <!-- <button type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">Save</button> -->
 
-                                        <input type="submit" class="new-btn rounded-pill font-weight-bold bg-purple-gradient text-white px-4 py-2" id="edit_profile_btn" value="Save">
+                                        <input type="submit" class="new-btn rounded-pill font-weight-bold btn-actives save_btn_hover text-white px-4 py-2" id="edit_profile_btn" value="Save">
                                     </li>
                                 </ul>
                             </div>
@@ -1137,7 +1139,7 @@
             @endif
         });
     $("#pills-back-tab").click(function(){
-        
+        console.log("3")
         document.getElementById("profileBar_info").style.display = "block";
         $('#services_navbar').addClass('show-on-unblock');
         // document.getElementById("services_navbar").style.display = "block";

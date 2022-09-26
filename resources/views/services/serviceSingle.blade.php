@@ -643,6 +643,7 @@
     <div class="" id="hide-show-on-block">
         <div class="col-md-12 bg-white rounded shadow d-flex align-items-center justify-content-center block-text">
            <!-- <h1>1</h1> -->
+           <!-- <input type="hidden" value="{{$checkBlockedUser}}"> -->
             <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
         </div>  
     </div>
@@ -738,10 +739,11 @@
         });
         $('#edit_user_profile-tab').click(function(){
 
-            // console.log("Hello");
+            console.log("4");
             // localStorage.setItem("edit_seller_profile", "edit_btn_pressed");
             
-            document.getElementById("profileBar_info").style.display = "none";
+            // document.getElementById("profileBar_info").style.display = "none !important";
+            $('#profileBar_info').attr("style", "display: none !important");
             $('#services_navbar').removeClass('show-on-unblock');
             $('#services_navbar').addClass('hide-on-block');
             // document.getElementById("services_navbar").style.display = "none";

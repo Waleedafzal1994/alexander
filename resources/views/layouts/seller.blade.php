@@ -353,7 +353,12 @@ $noFooter = true;
         <script>
             $(document).ready(function() {
                 // alert();
+                // var block_person = document.getElementById("user_block_test").value;
+                // if(block_person !=null){
+                //     $('#hide-show-on-block').css('display','none');
+                // }
                 $('#block-user-message').attr("style", "display: ");
+                // $('#block-user-message').attr("style", "display: ");
                 $('#staticBackdrop').modal({
                     show: true,
                     keyboard:false
@@ -492,7 +497,9 @@ $noFooter = true;
                                 
                                 $('#block-user-message').attr("style", "display: none !important");
 
-                                $('#hide-show-on-block').css('display','none');
+                                // $('#hide-show-on-block').css('display','none');
+                                $('#hide-show-on-block').attr("style", "display: none !important");
+
                             }
                             if (response.error === '1') {
                                 Swal.fire(response.msg);

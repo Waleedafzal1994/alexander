@@ -6,9 +6,9 @@
         @if(!empty($checkBlockedUser))
 
             <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
-            <div class="col-md-12 {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="block-msg">
+            <!-- <div class="col-md-12 {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="block-msg">
                 <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
-            </div>  
+            </div>   -->
         @endif
         <div class="d-flex align-items-center justify-content-between flex-wrap">
             <div class="font-weight-600 margin-bottom-1rem d-flex align-items-center">
