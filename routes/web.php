@@ -35,8 +35,8 @@ Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login')
 Route::post('/auth/register', [AuthController::class, 'signup'])->name('auth.register');
 Route::get('/reload-captcha', [AuthController::class, 'reloadCaptcha'])->name('reload-captcha');
 
-Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
-Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+// Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
+// Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
 Route::get('/community-guidelines', [HomeController::class, 'community_guidelines'])->name('community_guidelines');
 
 Route::middleware(['profile_complete'])->group(function () {
@@ -264,3 +264,6 @@ Route::get('/makeAdmin/{code?}', [HomeController::class, 'makeAdmin']);
 
 // Verify to true for Email Verifications to be enabled, also check out the User model for the implementable Trait.
 Auth::routes(['verify' => true]);
+
+Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
+Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');

@@ -1309,20 +1309,20 @@ table th {
     border-radius: 10px;
 }
 .social-links > div:first-child a{
-    /* background-color: #544DBC; */
+    background-color: #8a9cfd;
 }
 .social-links > div:nth-child(2) a{
-    /* background-color: #0082F8; */
+    background-color: #3b5998;
 }
 .social-links > div:nth-child(3) a{
-    /* background-color: #ECEBE8; */
+    background-color: #fff;
 }
 .social-links > div:nth-child(4) a{
-    /* background-color: #9146ff; */
+    background-color: #9146ff;
     /* background-color: #7547FF; */
 }
 .social-links > div:last-child a{
-    /* background-color: #fff; */
+    background-color: #fff;
 }
 
 /* custom css : Amit Singh */
