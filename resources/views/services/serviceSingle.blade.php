@@ -266,7 +266,7 @@
 
 
                     @if(!empty($service->user->facebook_profile))
-
+                    <?php var_dump($service->user->facebook_profile)?>
                     <a href="{{$service->user->facebook_profile}}" target=_blank>
                         <i class="fab fa-facebook-f text-white"></i>
                     </a>

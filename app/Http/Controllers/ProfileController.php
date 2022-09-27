@@ -208,17 +208,31 @@ class ProfileController extends Controller
 
         // user socials
         if ($request->input('facebook_profile')) {
+    
             $user->facebook_profile = $request->input('facebook_profile');
+        }
+        else{
+            $user->facebook_profile = NULL;
         }
         if ($request->input('twitch_profile')) {
             $user->twitch_profile = $request->input('twitch_profile');
         }
+        else{
+            $user->twitch_profile = NULL;
+        }
         if ($request->input('instagram_profile')) {
             $user->instagram_profile = $request->input('instagram_profile');
+        }
+        else{
+            $user->instagram_profile = NULL;
         }
         if ($request->input('tiktok_profile')) {
             $user->tiktok_profile = $request->input('tiktok_profile');
         }
+        else{
+            $user->tiktok_profile = NULL;
+        }
+
         // if ($request->input('discord_handle')) {
         //     $dcHandle = explode('#', $request->input('discord_handle'));
         //     if (is_array($dcHandle) && count($dcHandle) == 2) {

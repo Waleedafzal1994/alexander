@@ -392,6 +392,10 @@ $noFooter = true;
                             block();
                             //alert('sdf');
                         } else {
+
+                            $(".block-toggle").prop("checked", false);
+
+                            //  
                             //Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
                         }
                     })
@@ -414,6 +418,7 @@ $noFooter = true;
                             unblock();
                             //alert('sdf');
                         } else {
+                            $(".block-toggle").prop("checked", true);
                             //Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
                         }
                     })
