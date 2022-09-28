@@ -697,10 +697,10 @@
 
 @push('scripts')
 <script src="{{ asset('js/mdb.min.js') }}"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 <script>
     jQuery(document).ready(function($) {
-
         // console.log("Hello");
         // var seller_edit = localStorage.getItem("edit_seller_profile");
         // if(seller_edit){
@@ -970,26 +970,51 @@
         //     }
         // });
 
-        $("#follow-checkss").hover(function(){
-            var follow_checking = document.getElementById("follow-checkss").innerHTML;
-            if(follow_checking == 'Following'){
-                document.getElementById("follow-checkss").innerHTML = "Unfollow";
-                console.log(follow_checking,'1');
-            }else if(follow_checking == 'Follow'){
-                document.getElementById("follow-checkss").innerHTML = "Follow";
-                console.log(follow_checking,'2');
+        // $("#follow-checkss").hover(function(){
+        //     var follow_checking = document.getElementById("follow-checkss").innerHTML;
+        //     console.log(follow_checking,'12121');
+        //     if(follow_checking == 'Following'){
+        //         document.getElementById("follow-checkss").innerHTML = "Unfollow";
+        //         console.log(follow_checking,'1');
+        //     }else if(follow_checking == 'Follow'){
+        //         document.getElementById("follow-checkss").innerHTML = "Follow";
+        //         console.log(follow_checking,'2');
+        //     }else{
+        //     }
+        //     }, function(){
+        //         let follow_status = document.getElementById("check-follow-toggle").value;
+        //         console.log(follow_status,'Yeh')
+        //         if(follow_status == 'Following'){
+        //             document.getElementById("follow-checkss").innerHTML = "Following";
+        //             // console.log(follow_status,'3');
+        //         }else{
+        //             document.getElementById("follow-checkss").innerHTML = "Follow";
+        //             // console.log(follow_status,'4');
+        //         }
+        // });
+        // NEED TO WORK ON TO MAKE IT PERFECTLY MATCH REQUIREMENT
+        $(document).on({
+            mouseenter: function () {
+                var follow_checking = document.getElementById("follow-check").innerHTML;
+                if(follow_checking == 'Following'){
+                    document.getElementById("follow-checkss").innerHTML = "Unfollow";
+                    console.log(follow_checking,'1');
+                }else if(follow_checking == 'Follow'){
+                    document.getElementById("follow-checkss").innerHTML = "Follow";
+                    console.log(follow_checking,'2');
             }else{
             }
-            }, function(){
+            },
+            mouseleave: function () {
                 let follow_status = document.getElementById("check-follow-toggle").value;
                 if(follow_status == 'Following'){
                     document.getElementById("follow-checkss").innerHTML = "Following";
-                    console.log(follow_status,'3');
                 }else{
                     document.getElementById("follow-checkss").innerHTML = "Follow";
-                    console.log(follow_status,'4');
                 }
-        });
+            }
+        }, '#follow-checkss');
+        // END HERE NEED TO WORK ON TO MAKE IT PERFECTLY MATCH REQUIREMENT
     });
 </script>
 <script type="text/javascript">

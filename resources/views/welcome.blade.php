@@ -550,7 +550,7 @@
         </div> -->
 
         <!-- <div style="display:flex; justify-content:center; margin-top: 40px;">
-            <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
+            <img src="/imgs/arrow-023.png" class="frontpage-arrow-down">
         </div>
         <div style="height:70px;">
         </div> -->
@@ -752,7 +752,7 @@
         </div>
 
         <div style="display:flex; justify-content:center; padding-top:50px;">
-            <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
+            <img src="/imgs/arrow-023.png" class="frontpage-arrow-down">
         </div>
 
         <br id="learnMore">
@@ -802,7 +802,7 @@
             <div style="height:100px;"></div>
         </div>
         <div style="display:flex; justify-content:center; margin-top: 50px;">
-            <img src="/imgs/arrow-02.png" class="frontpage-arrow-down">
+            <img src="/imgs/arrow-023.png" class="frontpage-arrow-down">
         </div>
         <div class="container">
             <div class="col-md-12">
