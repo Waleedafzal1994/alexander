@@ -1118,7 +1118,9 @@
    $(document).ready(function() {
     // field
     const length_textarea = document.getElementById("field").value.length;
-
+    // document.getElementById("#profile-tab").click();
+    // $("#profile-tab").addClass('active');
+    // $("#profile").addClass('active show');
     // console.log(length_textarea,'Value')
     $('#charCounting').text(length_textarea);
     });
@@ -1139,21 +1141,45 @@
             @endif
         });
     $("#pills-back-tab").click(function(){
-        console.log("3")
-        document.getElementById("profileBar_info").style.display = "block";
-        $('#services_navbar').addClass('show-on-unblock');
-        // document.getElementById("services_navbar").style.display = "block";
-        document.getElementById("edit_profile").style.display = "none";
+        // NEW
+        var scrollV, scrollH, loc = window.location;
+        if ("pushState" in history){
+            history.pushState("", document.title, loc.pathname + loc.search);
+            location.reload();
+        }else {
+            // Prevent scrolling by storing the page's current scroll offset
+            scrollV = document.body.scrollTop;
+            scrollH = document.body.scrollLeft;
 
-        $("#edit_user_profile").removeClass('show active'); 
-        $("#pills-edit-profile-tab").removeClass('active');
-        $("#pills-back-tab").removeClass('active');
+            loc.hash = "";
 
-        $("#home-tab").addClass('active');
-        $("#home").addClass('active show');
+            // Restore the scroll offset, should be flicker free
+            document.body.scrollTop = scrollV;
+            document.body.scrollLeft = scrollH;
+        }
+        // END HERE
 
-        // localStorage.removeItem("edit_seller_profile");
-        document.getElementById("home-tab").click();
+
+
+
+        // console.log("Hello");
+        // document.getElementById("profileBar_info").style.display = "block";
+        // $('#services_navbar').addClass('show-on-unblock');
+        // // document.getElementById("services_navbar").style.display = "block";
+        // document.getElementById("edit_profile").style.display = "none";
+
+        // $("#edit_user_profile").removeClass('show active'); 
+        // $("#pills-edit-profile-tab").removeClass('active');
+        // $("#pills-back-tab").removeClass('active');
+
+        // $("#home-tab").addClass('active');
+        // $("#home").addClass('active show');
+
+        // $("#profile-tab").addClass('active');
+        // $("#profile").addClass('active show');
+
+        // // localStorage.removeItem("edit_seller_profile");
+        // document.getElementById("#profile-tab").click();
 
     });
     $('#profile_picture_img').click(function(e) {
