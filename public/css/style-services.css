@@ -1440,6 +1440,7 @@ p {
   margin-top: 13px;
   padding-left: 0;
   width: 66%;
+  margin-left: -25px;
 }
 
 .we-video-info>ul li {
@@ -1510,9 +1511,10 @@ p {
   font-size: 11px;
   left: 36px;
   position: absolute;
-  top: 5px;
+  top: 18px;
   white-space: nowrap;
   font-weight: 600;
+  line-height: 0px;
 }
 
 .gallery-like-heart {

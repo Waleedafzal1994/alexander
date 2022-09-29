@@ -63,6 +63,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
     <div class="bg-welcome-clr">
+        <a class="right-bottom-arrow new-purple-gradient shadows text-decoration-none" style="display: none;" id="back_to_top">
+            <div class="d-flex align-items-center justify-content-center h-100">
+                <i class="fa fa-chevron-up text-white"></i>
+            </div>
+        </a>
         <div class="ripple-section">
             <div class="container-fluid">
                 <div class="row">
@@ -1149,6 +1154,25 @@ for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" ></script>
 <script>
+
+    $("#back_to_top").css("display", "none");
+        // Scroll Button Functionality Start Here 
+        const btnScrollToTop = document.querySelector("#back_to_top");
+
+        // // scroll to top of page when button clicked
+        btnScrollToTop.addEventListener("click", e => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+    });
+
+     // // toggle 'scroll to top' based on scroll position
+        window.addEventListener('scroll', e => {
+            btnScrollToTop.style.display = window.scrollY > 20 ? 'block' : 'none';
+        });
+
 
     // Play btn animation start
     $('#play-video').on('click', function(e){

@@ -688,6 +688,30 @@
 
     </div>
 </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-close-btn">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-header header-page login-header rounded-top">
+                <div class="header-img-modal-login-center custom-set">
+                    <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="swal2-title">Are you sure you want to delete this Post?</div>
+                <div class="swal2-html-container">You will not be able to recover this post!</div>
+                <div class="swal2-actions d-flex align-items-center justify-content-end">
+                    <button class="btn swal2-confirm swal2-styled">OK</button>
+                    <button class="btn swal2-cancel swal2-styled">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {{-- NEW CONTENT END --}}

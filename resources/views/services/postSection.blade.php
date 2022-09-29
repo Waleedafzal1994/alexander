@@ -205,6 +205,9 @@
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
                                                         <div class="textArea-body">
                                                             <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
+                                                            <button id="emojishow">
+                                                                <i class="fa-solid fa-face-smile"></i>
+                                                            </button>
                                                             <div class="text-counter">
                                                                 <span id="wordsCounts" class="counter">0</span>
                                                                 <span class="fix-count">/500</span>
@@ -334,6 +337,21 @@ $(document).ready(function(){
         });
 
     });
+
+    // Emoji textarea content start //
+        // var margin = 10,
+        //     instance1 = new emojiButtonList( "emojishow", {
+        //         dropDownXAlign: "left",
+        //         textBoxID: "emojitext",
+        //         yAlignMargin: margin,
+        //         xAlignMargin: margin
+        //     } )
+
+        // function emojiClickEvent( emojiText ) {
+        //     document.title += " " + emojiText;
+        // }
+    // Emoji textarea content end //
+
 
     $('#add-blog-post-form').submit(function(e) {
 

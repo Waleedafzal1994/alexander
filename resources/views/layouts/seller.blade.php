@@ -163,9 +163,13 @@ $noFooter = true;
                         @else
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
-                                    <input type="text"
-                                        style="width:250px; text-align:center; background:transparent !important; color:white; border:1px solid rgba(255,255,255,0.3) !important;"
-                                        id="search" placeholder="Search">
+                                    <div class="position-relative search-section">
+                                        <input type="text"
+                                            class="font-15 search-input"
+                                            style="width:250px; text-align:center; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);"
+                                            id="search" placeholder="Search">
+                                            <i class="fa fa-search text-white"></i>
+                                    </div>
                                     <div id="myDropdown" class="dropdown-content"
                                         style="border-radius:4px; width:250px; min-height:50px; margin-top:40px;">
 
@@ -189,7 +193,7 @@ $noFooter = true;
                             <li class="nav-item spaced-out-lg">
                                 <a href="/points" class="nav-link"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;">
-                                    <span class="badge badge-pill badge-points">{{ Auth::user()->points }} GP <img
+                                    <span class="badge badge-pill badge-points d-flex align-items-center">{{ Auth::user()->points }} GP <img
                                             src="/imgs/icons/6.png" style="height:24px; margin-left:5px;"></span>
                                 </a>
                             </li>

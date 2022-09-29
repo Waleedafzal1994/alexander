@@ -253,6 +253,7 @@ p {
     color: #fff;
     padding: 5px 15px !important;
     vertical-align: middle;
+    font-size: 16px;
 }
 
 
@@ -568,18 +569,19 @@ a:hover {
 /* Scrollbar CSS */
 
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 body,
 .newdropdown .dropdown .dropdown-menu .scroll-div {
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) white;
 }
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: white;
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
     border: 2px solid white;
@@ -993,7 +995,7 @@ ul.footer-menu li a:before {
 }
 
 .nav-link-icon {
-    height: 27px;
+    height: 35px;
 }
 
 .nav-link-icon-container {
@@ -2269,11 +2271,13 @@ a.slider-link:hover {
     font-weight: 500;
 }
 @media (max-width: 1024px){
-    .service > div{
+    .service > div,
+    .bg-welcome-clr > div{
         display: block !important;
 
     }
-    .service > .right-bottom-arrow{
+    .service > .right-bottom-arrow,
+    .bg-welcome-clr > .right-bottom-arrow{
         display: flex !important;
     }
     .service > div .profileBar{
@@ -3161,7 +3165,7 @@ input:checked + .slider {
 
 
 .comment-action-box p{
-    font-size: 1rem;
+    font-size: 14px;
 }
 
 
@@ -3525,4 +3529,28 @@ footer{
 }
 .block-text a{
     color: #581c87 !important;
+}
+
+.search-input:focus{
+    border-color: #fff !important;
+}
+
+.search-section i{
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    font-size: 18px;
+}
+#emojishow{
+    position: absolute;
+    bottom: 4px;
+    left: 6px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+#emojishow i{
+    color: #ffa208c7;
+    font-size: 20px;
+    border-radius: 50%;
 }
