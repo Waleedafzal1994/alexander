@@ -3294,17 +3294,9 @@ input:checked + .slider {
 background: #888; 
 }
 
-
-
-
-
-
 .shadows {
     box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(28 27 30 / 5%) !important;
-  }
-
-
-
+}
 
   /* Multi select */
   .choices__input{
@@ -3553,4 +3545,76 @@ footer{
     color: #ffa208c7;
     font-size: 20px;
     border-radius: 50%;
+}
+
+/* Posts tabs section */
+
+.post-tabs .nav-link{
+    font-size: 18px;
+    font-weight: 500;
+    color: #262626;
+    line-height: 27px;
+}
+.post-tabs .nav-link.active{
+    color: #581C87 !important;
+    background-color: transparent !important;
+}
+.post-tabs .nav-link i{
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+.post-tabs .nav-link i:before{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.post-tabs .nav-link.active i{
+    color: #fff !important;
+    background-color: #581C87 !important;
+}
+
+.post-tabs .post-btn a{
+    font-size: 20px;
+    font-weight: 600;
+}
+.upload-section p{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.upload-section .form-group{
+    position: relative;
+    height: 104px;
+    width: 104px;
+    cursor: pointer;
+}
+.upload-section .form-group input{
+    opacity: 0;
+    position: absolute;
+    z-index: 102;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.upload-section .form-group .upload-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #C6C5D7;
+    background-color: #EDEDFB;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload-section .form-group .upload-box i{
+    color: rgba(18,14,27,0.3);
+    font-size: 20px;
 }

@@ -98,6 +98,7 @@ Route::prefix('apple')->name('apple.')->group(function () {
 Route::middleware(['auth', 'verified', 'throttle:custom_five'])->group(function () {
     Route::post('/create/post', [PostController::class, 'createPost'])->name('createPost');
     Route::post('/post/comment', [PostController::class, 'addComment'])->name('comment');
+    Route::get('/community/post', [PostController::class, 'addPost'])->name('myPost');
 });
 
 // Authentication required routes.

@@ -433,4 +433,7 @@ class PostController extends Controller
             return $this->error("Image not found.");
         }
     }
+    public function addPost(){
+        return view('posts.addpost');
+    }
 }
