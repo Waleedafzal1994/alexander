@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('css/emojibuttonlistjs.css')}}">
 <style type="text/css">
     .show-less{
         display: none !important;
@@ -262,16 +263,65 @@
 </div>
 <div class="post-item-box"></div>
 
+
+<!-- Modal On Delete Post to Show Start Here -->
+
+<!-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-close-btn">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-header header-page login-header rounded-top">
+                <div class="header-img-modal-login-center custom-set">
+                    <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="swal2-title">Are you sure you want to delete this Post?</div>
+                <div class="swal2-html-container">You will not be able to recover this post!</div>
+                <div class="swal2-actions d-flex align-items-center justify-content-end">
+                    <button class="btn swal2-confirm swal2-styled">OK</button>
+                    <button class="btn swal2-cancel swal2-styled">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Modal On Delete Post to Show End Here -->
+
+
 <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"> </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="{{asset('js/emojibuttonlistjs.js')}}"></script>
 <script>
     
 $(document).ready(function(){
     $(".HeartAnimation").click(function() {
         $(this).toggleClass("animate");
     });
+    $("#emojishow").click(function(){
+        // let post_id = document.querySelector('input').value;
+        // let post_id = document.getElementById("commentable_id").value;
+        // console.log(post_id,'POST ID');
+        console.log("Hello");
+        var margin = 10,
+            instance1 = new emojiButtonList( "emojishow", {
+                dropDownXAlign: "left",
+                textBoxID: "commentable_content_10",
+                yAlignMargin: margin,
+                xAlignMargin: margin
+            });
+
+        function emojiClickEvent( emojiText ) {
+            document.title += " " + emojiText;
+        }
+    })
     //show comment//
     $('.comment').off().on('click', function(e) {
         e.stopImmediatePropagation();
@@ -418,7 +468,7 @@ $(document).ready(function(){
         });
 
 
-});
+    });
 
     // Textarea
     function auto_grow(element) {

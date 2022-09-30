@@ -1276,7 +1276,7 @@
                 let post_id = $(e.currentTarget).attr('data-post');
                 if (e.target.className === 'delete-post-action') {
                     Swal.fire({
-                        title: "Are you sure you want to delete this Post?",
+                        title: "Are you sure you want to delete this Postssssssssssss?",
                         text: "You will not be able to recover this post!",
                         icon: "warning",
                         buttons: [

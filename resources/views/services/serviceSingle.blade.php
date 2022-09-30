@@ -676,6 +676,18 @@
         </div>
     </div>
 </div>
+
+<!-- <div class="modal fade modal-body-custom" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" data-dismiss="modal">
+        <div class="modal-content modal-content-custom">
+            <div class="modal-body">
+                <button type="button" class="close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview">
+            </div>
+        </div>
+    </div>
+</div> -->
+
 <div class="modal fade in" id="file_not_supported" role="dialog">
     <div class="modal-dialog">
 
@@ -689,12 +701,12 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade modal-body-custom" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-close-btn">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true" class="close_action">×</span>
                 </button>
             </div>
             <div class="modal-header header-page login-header rounded-top">
@@ -703,18 +715,17 @@
                 </div>
             </div>
             <div class="modal-body">
-                <div class="swal2-title">Are you sure you want to delete this Post?</div>
-                <div class="swal2-html-container">You will not be able to recover this post!</div>
-                <div class="swal2-actions d-flex align-items-center justify-content-end">
-                    <button class="btn swal2-confirm swal2-styled">OK</button>
-                    <button class="btn swal2-cancel swal2-styled">Cancel</button>
+                <div class="">Are you sure you want to delete this Post?</div>
+                <div class="">You will not be able to recover this post!</div>
+                <div class="d-flex align-items-center justify-content-end">
+                    <button class="btn">OK</button>
+                    <button class="close_action">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{{-- NEW CONTENT END --}}
 @endsection
 
 
@@ -1333,25 +1344,31 @@
             if (e.currentTarget.classList.contains("post-actions")) {
                 let post_id = $(e.currentTarget).attr('data-post');
                 if (e.target.className === 'delete-post-action') {
-                    Swal.fire({
-                        title: "Are you sure you want to delete this Post?",
-                        text: "You will not be able to recover this post!",
-                        icon: "warning",
-                        buttons: [
-                            'No, cancel it!',
-                            'Yes, I am sure!'
-                        ],
-                        dangerMode: true,
-                        showCancelButton: true,
-                    }).then(function(isConfirm) {
-                        if (isConfirm.isConfirmed === true) {
-                            deletePost(post_id)
-                        } else {
-                            Swal.fire("Cancelled", "Your post is safe :)", "error");
-                        }
-                    })
+                    console.log("Hellllloooo");
+                    $('#deletemodal').modal("show");
+                    // $('#imagemodal').modal('show');
+                    // Swal.fire({
+                    //     title: "Are you sure you want to delete this Post?",
+                    //     text: "You will not be able to recover this post!",
+                    //     icon: "warning",
+                    //     buttons: [
+                    //         'No, cancel it!',
+                    //         'Yes, I am sure!'
+                    //     ],
+                    //     dangerMode: true,
+                    //     showCancelButton: true,
+                    // }).then(function(isConfirm) {
+                    //     if (isConfirm.isConfirmed === true) {
+                    //         deletePost(post_id)
+                    //     } else {
+                    //         Swal.fire("Cancelled", "Your post is safe :)", "error");
+                    //     }
+                    // })
                 }
             }
+        });
+        $(".close_action").click(function(){
+            $('#deletemodal').modal("hide");
         });
     });
     // post delete function
