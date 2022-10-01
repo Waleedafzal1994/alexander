@@ -96,7 +96,7 @@ $noFooter = true;
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link" href="/gp">
@@ -165,7 +165,7 @@ $noFooter = true;
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
                                     <div class="position-relative search-section">
                                         <input type="text"
-                                            class="font-15 search-input"
+                                            class="font-15 search-input bg-transparent"
                                             style="width:250px; text-align:center; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);"
                                             id="search" placeholder="Search">
                                             <i class="fa fa-search text-white"></i>

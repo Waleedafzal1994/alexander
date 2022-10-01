@@ -42,7 +42,7 @@
 
     <div class="container post-tabs">
         <div class="row">
-            <div class="col-3">
+            <div class="col-4">
                 <div class="nav flex-column nav-pills bg-white shadows rounded-lg mb-4 py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                     <a class="nav-link active" id="following-tab" data-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true"><i class="fa-solid fa-user-group"></i> Following</a>
@@ -61,7 +61,7 @@
                     <a href="/community/post" class="new-btn w-100 d-block new-purple-gradient text-white py-2 rounded-pill">Post</a>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-8">
                 <div class="tab-content" id="v-pills-tabContent">
                     
                     <div class="tab-pane fade show active" id="following" role="tabpanel" aria-labelledby="following-tab">

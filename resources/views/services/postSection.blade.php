@@ -141,7 +141,7 @@
                                     @endif
                                    
                                 </div>
-                                <div class="we-video-info">
+                                <div class="we-video-info d-flex">
                                     <ul>
                                         {{-- <li>
                                                 <span class="views" title="views">
@@ -167,8 +167,11 @@
                                                 <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
                                             </li> --}}
                                     </ul>
-                                    <div class="users-thumb-list" id="people-liked-post-{{ $post->id }}">
-                                        {!! $post->postLikedUserNames() !!}
+                                    <div class="">
+                                        <div class="hashtag my-4 font-weight-bold">#Highlights</div>
+                                        <div class="users-thumb-list" id="people-liked-post-{{ $post->id }}">
+                                            {!! $post->postLikedUserNames() !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -702,7 +702,7 @@
 </div>
 
 <div class="modal fade modal-body-custom" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-close-btn">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -714,17 +714,21 @@
                     <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
                 </div>
             </div>
-            <div class="modal-body">
-                <div class="">Are you sure you want to delete this Post?</div>
-                <div class="">You will not be able to recover this post!</div>
-                <div class="d-flex align-items-center justify-content-end">
-                    <button class="btn">OK</button>
-                    <button class="close_action">Cancel</button>
-                </div>
+            
+            <div class="modal-body px-0">
+                <div class="text-center text-white bg-purple-gradient py-4 mb-3 ">Are you sure you want to delete this Post?</div>
+                <div class="text-center py-4 model-footer-bg">You will not be able to recover this post!</div>
+            </div>
+            <div class="modal-footer model-footer-bg d-flex align-items-center justify-content-end">
+                <button class="new-btn mr-3">OK</button>
+                <button class="new-btn close_action btn-danger rounded-pill text-white px-3 py-1">Cancel</button>
             </div>
         </div>
     </div>
 </div>
+
+
+
 
 @endsection
 
