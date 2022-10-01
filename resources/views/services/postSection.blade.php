@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="{{asset('css/emojibuttonlistjs.css')}}">
 <style type="text/css">
-    .show-less{
+    .show-less {
         display: none !important;
     }
-    .show-less-block{
+
+    .show-less-block {
         display: block !important;
     }
 </style>
@@ -101,37 +102,37 @@
                                 <div class="carousel-row">
                                     @php $images = $post->imageContentHtml() @endphp
                                     @if(!empty($images) && $images->count()>0)
-                                     <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
+                                    <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
                                         <ol class="carousel-indicators">
                                             @if(!empty($images))
-                                                @php $i=0; @endphp
-                                                @foreach ($images as $value)
-                                                    <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
-                                                    @php $i++ @endphp
-                                                @endforeach
+                                            @php $i=0; @endphp
+                                            @foreach ($images as $value)
+                                            <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                            @php $i++ @endphp
+                                            @endforeach
                                             @endif
-                                            
+
                                         </ol>
                                         <div class="carousel-inner">
 
                                             @if(!empty($images))
-                                                @php $i=0; @endphp
-                                                @foreach ($images as $value) 
+                                            @php $i=0; @endphp
+                                            @foreach ($images as $value)
 
-                                                    <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
-                                                        <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
-                                                    </div>
-                                                        @php $i++ @endphp
-                                                @endforeach
+                                            <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
+                                                <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
+                                            </div>
+                                            @php $i++ @endphp
+                                            @endforeach
                                             @endif
-                                            
+
                                         </div>
                                         <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
                                             <i class="fa-solid fa-location-arrow prev-icon"></i>
                                             <span class="sr-only">Previous</span>
                                         </a>
-                                        
-                                        @if(!empty($images) && count($images) > 1   )
+
+                                        @if(!empty($images) && count($images) > 1 )
                                         <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
                                             <i class="fa-solid fa-location-arrow next-icon"></i>
                                             <span class="sr-only">Next</span>
@@ -139,7 +140,7 @@
                                         @endif
                                     </div>
                                     @endif
-                                   
+
                                 </div>
                                 <div class="we-video-info d-flex">
                                     <ul>
@@ -158,7 +159,7 @@
                                         </li>
                                         <li>
                                             <span class="comment" title="Comments">
-                                                <i class="fa fa-commenting" ></i>
+                                                <i class="fa fa-commenting"></i>
                                                 <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
                                             </span>
                                         </li>
@@ -178,9 +179,9 @@
                             <div class="coment-area ">
                                 <ul class="we-comet" id="comment-box_{{ $post->id }}">
                                     {!! $post->commentByUsers() !!}
-                                    
+
                                     <span id="append_comment_{{ $post->id }}"></span>
-                                    
+
                                     <div class="comment-loader" id="append_less_comment_{{ $post->id }}" style="display: none;">
                                         <img src="{{asset('imgs/loader.gif')}}">
                                     </div>
@@ -207,6 +208,7 @@
                                                 <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
                                                     <div class="position-relative">
                                                         <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
+                                                        <div id="post_id" style="display: none;">{{ $post->id }}</div>
                                                         <div class="textArea-body">
                                                             <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
                                                             <button id="emojishow">
@@ -231,24 +233,24 @@
                                                                 window.charCount = 0;
                                                                 setInterval(function() {
                                                                     var c = $(".content-count").val().length;
-                                                                    if(c != window.charCount) {
+                                                                    if (c != window.charCount) {
                                                                         window.charCount = c;
-                                                                        $("#wordsCounts").html(window.charCount); 
+                                                                        $("#wordsCounts").html(window.charCount);
                                                                     }
-                                                                    }, 500);
+                                                                }, 500);
                                                             });
                                                         </script>
                                                     </div>
                                                     <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">
                                                 </form>
                                             </div>
-                                            
+
                                         </div>
                                     </li>
                                 </ul>
                             </div>
 
-                            
+
                         </div>
                     </div>
                 </div>
@@ -303,95 +305,91 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="{{asset('js/emojibuttonlistjs.js')}}"></script>
 <script>
-    
-$(document).ready(function(){
-    $(".HeartAnimation").click(function() {
-        $(this).toggleClass("animate");
-    });
-    $("#emojishow").click(function(){
+    $(document).ready(function() {
+        $(".HeartAnimation").click(function() {
+            $(this).toggleClass("animate");
+        });
+        let post_id = document.getElementById("post_id").innerText;
+        // $("#emojishow").click(function(){
         // let post_id = document.querySelector('input').value;
         // let post_id = document.getElementById("commentable_id").value;
         // console.log(post_id,'POST ID');
-        console.log("Hello");
         var margin = 10,
-            instance1 = new emojiButtonList( "emojishow", {
+            instance1 = new emojiButtonList("emojishow", {
                 dropDownXAlign: "left",
-                textBoxID: "commentable_content_10",
+                textBoxID: "commentable_content_"+post_id,
                 yAlignMargin: margin,
                 xAlignMargin: margin
             });
 
-        function emojiClickEvent( emojiText ) {
+        function emojiClickEvent(emojiText) {
             document.title += " " + emojiText;
         }
-    })
-    //show comment//
-    $('.comment').off().on('click', function(e) {
-        e.stopImmediatePropagation();
+        // })
+        //show comment//
+        $('.comment').off().on('click', function(e) {
+            e.stopImmediatePropagation();
             $(this).parents(".post-meta").siblings(".coment-area").slideToggle("slow");
         });
-  // When strating hide prev arrow
-    $('.carousel-control-prev').hide();
+        // When strating hide prev arrow
+        $('.carousel-control-prev').hide();
 
-    jQuery(".post-comt-box form").on("submit", function(event) 
-    {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        let comment = jQuery(this).find('textarea').val();
-        let post_id = jQuery(this).attr("data-post-id");
+        jQuery(".post-comt-box form").on("submit", function(event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            let comment = jQuery(this).find('textarea').val();
+            let post_id = jQuery(this).attr("data-post-id");
 
-        if (!post_id) {
-            return false;
-        }
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            if (!post_id) {
+                return false;
             }
-        });
-        $.ajax({
-            type: 'POST',
-            url: "/post/comment",
-            data: $('#' + jQuery(this).attr("id")).serialize(),
-            success: function(response) {
-                if (response.status === true && response.code === 200) {
-                    let parent = jQuery("#post-comment_form_" + post_id).parent(
-                        "li");
-                    let comment_HTML = response.data;
-                    // $("#comment-box_" + post_id).prepend(comment_HTML);
 
-                    if(response.count == 1){
-                       
-                       $("#append_comment_" + post_id).append(comment_HTML);
-                     
-                    }
-                    else if($("#comment-box_" + post_id).first().length > 0 ){
-                        
-                        $(".comment-section_" + post_id).last().after(response.data);
-                    }
-                    else{
-                        $("#append_comment_" + post_id).append(comment_HTML);
-                    }
-
-                    // $("#append_comment_" + post_id).append(comment_HTML);
-                    // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
-                    $("#commentable_content_" + post_id).val("");
-                    $("#comment_post_count_" + post_id).text(response.count);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-            },
+            });
+            $.ajax({
+                type: 'POST',
+                url: "/post/comment",
+                data: $('#' + jQuery(this).attr("id")).serialize(),
+                success: function(response) {
+                    if (response.status === true && response.code === 200) {
+                        let parent = jQuery("#post-comment_form_" + post_id).parent(
+                            "li");
+                        let comment_HTML = response.data;
+                        // $("#comment-box_" + post_id).prepend(comment_HTML);
 
-            error: function(data) {
-                data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
-                    .error, "error") : ""
-                data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
-                    ""
-                jQuery(this).find('textarea').val(' ');
-            }
+                        if (response.count == 1) {
+
+                            $("#append_comment_" + post_id).append(comment_HTML);
+
+                        } else if ($("#comment-box_" + post_id).first().length > 0) {
+
+                            $(".comment-section_" + post_id).last().after(response.data);
+                        } else {
+                            $("#append_comment_" + post_id).append(comment_HTML);
+                        }
+
+                        // $("#append_comment_" + post_id).append(comment_HTML);
+                        // $(comment_HTML).insertBefore("#post-comment_form_" + post_id);
+                        $("#commentable_content_" + post_id).val("");
+                        $("#comment_post_count_" + post_id).text(response.count);
+                    }
+                },
+
+                error: function(data) {
+                    data?.responseJSON?.error?.error ? $.notify(data.responseJSON.error
+                        .error, "error") : ""
+                    data?.responseJSON?.message ? $.notify(data.responseJSON.message, "error") :
+                        ""
+                    jQuery(this).find('textarea').val(' ');
+                }
+            });
+
         });
 
-    });
-
-    // Emoji textarea content start //
+        // Emoji textarea content start //
         // var margin = 10,
         //     instance1 = new emojiButtonList( "emojishow", {
         //         dropDownXAlign: "left",
@@ -403,10 +401,10 @@ $(document).ready(function(){
         // function emojiClickEvent( emojiText ) {
         //     document.title += " " + emojiText;
         // }
-    // Emoji textarea content end //
+        // Emoji textarea content end //
 
 
-    $('#add-blog-post-form').submit(function(e) {
+        $('#add-blog-post-form').submit(function(e) {
 
             e.preventDefault();
             let i = 1;
@@ -476,51 +474,48 @@ $(document).ready(function(){
     // Textarea
     function auto_grow(element) {
         element.style.height = "5px";
-        element.style.height = (element.scrollHeight)+"px";
+        element.style.height = (element.scrollHeight) + "px";
     };
 
-    $('.textarea').focus(function() { 
+    $('.textarea').focus(function() {
         $(this).parent().removeClass("inputFocus");
         $(this).parent().addClass("inputFocus");
-    }).blur(function(){
+    }).blur(function() {
         $(this).parent().removeClass("inputFocus");
     });
 
-// function countCount(val) {
-//         console.log(val,'Hello');
-//         var len = val.value.length;
-//         if (len >= 500) {
-//             val.value = val.value.substring(0, 500);
-//         } else {
-//             $('#charCounts').text(500 - len);
-//         }
-//     };
+    // function countCount(val) {
+    //         console.log(val,'Hello');
+    //         var len = val.value.length;
+    //         if (len >= 500) {
+    //             val.value = val.value.substring(0, 500);
+    //         } else {
+    //             $('#charCounts').text(500 - len);
+    //         }
+    //     };
 
 
-$('.post-carousel').on('slide.bs.carousel', function (e) {
+    $('.post-carousel').on('slide.bs.carousel', function(e) {
 
-  // var slidingItemsAsIndex = $('.carousel-item').length - 1;
-  var slidingItemsAsIndex = $(this).find('.carousel-item').length - 1;
+        // var slidingItemsAsIndex = $('.carousel-item').length - 1;
+        var slidingItemsAsIndex = $(this).find('.carousel-item').length - 1;
 
-  // If last item hide next arrow
-  if($(e.relatedTarget).index() == slidingItemsAsIndex ){
+        // If last item hide next arrow
+        if ($(e.relatedTarget).index() == slidingItemsAsIndex) {
 
-      $(this).find('.carousel-control-next').hide();
-  }
-  else{
-      $(this).find('.carousel-control-next').show();
-  }
+            $(this).find('.carousel-control-next').hide();
+        } else {
+            $(this).find('.carousel-control-next').show();
+        }
 
-  // If first item hide prev arrow
-  if($(e.relatedTarget).index() == 0){
-      $(this).find('.carousel-control-prev').hide();
-    }
-  else{
-      $(this).find('.carousel-control-prev').show();
-    }
+        // If first item hide prev arrow
+        if ($(e.relatedTarget).index() == 0) {
+            $(this).find('.carousel-control-prev').hide();
+        } else {
+            $(this).find('.carousel-control-prev').show();
+        }
 
-})
-
+    })
 </script>
 
 
@@ -532,7 +527,7 @@ $('.post-carousel').on('slide.bs.carousel', function (e) {
 
 
 
-        <!-- Owl Carousel -->
+<!-- Owl Carousel -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script> -->
 
