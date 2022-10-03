@@ -166,12 +166,12 @@
                                     @if(in_array('elite',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/elitegpbadge.png" width="40" alt="">
+                                        <img src="/imgs/elitegpbadge.png" width="60" alt="">
                                         ELITE GP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/elitegpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="60" alt="">
                                         Elite GP+
                                     </div>
                                     @endif
@@ -179,12 +179,12 @@
                                     @if(in_array('top',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/topgpbadge.png" width="40" alt="">
+                                        <img src="/imgs/topgpbadge.png" width="60" alt="">
                                         Top GP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="60" alt="">
                                         Top GP+
                                     </div>
                                     @endif
@@ -192,12 +192,12 @@
                                     @if(in_array('vip',$g_badge))
 
                                     <div class="">
-                                        <img src="/imgs/vipbadge.png" width="40" alt="">
+                                        <img src="/imgs/vipbadge.png" width="60" alt="">
                                         VIP+
                                     </div>
                                     @else
                                     <div class="disbaled">
-                                        <img src="/imgs/vipbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/vipbadgedisabled.png" width="60" alt="">
                                         VIP+
                                     </div>
                                     @endif
@@ -205,15 +205,15 @@
                                     @else
 
                                     <div class="disbaled">
-                                        <img src="/imgs/elitegpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/elitegpbadgedisabled.png" width="60" alt="">
                                         Elite GP+
                                     </div>
                                     <div class="disbaled">
-                                        <img src="/imgs/topgpbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/topgpbadgedisabled.png" width="60" alt="">
                                         Top GP+
                                     </div>
                                     <div class="disbaled">
-                                        <img src="/imgs/vipbadgedisabled.png" width="40" alt="">
+                                        <img src="/imgs/vipbadgedisabled.png" width="60" alt="">
                                         VIP+
                                     </div>
                                     @endif
