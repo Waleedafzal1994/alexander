@@ -67,14 +67,14 @@
                                         <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
                                     </div>
                                 @else    
-                                <div class="mt-4"></div>
+                                <div class="mt-4 d-none"></div>
                                 @endif
                                 
                                 <div class="center-img">
                                     <div class="">
                                         <!-- <a href="#" class="pop"> -->
-                                        <div class="lightbox lightbox-user-gallery">
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img" />
+                                        <div class="lightbox lightbox-user-gallery h-100">
+                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                             <!-- </a> -->
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                     <a class="btn-cust" type="button">Chat</a>
                                 </div>
                                 @else    
-                                <div class="mt-4"></div>
+                                <div class="mt-4 d-none"></div>
                                 @endif
                             </div>
                         </div>
