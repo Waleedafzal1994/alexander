@@ -99,80 +99,82 @@
                                     <p> {!! $post->videoContentHtml() !!}
                                     </p>
                                 </div>
-                                <div class="carousel-row">
-                                    @php $images = $post->imageContentHtml() @endphp
-                                    @if(!empty($images) && $images->count()>0)
-                                    <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            @if(!empty($images))
-                                            @php $i=0; @endphp
-                                            @foreach ($images as $value)
-                                            <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
-                                            @php $i++ @endphp
-                                            @endforeach
-                                            @endif
+                                <div class="carousel_section">
+                                    <div class="carousel-row">
+                                        @php $images = $post->imageContentHtml() @endphp
+                                        @if(!empty($images) && $images->count()>0)
+                                        <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
+                                            <ol class="carousel-indicators">
+                                                @if(!empty($images))
+                                                @php $i=0; @endphp
+                                                @foreach ($images as $value)
+                                                <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                                @php $i++ @endphp
+                                                @endforeach
+                                                @endif
 
-                                        </ol>
-                                        <div class="carousel-inner">
+                                            </ol>
+                                            <div class="carousel-inner">
 
-                                            @if(!empty($images))
-                                            @php $i=0; @endphp
-                                            @foreach ($images as $value)
+                                                @if(!empty($images))
+                                                @php $i=0; @endphp
+                                                @foreach ($images as $value)
 
-                                            <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
-                                                <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
+                                                <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
+                                                    <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
+                                                </div>
+                                                @php $i++ @endphp
+                                                @endforeach
+                                                @endif
+
                                             </div>
-                                            @php $i++ @endphp
-                                            @endforeach
+                                            <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
+                                                <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+
+                                            @if(!empty($images) && count($images) > 1 )
+                                            <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
+                                                <i class="fa-solid fa-location-arrow next-icon"></i>
+                                                <span class="sr-only">Next</span>
+                                            </a>
                                             @endif
-
                                         </div>
-                                        <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
-                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-
-                                        @if(!empty($images) && count($images) > 1 )
-                                        <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
-                                            <i class="fa-solid fa-location-arrow next-icon"></i>
-                                            <span class="sr-only">Next</span>
-                                        </a>
                                         @endif
+
                                     </div>
-                                    @endif
-
-                                </div>
-                                <div class="we-video-info d-flex">
-                                    <ul>
-                                        {{-- <li>
-                                                <span class="views" title="views">
-                                                    <i class="fa fa-eye"></i>
-                                                    <ins>0</ins>
+                                    <div class="we-video-info d-flex justify-content-between pr-4">
+                                        <ul>
+                                            {{-- <li>
+                                                    <span class="views" title="views">
+                                                        <i class="fa fa-eye"></i>
+                                                        <ins>0</ins>
+                                                    </span>
+                                                </li> --}}
+                                            <li>
+                                                <div class="likes heart post-reaction HeartAnimation {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
+                                                    <!-- <i class="fas fa-heart"></i> -->
+                                                    <!-- <div class="HeartAnimation"></div> -->
+                                                    <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span class="comment" title="Comments">
+                                                    <i class="fa fa-commenting"></i>
+                                                    <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
                                                 </span>
-                                            </li> --}}
-                                        <li>
-                                            <div class="likes heart post-reaction HeartAnimation {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
-                                                <!-- <i class="fas fa-heart"></i> -->
-                                                <!-- <div class="HeartAnimation"></div> -->
-                                                <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="comment" title="Comments">
-                                                <i class="fa fa-commenting"></i>
-                                                <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
-                                            </span>
-                                        </li>
+                                            </li>
 
-                                        {{-- <li><span><a class="share-pst" href="#" title="Share">
-                                                <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
-                                            </li> --}}
-                                    </ul>
-                                    <div class="">
-                                        <div class="hashtag my-4 font-weight-bold">#Highlights</div>
-                                        <div class="users-thumb-list" id="people-liked-post-{{ $post->id }}">
-                                            {!! $post->postLikedUserNames() !!}
+                                            {{-- <li><span><a class="share-pst" href="#" title="Share">
+                                                    <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
+                                                </li> --}}
+                                        </ul>
+                                        <div class="pr-1">
+                                            <div class="hashtag my-4 font-weight-bold">#Highlights</div>
                                         </div>
+                                    </div>
+                                    <div class="users-thumb-list pr-4" id="people-liked-post-{{ $post->id }}">
+                                        {!! $post->postLikedUserNames() !!}
                                     </div>
                                 </div>
                             </div>

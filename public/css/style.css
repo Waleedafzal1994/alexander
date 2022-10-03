@@ -179,6 +179,7 @@ body {
     display: inline-block;
     border-radius: 50%;
     /* border:1px solid white; */
+    object-fit: cover;
 }
 
 .nav_profile_name {
@@ -222,6 +223,8 @@ body {
 .navbar .navbar-nav .nav-item .nav-link{
     display: flex;
     align-items: center;
+    font-weight: 700;
+    font-size: 19px;
 }
 
 .scrolled {
@@ -257,7 +260,7 @@ p {
 .badge-points {
     background: linear-gradient(179deg, #c395f1 0%, #8224e3 75%) !important;
     color: #fff;
-    padding: 5px 15px !important;
+    padding: 15px !important;
     vertical-align: middle;
     font-size: 16px !important;
 }
@@ -1048,7 +1051,7 @@ table th {
     padding: 15px;
     margin: 0 !important;
     position: relative;
-    bottom: 25px;
+    /* bottom: 25px; */
     /* border-top: 8px dashed #7E22CE;
     border-bottom: 8px dashed #7E22CE; */
     display: flex;
@@ -2481,6 +2484,13 @@ a.slider-link:hover {
     visibility: hidden;
     transition: all .3s ease-in-out;
 }
+.photos-section{
+    transition: all .3s ease-in-out;
+    border-radius: 10px;
+}
+.photos-section:hover{
+    box-shadow: 0 0 20px -7px black;
+}
 .photos-section:hover .box-shadow{
     opacity: 1;
     visibility: visible;
@@ -3074,7 +3084,7 @@ input:checked + .slider {
     background-repeat: no-repeat;
     background-size: cover;
     /* background: #581c87; */
-    min-height: 200px;
+    min-height: 330px;
     position: relative;
     /* overflow: hidden; */
     box-shadow: 1px -103px 58px -50px rgba(90,60,161,0.45) inset;
@@ -3535,6 +3545,9 @@ footer{
 .search-input:focus{
     border-color: #fff !important;
 }
+.search-input:hover{
+    border-color: #fff !important;
+}
 
 .search-section i{
     position: absolute;
@@ -3685,4 +3698,11 @@ div.emoji-drop-down div.emoji{
 }
 .custom-scroll-bars::-webkit-scrollbar{
     width: 0;
+}
+
+#circle-profile-pic{
+    object-fit: cover;
+}
+.carousel_section{
+    width: fit-content;
 }

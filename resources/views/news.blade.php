@@ -40,7 +40,7 @@
         {{$posts->links()}}
     </div> -->
 
-    <div class="container post-tabs">
+    <div class="container post-tabs mt-5 px-0">
         <div class="row">
             <div class="col-4">
                 <div class="nav flex-column nav-pills bg-white shadows rounded-lg mb-4 py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">

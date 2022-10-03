@@ -14,7 +14,7 @@
                     </div>
                     <div class="w-100">
                         <div class="my-3">
-                            <h5 class="font-weight-bold mb-4 pt-2">Mark zinger burger</h5>
+                            <h5 class="font-weight-bold mb-4 pt-2">Title (Optional)</h5>
                             <input type="text" class="form-control bg-gradient" name="" placeholder="Please input title" id="">
                         </div>
 

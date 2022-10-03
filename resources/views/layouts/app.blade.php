@@ -80,7 +80,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; z-index: 100; box-shadow: 0 0 20px -6px black;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style="height:40px;">
@@ -164,10 +164,10 @@ $noFooter = true;
                         @else
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
-                                    <div class="position-relative search-section">
+                                    <div class="position-relative search-section mt-2">
                                         <input type="text"
                                             class="font-15 search-input"
-                                            style="width:250px; text-align:center; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);"
+                                            style="width:250px; text-align:center; background:transparent; color:white;"
                                             id="search" placeholder="Search">
                                             <i class="fa fa-search text-white"></i>
                                     </div>
@@ -283,7 +283,7 @@ $noFooter = true;
         @if(!empty(Auth::user()) && empty(Auth::user()->profile_complete))
             @include('partials.register_complete')
         @endif
-        <div class="bg-content-clr">
+        <div class="bg-content-clr" style="padding-top: 14px;">
             <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
                 @yield('content')
             </main>

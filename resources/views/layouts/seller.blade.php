@@ -163,10 +163,10 @@ $noFooter = true;
                         @else
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
-                                    <div class="position-relative search-section">
+                                    <div class="position-relative search-section mt-2">
                                         <input type="text"
                                             class="font-15 search-input bg-transparent"
-                                            style="width:250px; text-align:center; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);"
+                                            style="width:250px; text-align:center; background:transparent; color:white;"
                                             id="search" placeholder="Search">
                                             <i class="fa fa-search text-white"></i>
                                     </div>
