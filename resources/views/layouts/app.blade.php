@@ -80,7 +80,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style="height:40px;">
@@ -207,7 +207,7 @@ $noFooter = true;
                                     <!-- <img src="{{ Auth::user()->profile_picture }}" class="nav_avatar_container"> -->
                                         <img src="{{ Auth::user()->profile_picture }}" class="nav_avatar_container">
                                     @endif
-                                    <span class="nav_profile_name">{{ Auth::user()->name }}</span>
+                                    <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"

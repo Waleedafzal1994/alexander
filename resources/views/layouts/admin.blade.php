@@ -144,7 +144,7 @@
                                     @if (Auth::user()->profile_picture)
                                         <img src="{{ Auth::user()->profile_picture }}" class="nav_avatar_container">
                                     @endif
-                                    <span class="nav_profile_name">{{ Auth::user()->name }}</span>
+                                    <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"

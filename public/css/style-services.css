@@ -2569,7 +2569,7 @@ form button {
 }
 .profile-info-counters .social .activeFollowers::before,
 .profile-info-counters .social .activeBadge::before{
-  content: "";
+  /* content: ""; */
   position: absolute;
   left: 0;
   top: 50%;
