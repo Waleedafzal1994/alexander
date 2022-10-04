@@ -24,9 +24,9 @@
                                         @foreach ($followersList as $row)
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
-                                                <img src="{{$row->profile_picture}}" class="rounded-circle w-60px" alt="">
+                                                <img src="{{$row->profile_picture}}" class="rounded-circle w-60px h-60px" alt="">
                                                 <a href="/user-profile/{{ $row->id }}#edit_user_profile/" class="hover-black">{{$row->name}}</a>
-                                                <!-- <div class="online">
+                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>
                                                 </div> -->
                                                 <div class="offline">
@@ -49,7 +49,7 @@
                                         @foreach ($followingList as $row)
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="follower-img d-flex align-items-center">
-                                                <img src="{{$row->profile_picture}}" class="rounded-circle" width="80" alt="">
+                                                <img src="{{$row->profile_picture}}" class="rounded-circle w-60px h-60px" alt="">
                                                 <a href="/user-profile/{{ $row->id }}#edit_user_profile/" class="hover-black">{{$row->name}}</a>
                                                 <!-- <div class="online">
                                                     <div class="tool-tip">Online</div>

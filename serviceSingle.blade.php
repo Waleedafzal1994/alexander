@@ -67,16 +67,14 @@
                                         <a class="btn-cust follow" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
                                     </div>
                                 @else    
-                                <div class="mt-4 d-none"></div>
+                                <div class="mt-4"></div>
                                 @endif
                                 
                                 <div class="center-img">
-                                    <div class="">
-                                        <!-- <a href="#" class="pop"> -->
-                                        <div class="lightbox lightbox-user-gallery h-100">
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
-                                            <!-- </a> -->
-                                        </div>
+                                    <!-- <a href="#" class="pop"> -->
+                                    <div class="lightbox lightbox-user-gallery h-100">
+                                        <img id="circle-profile-pic h-100" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                        <!-- </a> -->
                                     </div>
                                 </div>
                                 @if(Request::segment(1) !='user-profile')

@@ -18,7 +18,7 @@
     <div class="user-post">
         <div class="friend-info">
             <div class="d-flex">
-                <img src="{{ $post->postAuthor->getProfilePicture() }}" style="height:80px;" width="80" class="rounded-circle mr-3" alt="">
+                <img src="{{ $post->postAuthor->getProfilePicture() }}" style="height:80px;" width="80" class="diamond-img rounded-circle mr-3" alt="">
                 <div class="d-flex align-items-center justify-content-between w-100">
                     <div class="d-flex align-items-center w-100">
                         <div class="d-flex flex-column w-100">
@@ -143,7 +143,7 @@
                                         @endif
 
                                     </div>
-                                    <div class="we-video-info d-flex justify-content-between pr-4">
+                                    <div class="we-video-info d-flex justify-content-between">
                                         <ul>
                                             {{-- <li>
                                                     <span class="views" title="views">
@@ -173,7 +173,7 @@
                                             <div class="hashtag my-4 font-weight-bold">#Highlights</div>
                                         </div>
                                     </div>
-                                    <div class="users-thumb-list pr-4" id="people-liked-post-{{ $post->id }}">
+                                    <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
                                         {!! $post->postLikedUserNames() !!}
                                     </div>
                                 </div>

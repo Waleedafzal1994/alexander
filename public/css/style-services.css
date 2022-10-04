@@ -1441,7 +1441,7 @@ p {
   margin-top: 13px;
   padding-left: 0;
   width: 66%;
-  margin-left: -25px;
+  margin-left: -24px;
 }
 
 .we-video-info>ul li {
@@ -1638,6 +1638,8 @@ p {
   border: 2px solid #fff;
   border-radius: 50%;
   width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 .coment-area {
@@ -1666,6 +1668,11 @@ p {
   max-width: 80px;
   vertical-align: top;
   width: 80px;
+}
+.comet-avatar img{
+  object-fit: cover;
+  width: 74px !important;
+  height: 74px !important;
 }
 
 .we-comment {
@@ -2567,7 +2574,7 @@ form button {
   padding: 12px 4px;
   position: relative;
 }
-.profile-info-counters .social .activeFollowers::before,
+/* .profile-info-counters .social .activeFollowers::before, */
 .profile-info-counters .social .activeBadge::before{
   /* content: ""; */
   position: absolute;

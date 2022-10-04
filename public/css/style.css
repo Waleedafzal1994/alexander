@@ -19,6 +19,9 @@
 .w-60px{
     width: 60px;
 }
+.h-60px{
+    height: 60px;
+}
 .bg-content-clr{
     background-color: #f6f6ff !important;
 }
@@ -2004,6 +2007,7 @@ a.slider-link:hover {
 .badge-section > div{
     color: #fff;
     font-weight: 700;
+    padding: 10px 0;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -2368,6 +2372,9 @@ a.slider-link:hover {
     font-size: 24px;
     font-weight: bold;
 }
+.friend-info > .diamond-img{
+    object-fit: cover;
+}
 .friend-info .carousel-inner{
     width: 90%;
     height: 650px;
@@ -2580,6 +2587,7 @@ a.slider-link:hover {
 }
 .follower-section .tab-content .follower-img img{
     margin-right: 12px;
+    object-fit: cover;
 }
 .follower-section .tab-content .follower-img p {
     font-size: 18px;
@@ -3709,4 +3717,16 @@ div.emoji-drop-down div.emoji{
 }
 .carousel_section{
     width: fit-content;
+}
+@media (max-width: 1350px){
+    .navbar .navbar-nav .nav-item .nav-link{
+        display: block;
+        font-size: 18px;
+    }
+}
+
+.carousel_section .we-video-info,
+.carousel_section .users-thumb-list{
+    max-width: 515px !important;
+    min-width: 515px !important;
 }
