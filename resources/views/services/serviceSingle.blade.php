@@ -73,10 +73,10 @@
                                 <div class="mt-4"></div>
                                 @endif
                                 
-                                <div class="center-img">
-                                    <div class="">
+                                <div class="center-img h-100">
+                                    <!-- <div class=""> -->
                                         <!-- <a href="#" class="pop"> -->
-                                        <div class="lightbox lightbox-user-gallery">
+                                        <div class="lightbox lightbox-user-gallery h-100">
                                             @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
                                                 <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img" />
                                             @else
@@ -89,7 +89,7 @@
                                                 @endif
                                             @endif
                                         </div>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                                 @if(Request::segment(1) !='user-profile')
                                 <div class="mt-4">
@@ -720,13 +720,13 @@
             </div>
             <div class="modal-header header-page login-header rounded-top">
                 <div class="header-img-modal-login-center custom-set h-auto mx-2 font-weight-bold">
-                    Delete Post
+                    Delete 
                     <!-- <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}"> -->
                 </div>
             </div>
             
             <div class="modal-body px-0">
-                <div class="text-center py-2">Are you sure you want to delete this Post?</div>
+                <div class="text-center py-2">Are you sure you want to delete ?</div>
                 <!-- <div class="text-center py-4 model-footer-bg">You will not be able to recover this post!</div> -->
             </div>
             <div class="modal-footer model-footer-bg d-flex align-items-center justify-content-end">
@@ -1661,23 +1661,24 @@
             if (e.target.parentNode.classList.contains("delete-gallery")) {
                 let post_id = e.target.parentNode.getAttribute("data-delete-post-id");
                 if (!post_id) return false;
-                Swal.fire({
-                    title: "Are you sure you want to delete this image?",
-                    text: "You will not be able to recover this image file!",
-                    icon: "warning",
-                    buttons: [
-                        'No, cancel it!',
-                        'Yes, I am sure!'
-                    ],
-                    dangerMode: true,
-                    showCancelButton: true,
-                }).then(function(isConfirm) {
-                    if (isConfirm.isConfirmed === true) {
-                        deleteGalleryImage(post_id);
-                    } else {
-                        Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
-                    }
-                })
+                    $('#deletemodal').modal("show");
+                // Swal.fire({
+                //     title: "Umair",
+                //     text: "You will not be able to recover this image file!",
+                //     icon: "warning",
+                //     buttons: [
+                //         'No, cancel it!',
+                //         'Yes, I am sure!'
+                //     ],
+                //     dangerMode: true,
+                //     showCancelButton: true,
+                // }).then(function(isConfirm) {
+                //     if (isConfirm.isConfirmed === true) {
+                //         deleteGalleryImage(post_id);
+                //     } else {
+                //         Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+                //     }
+                // })
             }
         })
         // like comments

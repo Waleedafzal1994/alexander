@@ -70,10 +70,10 @@
                                 <div class="mt-4"></div>
                                 @endif
                                 
-                                <div class="center-img">
+                                <div class="center-img h-100">
                                     <!-- <a href="#" class="pop"> -->
                                     <div class="lightbox lightbox-user-gallery h-100">
-                                        <img id="circle-profile-pic h-100" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                        <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                         <!-- </a> -->
                                     </div>
                                 </div>
