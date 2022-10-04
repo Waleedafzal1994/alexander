@@ -78,8 +78,8 @@
                                         <!-- <a href="#" class="pop"> -->
                                         <div class="lightbox lightbox-user-gallery h-100">
                                             @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                            <!-- <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img" /> -->
-                                                <img id="circle-profile-pic" src='{{asset("imgs/aunty.jpg")}}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                <!-- <img id="circle-profile-pic" src='{{asset("imgs/aunty.jpg")}}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" /> -->
                                             @else
                                                 @if($service->user->gender == 'Male')
                                                     <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
