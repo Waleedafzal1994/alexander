@@ -1007,7 +1007,7 @@ ul.footer-menu li a:before {
 }
 
 .nav-link-icon {
-    height: 35px;
+    height: 29px;
 }
 
 .nav-link-icon-container {
@@ -1846,7 +1846,7 @@ a.slider-link:hover {
 }
 .number-row-card{
     background: transparent !important;
-    padding: 0 !important;
+    padding: 20px !important;
     margin-left: 0 !important;
     color: #000 !important;
     font-size: 17px !important;
@@ -2006,15 +2006,14 @@ a.slider-link:hover {
 
 .badge-section > div{
     color: #fff;
-    font-weight: 700;
-    padding: 10px 0;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 17px;
+    min-height: 100px !important;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    min-height: 70px;
-    width: 30%;
+    width: 32%;
     justify-content: center;
     background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
@@ -3729,4 +3728,17 @@ div.emoji-drop-down div.emoji{
 .carousel_section .users-thumb-list{
     max-width: 515px !important;
     min-width: 515px !important;
+}
+
+.profile-info-counters .social .item .count {
+    font-size: 20px;
+}
+.profile-info-counters .social .item .socialName {
+    font-size: 15px;
+}
+.number-row-card {
+    border-radius: 40px !important;
+}
+#captcha::placeholder{
+    color: #120e1b;
 }

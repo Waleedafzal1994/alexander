@@ -719,14 +719,15 @@
                 </button>
             </div>
             <div class="modal-header header-page login-header rounded-top">
-                <div class="header-img-modal-login-center custom-set">
-                    <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}">
+                <div class="header-img-modal-login-center custom-set h-auto mx-2 font-weight-bold">
+                    Delete Post
+                    <!-- <img class="img-modal-login-center" src="{{ asset('temp-services/images/newv3.png') }}"> -->
                 </div>
             </div>
             
             <div class="modal-body px-0">
-                <div class="text-center text-white bg-purple-gradient py-4 mb-3 ">Are you sure you want to delete this Post?</div>
-                <div class="text-center py-4 model-footer-bg">You will not be able to recover this post!</div>
+                <div class="text-center py-2">Are you sure you want to delete this Post?</div>
+                <!-- <div class="text-center py-4 model-footer-bg">You will not be able to recover this post!</div> -->
             </div>
             <div class="modal-footer model-footer-bg d-flex align-items-center justify-content-end">
                 <button class="new-btn mr-3">OK</button>

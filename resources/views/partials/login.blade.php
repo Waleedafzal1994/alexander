@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input id="captcha" type="text" class="form-control border-input" placeholder="Enter Captcha" name="captcha" maxlength="5" required>
+                                    <input id="captcha" type="text" class="border-input" placeholder="Enter Captcha" name="captcha" maxlength="5" required>
                                     <span class="invalid-feedback" role="alert" id="captcha-login-error">
                                         <strong></strong>
                                     </span>

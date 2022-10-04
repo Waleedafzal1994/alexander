@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div class="upload-section mt-4 p-4 br-10">
+                        <div class="upload-section my-4 p-4 br-10">
                             <div class="d-flex align-items-center">
                                 <div class="form-group mb-0 mr-3">
                                     <input type="file">
@@ -107,7 +107,7 @@
 
                         <hr>
 
-                        <div class="text-right mt-4">
+                        <div class="text-right mt-4 mb-5 pb-5">
                             <a href="" class="new-btn new-purple-gradient text-white py-2 px-5 rounded-pill">Post</a>
                         </div>
                     </div>
