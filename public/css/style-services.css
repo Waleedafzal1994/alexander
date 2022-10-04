@@ -1486,14 +1486,15 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
+  z-index: 0;
 }
 
-.heart::before {
+/* .heart::before {
   content: "❤";
   position: absolute;
   color: rgb(161, 43, 43);
   opacity: 0;
-}
+} */
 
 /* .heart:hover i {
   color: red !important;

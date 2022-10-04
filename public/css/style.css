@@ -1976,7 +1976,7 @@ a.slider-link:hover {
 .img-two-btns-row a{
     background-color: #581c87;
     color: rgb(248, 245, 242) !important;
-    border-radius: 25px;
+    border-radius: 50px;
     min-width: 110px;
     font-size: 16px;
     font-weight: 600;
@@ -3089,7 +3089,7 @@ input:checked + .slider {
 }
 
 .top-bg-section{
-    background-image: url('../images/gaming-background.png');
+    background-image: url('../imgs/gaming-background.png');
     background-repeat: no-repeat;
     background-size: cover;
     /* background: #581c87; */
