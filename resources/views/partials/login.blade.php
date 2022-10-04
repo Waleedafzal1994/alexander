@@ -26,7 +26,7 @@
 
             <!--Modal cascading tabs-->
             <div class="modal-c-tabs">
-                <div class="contact-us mb-2 pb-1 text-right mr-3">
+                <div class="contact-us mt-1 pb-1 text-right mr-3">
                     <a type="button">Contact Us</a>
                 </div>
                     <!-- Nav tabs -->

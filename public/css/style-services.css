@@ -1560,9 +1560,9 @@ p {
   /* animation: pulse 0.6s linear; */
 }
 
-.delete-gallery:hover {
+/* .delete-gallery:hover {
   animation: pulse 0.6s linear;
-}
+} */
 
 .delete-gallery {
   color: #b3b1c5;
