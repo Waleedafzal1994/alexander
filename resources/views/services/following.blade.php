@@ -13,7 +13,7 @@
 
                                     
                                                 <figure>
-                                                    <img src="{{$row->profile_picture}}" alt="">
+                                                    <img class="image" src="{{$row->profile_picture}}" alt="">
                                                 </figure>
                                                 <div class="friend-name">
                                                 

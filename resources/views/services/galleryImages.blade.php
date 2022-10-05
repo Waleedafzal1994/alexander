@@ -38,9 +38,9 @@ $userGallery = $service->user->imagesAsArray;
                     <span class="gallery-like-heart heart HeartAnimation float-left {{ $galleryImage->userliked() ? 'active-heart' : '' }}">
                     <span class="liked_gallery_count" id="liked_gallery_count-{{ $galleryImage->id }}">{{ $galleryImage->likes->count() }}</span>
                     @auth
-                    @if (Auth::user()->id == $service->user->id)
-                    <span class="delete-gallery float-right" id="delete-gallery-{{ $galleryImage->id }}" data-delete-post-id="{{ $galleryImage->id }}" title="Delete"><i class="fas fa-trash"></i></span>
-                    @endif
+                        @if (Auth::user()->id == $service->user->id)
+                            <span class="delete-gallery float-right" id="delete-gallery-{{ $galleryImage->id }}" data-delete-post-id="{{ $galleryImage->id }}" title="Delete"><i class="fas fa-trash"></i></span>
+                        @endif
                     @endauth
                 </div>
             </div>

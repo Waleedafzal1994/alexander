@@ -999,7 +999,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div> -->
-            <div class="modal-close-btn" style="margin-bottom: -6px !important;">
+            <div class="modal-close-btn">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -1049,7 +1049,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div> -->
-            <div class="modal-close-btn" style="margin-bottom: -6px !important;">
+            <div class="modal-close-btn">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>

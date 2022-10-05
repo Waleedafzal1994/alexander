@@ -226,7 +226,7 @@ body {
 .navbar .navbar-nav .nav-item .nav-link{
     display: flex;
     align-items: center;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 19px;
 }
 
@@ -1424,7 +1424,7 @@ p.card-text {
 }
 
 .modal-close-btn {
-    margin-bottom: -32px !important;
+    margin-bottom: -34px !important;
     font-size: 33px;
     z-index: 9999;
     margin-left: 17px;
@@ -2372,7 +2372,7 @@ a.slider-link:hover {
     font-weight: bold;
 }
 .friend-info > .diamond-img{
-    object-fit: cover;
+    object-fit: cover !important;
 }
 .friend-info .carousel-inner{
     width: 90%;
@@ -2535,6 +2535,7 @@ a.slider-link:hover {
 }
 .served .new-btn{
     background: linear-gradient(359deg , #581c87, #8e5cb5 ) !important;
+    padding: 20px !important;
 }
 .post-carousel.carousel{
     max-width: 575px !important;

@@ -173,9 +173,9 @@
                                             <div class="hashtag my-4 font-weight-bold">#Highlights</div>
                                         </div>
                                     </div>
-                                    <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
+                                    <!-- <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
                                         {!! $post->postLikedUserNames() !!}
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="coment-area ">
