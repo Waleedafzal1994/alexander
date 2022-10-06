@@ -3,13 +3,13 @@
 
 
 
-    <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{{url($service->category->image_1) }}');">
+    <div class="categories_box_holder" style="background-image:url('{{url($service->category->image_1) }}');">
         @else
         <div class="categories_box_holder" style="background:var(--color-secondary);">
         </div>
     </div>
     @endif
-    <p>{{ $service->category->name }}</p>
+    <!-- <p>{{ $service->category->name }}</p> -->
 </li>
 
 
@@ -29,7 +29,7 @@ $order_arr[0] = $service->category->id; ?>
 <li class="nav-item" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)" role="presentation" value="{{$category->id}}">
     <!-- IF STAART HERE -->
     @if($category->image_1 != null)
-    <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{url($category->image_1)}});">
+    <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)),url({{url($category->image_1)}});">
 
 
 
@@ -42,12 +42,12 @@ $order_arr[0] = $service->category->id; ?>
 
 
     <!-- ENd Here -->
-    <p>{{ $category->name }}</p>
+    <!-- <p>{{ $category->name }}</p> -->
 </li>
 
 
 
-@if($i >= 4)
+@if($i >= 3)
 @break
 
 
@@ -64,18 +64,18 @@ $order_arr[0] = $service->category->id; ?>
 
 @if(!empty($all_remaining_cats) && (count($all_remaining_cats) >=4))
 
-<li class="nav-item" role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,'more')">
+<li class="nav-item more-section" role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,'more')">
     <!-- IF STAART HERE -->
     <!-- <div class="nav-link p-0" id="more_section"> -->
     <a class="nav-link p-0" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
-        <div class="categories_box_holder" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))">
-            <!-- Else Section -->
-            <!-- <div class="categories_box_holder" style="background:var(--color-secondary);">
-                            </div> -->
-            <!-- Else Section ENd Here -->
+        <div class="categories_box_holder" style="background-image:linear-gradient(45deg, rgba(123, 33, 193, 0.3), rgba(203, 73, 166, 0.2)),url({{asset('imgs/browse-more-games.png')}});">
+            <!-- Else Section
+                <div class="categories_box_holder" style="background:var(--color-secondary);">
+                            </div>
+            Else Section ENd Here -->
         </div>
         <!-- ENd Here -->
-        <p>More</p>
+        <p class="text-white">Browse more Services</p>
     </a>
     <!-- </div> -->
 </li>

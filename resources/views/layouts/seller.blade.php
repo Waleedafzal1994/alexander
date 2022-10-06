@@ -81,8 +81,8 @@ $noFooter = true;
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <div style="height:40px;">
+                <a class="navbar-brand mr-0" href="{{ url('/') }}">
+                    <div style="height:40px; width: max-content;">
                         <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;">
                         {{ config('app.name', 'Laravel') }}
 
@@ -161,14 +161,19 @@ $noFooter = true;
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <button id="buyBtn" class="mt-0 mr-3"> 
+                                <svg width="22" class="mr-1" height="24" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.16647 27.9558C9.25682 27.9856 9.34946 28.0001 9.44106 28.0001C9.71269 28.0001 9.97541 27.8732 10.1437 27.6467L21.5954 12.2248C21.7926 11.9594 21.8232 11.6055 21.6746 11.31C21.526 11.0146 21.2236 10.8282 20.893 10.8282H13.1053V0.874999C13.1053 0.495358 12.8606 0.15903 12.4993 0.042327C12.1381 -0.0743215 11.7428 0.0551786 11.5207 0.363124L0.397278 15.7849C0.205106 16.0514 0.178364 16.403 0.327989 16.6954C0.477614 16.9878 0.77845 17.1718 1.10696 17.1718H8.56622V27.125C8.56622 27.5024 8.80816 27.8373 9.16647 27.9558ZM2.81693 15.4218L11.3553 3.58389V11.7032C11.3553 12.1865 11.7471 12.5782 12.2303 12.5782H19.1533L10.3162 24.479V16.2968C10.3162 15.8136 9.92444 15.4218 9.44122 15.4218H2.81693Z" fill="#fff"></path>
+                                </svg>
+                                Start earning as GP+
+                            </button>
+                        </li>
                             <li class="nav-item">
                                 <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
-                                    <div class="position-relative search-section mt-2">
-                                        <input type="text"
-                                            class="font-15 search-input bg-transparent"
-                                            style="width:250px; text-align:center; background:transparent; color:white;"
-                                            id="search" placeholder="Search">
-                                            <i class="fa fa-search text-white"></i>
+                                    <div class="position-relative search-section">
+                                        <input type="text" class="font-15 search-input border-0" id="search" placeholder="Search">
+                                        <i class="fa fa-search text-white"></i>
                                     </div>
                                     <div id="myDropdown" class="dropdown-content"
                                         style="border-radius:4px; width:250px; min-height:50px; margin-top:40px;">
@@ -199,7 +204,7 @@ $noFooter = true;
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle nav_profile_name" href="#"
+                                <a id="navbarDropdown" class="flex-row nav-link dropdown-toggle nav_profile_name" href="#"
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
                                     @if (Auth::user()->profile_picture)
@@ -285,55 +290,6 @@ $noFooter = true;
         <div class="top-bg-section w-100 d-flex align-items-end">
             <div class="container">
                 <div class="bg-img"></div>
-                <ul class="list mb-4">
-                    <li class="circle-link">
-                        <a href="">
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
-                    </li>
-                    <li class="circle-link">
-                        <a href="">
-                            <i class="fab fa-twitter text-white"></i>
-                        </a>
-                    </li>
-                    @if(!empty(Auth::id()) && !empty($service->user->id) && (Auth::id() != $service->user->id))
-                    <li class="nav-item dropdown circle-link">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                            <i class="fas fa-ellipsis-h text-white"></i>
-                        </a>
-                        <ul class="dropdown-menu fade-up p-2">
-                            <li>
-                                <div class="d-flex align-items-center justify-content-between p-2 rounded">
-
-                                    <p class="mb-0">Block</p>
-                                    <label class="switch m-0 mb-2">
-
-                                        <?php $getUser = getUserById($service->user->id)?>
-
-                                        <input type="checkbox" name="{{ !empty($getUser->name) ? $getUser->name : 'this person' }}" class="block-toggle" 
-                                        
-                                        <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
-                                        @if(!empty($checkBlockedUser))
-
-                                            {{"checked"}}
-                                            value="confirm_unblock" 
-                                        @else
-                                            value="confirm_block"
-                                        @endif
-                                        >
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="dropdown-item p-2 mt-2 rounded" href="#">
-                                    <p class="mb-0">Report</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    @endif
-                </ul>
             </div>
         </div>
         <div class="bg-content-clr">

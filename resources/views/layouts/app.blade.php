@@ -82,8 +82,8 @@ $noFooter = true;
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <div style="height:40px;">
+                <a class="navbar-brand mr-0" href="{{ url('/') }}">
+                    <div style="height:40px; width: max-content;">
                         <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;">
                         {{ config('app.name', 'Laravel') }}
 
@@ -200,7 +200,7 @@ $noFooter = true;
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle nav_profile_name" href="#"
+                                <a id="navbarDropdown" class="flex-row nav-link dropdown-toggle nav_profile_name" href="#"
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
                                     @if (Auth::user()->profile_picture)

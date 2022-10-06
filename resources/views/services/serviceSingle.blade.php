@@ -31,7 +31,32 @@
 @section('content')
 <!-- {{-- NEW CONTENT START --}} -->
 <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
-<div class="gamePlay" id="gamePlay">
+<div class="position-sticky" style="top: 80px; width: 64px; float: left; margin-left: -100px; margin-right: 100px;">
+    <ul class="list mb-4">
+        <li class="circle-link">
+            <a href="">
+                <img src="{{asset('imgs/front-view-icons/Twitter.png')}}" alt="">
+            </a>
+        </li>
+        <li class="circle-link">
+            <a href="">
+                <img src="{{asset('imgs/front-view-icons/Instagram.png')}}" alt="">
+            </a>
+        </li>
+        <li class="circle-link">
+            <a href="">
+                <img src="{{asset('imgs/front-view-icons/Tiktok.png')}}" alt="">
+            </a>
+        </li>
+        <li class="circle-link">
+            <a href="">
+                <img src="{{asset('imgs/front-view-icons/Twitch.png')}}" alt="">
+            </a>
+        </li>
+    </ul>    
+</div>
+
+<div class="gamePlay container px-5" id="gamePlay">
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service" id="servicePage">
@@ -47,7 +72,7 @@
                 <!-- START: Service Profile Side bar First Card -->
                 <div class="card shadows">
                     <div class="card-body p-0 m-0">
-                        <div class="profile-image-part">
+                        <div class="profile-image-part d-none">
                             <div class="profile-background">
                                 <!-- <a href="#" class="pop">
                                     <img id="img01" src="/temp-services/images/2728343.jpg" data-mdb-img="/temp-services/images/2728343.jpg" alt="" class="img-fluid profile-background-image boder-top-left-right-radius zoom-clicked-img" />
@@ -509,8 +534,8 @@
 <div class="mainBody">
 
     <!-- START: First Card mianbody -->
-    <div class="card review-body shadows {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="services_navbar">
-        <div class="card-body ">
+    <div class="card review-body mb-4 bg-transparent shadow-0 {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="services_navbar">
+        <div class="card-body p-0">
             <div class="service-game-main-body">
                 <div class="service-game-nav">
                     <!-- START: Service main Body nav bar-->
