@@ -31,7 +31,7 @@
 @section('content')
 <!-- {{-- NEW CONTENT START --}} -->
 <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
-<div class="position-sticky" style="top: 80px; width: 64px; float: left; margin-left: -100px; margin-right: 100px;">
+<div class="social-icons-list position-sticky">
     <ul class="list mb-4">
         <li class="circle-link">
             <a href="">
@@ -56,7 +56,7 @@
     </ul>    
 </div>
 
-<div class="gamePlay container px-5" id="gamePlay">
+<div class="gamePlay container" id="gamePlay">
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service" id="servicePage">

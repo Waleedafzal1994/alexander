@@ -126,7 +126,16 @@
   transform: scale(.25);
   -webkit-transition: all .4s ease-out;
   transition: all .4s ease-out;
-  pointer-events: none
+  pointer-events: none;
+}
+
+.lightbox-gallery .lightbox-gallery-content .lightbox-gallery-image img{
+    top: 50% !important; 
+    left: 50% !important;
+    transform: translate(-50% , -50%) !important;
+    height: fit-content !important; 
+    max-height: 80% !important;
+    width: auto !important;
 }
 
 .lightbox-gallery .lightbox-gallery-content .lightbox-gallery-image img {

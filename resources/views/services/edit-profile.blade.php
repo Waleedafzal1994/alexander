@@ -7,11 +7,11 @@
 
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="edit-profile-page d-flex align-items-center">
-        <div class="" style="width:0; max-width:500px; margin-right:20px;"></div>
+        <div class="" style="width:0; max-width:500px; margin-right:20px; display: none;"></div>
             <div class="w-100 col-tab-nav">
                 <div class="card review-body shadows mb-3">
                     <div class="card-body">
-                        <ul class="nav nav-tabs nav-custom-nav border-bottom-0" id="pills-tab" role="tablist">
+                        <ul class="nav nav-tabs nav-custom-nav back-nav border-bottom-0" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="pills-edit-profile-tab" data-toggle="pill" href="#pills-edit-profile" role="tab" aria-controls="pills-edit-profile" aria-selected="true">Profile</a>
                             </li>
@@ -28,10 +28,10 @@
                                 <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">IM Settings</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="block-list-tab" data-bs-toggle="tab" data-bs-target="#block-list" type="button" role="tab" aria-controls="block-list" aria-selected="false" href="#block-list">
-                                        Block List
-                                    </a>
-                                </li>
+                                <a class="nav-link" id="block-list-tab" data-bs-toggle="tab" data-bs-target="#block-list" type="button" role="tab" aria-controls="block-list" aria-selected="false" href="#block-list">
+                                    Block List
+                                </a>
+                            </li>
                             <li class="nav-item ml-auto" role="presentation">
                                 <a class="nav-link btn-active" id="pills-back-tab" data-toggle="pill" href="#profile_info" role="tab" aria-controls="profile_info" aria-selected="true"><i class="fa fa-chevon-left"></i> Back</a>
                             </li>

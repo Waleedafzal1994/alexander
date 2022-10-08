@@ -80,237 +80,241 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-white px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
-            <div class="container-fluid">
-                <a class="navbar-brand mr-0" href="{{ url('/') }}">
-                    <div style="height:40px; width: max-content;">
-                        <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;">
-                        {{ config('app.name', 'Laravel') }}
+        <nav class="navbar navbar-expand-md navbar-dark px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
+                <div class="container-fluid">
+                    <a class="navbar-brand mr-0" href="{{ url('/') }}">
+                        <div style="height:40px; width: max-content;">
+                            <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;">
+                            {{ config('app.name', 'Laravel') }}
 
-                    </div>
-                </a>
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav">
-                        @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="/gp">
-                                    <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/services.png') }}" class="nav-link-icon">
-                                    </div>
-                                    Services
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/news">
-                                    <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/news.png') }}" class="nav-link-icon">
-                                    </div>
-                                    Posts
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/rankings">
-                                    <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/rankings.png') }}" class="nav-link-icon">
-                                    </div>
-                                    Rankings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/frequently-asked-questions">
-                                    <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/faq.png') }}" class="nav-link-icon">
-                                    </div>
-                                    F.A.Q
-                                </a>
-                            </li>
-                        @endauth
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto auth-links">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav">
+                            @auth
                                 <li class="nav-item">
-                                    <a href="#loginPanel" class="btn login-btn" id="" style="cursor: pointer"
-                                        data-toggle="modal" data-target="#loginModal" data-backdrop="static"
-                                        data-keyboard="false">
-                                        <img src="{{ asset('temp-services/images/3d/circle.png') }}"
-                                            style="height:20px;">
-                                        {{ __('Login') }}
+                                    <a class="nav-link" href="/gp">
+                                        <div class="nav-link-icon-container">
+                                            <img src="{{ asset('/imgs/icons/services.png') }}" class="nav-link-icon">
+                                        </div>
+                                        Services
                                     </a>
                                 </li>
-                            @endif
-
-                            @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a href="#registerPanel" class="btn register-btn" id="" style="cursor: pointer;"
-                                        data-toggle="modal" data-target="#loginModal" data-backdrop="static"
-                                        data-keyboard="false">
-                                        <img src="{{ asset('temp-services/images/3d/triangle.png') }}"
-                                            style="height:20px;">
-                                        {{ __('Register') }}
+                                    <a class="nav-link" href="/news">
+                                        <div class="nav-link-icon-container">
+                                            <img src="{{ asset('/imgs/icons/news.png') }}" class="nav-link-icon">
+                                        </div>
+                                        Posts
                                     </a>
                                 </li>
-                            @endif
-                        @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/rankings">
+                                        <div class="nav-link-icon-container">
+                                            <img src="{{ asset('/imgs/icons/rankings.png') }}" class="nav-link-icon">
+                                        </div>
+                                        Rankings
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/frequently-asked-questions">
+                                        <div class="nav-link-icon-container">
+                                            <img src="{{ asset('/imgs/icons/faq.png') }}" class="nav-link-icon">
+                                        </div>
+                                        F.A.Q
+                                    </a>
+                                </li>
+                            @endauth
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto auth-links">
+                            <!-- Authentication Links -->
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a href="#loginPanel" class="btn login-btn" id="" style="cursor: pointer"
+                                            data-toggle="modal" data-target="#loginModal" data-backdrop="static"
+                                            data-keyboard="false">
+                                            <img src="{{ asset('temp-services/images/3d/circle.png') }}"
+                                                style="height:20px;">
+                                            {{ __('Login') }}
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a href="#registerPanel" class="btn register-btn" id="" style="cursor: pointer;"
+                                            data-toggle="modal" data-target="#loginModal" data-backdrop="static"
+                                            data-keyboard="false">
+                                            <img src="{{ asset('temp-services/images/3d/triangle.png') }}"
+                                                style="height:20px;">
+                                            {{ __('Register') }}
+                                        </a>
+                                    </li>
+                                @endif
+                            @else
                             <li class="nav-item">
-                                <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
-                                    <div class="position-relative search-section mt-2">
-                                        <input type="text"
-                                            class="font-15 search-input"
-                                            style="width:250px; text-align:center; background:transparent; color:white;"
-                                            id="search" placeholder="Search">
+                                <button id="buyBtn" class="mt-0 mr-3"> 
+                                    <svg width="22" class="mr-1" height="24" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.16647 27.9558C9.25682 27.9856 9.34946 28.0001 9.44106 28.0001C9.71269 28.0001 9.97541 27.8732 10.1437 27.6467L21.5954 12.2248C21.7926 11.9594 21.8232 11.6055 21.6746 11.31C21.526 11.0146 21.2236 10.8282 20.893 10.8282H13.1053V0.874999C13.1053 0.495358 12.8606 0.15903 12.4993 0.042327C12.1381 -0.0743215 11.7428 0.0551786 11.5207 0.363124L0.397278 15.7849C0.205106 16.0514 0.178364 16.403 0.327989 16.6954C0.477614 16.9878 0.77845 17.1718 1.10696 17.1718H8.56622V27.125C8.56622 27.5024 8.80816 27.8373 9.16647 27.9558ZM2.81693 15.4218L11.3553 3.58389V11.7032C11.3553 12.1865 11.7471 12.5782 12.2303 12.5782H19.1533L10.3162 24.479V16.2968C10.3162 15.8136 9.92444 15.4218 9.44122 15.4218H2.81693Z" fill="#fff"></path>
+                                    </svg>
+                                    Start earning as GP+
+                                </button>
+                            </li>
+                                <li class="nav-item">
+                                    <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
+                                        <div class="position-relative search-section">
+                                            <input type="text" class="font-15 search-input border-0" id="search" placeholder="Search">
                                             <i class="fa fa-search text-white"></i>
-                                    </div>
-                                    <div id="myDropdown" class="dropdown-content"
-                                        style="border-radius:4px; width:250px; min-height:50px; margin-top:40px;">
+                                        </div>
+                                        <div id="myDropdown" class="dropdown-content"
+                                            style="border-radius:4px; width:250px; min-height:50px; margin-top:40px;">
 
-                                        <div id="spinner"
-                                            style="display:flex; justify-content:center; align-items:center; height:100%; width:100%; margin:10px 0;">
+                                            <div id="spinner"
+                                                style="display:flex; justify-content:center; align-items:center; height:100%; width:100%; margin:10px 0;">
 
-                                            <div class="spinner-border" role="status"
-                                                style="display:Flex; justify-content:center;align-items:center;">
-                                                <span class="sr-only">Loading...</span>
+                                                <div class="spinner-border" role="status"
+                                                    style="display:Flex; justify-content:center;align-items:center;">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
                                             </div>
+
+                                            <div id="search_content" style="display:flex; flex-direction:column;">
+
+                                            </div>
+
                                         </div>
-
-                                        <div id="search_content" style="display:flex; flex-direction:column;">
-
-                                        </div>
-
                                     </div>
-                                </div>
-                            </li>
+                                </li>
 
-                            <li class="nav-item spaced-out-lg">
-                                <a href="/points" class="nav-link"
-                                    style="height:100%; display:flex; justify-content:center; align-items:center;">
-                                    <span class="badge badge-pill badge-points d-flex align-items-center">{{ Auth::user()->points }} GP <img
-                                            src="/imgs/icons/6.png" style="height:24px; margin-left:5px;"></span>
-                                </a>
-                            </li>
+                                <li class="nav-item spaced-out-lg">
+                                    <a href="/points" class="nav-link"
+                                        style="height:100%; display:flex; justify-content:center; align-items:center;">
+                                        <span class="badge badge-pill badge-points d-flex align-items-center">{{ Auth::user()->points }} GP <img
+                                                src="/imgs/icons/6.png" style="height:24px; margin-left:5px;"></span>
+                                    </a>
+                                </li>
 
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="flex-row nav-link dropdown-toggle nav_profile_name" href="#"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
-                                    @if (Auth::user()->profile_picture)
-                                    <!-- <img src="{{ Auth::user()->profile_picture }}" class="nav_avatar_container"> -->
-                                        <img src="{{ Auth::user()->profile_picture }}" class="nav_avatar_container">
-                                    @endif
-                                    <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
-                                </a>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="flex-row nav-link dropdown-toggle nav_profile_name" href="#"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
+                                        @if (Auth::user()->profile_picture)
+                                            <img src="{{Auth::user()->profile_picture}}" class="nav_avatar_container">
+                                        @endif
+                                        <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
+                                    </a>
 
-                                <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"
-                                    aria-labelledby="navbarDropdown">
-                                    @if (Auth::user()->user_group == '3')
-                                        <a class="dropdown-item" href="/admin">
-                                            <span class="material-icons"
-                                                style="color:red; height:10px; vertical-align:top;">local_police</span>
-                                            Admin Panel
+                                    <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"
+                                        aria-labelledby="navbarDropdown">
+                                        @if (Auth::user()->user_group == '3')
+                                            <a class="dropdown-item" href="/admin">
+                                                <span class="material-icons"
+                                                    style="color:red; height:10px; vertical-align:top;">local_police</span>
+                                                Admin Panel
+                                            </a>
+                                        @endif
+                                        @if (intVal(Auth::user()->user_group) > 0)
+                                            <a class="dropdown-item" href="/moderator">
+                                                <span class="material-icons"
+                                                    style="color:red; height:10px; vertical-align:top;">admin_panel_settings</span>
+                                                Moderator Panel
+                                            </a>
+                                        @endif
+                                        @if (intVal(Auth::user()->seller_rank) > 0)
+                                            <a class="dropdown-item" href="/seller">
+                                                Seller Dashboard
+                                            </a>
+                                        @endif
+                                        @if (Auth::user()->seller_rank == '0')
+                                            <a class="dropdown-item" href="/seller/apply">
+                                                <span class="material-icons"
+                                                    style="color:orange; height:10px; vertical-align:top;">star</span>
+                                                <span style="font-weight:bold;">Seller Application</span>
+                                            </a>
+                                        @endif
+                                        <a class="dropdown-item" href="/user-profile/{{ Auth::id() }}">
+                                            My Profile
                                         </a>
-                                    @endif
-                                    @if (intVal(Auth::user()->user_group) > 0)
-                                        <a class="dropdown-item" href="/moderator">
-                                            <span class="material-icons"
-                                                style="color:red; height:10px; vertical-align:top;">admin_panel_settings</span>
-                                            Moderator Panel
+                                        <a class="dropdown-item" href="/points">
+                                            Wallet
                                         </a>
-                                    @endif
-                                    @if (intVal(Auth::user()->seller_rank) > 0)
-                                        <a class="dropdown-item" href="/seller">
-                                            Seller Dashboard
+                                        <a class="dropdown-item" href="/orders">
+                                            Order History
                                         </a>
-                                    @endif
-                                    @if (Auth::user()->seller_rank == '0')
-                                        <a class="dropdown-item" href="/seller/apply">
-                                            <span class="material-icons"
-                                                style="color:orange; height:10px; vertical-align:top;">star</span>
-                                            <span style="font-weight:bold;">Seller Application</span>
+                                        <a class="dropdown-item" href="/chat">
+                                            Chat
                                         </a>
-                                    @endif
-                                    <a class="dropdown-item" href="/user-profile/{{ Auth::id() }}">
-                                        My Profile
-                                    </a>
-                                    <a class="dropdown-item" href="/points">
-                                        Wallet
-                                    </a>
-                                    <a class="dropdown-item" href="/orders">
-                                        Order History
-                                    </a>
-                                    <a class="dropdown-item" href="/chat">
-                                        Chat
-                                    </a>
-                                    <a class="dropdown-item" href="/support">
-                                        Support
-                                    </a>
+                                        <a class="dropdown-item" href="/support">
+                                            Support
+                                        </a>
 
-                                    <a class="dropdown-item" href="javascript:void(0)"
-                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                        <a class="dropdown-item" href="javascript:void(0)"
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
 
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+            <div class="spacer" style="height:55px;">
+                &nbsp;
             </div>
-        </nav>
-        <div class="spacer" style="height:55px;">
-            &nbsp;
-        </div>
-        @guest
-            @include('partials.login')
-        @endguest
-        {{-- @include('partials.login2') --}}
-        {{-- @include('partials.register') --}}
+            @guest
+                @include('partials.login')
+            @endguest
+            {{-- @include('partials.login2') --}}
+            {{-- @include('partials.register') --}}
 
-        @if(!empty(Auth::user()) && empty(Auth::user()->profile_complete))
-            @include('partials.register_complete')
-        @endif
-        <div class="bg-content-clr" style="padding-top: 14px;">
-            <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
-                @yield('content')
-            </main>
-        </div>
-        @yield('footer')
+            @if(!empty(Auth::user()) && empty(Auth::user()->profile_complete))
+                @include('partials.register_complete')
+            @endif
+            <div class="bg-content-clr" style="padding-top: 14px;">
+                <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
+                    @yield('content')
+                </main>
+            </div>
+            @yield('footer')
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="{{ asset('js/notify/notify.min.js') }}" type="text/javascript"></script>
-        <script>
-            $(document).ready(function() {
-                $("#loginModal").on('shown.bs.modal', function(e) {
-                    var tab = e.relatedTarget.hash;
-                    $('.nav-tabs a[href="' + tab + '"]').tab('show');
-                })
-            });
-        </script>
-
-        <script>
-            $(document).ready(function() {
-
-                $('#staticBackdrop').modal({
-                    show: true
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="{{ asset('js/notify/notify.min.js') }}" type="text/javascript"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#loginModal").on('shown.bs.modal', function(e) {
+                        var tab = e.relatedTarget.hash;
+                        $('.nav-tabs a[href="' + tab + '"]').tab('show');
+                    })
                 });
-            });
-        </script>
-        
-    </div>
+            </script>
+
+            <script>
+                $(document).ready(function() {
+
+                    $('#staticBackdrop').modal({
+                        show: true
+                    });
+                });
+            </script>
+            
+        </div>
     <script type="text/javascript">
         $.notify.defaults({globalPosition: 'top right'});   
     </script>
