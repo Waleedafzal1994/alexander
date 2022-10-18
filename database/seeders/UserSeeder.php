@@ -20,12 +20,12 @@ class UserSeeder extends Seeder
         //
         DB::table('users')->insert([
             'name' => Str::random(10),
-            'email' => 'test'.Str::random(1).'@gmail.com',
+            'email' => 'admin'.Str::random(1).'@gmail.com',
             'password' => Hash::make('password'),
             'points' => 0,
             'active' => 1,
             'banned' => 0,
-            'user_group' => 0,
+            'user_group' => 3,
             'email_verified_at' => Carbon::now(),
             'created_at' => Carbon::now(),
         ]);
