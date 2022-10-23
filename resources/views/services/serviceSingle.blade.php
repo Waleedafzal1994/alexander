@@ -89,7 +89,7 @@
 
                         <div class="nav-button-side mt-2 mx-3">
                             <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
-                                @if(Request::segment(1) !='user-profile')
+                                @if(Request::segment(1) !='user-profile' || empty(Auth::id()))
                                     <div class="mt-4">
                                         <a class="btn-follower follow d-flex align-items-center justify-content-center" id="follow-checkss" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
                                         <input type="hidden" id="check-follow-toggless" value= "{{$checkFollow}}">
@@ -117,7 +117,7 @@
                                         </div>
                                     <!-- </div> -->
                                 </div>
-                                @if(Request::segment(1) !='user-profile')
+                                @if((Request::segment(1) !='user-profile') || empty(Auth::id()) )
                                 <div class="mt-4">
                                     <a class="btn-cust btn-width" type="button">Chat</a>
                                 </div>
@@ -756,7 +756,7 @@
                 <!-- <div class="text-center py-4 model-footer-bg">You will not be able to recover this post!</div> -->
             </div>
             <div class="modal-footer model-footer-bg d-flex align-items-center justify-content-end">
-                <button class="new-btn mr-3">OK</button>
+                <button class="new-btn mr-3 btn-ok">OK</button>
                 <button class="new-btn close_action btn-danger rounded-pill text-white px-3 py-1">Cancel</button>
             </div>
         </div>
@@ -1380,12 +1380,25 @@
             // }
         });
         // delete post
+        // $('#deletemodal').on('show.bs.modal', function(e) {
+        // // $('#confirm-delete').on('click', function(e) {
+            
+        //     // $('#deletemodal').modal("show");
+        //     alert($(e.relatedTarget).data('href'));
+        //     // $(this).find('.btn-ok').attr('onclick', $(e.relatedTarget).data('href'));
+        // });
+
+
         $(document).on("click", ".post-actions", function(e) {
             if (e.currentTarget.classList.contains("post-actions")) {
                 let post_id = $(e.currentTarget).attr('data-post');
                 if (e.target.className === 'delete-post-action') {
-                    console.log("Hellllloooo");
+
                     $('#deletemodal').modal("show");
+
+                    $('#deletemodal').find('.btn-ok').attr('onclick', $(e.currentTarget).data('href'));
+                    // $()()
+
                     // $('#imagemodal').modal('show');
                     // Swal.fire({
                     //     title: "Are you sure you want to delete this Post?",
@@ -1408,7 +1421,9 @@
             }
         });
         $(".close_action").click(function(){
+           
             $('#deletemodal').modal("hide");
+            // $("#deletemodal .close").click();
         });
     });
     // post delete function
@@ -1427,9 +1442,10 @@
             },
             success: function(response) {
                 if (response.status === true && response.code === 200) {
-                    // $("#post-item-box-" + postId).remove();
-                    // Swal.fire('Success', response.message);
-                    window.location.reload();
+
+                    $("#post-item-box-" + postId).remove();
+                    $('#deletemodal').modal("hide");
+
                 }
             },
             error: function(XMLHttpRequest) {
@@ -1453,9 +1469,12 @@
             },
             success: function(response) {
                 if (response.status === true && response.code === 200) {
+
+                    $("#gallery-item-box-" + post_id).remove();
+                    $('#deletemodal').modal("hide");
                     // $("#post-item-box-" + postId).remove();
                     // Swal.fire('Success', response.message);
-                    window.location.reload();
+                    // window.location.reload();
                 }
             },
             error: function(XMLHttpRequest) {
@@ -1681,13 +1700,20 @@
         })
         // like and delete gallery images
         $(document).on("click", ".lightbox-user-gallery", function(e) {
+
             if (e.target.classList.contains("gallery-like-heart")) {
                 registerGalleryReaction(e.target)
             }
             if (e.target.parentNode.classList.contains("delete-gallery")) {
+
                 let post_id = e.target.parentNode.getAttribute("data-delete-post-id");
                 if (!post_id) return false;
+
                     $('#deletemodal').modal("show");
+
+                    var galleryfunction = e.target.parentNode.getAttribute("data-href");
+
+                    $('#deletemodal').find('.btn-ok').attr('onclick', galleryfunction);
                 // Swal.fire({
                 //     title: "Umair",
                 //     text: "You will not be able to recover this image file!",
