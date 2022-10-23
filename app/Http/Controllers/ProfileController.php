@@ -19,6 +19,7 @@ use App\Models\GenericModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\URL;
 
 class ProfileController extends Controller
 {
@@ -438,7 +439,22 @@ class ProfileController extends Controller
         }
         $user->profile_picture = null;
         $user->save();
-        return redirect()->back()->with(['success' => 'Avatar has been removed.']);
+
+        if($user->gender == 'Male'){
+
+            $image = URL::asset('/images/ProfilePlaceholders/male.jpg');
+        }
+        elseif($user->gender == 'Female'){
+            $image = URL::asset('/images/ProfilePlaceholders/female.jpg');
+        }
+        else{
+            $image = URL::asset('/images/ProfilePlaceholders/non-binary.jpg');
+        }
+        return Response()->json([
+            "success" => true,
+            "image" => $image
+        ]);
+        // return redirect()->back()->with(['success' => 'Avatar has been removed.']);
     }
 
     public function test()
