@@ -5,6 +5,13 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 
+@if (empty($service->user->profile_picture))
+<style type="text/css">
+    #removeBtn{
+        display: none;
+    }
+</style>
+@endif
 <div class="bg-content-clr h-100" id="edit_profile" style="display: none;">
     <div class="edit-profile-page d-flex align-items-center">
         <div class="" style="width:0; max-width:500px; margin-right:20px; display: none;"></div>
@@ -69,17 +76,28 @@
                                                 <div style="margin:2px auto;">
                                                     <button class="btn-success py-2 px-3 rounded" id="saveBtn" type="submit"
                                                         style="display:none;">Save</button>
-                                                    <a class="btn-danger py-2 px-3 rounded"
-                                                        href="/profile/{{ $service->user->id }}/removeAvatar">Remove</a>
+                                                    <a class="btn-danger py-2 px-3 rounded" id="removeBtn"
+                                                        href="javascript:void(0);">Remove</a>
                                                 </div>
 
                                             </div>
                                         @else
                                             <div style="display:Flex; justify-content:center; flex-direction:column;">
                                                 <div style="text-align: center;">
-                                                    <img src="{{ asset('/imgs/avatar.svg') }}"
-                                                        style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
+
+                                                    @if($service->user->gender == 'Male')
+                                                        <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}" style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
                                                         id="profile_picture_img">
+                                                    @elseif($service->user->gender == 'Female')
+                                                        <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}" style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
+                                                        id="profile_picture_img">
+                                                    @else
+                                                        <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}" style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
+                                                        id="profile_picture_img">
+                                                    @endif
+                                                    <!-- <img src="{{ asset('/imgs/avatar.svg') }}"
+                                                        style="height:128px; width:128px; object-fit:cover; max-width:128px;  border-radius:50%; border:4px solid white;"
+                                                        id="profile_picture_img"> -->
                                                     <div>
                                                     <small style="color: #000;">Avatar must be JPG, JPEG or PNG and cannot exceed 5MB<br> <strong>VIP+</strong> can upload GIF profile photo</small>
                                                     </div>
@@ -90,6 +108,8 @@
                                                 <div style="margin:2px auto;">
                                                     <button class="btn-success py-2 px-3 rounded" type="submit" id="saveBtn"
                                                         style="display:none;">Save</button>
+                                                        <a class="btn-danger py-2 px-3 rounded" id="removeBtn"
+                                                        href="javascript:void(0);">Remove</a>
                                                 </div>
 
                                             </div>
@@ -1206,6 +1226,36 @@
         });
 
 
+        $('#removeBtn').click(function(e) {
+           
+            // e.preventDefault();
+            $(".invalid-feedback").children("strong").text("");
+            $(".is-invalid").removeClass("is-invalid");
+            // var formData = new FormData(this);
+            $.ajax({
+                type: 'GET',
+                url: "/profile/{{ $service->user->id }}/removeAvatar",
+                // data: ,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: (data) => {
+                    // this.reset();
+                    $('#profile_picture_img').attr('src',data.image);
+                    //window.location.reload();
+                    alertify.success('Profile Image Removed Successfully.');
+                    $('#saveBtn').hide();
+                    $('#removeBtn').hide();
+                },
+                error: function(response) {
+
+                    console.log("error1", response);
+                   
+                }
+            });
+        });
+
+
         $('#ajax-profile').submit(function(e) {
             e.preventDefault();
             $(".invalid-feedback").children("strong").text("");
@@ -1222,6 +1272,8 @@
                     this.reset();
                     //window.location.reload();
                     alertify.success('Profile Image Update Successfully.');
+                    $('#saveBtn').hide();
+                    $('#removeBtn').show();
                 },
                 error: function(response) {
 

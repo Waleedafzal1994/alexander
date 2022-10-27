@@ -31,7 +31,7 @@ $userGallery = $service->user->imagesAsArray;
     <div id="gallery" class="gallery-section sadasdasd">
         <div class="w-100 bg-white">
             @foreach ($userGallery as $galleryImage)
-            <div class="position-relative photos-section mb-4">
+            <div class="position-relative photos-section mb-4" id="gallery-item-box-{{ $galleryImage->id }}">
                 <img src="{{ $galleryImage->file_name }}" class="img-responsive">
                 <div class="box-shadows"></div>
                 <div class="likes gallery-reaction " data-gallery-image-id="{{ $galleryImage->id }}" data-gallery-reaction-id="{{ $galleryImage->likedPost() }}">
@@ -40,7 +40,7 @@ $userGallery = $service->user->imagesAsArray;
                 </div>
                 @auth
                     @if (Auth::user()->id == $service->user->id)
-                        <span class="delete-gallery float-right" id="delete-gallery-{{ $galleryImage->id }}" data-delete-post-id="{{ $galleryImage->id }}" title="Delete"><i class="fas fa-trash"></i></span>
+                        <span class="delete-gallery float-right" id="delete-gallery-{{ $galleryImage->id }}" data-delete-post-id="{{ $galleryImage->id }}" data-href="deleteGalleryImage({{$galleryImage->id}})" title="Delete"><i class="fas fa-trash"></i></span>
                     @endif
                 @endauth
             </div>

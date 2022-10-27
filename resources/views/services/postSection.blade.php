@@ -34,14 +34,19 @@
                                 </div>
                                 @if ($post->user_id == Auth::user()->id)
                                 <div class="more">
-                                    <div class="more-post-optns post-actions" data-post="{{ $post->id }}">
+                                    <div class="more-post-optns post-actions" data-post="{{ $post->id }}" data-href="deletePost({{$post->id}})">
                                         <i class="fas fa-ellipsis-h"></i>
                                         <ul>
                                             {{-- <li><i class="fas fa-edit"></i>Edit
                                                         Post
                                                     </li> --}}
-                                            <li class="delete-post-action"><i class="fas fa-trash"></i>Delete
-                                                Post
+
+
+                                            <li  class="delete-post-action">
+
+                                                <i class="fas fa-trash"></i>Delete Post
+                                                <!-- <a href="#" data-href="deletePost({{$post->id}})" data-toggle="modal" data-target="#deletemodal"><i class="fas fa-trash"></i>Delete Post</a> -->
+                                                
                                             </li>
                                             {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
                                                         Post</li> --}}
@@ -407,7 +412,7 @@
 
 
         $('#add-blog-post-form').submit(function(e) {
-
+          
             e.preventDefault();
             let i = 1;
             $("#create-post-btn").attr('disabled', true);
