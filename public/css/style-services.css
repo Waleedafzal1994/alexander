@@ -2699,12 +2699,12 @@ form button {
   font-size: 14px;
 }
 
-.profile-section-two {
+/* .profile-section-two {
   background: #ededfb !important;
   border-radius: var(--border-radius) !important;
   border: none !important;
   padding: 0px;
-}
+} */
 
 #myImageModal {
   width: 100px;

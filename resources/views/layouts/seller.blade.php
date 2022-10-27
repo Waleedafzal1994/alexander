@@ -79,11 +79,11 @@ $noFooter = true;
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark px-0" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
+        <nav class="navbar navbar-expand-md navbar-dark" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
             <div class="container-fluid">
-                <a class="navbar-brand mr-0" href="{{ url('/') }}">
-                    <div style="height:40px; width: max-content;">
-                        <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <div style=" width: max-content;">
+                        <!-- <img src="{{ asset('imgs/gplogopurple.svg') }}" alt="" style="height:40px; width:40px; padding:5px;"> -->
                         {{ config('app.name', 'Laravel') }}
 
                     </div>
@@ -101,7 +101,7 @@ $noFooter = true;
                             <li class="nav-item">
                                 <a class="nav-link" href="/gp">
                                     <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/services.png') }}" class="nav-link-icon">
+                                        <img src="{{ asset('/imgs/icons/services-icon.svg') }}" class="nav-link-icon">
                                     </div>
                                     Services
                                 </a>
@@ -109,7 +109,7 @@ $noFooter = true;
                             <li class="nav-item">
                                 <a class="nav-link" href="/news">
                                     <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/news.png') }}" class="nav-link-icon">
+                                        <img src="{{ asset('/imgs/icons/posts-icon.svg') }}" class="nav-link-icon">
                                     </div>
                                     Posts
                                 </a>
@@ -117,15 +117,15 @@ $noFooter = true;
                             <li class="nav-item">
                                 <a class="nav-link" href="/rankings">
                                     <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/rankings.png') }}" class="nav-link-icon">
+                                        <img src="{{ asset('/imgs/icons/ranking-icon.svg') }}" class="nav-link-icon">
                                     </div>
                                     Rankings
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mr-3">
                                 <a class="nav-link" href="/frequently-asked-questions">
                                     <div class="nav-link-icon-container">
-                                        <img src="{{ asset('/imgs/icons/faq.png') }}" class="nav-link-icon">
+                                        <img src="{{ asset('/imgs/icons/faq-icon.svg') }}" class="nav-link-icon">
                                     </div>
                                     F.A.Q
                                 </a>
@@ -162,10 +162,10 @@ $noFooter = true;
                             @endif
                         @else
                         <li class="nav-item">
-                            <button id="buyBtn" class="mt-0 mr-3"> 
-                                <svg width="22" class="mr-1" height="24" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button id="buyBtn" class="mt-0"> 
+                                <!-- <svg width="22" class="mr-1" height="24" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9.16647 27.9558C9.25682 27.9856 9.34946 28.0001 9.44106 28.0001C9.71269 28.0001 9.97541 27.8732 10.1437 27.6467L21.5954 12.2248C21.7926 11.9594 21.8232 11.6055 21.6746 11.31C21.526 11.0146 21.2236 10.8282 20.893 10.8282H13.1053V0.874999C13.1053 0.495358 12.8606 0.15903 12.4993 0.042327C12.1381 -0.0743215 11.7428 0.0551786 11.5207 0.363124L0.397278 15.7849C0.205106 16.0514 0.178364 16.403 0.327989 16.6954C0.477614 16.9878 0.77845 17.1718 1.10696 17.1718H8.56622V27.125C8.56622 27.5024 8.80816 27.8373 9.16647 27.9558ZM2.81693 15.4218L11.3553 3.58389V11.7032C11.3553 12.1865 11.7471 12.5782 12.2303 12.5782H19.1533L10.3162 24.479V16.2968C10.3162 15.8136 9.92444 15.4218 9.44122 15.4218H2.81693Z" fill="#fff"></path>
-                                </svg>
+                                </svg> -->
                                 Start earning as GP+
                             </button>
                         </li>
@@ -195,16 +195,34 @@ $noFooter = true;
                                 </div>
                             </li>
 
-                            <li class="nav-item spaced-out-lg">
+                            <li class="nav-item ml-4">
+                                <a href="">
+                                    <img src="{{asset('imgs/icons/search-icon.svg')}}" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item mx-4">
+                                <a href="">
+                                    <img src="{{asset('imgs/icons/gift-box-icon.svg')}}" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item mr-4">
+                                <a href="">
+                                    <img src="{{asset('imgs/icons/bell-icon.svg')}}" alt="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item spaced-out-lg mr-0">
                                 <a href="/points" class="nav-link"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;">
-                                    <span class="badge badge-pill badge-points d-flex align-items-center">{{ Auth::user()->points }} GP <img
-                                            src="/imgs/icons/6.png" style="height:24px; margin-left:5px;"></span>
+                                    <span class="badge badge-pill badge-points d-flex align-items-center">
+                                        <img src="/imgs/icons/currency-coin.svg" style="height:24px; margin-right:5px;"> 
+                                        {{ Auth::user()->points }} GP 
+                                    </span>
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="flex-row nav-link dropdown-toggle nav_profile_name" href="#"
+                                <a id="navbarDropdown" class="px-0 flex-row nav-link dropdown-toggle nav_profile_name" href="#"
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;" v-pre>
                                     @if (Auth::user()->profile_picture)

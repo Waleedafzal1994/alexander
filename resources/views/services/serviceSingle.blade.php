@@ -70,8 +70,8 @@
             <!-- START: Service Profile Side bar -->
             <div class="profileBar {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="profileBar_info">
                 <!-- START: Service Profile Side bar First Card -->
-                <div class="card shadows">
-                    <div class="card-body p-0 m-0">
+                <div class="card border-0">
+                    <div class="card-body">
                         <div class="profile-image-part d-none">
                             <div class="profile-background">
                                 <!-- <a href="#" class="pop">
@@ -87,8 +87,37 @@
 
 
 
-                        <div class="nav-button-side mt-2 mx-3">
-                            <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
+                        <div class="nav-button-side mx-3">
+                            <div class="new-profile-section img-two-btns">
+                                <div class="center-img mt-2">
+                                    <div class="dark-cirlce">
+                                        <div class="light-dark-circle">
+                                            <div class="golden-circle">
+                                                <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                                <div class="lightbox lightbox-user-gallery h-100">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="online-section text-center text-white">
+                                    <div class="title">CEO  <sup>.</sup> Admin</div>
+                                    <div class="online">online</div>
+                                    <button clas="new-btn">Subscribe</button>
+                                </div>
+                            </div>
+                            <!-- <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
                                 @if(Request::segment(1) !='user-profile')
                                     <div class="mt-4">
                                         <a class="btn-follower follow d-flex align-items-center justify-content-center" id="follow-checkss" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
@@ -99,23 +128,19 @@
                                 @endif
                                 
                                 <div class="center-img">
-                                    <!-- <div class=""> -->
-                                        <!-- <a href="#" class="pop"> -->
-                                        <div class="lightbox lightbox-user-gallery h-100">
-                                            @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
-                                                <!-- <img id="circle-profile-pic" src='{{asset("imgs/aunty.jpg")}}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" /> -->
+                                    <div class="lightbox lightbox-user-gallery h-100">
+                                        @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                        <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                        @else
+                                            @if($service->user->gender == 'Male')
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                            @elseif($service->user->gender == 'Female')
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
                                             @else
-                                                @if($service->user->gender == 'Male')
-                                                    <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
-                                                @elseif($service->user->gender == 'Female')
-                                                    <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
-                                                @else
-                                                    <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
-                                                @endif
+                                                <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
                                             @endif
-                                        </div>
-                                    <!-- </div> -->
+                                        @endif
+                                    </div>
                                 </div>
                                 @if(Request::segment(1) !='user-profile')
                                 <div class="mt-4">
@@ -124,64 +149,84 @@
                                 @else    
                                 <div class="mt-4"></div>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
 
                         <!-- END: Service Social button -->
-                        <div class="profile-info mt-2 pr-3 mb-2 profile-name-top">
-                            <h3 class="pl-3 profile-name text-center text-style-3 mb-2 profile-name-game">
+                        <div class="profile-info my-2 profile-name-top">
+                            <h3 class="profile-name text-center text-style-3 mb-2 profile-name-game">
                                 {{ $service->user->name ?: 'N/A' }}
                             </h3>
                             <div class="profile-about">
-                                <div class="pl-3">
-                                    <div class=" profile-section-two">
+                                <div class="lang-years my-1 d-flex align-items-center">
+                                    <div class="profile-section-two gender">
+                                        <div class="review-body text-center">
+                                            <!-- @if($service->user->gender == 'Male') -->
+                                            <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}"> -->
+
+
+
+                                            <!-- {{ $service->user->gender ?: 'N/A' }} -->
+                                            M
+
+
+
+                                            <!-- @elseif($service->user->gender == 'Female') -->
+                                            <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}"> -->
+                                            <!-- {{ $service->user->gender ?: 'N/A' }} -->
+                                            <!-- @elseif($service->user->gender == 'Non-Binary') -->
+                                            <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}"> -->
+                                            <!-- {{ $service->user->gender ?: 'N/A' }} -->
+                                            <!-- @else -->
+                                            <!-- N/A -->
+                                            <!-- @endif -->
+                                        </div>
+                                        <p>Gender</p>
+                                    </div>
+                                    
+                                    <div class=" profile-section-two pr-4">
                                         <div class="review-body text-center">
                                             {{ $service->user->primary_language ?: 'N/A' }}
-                                            {{ !empty($service->user->secondary_language) ? '1/'.$service->user->secondary_language : '' }}
+                                            <!-- {{ !empty($service->user->secondary_language) ? '1/'.$service->user->secondary_language : '' }} -->
                                         </div>
+                                        <p>Language</p>
                                     </div>
-                                    <div class="my-1 d-flex align-items-center justify-content-between">
-                                        <div class="profile-section-two gender">
-                                            <div class="review-body text-center">
-                                                <!-- @if($service->user->gender == 'Male') -->
-                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}"> -->
-                                                {{ $service->user->gender ?: 'N/A' }}
-                                                <!-- @elseif($service->user->gender == 'Female') -->
-                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}"> -->
-                                                <!-- {{ $service->user->gender ?: 'N/A' }} -->
-                                                <!-- @elseif($service->user->gender == 'Non-Binary') -->
-                                                <!-- <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}"> -->
-                                                <!-- {{ $service->user->gender ?: 'N/A' }} -->
-                                                <!-- @else -->
-                                                <!-- N/A -->
-                                                <!-- @endif -->
-                                            </div>
+
+                                    <div class="profile-section-two numbers">
+                                        <div class="review-body text-center">
+                                            {{ $service->user->getAge() ? $service->user->getAge(): '-' }}
                                         </div>
-                                        <div class="profile-section-two w-100 mx-2">
-                                            <div class="review-body text-center">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="profile-section-two numbers">
-                                            <div class="review-body text-center">
-                                                {{ $service->user->getAge() ? $service->user->getAge().' years': '-' }}
-                                            </div>
-                                        </div>
+                                        <p>Age</p>
                                     </div>
                                 </div>
 
-                                <div class="d-block mt-5 ml-3 pb-3">
+
+                                <div class="range-slider">
+                                    <div class="text-white">
+                                        <span>
+                                            <span class="range-slider__value"> 250</span>/400xp
+                                        </span>
+                                    </div>
+                                    <input class="range-slider__range" type="range" value="200" min="0" max="400">
+                                    <div class="text-white d-flex align-items-center justify-content-between">
+                                        <span>Level 1</span>
+                                        <span>Level 2</span>
+                                    </div>
+                                </div>
+
+
+                                <!-- <div class="d-block mt-5 pb-3"> -->
                                     <!-- <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between mb-2 px-3">
                                         <span>Avg. Response Time</span>
                                         <span>5 - 10 Mins</span>
                                     </div> -->
-                                    <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 sidebar-rating">
+                                    <!-- <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between px-3 sidebar-rating">
                                         <span>1258 Served</span>
                                         <span class="number-row-card"><i class="fas fa-star"></i> 5.0 </span>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div> -->
 
-                                <div class="pl-3 badge-section my-5 d-flex align-items-center justify-content-between pb-5">
+                                <!-- <div class="badge-section my-5 d-flex align-items-center justify-content-between pb-5">
 
                                     @if(!empty($service->user->general_badge))
 
@@ -245,14 +290,25 @@
                                     @endif
 
 
+                                </div> -->
+
+                                <div class="achievements text-center">
+                                    <h4>Achievements</h4>
+                                    <div class="badges">
+                                        <img src="{{asset('imgs/icons/purple_badge.svg')}}" alt="">
+                                        <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                        <img src="{{asset('imgs/icons/gold_badge.svg')}}" alt="">
+                                    </div>
                                 </div>
 
-                                <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
+                                <!-- <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
                                     About Me
                                 </h4>
 
                                 <p class="text-black pl-3 more-description text-justify mt-3"> {{ !empty($service->user->description) ? $service->user->description : 'N/A' }} </p>
-                                {{-- <hr class="hr-dotted-2px mt-5"> --}}
+                                {{-- <hr class="hr-dotted-2px mt-5"> --}} -->
+
+                                
                                 <div class="pl-3 mb-3"></div>
                                 <!-- Commented Data -->
                                 {{-- <div class="review-body">
@@ -289,12 +345,11 @@
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
             <div class="mb-5"></div>
 
-            <div class="profile-about mt-3">
+            <!-- <div class="profile-about mt-3">
 
                 <h4 class="skew-bg skew-height mb-4 profile-name text-style-4 color-primary font-weight-600 head-style-fst">
                     Socials
                 </h4>
-
 
                 <div class="pl-3 social_icons mb-4">
                     @if(!empty($service->user->facebook_profile) || !empty($service->user->instagram_profile) || !empty($service->user->twitch_profile) || !empty($service->user->tiktok_profile))
@@ -332,33 +387,7 @@
                     @endif
 
                 </div>
-
-                
-
-
-
-                <!-- <div class="body-fluid row justify-content-start ml-0">
-                    @if (!empty($service->user->instagram_profile))
-                    <a href="https://www.instagram.com/{{ $service->user->instagram_profile }}" class="icon-game col-3 icon-instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    @endif
-
-                    @if (!empty($service->user->twitch_profile))
-                    <a href="https://www.{{ $service->user->twitch_profile }}" class="icon-game col-3 icon-twitch" target="_blank">
-                        <i class="fab fa-twitch"></i>
-                    </a>
-                    @endif
-
-                    @if (!empty($service->user->facebook_profile))
-                    <a href="https://www.{{ $service->user->facebook_profile }}" class="icon-game col-3 icon-fb" target="_blank">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    @endif
-                </div> -->
-
-
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -546,24 +575,24 @@
                                 @if(Request::segment(1) !='user-profile')
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" href="#home" aria-selected="true">
-                                        Service Details
+                                        Services
                                     </a>
                                 </li>
                                 @endif
 
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link <?= (Request::segment(1) =='user-profile') ? 'active' : '' ?> " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" href="#profile">
-                                        Timeline
+                                        Feeds
                                     </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery" type="button" role="tab" aria-controls="gallery" aria-selected="false" href="#gallery">
-                                        Photos
+                                        Album
                                     </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="followers-tab" data-bs-toggle="tab" data-bs-target="#followers" type="button" role="tab" aria-controls="followers" aria-selected="false" href="#followers">
-                                        Followers
+                                        About
                                     </a>
                                 </li>
                                 <!-- <li class="nav-item" role="presentation">
@@ -774,7 +803,36 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 <script>
+
     jQuery(document).ready(function($) {
+
+    // Range Slider Start
+        const settings={
+            fill: '#6DD95A',
+            background: '#000000'
+        }
+
+        const sliders = document.querySelectorAll('.range-slider');
+
+        Array.prototype.forEach.call(sliders,(slider)=>{
+            slider.querySelector('input').addEventListener('input', (event)=>{
+            slider.querySelector('span').innerHTML = event.target.value;
+            applyFill(event.target);
+        });
+            applyFill(slider.querySelector('input'));
+        });
+        
+        function applyFill(slider) {
+            const percentage = 100*(slider.value-slider.min)/(slider.max-slider.min);
+            const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage+0.1}%)`;
+            slider.style.background = bg;
+        }
+
+    // Range Slider End
+
+
+
+
         // console.log("Hello");
         // var seller_edit = localStorage.getItem("edit_seller_profile");
         // if(seller_edit){
