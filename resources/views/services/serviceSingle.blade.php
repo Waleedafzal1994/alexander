@@ -31,7 +31,7 @@
 @section('content')
 <!-- {{-- NEW CONTENT START --}} -->
 <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
-<div class="social-icons-list position-sticky">
+<div class="social-icons-list position-sticky d-none">
     <ul class="list mb-4">
         <li class="circle-link">
             <a href="">
@@ -87,40 +87,39 @@
 
 
 
-                        <div class="nav-button-side mt-2 mx-3">
-                            <div class="mt-3 mx-0 d-flex justify-content-between img-two-btns-row">
-                                @if(Request::segment(1) !='user-profile' || empty(Auth::id()))
-                                    <div class="mt-4">
-                                        <a class="btn-follower follow d-flex align-items-center justify-content-center" id="follow-checkss" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
-                                        <input type="hidden" id="check-follow-toggless" value= "{{$checkFollow}}">
-                                    </div>
-                                @else    
-                                <div class="mt-4"></div>
-                                @endif
-                                
-                                <div class="center-img">
-                                    <div class="lightbox lightbox-user-gallery h-100">
-                                        @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                        <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
-                                        @else
-                                            @if($service->user->gender == 'Male')
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
-                                            @elseif($service->user->gender == 'Female')
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
-                                            @else
-                                                <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
-                                            @endif
-                                        @endif
+                        <div class="nav-button-side mx-3">
+                            <div class="mt-3 mx-0 d-flex justify-content-between new-profile-section">
+                                <div class="center-img mt-2">
+                                    <div class="dark-circle">
+                                        <div class="light-dark-circle">
+                                            <div class="golden-circle">
+                                                <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                                <div class="lightbox lightbox-user-gallery h-100">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                @if((Request::segment(1) !='user-profile') || empty(Auth::id()) )
-                                <div class="mt-4">
-                                    <a class="btn-cust btn-width" type="button">Chat</a>
+                                <div class="subscribe text-center">
+                                    <div class="heading">CEO <sup>.</sup> Admin</div>
+                                    <div class="designation d-flex align-items-center justify-content-center">
+                                        <div class="circle"></div> Online
+                                        <!-- <div class="circle off mr-3"></div> Offline -->
+                                    </div>
+                                    <button class="btn text-white text-center">Subscribe</button>
                                 </div>
-                                @else    
-                                <div class="mt-4"></div>
-                                @endif
-                            </div> -->
+                            </div>
                         </div>
 
                         <!-- END: Service Social button -->
@@ -138,7 +137,6 @@
 
 
                                             <!-- {{ $service->user->gender ?: 'N/A' }} -->
-                                            M
 
 
 
@@ -151,6 +149,7 @@
                                             <!-- @else -->
                                             <!-- N/A -->
                                             <!-- @endif -->
+                                            M
                                         </div>
                                         <p>Gender</p>
                                     </div>
@@ -163,7 +162,7 @@
                                         <p>Language</p>
                                     </div>
 
-                                    <div class="profile-section-two numbers">
+                                    <div class="profile-section-two numbers pr-2">
                                         <div class="review-body text-center">
                                             {{ $service->user->getAge() ? $service->user->getAge(): '-' }}
                                         </div>
@@ -174,9 +173,9 @@
 
                                 <div class="range-slider">
                                     <div class="text-white">
-                                        <span>
+                                        <label>
                                             <span class="range-slider__value"> 250</span>/400xp
-                                        </span>
+                                        </label>
                                     </div>
                                     <input class="range-slider__range" type="range" value="200" min="0" max="400">
                                     <div class="text-white d-flex align-items-center justify-content-between">
@@ -184,7 +183,6 @@
                                         <span>Level 2</span>
                                     </div>
                                 </div>
-
 
                                 <!-- <div class="d-block mt-5 pb-3"> -->
                                     <!-- <div class="new-purple-gradient text-white border-0 py-3 br-10 h-40 d-flex align-items-center justify-content-between mb-2 px-3">
@@ -264,12 +262,60 @@
                                 </div> -->
 
                                 <div class="achievements text-center">
-                                    <h4>Achievements</h4>
-                                    <div class="badges">
-                                        <img src="{{asset('imgs/icons/purple_badge.svg')}}" alt="">
-                                        <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
-                                        <img src="{{asset('imgs/icons/gold_badge.svg')}}" alt="">
+                                    <div class="">
+                                        <h4>Achievements</h4>
+                                        <div class="badges">
+                                            <img src="{{asset('imgs/icons/purple_badge.svg')}}" alt="">
+                                            <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            <img src="{{asset('imgs/icons/gold_badge.svg')}}" alt="">
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="light-border my-5"></div>
+                                
+                                <div class="socialmedia">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="{{asset('imgs/icons/instagram-icon.svg')}}" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="{{asset('imgs/icons/tiktok-icon.svg')}}" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="{{asset('imgs/icons/twitter-icon.svg')}}" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="{{asset('imgs/icons/facebook-icon.svg')}}" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="img-two-btns-row">
+                                    @if(Request::segment(1) !='user-profile' || empty(Auth::id()))
+                                        <div class="">
+                                            <a class="btn-follower d-flex align-items-center justify-content-center" id="follow-checkss" type="button">{{ !empty($checkFollow) ? 'Following' : 'Follow' }} </a>
+                                            <input type="hidden" id="check-follow-toggless" value= "{{$checkFollow}}">
+                                        </div>
+                                    @else    
+                                    <div class=""></div>
+                                    @endif
+
+                                    @if((Request::segment(1) !='user-profile') || empty(Auth::id()) )
+                                    <div class="">
+                                        <a class="btn-cust btn-width" type="button">Chat</a>
+                                    </div>
+                                    @else    
+                                    <div class=""></div>
+                                    @endif
                                 </div>
 
                                 <!-- <h4 class="skew-height skew-bg profile-name text-style-4 color-primary head-style-fst">
@@ -280,7 +326,6 @@
                                 {{-- <hr class="hr-dotted-2px mt-5"> --}} -->
 
                                 
-                                <div class="pl-3 mb-3"></div>
                                 <!-- Commented Data -->
                                 {{-- <div class="review-body">
                                         <div class="profile-section-two">
@@ -314,7 +359,6 @@
                 </div> --}}
             </div>
             {{-- <hr class="hr-dotted-2px mb-5"> --}}
-            <div class="mb-5"></div>
 
             <!-- <div class="profile-about mt-3">
 
@@ -364,7 +408,7 @@
     </div>
 </div>
 
-<div class="card mt-4 mb-4 shadows">
+<!-- <div class="card mt-4 mb-4 shadows">
     <div class="card">
         <div class="profile-info-counters">
             <div class="social mt-0">
@@ -414,13 +458,43 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="card mt-4 mb-4 shadows">
+<!-- <div class="card mt-4 mb-4 shadows">
     <div class="card">
         <div class="profile-info-counters">
             <div class="social">
             <p class="pl-3 mb-3 text-style-4 text-black" style="font-size: 14px;"><span class="font-weight-bold">ID:</span> {{ str_pad($service->user->id, 5, '0', STR_PAD_LEFT) }}</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="card border-0 share-and-win">
+    <div class="card-body">
+        <div class="left-bg"></div>
+        <div class="left-bg right"></div>
+        <div class="dots-border">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="left-circle"></div>
+                <div class="right-heading">GamersPlay</div>
+            </div>
+            <div class="coins-heading d-flex align-items-center justify-content-between">
+                <div class="">
+                    <div class="text-white font-weight-bold">Share and win</div>
+                    <div class="green">COINS!</div>
+                </div>
+                <div class="left-circle right"></div>
+            </div>
+            <div class="share-btn d-flex align-items-center justify-content-between">
+                <a href="" type="button">
+                    <img src="{{asset('imgs/icons/f-icon.svg')}}" alt="">
+                    Facebook
+                </a>
+                <a href="" type="button">
+                    <img src="{{asset('imgs/icons/f-icon.svg')}}" alt="">
+                    Twitter
+                </a>
             </div>
         </div>
     </div>

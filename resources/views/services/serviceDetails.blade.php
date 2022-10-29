@@ -1,12 +1,12 @@
 <div class="main-services">
     <div id="" class="service_category main-category mb-4">
-        <ul class="menu_ul nav nav-pills top-head-cate justify-content-between w-100 flex-wrap" id="pills-tab" role="tablist">
+        <ul class="menu_ul nav nav-pills top-head-cate position-relative" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
         </ul>
     </div>
 
-    <div class="tab-content bg-transparent" id="pills-tabContent">
+    <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
             @include('services.dynamic-service-tabs')
@@ -14,7 +14,7 @@
 
         <!-- <div class="tab-pane more_section"> -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="card-body bg-white br-10 shadows">
+            <div class="card-body bg-transparent br-10 shadows">
                 <div class="service-main-body-content">
                     <!-- <div id="more_section_content" class="service_category  main-category"> -->
                     <div class="service_category main-category more-cards">

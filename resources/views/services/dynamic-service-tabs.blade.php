@@ -1,4 +1,4 @@
-<div class="card-body bg-white shadows rounded py-5 pl-0">
+<div class="card-body bg-transparent shadows rounded py-5 pl-0">
     <div class="service-main-body-content">
 
         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>

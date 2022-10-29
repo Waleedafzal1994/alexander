@@ -33,7 +33,7 @@ select {
   width: 100%;
   border: 1px solid #c6c5d7 !important;
   outline: none;
-  background: #EDEDFB !important;
+  background: #EDEDFB;
   padding: 5px 10px;
   transition: 0.2s ease;
 }
@@ -311,9 +311,9 @@ ul {
 /* END: Table Class */
 
 /* START: Service > Profile Card */
-.profileBar .card .card-body {
+/* .profileBar .card .card-body {
   min-height: 60vh !important;
-}
+} */
 
 .border-radius-img {
   position: relative;
