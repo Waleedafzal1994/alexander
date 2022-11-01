@@ -1,6 +1,6 @@
 <div class="main-services">
     <div id="" class="service_category main-category mb-4">
-        <ul class="menu_ul nav nav-pills top-head-cate position-relative" id="pills-tab" role="tablist">
+        <ul class="menu_ul nav nav-pills top-head-cate position-relative flex-nowrap" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
         </ul>
@@ -77,22 +77,246 @@
         <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         </div>
 
-        <div class="card shadows mt-4">
-            <div class="card-body py-4 pr-4 pl-0">
+        <div class="review-section card shadows mt-4 bg-lightgrey br-16 px-3">
+            <div class="card-body p-0">
                 <div class="service-main-body-content">
                     <div class="row">
                         <div class="col-sm-12">
-                            <span class="d-flex align-items-center justify-content-between review-header">
-                                <div class="">
-                                    <h5 class="color-primary fw-bold mr-2 mb-0 skew-bg skew-height">Service Review(s)</h5>
-                                    <span class="line"></span>
+                            <span class="d-flex align-items-center justify-content-between review-header position-relative">
+                                <div class="d-flex align-items-center">
+                                    <h5 class="color-primary fw-bold mr-2 mb-0">Reviews</h5>
+                                    <div class="tag-box">12</div>
                                 </div>
+                                <div class="review-rating">
+                                    <div class="circle">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="50" cy="50" r="41"></circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h3>5.0 <br>
+                                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 @if(!empty($service->average_rate))
                                 <span class="number-row-card bg-purple-gradient">
                                     {{ $service->average_rate }} <i class="fas fa-star"></i>
                                 </span>
                                 @endif
                             </span>
+
+                            <div class="review-cards">
+                                <!-- King Card -->
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey br-12">
+                                        <div class="card-body p-0">
+                                            <div class="king-circle small">
+                                                <div class="dark-circle bg-darkgrey">
+                                                    <div class="golden-circle">
+                                                        <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                                        <div class="inner-golden-circle lightbox lightbox-user-gallery h-100">
+                                                            <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                            <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                            <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
+                                                            <img src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="profile-image-v2" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                           
+                                            <div class="">
+                                                <div class="card-title">Hailey Marcie</div>
+                                                <div class="card-text">CEO <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-rating d-flex align-items-center">
+                                            <div class="text-star">
+                                                <img src="{{asset('imgs/icons/rating-star.svg')}}" width="14" class="mr-1" alt="">
+                                                <span>5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end mt-12">
+                                        <div class="gamerHash mr-3">13 October 2022</div>
+                                        <div class="dots-dropdown dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">First Item</a>
+                                                <a class="dropdown-item" href="#">Second One</a>
+                                                <a class="dropdown-item" href="#">The last but not the least</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-description ml-2 pl-1">
+                                        Excellent services, recommended ! I would buy again ++
+                                    </div>
+                                </div>
+
+                                <!-- Golden Card -->
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey grey_white br-12">
+                                        <div class="card-body p-0">
+                                            <div class="card-image">
+                                                <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="card-title">Jacob Oliver</div>
+                                                <div class="card-text">Elite <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-rating d-flex align-items-center">
+                                            <div class="text-star">
+                                                <img src="{{asset('imgs/icons/rating-star.svg')}}" width="14" class="mr-1" alt="">
+                                                <span>5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end mt-12">
+                                        <div class="gamerHash mr-3">13 October 2022</div>
+                                        <div class="dots-dropdown dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">First Item</a>
+                                                <a class="dropdown-item" href="#">Second One</a>
+                                                <a class="dropdown-item" href="#">The last but not the least</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-description ml-2 pl-1">
+                                        Excellent services, recommended ! I would buy again ++
+                                    </div>
+                                </div>
+
+                                <!-- Purple Card -->
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey purple_white br-12">
+                                        <div class="card-body p-0">
+                                            <div class="card-image">
+                                                <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="" />
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="card-title">Hailey James</div>
+                                                <div class="card-text">VIP <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-rating d-flex align-items-center">
+                                            <div class="text-star">
+                                                <img src="{{asset('imgs/icons/rating-star.svg')}}" width="14" class="mr-1" alt="">
+                                                <span>5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end mt-12">
+                                        <div class="gamerHash mr-3">13 October 2022</div>
+                                        <div class="dots-dropdown dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">First Item</a>
+                                                <a class="dropdown-item" href="#">Second One</a>
+                                                <a class="dropdown-item" href="#">The last but not the least</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-description ml-2 pl-1">
+                                        Excellent services, recommended ! I would buy again ++
+                                    </div>
+                                </div>
+
+                                <!-- Blue Card -->
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey blue_white br-12">
+                                        <div class="card-body p-0">
+                                            <div class="card-image">
+                                                <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/noah-henry.svg')}}" alt="" class="" />
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="card-title">Noah Henry</div>
+                                                <div class="card-text">Top  <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-rating d-flex align-items-center">
+                                            <div class="text-star">
+                                                <img src="{{asset('imgs/icons/rating-star.svg')}}" width="14" class="mr-1" alt="">
+                                                <span>5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end mt-12">
+                                        <div class="gamerHash mr-3">13 October 2022</div>
+                                        <div class="dots-dropdown dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">First Item</a>
+                                                <a class="dropdown-item" href="#">Second One</a>
+                                                <a class="dropdown-item" href="#">The last but not the least</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-description ml-2 pl-1">
+                                        Excellent services, recommended ! I would buy again ++
+                                    </div>
+                                </div>
+
+                                <!-- Simple Card -->
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey simple br-12">
+                                        <div class="card-body p-0">
+                                            <div class="card-image bg-transparent">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/william-lucas.svg')}}" alt="" class="" />
+                                            </div>
+                                            <div class="">
+                                                <div class="card-title">William Lucas</div>
+                                                <div class="card-text">VIP <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-rating d-flex align-items-center">
+                                            <div class="text-star">
+                                                <img src="{{asset('imgs/icons/rating-star.svg')}}" width="14" class="mr-1" alt="">
+                                                <span>5.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end mt-12">
+                                        <div class="gamerHash mr-3">13 October 2022</div>
+                                        <div class="dots-dropdown dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">First Item</a>
+                                                <a class="dropdown-item" href="#">Second One</a>
+                                                <a class="dropdown-item" href="#">The last but not the least</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-description ml-2 pl-1">
+                                        Excellent services, recommended ! I would buy again ++
+                                    </div>
+                                </div>
+
+                                <div class="show-more-btn text-center mt-3">
+                                    <button class="new-btn bg-transparent gamerHash">Show More</button>
+                                </div>
+                            </div>
+
                             <ul class="pl-4 review mt-3 mb-3">
                                 @if (!empty($service->ratings))
                                 @foreach ($service->ratings as $rating)
