@@ -8,74 +8,73 @@
 
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
             @include('services.dynamic-service-tabs')
         </div>
 
         <!-- <div class="tab-pane more_section"> -->
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="card-body bg-transparent br-10 shadows">
-                <div class="service-main-body-content">
-                    <!-- <div id="more_section_content" class="service_category  main-category"> -->
-                    <div class="service_category main-category more-cards">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="card-body bg-transparent br-10 shadows">
+                    <div class="service-main-body-content">
+                        <!-- <div id="more_section_content" class="service_category  main-category"> -->
+                        <div class="service_category main-category more-cards">
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                
-                            </div>
-                            <div class="col-4 mb-4 pb-5 pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
-                                @if ($service->category->image_1 != null)
-
-                                <div class="game-img">
-                                    <img class="rounded" src="{{ url($service->category->image_1) }}">
+                            <div class="row">
+                                <div class="col-md-12">          
                                 </div>
-                                @else
+                                <div class="col-4 mb-4 pb-5 pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                    @if ($service->category->image_1 != null)
 
-                                <div style="background:var(--color-secondary);">
+                                    <div class="game-img">
+                                        <img class="rounded" src="{{ url($service->category->image_1) }}">
+                                    </div>
+                                    @else
 
+                                    <div style="background:var(--color-secondary);">
+                                    </div>
+
+                                    @endif
+                                    <h2>{{ $service->category->name }}</h2>
+                                    <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small>
                                 </div>
 
+                                <?php $i = 1 ?>
+                                @if(!empty($all_remaining_cats))
+                                @foreach($all_remaining_cats as $category)
+                                <div class="col-4 mb-4 pb-5 pointer" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+
+                                    @if ($category->image_1 != null)
+
+                                    <div class="game-img">
+                                        <img class="rounded" src="{{ url($category->image_1) }}">
+                                    </div>
+
+                                    @else
+
+                                    <div style="background:var(--color-secondary);">
+
+                                    </div>
+
+                                    @endif
+                                    <h2>{{ $category->name }} </h2>
+                                    <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small>
+                                </div>
+
+                                <?php $i++; ?>
+                                @endforeach
                                 @endif
-                                <h2>{{ $service->category->name }}</h2>
-                                <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small>
+
                             </div>
-
-                            <?php $i = 1 ?>
-                            @if(!empty($all_remaining_cats))
-                            @foreach($all_remaining_cats as $category)
-                            <div class="col-4 mb-4 pb-5 pointer" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
-
-                                @if ($category->image_1 != null)
-
-                                <div class="game-img">
-                                    <img class="rounded" src="{{ url($category->image_1) }}">
-                                </div>
-
-                                @else
-
-                                <div style="background:var(--color-secondary);">
-
-                                </div>
-
-                                @endif
-                                <h2>{{ $category->name }} </h2>
-                                <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small>
-                            </div>
-
-                            <?php $i++; ?>
-                            @endforeach
-                            @endif
 
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
         <!-- Modal -->
 
-        <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        </div>
+        <!-- <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        </div> -->
 
         <div class="review-section card shadows mt-4 bg-lightgrey br-16 px-3">
             <div class="card-body p-0">
@@ -369,7 +368,6 @@
 
 <script>
     function categoryId(id) {
-        console.log(id, 'ID')
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -480,7 +478,7 @@
                 user_id: user_id
             },
             success: function(response) {
-
+                // console.log(id,'Hello');
                 if (id == 'more') {
                     $('#more_section').show();
                     $('#more_section_content').show();
