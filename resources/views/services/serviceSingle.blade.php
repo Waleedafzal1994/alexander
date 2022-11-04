@@ -108,9 +108,9 @@
                                             <div class="heading">CEO - Admin</div>
                                             <div class="designation d-flex align-items-center justify-content-center">
                                                 <div class="circle"></div> Online
-                                                <!-- <div class="circle off mr-3"></div> Offline -->
+                                                <!-- <div class="circle off"></div> Offline -->
                                             </div>
-                                            <button class="btn text-white text-center">Subscribe</button>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
                                         </div>
                                     </div>
                                 </div>
@@ -826,7 +826,7 @@
                                             </div>
                                         </div>
                                         <div class="play-btn">
-                                            <button class="btn">
+                                            <button class="new-btn">
                                                 <img src="{{asset('imgs/icons/mini-bolt.svg')}}" alt="">
                                                 Play
                                             </button>
@@ -839,6 +839,320 @@
 
                 </div>
             </section>
+
+            <!-- Sidebar Section Start -->
+            <div class="fixed-nav bg-lightgrey">
+                <div class="logo menu-icon mx-auto">
+                    <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                </div>
+
+                <div class="card border-0 bg-transparent">
+                    <div class="online"></div>
+                    <div class="card-body p-0">
+                        <div class="king-circle small">
+                            <div class="dark-circle bg-darkgrey">
+                                <div class="golden-circle">
+                                    <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                    <div class="inner-golden-circle lightbox lightbox-user-gallery h-100">
+                                        <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                        <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                        <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
+                                        <img src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="profile-image-v2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent grey_white">
+                    <div class="online"></div>
+                    <div class="card-body p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent purple_white">
+                    <div class="online"></div>
+                    <div class="card-body p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent blue_white">
+                    <div class="online"></div>
+                    <div class="card-body p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/noah-henry.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent simple">
+                    <div class="online"></div>
+                    <div class="card-body p-0">
+                        <div class="card-image bg-transparent">
+                            <img id="circle-profile-pic" src="{{asset('imgs/william-lucas.svg')}}" alt="" class="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question logo mx-auto">
+                    <img src="{{asset('imgs/icons/question-icon.svg')}}" alt="">
+                </div>
+
+            </div>
+
+            <nav class="navSection">
+                <div class="right-sidebar">
+                    <div class="d-none h-100">
+                        <div class="left-section">
+                            <div class="logo menu-icon">
+                                <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                            </div>
+
+                            <div class="sidebar-content h-100 d-flex justify-content-between flex-column">
+                                <div class="">
+                                    <div class="nav nav-pills me-3 my-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="new-btn nav-link active" id="message-tab" data-bs-toggle="pill" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="true">Message</button>
+                                        <button class="new-btn nav-link" id="contact-tab" data-bs-toggle="pill" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                                    </div>
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
+                                            <div class="card border-0 bg-darkgrey br-12">
+                                                <div class="card-body p-0">
+                                                    <div class="king-circle small">
+                                                        <div class="dark-circle bg-darkgrey">
+                                                            <div class="golden-circle">
+                                                                <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                                                <div class="inner-golden-circle lightbox lightbox-user-gallery h-100">
+                                                                    <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                                    <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
+                                                                    <img src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="profile-image-v2" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                                    
+                                                    <div class="">
+                                                        <div class="card-title">Hailey Marcie</div>
+                                                        <div class="card-text">CEO <sup>.</sup> GamersPlay+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                            <div class="d-flex align-items-start inner-tabs-btn">
+                                                <div class="nav flex-column nav-pills me-3 w-100" id="contactTab" role="tablist" aria-orientation="vertical">
+                                                    <button class="nav-link active" id="side-ordered-tab" data-bs-toggle="pill" data-bs-target="#side-ordered" type="button" role="tab" aria-controls="side-ordered" aria-selected="true">Home</button>
+
+                                                    <button class="nav-link" id="side-following-tab" data-bs-toggle="pill" data-bs-target="#side-following" type="button" role="tab" aria-controls="side-following" aria-selected="false">Profile</button>
+                                                    
+                                                    <button class="nav-link" id="side-followers-tab" data-bs-toggle="pill" data-bs-target="#side-followers" type="button" role="tab" aria-controls="side-followers" aria-selected="false">Messages</button>
+                                                    
+                                                    <button class="nav-link" id="side-visitors-tab" data-bs-toggle="pill" data-bs-target="#side-visitors" type="button" role="tab" aria-controls="side-visitors" aria-selected="false">Settings</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="help-btn px-3">
+                                    <button class="new-btn rounded-pill text-center w-100 text-white bg-darkgrey py-2">Need help?</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-section">
+                            <div class="tab-content rightMesageTabContent" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
+                                    <div class="right-main-content">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="card border-0 bg-transparent">
+                                                <div class="online"></div>
+                                                <div class="card-body p-0 d-flex align-items-center">
+                                                    <div class="king-circle small">
+                                                        <div class="dark-circle bg-darkgrey">
+                                                            <div class="golden-circle">
+                                                                <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                                                <div class="inner-golden-circle lightbox lightbox-user-gallery h-100">
+                                                                    <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                                    <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
+                                                                    <img src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="profile-image-v2" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title mb-0 text-white font-20 font-weight-bold">Hailey Marcie</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <a type="button" class="call-now text-white me-4">
+                                                    <i class="fa-solid fa-phone"></i>
+                                                </a>
+                                                <div class="dots-dropdown dropdown">
+                                                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu bg-darkgrey" aria-labelledby="navbarDropdownMenuLink">
+                                                        <a class="dropdown-item" href="#">Follow</a>
+                                                        <a class="dropdown-item" href="#">Note</a>
+                                                        <a class="dropdown-item" href="#">Report</a>
+                                                        <a class="dropdown-item" href="#">Mute</a>
+                                                        <a class="dropdown-item" href="#">Block</a>
+                                                        <div class="dropdown-divider mx-1"></div>
+                                                        <a class="delete-message dropdown-item" href="#">Delete Message</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="dropdown-divider mt-4 mb-3"></div>
+
+                                        <div class="chat-section">
+                                            <div class="inner-chat-section">
+                                                <div class="opacity-7 last-chat-date font-12 text-white text-center mb-3">Oct 31, 1:09 PM</div>
+
+                                                <div class="left-chat-msg">
+                                                    Hi Sallu! My name is Brian, the CEO of E-Pal. I'm glad to meet you here. if you are new comer and feel confused about E-Pal, here is an official discord group to solve your problems!
+                                                </div>
+                                                
+                                                <div class="opacity-7 time-msg-sent font-12 text-white text-center my-2">2:45 PM</div>
+                                                
+                                                <div class="right-chat-msg">
+                                                    Hi Sallu! My name is Brian, the CEO of E-Pal. I'm glad to meet you here. if you are new comer and feel confused about E-Pal.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-footer">
+                                            <div class="d-flex align-items-center w-100">
+                                                <div class="price-sec bg-darkgrey">
+                                                    <img src="{{asset('imgs/icons/money-sent.png')}}" width="22" alt="">
+                                                </div>
+                                                <div class="gallery-sec bg-darkgrey">
+                                                    <input type="file">
+                                                    <i class="fa-regular fa-image text-white"></i>
+                                                </div>
+                                                <div class="chat-type-sec position-relative">
+                                                    <input type="text" class="form-control bg-darkgrey" placeholder="Knowing and respecting your teammate .....">
+                                                    <button id="emojishow" class="border-0">
+                                                        <i class="fa-solid fa-face-smile"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                                </div>
+                            </div>
+                            <!-- <div class="tab-content rightContactTabContent" id="contactTabContent">
+                                <div class="tab-pane fade show active" id="side-ordered" role="tabpanel" aria-labelledby="side-ordered-tab">Ordered Tab</div>
+                                <div class="tab-pane fade" id="side-following" role="tabpanel" aria-labelledby="side-following-tab">Following Tab</div>
+                                <div class="tab-pane fade" id="side-followers" role="tabpanel" aria-labelledby="side-followers-tab">Followers Tab</div>
+                                <div class="tab-pane fade" id="side-visitors" role="tabpanel" aria-labelledby="side-visitors-tab">Ordered Tab</div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="browse-section h-100">
+                        <div class="p-24">
+                            <div class="d-flex align-items-center">
+                                <div class="logo menu-icon mr-4">
+                                    <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                                </div>
+                                <div class="font-24 font-weight-bold text-white">All Services</div>
+                            </div>
+                        </div>
+                        <div class="px-24 sidebar-content more-cards">
+                            <ul class="nav nav-pills mb-4" id="gamestab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="favorites-tab" data-bs-toggle="pill" data-bs-target="#favorites" type="button" role="tab" aria-controls="favorites" aria-selected="true">Favorites</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="games-tab" data-bs-toggle="pill" data-bs-target="#games" type="button" role="tab" aria-controls="games" aria-selected="false">Games</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="lisestyle-tab" data-bs-toggle="pill" data-bs-target="#lisestyle" type="button" role="tab" aria-controls="lisestyle" aria-selected="false">Lifestyle</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="customized-tab" data-bs-toggle="pill" data-bs-target="#customized" type="button" role="tab" aria-controls="customized" aria-selected="false">Customized</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="gamestabContent">
+                                <div class="tab-pane fade show active" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="game-card pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                            @if ($service->category->image_1 != null)
+
+                                            <div class="game-img">
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <img class="rounded" src="{{ url($service->category->image_1) }}">
+                                            </div>
+                                            @else
+
+                                            <div style="background:var(--color-secondary);">
+                                            </div>
+
+                                            @endif
+                                            <h2>{{ $service->category->name }}</h2>
+                                            <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small>
+                                        </div>
+
+                                        <?php $i = 1 ?>
+                                        @if(!empty($all_remaining_cats))
+                                        @foreach($all_remaining_cats as $category)
+                                        <div class="game-card pointer" id="{{$category->id}}" onclick="getCategoryServices(this,this.id)">
+
+                                            @if ($category->image_1 != null)
+
+                                            <div class="game-img">
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <img class="rounded" src="{{ url($category->image_1) }}">
+                                            </div>
+
+                                            @else
+
+                                            <div style="background:var(--color-secondary);">
+
+                                            </div>
+
+                                            @endif
+                                            <h2>{{ $category->name }} </h2>
+                                            <small>{{ $category->minPrice .'/'. $category->service_duration_type }}</small>
+                                        </div>
+
+                                        <?php $i++; ?>
+                                        @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
+                                    Alphabetically Games Display here...
+                                </div>
+                                <div class="tab-pane fade" id="lisestyle" role="tabpanel" aria-labelledby="lisestyle-tab">
+                                    Lise Styles Display here...
+                                </div>
+                                <div class="tab-pane fade" id="customized" role="tabpanel" aria-labelledby="customized-tab">
+                                    Customized Games Display here...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="overlay"></div>
+            <!-- Sidebar Section End -->
 
         <!-- END: Service Section  -->
 
@@ -913,7 +1227,46 @@
 
     <script>
 
+        // Chat Section Start
+            const navBar = document.querySelector(".navSection"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".overlay");
+
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    navBar.classList.toggle("open");
+                });
+            });
+
+            overlay.addEventListener("click", () => {
+                navBar.classList.remove("open");
+            });
+
+        // Chat Section End
+
+         /*--- emojies show on text area ---*/
+         $('.add-smiles > span, .smile-it').on("click", function() {
+            $(this).siblings(".smiles-bunch").toggleClass("active");
+        });
+
         jQuery(document).ready(function($) {
+
+        // Multiple Tabs Active start
+        
+            // document.querySelectorAll('button[data-bs-toggle="tab"]').forEach((t,i)=>{
+            //     t.addEventListener('show.bs.tab', function (e) {
+            //         let targetClass = t.dataset.bsTarget
+            //         var pane = document.querySelector('#v-pills-tabContentS '+targetClass)
+            //         var sibling = document.querySelector('#v-pills-tabContentS .tab-pane.active')
+            //         // hide 2nd pane sibling
+            //         sibling.classList.remove('show')
+            //         sibling.classList.remove('active')
+            //         // show 2nd pane
+            //         pane.classList.add('show')
+            //         pane.classList.add('active')
+            //     })  
+            // })
+        // Multiple tabs Active End
 
         // Range Slider Start
             const settings={
@@ -942,31 +1295,31 @@
 
 
 
-            // console.log("Hello");
-            // var seller_edit = localStorage.getItem("edit_seller_profile");
-            // if(seller_edit){
-                // localStorage.removeItem("edit_seller_profile");
-                // COMMENTED CODE ------ 16/09/2022
+        // console.log("Hello");
+        // var seller_edit = localStorage.getItem("edit_seller_profile");
+        // if(seller_edit){
+            // localStorage.removeItem("edit_seller_profile");
+            // COMMENTED CODE ------ 16/09/2022
 
-                    // document.getElementById("profileBar_info").style.display = "none";
-                    // $('#services_navbar').removeClass('show-on-unblock');
-                    // $('#services_navbar').addClass('hide-on-block');
-                    // // document.getElementById("services_navbar").style.display = "none";
-                    // document.getElementById("edit_profile").style.display = "block";
-                    
-                    // $("#pills-edit-profile-tab").addClass('active');
-                    // $("#pills-edit-profile").addClass('show active');
-                    // $("#edit_user_profile").addClass('show active');  
-                    
-                    // $("#home").removeClass('active');    
-                    // $("#edit_user_profile-tab").removeClass('active');
-                    // $("#pills-back-tab").removeClass('active');
-                    // $("#pills-account").removeClass('active show');
-                    // $("#pills-notification").removeClass('active show');
-                    // $("#pills-privacy").removeClass('active show');
-                    // $("#pills-settings").removeClass('active show');
-                // COMMENTED END HERE
-            // }
+                // document.getElementById("profileBar_info").style.display = "none";
+                // $('#services_navbar').removeClass('show-on-unblock');
+                // $('#services_navbar').addClass('hide-on-block');
+                // // document.getElementById("services_navbar").style.display = "none";
+                // document.getElementById("edit_profile").style.display = "block";
+                
+                // $("#pills-edit-profile-tab").addClass('active');
+                // $("#pills-edit-profile").addClass('show active');
+                // $("#edit_user_profile").addClass('show active');  
+                
+                // $("#home").removeClass('active');    
+                // $("#edit_user_profile-tab").removeClass('active');
+                // $("#pills-back-tab").removeClass('active');
+                // $("#pills-account").removeClass('active show');
+                // $("#pills-notification").removeClass('active show');
+                // $("#pills-privacy").removeClass('active show');
+                // $("#pills-settings").removeClass('active show');
+            // COMMENTED END HERE
+        // }
 
 
             jQuery(document).scroll(function() { // OR  $(window).scroll(function() {

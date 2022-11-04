@@ -67,7 +67,7 @@ $order_arr[0] = $service->category->id; ?>
 <li class="nav-item more-section mr-0" role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,'more')" >
     <!-- IF STAART HERE -->
     <!-- <div class="nav-link p-0" id="more_section"> -->
-    <a class="nav-link p-0 ml-auto" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false" style="background-image:url({{asset('imgs/more-services-img.svg')}}) !important; backdrop-filter: blur(4px); background-repeat: no-repeat;" >
+    <a class="nav-link p-0 ml-auto menu-icon" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false" style="background-image:url({{asset('imgs/more-services-img.svg')}}) !important; backdrop-filter: blur(4px); background-repeat: no-repeat;" >
         <div class="categories_box_holder">
             <!-- Else Section
                 <div class="categories_box_holder" style="background:var(--color-secondary);">

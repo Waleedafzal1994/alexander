@@ -80,7 +80,7 @@ $noFooter = true;
 
 <body>
     <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0 0 20px -6px black !important;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="position:fixed; width:100%; height:70px; z-index: 100; box-shadow: 0px 1px 5px rgba(24, 27, 32, 0.3) !important;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div style=" width: max-content;">

@@ -1,5 +1,5 @@
 <div class="main-services">
-    <div id="" class="service_category main-category mb-4">
+    <div id="" class="service_category main-category">
         <ul class="menu_ul nav nav-pills top-head-cate position-relative flex-nowrap" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
@@ -20,8 +20,6 @@
                         <div class="service_category main-category more-cards">
 
                             <div class="row">
-                                <div class="col-md-12">          
-                                </div>
                                 <div class="col-4 mb-4 pb-5 pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
                                     @if ($service->category->image_1 != null)
 
@@ -86,6 +84,7 @@
                                     <h5 class="color-primary fw-bold mr-2 mb-0">Reviews</h5>
                                     <div class="tag-box">12</div>
                                 </div>
+                                <div class="middle-line"></div>
                                 <div class="review-rating">
                                     <div class="circle">
                                         <div class="percent">
