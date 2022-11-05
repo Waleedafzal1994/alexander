@@ -888,6 +888,7 @@
                             <!-- START: SECOND Card mianbody -->
 
                             <!-- END: First Card mianbody -->
+                            </div>
                         </div>
                     </div>
                     <!-- END: Service main Body -->
