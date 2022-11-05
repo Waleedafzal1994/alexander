@@ -74,35 +74,32 @@
         @endif
     </div>
 
+    {{-- @if(!empty($all_remaining_services))
+    @foreach($all_remaining_services as $r_service)
+    <div class="row mt-3 pl-20">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="box-styling" type="button" id="{{$r_service->id}}" onclick="openComfirmOrderModel(this.id)">
 
-
-        {{-- @if(!empty($all_remaining_services))
-        @foreach($all_remaining_services as $r_service)
-        <div class="row mt-3 pl-20">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="box-styling" type="button" id="{{$r_service->id}}" onclick="openComfirmOrderModel(this.id)">
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="subcategory">
-                            <h5 class="mb-0">{{$r_service->name}}</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="subcategory">
+                        <h5 class="mb-0">{{$r_service->name}}</h5>
+                    </div>
+                    <div class="rateMin d-flex align-items-center">
+                        <div class="mr-2">
+                            <img src="/imgs/icons/6.png" style="height:24px; margin-left:5px;">
                         </div>
-                        <div class="rateMin d-flex align-items-center">
-                            <div class="mr-2">
-                                <img src="/imgs/icons/6.png" style="height:24px; margin-left:5px;">
-                            </div>
-                            <div class="mr-2">
-                                <p class="mb-0">{{$r_service->price}}/{{$r_service->service_duration_type}}</p>
-                            </div>
-                            <div class="right-arrow ml-4">
-                                <i class="fa fa-chevron-right"></i>
-                            </div>
+                        <div class="mr-2">
+                            <p class="mb-0">{{$r_service->price}}/{{$r_service->service_duration_type}}</p>
+                        </div>
+                        <div class="right-arrow ml-4">
+                            <i class="fa fa-chevron-right"></i>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
-        @endforeach
-        @endif --}}
     </div>
+    @endforeach
+    @endif --}}
 </div>

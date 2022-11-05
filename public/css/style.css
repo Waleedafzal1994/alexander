@@ -5015,7 +5015,7 @@ input::-moz-focus-outer {
     display: flex;
     align-items: center;
 }
-.card .card-image{
+.card .card-clr .card-image{
     background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
     opacity: 0.9;
     border-radius: 50%;
@@ -5024,7 +5024,7 @@ input::-moz-focus-outer {
     margin-right: 10px;
     display: flex;
 }
-.card .card-image .img-frame{
+.card .card-clr .card-image .img-frame{
     background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
     transform: rotate(-15deg);
     border-radius: 50%;
@@ -5035,13 +5035,13 @@ input::-moz-focus-outer {
     align-items: center;
     justify-content: center;
 }
-.card .card-image .img-frame img{
+.card .card-clr .card-image .img-frame img{
     width: 46px;
     height: 46px;
     margin: auto;
     object-fit: cover;
 }
-.card .card-image .img-frame::before{
+.card .card-clr .card-image .img-frame::before{
     content: "";
     display: block;
     position: absolute;
@@ -5053,7 +5053,7 @@ input::-moz-focus-outer {
     bottom: 2px;
     left: 0px;
 }
-.card .card-image .img-frame::after{
+.card .card-clr .card-image .img-frame::after{
     content: "";
     display: block;
     position: absolute;

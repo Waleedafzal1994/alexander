@@ -966,7 +966,7 @@
 
                 <div class="card border-0 bg-transparent">
                     <div class="online"></div>
-                    <div class="card-body p-0">
+                    <div class="card-body card-clr p-0">
                         <div class="king-circle small">
                             <div class="dark-circle bg-darkgrey">
                                 <div class="golden-circle">
@@ -984,7 +984,7 @@
                 </div>
                 <div class="card border-0 bg-transparent grey_white">
                     <div class="online"></div>
-                    <div class="card-body p-0">
+                    <div class="card-body card-clr p-0">
                         <div class="card-image">
                             <div class="img-frame">
                             <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
@@ -994,7 +994,7 @@
                 </div>
                 <div class="card border-0 bg-transparent purple_white">
                     <div class="online"></div>
-                    <div class="card-body p-0">
+                    <div class="card-body card-clr p-0">
                         <div class="card-image">
                             <div class="img-frame">
                             <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="" />
@@ -1004,7 +1004,7 @@
                 </div>
                 <div class="card border-0 bg-transparent blue_white">
                     <div class="online"></div>
-                    <div class="card-body p-0">
+                    <div class="card-body card-clr p-0">
                         <div class="card-image">
                             <div class="img-frame">
                             <img id="circle-profile-pic" src="{{asset('imgs/noah-henry.svg')}}" alt="" class="" />
@@ -1014,7 +1014,7 @@
                 </div>
                 <div class="card border-0 bg-transparent simple">
                     <div class="online"></div>
-                    <div class="card-body p-0">
+                    <div class="card-body card-clr p-0">
                         <div class="card-image bg-transparent">
                             <img id="circle-profile-pic" src="{{asset('imgs/william-lucas.svg')}}" alt="" class="" />
                         </div>
@@ -1044,7 +1044,7 @@
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
                                             <div class="card border-0 bg-darkgrey br-12">
-                                                <div class="card-body p-0">
+                                                <div class="card-body card-clr p-0">
                                                     <div class="king-circle small">
                                                         <div class="dark-circle bg-darkgrey">
                                                             <div class="golden-circle">

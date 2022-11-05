@@ -22,7 +22,7 @@
                 <div class="d-flex justify-content-between w-100">
                     <div class="d-flex blue_white">
                         <div class="card border-0 bg-transparent blue_white mr-3">
-                            <div class="card-body p-0">
+                            <div class="card-body card-clr p-0">
                                 <div class="card-image mr-0">
                                     <div class="img-frame">
                                         <img id="circle-profile-pic" src="{{ $post->postAuthor->getProfilePicture() }}" class="diamond-img rounded-circle" alt="" />

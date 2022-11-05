@@ -111,7 +111,7 @@
                                 <!-- King Card -->
                                 <div class="main-card">
                                     <div class="card border-0 bg-darkgrey br-12">
-                                        <div class="card-body p-0">
+                                        <div class="card-body card-clr p-0">
                                             <div class="king-circle small">
                                                 <div class="dark-circle bg-darkgrey">
                                                     <div class="golden-circle">
@@ -159,7 +159,7 @@
                                 <!-- Golden Card -->
                                 <div class="main-card">
                                     <div class="card border-0 bg-darkgrey grey_white br-12">
-                                        <div class="card-body p-0">
+                                        <div class="card-body card-clr p-0">
                                             <div class="card-image">
                                                 <div class="img-frame">
                                                 <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
@@ -198,7 +198,7 @@
                                 <!-- Purple Card -->
                                 <div class="main-card">
                                     <div class="card border-0 bg-darkgrey purple_white br-12">
-                                        <div class="card-body p-0">
+                                        <div class="card-body card-clr p-0">
                                             <div class="card-image">
                                                 <div class="img-frame">
                                                 <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="" />
@@ -237,7 +237,7 @@
                                 <!-- Blue Card -->
                                 <div class="main-card">
                                     <div class="card border-0 bg-darkgrey blue_white br-12">
-                                        <div class="card-body p-0">
+                                        <div class="card-body card-clr p-0">
                                             <div class="card-image">
                                                 <div class="img-frame">
                                                 <img id="circle-profile-pic" src="{{asset('imgs/noah-henry.svg')}}" alt="" class="" />
