@@ -1840,10 +1840,6 @@ a.slider-link:hover {
     background: linear-gradient(135deg, #c395f1 0%, #ad75e7c4 75%) !important;
 }
 
-/* span {.post-carousel .carousel-inner .carousel-item img
-    cursor: pointer;
-} */
-
 .minus,
 .plus {
     width: 40px;
@@ -2083,7 +2079,7 @@ a.slider-link:hover {
     border-radius: 16px;
     /* padding-left: 17px;
     padding-right: 17px; */
-    border: 2px solid #fc94025f;
+    border: 2px solid rgb(252 148 2 / 37%);
     /* margin-top: -102px; */
 }
 
@@ -2176,6 +2172,82 @@ a.slider-link:hover {
     left: 14px;
     bottom: 4px;
 }
+
+
+.new-circle .king-circle .inner-golden-circle .sparkle.top{
+    right: 20px;
+    top: -11px;
+}
+.new-circle .king-circle .inner-golden-circle .sparkle.bottom{
+    left: 8px;
+    bottom: -5px;
+}
+
+.new-circle .king-circle{
+    opacity: 0.9;
+    position: relative;
+    transform: rotate(30deg);
+}
+.new-circle .king-circle .dark-circle{
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Yellow Circle */
+.yellow-circle .king-circle{
+    background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
+}
+.yellow-circle .king-circle .dark-circle{
+    background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
+}
+
+/* Purple Circle */
+.new-circle.purple-circle .king-circle{
+    background: linear-gradient(90deg, #8A00F5 0%, #E5C2FF 12%, #8A00F5 24%, #D299FF 35%, #C478FF 39.06%, #6402AF 51%, #8A00F5 60%, #6902B9 67%, #B95FFF 72%, #CF92FF 75%, #8A00F5 81%, #7A02D7 86%, #BE6CFE 100%);
+}
+.new-circle.purple-circle .king-circle .dark-circle{
+    background: linear-gradient(90deg, #8A00F5 0%, #E5C2FF 9.37%, #8A00F5 24%, #C478FF 30.73%, #D299FF 35%, #6402AF 41.14%, #AD66E3 51.04%, #8A00F5 60%, #6902B9 67%, #B95FFF 72%, #8A00F5 81%, #7A02D7 86%, #CF92FF 89.58%, #940DFD 100%);
+}
+
+/* Blue Circle */
+.new-circle.blue-circle .king-circle{
+    background: linear-gradient(90deg, #09B8EF 0%, #B3E9FB 12%, #19C1F6 24%, #AFECFF 35%, #09B3E9 47%, #19C1F6 51%, #03789C 60%, #029DCE 67%, #7ADCFB 72%, #8FE3FE 75%, #036685 81%, #0486AE 86%, #006281 100%);
+}
+.new-circle.blue-circle .king-circle .dark-circle{
+    background: linear-gradient(90deg, #09B8EF 0%, #B3E9FB 12%, #19C1F6 24%, #AFECFF 35%, #09B3E9 47%, #19C1F6 51%, #03789C 60%, #029DCE 67%, #7ADCFB 72%, #8FE3FE 75%, #036685 81%, #0486AE 86%, #93E5FF 100%);
+}
+
+/* No Circle */
+.new-circle.simple-circle .king-circle{
+    background: none
+}
+.new-circle.simple-circle .king-circle .dark-circle{
+    background: none
+}
+
+.new-circle .king-circle .dark-circle .inner-golden-circle{
+    transform: rotate(15deg);
+    background: transparent !important;
+}
+.new-circle .king-circle .dark-circle .inner-golden-circle .profile-image-v2 {
+    height: 87px !important;
+    width: 87px !important;
+}
+
+.new-circle.yellow-circle {
+    border-color: rgb(255, 250, 207, 37%);
+}
+.new-circle.purple-circle {
+    border-color: rgb(180, 85, 255, 37%);
+}
+.new-circle.blue-circle {
+    border-color: rgb(132, 211, 236, 37%);
+}
+.new-circle.simple-circle{
+    border-color: rgb(255, 255, 255, 37%);
+}
+
+
+
 .img-two-btns-row a{
     background-color: #581c87;
     color: rgb(248, 245, 242) !important;
@@ -2626,8 +2698,8 @@ a.slider-link:hover {
     object-fit: cover !important;
 }
 .friend-info .carousel-inner{
-    width: 90%;
-    height: 650px;
+    width: 100%;
+    height: 430px;
     margin: auto;
     border-radius: 10px;
 }
@@ -2660,11 +2732,13 @@ a.slider-link:hover {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
+    /* background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important; */
+    background: #212429;
+    box-shadow: 0 3px 5px black;
     border: 0;
 }
 .friend-info .carousel-indicators li.active {
-    background: #581c87;
+    background: #9B32ED;
 }
 .we-comet{
     width: 90% !important;
@@ -2793,7 +2867,7 @@ a.slider-link:hover {
     padding: 20px !important;
 }
 .post-carousel.carousel{
-    max-width: 575px !important;
+    max-width: 100% !important;
 }
 .post-carousel.carousel .carousel-control-prev {
     left: -50px;
@@ -2814,11 +2888,11 @@ a.slider-link:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 12px;
+    border-radius: 20px;
 }
-.carousel-row{
+/* .carousel-row{
     margin-left: -35px;
-}
+} */
 .carousel-row img{
     cursor: pointer;
 }
@@ -4027,14 +4101,15 @@ div.emoji-drop-down div.emoji{
 #circle-profile-pic{
     object-fit: cover;
 }
-.carousel_section{
+/* .carousel_section{
     width: fit-content;
-}
-.carousel_section .we-video-info,
+} */
+/* .carousel_section .we-video-info,
 .carousel_section .users-thumb-list{
     max-width: 515px !important;
     min-width: 515px !important;
-}
+} */
+
 
 .profile-info-counters .social .item .count {
     font-size: 20px;
@@ -4349,6 +4424,9 @@ input::-moz-focus-outer {
 .subscribe{
     color: #fff;
 }
+.subscribe sup {
+    top: -0.3em;
+}
 .subscribe .heading{
     font-weight: 500;
     font-size: 15px;
@@ -4379,6 +4457,7 @@ input::-moz-focus-outer {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 .light-border{
@@ -4515,6 +4594,7 @@ input::-moz-focus-outer {
 
 .dots-dropdown.dropdown {
     cursor: pointer;
+    height: fit-content;
 }
 .dots-dropdown.dropdown .dropdown-menu {
     transition: all 0.5s;
@@ -4522,6 +4602,20 @@ input::-moz-focus-outer {
     transform: scale(1, 0) !important;
     display: block;
     margin-left: -215px;
+    width: -webkit-fill-available;
+    background: #212429 !important;
+    border: 0;
+}
+.dots-dropdown.dropdown .dropdown-menu a{
+    color: #fff;
+    width: 93%;
+    margin: auto;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+.dots-dropdown.dropdown .dropdown-menu a:hover{
+    background: #2C2F36;
+
 }
 .dots-dropdown.dropdown:hover .dropdown-menu {
     transform: scale(1) !important;

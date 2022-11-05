@@ -77,7 +77,7 @@
                             <div class="card border-0">
 
                                 <div class="nav-button-side">
-                                    <div class="mx-0 d-flex justify-content-center new-profile-section">
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 golden-king">
                                         <div class="king-circle center-img mt-2">
                                             <div class="dark-circle">
                                                 <div class="light-dark-circle">
@@ -106,6 +106,124 @@
                                         </div>
                                         <div class="subscribe text-center">
                                             <div class="heading">CEO - Admin</div>
+                                            <div class="designation d-flex align-items-center justify-content-center">
+                                                <div class="circle"></div> Online
+                                                <!-- <div class="circle off"></div> Offline -->
+                                            </div>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle yellow-circle">
+                                        <div class="king-circle center-img mt-2">
+                                            <div class="dark-circle">
+                                                <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
+                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subscribe text-center">
+                                            <div class="heading">ELITE <sup>.</sup> GamersPlay+</div>
+                                            <div class="designation d-flex align-items-center justify-content-center">
+                                                <div class="circle"></div> Online
+                                                <!-- <div class="circle off"></div> Offline -->
+                                            </div>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle purple-circle">
+                                        <div class="king-circle center-img mt-2">
+                                            <div class="dark-circle">
+                                                <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
+                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subscribe text-center">
+                                            <div class="heading">VIP <sup>.</sup> GamersPlay+</div>
+                                            <div class="designation d-flex align-items-center justify-content-center">
+                                                <div class="circle"></div> Online
+                                                <!-- <div class="circle off"></div> Offline -->
+                                            </div>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle blue-circle">
+                                        <div class="king-circle center-img mt-2">
+                                            <div class="dark-circle">
+                                                <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
+                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subscribe text-center">
+                                            <div class="heading">TOP <sup>.</sup> GamersPlay+</div>
+                                            <div class="designation d-flex align-items-center justify-content-center">
+                                                <div class="circle"></div> Online
+                                                <!-- <div class="circle off"></div> Offline -->
+                                            </div>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle simple-circle">
+                                        <div class="king-circle center-img mt-2">
+                                            <div class="dark-circle">
+                                                <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subscribe text-center">
+                                            <div class="heading">VIP <sup>.</sup> GamersPlay+</div>
                                             <div class="designation d-flex align-items-center justify-content-center">
                                                 <div class="circle"></div> Online
                                                 <!-- <div class="circle off"></div> Offline -->
@@ -903,7 +1021,7 @@
                     </div>
                 </div>
 
-                <div class="question logo mx-auto">
+                <div class="question logo mx-auto menu-icon">
                     <img src="{{asset('imgs/icons/question-icon.svg')}}" alt="">
                 </div>
 

@@ -17,249 +17,273 @@
 
     <div class="user-post">
         <div class="friend-info">
-            <div class="d-flex">
-                <img src="{{ $post->postAuthor->getProfilePicture() }}" style="height:80px;" width="80" class="diamond-img rounded-circle mr-3" alt="">
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="d-flex align-items-center w-100">
-                        <div class="d-flex flex-column w-100">
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="d-flex align-items-center">
-                                    <span class="mr-3 font-weight-bold review-profile-heading"><a href="javascrip:void(0);" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
-                                        {{-- share <a href="#" title="">link</a> --}}
-                                    </span>
-                                    <span class="text-black">
-                                        <!-- <i class="fa fa-globe"></i> -->
-                                        {{ $post->formatted_created_at }}
-                                    </span>
-                                </div>
-                                @if ($post->user_id == Auth::user()->id)
-                                <div class="more">
-                                    <div class="more-post-optns post-actions" data-post="{{ $post->id }}" data-href="deletePost({{$post->id}})">
-                                        <i class="fas fa-ellipsis-h"></i>
-                                        <ul>
-                                            {{-- <li><i class="fas fa-edit"></i>Edit
-                                                        Post
-                                                    </li> --}}
 
-
-                                            <li  class="delete-post-action">
-
-                                                <i class="fas fa-trash"></i>Delete Post
-                                                <!-- <a href="#" data-href="deletePost({{$post->id}})" data-toggle="modal" data-target="#deletemodal"><i class="fas fa-trash"></i>Delete Post</a> -->
-                                                
-                                            </li>
-                                            {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
-                                                        Post</li> --}}
-                                            {{-- <li>
-                                                    <i class="fas fa-address-card"></i>Boost
-                                                        This Post</li>
-                                                    <li><i class="fas fa-clock"></i>Schedule Post</li>
-                                                    <li><i class="fab fa-wpexplorer"></i>Select as featured
-                                                    </li>
-                                                    <li><i class="fas fa-bell-slash"></i>Turn off
-                                                        Notifications
-                                                    </li> --}}
-                                        </ul>
+            <div class="w-100">
+                <div class="d-flex justify-content-between w-100">
+                    <div class="d-flex blue_white">
+                        <div class="card border-0 bg-transparent blue_white mr-3">
+                            <div class="card-body p-0">
+                                <div class="card-image mr-0">
+                                    <div class="img-frame">
+                                        <img id="circle-profile-pic" src="{{ $post->postAuthor->getProfilePicture() }}" class="diamond-img rounded-circle" alt="" />
                                     </div>
                                 </div>
-                                @endif
                             </div>
+                        </div>
 
-                            <!-- New Design -->
-                            <!-- <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="d-flex">
+                            <div class="d-flex flex-column">
+                                <span class="mr-3 font-weight-bold review-profile-heading"><a href="javascrip:void(0);" title="">{{ Str::upper($post->postAuthor->name ?: 'NA') }}</a>
+                                    {{-- share <a href="#" title="">link</a> --}}
+                                </span>
+                                <span class="date-post">
+                                    <!-- <i class="fa fa-globe"></i> -->
+                                    {{ $post->formatted_created_at }}
+                                </span>
+                            </div>
+                            <div class="title-badge">
+                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dots-dropdown dropdown">
+                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">First Item</a>
+                            <a class="dropdown-item" href="#">Second One</a>
+                            <a class="dropdown-item" href="#">The last but not the least</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    @if ($post->user_id == Auth::user()->id)
+                    <div class="more">
+                        <div class="more-post-optns post-actions" data-post="{{ $post->id }}" data-href="deletePost({{$post->id}})">
+                            <i class="fas fa-ellipsis-h"></i>
+                            <ul>
+                                {{-- <li><i class="fas fa-edit"></i>Edit
+                                            Post
+                                        </li> --}}
+
+
+                                <li  class="delete-post-action">
+
+                                    <i class="fas fa-trash"></i>Delete Post
+                                    <!-- <a href="#" data-href="deletePost({{$post->id}})" data-toggle="modal" data-target="#deletemodal"><i class="fas fa-trash"></i>Delete Post</a> -->
+                                    
+                                </li>
+                                {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
+                                            Post</li> --}}
+                                {{-- <li>
+                                        <i class="fas fa-address-card"></i>Boost
+                                            This Post</li>
+                                        <li><i class="fas fa-clock"></i>Schedule Post</li>
+                                        <li><i class="fab fa-wpexplorer"></i>Select as featured
+                                        </li>
+                                        <li><i class="fas fa-bell-slash"></i>Turn off
+                                            Notifications
+                                        </li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+
+                <!-- New Design -->
+                <!-- <div id="carousel-1" class="lightbox mt-4 mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-1" data-slide-to="1"></li>
+                        <li data-target="#carousel-1" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                        <i class="fa-solid fa-location-arrow prev-icon"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                        <i class="fa-solid fa-location-arrow next-icon"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div> -->
+
+                <!-- New Design -->
+
+                <!-- This section is for pictures & comment-section and also dynamic -->
+                <div class="post-meta mt-3">
+                    <div class="description">
+                        <p class="">Hello! what you’re looking for?</p>
+                    </div>
+                    <!-- <div class="row">
+                        <p> {!! $post->videoContentHtml() !!}
+                        </p>
+                    </div> -->
+                    <div class="carousel_section">
+                        <div class="carousel-row">
+                            @php $images = $post->imageContentHtml() @endphp
+                            @if(!empty($images) && $images->count()>0)
+                            <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-1" data-slide-to="1"></li>
-                                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                                    @if(!empty($images))
+                                    @php $i=0; @endphp
+                                    @foreach ($images as $value)
+                                    <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
+                                    @php $i++ @endphp
+                                    @endforeach
+                                    @endif
+
                                 </ol>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
+
+                                    @if(!empty($images))
+                                    @php $i=0; @endphp
+                                    @foreach ($images as $value)
+
+                                    <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
+                                        <img src="{{asset('imgs/carousel-imgs/fortnite-lfg.jpg')}}" class="d-block w-100" alt="">
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="/imgs/services/astronaut.png" class="d-block w-100" alt="...">
-                                    </div>
+                                    @php $i++ @endphp
+                                    @endforeach
+                                    @endif
+
                                 </div>
-                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                                <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
                                     <i class="fa-solid fa-location-arrow prev-icon"></i>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+
+                                @if(!empty($images) && count($images) > 1 )
+                                <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
                                     <i class="fa-solid fa-location-arrow next-icon"></i>
                                     <span class="sr-only">Next</span>
                                 </a>
-                            </div> -->
-
-                            <!-- New Design -->
-
-                            <!-- This section is for pictures & comment-section and also dynamic -->
-                            <div class="post-meta mt-3">
-                                <div class="description">
-                                    <!-- <p class="text-black">{!! $post->content !!}</p> -->
-                                </div>
-                                <div class="row">
-                                    <p> {!! $post->videoContentHtml() !!}
-                                    </p>
-                                </div>
-                                <div class="carousel_section">
-                                    <div class="carousel-row">
-                                        @php $images = $post->imageContentHtml() @endphp
-                                        @if(!empty($images) && $images->count()>0)
-                                        <div id="carousel-{{$post->id}}" class="lightbox mt-4 mb-5 post-carousel carousel slide" data-ride="carousel" data-interval="false">
-                                            <ol class="carousel-indicators">
-                                                @if(!empty($images))
-                                                @php $i=0; @endphp
-                                                @foreach ($images as $value)
-                                                <li data-target="#carousel-{{$post->id}}" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' :''}}"></li>
-                                                @php $i++ @endphp
-                                                @endforeach
-                                                @endif
-
-                                            </ol>
-                                            <div class="carousel-inner">
-
-                                                @if(!empty($images))
-                                                @php $i=0; @endphp
-                                                @foreach ($images as $value)
-
-                                                <div class="carousel-item carousel-item-{{$post->id}} {{$i == 0 ? 'active' :''}}">
-                                                    <img src="{{$value->file_name}}" class="d-block w-100" alt="...">
-                                                </div>
-                                                @php $i++ @endphp
-                                                @endforeach
-                                                @endif
-
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carousel-{{$post->id}}" role="button" data-slide="prev">
-                                                <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-
-                                            @if(!empty($images) && count($images) > 1 )
-                                            <a class="carousel-control-next" href="#carousel-{{$post->id}}" role="button" data-slide="next">
-                                                <i class="fa-solid fa-location-arrow next-icon"></i>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                            @endif
-                                        </div>
-                                        @endif
-
-                                    </div>
-                                    <div class="we-video-info d-flex justify-content-between">
-                                        <ul>
-                                            {{-- <li>
-                                                    <span class="views" title="views">
-                                                        <i class="fa fa-eye"></i>
-                                                        <ins>0</ins>
-                                                    </span>
-                                                </li> --}}
-                                            <li>
-                                                <div class="likes heart post-reaction HeartAnimation {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
-                                                    <!-- <i class="fas fa-heart"></i> -->
-                                                    <!-- <div class="HeartAnimation"></div> -->
-                                                    <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <span class="comment" title="Comments">
-                                                    <i class="fa fa-commenting"></i>
-                                                    <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
-                                                </span>
-                                            </li>
-
-                                            {{-- <li><span><a class="share-pst" href="#" title="Share">
-                                                    <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
-                                                </li> --}}
-                                        </ul>
-                                        <div class="pr-1">
-                                            <div class="hashtag my-4 font-weight-bold">#Highlights</div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
-                                        {!! $post->postLikedUserNames() !!}
-                                    </div> -->
-                                </div>
+                                @endif
                             </div>
-                            <div class="coment-area ">
-                                <ul class="we-comet" id="comment-box_{{ $post->id }}">
-                                    {!! $post->commentByUsers() !!}
-
-                                    <span id="append_comment_{{ $post->id }}"></span>
-
-                                    <div class="comment-loader" id="append_less_comment_{{ $post->id }}" style="display: none;">
-                                        <img src="{{asset('imgs/loader.gif')}}">
-                                    </div>
-
-
-                                    @if ($post->comments_count > 3)
-                                    <li>
-                                        <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
-                                        </a>
-                                    </li>
-                                    @endif
-
-                                    <li class="show-less show-less-{{ $post->id }}">
-                                        <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="0" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
-                                        </a>
-                                    </li>
-
-                                    <li class="post-comment" id="post-comment_form_{{ $post->id }}">
-                                        <div class="d-flex">
-                                            <div class="comet-avatar">
-                                                <img width="80" src="{{Auth::user()->getProfilePicture()}}" alt="">
-                                            </div>
-                                            <div class="post-comt-box">
-                                                <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
-                                                    <div class="position-relative">
-                                                        <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
-                                                        <div id="post_id" style="display: none;">{{ $post->id }}</div>
-                                                        <div class="textArea-body">
-                                                            <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
-                                                            <button id="emojishow">
-                                                                <i class="fa-solid fa-face-smile"></i>
-                                                            </button>
-                                                            <div class="text-counter">
-                                                                <span id="wordsCounts" class="counter">0</span>
-                                                                <span class="fix-count">/500</span>
-                                                            </div>
-                                                        </div>
-                                                        <script>
-                                                            // function wordCount(val) {
-                                                            //     var len = val.value.length;
-                                                            //     console.log(len,'Leng')
-                                                            //     if (len >= 500) {
-                                                            //         val.value = val.value.substring(0, 500);
-                                                            //     } else {
-                                                            //         $('#wordsCounts').text(len);
-                                                            //     };
-                                                            // };
-                                                            $(function() {
-                                                                window.charCount = 0;
-                                                                setInterval(function() {
-                                                                    var c = $(".content-count").val().length;
-                                                                    if (c != window.charCount) {
-                                                                        window.charCount = c;
-                                                                        $("#wordsCounts").html(window.charCount);
-                                                                    }
-                                                                }, 500);
-                                                            });
-                                                        </script>
-                                                    </div>
-                                                    <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
+                            @endif
 
                         </div>
+                        <div class="we-video-info d-flex justify-content-between align-items-center pt-0">
+                            <ul>
+                                {{-- <li>
+                                        <span class="views" title="views">
+                                            <i class="fa fa-eye"></i>
+                                            <ins>0</ins>
+                                        </span>
+                                    </li> --}}
+                                <li>
+                                    <div class="likes heart post-reaction HeartAnimation {{ $post->userliked() ? 'active-heart' : '' }}" title="Like/Dislike" data-post-id="{{ $post->id }}" data-reaction-id="{{ $post->likedPost() }}">
+                                        <!-- <i class="fas fa-heart"></i> -->
+                                        <!-- <div class="HeartAnimation"></div> -->
+                                        <span class="liked_post_count">{{ shortNumber($post->likes_count) }}</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="comment" title="Comments">
+                                        <i class="fa fa-commenting"></i>
+                                        <ins id="comment_post_count_{{ $post->id }}">{{ shortNumber($post->comments_count) }}</ins>
+                                    </span>
+                                </li>
+
+                                {{-- <li><span><a class="share-pst" href="#" title="Share">
+                                        <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
+                                    </li> --}}
+                            </ul>
+                            <div class="hashtag">
+                                <div class="">#Highlights</div>
+                            </div>
+                        </div>
+                        <!-- <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
+                            {!! $post->postLikedUserNames() !!}
+                        </div> -->
                     </div>
+                </div>
+                <div class="coment-area ">
+                    <ul class="we-comet" id="comment-box_{{ $post->id }}">
+                        {!! $post->commentByUsers() !!}
+
+                        <span id="append_comment_{{ $post->id }}"></span>
+
+                        <div class="comment-loader" id="append_less_comment_{{ $post->id }}" style="display: none;">
+                            <img src="{{asset('imgs/loader.gif')}}">
+                        </div>
+
+
+                        @if ($post->comments_count > 3)
+                        <li>
+                            <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="1" data-comment-post-id="{{ $post->id }}" id="showmore_{{ $post->id }}">more comments+
+                            </a>
+                        </li>
+                        @endif
+
+                        <li class="show-less show-less-{{ $post->id }}">
+                            <a href="#" title="" class="showmore text-decoration-none more-comment" data-comment-load_page="0" data-comment-post-id="{{ $post->id }}" id="showless_{{ $post->id }}">less comments-
+                            </a>
+                        </li>
+
+                        <li class="post-comment" id="post-comment_form_{{ $post->id }}">
+                            <div class="d-flex">
+                                <div class="comet-avatar">
+                                    <img width="80" src="{{Auth::user()->getProfilePicture()}}" alt="">
+                                </div>
+                                <div class="post-comt-box">
+                                    <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
+                                        <div class="position-relative">
+                                            <input name="commentable_id" type="hidden" value="{{ $post->id }}" id="commentable_id_{{ $post->id }}">
+                                            <div id="post_id" style="display: none;">{{ $post->id }}</div>
+                                            <div class="textArea-body">
+                                                <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
+                                                <button id="emojishow">
+                                                    <i class="fa-solid fa-face-smile"></i>
+                                                </button>
+                                                <div class="text-counter">
+                                                    <span id="wordsCounts" class="counter">0</span>
+                                                    <span class="fix-count">/500</span>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                // function wordCount(val) {
+                                                //     var len = val.value.length;
+                                                //     console.log(len,'Leng')
+                                                //     if (len >= 500) {
+                                                //         val.value = val.value.substring(0, 500);
+                                                //     } else {
+                                                //         $('#wordsCounts').text(len);
+                                                //     };
+                                                // };
+                                                $(function() {
+                                                    window.charCount = 0;
+                                                    setInterval(function() {
+                                                        var c = $(".content-count").val().length;
+                                                        if (c != window.charCount) {
+                                                            window.charCount = c;
+                                                            $("#wordsCounts").html(window.charCount);
+                                                        }
+                                                    }, 500);
+                                                });
+                                            </script>
+                                        </div>
+                                        <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">
+                                    </form>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
                 </div>
             </div>
         </div>
