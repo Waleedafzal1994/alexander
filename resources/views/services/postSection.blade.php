@@ -233,10 +233,16 @@
                             </a>
                         </li>
 
-                        <li class="post-comment" id="post-comment_form_{{ $post->id }}">
+                        <li class="post-comment bg-darkgrey br-16 p-3" id="post-comment_form_{{ $post->id }}">
                             <div class="d-flex">
-                                <div class="comet-avatar">
-                                    <img width="80" src="{{Auth::user()->getProfilePicture()}}" alt="">
+                                <div class="card bg-transparent p-0 border-0">
+                                    <div class="card-body card-clr p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img src="{{Auth::user()->getProfilePicture()}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="post-comt-box">
                                     <form method="POST" action="#" id="comment_{{ $post->id }}" data-post-id="{{ $post->id }}">
@@ -245,14 +251,8 @@
                                             <div id="post_id" style="display: none;">{{ $post->id }}</div>
                                             <div class="textArea-body">
                                                 <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
-                                                <button id="emojishow">
-                                                    <i class="fa-solid fa-face-smile"></i>
-                                                </button>
-                                                <div class="text-counter">
-                                                    <span id="wordsCounts" class="counter">0</span>
-                                                    <span class="fix-count">/500</span>
-                                                </div>
                                             </div>
+                                            
                                             <script>
                                                 // function wordCount(val) {
                                                 //     var len = val.value.length;
@@ -275,7 +275,24 @@
                                                 });
                                             </script>
                                         </div>
-                                        <input type="submit" class="nav-link btn-post post-btn-border btn-solid mt-2 btn-actives save_btn_hover" name="" value="Reply">
+                                        <div class="d-flex align-items-center justify-content-between mt-3">
+                                            <div class="d-flex align-items-center">
+                                                <button id="emojishow">
+                                                    <i class="fa-solid fa-face-smile"></i>
+                                                </button>
+                                                <div class="upload-post-img ml-3 position-relative">
+                                                    <input type="file">
+                                                    <img src="{{asset('imgs/icons/camera-icon.svg')}}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="text-counter mr-12">
+                                                    <span id="wordsCounts" class="counter">0</span>
+                                                    <span class="fix-count">/500</span>
+                                                </div>
+                                                <input type="submit" class="nav-link btn-post post-btn-border btn-solid btn-actives save_btn_hover" name="" value="Post">
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
 

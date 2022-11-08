@@ -954,6 +954,41 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="mt-4 their-services bg-lightgrey br-16 p-3">
+                            <div class="border-bg bg-darkgrey br-16">
+                                <div class="bg-darkgrey br-16">
+                                    <h4 class="text-white mb-3">their Services</h4>
+
+                                    <div class="card border-0 bg-transparent p-0">
+                                        <div class="card-body p-0">
+                                            <div class="card-image">
+                                                <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
+                                            </div>
+                                            <div class="card-text">
+                                                <div class="card-title">League of Legends</div>
+                                                <div class="card-price">
+                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                    <span>4.00/Game</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="card-rating">
+                                                        <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                                        <span>5.0</span>
+                                                    </div>
+                                                    <div class="tag-box">10</div>
+                                                </div>
+                                                <div class="card-btn">
+                                                    <button class="new-btn">Buy 3 get 1 free</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

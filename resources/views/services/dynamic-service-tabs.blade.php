@@ -1,4 +1,4 @@
-<div class="card-body bg-transparent px-3">
+<div class="card-body bg-lightgrey br-16 px-3">
     <div class="service-main-body-content">
 
         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>

@@ -143,42 +143,69 @@ class Post extends BaseModel
     public static function commentHtml($value, $post)
     {
         $content = "";
-        $content .= "<li class='comment-section_" . $post->id . "'>";
+        $content .= "<li class='mb-0 comment-section_" . $post->id . "'>";
         
-        // $content = "";
-        $content .= '<div class="bg-gradient br-10 p-3 mb-4">';
-        $content .= '<div class="d-flex">';
-        $content .= '<div class="comet-avatar"><img src="' . $value->user->getProfilePicture() . '" alt=""></div>';
-        $content .= '<div class="we-comment pb-0 pl-3">';
-        $content .= '<div class="d-flex align-items-center justify-content-between mt-3">';
-        $content .= '<div class="d-flex align-items-center">';
-        $content .= '<h5 class="review-profile-heading mb-0 text-decoration-none"><a href="/user-profile/'.$value->user->id.'" title="">' . $value->user->name . '</a></h5>';
-        $content .= '<span>' . Carbon::parse($value->created_at)->format('F d, Y') . '</span>';
-        $content .= '</div>';
-        $content .= '<div class="more">';
-        $content .= '<div class="more-post-optns post-actions" data-post="{{ $post->id }}">';
-        $content .= '<i class="fas fa-ellipsis-h"></i>';
-        $content .= '<ul>';
-        $content .= '<li class="delete-post-action"><i class="fas fa-trash"></i>Delete Comment</li>';
-        $content .= '</ul>';
-        $content .= '</div>';
-        $content .= '</div>';
-        $content .= '</div>';
-        $content .= '<div class="inline-itms comment-action-box">';
-        $content .= '<p class="text-black my-3 font-weight-normal">' . $value->body . '</p>';
-        $content .= '<span class="comment-reaction likes heart';
-        if ($value->userliked()) {
-            $content .= ' active-heart';
-        }
-        $content .= '" data-comment-post-id="' . $value->id . '" data-comment-reaction-id="' . shortNumber($value->likedPost()) . '">';
-        $content .= ' <i class="fa fa-heart"></i>';
-        $content .= ' <span id="liked_comment_count_' . $value->id . '"> ' . shortNumber($value->likes_count) . '</span>';
-        $content .= '</span>';
-        $content .= '</div>';
-        $content .= '</div>';
-        $content .= '</div>';
+            // $content = "";
+            $content .= '<div class="main-card">';
+                $content .= '<div class="review-cards bg-transparent">';
+                    $content .='<div class="card bg-darkgrey br-12 border-0 p-10">';
+                        $content .='<div class="card-body card-clr p-0">';
+                            $content .='<div class="card-image">';
+                                $content .='<div class="img-frame"><img src="' . $value->user->getProfilePicture() . '" alt=""></div>';
+                            $content .='</div>';
+                            $content .='<div>';
+                                $content .='<a class="card-title" href="/user-profile/'.$value->user->id.'" title="">' . $value->user->name . '</a>';
+                                $content .='<div class="card-text">CEO <sup>.</sup> GamersPlay+</div>';
+                            $content .='</div>';
+                        $content .='</div>';
+                    $content .='</div>';
 
-        $content .= '</div>';
+                    $content .= '<div class="d-flex align-items-center justify-content-end mt-12">';
+                        $content .= '<div class="gamerHash mr-3">13 October 2022</div>';
+                    $content .= '</div>';
+                    $content .='<div class="review-description ml-2 pl-1">' . $value->body . '</div>';
+                    $content .='<div class="reply-delt ml-2 pl-1 mb-4 d-flex align-items-center">';
+                        $content .='<div class="comment-like">';
+                            $content .='<span>2</span>';
+                        $content .='</div>';
+                        $content .='<div class="comment-reply">';
+                            $content .='<span>Reply</span>';
+                        $content .='</div>';
+                        $content .='<div class="comment-delt">';
+                            $content .='<span>Delete</span>';
+                        $content .='</div>';
+                    $content .='</div>';
+
+
+                    // $content .= '<div class="we-comment p-0">';
+                    //     $content .= '<div class="d-flex align-items-center justify-content-between mt-3">';
+                    //         $content .= '<div class="d-flex align-items-center">';
+                    //             $content .= '<h5 class="review-profile-heading mb-0 text-decoration-none"><a href="/user-profile/'.$value->user->id.'" title="">' . $value->user->name . '</a></h5>';
+                    //             $content .= '<span>' . Carbon::parse($value->created_at)->format('F d, Y') . '</span>';
+                    //         $content .= '</div>';
+                    //         $content .= '<div class="more">';
+                    //             $content .= '<div class="more-post-optns post-actions" data-post="{{ $post->id }}">';
+                    //                 $content .= '<i class="fas fa-ellipsis-h"></i>';
+                    //                 $content .= '<ul>';
+                    //                     $content .= '<li class="delete-post-action"><i class="fas fa-trash"></i>Delete Comment</li>';
+                    //                 $content .= '</ul>';
+                    //             $content .= '</div>';
+                    //         $content .= '</div>';
+                    //     $content .= '</div>';
+                    //     $content .= '<div class="inline-itms comment-action-box">';
+                    //     $content .= '<p class="text-black my-3 font-weight-normal">' . $value->body . '</p>';
+                    //     $content .= '<span class="comment-reaction likes heart';
+                    //         if ($value->userliked()) {
+                    //             $content .= ' active-heart';
+                    //         }
+                    //         $content .= '" data-comment-post-id="' . $value->id . '" data-comment-reaction-id="' . shortNumber($value->likedPost()) . '">';
+                    //         $content .= ' <i class="fa fa-heart"></i>';
+                    //         $content .= ' <span id="liked_comment_count_' . $value->id . '"> ' . shortNumber($value->likes_count) . '</span>';
+                    //     $content .= '</span>';
+                    // $content .= '</div>';
+
+                $content .= '</div>';
+            $content .= '</div>';
         $content .= "</li>";
         return $content;
     }
@@ -194,14 +221,14 @@ class Post extends BaseModel
         $content = "";
         if (!empty($images)) {
             $content .=  '<div id="fullsizeimg" style="position: relative;" class="lightbox lightbox-user-gallery">';
-            $content .=  '<div class="row wo_adaptive_media mx-0 px-3">';
-            foreach ($images as $value) {
-                $content .= '<div class="album-image ' . $this->selectClassImage($count) . '">';
-                $content .= '<img src="' . $value->file_name . '" alt="' . $value->name . '" class="image-file pointer">';
-                $content .= '</div>';
-                $content .= '<div class="clear"></div>';
-            }
-            $content .=  '</div>';
+                $content .=  '<div class="row wo_adaptive_media mx-0 px-3">';
+                foreach ($images as $value) {
+                    $content .= '<div class="album-image ' . $this->selectClassImage($count) . '">';
+                        $content .= '<img src="' . $value->file_name . '" alt="' . $value->name . '" class="image-file pointer">';
+                    $content .= '</div>';
+                    $content .= '<div class="clear"></div>';
+                }
+                $content .=  '</div>';
             $content .=  '</div>';
         }
         return $content;

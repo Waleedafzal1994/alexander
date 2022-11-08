@@ -1734,18 +1734,20 @@ p {
   margin-bottom: 20px;
   width: 100%;
 }
-
 .comet-avatar {
+  padding: 10px;
+}
+/* .comet-avatar {
   display: inline-block;
   max-width: 80px;
   vertical-align: top;
   width: 80px;
-}
-.comet-avatar img{
+} */
+/* .comet-avatar img{
   object-fit: cover;
   width: 74px !important;
   height: 74px !important;
-}
+} */
 
 .we-comment {
   /* border-bottom: 1px solid #ede9e9; */
@@ -1788,6 +1790,7 @@ a.underline:before,
   margin: 0 auto;
   text-transform: capitalize;
   font-weight: 700;
+  color: #fff !important;
 }
 
 a.underline {

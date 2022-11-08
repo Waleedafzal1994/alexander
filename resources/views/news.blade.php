@@ -17,18 +17,18 @@
         <div class="news-article">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="/news/{{$post->id}}">
+                    <a href="/news/10">
                         <div class="news-article-image" style="background:url('{{$post->image}}'); width:100%; height:150px; background-position:center; background-size:cover; border-radius:16px;"></div>
                     </a>
                 </div>
                 <div class="col-md-9">
-                    <h4 style="margin:0; padding:0;"><a href="/news/{{$post->id}}">{{$post->title}}</a></h4>
+                    <h4 style="margin:0; padding:0;"><a href="/news/10">{{$post->title}}</a></h4>
                     @if($post->postAuthor != null)
                     <p style="padding-bottom:10px; border-bottom:1px solid var(--color-secondary);">by <span style="font-weight:bold;">{{$post->postAuthor->name}}</span></p>
                     @endif
                    
                     {!! substr(strip_tags($post->content,'<br>'),0,150) !!}...
-                    {{-- <a href="/news/{{$post->id}}" class="btn button-primary">Read more</a> --}}
+                    {{-- <a href="/news/10" class="btn button-primary">Read more</a> --}}
                 </div>
             </div>
            
@@ -43,7 +43,7 @@
     <div class="container post-tabs mt-5 px-0">
         <div class="row">
             <div class="col-4">
-                <div class="nav flex-column nav-pills bg-white shadows rounded-lg mb-4 py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills bg-lightgrey shadows rounded-lg mb-4 py-4  br-16" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                     <a class="nav-link active" id="following-tab" data-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true"><i class="fa-solid fa-user-group"></i> Following</a>
 
@@ -56,9 +56,10 @@
                     <a class="nav-link" id="newcomer-tab" data-toggle="pill" href="#newcomer" role="tab" aria-controls="newcomer" aria-selected="false"><i class="fa-solid fa-camera"></i> Newcomer Selfies</a>
 
                     <a class="nav-link" id="gears-tab" data-toggle="pill" href="#gears" role="tab" aria-controls="gears" aria-selected="false"><i class="fa-solid fa-gamepad"></i> Gears</a>
-                </div>
-                <div class="post-btn text-center">
-                    <a href="/community/post" class="new-btn w-100 d-block new-purple-gradient text-white py-2 rounded-pill">Post</a>
+
+                    <div class="post-btn text-center mx-4">
+                        <a href="/community/post" class="new-btn w-100 d-block py-2 rounded-pill">Post</a>
+                    </div>
                 </div>
             </div>
             <div class="col-8">

@@ -1,6 +1,6 @@
 <div class="main-services">
-    <div id="" class="service_category main-category">
-        <ul class="menu_ul nav nav-pills top-head-cate position-relative flex-nowrap" id="pills-tab" role="tablist">
+    <div id="" class="service_category main-category position-relative">
+        <ul class="menu_ul nav nav-pills top-head-cate flex-nowrap" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
         </ul>
@@ -162,7 +162,7 @@
                                         <div class="card-body card-clr p-0">
                                             <div class="card-image">
                                                 <div class="img-frame">
-                                                <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
                                                 </div>
                                             </div>
                                             <div class="">
@@ -277,7 +277,7 @@
                                 <div class="main-card">
                                     <div class="card border-0 bg-darkgrey simple br-12">
                                         <div class="card-body p-0">
-                                            <div class="card-image bg-transparent">
+                                            <div class="card-image bg-transparent mr-3">
                                                 <img id="circle-profile-pic" src="{{asset('imgs/william-lucas.svg')}}" alt="" class="" />
                                             </div>
                                             <div class="">
