@@ -436,4 +436,12 @@ class PostController extends Controller
     public function addPost(){
         return view('posts.addpost');
     }
+
+    public function postDetail(){
+        return view('posts.post-detail');
+    }
+    public function serviceDetailSection(){
+        // dd("Hello");
+        return view('services.service-detail-section');
+    }
 }

@@ -131,6 +131,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
     Route::get('/gpplus/{id}', [ServicesController::class, 'service'])->name('service');
 
+
+
     Route::get('/user-profile/{id}', [ProfileController::class, 'user_timeline']);
     Route::post('/user/is_delete', [ProfileController::class, 'is_delete']);
     //---//
@@ -158,6 +160,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/posts/load', [PostController::class, 'loadMorePosts'])->name('postsLoad');
     Route::delete('/post/delete', [PostController::class, 'deletePost'])->name('deletePost');
     Route::delete('/gallery/delete', [PostController::class, 'deleteGallery'])->name('deleteGallery');
+
+    Route::get('/post-details', [PostController::class, 'postDetail'])->name('postDetail');
+
+
+
 
 
     Route::get('/getCategoriesInfo', [ServicesController::class, 'serviceCategoryInfo'])->name('service.serviceCategoryInfo');
@@ -268,3 +275,5 @@ Auth::routes(['verify' => true]);
 
 Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
 Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+
+Route::get('/services/info', [PostController::class, 'serviceDetailSection'])->name('serviceDetailSection');
