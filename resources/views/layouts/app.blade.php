@@ -28,6 +28,7 @@ $noFooter = true;
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css?v=') . time() }}" rel="stylesheet">
+    <link href="{{ asset('css/style-services.css?v=') . time() }}" rel="stylesheet">
     <link href="{{ asset('css/mq.css?v=1.0.0') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
