@@ -1226,6 +1226,14 @@ span.ttl,
   font-weight: 700;
   font-size: 18px;
 }
+.grey_white .review-profile-heading a{
+  background: linear-gradient(180deg, #FFFACF 0%, rgba(255, 250, 207, 0.35) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 18px;
+}
 
 .date-post{
   font-weight: 500;

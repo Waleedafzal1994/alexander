@@ -975,6 +975,7 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 
                         <div class="mt-4 their-services bg-lightgrey br-16 p-3">
                             <div class="border-bg bg-darkgrey br-16">
@@ -1011,6 +1012,8 @@
                             </div>
                         </div>
                         
+=======
+>>>>>>> cc967618739e73593ab330b98193b723f9d2ff19
                     </div>
                     
                 </div>

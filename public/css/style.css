@@ -2704,14 +2704,20 @@ a.slider-link:hover {
 .friend-info > .diamond-img{
     object-fit: cover !important;
 }
-.friend-info .carousel-inner{
+.friend-info .carousel-inner,
+.post-left-section .carousel-inner{
     width: 100%;
     height: 430px;
     margin: auto;
     border-radius: 10px;
 }
+.post-left-section .carousel-inner{
+    height: 400px;
+}
 .friend-info .carousel-control-prev, 
-.friend-info .carousel-control-next {
+.friend-info .carousel-control-next,
+.post-left-section .carousel-control-prev, 
+.post-left-section .carousel-control-next {
     width: 10%;
     background: linear-gradient(135deg, #c395f1 0%, #8224e3 75%) !important;
     margin: auto 12px;
@@ -2720,22 +2726,30 @@ a.slider-link:hover {
     border-radius: 50%;
 }
 .friend-info .carousel-control-prev i, 
-.friend-info .carousel-control-next i {
+.friend-info .carousel-control-next i,
+.post-left-section .carousel-control-prev i, 
+.post-left-section .carousel-control-next i {
     color: #fff;
     font-size: 20px;
 }
-.friend-info .prev-icon{
+.friend-info .prev-icon,
+.post-left-section .carousel .prev-icon{
     transform: rotate(230deg);
     margin-left: 4px;
 }
-.friend-info .next-icon{
+.friend-info .next-icon,
+.post-left-section .carousel .next-icon{
     transform: rotate(45deg);
     margin-right: 4px;
 }
-.friend-info .carousel-indicators{
+.friend-info .carousel-indicators,
+.friend-info .carousel-indicators,
+.post-left-section .carousel-indicators,
+.post-left-section .carousel-indicators{
     bottom: -45px;
 }
-.friend-info .carousel-indicators li {
+.friend-info .carousel-indicators li,
+.post-left-section .carousel-indicators li {
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -2744,7 +2758,8 @@ a.slider-link:hover {
     box-shadow: 0 3px 5px black;
     border: 0;
 }
-.friend-info .carousel-indicators li.active {
+.friend-info .carousel-indicators li.active,
+.post-left-section .carousel-indicators li.active {
     background: #9B32ED;
 }
 .we-comet{
@@ -2806,6 +2821,12 @@ a.slider-link:hover {
 }
 .h-40{
     height: 99px !important;
+}
+.mb-32{
+    margin-bottom: 32px !important;
+}
+.mt-32{
+    margin-top: 32px !important;
 }
 .navbar-nav .nav-link{
     padding-left: 4px;
@@ -2876,19 +2897,23 @@ a.slider-link:hover {
 .post-carousel.carousel{
     max-width: 100% !important;
 }
-.post-carousel.carousel .carousel-control-prev {
+.post-carousel.carousel .carousel-control-prev,
+.post-left-section .carousel .carousel-control-prev{
     left: 0;
     box-shadow: 0 4px 15px black;
 }
-.post-carousel.carousel .carousel-control-next {
+.post-carousel.carousel .carousel-control-next,
+.post-left-section .carousel .carousel-control-next {
     right: 0;
     box-shadow: 0 4px 15px black;
 }
-.post-carousel .carousel-inner .carousel-item{
+.post-carousel .carousel-inner .carousel-item,
+.post-left-section .carousel-inner .carousel-item{
     height: -webkit-fill-available;
     position: relative;
 }
-.post-carousel .carousel-inner .carousel-item img{
+.post-carousel .carousel-inner .carousel-item img,
+.post-left-section .carousel-inner .carousel-item img{
     height: auto !important;
     width: auto !important;
     object-fit: contain !important;
@@ -4763,7 +4788,7 @@ input::-moz-focus-outer {
     font-size: 18px;
     line-height: 27px;
     color: #FFFFFF;
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     margin-left: 10px;
     display: flex;
@@ -5841,7 +5866,9 @@ input::-moz-focus-outer {
     font-weight: 600;
     font-size: 14px;
 }
-
+.their-services .card-detail >div{
+    margin-bottom: 6px;
+} 
 .their-services .tag-box{
     margin-left: 4px;
 }
@@ -5851,4 +5878,52 @@ input::-moz-focus-outer {
     font-weight: 600;
     font-size: 12px;
     color: #FFFFFF;
+    min-width: 116px;
+}
+
+
+.post-detail .back-btn{
+    font-weight: 700;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+.post-detail .back-btn i{
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.post-left-section >div{
+    padding: 35px 16px 16px 18px;
+}
+.desc-detail{
+    font-weight: 400;
+    font-size: 16px;
+    color: #ADADBF;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.post-left-section .carousel .carousel-item img{
+    border-radius: 20px;
+}
+
+.highlight-section .likes span{
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #ADADBF;
+}
+.comment-box-section >div{
+    margin-bottom: 12px;
+}
+.comment-box-section >div h2{
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+.comment-box-section >div .tag-box{
+    margin-right: 13px;
 }
