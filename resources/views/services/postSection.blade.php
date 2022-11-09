@@ -69,11 +69,11 @@
                                         </li> --}}
 
 
-                                <li  class="delete-post-action">
+                                <li class="delete-post-action">
 
                                     <i class="fas fa-trash"></i>Delete Post
                                     <!-- <a href="#" data-href="deletePost({{$post->id}})" data-toggle="modal" data-target="#deletemodal"><i class="fas fa-trash"></i>Delete Post</a> -->
-                                    
+
                                 </li>
                                 {{-- <li class="bad-report"><i class="fa fa-flag"></i>Report
                                             Post</li> --}}
@@ -252,7 +252,7 @@
                                             <div class="textArea-body">
                                                 <textarea class="textarea content-count" maxlength="500" name="body" rows="8" id="commentable_content_{{ $post->id }}" data-post-id="{{ $post->id }}" placeholder="" onkeyup="wordCount(this)" oninput="auto_grow(this)"></textarea>
                                             </div>
-                                            
+
                                             <script>
                                                 // function wordCount(val) {
                                                 //     var len = val.value.length;
@@ -301,11 +301,11 @@
                     </ul>
                 </div>
 
-                </div>
             </div>
         </div>
     </div>
 </div>
+<!-- </div> -->
 <!-- @endif -->
 @endforeach
 @endif
@@ -365,7 +365,7 @@
         var margin = 10,
             instance1 = new emojiButtonList("emojishow", {
                 dropDownXAlign: "left",
-                textBoxID: "commentable_content_"+post_id,
+                textBoxID: "commentable_content_" + post_id,
                 yAlignMargin: margin,
                 xAlignMargin: margin
             });
@@ -453,7 +453,7 @@
 
 
         $('#add-blog-post-form').submit(function(e) {
-          
+
             e.preventDefault();
             let i = 1;
             $("#create-post-btn").attr('disabled', true);

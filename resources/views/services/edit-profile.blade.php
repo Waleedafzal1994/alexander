@@ -245,7 +245,7 @@
                                         @if(!empty($service->user->country))
                                         <input type="text" name="country" value="{{ getCountryFullName($service->user->country) }}" class="form-control border-input" disabled/>
                                         @else
-                                        <input type="text" name="country" value="N/A" class="form-control border-input" disabled/>
+                                        <input type="text" name="country" value="" class="form-control border-input" disabled/>
                                         @endif   
                                     </div>
                                     <input class="month_hidden" type="hidden" name="month">

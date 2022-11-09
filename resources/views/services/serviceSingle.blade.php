@@ -31,6 +31,7 @@
     @endsection
 
     @section('content')
+
         <!-- {{-- NEW CONTENT START --}} -->
         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
         <div class="social-icons-list position-sticky d-none">
@@ -57,6 +58,7 @@
                 </li>
             </ul>    
         </div>
+        
 
         <div class="gamePlay container" id="gamePlay">
             <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
@@ -728,7 +730,7 @@
                         </div>
                     </div>
                     <!-- END: Service Profile Side bar -->
-
+                    
                     <!-- START: Service main Body-->
                     <div class="col-lg-6">
                         <div class="mainBody">
@@ -789,6 +791,7 @@
                                                         @endif 
                                                     </ul>
                                                 </div>
+                                                
                                                 <!-- END: Service main Menu -->
                                                 <!-- START: Service Notificaiton menu -->
                                                 {{-- <div class="col-lg-5 col-md-5 col-sm-12 m-auto col-tab-nav-snd">
@@ -807,15 +810,21 @@
                                                         </li>
                                                     </ul>
                                                 </div> --}}
+                                                
                                                 <!-- END: Service Notificaiton menu -->
                                             </div>
+                                            
                                             <!-- END: Service main Body nav bar-->
                                         </div>
+                                        
                                     </div>
+                            
                                 </div>
+                                
                             </div>
 
                             <div class="tab-content {{!empty($checkBlockedUser) ? 'hide-on-block' : 'show-on-unblock'}}" id="myTabContent">
+                            
                                 @if(Request::segment(1) !='user-profile')
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     @include('services.serviceDetails', [
@@ -824,18 +833,21 @@
                                 </div>
                                 @endif
 
+                                
+
                                 <!-- START: Timeline Tab Start here -->
                                 <div class="tab-pane fade posttimeline <?= (Request::segment(1) =='user-profile') ? 'show active' : '' ?> " id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 @include('services.servicesPost', [
                                     'service' => $service,
                                     ]) 
                                 </div>
-
+                                
                                 <!-- END: Timeline Tab END here -->
                                 <!-- Badges -->
                                 <div class="tab-pane fade" id="badges" role="tabpanel" aria-labelledby="badges-tab">
                                     @include('services.badges')
                                 </div>
+
 
                                 <!-- START: Gallery -->
                                 <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
@@ -851,15 +863,20 @@
                                 </div>
                                 <!-- END: Gallery -->
 
+                                
                                 <!-- START: Followers -->
                                 <div class="tab-pane fade followers-result shadows rounded" id="followers" role="tabpanel" aria-labelledby="followers-tab">
                                     @include('services.followers')
                                 </div>
+                                
+
 
                                 <div class="tab-pane fade following-result" id="following" role="tabpanel" aria-labelledby="following-tab">
                                     @include('services.following')
                                 </div>
                                 <!-- END: Followers -->
+
+                                
 
                                 <!-- Edit Tab Start Here for user profile to edit -->
                                 <div class="tab-pane fade" id="edit_user_profile" role="tabpanel" aria-labelledby="following-tab">
@@ -874,6 +891,7 @@
                                         <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{Auth::id()}}">{{Auth::user()->name}}</a></p>
                                     </div>  
                                 </div>
+
                             
                                 @if(!empty($checkBlockedUser))
                                     <?php $getUser = getUserById($checkBlockedUser->blocker_id)?>
@@ -882,15 +900,18 @@
                                         <p class="text-center my-5 block-text">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
                                     </div>  
                                 @endif
-
+                                
                             <!-- END: First Card mianbody -->
 
                             <!-- START: SECOND Card mianbody -->
 
                             <!-- END: First Card mianbody -->
                             </div>
+                            
                         </div>
+                
                     </div>
+
                     <!-- END: Service main Body -->
 
                     <div class="col-lg-3">
@@ -989,11 +1010,11 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
-
+                    
                 </div>
             </section>
-
             <!-- Sidebar Section Start -->
             <div class="fixed-nav bg-lightgrey">
                 <div class="logo menu-icon mx-auto">
@@ -1070,7 +1091,7 @@
                             <div class="logo menu-icon">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
                             </div>
-
+                            
                             <div class="sidebar-content h-100 d-flex justify-content-between flex-column">
                                 <div class="">
                                     <div class="nav nav-pills me-3 my-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -1122,6 +1143,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="right-section">
                             <div class="tab-content rightMesageTabContent" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
@@ -1215,6 +1237,7 @@
                             </div> -->
                         </div>
                     </div>
+                
                     <div class="browse-section h-100">
                         <div class="p-24">
                             <div class="d-flex align-items-center">
@@ -1239,10 +1262,13 @@
                                     <button class="nav-link" id="customized-tab" data-bs-toggle="pill" data-bs-target="#customized" type="button" role="tab" aria-controls="customized" aria-selected="false">Customized</button>
                                 </li>
                             </ul>
+
+                            
                             <div class="tab-content" id="gamestabContent">
                                 <div class="tab-pane fade show active" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <div class="game-card pointer" id="{{!empty($service->category->id) ? $service->category->id : ''}}" onclick="getCategoryServices(this,this.id)">
+                                        @if($service->category != null)
+                                        <div class="game-card pointer" id="" onclick="getCategoryServices(this,this.id)">
                                             @if ($service->category->image_1 != null)
 
                                             <div class="game-img">
@@ -1260,7 +1286,9 @@
                                             <h2>{{ $service->category->name }}</h2>
                                             <small>{{ $minPrice->minPrice .'/'. $minPrice->service_duration_type }}</small>
                                         </div>
-
+                                        @endif
+                                        
+                                        
                                         <?php $i = 1 ?>
                                         @if(!empty($all_remaining_cats))
                                         @foreach($all_remaining_cats as $category)
@@ -1290,6 +1318,7 @@
                                         @endforeach
                                         @endif
                                     </div>
+                                   
                                 </div>
                                 <div class="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
                                     Alphabetically Games Display here...
@@ -1305,6 +1334,7 @@
                     </div>
                 </div>
             </nav>
+            
             <div class="overlay"></div>
             <!-- Sidebar Section End -->
 
