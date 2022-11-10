@@ -130,10 +130,15 @@
                                             <input type="text" name="name" class="form-control border-input" value="{{ $service->user->name }}" minlength="3" maxlength="30">
                                         </div>
                                         {{-- Form Element --}}
-                                       @if($service->user->seller_rank == 0 && $service->user->usaer_group == 3)
+                                       @if($service->user->seller_rank == 0 && $service->user->user_group == 3)
+                                        @php $user_rank = 'moderator' @endphp
+                                       
+                                       @elseif($service->user->seller_rank == 0 && $service->user->user_group == 4)
                                         @php $user_rank = 'admin' @endphp
+
                                        @elseif($service->user->seller_rank == 0)
                                         @php $user_rank = 'user' @endphp
+                                       
                                        @else
                                         @php $user_rank = 'seller' @endphp
                                        @endif
@@ -143,7 +148,11 @@
                                             value="{{ $user_rank }}" disabled> -->
                                             @if($user_rank == 'user')
                                             <div class="skew-bg-users">GamersPlay</div>
-                                            @else
+                                            @elseif($user_rank == 'admin')
+                                            <div class="skew-bg-users">Admin </div>
+                                            @elseif($user_rank == 'moderator')
+                                            <div class="skew-bg-users">GP Official</div>
+                                            @else($user_rank == 'seller')
                                             <div class="skew-bg-users">GamersPlay+</div>
                                             @endif
                                             <input type="hidden" name="title" value="{{ $user_rank }}">
