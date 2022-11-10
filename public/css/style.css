@@ -866,6 +866,7 @@ ul.footer-menu li a:before {
     /* z-index: 1; */
     margin-top: -32px;
     overflow: auto;
+    display: none !important;
 }
 
 .menu {
@@ -2789,12 +2790,12 @@ a.slider-link:hover {
 .right-bottom-arrow{
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 120px;
     z-index: 100;
     font-size: 20px;
-    border-radius: 10px;
-    height: 60px;
-    width: 60px;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5344,6 +5345,12 @@ input::-moz-focus-outer {
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
 }
+
+.chat-bar,
+.browse-bar{
+    display: none;
+}
+
 .right-sidebar{
     width: 0;
     top: 0;
@@ -5395,6 +5402,7 @@ input::-moz-focus-outer {
 }
 .fixed-nav .card{
     margin-bottom: 24px;
+    cursor: pointer;
 }
 .fixed-nav .card:last-child{    
     margin-bottom: 75px;
@@ -5829,10 +5837,17 @@ input::-moz-focus-outer {
 }
 .their-services >div>div{
     padding: 16px;
+    margin: 1px;
 }
 .their-services .card{
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 24px !important;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0;
+}
+.their-services .card:last-child{
+    margin-bottom: 0;
+    border-bottom: unset !important;
 }
 .their-services .card-body{
     display: flex;
@@ -5849,10 +5864,12 @@ input::-moz-focus-outer {
     font-weight: 600;
     font-size: 15px;
     color: #FFFFFF;
+    margin-bottom: 0;
 }
 .their-services .card-image img{
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 .their-services .card-price{
     display: flex;
@@ -5926,4 +5943,214 @@ input::-moz-focus-outer {
 }
 .comment-box-section >div .tag-box{
     margin-right: 13px;
+}
+
+.main-services h2{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+.recent-events{
+    position: relative;
+}
+.recent-events .card{
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    text-align: start;
+    min-height: 330px;
+}
+.recent-events .card::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    background: #9B32ED;
+    filter: blur(47.5px);
+    width: 37px;
+    height: 61px;
+}
+.recent-events .card .card-btn button{
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    min-width: 128px;
+    height: 36px;
+    margin-top: 32px;
+    border-radius: 18px;
+}
+.recent-events .card .card-btn .learn-more{
+    background: linear-gradient(359.81deg, #1D7144 7.09%, #36ED32 99.83%);
+}
+.recent-events .card .card-btn .check-now{
+    background: linear-gradient(359.81deg, #4C0A81 7.09%, #9B32ED 99.83%);
+}
+.recent-events .card .card-title{
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 26px;
+    color: #FFFFFF;
+    line-height: 35px;
+    padding-top: 67px;
+}
+.recent-events .card .card-body{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 30px;
+}
+.recent-events .card .card-text{
+    font-weight: 500;
+    font-size: 14px;
+    color: #ADADBF;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+.recent-events .card .card-btn{
+    position: relative;
+}
+.recent-events .card .card-btn .bg-blur{
+    position: absolute;
+    width: 63px;
+    height: 101px;
+    background: #9B32ED;
+    opacity: 0.5;
+    filter: blur(47.5px);
+    position: absolute;
+    left: 0;
+    top: 35%;
+}
+
+.recent-events .card .card-footer{
+    text-align: center;
+    padding-top: 22px;
+    padding-bottom: 0We;
+    font-weight: 600;
+    font-size: 12px;
+}
+.main-services .owl-nav{
+    position: absolute;
+    top: -52px;
+    right: 0;
+    margin-top: 0 !important;
+}
+.main-services .owl-prev,
+.main-services .owl-next{
+    width: 43px;
+    height: 43px;
+    border-radius: 50% !important;
+    background: #2C2F36 !important;
+    margin: auto 6px !important;
+}
+.main-services .owl-prev span,
+.main-services .owl-next span{
+    background: url('../imgs/icons/prev-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 10px;
+    display: flex;
+    color: #ffffff00;
+    background-position: center;
+}
+.main-services .owl-next span{
+    transform: rotate(180deg);
+}
+
+.main-services .owl-dots{
+    display: none;
+}
+
+.recommended .owl-carousel .owl-item img {
+    /* width: 191px;
+    height: 250px; */
+    border-radius: 8px;
+    /* overflow: hidden; */
+}
+.recommended .owl-carousel .owl-item img {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.main-services .owl-carousel .item{
+    padding-top: 0 ;
+}
+.game-carousel .browse-more-games{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(115.6deg, rgba(179, 82, 255, 0.81) 11.79%, rgba(40, 0, 71, 0.78) 99.05%);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    z-index: 2;
+    padding: 5px;
+    width: 322px;
+    cursor: pointer;
+}
+
+.game-carousel .browse-text{
+    width: 100%;
+    padding: 0 18px;
+    border: 1px dashed #fff;
+    border-radius: 10px !important;
+    justify-content: space-between !important;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    padding-bottom: 18px;
+}
+
+.game-carousel .browse-text p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+}
+.game-carousel .owl-carousel{
+    padding-right: 6px;
+}
+
+
+.service-game-card-section{
+    margin-top: 68px;
+}
+.service-game-card-section .card{
+    border: 0;
+    background: #2C2F36;
+    border-radius: 12px;
+    background: linear-gradient(61.97deg, rgba(109, 217, 90, 0.5) 32.76%, rgba(44, 47, 54, 0.5) 50.12%, rgba(44, 47, 54, 0.5) 68.33%, rgba(155, 51, 237, 0.5) 80.73%);
+    padding: 1px;
+    width: 300px;
+    margin-right: 24px;
+}
+.service-game-card-section .card-body{
+    background: #2C2F36;
+    padding-top: 0;
+    border-radius: 12px;
+}
+.service-game-card-section .card .card-image{
+    position: relative;
+    width: 107px;
+    height: 107px;
+    border-radius: 16px;
+    margin-top: -19px;
+}
+.service-game-card-section .card .card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service-game-card-section .card .card-image .online{
+    background: #14FB00;
+    border: 3px solid #2C2F36;
+    border-radius: 50%;
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    height: 22px;
+    width: 22px;
 }

@@ -64,9 +64,9 @@
             <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
             <!-- START: Service Section -->
             <section class="service" id="servicePage">
-                <a class="right-bottom-arrow new-purple-gradient shadows text-decoration-none" style="display: none;" id="back_to_top">
+                <a class="right-bottom-arrow bg-purple-white shadows text-decoration-none" style="display: none;" id="back_to_top">
                     <div class="d-flex align-items-center justify-content-center h-100">
-                        <i class="fa fa-chevron-up text-white"></i>
+                        <i class="fa-solid fa-arrow-up text-white"></i>
                     </div>
                 </a>
 
@@ -975,47 +975,7 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-
-                        <div class="mt-4 their-services bg-lightgrey br-16 p-3">
-                            <div class="border-bg bg-darkgrey br-16">
-                                <div class="bg-darkgrey br-16">
-                                    <h4 class="text-white mb-3">their Services</h4>
-
-                                    <div class="card border-0 bg-transparent p-0">
-                                        <div class="card-body p-0">
-                                            <div class="card-image">
-                                                <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
-                                            </div>
-                                            <div class="card-text">
-                                                <div class="card-title">League of Legends</div>
-                                                <div class="card-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>4.00/Game</span>
-                                                </div>
-                                            </div>
-                                            <div class="card-detail">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="card-rating">
-                                                        <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                                        <span>5.0</span>
-                                                    </div>
-                                                    <div class="tag-box">10</div>
-                                                </div>
-                                                <div class="card-btn">
-                                                    <button class="new-btn">Buy 3 get 1 free</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-=======
->>>>>>> cc967618739e73593ab330b98193b723f9d2ff19
-                    </div>
-                    
+                    </div>                    
                 </div>
             </section>
             <!-- Sidebar Section Start -->
@@ -1024,7 +984,7 @@
                     <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
                 </div>
 
-                <div class="card border-0 bg-transparent">
+                <div class="card border-0 bg-transparent menu-icon">
                     <div class="online"></div>
                     <div class="card-body card-clr p-0">
                         <div class="king-circle small">
@@ -1042,7 +1002,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 bg-transparent grey_white">
+                <div class="card border-0 bg-transparent menu-icon grey_white">
                     <div class="online"></div>
                     <div class="card-body card-clr p-0">
                         <div class="card-image">
@@ -1052,7 +1012,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 bg-transparent purple_white">
+                <div class="card border-0 bg-transparent menu-icon purple_white">
                     <div class="online"></div>
                     <div class="card-body card-clr p-0">
                         <div class="card-image">
@@ -1062,7 +1022,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 bg-transparent blue_white">
+                <div class="card border-0 bg-transparent menu-icon blue_white">
                     <div class="online"></div>
                     <div class="card-body card-clr p-0">
                         <div class="card-image">
@@ -1072,7 +1032,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-0 bg-transparent simple">
+                <div class="card border-0 bg-transparent menu-icon simple">
                     <div class="online"></div>
                     <div class="card-body card-clr p-0">
                         <div class="card-image bg-transparent">
@@ -1089,7 +1049,7 @@
 
             <nav class="navSection">
                 <div class="right-sidebar">
-                    <div class="d-none h-100">
+                    <div class="chat-bar h-100">
                         <div class="left-section">
                             <div class="logo menu-icon">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
@@ -1241,7 +1201,7 @@
                         </div>
                     </div>
                 
-                    <div class="browse-section h-100">
+                    <div class="browse-bar browse-section h-100">
                         <div class="p-24">
                             <div class="d-flex align-items-center">
                                 <div class="logo menu-icon mr-4">
@@ -1424,14 +1384,14 @@
                     navBar.classList.toggle("open");
                 });
             });
-
+  
             overlay.addEventListener("click", () => {
                 navBar.classList.remove("open");
             });
 
         // Chat Section End
 
-         /*--- emojies show on text area ---*/
+        /*--- emojies show on text area ---*/
          $('.add-smiles > span, .smile-it').on("click", function() {
             $(this).siblings(".smiles-bunch").toggleClass("active");
         });
