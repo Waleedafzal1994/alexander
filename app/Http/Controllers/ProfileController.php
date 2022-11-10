@@ -74,6 +74,7 @@ class ProfileController extends Controller
             'primary_language' => 'required',
             'secondary_language' => 'nullable',
             'facebook_profile' => 'max:64|nullable',
+            
             'twitch_profile' => 'nullable',
             'instagram_profile' => 'nullable',
             'tiktok_profile' => 'nullable',
@@ -209,8 +210,24 @@ class ProfileController extends Controller
 
         // user socials
         if ($request->input('facebook_profile')) {
-    
-            $user->facebook_profile = $request->input('facebook_profile');
+
+            $facebook = $request->input('facebook_profile');
+            $chk_facebook = explode('https://',trim($facebook));
+           
+            if(in_array('facebook.com',$chk_facebook)){
+               
+               $user->facebook_profile = $facebook;
+            }
+            elseif(in_array('www.facebook.com',$chk_facebook)){
+
+                $user->facebook_profile = $facebook;
+            }
+            else{
+                // echo "Entered URL should be facebook URL";
+                echo 2;
+                die();
+            }
+            
         }
         else{
             $user->facebook_profile = NULL;

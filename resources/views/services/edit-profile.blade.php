@@ -1510,7 +1510,7 @@
                     $('#edit_profile_btn').text('Save');
                 },
                 success: (response) => {
-
+                    console.log(response);
                     if(response === 0){
 
                         alertify.error('The age cannot be less than 13 years old');
@@ -1518,7 +1518,10 @@
                     else if(response === 1){
                         
                         alertify.success('Profile has been updated.');
-                        location.reload(true);
+                        // location.reload(true);
+                    }
+                    else if(response == 2){
+                        alertify.error('Entered URL should be facebook URL');
                     }
                     else{
 
@@ -1530,8 +1533,7 @@
                              });
                         }
                         else{
-
-                            alertify.error('Try again later');
+                            alertify.error(response);
                         }
                         
                         
