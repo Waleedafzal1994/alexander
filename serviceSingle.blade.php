@@ -34,9 +34,9 @@
     <div id="user_points" style="display: none;" value="{{Auth::user()->points}}">{{Auth::user()->points}}</div>
     <!-- START: Service Section -->
     <section class="service" id="servicePage">
-        <a class="right-bottom-arrow new-purple-gradient shadows text-decoration-none" style="display: none;" id="back_to_top">
+        <a class="right-bottom-arrow bg-purple-white shadows text-decoration-none" style="display: none;" id="back_to_top">
             <div class="d-flex align-items-center justify-content-center h-100">
-                <i class="fa fa-chevron-up text-white"></i>
+                <i class="fa-solid fa-arrow-up text-white"></i>
             </div>
         </a>
         <div class="d-flex justify-content-between">
