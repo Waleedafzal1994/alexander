@@ -350,9 +350,191 @@
             <div class="service-game-card-section">
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-image">
-                            <img src="{{asset('imgs/jaylon.svg')}}" alt="">
-                            <div class="online"></div>
+                        <div class="card-rating">
+                            <div class="card-image">
+                                <img src="{{asset('imgs/jaylon.svg')}}" alt="">
+                                <div class="online"></div>
+                            </div>
+                            <div class="rating-num d-flex align-items-center">
+                                <span>
+                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                    5.0
+                                </span>
+                                <div class="tag-box">13</div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h4>Jaylon</h4>
+                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                        </div>
+
+                        <div class="game-label border-bg br-8 p-1px">
+                            <h5 class="bg-darkgrey br-8 text-white">League of Legends</h5>
+                        </div>
+                        <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                        <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
+
+                        <div class="card-footer border-0 p-0">
+                            <div class="game-price">
+                                <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                <span>225<small>.0</small> <span class="game-title">/Game</span></span>
+                            </div>
+                        </div>
+
+                        <div class="game-playBtn">
+                            <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-rating">
+                            <div class="card-image">
+                                <img src="{{asset('imgs/talan.svg')}}" alt="">
+                                <div class="online"></div>
+                            </div>
+                            <div class="rating-num d-flex align-items-center">
+                                <span>
+                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                    5.0
+                                </span>
+                                <div class="tag-box">13</div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h4>Talan</h4>
+                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                        </div>
+
+                        <div class="game-label border-bg br-8 p-1px">
+                            <h5 class="bg-darkgrey br-8 text-white">E-chat</h5>
+                        </div>
+                        <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                        <div class="buyBtn bg-purple-white rounded-pill">16% OFF</div>
+
+                        <div class="card-footer border-0 p-0">
+                            <div class="game-price">
+                                <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                <span>225<small>.0</small> <span class="game-title"><del>300</del>/10Min</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-playBtn">
+                            <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-rating">
+                            <div class="card-image">
+                                <img src="{{asset('imgs/tatiana.svg')}}" alt="">
+                                <div class="online"></div>
+                            </div>
+                            <div class="rating-num d-flex align-items-center">
+                                <span>
+                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                    5.0
+                                </span>
+                                <div class="tag-box">13</div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h4>Tatiana</h4>
+                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                        </div>
+
+                        <div class="game-label border-bg br-8 p-1px">
+                            <h5 class="bg-darkgrey br-8 text-white">League of Legends</h5>
+                        </div>
+                        <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                        <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
+
+                        <div class="card-footer border-0 p-0">
+                            <div class="game-price">
+                                <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                <span>130<small>.0</small> <span class="game-title">/Game</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-playBtn">
+                            <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-rating">
+                            <div class="card-image">
+                                <img src="{{asset('imgs/alena.svg')}}" alt="">
+                                <div class="online"></div>
+                            </div>
+                            <div class="rating-num d-flex align-items-center">
+                                <span>
+                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                    5.0
+                                </span>
+                                <div class="tag-box">13</div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h4>Alena</h4>
+                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                        </div>
+
+                        <div class="game-label border-bg br-8 p-1px">
+                            <h5 class="bg-darkgrey br-8 text-white">Discover Server</h5>
+                        </div>
+                        <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                        <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
+
+                        <div class="card-footer border-0 p-0">
+                            <div class="game-price">
+                                <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                <span>276<small>.0</small> <span class="game-title"><del>300</del>/30Min</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-playBtn">
+                            <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-rating">
+                            <div class="card-image">
+                                <img src="{{asset('imgs/kianna.svg')}}" alt="">
+                                <div class="online"></div>
+                            </div>
+                            <div class="rating-num d-flex align-items-center">
+                                <span>
+                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                    5.0
+                                </span>
+                                <div class="tag-box">13</div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h4>Kianna</h4>
+                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                        </div>
+
+                        <div class="game-label border-bg br-8 p-1px">
+                            <h5 class="bg-darkgrey br-8 text-white">Valorant</h5>
+                        </div>
+                        <div class="card-text">I love to plau Valorant and Apex Legends!</div>
+                        <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
+
+                        <div class="card-footer border-0 p-0">
+                            <div class="game-price">
+                                <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                <span>110<small>.0</small> <span class="game-title">/Game</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="game-playBtn">
+                            <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
                         </div>
                     </div>
                 </div>

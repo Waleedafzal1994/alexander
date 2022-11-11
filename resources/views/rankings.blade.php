@@ -2,16 +2,89 @@
 
 @section('content')
 
-<div class="header-page rounded">
-    <div>
-        <img src="/imgs/icons/rankings.png" alt="" srcset="" style="height:64px;">
+    <div class="main-ranking-section">
+        <h2 class="my-3">Rankings</h2>
+        <div class="ranking-section">
+            
+            <div class="small-card card golden-white">
+                <div class="card-body">
+                    <div class="card-level">12 Level - 700 XP</div>
+                    <div class="king-circle card-image">
+                        <div class="inner-golden-circle">
+                            <img class="sparkle bottom" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img class="sparkle top" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img id="circle-profile-pic" src="{{asset('imgs/profile-logo.jpeg')}}" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" alt="">
+                            <div class="card-level-num">
+                                <span>2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-title">Maren Botosh</div>
+                    <div class="card-service border-bg rounded-pill p-1px mb-2">
+                        <div class="bg-lightgrey rounded-pill text-white">Services 800</div>
+                    </div>
+                    <div class="card-gp rounded-pill p-1px">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                            <div class="text-white">930.00 GP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="small-card large-card card purple-white">
+                <div class="card-body">
+                    <div class="card-level">16 Level - 800 XP</div>
+                    <div class="king-circle card-image">
+                        <div class="inner-golden-circle">
+                            <img class="sparkle bottom" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img class="sparkle top" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img id="circle-profile-pic" src="{{asset('imgs/profile-logo.jpeg')}}" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" alt="">
+                            <div class="card-level-num">
+                                <span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-title">Anika Baptista</div>
+                    <div class="card-service border-bg rounded-pill p-1px mb-2">
+                        <div class="bg-lightgrey rounded-pill text-white">Services 1000</div>
+                    </div>
+                    <div class="card-gp rounded-pill p-1px">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                            <div class="text-white">1179.00 GP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-card card blue-white">
+                <div class="card-body">
+                    <div class="card-level">10 Level - 500 XP</div>
+                    <div class="king-circle card-image">
+                        <div class="inner-golden-circle">
+                            <img class="sparkle bottom" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img class="sparkle top" src="http://127.0.0.1:8000/imgs/icons/sparkle-large.svg" width="24" alt="">
+                            <img id="circle-profile-pic" src="{{asset('imgs/profile-logo.jpeg')}}" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" alt="">
+                            <div class="card-level-num">
+                                <span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-title">Ann Culhane</div>
+                    <div class="card-service border-bg rounded-pill p-1px mb-2">
+                        <div class="bg-lightgrey rounded-pill text-white">Services 700</div>
+                    </div>
+                    <div class="card-gp rounded-pill p-1px">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                            <div class="text-white">840.00 GP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
- 
-    <div>
-        <h1>Rankings</h1>
-        <p>Here you may find the top 50 rankings of GamersPlay members & Seller+</p>
-    </div>
-</div>
 
 
 {{-- <div class="container-fluid">

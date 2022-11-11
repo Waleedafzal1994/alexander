@@ -2110,9 +2110,9 @@ a.slider-link:hover {
     width: 95px;
     border-radius: 50%;
     position: absolute;
-    left: 3px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 .king-circle .dark-circle .light-dark-circle{
     background-color: #3D3E41;
@@ -2120,9 +2120,9 @@ a.slider-link:hover {
     width: 90px;
     border-radius: 50%;
     position: absolute;
-    left: 3px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 .king-circle .dark-circle .light-dark-circle .golden-circle{
     background: linear-gradient(45deg, #FC9C01 14.65%, #FFE300 23.13%, #FC9501 31.62%, #FFE300 39.39%, #FC9501 47.88%, #FDA601 50.71%, #FEC800 57.07%, #FFDC00 62.02%, #FFE400 65.56%, #FFD700 67.68%, #FDB601 71.92%, #FC9502 75.46%, #FC9502 85.36%);
@@ -2808,6 +2808,9 @@ a.slider-link:hover {
 .text-black{
     color: #000000 !important;
 }
+.br-8{
+    border-radius: 8px !important;
+}
 .br-10{
     border-radius: 10px !important;
 }
@@ -2828,6 +2831,9 @@ a.slider-link:hover {
 }
 .mt-32{
     margin-top: 32px !important;
+}
+.p-1px{
+    padding: 1px !important;
 }
 .navbar-nav .nav-link{
     padding-left: 4px;
@@ -6117,6 +6123,10 @@ input::-moz-focus-outer {
 
 .service-game-card-section{
     margin-top: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .service-game-card-section .card{
     border: 0;
@@ -6124,13 +6134,18 @@ input::-moz-focus-outer {
     border-radius: 12px;
     background: linear-gradient(61.97deg, rgba(109, 217, 90, 0.5) 32.76%, rgba(44, 47, 54, 0.5) 50.12%, rgba(44, 47, 54, 0.5) 68.33%, rgba(155, 51, 237, 0.5) 80.73%);
     padding: 1px;
-    width: 300px;
-    margin-right: 24px;
+    width: 298px;
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 50px;
 }
 .service-game-card-section .card-body{
     background: #2C2F36;
     padding-top: 0;
     border-radius: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
 }
 .service-game-card-section .card .card-image{
     position: relative;
@@ -6153,4 +6168,351 @@ input::-moz-focus-outer {
     bottom: -3px;
     height: 22px;
     width: 22px;
+}
+.service-game-card-section .card-rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.service-game-card-section .card-rating span{
+    font-weight: 700;
+    font-size: 22px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+.service-game-card-section .card-rating span img{
+    margin-right: 6px;
+}
+.service-game-card-section .card-rating .rating-num{
+    padding-right: 22px;
+}
+.service-game-card-section .card-title{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.service-game-card-section .card-title h4{
+    font-weight: 700;
+    font-size: 24px;
+    color: #6DD95A;
+    margin-bottom: 0;
+    line-height: 36px;
+}
+
+.service-game-card-section .game-label{
+    width: fit-content;
+    margin-bottom: 14px;
+}
+
+.service-game-card-section .game-label h5{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 8px 16px;
+    margin: 0;
+}
+.service-game-card-section .card-text{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ADADBF;
+    opacity: 0.8;
+    margin-bottom: 14px;
+}
+.service-game-card-section .buyBtn{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+    padding: 5px 16px;
+    width: fit-content;
+    margin-bottom: 14px;
+}
+
+.service-game-card-section .card-footer span{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #fff;
+}
+
+.service-game-card-section .game-price{
+    display: flex;
+    align-items: center;
+}
+.service-game-card-section .game-price img{
+    margin-right: 3px;
+}
+.service-game-card-section .card-footer span small,
+.service-game-card-section .card-footer .game-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #878787;
+}
+.service-game-card-section .game-playBtn{
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    cursor: pointer;
+}
+
+
+.service-section .service-label{
+    margin-right: 20px;
+}
+.service-section .service-label >div{
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+}
+.service-section .service-label span{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+.service-section .service-label img{
+    margin-right: 10px;
+}
+
+.sort-by label{
+    margin-right: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.sort-by .dropdown-toggle::after{
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 6px solid transparent;
+    margin-bottom: -2px;
+}
+.service-section .service-game-card-section .card-text{
+    margin-bottom: 34px;
+}
+
+
+/* rankings */
+.ranking-section{
+    background-image: url('../imgs/rankings-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 423px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ranking-section .card{
+    text-align: center;
+}
+.ranking-section .card .card-body{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.ranking-section .large-card{
+    margin: 0 74px !important;
+    width: 267.08px !important;
+}
+.ranking-section .small-card{
+    background: linear-gradient(125.04deg, rgba(217, 217, 217, 0.5) 8.51%, rgba(217, 217, 217, 0.1) 73.78%);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    width: 204px;
+}
+.ranking-section .large-card{
+    width: 267px !important;
+    min-height: 389px !important;
+    border: 2px solid rgb(231 196 13 / 45%) !important;
+}
+.ranking-section .large-card .king-circle{
+    width: 196px !important;
+    height: 196px !important;
+}
+.ranking-section .large-card .inner-golden-circle{
+    width: 182px !important;
+    height: 182px !important;
+}
+.ranking-section .large-card .king-circle .inner-golden-circle .profile-image-v2{
+    width: 168px !important;
+    height: 168px !important;
+}
+.ranking-section .golden-white{
+    border: 2px solid rgb(195 195 195 / 45%) !important;
+}
+.ranking-section .blue-white{
+    border: 2px solid rgb(148 105 54 / 45%) !important;
+}
+.ranking-section .purple-white{
+    border: 2px solid rgb(148 105 54 / 45%) !important;
+}
+.main-ranking-section h2{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #fff;
+}
+.ranking-section::before{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, #000000 83.41%);
+    opacity: 0.85;
+    border-radius: 12px;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.small-card .king-circle{
+    height: 137px;
+    width: 137px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(30deg);
+    margin: auto;
+}
+.ranking-section .inner-golden-circle{
+    position: relative;
+}
+.small-card.golden-white .king-circle{
+    background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
+}
+.small-card.blue-white .king-circle{
+    background: linear-gradient(90deg, #09B8EF 0%, #B3E9FB 12%, #19C1F6 24%, #AFECFF 35%, #09B3E9 47%, #19C1F6 51%, #03789C 60%, #029DCE 67%, #7ADCFB 72%, #8FE3FE 75%, #036685 81%, #0486AE 86%, #006281 100%);
+}
+.small-card.purple-white .king-circle{
+    background: linear-gradient(90deg, #8A00F5 0%, #E5C2FF 12%, #8A00F5 24%, #D299FF 35%, #C478FF 39.06%, #6402AF 51%, #8A00F5 60%, #6902B9 67%, #B95FFF 72%, #CF92FF 75%, #8A00F5 81%, #7A02D7 86%, #BE6CFE 100%);
+}
+.small-card.golden-white .inner-golden-circle{
+    background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
+}
+.small-card.blue-white .inner-golden-circle{
+    background: linear-gradient(90deg, #09B8EF 0%, #B3E9FB 12%, #19C1F6 24%, #AFECFF 35%, #09B3E9 47%, #19C1F6 51%, #03789C 60%, #029DCE 67%, #7ADCFB 72%, #8FE3FE 75%, #036685 81%, #0486AE 86%, #93E5FF 100%);
+}
+.small-card.purple-white .inner-golden-circle{
+    background: linear-gradient(90deg, #8A00F5 0%, #E5C2FF 9.37%, #8A00F5 24%, #C478FF 30.73%, #D299FF 35%, #6402AF 41.14%, #AD66E3 51.04%, #8A00F5 60%, #6902B9 67%, #B95FFF 72%, #8A00F5 81%, #7A02D7 86%, #CF92FF 89.58%, #940DFD 100%);
+}
+.small-card .king-circle .inner-golden-circle{
+    height: 128px;
+    width: 128px;
+    transform: rotate(-30deg);
+}
+.small-card .king-circle .inner-golden-circle .profile-image-v2{
+    height: 117px !important;
+    width: 117px !important;
+}
+.ranking-section .card .card-level{
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.ranking-section .card-level-num{
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    z-index: 2;
+}
+.ranking-section .card-level-num span{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg);
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.ranking-section .card-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+.large-card .card-title{
+    font-size: 20px;
+}
+.small-card.golden-white .card-title{
+    background: linear-gradient(180deg, #FFFACF 0%, rgba(255, 250, 207, 0.35) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.small-card.blue-white .card-title{
+    background: linear-gradient(180deg, #84D3EC 0%, rgba(174, 211, 223, 0.35) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.large-card.purple-white .card-title{
+    background: linear-gradient(180deg, #9B32ED 0%, rgba(208, 132, 252, 0.83) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ranking-section .golden-white .card-level-num{
+    background: linear-gradient(90deg, #F9E109 0%, #FEFFBF 12%, #F9E109 24%, #BCA900 35%, #BDC107 47%, #F9E109 51%, #EBD511 60%, #D8C305 67%, #C5B100 72%, #FCFF82 75%, #FFEF5A 81%, #F9E109 86%, #DEC800 100%);
+}
+.ranking-section .blue-white .card-level-num{
+    background: linear-gradient(90deg, #09B8EF 0%, #B3E9FB 12%, #19C1F6 24%, #AFECFF 35%, #09B3E9 47%, #19C1F6 51%, #03789C 60%, #029DCE 67%, #7ADCFB 72%, #8FE3FE 75%, #036685 81%, #0486AE 86%, #006281 100%);
+}
+.ranking-section .purple-white .card-level-num{
+    background: linear-gradient(90deg, #8A00F5 0%, #E5C2FF 9.37%, #8A00F5 24%, #C478FF 30.73%, #D299FF 35%, #6402AF 41.14%, #AD66E3 51.04%, #8A00F5 60%, #6902B9 67%, #B95FFF 72%, #8A00F5 81%, #7A02D7 86%, #CF92FF 89.58%, #940DFD 100%);
+}
+.ranking-section .golden-white .card-level-num span{
+    color: #A29202;
+}
+.ranking-section .blue-white .card-level-num span{
+    color: #04799E;
+}
+.ranking-section .golden-white .card-level-num span{
+    color: #9B32ED;
+}
+.ranking-section .card-service{
+    height: 30px;
+    width: fit-content;
+    margin: auto;
+}
+.ranking-section .card-service >div,
+.ranking-section .card-gp >div{
+    padding: 0 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.ranking-section .card-gp{
+    background: linear-gradient(180deg, #9B32ED 0%, rgba(208, 132, 252, 0.83) 100%);
+    height: 30px;
+    width: fit-content;
+    margin: auto;
+}
+.ranking-section .card-gp >div{
+    background: #9B32ED;
+    border-radius: 50px;
+}
+.ranking-section .card-gp img{
+    margin-right: 4px;
 }
