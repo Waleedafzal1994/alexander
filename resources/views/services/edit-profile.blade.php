@@ -1521,7 +1521,7 @@
                         // location.reload(true);
                     }
                     else if(response == 2){
-                        alertify.error('Entered URL should be facebook URL');
+                        alertify.error('Entered URL not allowed.');
                     }
                     else{
 

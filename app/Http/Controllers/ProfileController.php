@@ -212,7 +212,8 @@ class ProfileController extends Controller
         if ($request->input('facebook_profile')) {
 
             $facebook = $request->input('facebook_profile');
-            $chk_facebook = explode('https://',trim($facebook));
+            $chk_facebook = explode('/',trim($facebook));
+
            
             if(in_array('facebook.com',$chk_facebook)){
                
@@ -223,7 +224,6 @@ class ProfileController extends Controller
                 $user->facebook_profile = $facebook;
             }
             else{
-                // echo "Entered URL should be facebook URL";
                 echo 2;
                 die();
             }
@@ -233,19 +233,67 @@ class ProfileController extends Controller
             $user->facebook_profile = NULL;
         }
         if ($request->input('twitch_profile')) {
-            $user->twitch_profile = $request->input('twitch_profile');
+          
+            $twitch = $request->input('twitch_profile');
+            $chk = explode('/',trim($twitch));
+           
+            if(in_array('twitch.tv',$chk)){
+               
+               $user->twitch_profile = $twitch;
+            }
+            elseif(in_array('www.twitch.tv',$chk)){
+
+                $user->twitch_profile = $twitch;
+            }
+            else{
+                echo 2;
+                die();
+            }
         }
         else{
             $user->twitch_profile = NULL;
         }
         if ($request->input('instagram_profile')) {
-            $user->instagram_profile = $request->input('instagram_profile');
+            
+             $instagram = $request->input('instagram_profile');
+            $chk = explode('/',trim($instagram));
+           
+            if(in_array('instagram.com',$chk)){
+               
+               $user->instagram_profile = $instagram;
+            }
+            elseif(in_array('www.instagram.com',$chk)){
+
+                $user->instagram_profile = $instagram;
+            }
+            else{
+                echo 2;
+                die();
+            }
         }
         else{
             $user->instagram_profile = NULL;
         }
+
         if ($request->input('tiktok_profile')) {
+            
             $user->tiktok_profile = $request->input('tiktok_profile');
+
+            $tiktok = $request->input('tiktok_profile');
+            $chk = explode('/',trim($tiktok));
+           
+            if(in_array('tiktok.com',$chk)){
+               
+               $user->tiktok_profile = $tiktok;
+            }
+            elseif(in_array('www.tiktok.com',$chk)){
+
+                $user->tiktok_profile = $tiktok;
+            }
+            else{
+                echo 2;
+                die();
+            }
         }
         else{
             $user->tiktok_profile = NULL;
