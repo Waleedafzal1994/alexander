@@ -248,6 +248,186 @@
                 </div>
             </div>
         </div>
+
+        <!-- Sidebar Section Start -->
+            <div class="fixed-nav bg-lightgrey">
+                <div class="logo menu-icon mx-auto">
+                    <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                </div>
+
+                <div class="card border-0 bg-transparent menu-icon">
+                    <div class="online"></div>
+                    <div class="card-body card-clr p-0">
+                        <div class="king-circle small">
+                            <div class="dark-circle bg-darkgrey">
+                                <div class="golden-circle">
+                                    <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
+                                    <div class="inner-golden-circle h-100">
+                                        <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                        <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
+                                        <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
+                                        <img src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="profile-image-v2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent menu-icon grey_white">
+                    <div class="online"></div>
+                    <div class="card-body card-clr p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent menu-icon purple_white">
+                    <div class="online"></div>
+                    <div class="card-body card-clr p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent menu-icon blue_white">
+                    <div class="online"></div>
+                    <div class="card-body card-clr p-0">
+                        <div class="card-image">
+                            <div class="img-frame">
+                            <img id="circle-profile-pic" src="{{asset('imgs/noah-henry.svg')}}" alt="" class="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 bg-transparent menu-icon simple">
+                    <div class="online"></div>
+                    <div class="card-body card-clr p-0">
+                        <div class="card-image bg-transparent">
+                            <img id="circle-profile-pic" src="{{asset('imgs/william-lucas.svg')}}" alt="" class="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question logo mx-auto menu-icon">
+                    <img src="{{asset('imgs/icons/question-icon.svg')}}" alt="">
+                </div>
+
+            </div>
+
+            <nav class="navSection">
+                <div class="right-sidebar">
+                    <div class="filters h-100">
+                        <div class="d-flex align-items-center">
+                            <div class="logo menu-icon d-flex align-content-center">
+                                <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                            </div>
+                            <h2 class="text-white mb-0">Filter</h2>
+
+                            <div class="view-online-pad"></div>
+                        </div>
+                        <div class="view-online-gamers mt-4">
+                            <h2 class="text-white m-0 mb-3">Online</h2>
+
+                            <div class="d-flex align-items-center">
+                                <p class="text-white">View only online GamersPlays</p>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="language text-white my-5">
+                            <h2 class="text-white m-0 mb-4">Language</h2>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="engLang">
+                                            <label class="form-check-label" for="engLang">English</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="dueLang">
+                                            <label class="form-check-label" for="dueLang">Duetsch</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="netLang">
+                                            <label class="form-check-label" for="netLang">Netherlands</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="franceLang">
+                                            <label class="form-check-label" for="franceLang">Français</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="espLang">
+                                            <label class="form-check-label" for="espLang">Español</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="espArLang">
+                                            <label class="form-check-label" for="espArLang">Español (AR)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="catLang">
+                                            <label class="form-check-label" for="catLang">Catalang</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="itlLang">
+                                            <label class="form-check-label" for="itlLang">Italiana</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="price">
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="overlay"></div>
+        <!-- Sidebar Section End -->
     </div>
+
+    <script>
+        // Chat Section Start
+        const navBar = document.querySelector(".navSection"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".overlay");
+
+            menuBtns.forEach((menuBtn) => {
+                menuBtn.addEventListener("click", () => {
+                    navBar.classList.toggle("open");
+                });
+            });
+  
+            overlay.addEventListener("click", () => {
+                navBar.classList.remove("open");
+            });
+
+        // Chat Section End
+    </script>
 
 @endsection

@@ -45,6 +45,9 @@ $noFooter = true;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
     <!-- Owl caoursel -->
 
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
     <!-- Primary Meta Tags -->
     <title>GamersPlay | Home</title>
     <meta name="title" content="GamersPlay | Home">
@@ -353,5 +356,10 @@ $noFooter = true;
 
     @endif
     @stack('scripts')
+
+    <!-- Bootstrap 5 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

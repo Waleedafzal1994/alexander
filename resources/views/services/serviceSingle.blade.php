@@ -991,7 +991,7 @@
                             <div class="dark-circle bg-darkgrey">
                                 <div class="golden-circle">
                                     <img src="{{asset('imgs/icons/king-head.svg')}}" class="king-head" alt="">
-                                    <div class="inner-golden-circle lightbox lightbox-user-gallery h-100">
+                                    <div class="inner-golden-circle h-100">
                                         <img class="sparkle left" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
                                         <img class="sparkle right" src="{{asset('imgs/icons/sparkle-white.svg')}}" alt="">
                                         <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
@@ -1226,7 +1226,6 @@
                                 </li>
                             </ul>
 
-                            
                             <div class="tab-content" id="gamestabContent">
                                 <div class="tab-pane fade show active" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                                     <div class="d-flex align-items-center justify-content-between">

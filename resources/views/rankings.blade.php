@@ -32,7 +32,7 @@
                 </div>
             </div>
             
-            <div class="small-card large-card card purple-white">
+            <div class="small-card large-card card purple_white">
                 <div class="card-body">
                     <div class="card-level">16 Level - 800 XP</div>
                     <div class="king-circle card-image">
@@ -83,6 +83,236 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="ranking-table">
+            <div class="table-responsive bg-lightgrey br-12 p-12px mt-4">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tag-box">1</div>
+                            </td>
+                            <td>
+                                <div class="card bg-transparent border-0 p-0 purple_white">
+                                    <div class="card-body card-clr bg-transparent border-0 p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Lindsey Baptista</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card-service border-bg rounded-pill p-1px">
+                                    <div class="bg-lightgrey rounded-pill text-white">Service 695</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-600 purple-white font-16">9 Level</div>
+                            </td>
+                            <td>
+                                <div class="fw-600 text-white font-16">490.00 XP</div>
+                            </td>
+                            <td>
+                                <div class="card-gp rounded-pill p-1px">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                        <div class="text-white">800.00 GP</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag-box">2</div>
+                            </td>
+                            <td>
+                                <div class="card bg-transparent grey_white border-0 p-0 -">
+                                    <div class="card-body card-clr bg-transparent border-0 p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Jaydon Passaquindici Arcand</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card-service border-bg rounded-pill p-1px">
+                                    <div class="bg-lightgrey rounded-pill text-white">Service 695</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-600 purple-white font-16">9 Level</div>
+                            </td>
+                            <td>
+                                <div class="fw-600 text-white font-16">490.00 XP</div>
+                            </td>
+                            <td>
+                                <div class="card-gp rounded-pill p-1px">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                        <div class="text-white">800.00 GP</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag-box">3</div>
+                            </td>
+                            <td>
+                                <div class="card bg-transparent border-0 p-0 blue_white">
+                                    <div class="card-body card-clr bg-transparent border-0 p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Marley Kenter</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card-service border-bg rounded-pill p-1px">
+                                    <div class="bg-lightgrey rounded-pill text-white">Service 695</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-600 purple-white font-16">9 Level</div>
+                            </td>
+                            <td>
+                                <div class="fw-600 text-white font-16">490.00 XP</div>
+                            </td>
+                            <td>
+                                <div class="card-gp rounded-pill p-1px">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                        <div class="text-white">800.00 GP</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag-box">4</div>
+                            </td>
+                            <td>
+                                <div class="card bg-transparent border-0 p-0 grey_white">
+                                    <div class="card-body card-clr bg-transparent border-0 p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Lindsey Baptista</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card-service border-bg rounded-pill p-1px">
+                                    <div class="bg-lightgrey rounded-pill text-white">Service 695</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-600 purple-white font-16">9 Level</div>
+                            </td>
+                            <td>
+                                <div class="fw-600 text-white font-16">490.00 XP</div>
+                            </td>
+                            <td>
+                                <div class="card-gp rounded-pill p-1px">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                        <div class="text-white">800.00 GP</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tag-box">5</div>
+                            </td>
+                            <td>
+                                <div class="card bg-transparent border-0 p-0 purple_white">
+                                    <div class="card-body card-clr bg-transparent border-0 p-0">
+                                        <div class="card-image">
+                                            <div class="img-frame">
+                                                <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Alfredo Saris</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="card-service border-bg rounded-pill p-1px">
+                                    <div class="bg-lightgrey rounded-pill text-white">Service 695</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="fw-600 purple-white font-16">9 Level</div>
+                            </td>
+                            <td>
+                                <div class="fw-600 text-white font-16">490.00 XP</div>
+                            </td>
+                            <td>
+                                <div class="card-gp rounded-pill p-1px">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                        <div class="text-white">800.00 GP</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example">
+                <div class="d-flex align-items-center justify-content-between">
+                    <ul class="pagination align-items-center justify-content-start my-4">
+                        <li class="page-item prev">
+                            <a class="page-link" href="#">
+                                <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <div class="page-link">...</div>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">11</a>
+                        </li>
+                        <li class="page-item ">
+                            <a class="page-link" href="#">12</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">13</a>
+                        </li>
+                        <li class="page-item next">
+                            <a class="page-link" href="#">
+                                <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="go-to-page">Go to page</div>
+                        <button class="new-btn go-btn border-0 shadow-0 ms-5">Go</button>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
 

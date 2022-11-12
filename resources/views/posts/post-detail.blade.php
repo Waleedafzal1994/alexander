@@ -247,92 +247,156 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="post-right-section">
-                    <div class="mt-4 their-services bg-lightgrey br-16 p-3">
-                        <div class="border-bg bg-darkgrey br-16">
-                            <div class="bg-darkgrey br-16">
-                                <h4 class="text-white mb-3">their Services</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="right-detail bg-lightgrey br-16 p-3 border-0">
+                            <div class=" bg-darkgrey br-16">
+                                <div class="main-card">
+                                    <div class="card border-0 bg-darkgrey grey_white br-12">
+                                        <div class="card-body card-clr p-0">
+                                            <div class="card-image hw-61px">
+                                                <div class="img-frame hw-57px">
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="hw-52px" />
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="card-title">Jacob Oliver</div>
+                                                <div class="card-text">Elite <sup>.</sup> GamersPlay+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <div class="card border-0 bg-transparent p-0">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="card-image">
-                                                <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
-                                            </div>
-                                            <div class="card-text">
-                                                <div class="card-title">League of Legends</div>
-                                                <div class="card-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>4.00/Game</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-detail">
-                                            <div class="d-flex align-items-center justify-content-end">
-                                                <div class="card-rating text-white">
-                                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                                    <span class="ml-1">5.0</span>
-                                                </div>
-                                                <div class="tag-box">10</div>
-                                            </div>
-                                            <div class="card-btn">
-                                                <button class="new-btn">Buy 3 get 1 free</button>
-                                            </div>
+                                <div class="lang-years my-1 d-flex align-items-center justify-content-center">
+                                    <div class="profile-section-two gender pl-0">
+                                        <div class="review-body text-center">6</div>
+                                        <p>Topics</p>
+                                    </div>
+                                    
+                                    <div class="profile-section-two">
+                                        <div class="review-body text-center">13</div>
+                                        <p>Comments</p>
+                                    </div>
+
+                                    <div class="profile-section-two numbers pr-0 mr-0">
+                                        <div class="review-body text-center">123</div>
+                                        <p>Likes</p>
+                                    </div>
+                                </div>
+
+                                <div class="achievements text-center">
+                                    <div class="">
+                                        <h4>Achievements</h4>
+                                        <div class="badges">
+                                            <img src="{{asset('imgs/icons/purple_badge.svg')}}" alt="">
+                                            <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            <img src="{{asset('imgs/icons/gold_badge.svg')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card border-0 bg-transparent p-0">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="card-image">
-                                                <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
-                                            </div>
-                                            <div class="card-text">
-                                                <div class="card-title">League of Legends</div>
-                                                <div class="card-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>4.00/Game</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-detail">
-                                            <div class="d-flex align-items-center justify-content-end">
-                                                <div class="card-rating text-white">
-                                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                                    <span class="ml-1">5.0</span>
-                                                </div>
-                                                <div class="tag-box">10</div>
-                                            </div>
-                                            <div class="card-btn">
-                                                <button class="new-btn">Buy 3 get 1 free</button>
-                                            </div>
-                                        </div>
+
+                                <div class="img-two-btns-row">
+                                    <div class="">
+                                        <a class="btn-follower d-flex align-items-center justify-content-center" id="follow-checkss" type="button">Follow</a>
+                                        <input type="hidden" id="check-follow-toggless" value= "">
+                                    </div>
+                                    <div class="">
+                                        <a class="btn-cust btn-width" type="button">Chat</a>
                                     </div>
                                 </div>
-                                <div class="card border-0 bg-transparent p-0">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="card-image">
-                                                <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
-                                            </div>
-                                            <div class="card-text">
-                                                <div class="card-title">League of Legends</div>
-                                                <div class="card-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>4.00/Game</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="post-right-section">
+                            <div class="mt-4 their-services bg-lightgrey br-16 p-3">
+                                <div class="border-bg bg-darkgrey br-16">
+                                    <div class="bg-darkgrey br-16">
+                                        <h4 class="text-white mb-3">their Services</h4>
+
+                                        <div class="card border-0 bg-transparent p-0">
+                                            <div class="card-body p-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="card-image">
+                                                        <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
+                                                    </div>
+                                                    <div class="card-text">
+                                                        <div class="card-title">League of Legends</div>
+                                                        <div class="card-price">
+                                                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                            <span>4.00/Game</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-detail">
+                                                    <div class="d-flex align-items-center justify-content-end">
+                                                        <div class="card-rating text-white">
+                                                            <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                                            <span class="ml-1">5.0</span>
+                                                        </div>
+                                                        <div class="tag-box">10</div>
+                                                    </div>
+                                                    <div class="card-btn">
+                                                        <button class="new-btn">Buy 3 get 1 free</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-detail">
-                                            <div class="d-flex align-items-center justify-content-end">
-                                                <div class="card-rating text-white">
-                                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                                    <span class="ml-1">5.0</span>
+                                        <div class="card border-0 bg-transparent p-0">
+                                            <div class="card-body p-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="card-image">
+                                                        <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
+                                                    </div>
+                                                    <div class="card-text">
+                                                        <div class="card-title">League of Legends</div>
+                                                        <div class="card-price">
+                                                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                            <span>4.00/Game</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="tag-box">10</div>
+                                                <div class="card-detail">
+                                                    <div class="d-flex align-items-center justify-content-end">
+                                                        <div class="card-rating text-white">
+                                                            <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                                            <span class="ml-1">5.0</span>
+                                                        </div>
+                                                        <div class="tag-box">10</div>
+                                                    </div>
+                                                    <div class="card-btn">
+                                                        <button class="new-btn">Buy 3 get 1 free</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="card-btn">
-                                                <button class="new-btn">Buy 3 get 1 free</button>
+                                        </div>
+                                        <div class="card border-0 bg-transparent p-0">
+                                            <div class="card-body p-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="card-image">
+                                                        <img src="{{asset('imgs/icons/mini-game-img.svg')}}" alt="">
+                                                    </div>
+                                                    <div class="card-text">
+                                                        <div class="card-title">League of Legends</div>
+                                                        <div class="card-price">
+                                                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                            <span>4.00/Game</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-detail">
+                                                    <div class="d-flex align-items-center justify-content-end">
+                                                        <div class="card-rating text-white">
+                                                            <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                                            <span class="ml-1">5.0</span>
+                                                        </div>
+                                                        <div class="tag-box">10</div>
+                                                    </div>
+                                                    <div class="card-btn">
+                                                        <button class="new-btn">Buy 3 get 1 free</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
