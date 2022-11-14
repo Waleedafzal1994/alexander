@@ -45,43 +45,52 @@
             <div class="col-4">
                 <div class="nav flex-column nav-pills bg-lightgrey shadows rounded-lg mb-4 py-4  br-16" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                    <a class="nav-link active" id="following-tab" data-toggle="pill" href="#following" role="tab" aria-controls="following" aria-selected="true"><i class="fa-solid fa-user-group"></i> Following</a>
+                    <a class="nav-link active" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
+                        <img src="{{asset('imgs/posts/profile-icon.svg')}}" alt=""> Profile</a>
 
-                    <a class="nav-link" id="official-tab" data-toggle="pill" href="#official" role="tab" aria-controls="official" aria-selected="false"><i class="fa-brands fa-squarespace"></i> Official</a>
+                    <a class="nav-link" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="false">
+                        <img src="{{asset('imgs/posts/account-icon.svg')}}" alt=""> Account</a>
 
-                    <a class="nav-link" id="highlights-tab" data-toggle="pill" href="#highlights" role="tab" aria-controls="highlights" aria-selected="false"><i class="fa-solid fa-wand-magic-sparkles"></i> Highlights</a>
+                    <a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+                        <img src="{{asset('imgs/posts/notification-icon.svg')}}" alt=""> Notifications</a>
 
-                    <a class="nav-link" id="chitchat-tab" data-toggle="pill" href="#chitchat" role="tab" aria-controls="chitchat" aria-selected="false"><i class="fa-regular fa-comments"></i> Chit-Chat</a>
+                    <a class="nav-link" id="imSetting-tab" data-toggle="pill" href="#imSetting" role="tab" aria-controls="imSetting" aria-selected="false">
+                        <img src="{{asset('imgs/posts/imsetting-icon.svg')}}" alt=""> IM Settings</a>
 
-                    <a class="nav-link" id="newcomer-tab" data-toggle="pill" href="#newcomer" role="tab" aria-controls="newcomer" aria-selected="false"><i class="fa-solid fa-camera"></i> Newcomer Selfies</a>
+                    <a class="nav-link" id="identify-tab" data-toggle="pill" href="#identify" role="tab" aria-controls="identify" aria-selected="false">
+                        <img src="{{asset('imgs/posts/identify-icon.svg')}}" alt=""> Identify</a>
 
-                    <a class="nav-link" id="gears-tab" data-toggle="pill" href="#gears" role="tab" aria-controls="gears" aria-selected="false"><i class="fa-solid fa-gamepad"></i> Gears</a>
-
-                    <div class="post-btn text-center mx-4">
-                        <a href="/community/post" class="new-btn w-100 d-block py-2 rounded-pill">Post</a>
+                    <a class="nav-link" id="blockList-tab" data-toggle="pill" href="#blockList" role="tab" aria-controls="blockList" aria-selected="false">
+                        <img src="{{asset('imgs/posts/blocklist-icon.svg')}}" alt=""> block List</a>
+                    
+                    <div class="nav-link post-btn text-center mx-4">
+                        <a href="/community/post" class="new-btn w-100 d-block py-2 rounded-pill">
+                            <img src="{{asset('imgs/posts/logout-icon.svg')}}" alt="">
+                            <span> Log Out</span>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col-8">
                 <div class="tab-content" id="v-pills-tabContent">
                     
-                    <div class="tab-pane fade show active" id="following" role="tabpanel" aria-labelledby="following-tab">
-                        Following Tab
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        Profile Tab
                     </div>
-                    <div class="tab-pane fade" id="official" role="tabpanel" aria-labelledby="official-tab">
-                        Official Tab
+                    <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                        Account Tab
                     </div>
-                    <div class="tab-pane fade" id="highlights" role="tabpanel" aria-labelledby="highlights-tab">
-                        Highlights Tab
+                    <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+                        Notifications Tab
                     </div>
-                    <div class="tab-pane fade" id="chitchat" role="tabpanel" aria-labelledby="chitchat-tab">
-                        Chit-Chat Tab
+                    <div class="tab-pane fade" id="imSetting" role="tabpanel" aria-labelledby="imSetting-tab">
+                        IM Settings Tab
                     </div>
-                    <div class="tab-pane fade" id="newcomer" role="tabpanel" aria-labelledby="newcomer-tab">
-                        NewComer Selfies Tab
+                    <div class="tab-pane fade" id="identify" role="tabpanel" aria-labelledby="identify-tab">
+                        Identify Selfies Tab
                     </div>
-                    <div class="tab-pane fade" id="gears" role="tabpanel" aria-labelledby="gears-tab">
-                        Grears Tab
+                    <div class="tab-pane fade" id="blockList" role="tabpanel" aria-labelledby="blockList-tab">
+                        Block List Tab
                     </div>
                 </div>
             </div>

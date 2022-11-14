@@ -851,8 +851,8 @@
 
                                 <!-- START: Gallery -->
                                 <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-                                    <div class="card mt-2 p-3 shadows">
-                                        <div class="card-body ">
+                                    <div class="card mt-2 p-0 bg-lightgrey br-16">
+                                        <div class="card-body p-3">
                                             <div class="service-main-body-content">
                                                 @include('services.galleryImages', [
                                                 'service' => $service,

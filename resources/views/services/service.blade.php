@@ -290,7 +290,7 @@
                         </div>
                         <div class="item">
                             <a href="">
-                                <img src="{{asset('imgs/game-2.svg')}}" alt="">
+                                <img src="{{asset('imgs/game-4.svg')}}" alt="">
                             </a>
                         </div>
                         <div class="item">

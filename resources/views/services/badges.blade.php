@@ -1,12 +1,12 @@
 
 
-<div class="card mt-2 p-0">
+<div class="card mt-2 p-0 bg-lightgrey br-16">
     <div class="card-body">
         <div class="service-main-body-content">
             <div class="row">
                 <div class="col-sm-12 badge-cards d-flex align-items-center flex-wrap">
                 @if($totalOrders >= 50 && $totalOrders < 100) 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 @elseif($totalOrders >= 100 && $totalOrders < 500)
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
@@ -37,7 +37,7 @@
                 </div>
                 @elseif($totalOrders>= 500 && $totalOrders < 1000)
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -68,7 +68,7 @@
                 </div>
                 @elseif($totalOrders>= 1000)
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
@@ -117,7 +117,7 @@
 
                 @if(in_array('elite',$g_badge))
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/elitegpbadge.png" width="220" alt="">
@@ -131,7 +131,7 @@
 
                 @if(in_array('top',$g_badge))
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/topgpbadge.png" width="220" alt="">
@@ -145,7 +145,7 @@
 
                 @if(in_array('vip',$g_badge))
 
-                <div class="card badge-card border-0 py-4 my-3">
+                <div class="card badge-card border-0 py-4 my-3 br-16">
                     <div class="card-body text-center">
                         <div class="badge-img">
                             <img src="/imgs/vipbadge.png" width="220" alt="">

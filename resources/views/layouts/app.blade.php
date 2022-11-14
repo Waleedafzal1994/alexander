@@ -211,16 +211,17 @@ $noFooter = true;
                                 </a>
                             </li>
                             <li class="nav-item mr-4">
-                                <a href="">
+                                <a href="" class="bell-icon">
                                     <img src="{{asset('imgs/icons/bell-icon.svg')}}" alt="">
+                                    <span>2</span>
                                 </a>
                             </li>
 
                             <li class="nav-item spaced-out-lg mr-0">
-                                <a href="/points" class="nav-link"
+                                <a href="/points" class="nav-link p-0"
                                     style="height:100%; display:flex; justify-content:center; align-items:center;">
                                     <span class="badge badge-pill badge-points d-flex align-items-center">
-                                        <img src="/imgs/icons/currency-coin.svg" style="height:24px; margin-right:5px;"> 
+                                        <img src="/imgs/icons/currency-coin.svg" style="height:16px; margin-right:5px;"> 
                                         {{ Auth::user()->points }} GP 
                                     </span>
                                 </a>
@@ -233,6 +234,7 @@ $noFooter = true;
                                     @if (Auth::user()->profile_picture)
                                         <img src="{{Auth::user()->profile_picture}}" class="nav_avatar_container">
                                     @endif
+                                    <div class="bg-blur"></div>
                                     <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
                                 </a>
 

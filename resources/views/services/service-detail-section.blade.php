@@ -320,7 +320,7 @@
 
             <nav class="navSection">
                 <div class="right-sidebar">
-                    <div class="filters h-100">
+                    <div class="filters">
                         <div class="d-flex align-items-center">
                             <div class="logo menu-icon d-flex align-content-center">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
@@ -329,6 +329,7 @@
 
                             <div class="view-online-pad"></div>
                         </div>
+
                         <div class="view-online-gamers mt-4">
                             <h2 class="text-white m-0 mb-3">Online</h2>
 
@@ -341,32 +342,32 @@
                             </div>
                         </div>
 
-                        <div class="language text-white my-5">
+                        <div class="language mt-5">
                             <h2 class="text-white m-0 mb-4">Language</h2>
                             <form action="">
                                 <div class="row">
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="engLang">
-                                            <label class="form-check-label" for="engLang">English</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang1">
+                                            <label class="form-check-label" for="lang1">English</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="dueLang">
-                                            <label class="form-check-label" for="dueLang">Duetsch</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang2">
+                                            <label class="form-check-label" for="lang2">Duetsch</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="netLang">
-                                            <label class="form-check-label" for="netLang">Netherlands</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang3">
+                                            <label class="form-check-label" for="lang3">Netherlands</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="franceLang">
-                                            <label class="form-check-label" for="franceLang">Français</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang4">
+                                            <label class="form-check-label" for="lang4">Français</label>
                                         </div>
                                     </div>
                                 </div>
@@ -374,26 +375,26 @@
                                 <div class="row">
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="espLang">
-                                            <label class="form-check-label" for="espLang">Español</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang5">
+                                            <label class="form-check-label" for="lang5">Español</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="espArLang">
-                                            <label class="form-check-label" for="espArLang">Español (AR)</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang6">
+                                            <label class="form-check-label" for="lang6">Español (AR)</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="catLang">
-                                            <label class="form-check-label" for="catLang">Catalang</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang7">
+                                            <label class="form-check-label" for="lang7">Catalang</label>
                                         </div>
                                     </div>
                                     <div class="col-3 mb-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="itlLang">
-                                            <label class="form-check-label" for="itlLang">Italiana</label>
+                                            <input class="form-check-input" type="checkbox" value="" id="lang8">
+                                            <label class="form-check-label" for="lang8">Italiana</label>
                                         </div>
                                     </div>
                                 </div>
@@ -401,8 +402,127 @@
                         </div>
 
                         <div class="price">
+                            <h2>Price</h2>
 
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>1.00 - 5.00</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>1.00 - 20.00</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>3.00 - 15.00</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>1.00 - 10.00</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>1.00 - 20+</span>
+                            </button>
                         </div>
+
+                        <div class="promotion price">
+                            <h2>Promotion</h2>
+
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>Discount</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>1st Order Free</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>Buy X Get Y</span>
+                            </button>
+                        </div>
+
+                        <div class="gender price">
+                            <h2>Gender</h2>
+
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>Male</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>Female</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>Nonconforming</span>
+                            </button>
+                        </div>
+
+                        <div class="age price">
+                            <h2>Age</h2>
+
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>18 - 25</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>26 - 30</span>
+                            </button>
+                            <button class="new-btn">
+                                <img src="{{asset('imgs/icons/thunder.png')}}" width="12" alt="">
+                                <span>30+</span>
+                            </button>
+                        </div>
+
+                        <div class="gamersplays">
+                            <h2 class="m-0 mb-4">Role</h2>
+
+                            <form action="">
+                                <div class="mini-heading">GamersPlay</div>
+                                <div class="row">
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gamersPlay1">
+                                            <label class="form-check-label" for="gamersPlay1">GamersPlay 1</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gamersPlay2">
+                                            <label class="form-check-label" for="gamersPlay2">GamersPlay 1</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gamersPlay3">
+                                            <label class="form-check-label" for="gamersPlay3">GamersPlay 1</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="qualityGanmersPlay1">
+                                            <label class="form-check-label" for="qualityGanmersPlay1">GamersPlay Star 1</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 mb-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="qualityGanmersPlay2">
+                                            <label class="form-check-label" for="qualityGanmersPlay2">GamersPlay Star 2</label>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-footer">
+                        <button class="new-btn clearAll bg-transparent"> Clear all</button>
+                        <button class="new-btn submit bg-purple-white text-white"> Submit</button>
                     </div>
                 </div>
             </nav>

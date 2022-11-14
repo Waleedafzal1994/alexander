@@ -29,7 +29,7 @@ $userGallery = $service->user->imagesAsArray;
 
     <!-- Gallery images section -->
     <div id="gallery" class="gallery-section sadasdasd">
-        <div class="w-100 bg-white">
+        <div class="w-100">
             @foreach ($userGallery as $galleryImage)
             <div class="position-relative photos-section mb-4" id="gallery-item-box-{{ $galleryImage->id }}">
                 <img src="{{ $galleryImage->file_name }}" class="img-responsive">
