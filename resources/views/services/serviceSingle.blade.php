@@ -1051,7 +1051,7 @@
                 <div class="right-sidebar">
                     <div class="h-100" id="chat-inner">
                         <div class="left-section">
-                            <div class="logo menu-icon">
+                            <div class="logo menu-icon close-chat">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
                             </div>
                             
@@ -1435,6 +1435,10 @@
                 chat.style.display="flex";
                 $(".chatValue").removeClass('d-none');
                 $(".orderValue").addClass('d-none');
+                $('.messageValue').addClass("active");
+                $('.contactValue').removeClass("active");
+                $('#message').addClass("active show");
+                $('#contact').removeClass("active show");
             });
             $('.messageValue').click(function(){
                 var chat = document.getElementById("chat-inner");
@@ -1448,6 +1452,8 @@
                 $(".chatValue").addClass('d-none');
                 $(".orderValue").removeClass('d-none');
             });
+            // $(".close-chat").click(function(){
+            // })
         // Multiple Tabs Active start
         
             // document.querySelectorAll('button[data-bs-toggle="tab"]').forEach((t,i)=>{
