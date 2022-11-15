@@ -980,7 +980,7 @@
             </section>
             <!-- Sidebar Section Start -->
             <div class="fixed-nav bg-lightgrey">
-                <div class="logo menu-icon mx-auto">
+                <div class="logo menu-icon mx-auto" id="chatToShow">
                     <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
                 </div>
 
@@ -1049,7 +1049,7 @@
 
             <nav class="navSection">
                 <div class="right-sidebar">
-                    <div class="d-flex h-100">
+                    <div class="h-100" id="chat-inner">
                         <div class="left-section">
                             <div class="logo menu-icon">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
@@ -1058,8 +1058,8 @@
                             <div class="sidebar-content h-100 d-flex justify-content-between flex-column">
                                 <div class="">
                                     <div class="nav nav-pills me-3 my-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <button class="new-btn nav-link active" id="message-tab" data-bs-toggle="pill" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="true">Message</button>
-                                        <button class="new-btn nav-link" id="contact-tab" data-bs-toggle="pill" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                                        <button class="new-btn nav-link active messageValue" id="message-tab" data-bs-toggle="pill" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="true">Message</button>
+                                        <button class="new-btn nav-link contactValue" id="contact-tab" data-bs-toggle="pill" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
                                     </div>
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
@@ -1108,7 +1108,7 @@
                         </div>
                         
                         <div class="right-section">
-                            <div class="tab-content rightMesageTabContent d-none" id="v-pills-tabContent">
+                            <div class="tab-content rightMesageTabContent d-none chatValue" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
                                     <div class="right-main-content">
                                         <div class="d-flex align-items-center justify-content-between">
@@ -1192,7 +1192,7 @@
 
                                 </div>
                             </div>
-                            <div class="tab-content rightContactTabContent" id="contactTabContent">
+                            <div class="tab-content rightContactTabContent orderValue" id="contactTabContent">
                                 <div class="tab-pane fade show active" id="side-ordered" role="tabpanel" aria-labelledby="side-ordered-tab">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <h2>Ordered Tab</h2>
@@ -1233,7 +1233,7 @@
                         </div>
                     </div>
                 
-                    <div class="browse-bar browse-section h-100">
+                    <div class="browse-bar browse-section h-100" id="browser-inner">
                         <div class="p-24">
                             <div class="d-flex align-items-center">
                                 <div class="logo menu-icon mr-4">
@@ -1400,10 +1400,11 @@
     @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/mdb.min.js') }}"></script>
+    <!-- <script src="{{ asset('js/mdb.min.js') }}"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
     <script>
+        
 
         // Chat Section Start
             const navBar = document.querySelector(".navSection"),
@@ -1427,8 +1428,26 @@
             $(this).siblings(".smiles-bunch").toggleClass("active");
         });
 
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function($) {     
 
+            $('#chatToShow').click(function(){
+                var chat = document.getElementById("chat-inner");
+                chat.style.display="flex";
+                $(".chatValue").removeClass('d-none');
+                $(".orderValue").addClass('d-none');
+            });
+            $('.messageValue').click(function(){
+                var chat = document.getElementById("chat-inner");
+                chat.style.display="flex";
+                $(".chatValue").removeClass('d-none');
+                $(".orderValue").addClass('d-none');
+            });
+            $('.contactValue').click(function(){
+                var chat = document.getElementById("chat-inner");
+                chat.style.display="flex";
+                $(".chatValue").addClass('d-none');
+                $(".orderValue").removeClass('d-none');
+            });
         // Multiple Tabs Active start
         
             // document.querySelectorAll('button[data-bs-toggle="tab"]').forEach((t,i)=>{
@@ -1467,6 +1486,7 @@
                 const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage+0.1}%)`;
                 slider.style.background = bg;
             }
+
 
         // Range Slider End
 

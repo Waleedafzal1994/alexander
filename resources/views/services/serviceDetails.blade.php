@@ -437,6 +437,14 @@
     }
 
     function getCategoryServices(obj, id) {
+        var chat = document.getElementById("chat-inner");
+        chat.style.display="none";
+        var browse = document.getElementById("browser-inner");
+        browse.style.display="block";
+        // $(".chatValue").aClass('d-none');
+        // $(".orderValue").addClass('d-none');
+
+
         $('.nav-item').removeClass('active');
         $(obj).addClass('active');
 
