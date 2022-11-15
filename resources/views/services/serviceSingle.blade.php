@@ -1049,7 +1049,7 @@
 
             <nav class="navSection">
                 <div class="right-sidebar">
-                    <div class="chat-bar h-100">
+                    <div class="d-flex h-100">
                         <div class="left-section">
                             <div class="logo menu-icon">
                                 <img src="{{asset('imgs/side-arrow.svg')}}" alt="">
@@ -1108,7 +1108,7 @@
                         </div>
                         
                         <div class="right-section">
-                            <div class="tab-content rightMesageTabContent" id="v-pills-tabContent">
+                            <div class="tab-content rightMesageTabContent d-none" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
                                     <div class="right-main-content">
                                         <div class="d-flex align-items-center justify-content-between">
@@ -1192,12 +1192,44 @@
 
                                 </div>
                             </div>
-                            <!-- <div class="tab-content rightContactTabContent" id="contactTabContent">
-                                <div class="tab-pane fade show active" id="side-ordered" role="tabpanel" aria-labelledby="side-ordered-tab">Ordered Tab</div>
-                                <div class="tab-pane fade" id="side-following" role="tabpanel" aria-labelledby="side-following-tab">Following Tab</div>
-                                <div class="tab-pane fade" id="side-followers" role="tabpanel" aria-labelledby="side-followers-tab">Followers Tab</div>
-                                <div class="tab-pane fade" id="side-visitors" role="tabpanel" aria-labelledby="side-visitors-tab">Ordered Tab</div>
-                            </div> -->
+                            <div class="tab-content rightContactTabContent" id="contactTabContent">
+                                <div class="tab-pane fade show active" id="side-ordered" role="tabpanel" aria-labelledby="side-ordered-tab">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2>Ordered Tab</h2>
+                                        <div class="right-search position-relative">
+                                            <input type="text" class="form-control" placeholder="search">
+                                            <i class="fa fa-search"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="side-following" role="tabpanel" aria-labelledby="side-following-tab">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2>Following Tab</h2>
+                                        <div class="right-search position-relative">
+                                            <input type="text" class="form-control" placeholder="search">
+                                            <i class="fa fa-search"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="side-followers" role="tabpanel" aria-labelledby="side-followers-tab">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2>Followers Tab</h2>
+                                        <div class="right-search position-relative">
+                                            <input type="text" class="form-control" placeholder="search">
+                                            <i class="fa fa-search"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="side-visitors" role="tabpanel" aria-labelledby="side-visitors-tab">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h2>Side Visitors Tab</h2>
+                                        <div class="right-search position-relative">
+                                            <input type="text" class="form-control" placeholder="search">
+                                            <i class="fa fa-search"> </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 

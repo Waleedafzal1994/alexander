@@ -251,8 +251,9 @@ html{
 }
 
 body {
-    background: #FAF5FF !important;
+    /* background: #FAF5FF !important; */
     font-family: 'Poppins', sans-serif;
+    background: #212429 !important;
 }
 
 .nav_avatar_container {
@@ -1270,14 +1271,22 @@ table th {
 }
 
 .user-actions-dropdown a:hover {
-    background: var(--color-secondary) !important;
-    color: white !important;
+    background: #2C2F36 !important;
+    color: #fff;
+    border-radius: 8px;
 }
 
 .user-actions-dropdown {
     border: 1px solid var(--color-secondary);
 }
 
+.user-actions-dropdown a{
+    color: #fff;
+    padding: 8px 16px 8px 12px;
+}
+.user-actions-dropdown{
+    min-width: 250px !important;
+}
 
 .login-btn {
     background: var(--color-background);
@@ -3876,10 +3885,10 @@ background: #888;
 /* .hover-text-change::after{
     content: "Unfollow"
 } */
-
+/* 
 footer{
     padding-top: 3rem;
-}
+} */
 
 @media (max-width: 76px){
     footer{
@@ -4083,10 +4092,26 @@ footer{
     position: absolute;
     left: 0;
 }
-.post-tabs .nav-link img{
+.post-tabs .nav-link span{
     margin-right: 12px;
+    position: relative;
 }
-.post-tabs .nav-link i:before{
+.post-tabs .nav-link.active span::before{
+    content: "";
+    background: rgb(155 50 237 / 50%);
+    filter: blur(5px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+.post-tabs .nav-link.active svg path{
+    fill: #9B32ED;
+}
+/* .post-tabs .nav-link svg::before{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4095,7 +4120,7 @@ footer{
 .post-tabs .nav-link.active i{
     color: #9B32ED;
     filter: blur(0.5px);
-}
+} */
 
 .post-tabs .post-btn{
     margin-top: 18px;
@@ -4103,9 +4128,7 @@ footer{
 .post-tabs .post-btn a{
     font-weight: 700;
     font-size: 18px;
-    line-height: 27px;
-    text-align: center;
-    color: #FFFFFF;
+    height: 40px;
     background: linear-gradient(92.63deg, #4C0A81 -2.33%, #9B32ED 48.76%, #4C0A81 113.3%);
     border-radius: 24px;
 }
@@ -4336,12 +4359,12 @@ div.emoji-drop-down div.emoji{
 }
 .navbar-brand{
     margin-right: 10px !important;
-    background: linear-gradient(180deg, #FC9502 0%, rgba(252, 149, 2, 0.35) 100%);
+    background: linear-gradient(180deg, #7E8AF3 0%, #B454FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-weight: 600;
+    font-size: 20px;
 }
 .navbar{
     padding-left: 15px !important;
@@ -5606,20 +5629,17 @@ svg circle:last-of-type {
 .right-main-content .chat-section{
     display: flex;
     flex-direction: column;
-    min-height: 0;
-    flex: 1 1;
     width: 100%;
     background-position: top;
     background-repeat: no-repeat;
 }
 
 .right-main-content .chat-section .inner-chat-section{
-    min-height: 0;
-    flex: 1 1;
-    padding: 0 24px;
-    width: 100%;
+    padding-bottom: 50px;
+    height: calc(100vh - 200px);
     overflow-y: auto;
 }
+
 .gallery-sec,
 .price-sec{
     height: 48px;
@@ -6711,7 +6731,7 @@ table .card.purple-white .card-image .img-frame{
 .filters{
     padding: 32px;
     padding-bottom: 50px;
-    height: 85%;
+    height: calc(100vh - 75px);
     overflow-y: auto;
 }
 .filters h2{
@@ -6796,6 +6816,13 @@ table .card.purple-white .card-image .img-frame{
     display: inline-block;
     cursor: pointer;
     margin-right: 14px;
+    transition: all .3s ease-in-out;
+}
+.price button.active{
+    background: linear-gradient(92.63deg, #4C0A81 -2.33%, #9B32ED 48.76%, #4C0A81 113.3%) !important;
+}
+.price button:hover{
+    background-color: #21242991 !important;
 }
 .price button:last-child{
     margin-right: 0;
@@ -6847,9 +6874,9 @@ table .card.purple-white .card-image .img-frame{
 }
 .bell-icon span{
     background: #00FF0A;
-    width: 12px;
+    min-width: 12px;
     height: 12px;
-    border-radius: 50%;
+    border-radius: 25px;
     font-weight: 700;
     font-size: 10px;
     color: #2C2F36;
@@ -6860,6 +6887,7 @@ table .card.purple-white .card-image .img-frame{
     position: absolute;
     top: -2px;
     right: -8px;
+    padding: 4px;
 }
 .nav-item .nav_profile_name .bg-blur{
     background: #9B32ED;
@@ -6873,4 +6901,35 @@ table .card.purple-white .card-image .img-frame{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+}
+.rightContactTabContent h2{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.rightContactTabContent .right-search .form-control{
+    padding-left: 36px;
+    background: #212429;
+    border: 0 !important;
+    border-radius: 25px;
+    color: #fff;
+    opacity: .7;
+}
+.rightContactTabContent .right-search .form-control::placeholder{
+    color: #fff;
+    opacity: .7;
+}
+.rightContactTabContent .right-search i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.mini-heading{
+    font-size: 14px;
+    color: #fff !important;
+    opacity: .4;
+    margin-bottom: 6px;
 }

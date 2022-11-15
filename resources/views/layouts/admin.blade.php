@@ -147,18 +147,18 @@
                                     <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"
+                                <div class="bg-darkgrey p-3 br-16 border-0 dropdown-menu dropdown-menu-right user-actions-dropdown"
                                     aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->user_group == '3')
                                         <a class="dropdown-item" href="/admin">
-                                            <span class="material-icons"
+                                            <span class="material-icons text-white"
                                                 style="color:red; height:10px; vertical-align:top;">local_police</span>
                                             Admin Panel
                                         </a>
                                     @endif
                                     @if (intVal(Auth::user()->user_group) > 0)
                                         <a class="dropdown-item" href="/moderator">
-                                            <span class="material-icons"
+                                            <span class="material-icons text-white"
                                                 style="color:red; height:10px; vertical-align:top;">admin_panel_settings</span>
                                             Moderator Panel
                                         </a>

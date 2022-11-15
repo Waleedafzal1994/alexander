@@ -170,7 +170,7 @@ $noFooter = true;
                             </button>
                         </li>
                             <li class="nav-item">
-                                <div style="margin-right:25px; display:flex; justify-content:center; padding:10px 0;">
+                                <div style="margin-right:18px; display:flex; justify-content:center; padding:10px 0;">
                                     <div class="position-relative search-section">
                                         <input type="text" class="font-15 search-input border-0" id="search" placeholder="Search">
                                         <i class="fa fa-search text-white"></i>
@@ -205,7 +205,7 @@ $noFooter = true;
                                     <img src="{{asset('imgs/icons/gift-box-icon.svg')}}" alt="">
                                 </a>
                             </li>
-                            <li class="nav-item mr-4">
+                            <li class="nav-item mr-4 pr-2">
                                 <a href="" class="bell-icon">
                                     <img src="{{asset('imgs/icons/bell-icon.svg')}}" alt="">
                                     <span>2</span>
@@ -233,18 +233,18 @@ $noFooter = true;
                                     <!-- <span class="nav_profile_name">{{ Auth::user()->name }}</span> -->
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right user-actions-dropdown"
+                                <div class="bg-darkgrey p-3 br-16 border-0 dropdown-menu dropdown-menu-right user-actions-dropdown"
                                     aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->user_group == '3')
                                         <a class="dropdown-item" href="/admin">
-                                            <span class="material-icons"
+                                            <span class="material-icons text-white"
                                                 style="color:red; height:10px; vertical-align:top;">local_police</span>
                                             Admin Panel
                                         </a>
                                     @endif
                                     @if (intVal(Auth::user()->user_group) > 0)
                                         <a class="dropdown-item" href="/moderator">
-                                            <span class="material-icons"
+                                            <span class="material-icons text-white"
                                                 style="color:red; height:10px; vertical-align:top;">admin_panel_settings</span>
                                             Moderator Panel
                                         </a>
@@ -313,13 +313,13 @@ $noFooter = true;
             </div>
         </div>
         <div class="bg-content-clr">
-            <main class="py-4 @if (Route::current()->getName() != 'welcome') container @endif">
+            <main class=" @if (Route::current()->getName() != 'welcome') container @endif">
                 @yield('content')
             </main>
         </div>
         @yield('footer')
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{{ asset('js/notify/notify.min.js') }}" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
