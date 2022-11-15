@@ -117,55 +117,642 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <div class="tab-content" id="v-pills-tabContent">
-                    
                     <div class="tab-pane fade show active" id="following" role="tabpanel" aria-labelledby="following-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                Following Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-following" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-following" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-following" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-following" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/apex-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/fortnite-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/genshin-impact-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-following" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-following" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="official" role="tabpanel" aria-labelledby="official-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                Official Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-official" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-official" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-official" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-official" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/fortnite-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/apex-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/genshin-impact-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-official" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-official" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                Recommend Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-recommended" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-recommended" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-recommended" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-recommended" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/league-of-legends-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/legends-of-runeterra-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/minecraft-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-recommended" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-recommended" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="highlight" role="tabpanel" aria-labelledby="highlight-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                Highlights Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-highlight" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-highlight" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-highlight" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-highlight" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/overwatch-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/valorant-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/wild-rift-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-highlight" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-highlight" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="chitchat" role="tabpanel" aria-labelledby="chitchat-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                Chit Chat Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-chitchat" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-chitchat" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-chitchat" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-chitchat" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/league-of-legends-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/legends-of-runeterra-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/minecraft-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-chitchat" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-chitchat" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="newcomer" role="tabpanel" aria-labelledby="newcomer-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                NewCommer Selfies Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-selfie" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-selfie" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-selfie" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-selfie" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/fortnite-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/apex-lfg.jpg')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/genshin-impact-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-selfie" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-selfie" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="gears" role="tabpanel" aria-labelledby="gears-tab">
-                        <div class="bg-lightgrey br-16 p-3">
-                            <div class="tabs bg-darkgrey br-16 p-3 text-white">
-                                PC & Gears Tab
+                        <div class="post-left-section">
+                            <div class="bg-lightgrey br-16 mb-32">
+                                <div class="game-post d-flex align-items-center justify-content-between">
+                                    <div class="d-flex grey_white">
+                                        <div class="card border-0 bg-transparent mr-3">
+                                            <div class="card-body card-clr p-0">
+                                                <div class="card-image mr-0">
+                                                    <div class="img-frame">
+                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <span class="mr-3 font-weight-bold review-profile-heading">
+                                                    <a type="button">GamersPlayAlex</a>
+                                                </span>
+                                                <span class="date-post">August 26, 2022</span>
+                                            </div>
+                                            <div class="title-badge">
+                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dots-dropdown dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">First Item</a>
+                                            <a class="dropdown-item" href="#">Second One</a>
+                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="description">
+                                    <p>Hello! What You’re Looking For?</p>
+                                </div>
+                                <div class="desc-detail">
+                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
+                                </div>
+
+                                <div class="carousel_section">
+                                    <div id="carousel-pcgear" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-pcgear" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-pcgear" data-slide-to="1" class=""></li>
+                                            <li data-target="#carousel-pcgear" data-slide-to="2" class=""></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="{{asset('imgs/carousel-imgs/valorant-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/overwatch-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="{{asset('imgs/carousel-imgs/wild-rift-lfg.png')}}" class="d-block w-100" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carousel-pcgear" role="button" data-slide="prev">
+                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-pcgear" role="button" data-slide="next">
+                                            <i class="fa-solid fa-location-arrow next-icon"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="likes d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
+                                            <span class="ml-2">23</span>
+                                        </div>
+                                        <a href="/post-details" class="likes comments d-flex align-items-center">
+                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
+                                            <span class="ml-2">13</span>
+                                        </a>
+                                    </div>
+                                    <div class="hashtag">
+                                        <div class="">#Newcomer Selfies</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

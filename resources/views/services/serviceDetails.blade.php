@@ -1,6 +1,6 @@
 <div class="main-services">
     <div id="" class="service_category main-category position-relative">
-        <ul class="menu_ul nav nav-pills top-head-cate flex-nowrap" id="pills-tab" role="tablist">
+        <ul class="menu_ul nav nav-pills top-head-cate" id="pills-tab" role="tablist">
 
             @include('services.categories-list')
         </ul>

@@ -152,7 +152,7 @@
 
 
     <!-- This is a Static Code -->
-    <div class="main-services">
+    <div class="main-services mt-4">
         <div class="recent-events">
             <h2 class="text-white">Recent Events</h2>
             <div id="owlCarouselEvents" class="owl-carousel owl-theme">
@@ -170,82 +170,13 @@
                             <div class="card-footer">1/8</div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">LEAGUE S12 Worlds Picks & Guessing</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">2/8</div>
-                            </div>
-                            <div class="card-footer">1/8</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">Halloween Discord Gaming</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">3/8</div>
-                            </div>
-                            <div class="card-footer">1/8</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">PLAY WITH THE LEGENDS</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">4/8</div>
-                            </div>
-                            <div class="card-footer">1/8</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">INFLUENCER GROWING PROJECT</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn learn-more">Learn more</button>
-                                </div>
-                                <div class="card-footer">5/8</div>
-                            </div>
-                            <div class="card-footer">1/8</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">LEAGUE S12 Worlds Picks & Guessing</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">6/8</div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">LEAGUE S12 Worlds Picks & Guessing</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
                             </div>
                             <div class="card-btn">
                                 <div class="bg-blur"></div>
@@ -254,18 +185,13 @@
                             <div class="card-footer">1/8</div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">Halloween Discord Gaming</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">7/8</div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">Halloween Discord Gaming</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
                             </div>
                             <div class="card-btn">
                                 <div class="bg-blur"></div>
@@ -274,18 +200,77 @@
                             <div class="card-footer">1/8</div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="card border-0 p-0">
-                            <div class="card-body">
-                                <div class="card-title">PLAY WITH THE LEGENDS</div>
-                                <div class="card-text">
-                                    Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
-                                </div>
-                                <div class="card-btn">
-                                    <div class="bg-blur"></div>
-                                    <button class="new-btn check-now">Check now</button>
-                                </div>
-                                <div class="card-footer">8/8</div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">PLAY WITH THE LEGENDS</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
+                            </div>
+                            <div class="card-btn">
+                                <div class="bg-blur"></div>
+                                <button class="new-btn check-now">Check now</button>
+                            </div>
+                            <div class="card-footer">1/8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">INFLUENCER GROWING PROJECT</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
+                            </div>
+                            <div class="card-btn">
+                                <div class="bg-blur"></div>
+                                <button class="new-btn learn-more">Learn more</button>
+                            </div>
+                            <div class="card-footer">1/8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">LEAGUE S12 Worlds Picks & Guessing</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
+                            </div>
+                            <div class="card-btn">
+                                <div class="bg-blur"></div>
+                                <button class="new-btn check-now">Check now</button>
+                            </div>
+                            <div class="card-footer">1/8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">Halloween Discord Gaming</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
+                            </div>
+                            <div class="card-btn">
+                                <div class="bg-blur"></div>
+                                <button class="new-btn check-now">Check now</button>
+                            </div>
+                            <div class="card-footer">1/8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card border-0 p-0">
+                        <div class="card-body">
+                            <div class="card-title">PLAY WITH THE LEGENDS</div>
+                            <div class="card-text">
+                                Natoque imperdiet placerat non pulvinar nam consequat ut id pellentesque.
+                            </div>
+                            <div class="card-btn">
+                                <div class="bg-blur"></div>
+                                <button class="new-btn check-now">Check now</button>
                             </div>
                             <div class="card-footer">1/8</div>
                         </div>
@@ -294,60 +279,14 @@
             </div>
         </div>
 
-            <div class="recommended">
-                <h2 class="text-white">Recommended</h2>
-                <div class="position-relative game-carousel">
-                    <div id="owlCarouselGames" class="owl-carousel owl-theme">
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-1.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-4.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-3.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-4.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-5.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-6.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-1.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-2.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-3.svg')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="/services/info" target="blank">
-                                <img src="{{asset('imgs/game-4.svg')}}" alt="">
-                            </a>
-                        </div>
+        <div class="recommended">
+            <h2 class="text-white">Recommended</h2>
+            <div class="position-relative game-carousel">
+                <div id="owlCarouselGames" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="">
+                            <img src="{{asset('imgs/game-1.svg')}}" alt="">
+                        </a>
                     </div>
                     <div class="item">
                         <a href="">
@@ -408,65 +347,96 @@
             </div>
         </div>
 
-            <div class="service-game-card-section">
-                <a href="/gpplus/">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-rating">
-                                <div class="card-image">
-                                    <img src="{{asset('imgs/jaylon.svg')}}" alt="">
-                                    <div class="online"></div>
-                                </div>
-                                <div class="rating-num d-flex align-items-center">
-                                    <span>
-                                        <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                        5.0
-                                    </span>
-                                    <div class="tag-box">13</div>
-                                </div>
-                            </div>
-                            <div class="card-title">
-                                <h4>Jaylon</h4>
-                                <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
-                            </div>
-
-                            <div class="game-label border-bg br-8 p-1px">
-                                <h5 class="bg-darkgrey br-8 text-white">League of Legends</h5>
-                            </div>
-                            <div class="card-text">I love to plau League of legends and Apex Legends!</div>
-                            <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
-
-                            <div class="card-footer border-0 p-0">
-                                <div class="game-price">
-                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                    <span>225<small>.0</small> <span class="game-title">/Game</span></span>
-                                </div>
-                            </div>
-
-                            <div class="game-playBtn">
-                                <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
-                            </div>
+        <div class="service-game-card-section">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-rating">
+                        <div class="card-image">
+                            <img src="{{asset('imgs/jaylon.svg')}}" alt="">
+                            <div class="online"></div>
+                        </div>
+                        <div class="rating-num d-flex align-items-center">
+                            <span>
+                                <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                5.0
+                            </span>
+                            <div class="tag-box">13</div>
                         </div>
                     </div>
-                </a>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-rating">
-                            <div class="card-image">
-                                <img src="{{asset('imgs/talan.svg')}}" alt="">
-                                <div class="online"></div>
-                            </div>
-                            <div class="rating-num d-flex align-items-center">
-                                <span>
-                                    <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
-                                    5.0
-                                </span>
-                                <div class="tag-box">13</div>
-                            </div>
+                    <div class="card-title">
+                        <h4>Jaylon</h4>
+                        <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                    </div>
+
+                    <div class="game-label border-bg br-8 p-1px">
+                        <h5 class="bg-darkgrey br-8 text-white">League of Legends</h5>
+                    </div>
+                    <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                    <div class="buyBtn bg-purple-white rounded-pill">Buy 2 get 1 free</div>
+
+                    <div class="card-footer border-0 p-0">
+                        <div class="game-price">
+                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                            <span>225<small>.0</small> <span class="game-title">/Game</span></span>
                         </div>
-                        <div class="card-title">
-                            <h4>Talan</h4>
-                            <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                    </div>
+
+                    <div class="game-playBtn">
+                        <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-rating">
+                        <div class="card-image">
+                            <img src="{{asset('imgs/talan.svg')}}" alt="">
+                            <div class="online"></div>
+                        </div>
+                        <div class="rating-num d-flex align-items-center">
+                            <span>
+                                <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                5.0
+                            </span>
+                            <div class="tag-box">13</div>
+                        </div>
+                    </div>
+                    <div class="card-title">
+                        <h4>Talan</h4>
+                        <img src="{{asset('imgs/services/gold_badge.svg')}}" alt="">
+                    </div>
+
+                    <div class="game-label border-bg br-8 p-1px">
+                        <h5 class="bg-darkgrey br-8 text-white">E-chat</h5>
+                    </div>
+                    <div class="card-text">I love to plau League of legends and Apex Legends!</div>
+                    <div class="buyBtn bg-purple-white rounded-pill">16% OFF</div>
+
+                    <div class="card-footer border-0 p-0">
+                        <div class="game-price">
+                            <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                            <span>225<small>.0</small> <span class="game-title"><del>300</del>/10Min</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-playBtn">
+                        <img src="{{asset('imgs/services/game-playBtn.svg')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-rating">
+                        <div class="card-image">
+                            <img src="{{asset('imgs/tatiana.svg')}}" alt="">
+                            <div class="online"></div>
+                        </div>
+                        <div class="rating-num d-flex align-items-center">
+                            <span>
+                                <img src="{{asset('imgs/icons/rating-star.svg')}}" alt="">
+                                5.0
+                            </span>
+                            <div class="tag-box">13</div>
                         </div>
                     </div>
                     <div class="card-title">

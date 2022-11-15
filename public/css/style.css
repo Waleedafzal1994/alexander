@@ -132,8 +132,8 @@ a:hover{
     margin-left: 15px;
     padding: 0;
     user-select: none;
-    min-height: 300px;
-    margin-bottom: 12px !important;
+    /* min-height: 300px; */
+    margin-bottom: 17px !important;
 }
 
 .service_category ul {
@@ -2312,7 +2312,13 @@ a.slider-link:hover {
 } */
 .mainBody{
     width: 100%;
-    margin-top: -93px;
+    margin-top: -67px;
+}
+.mainBody > .tab-content{
+    margin-top: 56px;
+}
+.service-type-section{
+    margin-top: 20px;
 }
 .review-body{
     border: 0 !important;
@@ -4371,6 +4377,9 @@ div.emoji-drop-down div.emoji{
     padding-right: 15px !important;
 }
 
+.profileBar {
+    margin-top: 20px;
+}
 .profileBar .card{
     background: #2C2F36;
     border-radius: 16px;
@@ -4770,12 +4779,14 @@ input::-moz-focus-outer {
 }
 .dots-dropdown >a{
     width: 30px;
-    height: 30px;
+    height: 30px !important;
     background: #212429;
     border-radius: 18.5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50% !important;
+    padding: 0 !important;
 }
 .dots-dropdown >a::after{
     display: none;
@@ -6011,12 +6022,17 @@ svg circle:last-of-type {
 .post-left-section .carousel .carousel-item img{
     border-radius: 20px;
 }
-
+.highlight-section .likes{
+    cursor: pointer;
+}
 .highlight-section .likes span{
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.01em;
     color: #ADADBF;
+}
+.highlight-section .likes.comments{
+    margin-left: 30px;
 }
 .comment-box-section >div{
     margin-bottom: 12px;
