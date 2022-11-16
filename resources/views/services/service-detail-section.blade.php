@@ -490,7 +490,7 @@
 
                             <div class="language mt-5">
                                 <h2 class="text-white m-0 mb-4">Language</h2>
-                                <form action="">
+                                <form action="" id="langForm">
                                     <div class="row">
                                         <div class="col-3 mb-4">
                                             <div class="form-check">
@@ -516,9 +516,7 @@
                                                 <label class="form-check-label" for="lang4">Français</label>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
                                         <div class="col-3 mb-4">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="lang5">
@@ -543,8 +541,234 @@
                                                 <label class="form-check-label" for="lang8">Italiana</label>
                                             </div>
                                         </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang9">
+                                                <label class="form-check-label" for="lang9">Português (PT)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang10">
+                                                <label class="form-check-label" for="lang10">Português (BR)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang11">
+                                                <label class="form-check-label" for="lang11">Norsk</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang12">
+                                                <label class="form-check-label" for="lang12">Suomi</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang13">
+                                                <label class="form-check-label" for="lang13">Svenska</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang14">
+                                                <label class="form-check-label" for="lang14">Dansk</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang15">
+                                                <label class="form-check-label" for="lang15">Čeština</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang16">
+                                                <label class="form-check-label" for="lang16">Magyar</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang17">
+                                                <label class="form-check-label" for="lang17">Română</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang18">
+                                                <label class="form-check-label" for="lang18">日本語</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang19">
+                                                <label class="form-check-label" for="lang19">简体中文</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang20">
+                                                <label class="form-check-label" for="lang20">繁體中文</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang21">
+                                                <label class="form-check-label" for="lang21">Polski</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang22">
+                                                <label class="form-check-label" for="lang22">Ελληνικά</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang23">
+                                                <label class="form-check-label" for="lang23">Русский</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang24">
+                                                <label class="form-check-label" for="lang24">Türkçe</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang25">
+                                                <label class="form-check-label" for="lang25">Български</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang26">
+                                                <label class="form-check-label" for="lang26">العربية</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang27">
+                                                <label class="form-check-label" for="lang27">한국어</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang28">
+                                                <label class="form-check-label" for="lang28">עברית</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang29">
+                                                <label class="form-check-label" for="lang29">Latviski</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang30">
+                                                <label class="form-check-label" for="lang30">Українська</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang31">
+                                                <label class="form-check-label" for="lang31">Bahasa Indonesia</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang32">
+                                                <label class="form-check-label" for="lang32">Bahasa Malaysia</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang33">
+                                                <label class="form-check-label" for="lang33">ภาษาไทย</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang34">
+                                                <label class="form-check-label" for="lang34">Eesti</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang35">
+                                                <label class="form-check-label" for="lang35">Hrvatski</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang36">
+                                                <label class="form-check-label" for="lang36">Lietuvių</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang37">
+                                                <label class="form-check-label" for="lang37">Slovenčina</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang38">
+                                                <label class="form-check-label" for="lang38">Srpski</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang39">
+                                                <label class="form-check-label" for="lang39">Slovenščina</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang40">
+                                                <label class="form-check-label" for="lang40">Tiếng Việt</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang41">
+                                                <label class="form-check-label" for="lang41">Filipino</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang42">
+                                                <label class="form-check-label" for="lang42">Íslenska</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang43">
+                                                <label class="form-check-label" for="lang43">Georgian</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="lang44">
+                                                <label class="form-check-label" for="lang44">Macedonian</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
+                                <button id="expandBtn" class="new-btn p-0 showLang bg-transparent border-0 shadow-0 purple-white font-16 font-weight-bold my-4">Show more</button>
                             </div>
 
                             <div class="price pricing">
@@ -719,6 +943,21 @@
                 $('.age .new-btn')
                     .removeClass('active'); 
                 $(this).addClass('active');
+            });
+
+
+            // $('.showLang').click(function() {
+            //     $('.language form').toggleClass('full-height');
+            // });
+
+            $('button').click(function(){
+                if($('#langForm').hasClass("readmore")) {
+                    $('#expandBtn').html('Show more');
+                    $('#langForm').removeClass("readmore");
+                } else {
+                    $('#expandBtn').html('Show less');
+                    $('#langForm').addClass("readmore");
+                }
             });
         });
     </script>

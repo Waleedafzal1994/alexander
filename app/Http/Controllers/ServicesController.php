@@ -510,4 +510,10 @@ class ServicesController extends Controller
             }
         }
     }
+
+    public function settingPage(){
+        return view('services.settingPage');
+    }
 }
+
+

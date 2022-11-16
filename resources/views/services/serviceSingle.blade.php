@@ -935,33 +935,55 @@
                                         <div class="tag-box">6</div>
                                     </div>
                                     <div class="card-body bg-darkgrey">
-                                        <div class="card border-0 border-bg">
-                                            <div class="card-body">
-                                                <div class="service-title">1v1 me in rift!</div>
-                                                <div class="service-btn">Buy 3 get 1 free</div>
-                                                <div class="service-game-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>17.00/ Game</span>
+                                        <div class="scroll-card">
+                                            <div class="card border-0 border-bg">
+                                                <div class="card-body">
+                                                    <div class="service-title">1v1 me in rift!</div>
+                                                    <div class="service-btn">Buy 3 get 1 free</div>
+                                                    <div class="service-game-price">
+                                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                        <span>17.00/ Game</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card border-0 border-bg">
-                                            <div class="card-body">
-                                                <div class="service-title">1v1 me in rift!</div>
-                                                <div class="service-btn">Buy 3 get 1 free</div>
-                                                <div class="service-game-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>17.00/ Game</span>
+                                            <div class="card border-0 border-bg">
+                                                <div class="card-body">
+                                                    <div class="service-title">1v1 me in rift!</div>
+                                                    <div class="service-btn">Buy 3 get 1 free</div>
+                                                    <div class="service-game-price">
+                                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                        <span>17.00/ Game</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card border-0 border-bg">
-                                            <div class="card-body">
-                                                <div class="service-title">1v1 me in rift!</div>
-                                                <div class="service-btn">Buy 3 get 1 free</div>
-                                                <div class="service-game-price">
-                                                    <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
-                                                    <span>17.00/ Game</span>
+                                            <div class="card border-0 border-bg">
+                                                <div class="card-body">
+                                                    <div class="service-title">1v1 me in rift!</div>
+                                                    <div class="service-btn">Buy 3 get 1 free</div>
+                                                    <div class="service-game-price">
+                                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                        <span>17.00/ Game</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card border-0 border-bg">
+                                                <div class="card-body">
+                                                    <div class="service-title">1v1 me in rift!</div>
+                                                    <div class="service-btn">Buy 3 get 1 free</div>
+                                                    <div class="service-game-price">
+                                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                        <span>17.00/ Game</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card border-0 border-bg">
+                                                <div class="card-body">
+                                                    <div class="service-title">1v1 me in rift!</div>
+                                                    <div class="service-btn">Buy 3 get 1 free</div>
+                                                    <div class="service-game-price">
+                                                        <img src="{{asset('imgs/icons/currency-coin.svg')}}" alt="">
+                                                        <span>17.00/ Game</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

@@ -6949,3 +6949,16 @@ table .card.purple-white .card-image .img-frame{
     opacity: .4;
     margin-bottom: 6px;
 }
+
+.scroll-card{
+    height: 500px;
+    overflow-y: auto;
+}
+
+.language form{
+    height: 80px;
+    overflow: hidden;
+}
+.language form.readmore{
+    height: auto !important;
+}

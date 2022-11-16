@@ -277,3 +277,5 @@ Route::get('/terms-of-service', [HomeController::class, 'tos'])->name('tos');
 Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
 
 Route::get('/services/info', [PostController::class, 'serviceDetailSection'])->name('serviceDetailSection');
+
+Route::get('/settings/userProfile', [ServicesController::class, 'settingPage'])->name('settingPage');

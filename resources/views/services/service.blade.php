@@ -284,7 +284,7 @@
             <div class="position-relative game-carousel">
                 <div id="owlCarouselGames" class="owl-carousel owl-theme">
                     <div class="item">
-                        <a href="">
+                        <a href="/services/info">
                             <img src="{{asset('imgs/game-1.svg')}}" alt="">
                         </a>
                     </div>
