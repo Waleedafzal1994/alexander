@@ -152,9 +152,9 @@
 
 
     <!-- This is a Static Code -->
-    <div class="main-services mt-4">
+    <div class="main-services mt-5">
         <div class="recent-events">
-            <h2 class="text-white">Recent Events</h2>
+            <h2 class="new-h2">Recent Events</h2>
             <div id="owlCarouselEvents" class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="card border-0 p-0">
@@ -280,7 +280,7 @@
         </div>
 
         <div class="recommended">
-            <h2 class="text-white">Recommended</h2>
+            <h2 class="new-h2">Recommended</h2>
             <div class="position-relative game-carousel">
                 <div id="owlCarouselGames" class="owl-carousel owl-theme">
                     <div class="item">

@@ -50,6 +50,9 @@ a:hover{
 .font-15{
     font-size: 15px !important;
 }
+.font-14{
+    font-size: 15px !important;
+}
 .font-16{
     font-size: 16px !important;
 }
@@ -90,6 +93,10 @@ a:hover{
 }
 .p-12px{
     padding: 12px !important;
+}
+.px-12px{
+    padding-left: 12px !important;
+    padding-right: 12px !important;
 }
 
 .border-bg{
@@ -704,14 +711,17 @@ body,
 
 
 .newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
+    /* width: 2px;
+    height: 2px; */
+    width: 0;
+    height: 0;
 }
 .newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-track {
     border-radius: 10px;
 }
 .newdropdown .dropdown .dropdown-menu .scroll-div::-webkit-scrollbar-thumb {
-    background-color: #f6f6ff;
+    /* background-color: #f6f6ff; */
+    background-color: transparent;
     border-radius: var(--border-radius);
 }
 
@@ -4117,6 +4127,9 @@ footer{
 .post-tabs .nav-link.active svg path{
     fill: #9B32ED;
 }
+.post-tabs .nav-link.active svg g rect:last-child{
+    fill: #9B32ED;
+}
 /* .post-tabs .nav-link svg::before{
     display: flex;
     align-items: center;
@@ -6405,6 +6418,7 @@ svg circle:last-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 12px;
 }
 
 .ranking-section .card{
@@ -6732,18 +6746,34 @@ table .card.purple-white .card-image .img-frame{
     font-size: 18px;
 }
 
+/* height width of color circle */
 .hw-61px{
-    height: 61px;
-    width: 61px;
+    height: 61px !important;
+    width: 61px !important;
 }
 .hw-57px{
-    height: 57px;
-    width: 57px;
+    height: 57px !important;
+    width: 57px !important;
 }
 .hw-52px{
-    height: 52px;
-    width: 52px;
+    height: 52px !important;
+    width: 52px !important;
 }
+
+.hw-81px{
+    height: 81px !important;
+    width: 81px !important;
+}
+.hw-76px{
+    height: 76px !important;
+    width: 76px !important;
+}
+.hw-69px{
+    height: 69px !important;
+    width: 69px !important;
+}
+
+
 .filters{
     padding: 32px;
     padding-bottom: 50px;
@@ -6961,4 +6991,110 @@ table .card.purple-white .card-image .img-frame{
 }
 .language form.readmore{
     height: auto !important;
+}
+
+
+.user-profile .card .card-clr .card-image .img-frame::before,
+.user-profile .card .card-clr .card-image .img-frame::after{
+    background-size: contain;
+    height: 19px;
+    width: 19px;
+}
+.user-profile .desc-detail{
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.new-h2{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+.gp-text{
+    color: #ADADBF;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.user_profile_form label{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #F1F1F1;
+    opacity: 0.5;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.user_profile_form .form-control,
+.user_profile_form .newdropdown .dropdown .dropdown-toggle{
+    background: #212429 !important;
+    border-radius: 24px !important;
+    height: 48px;
+    padding-left: 16px !important;
+    border: 0 !important;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(255 255 255 / 80%) !important;
+}
+.user_profile_form .form-group .border-bg{
+    padding: 1.5px;
+}
+
+.user_profile_form .newdropdown .dropdown .dropdown-toggle:hover{
+    border: 0 !important;
+}
+.user_profile_form .newdropdown .dropdown .dropdown-toggle::after{
+    border-top: 0.55em solid;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0;
+    border-left: 0.4em solid transparent;
+    opacity: .5;
+    right: 16px !important;
+}
+.user_profile_form .newdropdown .dropdown .dropdown-menu{
+    background: #212429 !important;
+}
+.user_profile_form .newdropdown .dropdown .dropdown-menu li a{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(255 255 255 / 80%) !important;
+}
+.user_profile_form .newdropdown .dropdown .dropdown-menu li a:hover{
+    background-color: #2C2F36 !important;
+
+}
+.input-tags {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+}
+.input-tags button{
+    min-width: 89px;
+    height: 24px;
+    margin-right: 8px;
+    display: none;
+}
+.input-tags button.removeTag{
+    display: flex !important;
+}
+.socials {
+    display: flex;
+    align-items: center;
+}
+.socials .socials_icon{
+    background: #212429;
+    border-radius: 50%;
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    padding-top: 8px;
+    margin-right: 8px;
 }

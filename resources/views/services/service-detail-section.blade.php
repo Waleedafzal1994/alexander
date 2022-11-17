@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="main-service-detail">
-        <h2>League of Legends</h2>
+    <div class="main-service-detail mt-5">
+        <h2 class="new-h2 mb-0">League of Legends</h2>
         <div class="gp-text mb-4">23.5k GP+</div>
 
         <div class="service-section">
@@ -945,12 +945,8 @@
                 $(this).addClass('active');
             });
 
-
-            // $('.showLang').click(function() {
-            //     $('.language form').toggleClass('full-height');
-            // });
-
-            $('button').click(function(){
+            // Show Hide Language in sidebar  
+            $('#expandBtn').click(function(){
                 if($('#langForm').hasClass("readmore")) {
                     $('#expandBtn').html('Show more');
                     $('#langForm').removeClass("readmore");

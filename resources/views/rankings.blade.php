@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="main-ranking-section">
-        <h2 class="my-3">Rankings</h2>
+    <div class="main-ranking-section mt-5">
+        <h2 class="new-h2">Rankings</h2>
         <div class="ranking-section">
             
             <div class="small-card card golden-white">
