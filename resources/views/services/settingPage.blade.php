@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
     <!-- Posts Section -->
     <div class="container post-tabs mt-5 px-0">
         <h2 class="new-h2">Settings</h2>
@@ -120,6 +119,8 @@
                         Block List
                     </a>
 
+                    <hr class="dash border-white">
+
                     <a href="logout" class="nav-link logout">
                         <span>
                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -145,7 +146,10 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="post-left-section user-profile">
-                            <div class="bg-lightgrey br-16 mb-32">
+                            <div class="bg-lightgrey br-16 mb-32 pt-4">
+                                <div class="profile-heading">
+                                    <h3>Profile</h3>
+                                </div>
                                 <div class="game-post d-flex align-items-center justify-content-center">
                                     <div class="d-flex align-items-center grey_white">
                                         <div class="card border-0 bg-transparent mr-3">
@@ -157,8 +161,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="subscribe update-photo">
-                                            <button class="new-btn text-white">Update Photo</button>
+                                        <div class="subscribe update-photo pointer">
+                                            <input type="file">
+                                            <button class="new-btn text-white pointer">Update Photo</button>
                                         </div>
                                     </div>
                                 </div>
@@ -420,7 +425,21 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12 text-end mt-4">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="">About Me</label>
+                                                <!-- <div class="textArea-body bg-darkgrey" id="focus_textarea"> -->
+                                                    <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-darkgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)"
+                                                        rows="9">Hello, I'm alex and that's my GamersPlay Bio.</textarea>
+                                                <!-- </div> -->
+                                                <div class="text-counter position-static justify-content-end">
+                                                    <span id="charCounting" class="counter">0</span>
+                                                    <span class="fix-count">/500</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 text-end">
                                             <button class="new-btn rounded-pill px-3 py-2">Save Changes</button>
                                         </div>
                                     </div>
@@ -430,90 +449,58 @@
                     </div>
                     <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
                         <div class="post-left-section">
-                            <div class="bg-lightgrey br-16 mb-32">
-                                <div class="game-post d-flex align-items-center justify-content-between">
-                                    <div class="d-flex grey_white">
-                                        <div class="card border-0 bg-transparent mr-3">
-                                            <div class="card-body card-clr p-0">
-                                                <div class="card-image mr-0">
-                                                    <div class="img-frame">
-                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
-                                                    </div>
+                            <div class="bg-lightgrey br-16 mb-32 pt-4">
+                                <div class="profile-heading">
+                                    <h3>Account</h3>
+                                    <p class="mb-4">General account information</p>
+                                </div>
+
+                                <div class="account-details bg-darkgrey br-16">
+                                    <div class="p-32px">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="heading text-white mr-4">ID</div>
+                                            <div class="border-bg rounded-pill p-1px">
+                                                <div class="details bg-lightgrey rounded-pill text-center text-white font-14 fw-600">
+                                                    7938475
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <span class="mr-3 font-weight-bold review-profile-heading">
-                                                    <a type="button">GamersPlayAlex</a>
-                                                </span>
-                                                <span class="date-post">August 26, 2022</span>
-                                            </div>
-                                            <div class="title-badge">
-                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="heading text-white mr-4">Registration Date:</div>
+                                            <div class="border-bg rounded-pill p-1px">
+                                                <div class="details bg-lightgrey rounded-pill text-center text-white font-14 fw-600">
+                                                    14 Nov 2022
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="dots-dropdown dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">First Item</a>
-                                            <a class="dropdown-item" href="#">Second One</a>
-                                            <a class="dropdown-item" href="#">The last but not the least</a>
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="heading text-white mr-4">Registered With:</div>
+                                            <div class="border-bg rounded-pill p-1px">
+                                                <div class="details bg-lightgrey rounded-pill text-center text-white font-14 fw-600">
+                                                    Signed In With Google
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="heading text-white mr-4">Password:</div>
+                                            <div class="border-bg rounded-pill p-1px">
+                                                <div class="details bg-lightgrey rounded-pill text-center text-white font-14 fw-600">
+                                                    ***********
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="changeBtn">
+                                            <button class="new-btn">Change</button>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="description">
-                                    <p>Hello! What You’re Looking For?</p>
-                                </div>
-                                <div class="desc-detail">
-                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
-                                </div>
-
-                                <div class="carousel_section">
-                                    <div id="carousel-official" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-official" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-official" data-slide-to="1" class=""></li>
-                                            <li data-target="#carousel-official" data-slide-to="2" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{asset('imgs/carousel-imgs/fortnite-lfg.jpg')}}" class="d-block w-100" alt="">
-                                            </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/apex-lfg.jpg')}}" class="d-block w-100" alt="">
-                                            </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/genshin-impact-lfg.png')}}" class="d-block w-100" alt="">
+                                    <div class="dash-border">
+                                        <div class="p-32px">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="heading">Delete Account</div>
+                                                <button class="new-btn bg-transparent shadow-0">Delete</button>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carousel-official" role="button" data-slide="prev">
-                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carousel-official" role="button" data-slide="next">
-                                            <i class="fa-solid fa-location-arrow next-icon"></i>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <div class="likes d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
-                                            <span class="ml-2">23</span>
-                                        </div>
-                                        <a href="/post-details" class="likes comments d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
-                                            <span class="ml-2">13</span>
-                                        </a>
-                                    </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
                                     </div>
                                 </div>
                             </div>
@@ -521,90 +508,86 @@
                     </div>
                     <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
                         <div class="post-left-section">
-                            <div class="bg-lightgrey br-16 mb-32">
-                                <div class="game-post d-flex align-items-center justify-content-between">
-                                    <div class="d-flex grey_white">
-                                        <div class="card border-0 bg-transparent mr-3">
-                                            <div class="card-body card-clr p-0">
-                                                <div class="card-image mr-0">
-                                                    <div class="img-frame">
-                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <span class="mr-3 font-weight-bold review-profile-heading">
-                                                    <a type="button">GamersPlayAlex</a>
-                                                </span>
-                                                <span class="date-post">August 26, 2022</span>
-                                            </div>
-                                            <div class="title-badge">
-                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dots-dropdown dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">First Item</a>
-                                            <a class="dropdown-item" href="#">Second One</a>
-                                            <a class="dropdown-item" href="#">The last but not the least</a>
-                                        </div>
-                                    </div>
+                            <div class="bg-lightgrey br-16 mb-32 pt-4">
+                                <div class="profile-heading">
+                                    <h3>Notifications</h3>
+                                    <p class="mb-4">Customize your notifications.</p>
                                 </div>
+                                <div class="bg-darkgrey br-16 notification">
+                                    <div class="px-32px pt-32px">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">Email Subscriptions:</div>
+                                                <p>Subscribe to receive order notifications, news, major updates and promotional events.</p>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="description">
-                                    <p>Hello! What You’re Looking For?</p>
-                                </div>
-                                <div class="desc-detail">
-                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
-                                </div>
+                                    <hr class="dash border-white">
 
-                                <div class="carousel_section">
-                                    <div id="carousel-recommended" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-recommended" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-recommended" data-slide-to="1" class=""></li>
-                                            <li data-target="#carousel-recommended" data-slide-to="2" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{asset('imgs/carousel-imgs/league-of-legends-lfg.png')}}" class="d-block w-100" alt="">
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">GamersPlay Recommendation:</div>
+                                                <p>Receive GamersPlay recommended by the platform.</p>
                                             </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/legends-of-runeterra-lfg.jpg')}}" class="d-block w-100" alt="">
-                                            </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/minecraft-lfg.png')}}" class="d-block w-100" alt="">
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carousel-recommended" role="button" data-slide="prev">
-                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carousel-recommended" role="button" data-slide="next">
-                                            <i class="fa-solid fa-location-arrow next-icon"></i>
-                                            <span class="sr-only">Next</span>
-                                        </a>
                                     </div>
-                                </div>
-                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <div class="likes d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
-                                            <span class="ml-2">23</span>
+                                    
+                                    <hr class="dash border-white">
+
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center pb-3">
+                                            <div class="col-8">
+                                                <div class="heading">Sound</div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
                                         </div>
-                                        <a href="/post-details" class="likes comments d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
-                                            <span class="ml-2">13</span>
-                                        </a>
+                                        <div class="row align-items-center pb-3">
+                                            <div class="col-8">
+                                                <div class="heading">Order</div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">IM Message</div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="changeBtn px-32px pb-32px pt-3 text-end text-right">
+                                        <button class="new-btn">Save Change</button>
                                     </div>
                                 </div>
                             </div>
@@ -612,90 +595,65 @@
                     </div>
                     <div class="tab-pane fade" id="privacy" role="tabpanel" aria-labelledby="privacy-tab">
                         <div class="post-left-section">
-                            <div class="bg-lightgrey br-16 mb-32">
-                                <div class="game-post d-flex align-items-center justify-content-between">
-                                    <div class="d-flex grey_white">
-                                        <div class="card border-0 bg-transparent mr-3">
-                                            <div class="card-body card-clr p-0">
-                                                <div class="card-image mr-0">
-                                                    <div class="img-frame">
-                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <span class="mr-3 font-weight-bold review-profile-heading">
-                                                    <a type="button">GamersPlayAlex</a>
-                                                </span>
-                                                <span class="date-post">August 26, 2022</span>
-                                            </div>
-                                            <div class="title-badge">
-                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dots-dropdown dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">First Item</a>
-                                            <a class="dropdown-item" href="#">Second One</a>
-                                            <a class="dropdown-item" href="#">The last but not the least</a>
-                                        </div>
-                                    </div>
+                            <div class="bg-lightgrey br-16 mb-32 pt-4">
+                                <div class="profile-heading">
+                                    <h3>Privacy Settings</h3>
+                                    <p class="mb-4">Customize your Privacy.</p>
                                 </div>
+                                <div class="bg-darkgrey br-16 notification">
+                                    <div class="px-32px pt-32px pb-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">Hide Birthday:</div>
+                                                <p>Activate to stop other user from seeing your birthday.</p>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="description">
-                                    <p>Hello! What You’re Looking For?</p>
-                                </div>
-                                <div class="desc-detail">
-                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
-                                </div>
+                                    <hr class="dash border-white">
 
-                                <div class="carousel_section">
-                                    <div id="carousel-highlight" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-highlight" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-highlight" data-slide-to="1" class=""></li>
-                                            <li data-target="#carousel-highlight" data-slide-to="2" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{asset('imgs/carousel-imgs/overwatch-lfg.png')}}" class="d-block w-100" alt="">
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">Anonymous on Leaderboard:</div>
+                                                <p>When activated, you’ll not be shown on the client leaderboard.</p>
                                             </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/valorant-lfg.png')}}" class="d-block w-100" alt="">
-                                            </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/wild-rift-lfg.png')}}" class="d-block w-100" alt="">
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carousel-highlight" role="button" data-slide="prev">
-                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carousel-highlight" role="button" data-slide="next">
-                                            <i class="fa-solid fa-location-arrow next-icon"></i>
-                                            <span class="sr-only">Next</span>
-                                        </a>
                                     </div>
-                                </div>
-                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <div class="likes d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
-                                            <span class="ml-2">23</span>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading">Turn Off Suggestions:</div>
+                                                <p>When activated, the system will not suggest you to anyone.</p>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
                                         </div>
-                                        <a href="/post-details" class="likes comments d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
-                                            <span class="ml-2">13</span>
-                                        </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="changeBtn px-32px pb-32px pt-3 text-end text-right">
+                                        <button class="new-btn">Save Change</button>
                                     </div>
                                 </div>
                             </div>
@@ -703,90 +661,114 @@
                     </div>
                     <div class="tab-pane fade" id="imSetting" role="tabpanel" aria-labelledby="imSetting-tab">
                         <div class="post-left-section">
-                            <div class="bg-lightgrey br-16 mb-32">
-                                <div class="game-post d-flex align-items-center justify-content-between">
-                                    <div class="d-flex grey_white">
-                                        <div class="card border-0 bg-transparent mr-3">
-                                            <div class="card-body card-clr p-0">
-                                                <div class="card-image mr-0">
-                                                    <div class="img-frame">
-                                                        <img id="circle-profile-pic" src="{{asset('imgs/aunty.jpg')}}" class="diamond-img rounded-circle" alt="" />
-                                                    </div>
+                            <div class="bg-lightgrey im_setting br-16 mb-32 pt-4">
+                                <div class="profile-heading">
+                                    <h3>Privacy Settings</h3>
+                                    <p class="mb-4">Customize your Privacy.</p>
+                                </div>
+                                <div class="bg-darkgrey br-16 notification">
+                                    <div class="px-32px pt-32px pb-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading"><label class="online"></label> Online</div>
+                                                <div class="">
+                                                    <p>No auto reply yet</p>
+                                                    <!-- <div class="add_auto_reply">
+                                                        <div class="form-group border-bg br-16 p-1px">
+                                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-lightgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="9">Please add your auto reply here</textarea>
+                                                            <div class="text-counter position-static justify-content-end">
+                                                                <span id="charCounting" class="counter">0</span>
+                                                                <span class="fix-count">/500</span>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <span class="mr-3 font-weight-bold review-profile-heading">
-                                                    <a type="button">GamersPlayAlex</a>
-                                                </span>
-                                                <span class="date-post">August 26, 2022</span>
-                                            </div>
-                                            <div class="title-badge">
-                                                <img src="{{asset('imgs/icons/blue_badge.svg')}}" alt="">
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <button class="new-btn editBtn">Edit</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="dots-dropdown dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">First Item</a>
-                                            <a class="dropdown-item" href="#">Second One</a>
-                                            <a class="dropdown-item" href="#">The last but not the least</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="description">
-                                    <p>Hello! What You’re Looking For?</p>
-                                </div>
-                                <div class="desc-detail">
-                                    Hi, I, Paola and I love to plau League of legends and Apex Legends! Feel free to dm me so we can play together! Don’t forget to follow me on social media for update.
-                                </div>
+                                    <hr class="dash border-white">
 
-                                <div class="carousel_section">
-                                    <div id="carousel-chitchat" class="lightbox mb-5 carousel slide" data-ride="carousel" data-interval="false">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-chitchat" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-chitchat" data-slide-to="1" class=""></li>
-                                            <li data-target="#carousel-chitchat" data-slide-to="2" class=""></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="{{asset('imgs/carousel-imgs/league-of-legends-lfg.png')}}" class="d-block w-100" alt="">
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading"><label class="offline"></label> Online</div>
+                                                <div class="">
+                                                    <p>No auto reply yet</p>
+                                                    <!-- <div class="add_auto_reply">
+                                                        <div class="form-group border-bg br-16 p-1px">
+                                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-lightgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="9">Please add your auto reply here</textarea>
+                                                            <div class="text-counter position-static justify-content-end">
+                                                                <span id="charCounting" class="counter">0</span>
+                                                                <span class="fix-count">/500</span>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
                                             </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/legends-of-runeterra-lfg.jpg')}}" class="d-block w-100" alt="">
-                                            </div>
-                                            <div class="carousel-item ">
-                                                <img src="{{asset('imgs/carousel-imgs/minecraft-lfg.png')}}" class="d-block w-100" alt="">
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <button class="new-btn editBtn">Edit</button>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carousel-chitchat" role="button" data-slide="prev">
-                                            <i class="fa-solid fa-location-arrow prev-icon"></i>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carousel-chitchat" role="button" data-slide="next">
-                                            <i class="fa-solid fa-location-arrow next-icon"></i>
-                                            <span class="sr-only">Next</span>
-                                        </a>
                                     </div>
-                                </div>
-                                <div class="we-video-info highlight-section float-none d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <div class="likes d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
-                                            <span class="ml-2">23</span>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading"><label class="in-order"></label> In an order</div>
+                                                <div class="">
+                                                    <p>No auto reply yet</p>
+                                                    <!-- <div class="add_auto_reply">
+                                                        <div class="form-group border-bg br-16 p-1px">
+                                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-lightgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="9">Please add your auto reply here</textarea>
+                                                            <div class="text-counter position-static justify-content-end">
+                                                                <span id="charCounting" class="counter">0</span>
+                                                                <span class="fix-count">/500</span>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <button class="new-btn editBtn">Edit</button>
+                                            </div>
                                         </div>
-                                        <a href="/post-details" class="likes comments d-flex align-items-center">
-                                            <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
-                                            <span class="ml-2">13</span>
-                                        </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="px-32px py-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <div class="heading"><label class="resting"></label> Resting</div>
+                                                <div class="">
+                                                    <p>No auto reply yet</p>
+                                                    <!-- <div class="add_auto_reply">
+                                                        <div class="form-group border-bg br-16 p-1px">
+                                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-lightgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="9">Please add your auto reply here</textarea>
+                                                            <div class="text-counter position-static justify-content-end">
+                                                                <span id="charCounting" class="counter">0</span>
+                                                                <span class="fix-count">/500</span>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center justify-content-end">
+                                                <button class="new-btn editBtn">Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="dash border-white">
+
+                                    <div class="changeBtn px-32px pb-32px pt-3 text-end text-right">
+                                        <button class="new-btn">Save Change</button>
                                     </div>
                                 </div>
                             </div>
@@ -1240,7 +1222,6 @@
     <!-- Sidebar Section End -->
 
     <script>
-
         // Chat Section Start
             const navBar = document.querySelector(".navSection"),
             menuBtns = document.querySelectorAll(".menu-icon"),
@@ -1258,14 +1239,66 @@
 
         // Chat Section End
 
-
         // remove tags
         function remove(el) {
             var element = el;
             element.remove();
         }
-    </script>
 
+        // Textarea
+        $('textarea').keyup(function() {
+        
+            var characterCount = $(this).val().length,
+                current = $('#current'),
+                maximum = $('#maximum'),
+                theCount = $('#the-count');
+            
+            current.text(characterCount);
+        
+            /*This isn't entirely necessary, just playin around*/
+            if (characterCount < 70) {
+                current.css('color', '#666');
+            }
+            if (characterCount > 70 && characterCount < 90) {
+                current.css('color', '#6d5555');
+            }
+            if (characterCount > 90 && characterCount < 100) {
+                current.css('color', '#793535');
+            }
+            if (characterCount > 100 && characterCount < 120) {
+                current.css('color', '#841c1c');
+            }
+            if (characterCount > 120 && characterCount < 139) {
+                current.css('color', '#8f0001');
+            }
+            
+            if (characterCount >= 140) {
+                maximum.css('color', '#8f0001');
+                current.css('color', '#8f0001');
+                theCount.css('font-weight','bold');
+            } else {
+                maximum.css('color','#666');
+                theCount.css('font-weight','normal');
+            }
+            
+        });
+
+        function auto_grow(element) {
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight)+"px";
+        };
+
+        $(function() {
+            window.charCount = 0;
+            setInterval(function() {
+                var c = $(".content-countss").val().length;
+                if(c != window.charCount) {
+                    window.charCount = c;
+                    $("#charCounting").html(window.charCount); 
+                }
+            }, 500);
+        });
+    </script>
 
 @endsection
 
