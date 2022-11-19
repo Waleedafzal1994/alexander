@@ -201,9 +201,7 @@
                                         <i class="fa fa-share-alt"></i></a><ins>20</ins></span>
                                     </li> --}}
                             </ul>
-                            <div class="hashtag">
-                                <div class="">#Highlights</div>
-                            </div>
+                            <div class="singlehashtag">#Newcomer Selfies</div>
                         </div>
                         <!-- <div class="users-thumb-list text-right" id="people-liked-post-{{ $post->id }}">
                             {!! $post->postLikedUserNames() !!}

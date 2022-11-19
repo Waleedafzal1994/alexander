@@ -294,7 +294,7 @@ $noFooter = true;
                 </div>
             </div>
         </nav>
-        <div class="spacer" style="height:55px;">
+        <div class="spacer" style="height:80px;">
             &nbsp;
         </div>
         @guest
@@ -308,9 +308,8 @@ $noFooter = true;
         @endif
 
         <div class="top-bg-section w-100 d-flex align-items-end">
-            <div class="container">
-                <div class="bg-img"></div>
-            </div>
+            <div class="bg-img-shadow"></div>
+            <img src="{{asset('imgs/gaming-background.png')}}" alt="">
         </div>
         <div class="bg-content-clr">
             <main class=" @if (Route::current()->getName() != 'welcome') container @endif">

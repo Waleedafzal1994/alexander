@@ -85,9 +85,7 @@
                                 <img src="{{asset('imgs/icons/red-heart.svg')}}" alt="">
                                 <span class="ml-2">23</span>
                             </div>
-                            <div class="hashtag">
-                                <div class="">#Newcomer Selfies</div>
-                            </div>
+                            <div class="singlehashtag">#Newcomer Selfies</div>
                         </div>
                     </div>
 

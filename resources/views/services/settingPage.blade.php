@@ -15,7 +15,7 @@
                                 </mask>
                                 <g mask="url(#mask0_1549_2967)">
                                 <rect width="19" height="21" transform="matrix(-1 0 0 1 19 0)" fill="url(#pattern1)"/>
-                                <rect width="19" height="21" transform="matrix(-1 0 0 1 19 0)" fill="#fff"/>
+                                <rect width="19" height="21" transform="matrix(-1 0 0 1 19 0)" fill="#9B32ED"/>
                                 </g>
                                 <defs>
                                     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -669,24 +669,38 @@
                                 <div class="bg-darkgrey br-16 notification">
                                     <div class="px-32px pt-32px pb-3">
                                         <div class="row align-items-center">
-                                            <div class="col-8">
+                                            <div class="col-12">
                                                 <div class="heading"><label class="online"></label> Online</div>
-                                                <div class="">
-                                                    <p>No auto reply yet</p>
-                                                    <!-- <div class="add_auto_reply">
-                                                        <div class="form-group border-bg br-16 p-1px">
-                                                            <textarea type="text" maxlength="500" id="field" name="description" class="textarea content-countss bg-lightgrey border-0 shadow-0" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="9">Please add your auto reply here</textarea>
-                                                            <div class="text-counter position-static justify-content-end">
-                                                                <span id="charCounting" class="counter">0</span>
-                                                                <span class="fix-count">/500</span>
+                                                <div class="row">
+                                                    <div class="col-12 editSection">
+                                                        <div class="col-8">
+                                                            <p>No auto reply yet</p>
+                                                        </div>
+                                                        <div class="col-4 d-flex editShow align-items-center justify-content-end">
+                                                            <button class="new-btn editBtn">Edit</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 saveSection">
+                                                        <div class="col-12">
+                                                            <div class="add_auto_reply">
+                                                                <div class="border-bg br-16 p-1px mb-2">
+                                                                    <textarea type="text" maxlength="500" id="field" name="description" class="form-control textarea content-countss bg-lightgrey br-16 border-0 shadow-0 text-white" onkeyup="countCount(this)" oninput="auto_grow(this)" rows="8">Please add your auto reply here</textarea>
+                                                                </div>
+                                                                <div class="text-counter position-static justify-content-end">
+                                                                    <span id="charCounting" class="counter">0</span>
+                                                                    <span class="fix-count">/500</span>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div> -->
+                                                        <div class="col-12 d-flex saveShow align-items-center justify-content-end mt-3">
+                                                            <button class="new-btn editBtn">Cancel</button>
+                                                            <button class="new-btn editBtn">Save</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-4 d-flex align-items-center justify-content-end">
-                                                <button class="new-btn editBtn">Edit</button>
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -858,9 +872,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -949,9 +961,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -1282,11 +1292,6 @@
             }
             
         });
-
-        function auto_grow(element) {
-            element.style.height = "5px";
-            element.style.height = (element.scrollHeight)+"px";
-        };
 
         $(function() {
             window.charCount = 0;

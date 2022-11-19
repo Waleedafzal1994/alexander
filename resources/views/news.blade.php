@@ -203,9 +203,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -294,9 +292,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -385,9 +381,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -476,9 +470,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -567,9 +559,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -658,9 +648,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>
@@ -749,9 +737,7 @@
                                             <span class="ml-2">13</span>
                                         </a>
                                     </div>
-                                    <div class="hashtag">
-                                        <div class="">#Newcomer Selfies</div>
-                                    </div>
+                                    <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
                             </div>
                         </div>

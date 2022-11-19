@@ -91,7 +91,7 @@
                                                             <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
                                                             <img class="sparkle top" src="{{asset('imgs/icons/sparkle-mini.svg')}}" alt="">
                                                             @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                                            <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                            <img id="circle-profile-pic" src="{{asset('imgs/gamersplay-ceo.svg')}}" alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                                             @else
                                                                 @if($service->user->gender == 'Male')
                                                                     <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
@@ -117,13 +117,13 @@
                                     </div>
                                     
                                     <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle yellow-circle">
-                                        <div class="king-circle center-img mt-2">
+                                        <div class="king-circle center-img">
                                             <div class="dark-circle">
                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
                                                     <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/gamersplay-icon.svg')}}" alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                                     @else
                                                         @if($service->user->gender == 'Male')
                                                             <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
@@ -147,7 +147,7 @@
                                     </div>
 
                                     <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle purple-circle">
-                                        <div class="king-circle center-img mt-2">
+                                        <div class="king-circle center-img">
                                             <div class="dark-circle">
                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
                                                     <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
@@ -177,7 +177,7 @@
                                     </div>
 
                                     <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle blue-circle">
-                                        <div class="king-circle center-img mt-2">
+                                        <div class="king-circle center-img">
                                             <div class="dark-circle">
                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
                                                     <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
@@ -207,7 +207,7 @@
                                     </div>
 
                                     <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle simple-circle">
-                                        <div class="king-circle center-img mt-2">
+                                        <div class="king-circle center-img">
                                             <div class="dark-circle">
                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
                                                     @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
