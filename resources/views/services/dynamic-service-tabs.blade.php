@@ -1,4 +1,4 @@
-<div class="card-body bg-lightgrey br-16 px-3">
+<div class="card-body bg-lightgrey br-16 px-3 pt-0 pb-3">
     <div class="service-main-body-content">
 
         <?php $checkBlockedUser = checkUserBloked($service->user->id)?>
@@ -10,7 +10,7 @@
                 <p class="text-center mb-5">This user is blocked by <a class="block-person" href="/user-profile/{{$getUser->id}}">{{$getUser->name}}</a></p>
             </div>   -->
         @endif
-        <div class="about-game d-flex align-items-center justify-content-between flex-wrap px-0">
+        <div class="about-game d-flex align-items-center justify-content-between flex-wrap px-0 pb-2">
             <div class="d-flex align-items-center justify-content-between w-100">
                 <h1 id="categoryName" class="mr-3 mb-0">
                     <span>{{$service->category->name}}</span>

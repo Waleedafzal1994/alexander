@@ -182,7 +182,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">2/8</div>
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">3/8</div>
                         </div>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">4/8</div>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn learn-more">Learn more</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">5/8</div>
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">6/8</div>
                         </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">7/8</div>
                         </div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                                 <div class="bg-blur"></div>
                                 <button class="new-btn check-now">Check now</button>
                             </div>
-                            <div class="card-footer">1/8</div>
+                            <div class="card-footer">8/8</div>
                         </div>
                     </div>
                 </div>

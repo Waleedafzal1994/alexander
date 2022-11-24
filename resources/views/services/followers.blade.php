@@ -111,12 +111,12 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                            <div class="avatar-frame">
+                                            <div class="avatar-frame disabled">
                                                 <div class="frame-label border-bg br-16">
                                                     <label for="">Supreme</label>
                                                 </div>
                                                 <div class="frame-circle border-bg">
-                                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle silver-circle">
+                                                    <div class="mx-0 d-flex justify-content-center mb-4 new-circle silver-circle">
                                                         <div class="king-circle center-img">
                                                             <div class="dark-circle">
                                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
@@ -133,7 +133,7 @@
                                                     <label for="">Vip</label>
                                                 </div>
                                                 <div class="frame-circle border-bg">
-                                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle purple-circle">
+                                                    <div class="mx-0 d-flex justify-content-center mb-4 new-circle purple-circle">
                                                         <div class="king-circle center-img">
                                                             <div class="dark-circle">
                                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
@@ -150,7 +150,7 @@
                                                     <label for="">Top</label>
                                                 </div>
                                                 <div class="frame-circle border-bg">
-                                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle blue-circle">
+                                                    <div class="mx-0 d-flex justify-content-center mb-4 new-circle blue-circle">
                                                         <div class="king-circle center-img">
                                                             <div class="dark-circle">
                                                                 <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">

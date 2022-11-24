@@ -200,8 +200,13 @@
                                         </div>
                                         <a href="/post-details" class="likes comments d-flex align-items-center">
                                             <img src="{{asset('imgs/icons/comment-icon.svg')}}" alt="">
-                                            <span class="ml-2">13</span>
+                                            <span class="ml-2">17</span>
                                         </a>
+
+                                        <!-- Button trigger modal -->
+                                        <button class="new-btn p-0 bg-transparent shadow-0 shareModal" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <img src="{{asset('imgs/icons/share-icon.svg')}}" alt="">
+                                        </button>
                                     </div>
                                     <div class="singlehashtag">#Newcomer Selfies</div>
                                 </div>
@@ -1006,6 +1011,21 @@
     
     <div class="overlay"></div>
     <!-- Sidebar Section End -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        share pop-up
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script>
 

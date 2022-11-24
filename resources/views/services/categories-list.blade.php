@@ -56,11 +56,11 @@
 @if(!empty($all_remaining_cats) && (count($all_remaining_cats) >=4))
 
 <li class="nav-item more-section mr-0" role="presentation" id="{{$category->id}}" onclick="getCategoryServices(this,'more')" >
-    <a class="nav-link p-0 ml-auto menu-icon" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false" style="background-image:url({{asset('imgs/more-services-img.svg')}}) !important; backdrop-filter: blur(4px); background-repeat: no-repeat;" >
+    <a class="nav-link p-0 ml-auto menu-icon" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false" >
         <div class="categories_box_holder">
-            <div class="d-flex align-items-end">
+            <div class="d-flex align-items-center">
                 <p class="text-white mb-0">Browse <br> more Services</p>
-                <div class="d-flex mb-1">
+                <div class="d-flex mt-4 pt-2">
                     <img src="{{asset('imgs/icons/service-arrow.svg')}}" class="mr-2" alt="">
                     <img src="{{asset('imgs/icons/service-arrow.svg')}}" alt="">
                 </div>

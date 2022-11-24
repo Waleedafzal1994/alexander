@@ -153,7 +153,7 @@
                                                     <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/jacob-oliver.svg')}}" alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                                     @else
                                                         @if($service->user->gender == 'Male')
                                                             <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
@@ -169,7 +169,7 @@
                                         <div class="subscribe text-center">
                                             <div class="heading">VIP <sup>.</sup> GamersPlay+</div>
                                             <div class="designation d-flex align-items-center justify-content-center">
-                                                <div class="circle"></div> Online
+                                                <div class="circle purple"></div> Online
                                                 <!-- <div class="circle off"></div> Offline -->
                                             </div>
                                             <button class="new-btn text-white text-center">Subscribe</button>
@@ -183,7 +183,7 @@
                                                     <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
                                                     @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
-                                                    <img id="circle-profile-pic" src='{{ $service->user->getProfilePicture() }}' alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/hailey-marcie.svg')}}" alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
                                                     @else
                                                         @if($service->user->gender == 'Male')
                                                             <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
@@ -206,6 +206,37 @@
                                         </div>
                                     </div>
 
+                                    <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle silver-circle">
+                                        <div class="king-circle center-img">
+                                            <div class="dark-circle">
+                                                <div class="inner-golden-circle position-static lightbox lightbox-user-gallery h-100">
+                                                    <img class="sparkle bottom" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    <img class="sparkle top" src="{{asset('imgs/icons/sparkle-large.svg')}}" width="24" alt="">
+                                                    @if($service->user->getProfilePicture() != '/imgs/avatar.svg')
+                                                    <img id="circle-profile-pic" src="{{asset('imgs/hailey-james.svg')}}" alt="" class="pointer img-fluid profile-image-v2 zoom-clicked-img h-100" />
+                                                    @else
+                                                        @if($service->user->gender == 'Male')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/male.jpg')}}">
+                                                        @elseif($service->user->gender == 'Female')
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/female.jpg')}}">
+                                                        @else
+                                                            <img src="{{URL::asset('/images/ProfilePlaceholders/non-binary.jpg')}}">
+                                                        @endif
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="subscribe text-center">
+                                            <div class="heading">Sup <sup>.</sup> GamersPlay</div>
+                                            <div class="designation d-flex align-items-center justify-content-center">
+                                                <div class="circle off"></div> Online
+                                                <!-- <div class="circle off"></div> Offline -->
+                                            </div>
+                                            <button class="new-btn text-white text-center">Subscribe</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dynamic Ring Card -->
                                     <div class="mx-0 d-flex justify-content-center new-profile-section mb-4 new-circle simple-circle">
                                         <div class="king-circle center-img">
                                             <div class="dark-circle">
@@ -225,7 +256,7 @@
                                             </div>
                                         </div>
                                         <div class="subscribe text-center">
-                                            <div class="heading">VIP <sup>.</sup> GamersPlay+</div>
+                                            <div class="heading">GamersPlay</div>
                                             <div class="designation d-flex align-items-center justify-content-center">
                                                 <div class="circle"></div> Online
                                                 <!-- <div class="circle off"></div> Offline -->
@@ -387,7 +418,7 @@
 
                                             </div> -->
 
-                                            <div class="achievements text-center">
+                                            <div class="new-border-bg achievements text-center">
                                                 <div class="">
                                                     <h4>Achievements</h4>
                                                     <div class="badges">
@@ -398,7 +429,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="light-border my-5"></div>
+                                            <div class="light-border my-32px"></div>
                                             
                                             <div class="socialmedia">
                                                 <ul>
@@ -613,13 +644,13 @@
                                             </div>
                                             <div class="left-circle right"></div>
                                         </div>
-                                        <div class="share-btn d-flex align-items-center justify-content-between">
+                                        <div class="share-btn d-flex align-items-center justify-content-between px-2">
                                             <a href="" type="button">
                                                 <img src="{{asset('imgs/icons/f-icon.svg')}}" alt="">
                                                 Facebook
                                             </a>
                                             <a href="" type="button">
-                                                <img src="{{asset('imgs/icons/f-icon.svg')}}" alt="">
+                                                <img src="{{asset('imgs/icons/t-icon.svg')}}" alt="">
                                                 Twitter
                                             </a>
                                         </div>
@@ -925,6 +956,13 @@
                                     <div class="">
                                         <div class="label-heading">GamersPlay Staff</div>
                                         <div class="label-text">GP Staff</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-lightgrey br-16 gamer-id-section mb-4">
+                                <div class="bg-darkgrey br-16">
+                                    <div class="new-border-bg br-16 position-relative">
+                                        <div class="bg-lightgrey br-16 gamer-id">ID:  438739879375938</div>
                                     </div>
                                 </div>
                             </div>
