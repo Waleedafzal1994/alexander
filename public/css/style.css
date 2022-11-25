@@ -2869,9 +2869,7 @@ a.slider-link:hover {
     border-radius: 10px;
 } */
 .modal{
-    /* background-color: rgba(175, 147, 239, 0.4); */
-    background: #000000;
-    opacity: 0.6;
+    background-color: rgba(175, 147, 239, 0.4);
 }
 .post-comt-box textarea{
     background-color: transparent !important;
@@ -7482,4 +7480,86 @@ input:checked + .slider{
     color: #FFFFFF;
     padding: 22px 0;
     text-align: center;
+}
+
+/* Share Modal Css */
+.modal.modal-share{
+    background: rgb(0 0 0 / 60%);
+}
+.modal-share .new-border-bg{
+    background: linear-gradient(96.6deg, rgba(217, 217, 217, 0.48) 1.74%, rgba(217, 217, 217, 0.12) 100%);
+    backdrop-filter: blur(5px);
+}
+.modal-share .new-border-bg:before{
+    border-radius: 16px;
+    z-index: -1;
+    padding: 2px;
+}
+.modal-share .modal-body{
+    padding: 0 32px;
+}
+.modal-share .modal-header{
+    padding: 32px 32px 28px 32px;
+    color: #fff;
+}
+.modal-share .share-link{
+    margin-bottom: 49px;
+}
+.modal-share .share-link .link-icon{
+    margin-right: 17px;
+    background: rgb(43 46 54 / 50%);
+    min-width: 83.17px;
+    min-height: 83.17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-share .share-link .link-icon.active{
+    background: #2C2F36;
+}
+.modal-share .share-link .link-icon img{
+    padding-top: 5px;
+}
+.modal-share .share-link .link-icon:before{
+    border-radius: 50%;
+    padding: 1px;
+}
+.modal-share .share-link .link-icon:last-child{
+    margin-right: 0;
+}
+
+.modal-share .modal-dialog{
+    max-width: 650px;
+}
+
+.modal-share .copy-link p{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+.modal-share .copy-link{
+    padding-bottom: 32px;
+}
+.modal-share .copy-link .form-control{
+    height: 56px;
+    background: #2C2F36;
+    border-radius: 28px;
+    border: 0 !important;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(255 255 255 / 50%);
+    padding-left: 16px;
+}
+.modal-share .copy-link .copybtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 17px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9B32ED;
 }

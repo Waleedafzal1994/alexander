@@ -1013,15 +1013,43 @@
     <!-- Sidebar Section End -->
 
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal modal-share fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content new-border-bg br-16">
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="new-btn btn-close bg-transparent border-0 shadow-0" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="{{asset('imgs/icons/share-modal-close.svg')}}" alt="">
+                        </button>
                     </div>
                     <div class="modal-body">
-                        share pop-up
+                        <div class="share-link d-flex align-items-center justify-content-between">
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/instagram-share.svg')}}" alt="">
+                            </button>
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/twitter-share.svg')}}" alt="">
+                            </button>
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/tiktok-share.svg')}}" alt="">
+                            </button>
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/facebook-share.svg')}}" alt="">
+                            </button>
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/pinterest-share.svg')}}" alt="">
+                            </button>
+                            <button class="new-btn link-icon">
+                                <img src="{{asset('imgs/icons/linkedin-share.svg')}}" alt="">
+                            </button>
+                        </div>
+                        <div class="copy-link">
+                            <p>Or Copy link</p>
+                            <div class="w-100 position-relative">
+                                <input type="text" id="linkCopied" readonly class="form-control" value="https://www.google.com/search?q=lorem+ipsum&oq=lor&aq">
+                                <button onclick="copyLink()" class="new-btn bg-transparent border-0 p-0 copybtn">Copy</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1045,6 +1073,15 @@
             });
 
         // Chat Section End
+
+        // Copy Link in Modal
+        function copyLink() {
+            var copyText = document.getElementById("linkCopied");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(copyText.value);
+            
+        }
 
     </script>
 
